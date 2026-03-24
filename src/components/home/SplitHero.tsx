@@ -23,10 +23,6 @@ type Activity = {
   color: string;
   hoverColor: string;
   glowClass: string;
-  borderColor: string;
-  bgColor: string;
-  hoverBg: string;
-  hoverText: string;
   shadowColor: string;
   overlayFrom: string;
   overlayVia: string;
@@ -41,10 +37,6 @@ const activities: Activity[] = [
     color: 'text-neon-blue',
     hoverColor: 'group-hover:text-neon-blue',
     glowClass: 'neon-glow-blue',
-    borderColor: 'border-[#00d4ff]',
-    bgColor: 'bg-[#00d4ff]',
-    hoverBg: 'group-hover:bg-[#00d4ff]',
-    hoverText: 'group-hover:text-black',
     shadowColor: 'rgba(0,212,255,0.3)',
     overlayFrom: 'from-black/65',
     overlayVia: 'via-black/45',
@@ -57,10 +49,6 @@ const activities: Activity[] = [
     color: 'text-neon-violet',
     hoverColor: 'group-hover:text-neon-violet',
     glowClass: 'neon-glow-violet',
-    borderColor: 'border-[#a855f7]',
-    bgColor: 'bg-[#a855f7]',
-    hoverBg: 'group-hover:bg-[#a855f7]',
-    hoverText: 'group-hover:text-white',
     shadowColor: 'rgba(168,85,247,0.3)',
     overlayFrom: 'from-[#1a0a2e]/70',
     overlayVia: 'via-[#1a0a2e]/50',
@@ -73,10 +61,6 @@ const activities: Activity[] = [
     color: 'text-neon-green',
     hoverColor: 'group-hover:text-neon-green',
     glowClass: 'neon-glow-green',
-    borderColor: 'border-[#39ff14]',
-    bgColor: 'bg-[#39ff14]',
-    hoverBg: 'group-hover:bg-[#39ff14]',
-    hoverText: 'group-hover:text-black',
     shadowColor: 'rgba(57,255,20,0.3)',
     overlayFrom: 'from-[#0a1a0a]/70',
     overlayVia: 'via-[#0a1a0a]/50',
@@ -89,10 +73,6 @@ const activities: Activity[] = [
     color: 'text-neon-pink',
     hoverColor: 'group-hover:text-neon-pink',
     glowClass: 'neon-glow-pink',
-    borderColor: 'border-[#ff2d7b]',
-    bgColor: 'bg-[#ff2d7b]',
-    hoverBg: 'group-hover:bg-[#ff2d7b]',
-    hoverText: 'group-hover:text-white',
     shadowColor: 'rgba(255,45,123,0.3)',
     overlayFrom: 'from-[#1a0a15]/70',
     overlayVia: 'via-[#1a0a15]/50',
@@ -105,10 +85,42 @@ export default function SplitHero() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-[#0a0a12]">
-      {/* 2x2 Grid panels */}
-      <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
-        {activities.map((activity) => {
+    <section className="relative min-h-screen bg-[#0a0a12] pb-12 pt-24">
+      {/* Background ambient glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-neon-orange/5 blur-[120px]" />
+        <div className="absolute -right-40 bottom-1/4 h-96 w-96 rounded-full bg-neon-violet/5 blur-[120px]" />
+      </div>
+
+      {/* Branding header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 mb-10 flex flex-col items-center px-4"
+      >
+        <Image
+          src="/images/logo-funzone.png"
+          alt="Fun Zone Tenerife"
+          width={80}
+          height={80}
+          className="h-20 w-20 rounded-full object-contain"
+          priority
+        />
+        <h1 className="neon-glow mt-4 text-3xl font-bold tracking-wider text-white sm:text-4xl md:text-5xl">
+          FUN ZONE
+        </h1>
+        <p className="mt-1 text-xs font-medium tracking-[0.5em] text-neon-orange sm:text-sm">
+          TENERIFE
+        </p>
+        <p className="mt-3 max-w-md text-center text-sm text-white/50 sm:text-base">
+          {t('subtitle')}
+        </p>
+      </motion.div>
+
+      {/* Cards grid */}
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-5 px-4 sm:grid-cols-2 sm:px-6 lg:px-8">
+        {activities.map((activity, index) => {
           const Icon = activity.icon;
           const isHovered = hoveredId === activity.id;
           const otherHovered = hoveredId !== null && !isHovered;
@@ -117,13 +129,19 @@ export default function SplitHero() {
             <motion.a
               key={activity.id}
               href={`/${locale}${activity.href}`}
-              className={`group relative flex min-h-[50vh] cursor-pointer items-center justify-center overflow-hidden transition-all duration-500 md:min-h-[50vh] ${
-                otherHovered ? 'opacity-70' : 'opacity-100'
-              }`}
+              className={`group relative flex aspect-[4/3] cursor-pointer items-center justify-center overflow-hidden rounded-3xl border border-white/5 transition-all duration-500 ${
+                otherHovered ? 'scale-[0.98] opacity-60' : 'opacity-100'
+              } ${isHovered ? 'scale-[1.02]' : ''}`}
               onMouseEnter={() => setHoveredId(activity.id)}
               onMouseLeave={() => setHoveredId(null)}
-              initial="hidden"
-              animate="visible"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+              style={{
+                boxShadow: isHovered
+                  ? `0 0 40px ${activity.shadowColor}, 0 20px 60px rgba(0,0,0,0.5)`
+                  : '0 4px 30px rgba(0,0,0,0.3)',
+              }}
             >
               {/* Background image */}
               <div className="absolute inset-0">
@@ -131,139 +149,78 @@ export default function SplitHero() {
                   src={activity.image}
                   alt={t(`${activity.id}Title`)}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
+                  className="rounded-3xl object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  priority={index < 2}
                 />
               </div>
 
               {/* Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-b ${activity.overlayFrom} ${activity.overlayVia} to-black/75 transition-all duration-500 group-hover:opacity-80`} />
+              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-b ${activity.overlayFrom} ${activity.overlayVia} to-black/80 transition-all duration-500 group-hover:opacity-80`} />
 
               {/* Colored border glow on hover */}
               <div
-                className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
-                  boxShadow: `inset 0 0 60px ${activity.shadowColor}, inset 0 0 120px ${activity.shadowColor.replace('0.3', '0.1')}`,
+                  boxShadow: `inset 0 0 60px ${activity.shadowColor}, inset 0 0 120px ${activity.shadowColor.replace('0.3', '0.08')}`,
+                }}
+              />
+
+              {/* Neon border on hover */}
+              <div
+                className="absolute inset-0 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-opacity-40"
+                style={{
+                  borderColor: isHovered ? activity.shadowColor.replace('0.3', '0.4') : 'transparent',
                 }}
               />
 
               {/* Content */}
-              <div className="relative z-10 -mt-4 flex flex-col items-center gap-3 px-6 text-center">
-                <motion.div
-                  custom={1}
-                  variants={fadeInUp}
-                  className={`flex h-14 w-14 items-center justify-center rounded-2xl border ${activity.borderColor}/30 bg-white/5 backdrop-blur-sm transition-all duration-500 group-hover:${activity.borderColor}/60 group-hover:bg-white/10`}
+              <div className="relative z-10 flex flex-col items-center gap-3 px-6 text-center">
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl border bg-white/5 backdrop-blur-sm transition-all duration-500 group-hover:bg-white/10"
                   style={{
-                    borderColor: `${activity.shadowColor.replace('0.3', '0.3')}`,
+                    borderColor: activity.shadowColor.replace('0.3', '0.3'),
                   }}
                 >
                   <Icon className={`h-7 w-7 ${activity.color}`} />
-                </motion.div>
+                </div>
 
-                <motion.h2
-                  custom={2}
-                  variants={fadeInUp}
+                <h2
                   className={`${activity.glowClass} text-2xl font-bold tracking-wider text-white transition-all duration-300 ${activity.hoverColor} sm:text-3xl lg:text-4xl`}
                 >
                   {t(`${activity.id}Title`)}
-                </motion.h2>
+                </h2>
 
-                <motion.p
-                  custom={3}
-                  variants={fadeInUp}
-                  className="max-w-[260px] text-sm text-white/70"
-                >
+                <p className="max-w-[260px] text-sm text-white/60">
                   {t(`${activity.id}Subtitle`)}
-                </motion.p>
+                </p>
 
-                <motion.div
-                  custom={4}
-                  variants={fadeInUp}
+                <div
                   className={`mt-2 rounded-xl border px-6 py-2.5 text-xs font-bold uppercase tracking-wider backdrop-blur-sm transition-all duration-300 ${activity.color}`}
                   style={{
-                    borderColor: `${activity.shadowColor.replace('0.3', '0.5')}`,
-                    backgroundColor: `${activity.shadowColor.replace('0.3', '0.1')}`,
+                    borderColor: activity.shadowColor.replace('0.3', '0.5'),
+                    backgroundColor: activity.shadowColor.replace('0.3', '0.1'),
                   }}
-                  onMouseEnter={() => {}} // inherit from parent
                 >
                   {t('discover')}
-                </motion.div>
+                </div>
               </div>
             </motion.a>
           );
         })}
       </div>
 
-      {/* Grid lines overlay */}
-      <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
-        {/* Vertical line */}
-        <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-        {/* Horizontal line */}
-        <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* Central branding overlay */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="pointer-events-none absolute inset-0 z-30 hidden items-center justify-center md:flex"
-      >
-        <div className="rounded-2xl bg-black/60 px-8 py-5 backdrop-blur-xl">
-          <div className="flex items-center justify-center gap-4">
-            <Image
-              src="/images/logo-funzone.png"
-              alt="Fun Zone Tenerife"
-              width={56}
-              height={56}
-              className="h-14 w-14 rounded-full object-contain"
-            />
-            <div>
-              <h1 className="neon-glow text-3xl font-bold tracking-wider text-white lg:text-4xl">
-                FUN ZONE
-              </h1>
-              <p className="text-center text-[10px] font-medium tracking-[0.5em] text-neon-orange">
-                TENERIFE
-              </p>
-            </div>
-          </div>
-          <p className="mt-2 text-center text-sm text-white/50">
-            {t('subtitle')}
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Mobile branding */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="pointer-events-none absolute left-0 right-0 top-16 z-30 flex flex-col items-center md:hidden"
-      >
-        <Image
-          src="/images/logo-funzone.png"
-          alt="Fun Zone Tenerife"
-          width={48}
-          height={48}
-          className="h-12 w-12 rounded-full object-contain"
-        />
-        <h1 className="neon-glow mt-1 text-xl font-bold tracking-wider text-white">
-          FUN ZONE
-        </h1>
-      </motion.div>
-
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="pointer-events-none absolute bottom-4 left-1/2 z-30 -translate-x-1/2"
+        className="mt-8 flex justify-center"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-1 text-white/40"
+          className="flex flex-col items-center gap-1 text-white/30"
         >
           <span className="text-[10px] uppercase tracking-widest">Scroll</span>
           <ChevronDown size={16} />
