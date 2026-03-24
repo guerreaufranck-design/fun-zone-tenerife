@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 /* ============================================
-   AXE THROWING TENERIFE - DARK NEON THEME
-   Premium dark theme with neon blue/violet accents
+   FUN ZONE TENERIFE - DARK NEON THEME
+   Premium dark theme with vibrant multi-color neon accents
    ============================================ */
 
 :root {
   /* Core palette */
-  --background: #0a0a0f;
+  --background: #0a0a12;
   --foreground: #f0f0f5;
 
-  /* Primary - Neon Blue */
-  --primary: #00d4ff;
-  --primary-foreground: #0a0a0f;
+  /* Primary - Neon Orange */
+  --primary: #ff8c00;
+  --primary-foreground: #0a0a12;
 
-  /* Secondary - Deep Blue-Gray */
-  --secondary: #1a1a2e;
+  /* Secondary - Deep Purple */
+  --secondary: #1a1025;
   --secondary-foreground: #f0f0f5;
 
-  /* Accent - Violet Neon */
-  --accent: #8b5cf6;
+  /* Accent - Neon Pink */
+  --accent: #ff2d7b;
   --accent-foreground: #f0f0f5;
 
   /* Destructive */
@@ -27,30 +27,32 @@
   --destructive-foreground: #f0f0f5;
 
   /* Muted */
-  --muted: #16161a;
-  --muted-foreground: #888899;
+  --muted: #14121a;
+  --muted-foreground: #908899;
 
   /* Card */
-  --card: #111118;
+  --card: #110f18;
   --card-foreground: #f0f0f5;
 
   /* Popover */
-  --popover: #111118;
+  --popover: #110f18;
   --popover-foreground: #f0f0f5;
 
   /* Border & Ring */
-  --border: #222233;
-  --input: #222233;
-  --ring: #00d4ff;
+  --border: #2a2235;
+  --input: #2a2235;
+  --ring: #ff8c00;
 
   /* Radius */
   --radius: 0.625rem;
 
-  /* Neon colors */
+  /* Neon colors - each activity gets its own */
   --neon-blue: #00d4ff;
-  --neon-violet: #8b5cf6;
-  --neon-orange: #ff6b00;
-  --neon-green: #00ff88;
+  --neon-violet: #a855f7;
+  --neon-orange: #ff8c00;
+  --neon-green: #39ff14;
+  --neon-pink: #ff2d7b;
+  --neon-cyan: #00e5ff;
 }
 
 /* Tailwind v4 theme integration */
@@ -79,6 +81,8 @@
   --color-neon-violet: var(--neon-violet);
   --color-neon-orange: var(--neon-orange);
   --color-neon-green: var(--neon-green);
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-cyan: var(--neon-cyan);
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
@@ -118,12 +122,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Selection styling */
 ::selection {
-  background-color: rgba(0, 212, 255, 0.3);
+  background-color: rgba(255, 140, 0, 0.3);
   color: #f0f0f5;
 }
 
 ::-moz-selection {
-  background-color: rgba(0, 212, 255, 0.3);
+  background-color: rgba(255, 140, 0, 0.3);
   color: #f0f0f5;
 }
 
@@ -161,25 +165,49 @@ h1, h2, h3, h4, h5, h6 {
 
 .neon-glow {
   text-shadow:
+    0 0 7px rgba(255, 140, 0, 0.6),
+    0 0 10px rgba(255, 140, 0, 0.4),
+    0 0 21px rgba(255, 140, 0, 0.3),
+    0 0 42px rgba(255, 140, 0, 0.2);
+}
+
+.neon-glow-violet {
+  text-shadow:
+    0 0 7px rgba(168, 85, 247, 0.6),
+    0 0 10px rgba(168, 85, 247, 0.4),
+    0 0 21px rgba(168, 85, 247, 0.3),
+    0 0 42px rgba(168, 85, 247, 0.2);
+}
+
+.neon-glow-blue {
+  text-shadow:
     0 0 7px rgba(0, 212, 255, 0.6),
     0 0 10px rgba(0, 212, 255, 0.4),
     0 0 21px rgba(0, 212, 255, 0.3),
     0 0 42px rgba(0, 212, 255, 0.2);
 }
 
-.neon-glow-violet {
+.neon-glow-green {
   text-shadow:
-    0 0 7px rgba(139, 92, 246, 0.6),
-    0 0 10px rgba(139, 92, 246, 0.4),
-    0 0 21px rgba(139, 92, 246, 0.3),
-    0 0 42px rgba(139, 92, 246, 0.2);
+    0 0 7px rgba(57, 255, 20, 0.6),
+    0 0 10px rgba(57, 255, 20, 0.4),
+    0 0 21px rgba(57, 255, 20, 0.3),
+    0 0 42px rgba(57, 255, 20, 0.2);
+}
+
+.neon-glow-pink {
+  text-shadow:
+    0 0 7px rgba(255, 45, 123, 0.6),
+    0 0 10px rgba(255, 45, 123, 0.4),
+    0 0 21px rgba(255, 45, 123, 0.3),
+    0 0 42px rgba(255, 45, 123, 0.2);
 }
 
 .neon-border {
   box-shadow:
-    0 0 5px rgba(0, 212, 255, 0.3),
-    0 0 10px rgba(0, 212, 255, 0.15),
-    inset 0 0 5px rgba(0, 212, 255, 0.05);
+    0 0 5px rgba(255, 140, 0, 0.3),
+    0 0 10px rgba(255, 140, 0, 0.15),
+    inset 0 0 5px rgba(255, 140, 0, 0.05);
 }
 
 .neon-border-hover {
@@ -188,10 +216,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .neon-border-hover:hover {
   box-shadow:
-    0 0 5px rgba(0, 212, 255, 0.4),
-    0 0 15px rgba(0, 212, 255, 0.2),
-    0 0 30px rgba(0, 212, 255, 0.1),
-    inset 0 0 5px rgba(0, 212, 255, 0.05);
+    0 0 5px rgba(255, 140, 0, 0.4),
+    0 0 15px rgba(255, 140, 0, 0.2),
+    0 0 30px rgba(255, 140, 0, 0.1),
+    inset 0 0 5px rgba(255, 140, 0, 0.05);
 }
 
 /* ============================================

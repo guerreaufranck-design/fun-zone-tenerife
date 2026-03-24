@@ -50,7 +50,6 @@ export function Navbar() {
 
   const handleLocaleSwitch = (newLocale: string) => {
     const currentPath = window.location.pathname;
-    // Handle experience detail pages with localized paths
     const expSegments: Record<string, string> = {
       en: 'experiences', es: 'experiencias', fr: 'experiences',
       de: 'erlebnisse', nl: 'ervaringen', it: 'esperienze',
@@ -79,26 +78,26 @@ export function Navbar() {
       <header
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'border-b border-border/30 bg-[#0a0a0f]/90 backdrop-blur-xl'
-            : 'bg-[#0a0a0f]/50 backdrop-blur-md'
+            ? 'border-b border-border/30 bg-[#0a0a12]/90 backdrop-blur-xl'
+            : 'bg-[#0a0a12]/50 backdrop-blur-md'
         }`}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2.5">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-funzone.png"
               alt="Fun Zone Tenerife"
               width={40}
               height={40}
-              className="h-9 w-9 sm:h-10 sm:w-10 object-contain"
+              className="h-9 w-9 rounded-full object-contain sm:h-10 sm:w-10"
               priority
             />
             <div className="flex flex-col items-start">
-              <span className="font-heading text-lg font-bold tracking-wider text-neon-blue transition-all duration-300 group-hover:text-white neon-glow sm:text-xl">
+              <span className="font-heading text-lg font-bold tracking-wider text-neon-orange transition-all duration-300 group-hover:text-white neon-glow sm:text-xl">
                 FUN ZONE
               </span>
-              <span className="text-[9px] font-medium tracking-[0.35em] text-muted-foreground transition-colors duration-300 group-hover:text-neon-blue sm:text-[10px]">
+              <span className="text-[9px] font-medium tracking-[0.35em] text-muted-foreground transition-colors duration-300 group-hover:text-neon-orange sm:text-[10px]">
                 TENERIFE
               </span>
             </div>
@@ -110,25 +109,17 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-neon-blue"
+                className="relative px-4 py-2 text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-neon-orange"
               >
                 <span className="relative">
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-neon-blue transition-all duration-300 hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-neon-orange transition-all duration-300 hover:w-full" />
                 </span>
               </Link>
             ))}
 
-            {/* Quiz Room CTA */}
-            <a
-              href={`/${locale}/experiences/quizzaboom-1h`}
-              className="ml-2 inline-flex items-center gap-2 rounded-lg bg-neon-blue px-4 py-2 text-sm font-extrabold tracking-wide !text-black shadow-[0_0_10px_rgba(0,212,255,0.3)] transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.6)] hover:brightness-110"
-            >
-              🧠 Quiz Room
-            </a>
-
             {/* Book Now CTA */}
-            <Button asChild variant="default" size="sm" className="ml-2">
+            <Button asChild variant="default" size="sm" className="ml-2 bg-neon-orange text-black hover:bg-neon-orange/90">
               <Link href="/book">{t('book')}</Link>
             </Button>
 
@@ -136,7 +127,7 @@ export function Navbar() {
             <div className="relative ml-3" ref={langRef}>
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-2 text-sm text-muted-foreground transition-all duration-200 hover:border-neon-blue/40 hover:text-foreground"
+                className="flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-2 text-sm text-muted-foreground transition-all duration-200 hover:border-neon-orange/40 hover:text-foreground"
                 aria-label={t('language')}
                 aria-expanded={langDropdownOpen}
               >
@@ -153,7 +144,7 @@ export function Navbar() {
 
               {/* Language Dropdown */}
               <div
-                className={`absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-border/50 bg-[#111118]/95 shadow-xl shadow-black/20 backdrop-blur-xl transition-all duration-200 ${
+                className={`absolute right-0 top-full mt-2 w-44 overflow-hidden rounded-xl border border-border/50 bg-[#110f18]/95 shadow-xl shadow-black/20 backdrop-blur-xl transition-all duration-200 ${
                   langDropdownOpen
                     ? 'visible translate-y-0 opacity-100'
                     : 'invisible -translate-y-2 opacity-0'
@@ -166,14 +157,14 @@ export function Navbar() {
                       onClick={() => handleLocaleSwitch(lang.code)}
                       className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-150 ${
                         locale === lang.code
-                          ? 'bg-neon-blue/10 text-neon-blue'
+                          ? 'bg-neon-orange/10 text-neon-orange'
                           : 'text-foreground/70 hover:bg-secondary hover:text-foreground'
                       }`}
                     >
                       <span className="text-base">{lang.flag}</span>
                       <span className="font-medium">{lang.label}</span>
                       {locale === lang.code && (
-                        <span className="ml-auto h-1.5 w-1.5 rounded-full bg-neon-blue shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+                        <span className="ml-auto h-1.5 w-1.5 rounded-full bg-neon-orange shadow-[0_0_6px_rgba(255,140,0,0.6)]" />
                       )}
                     </button>
                   ))}
@@ -185,7 +176,7 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-blue lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all duration-200 hover:border-neon-orange/50 hover:text-neon-orange lg:hidden"
             aria-label="Open menu"
           >
             <Menu className="h-5 w-5" />

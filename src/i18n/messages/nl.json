@@ -1,10 +1,14 @@
 {
   "splitHero": {
-    "subtitle": "Twee unieke ervaringen op een onvergetelijke plek",
+    "subtitle": "Vier unieke ervaringen op een onvergetelijke plek",
     "axeTitle": "AXE THROWING",
     "axeSubtitle": "Laat je innerlijke Viking los met bijlen, shurikens en meer",
     "quizTitle": "QUIZ ROOM",
     "quizSubtitle": "Test je kennis in Tenerife's eerste interactieve quizruimte",
+    "dartsTitle": "DARTS",
+    "dartsSubtitle": "Klassiek darts en Darts Pixel - de ultieme barervaring",
+    "escapeTitle": "ESCAPE GAME",
+    "escapeSubtitle": "Tenerife Chronicle - een uniek outdoor escape avontuur",
     "discover": "Ontdekken"
   },
   "nav": {

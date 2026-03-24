@@ -4,8 +4,8 @@ import { spaceGrotesk, inter } from '@/lib/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Axe Throwing Tenerife',
-  description: 'Experience the thrill of axe throwing in Playa Las Americas, Tenerife.',
+  title: 'Fun Zone Tenerife',
+  description: 'Four unique experiences in one place: Axe Throwing, Quiz Room, Darts & Escape Game in Playa Las Americas, Tenerife.',
   icons: {
     icon: '/favicon.png',
     apple: '/apple-touch-icon.png',

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -11,20 +12,29 @@ export function Footer() {
   return (
     <footer className="relative border-t border-border/20 bg-[#0d0d14]">
       {/* Neon accent line at top */}
-      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon-blue/60 to-transparent" />
+      <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon-orange/60 to-transparent" />
 
       {/* Main footer content */}
       <div className="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {/* Column 1: Logo + Description + Social */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="group inline-flex flex-col items-start">
-              <span className="font-heading text-xl font-bold tracking-wider text-neon-blue transition-all duration-300 group-hover:text-white neon-glow">
-                FUN ZONE
-              </span>
-              <span className="text-[10px] font-medium tracking-[0.35em] text-muted-foreground transition-colors duration-300 group-hover:text-neon-blue">
-                TENERIFE
-              </span>
+            <Link href="/" className="group inline-flex items-center gap-3">
+              <Image
+                src="/images/logo-funzone.png"
+                alt="Fun Zone Tenerife"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full object-contain"
+              />
+              <div className="flex flex-col items-start">
+                <span className="font-heading text-xl font-bold tracking-wider text-neon-orange transition-all duration-300 group-hover:text-white neon-glow">
+                  FUN ZONE
+                </span>
+                <span className="text-[10px] font-medium tracking-[0.35em] text-muted-foreground transition-colors duration-300 group-hover:text-neon-orange">
+                  TENERIFE
+                </span>
+              </div>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t('description')}
@@ -40,7 +50,7 @@ export function Footer() {
                   href="https://www.instagram.com/axethrowingtenerife"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-blue hover:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-orange hover:shadow-[0_0_10px_rgba(255,140,0,0.15)]"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-4 w-4" />
@@ -49,7 +59,7 @@ export function Footer() {
                   href="https://www.tiktok.com/@axethrowingtenerife"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-blue hover:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-orange hover:shadow-[0_0_10px_rgba(255,140,0,0.15)]"
                   aria-label="TikTok"
                 >
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -60,7 +70,7 @@ export function Footer() {
                   href="https://www.facebook.com/axethrowingtenerife"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-blue hover:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-all duration-200 hover:border-neon-blue/50 hover:text-neon-orange hover:shadow-[0_0_10px_rgba(255,140,0,0.15)]"
                   aria-label="Facebook"
                 >
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -88,7 +98,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-blue"
+                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
                   >
                     {link.label}
                   </Link>
@@ -104,7 +114,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-neon-blue" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-neon-orange" />
                 <span className="text-sm leading-relaxed text-muted-foreground">
                   {t('address')}
                 </span>
@@ -112,18 +122,18 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+34623362229"
-                  className="flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-blue"
+                  className="flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
                 >
-                  <Phone className="h-4 w-4 flex-shrink-0 text-neon-blue" />
+                  <Phone className="h-4 w-4 flex-shrink-0 text-neon-orange" />
                   +34 623 362 229
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:axethrowingtenerife@gmail.com"
-                  className="flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-blue"
+                  className="flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
                 >
-                  <Mail className="h-4 w-4 flex-shrink-0 text-neon-blue" />
+                  <Mail className="h-4 w-4 flex-shrink-0 text-neon-orange" />
                   <span className="break-all">axethrowingtenerife@gmail.com</span>
                 </a>
               </li>
@@ -137,7 +147,7 @@ export function Footer() {
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-neon-blue" />
+                <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-neon-orange" />
                 <div>
                   <p className="text-sm font-medium text-foreground/90">
                     {t('openHours')}
@@ -152,7 +162,7 @@ export function Footer() {
                 href="https://www.google.com/maps/place/axe+throwing+tenerife/@28.0579526,-16.7335001,17z/data=!3m2!4b1!5s0xc6a977ea71caa8b:0xf6c775e17f313020!4m6!3m5!1s0xc6a971a1b1e98ab:0x875a801337f2167e!8m2!3d28.057948!4d-16.7286292!16s%2Fg%2F11lv_fs566"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-lg border border-border/50 px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-neon-blue/40 hover:text-neon-blue hover:shadow-[0_0_10px_rgba(0,212,255,0.1)]"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg border border-border/50 px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-neon-blue/40 hover:text-neon-orange hover:shadow-[0_0_10px_rgba(255,140,0,0.1)]"
               >
                 <MapPin className="h-4 w-4" />
                 {t('directions')}
@@ -171,13 +181,13 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a
               href="/privacy"
-              className="text-xs text-muted-foreground transition-colors duration-200 hover:text-neon-blue"
+              className="text-xs text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
             >
               {t('privacy')}
             </a>
             <a
               href="/terms"
-              className="text-xs text-muted-foreground transition-colors duration-200 hover:text-neon-blue"
+              className="text-xs text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
             >
               {t('terms')}
             </a>

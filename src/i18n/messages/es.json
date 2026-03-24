@@ -1,10 +1,14 @@
 {
   "splitHero": {
-    "subtitle": "Dos experiencias unicas en un lugar inolvidable",
+    "subtitle": "Cuatro experiencias unicas en un lugar inolvidable",
     "axeTitle": "AXE THROWING",
     "axeSubtitle": "Libera tu vikingo interior con hachas, shurikens y mas",
     "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Pon a prueba tus conocimientos en la primera quiz room interactiva de Tenerife",
+    "quizSubtitle": "Pon a prueba tus conocimientos en la primera quiz room de Tenerife",
+    "dartsTitle": "DARTS",
+    "dartsSubtitle": "Dardos clasicos y Darts Pixel - la mejor experiencia de bar",
+    "escapeTitle": "ESCAPE GAME",
+    "escapeSubtitle": "Tenerife Chronicle - una aventura de escape al aire libre unica",
     "discover": "Descubrir"
   },
   "nav": {
