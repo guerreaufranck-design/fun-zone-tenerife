@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+/* ============================================
+   AXE THROWING TENERIFE - DARK NEON THEME
+   Premium dark theme with neon blue/violet accents
+   ============================================ */
+
+:root {
+  /* Core palette */
+  --background: #0a0a0f;
+  --foreground: #f0f0f5;
+
+  /* Primary - Neon Blue */
+  --primary: #00d4ff;
+  --primary-foreground: #0a0a0f;
+
+  /* Secondary - Deep Blue-Gray */
+  --secondary: #1a1a2e;
+  --secondary-foreground: #f0f0f5;
+
+  /* Accent - Violet Neon */
+  --accent: #8b5cf6;
+  --accent-foreground: #f0f0f5;
+
+  /* Destructive */
+  --destructive: #ef4444;
+  --destructive-foreground: #f0f0f5;
+
+  /* Muted */
+  --muted: #16161a;
+  --muted-foreground: #888899;
+
+  /* Card */
+  --card: #111118;
+  --card-foreground: #f0f0f5;
+
+  /* Popover */
+  --popover: #111118;
+  --popover-foreground: #f0f0f5;
+
+  /* Border & Ring */
+  --border: #222233;
+  --input: #222233;
+  --ring: #00d4ff;
+
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Neon colors */
+  --neon-blue: #00d4ff;
+  --neon-violet: #8b5cf6;
+  --neon-orange: #ff6b00;
+  --neon-green: #00ff88;
+}
+
+/* Tailwind v4 theme integration */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-violet: var(--neon-violet);
+  --color-neon-orange: var(--neon-orange);
+  --color-neon-green: var(--neon-green);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius));
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-slide-down: slideDown 0.3s ease-out;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings default to heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(0, 212, 255, 0.3);
+  color: #f0f0f5;
+}
+
+::-moz-selection {
+  background-color: rgba(0, 212, 255, 0.3);
+  color: #f0f0f5;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--background);
+}
+
+/* ============================================
+   NEON GLOW UTILITIES
+   ============================================ */
+
+.neon-glow {
+  text-shadow:
+    0 0 7px rgba(0, 212, 255, 0.6),
+    0 0 10px rgba(0, 212, 255, 0.4),
+    0 0 21px rgba(0, 212, 255, 0.3),
+    0 0 42px rgba(0, 212, 255, 0.2);
+}
+
+.neon-glow-violet {
+  text-shadow:
+    0 0 7px rgba(139, 92, 246, 0.6),
+    0 0 10px rgba(139, 92, 246, 0.4),
+    0 0 21px rgba(139, 92, 246, 0.3),
+    0 0 42px rgba(139, 92, 246, 0.2);
+}
+
+.neon-border {
+  box-shadow:
+    0 0 5px rgba(0, 212, 255, 0.3),
+    0 0 10px rgba(0, 212, 255, 0.15),
+    inset 0 0 5px rgba(0, 212, 255, 0.05);
+}
+
+.neon-border-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-border-hover:hover {
+  box-shadow:
+    0 0 5px rgba(0, 212, 255, 0.4),
+    0 0 15px rgba(0, 212, 255, 0.2),
+    0 0 30px rgba(0, 212, 255, 0.1),
+    inset 0 0 5px rgba(0, 212, 255, 0.05);
+}
+
+/* ============================================
+   ANIMATION KEYFRAMES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 5px rgba(0, 212, 255, 0.2),
+      0 0 10px rgba(0, 212, 255, 0.1);
+  }
+  to {
+    box-shadow:
+      0 0 10px rgba(0, 212, 255, 0.4),
+      0 0 20px rgba(0, 212, 255, 0.2),
+      0 0 40px rgba(0, 212, 255, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   FOCUS VISIBLE STYLES
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   LINK DEFAULTS
+   ============================================ */
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
