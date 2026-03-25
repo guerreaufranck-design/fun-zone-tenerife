@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Clock, Users, Axe, Target, Gamepad2, Swords, PartyPopper, CircleDot, Loader2 } from 'lucide-react';
+import { Clock, Users, Axe, Target, Gamepad2, Swords, PartyPopper, CircleDot, Brain, Map, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -34,7 +34,7 @@ const offerImages: Record<string, string> = {
   'quizzaboom-1h': '/images/offers/quizzaboom.png',
 };
 
-type Category = 'all' | 'axe' | 'ninja' | 'darts' | 'special';
+type Category = 'all' | 'axe' | 'ninja' | 'darts' | 'quiz' | 'escape' | 'special';
 
 interface MappedExperience {
   slug: string;
@@ -52,6 +52,8 @@ interface MappedExperience {
 }
 
 function getIconForSlug(slug: string): typeof Axe {
+  if (slug.includes('quizzaboom')) return Brain;
+  if (slug.includes('escape') || slug.includes('chronicle')) return Map;
   if (slug.includes('ninja')) return Swords;
   if (slug.includes('premium')) return Target;
   if (slug.includes('darts-pixels') || slug.includes('darts_pixels')) return Gamepad2;
@@ -63,12 +65,13 @@ function getIconForSlug(slug: string): typeof Axe {
 
 function getCategoryForOffer(offer: Offer): Category {
   if (offer.slug.includes('teambuilding') || offer.slug.includes('bachelor') || offer.slug.includes('birthday') || offer.slug.includes('despedida')) return 'special';
+  if (offer.slug.includes('quizzaboom')) return 'quiz';
+  if (offer.slug.includes('escape') || offer.slug.includes('chronicle')) return 'escape';
   if (offer.lane_type === 'darts_pixels') {
     if (offer.slug.includes('ninja')) return 'ninja';
     return 'darts';
   }
   if (offer.lane_type === 'classic_darts') return 'darts';
-  // lane_type === 'axe'
   if (offer.slug.includes('ninja')) return 'ninja';
   return 'axe';
 }
@@ -77,7 +80,9 @@ function getColorForCategory(category: Category): string {
   switch (category) {
     case 'axe': return '#00d4ff';
     case 'ninja': return '#8b5cf6';
-    case 'darts': return '#00d4ff';
+    case 'darts': return '#39ff14';
+    case 'quiz': return '#a855f7';
+    case 'escape': return '#ff2d7b';
     case 'special': return '#ff6b00';
     default: return '#00d4ff';
   }
@@ -95,6 +100,8 @@ const categories: { key: Category; label: string; icon: typeof Axe }[] = [
   { key: 'axe', label: 'Axe Throwing', icon: Axe },
   { key: 'ninja', label: 'Ninja', icon: Swords },
   { key: 'darts', label: 'Darts', icon: Gamepad2 },
+  { key: 'quiz', label: 'Quiz Room', icon: Brain },
+  { key: 'escape', label: 'Escape Game', icon: Map },
   { key: 'special', label: 'Special Events', icon: PartyPopper },
 ];
 
