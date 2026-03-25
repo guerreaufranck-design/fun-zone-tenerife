@@ -322,5 +322,30 @@
     "comingSoon": "Coming Soon",
     "headline": "The 1st Quiz Room in Tenerife is opening!",
     "bookNow": "Book Now!"
+  },
+  "activities": {
+    "backToHome": "Back to Home",
+    "comingSoon": "Coming Soon",
+    "comingSoonDesc": "This activity will be available soon. Stay tuned!",
+    "axe": {
+      "title": "AXE THROWING",
+      "subtitle": "Unleash your inner Viking with axes, shurikens, and ninja stars",
+      "description": "Discover our range of axe throwing experiences in Tenerife. From traditional hatchets to ninja shurikens, we have something for everyone. Professional coaching included in every session. No experience needed!"
+    },
+    "quiz": {
+      "title": "QUIZ ROOM",
+      "subtitle": "Test your knowledge in Tenerife's first interactive quiz room",
+      "description": "Welcome to Quizzaboom - the ultimate interactive quiz experience! Compete with your friends and family in our state-of-the-art quiz room with buzzer systems, giant screens, and thousands of questions across multiple categories."
+    },
+    "darts": {
+      "title": "DARTS",
+      "subtitle": "Classic darts and Darts Pixel - the ultimate bar game experience",
+      "description": "Choose between our classic steel-tip dartboards or our revolutionary Darts Pixel experience with interactive digital targets. Perfect for casual fun or competitive play. All skill levels welcome!"
+    },
+    "escape": {
+      "title": "ESCAPE GAME",
+      "subtitle": "Tenerife Chronicle - an outdoor escape adventure like no other",
+      "description": "Embark on an immersive outdoor escape game through the streets. Solve puzzles, uncover clues, and race against the clock in this unique adventure that combines exploration with brain-teasing challenges."
+    }
   }
 }

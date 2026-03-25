@@ -84,7 +84,7 @@
     "fullPayment": "Pagar Importe Completo",
     "depositDescription": "Paga el resto a la llegada",
     "fullPaymentDescription": "Sin pago adicional",
-    "depositNote": "Paga solo el dep\u00f3sito ahora, el resto en el lugar el d\u00eda de la sesi\u00f3n",
+    "depositNote": "Paga solo el depósito ahora, el resto en el lugar el día de la sesión",
     "depositLabel": "Deposito (20%)",
     "recommended": "Recomendado",
     "summary": "Resumen de la Reserva",
@@ -322,5 +322,30 @@
     "comingSoon": "Proximamente",
     "headline": "Apertura de la 1a Quiz Room de Tenerife!",
     "bookNow": "Reserva Ahora!"
+  },
+  "activities": {
+    "backToHome": "Volver al inicio",
+    "comingSoon": "Próximamente",
+    "comingSoonDesc": "Esta actividad estará disponible pronto. ¡Mantente atento!",
+    "axe": {
+      "title": "LANZAMIENTO DE HACHAS",
+      "subtitle": "Libera tu vikingo interior con hachas, shurikens y estrellas ninja",
+      "description": "Descubre nuestras experiencias de lanzamiento de hachas en Tenerife. Desde hachas tradicionales hasta shurikens ninja, tenemos algo para todos. Coaching profesional incluido en cada sesión. ¡No se necesita experiencia!"
+    },
+    "quiz": {
+      "title": "QUIZ ROOM",
+      "subtitle": "Pon a prueba tus conocimientos en la primera sala de quiz interactiva de Tenerife",
+      "description": "Bienvenido a Quizzaboom - ¡la experiencia de quiz interactivo definitiva! Compite con tus amigos y familia en nuestra sala de quiz con sistemas de pulsadores, pantallas gigantes y miles de preguntas."
+    },
+    "darts": {
+      "title": "DARDOS",
+      "subtitle": "Dardos clásicos y Darts Pixel - la experiencia definitiva de bar",
+      "description": "Elige entre nuestras dianas clásicas o nuestra revolucionaria experiencia Darts Pixel con dianas digitales interactivas. Perfecto para diversión casual o juego competitivo. ¡Todos los niveles son bienvenidos!"
+    },
+    "escape": {
+      "title": "ESCAPE GAME",
+      "subtitle": "Tenerife Chronicle - una aventura de escape al aire libre única",
+      "description": "Embárcate en un juego de escape inmersivo al aire libre por las calles. Resuelve acertijos, descubre pistas y compite contra el reloj en esta aventura única."
+    }
   }
 }

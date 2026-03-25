@@ -96,7 +96,11 @@ export const routing = defineRouting({
       de: '/buchung/[ref]/aendern',
       nl: '/boeking/[ref]/wijzigen',
       it: '/prenotazione/[ref]/modifica'
-    }
+    },
+    '/axe-throwing': '/axe-throwing',
+    '/quiz-room': '/quiz-room',
+    '/darts': '/darts',
+    '/escape-game': '/escape-game'
   }
 });
 

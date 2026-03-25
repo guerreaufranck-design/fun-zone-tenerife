@@ -322,5 +322,30 @@
     "comingSoon": "Bald",
     "headline": "Der 1. Quiz Room auf Teneriffa eroffnet!",
     "bookNow": "Jetzt Buchen!"
+  },
+  "activities": {
+    "backToHome": "Zurück zur Startseite",
+    "comingSoon": "Demnächst verfügbar",
+    "comingSoonDesc": "Diese Aktivität wird bald verfügbar sein. Bleiben Sie dran!",
+    "axe": {
+      "title": "AXTWERFEN",
+      "subtitle": "Entfessle deinen inneren Wikinger mit Äxten, Shurikens und Ninja-Sternen",
+      "description": "Entdecke unsere Axtwerf-Erlebnisse auf Teneriffa. Von traditionellen Beilen bis zu Ninja-Shurikens - wir haben für jeden etwas. Professionelles Coaching inklusive!"
+    },
+    "quiz": {
+      "title": "QUIZ ROOM",
+      "subtitle": "Teste dein Wissen in Teneriffas erstem interaktiven Quizraum",
+      "description": "Willkommen bei Quizzaboom - das ultimative interaktive Quiz-Erlebnis! Tritt gegen deine Freunde und Familie an mit Buzzer-Systemen, Riesenbildschirmen und tausenden Fragen."
+    },
+    "darts": {
+      "title": "DARTS",
+      "subtitle": "Klassische Darts und Darts Pixel - das ultimative Bar-Erlebnis",
+      "description": "Wähle zwischen klassischen Dartscheiben oder unserem revolutionären Darts Pixel Erlebnis mit interaktiven digitalen Zielen. Perfekt für Spaß oder Wettbewerb!"
+    },
+    "escape": {
+      "title": "ESCAPE GAME",
+      "subtitle": "Tenerife Chronicle - ein einzigartiges Outdoor-Escape-Abenteuer",
+      "description": "Begib dich auf ein immersives Outdoor-Escape-Game durch die Straßen. Löse Rätsel, entdecke Hinweise und kämpfe gegen die Zeit."
+    }
   }
 }

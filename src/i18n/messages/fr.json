@@ -322,5 +322,30 @@
     "comingSoon": "Bientot",
     "headline": "Ouverture de la 1ere Quiz Room de Tenerife !",
     "bookNow": "Reservez Maintenant !"
+  },
+  "activities": {
+    "backToHome": "Retour à l'accueil",
+    "comingSoon": "Bientôt disponible",
+    "comingSoonDesc": "Cette activité sera bientôt disponible. Restez connecté !",
+    "axe": {
+      "title": "LANCER DE HACHES",
+      "subtitle": "Libérez le Viking qui sommeille en vous avec haches, shurikens et étoiles ninja",
+      "description": "Découvrez nos expériences de lancer de haches à Tenerife. Des hachettes traditionnelles aux shurikens ninja, nous avons quelque chose pour tout le monde. Coaching professionnel inclus. Aucune expérience requise !"
+    },
+    "quiz": {
+      "title": "QUIZ ROOM",
+      "subtitle": "Testez vos connaissances dans la première salle de quiz interactive de Tenerife",
+      "description": "Bienvenue chez Quizzaboom - l'expérience de quiz interactive ultime ! Affrontez vos amis et votre famille dans notre salle de quiz avec buzzers, écrans géants et des milliers de questions."
+    },
+    "darts": {
+      "title": "FLÉCHETTES",
+      "subtitle": "Fléchettes classiques et Darts Pixel - l'expérience bar ultime",
+      "description": "Choisissez entre nos cibles classiques ou notre expérience révolutionnaire Darts Pixel avec cibles numériques interactives. Parfait pour le fun ou la compétition. Tous niveaux bienvenus !"
+    },
+    "escape": {
+      "title": "ESCAPE GAME",
+      "subtitle": "Tenerife Chronicle - une aventure d'escape en extérieur unique",
+      "description": "Embarquez pour un escape game immersif en extérieur dans les rues. Résolvez des énigmes, découvrez des indices et affrontez le chrono dans cette aventure unique."
+    }
   }
 }

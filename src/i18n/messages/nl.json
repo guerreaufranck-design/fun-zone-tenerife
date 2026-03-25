@@ -322,5 +322,30 @@
     "comingSoon": "Binnenkort",
     "headline": "De 1e Quiz Room van Tenerife opent!",
     "bookNow": "Boek Nu!"
+  },
+  "activities": {
+    "backToHome": "Terug naar home",
+    "comingSoon": "Binnenkort beschikbaar",
+    "comingSoonDesc": "Deze activiteit is binnenkort beschikbaar. Blijf op de hoogte!",
+    "axe": {
+      "title": "BIJLWERPEN",
+      "subtitle": "Laat je innerlijke Viking los met bijlen, shurikens en ninja-sterren",
+      "description": "Ontdek onze bijlwerp-ervaringen op Tenerife. Van traditionele bijlen tot ninja shurikens. Professionele coaching inbegrepen!"
+    },
+    "quiz": {
+      "title": "QUIZ ROOM",
+      "subtitle": "Test je kennis in Tenerife's eerste interactieve quizruimte",
+      "description": "Welkom bij Quizzaboom - de ultieme interactieve quiz-ervaring! Strijd tegen je vrienden en familie met buzzers, grote schermen en duizenden vragen."
+    },
+    "darts": {
+      "title": "DARTS",
+      "subtitle": "Klassieke darts en Darts Pixel - de ultieme bar-ervaring",
+      "description": "Kies tussen klassieke dartborden of onze revolutionaire Darts Pixel ervaring met interactieve digitale doelen. Perfect voor plezier of competitie!"
+    },
+    "escape": {
+      "title": "ESCAPE GAME",
+      "subtitle": "Tenerife Chronicle - een uniek outdoor escape-avontuur",
+      "description": "Ga op een meeslepend outdoor escape game door de straten. Los puzzels op, ontdek aanwijzingen en race tegen de klok."
+    }
   }
 }
