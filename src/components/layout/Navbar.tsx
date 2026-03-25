@@ -119,7 +119,7 @@ export function Navbar() {
             ))}
 
             {/* Book Now CTA */}
-            <Button asChild variant="default" size="sm" className="ml-2 bg-neon-orange font-bold text-white shadow-[0_0_15px_rgba(255,140,0,0.4)] hover:bg-neon-orange/90 hover:shadow-[0_0_25px_rgba(255,140,0,0.6)]">
+            <Button asChild variant="default" size="sm" className="ml-2 !bg-neon-orange !text-white !border-neon-orange/60 font-bold shadow-[0_0_15px_rgba(255,140,0,0.4)] hover:!bg-neon-orange/90 hover:shadow-[0_0_25px_rgba(255,140,0,0.6)]">
               <Link href="/book">{t('book')}</Link>
             </Button>
 
