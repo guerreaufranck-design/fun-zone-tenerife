@@ -78,6 +78,7 @@ const activityConfigs: Record<ActivityType, ActivityConfig> = {
     icon: Gamepad2,
     filterFn: (offer) => {
       if (offer.slug.includes('teambuilding') || offer.slug.includes('bachelor') || offer.slug.includes('birthday') || offer.slug.includes('despedida')) return false;
+      if (offer.slug.includes('quizzaboom')) return false;
       return offer.lane_type === 'darts_pixels' || offer.lane_type === 'classic_darts' || offer.slug.includes('darts');
     },
   },
