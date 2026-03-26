@@ -4,6 +4,7 @@ import { BookingReminder } from "@/emails/BookingReminder";
 import { BookingModified } from "@/emails/BookingModified";
 import { WaiverConfirmation } from "@/emails/WaiverConfirmation";
 import { ReviewRequest } from "@/emails/ReviewRequest";
+import { EscapeGameCode } from "@/emails/EscapeGameCode";
 import { formatPrice, formatDate, formatTime } from "./utils";
 import type { Booking, Offer, MultilingualText } from "./supabase/types";
 
@@ -294,6 +295,45 @@ export async function sendReviewRequest(waiver: {
     subject: subjects[language] ?? subjects.en,
     react: ReviewRequest({
       signerName: waiver.first_name,
+      language,
+    }),
+  });
+}
+
+/**
+ * Send an escape game activation code to the customer.
+ */
+export async function sendEscapeGameCode(params: {
+  email: string;
+  customerName: string;
+  code: string;
+  gameName: string;
+  city: string;
+  estimatedDuration: string;
+  appUrl: string;
+  language?: string;
+}): Promise<void> {
+  const language = params.language ?? "en";
+
+  const subjects: Record<string, string> = {
+    en: `🏴‍☠️ Your Escape Game Code - ${params.gameName}`,
+    es: `🏴‍☠️ Tu Codigo de Escape Game - ${params.gameName}`,
+    fr: `🏴‍☠️ Votre Code Escape Game - ${params.gameName}`,
+    de: `🏴‍☠️ Ihr Escape Game Code - ${params.gameName}`,
+    it: `🏴‍☠️ Il Tuo Codice Escape Game - ${params.gameName}`,
+  };
+
+  await getResend().emails.send({
+    from: "Escape Game Tenerife <bookings@axethrowingtenerife.com>",
+    to: params.email,
+    subject: subjects[language] ?? subjects.en,
+    react: EscapeGameCode({
+      customerName: params.customerName,
+      code: params.code,
+      gameName: params.gameName,
+      city: params.city,
+      estimatedDuration: params.estimatedDuration,
+      appUrl: params.appUrl,
       language,
     }),
   });
