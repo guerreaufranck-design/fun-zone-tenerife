@@ -2,6 +2,20 @@ export interface EscapeAct {
   title: Record<string, string>;
   location: Record<string, string>;
   description: Record<string, string>;
+  zone?: 'urban' | 'mountain';
+}
+
+export interface EscapeZone {
+  id: 'urban' | 'mountain';
+  tag: Record<string, string>;
+  title: Record<string, string>;
+  description: Record<string, string>;
+}
+
+export interface EscapeWarning {
+  icon: string;
+  title: Record<string, string>;
+  body: Record<string, string>;
 }
 
 export interface EscapeInfo {
@@ -37,9 +51,12 @@ export interface EscapeGameData {
   acts: EscapeAct[];
   features: EscapeFeature[];
   infos: EscapeInfo[];
+  zones?: EscapeZone[];
+  warning?: EscapeWarning;
   motto: Record<string, string>;
   mottoSub: Record<string, string>;
   ctaBody: Record<string, string>;
+  accentColor?: string; // override default gold theme per game
 }
 
 export const escapeGamesData: EscapeGameData[] = [
@@ -202,13 +219,14 @@ export const escapeGamesData: EscapeGameData[] = [
   {
     slug: 'le-code-dichasagua',
     image: '/images/offers/escape.png',
-    duration: '1h – 1h30',
-    distance: '~2.5 km',
-    difficulty: 3,
+    duration: '3h – 4h',
+    distance: '3 – 4 km',
+    difficulty: 4,
+    accentColor: 'turquoise',
     subtitle: {
-      en: 'Decode the Guanche legacy',
-      fr: 'Déchiffrez l\'héritage Guanche',
-      es: 'Descifra el legado Guanche',
+      en: 'The quest of the last Mencey',
+      fr: 'La quête du dernier Mencey',
+      es: 'La búsqueda del último Mencey',
     },
     title: {
       en: 'The Code of Ichasagua',
@@ -216,87 +234,142 @@ export const escapeGamesData: EscapeGameData[] = [
       es: 'El Código de Ichasagua',
     },
     tagline: {
-      en: 'Before the Conquistadors, the Guanches carved their secrets into the rock. One code remains undeciphered. Until today.',
-      fr: 'Avant les Conquistadors, les Guanches gravaient leurs secrets dans la roche. Un code reste indéchiffré. Jusqu\'à aujourd\'hui.',
-      es: 'Antes de los Conquistadores, los Guanches grababan sus secretos en la roca. Un código permanece sin descifrar. Hasta hoy.',
+      en: 'Before the sun disappears behind La Gomera, the last king\'s message awaits deciphering.',
+      fr: "Avant que le soleil ne disparaisse derrière La Gomera, le message du dernier roi attend d'être déchiffré.",
+      es: 'Antes de que el sol desaparezca tras La Gomera, el mensaje del último rey espera ser descifrado.',
     },
-    location: { en: 'Los Cristianos', fr: 'Los Cristianos', es: 'Los Cristianos' },
+    location: { en: 'Los Cristianos & Playa de las Américas', fr: 'Los Cristianos & Playa de las Américas', es: 'Los Cristianos y Playa de las Américas' },
     intro: {
-      en: 'Where ancient mysteries meet the modern coast',
-      fr: 'Là où les mystères anciens rencontrent la côte moderne',
-      es: 'Donde los misterios antiguos encuentran la costa moderna',
+      en: 'Where tourists stop, your adventure begins',
+      fr: "Là où les touristes s'arrêtent, votre aventure commence",
+      es: 'Donde los turistas se detienen, tu aventura comienza',
     },
     introBody: {
-      en: "Los Cristianos hides pre-Hispanic traces beneath its tourist facade. The Guanches, the original inhabitants of Tenerife, left coded messages in places most people walk past every day. Your mission: decode the ancestral message of Ichasagua before it is lost to time forever.",
-      fr: "Los Cristianos cache des traces préhispaniques sous sa façade touristique. Les Guanches, habitants originels de Tenerife, ont laissé des messages codés dans des lieux où l'on passe chaque jour sans les voir. Votre mission : décoder le message ancestral d'Ichasagua avant qu'il ne soit perdu à jamais.",
-      es: "Los Cristianos esconde huellas prehispánicas bajo su fachada turística. Los Guanches dejaron mensajes codificados en lugares por los que la gente pasa cada día sin verlos.",
+      en: "Behind the golden facade of Playa de las Américas, another town exists. A thousand-year-old fishing port, alleys where founding families built Tenerife before the hotel complexes arrived. And above it all, a mountain that 95% of visitors completely ignore — silent guardian of an erased civilisation. This game takes you off the beaten track to immerse you in the real history of this territory: that of the Guanches, whose resistance left traces that only the curious can still read.",
+      fr: "Derrière la façade dorée de Playa de las Américas, une autre ville existe. Un port de pêcheurs millénaire, des ruelles où les familles fondatrices ont bâti Tenerife avant l'arrivée des complexes hôteliers. Et au-dessus de tout cela, une montagne que 95% des visiteurs ignorent complètement — gardienne silencieuse d'une civilisation effacée. Ce jeu vous fait sortir des sentiers tracés pour vous plonger dans l'histoire réelle de ce territoire : celle des Guanches, ces habitants préhispaniques dont la résistance a laissé des traces que seuls les curieux savent encore lire.",
+      es: "Detrás de la fachada dorada de Playa de las Américas, existe otra ciudad. Un puerto pesquero milenario, callejones donde las familias fundadoras construyeron Tenerife antes de la llegada de los complejos hoteleros. Y por encima de todo, una montaña que el 95% de los visitantes ignora completamente — guardiana silenciosa de una civilización borrada.",
     },
     quote: {
-      en: '"The Guanches spoke to the mountains and the mountains answered. Their language was not of words, but of stone, wind and fire."',
-      fr: '« Les Guanches parlaient aux montagnes et les montagnes répondaient. Leur langage n\'était pas de mots, mais de pierre, de vent et de feu. »',
-      es: '"Los Guanches hablaban a las montañas y las montañas respondían. Su lenguaje no era de palabras, sino de piedra, viento y fuego."',
+      en: '"The Guanches did not disappear. They dissolved into the stone, the wind and the memory of this island. Those who know how to look can still hear them."',
+      fr: '« Les Guanches n\'ont pas disparu. Ils se sont dissous dans la pierre, dans le vent et dans la mémoire de cette île. Celui qui sait regarder les entend encore. »',
+      es: '"Los Guanches no desaparecieron. Se disolvieron en la piedra, en el viento y en la memoria de esta isla. Quien sabe mirar aún los escucha."',
     },
-    quoteAttr: { en: '— Canarian oral tradition', fr: '— Tradition orale canarienne', es: '— Tradición oral canaria' },
+    quoteAttr: { en: '— Oral tradition of Tenerife', fr: '— Tradition orale de Tenerife', es: '— Tradición oral de Tenerife' },
     historyTitle: {
-      en: 'The first people of Tenerife',
-      fr: 'Les premiers peuples de Tenerife',
-      es: 'Los primeros pueblos de Tenerife',
+      en: 'A vanished people, an intact memory',
+      fr: 'Un peuple disparu, une mémoire intacte',
+      es: 'Un pueblo desaparecido, una memoria intacta',
     },
     historyBody: {
       en: [
-        'Long before Columbus crossed the Atlantic, the Guanches lived in harmony with the volcanic landscape. They navigated by the stars, communicated across valleys with whistled language, and carved symbols whose meaning we are still trying to understand.',
-        'When the Spanish arrived in 1496, a world was lost. But not entirely. The land remembers what the books forgot.',
+        'Before the beaches, before the hotels, before even the first fishermen\'s houses, this territory belonged to the Guanches — the original inhabitants of Tenerife, whose civilisation remains one of the most mysterious in the Atlantic.',
+        'On the slopes of Montaña Guaza, their traces are still visible to those who take the trouble to look. Dry stone structures. Caves. Strategic viewpoints over the horizon. A people who carved their presence into the volcanic rock.',
+        'In 1502, as the Spanish conquest imposed its final grip on the island, the legendary Mencey Ichasagua is said to have chosen this territory for his last retreat. The rumour of a sacred code hidden in the landscape has never died.',
       ],
       fr: [
-        "Bien avant que Colomb ne traverse l'Atlantique, les Guanches vivaient en harmonie avec le paysage volcanique. Ils naviguaient aux étoiles, communiquaient entre vallées par le langage sifflé, et gravaient des symboles dont nous cherchons encore le sens.",
-        "Quand les Espagnols arrivèrent en 1496, un monde fut perdu. Mais pas entièrement. La terre se souvient de ce que les livres ont oublié.",
+        "Avant les plages, avant les hôtels, avant même les premières maisons de pêcheurs, ce territoire appartenait aux Guanches — les habitants originels de Tenerife, dont la civilisation reste l'une des plus mystérieuses de l'Atlantique.",
+        "Sur les pentes de la Montaña Guaza, leurs traces sont encore visibles pour qui prend la peine de s'approcher. Des structures en pierre sèche. Des grottes. Des points de vue stratégiques sur l'horizon. Un peuple qui a gravé sa présence dans la roche volcanique.",
+        "En 1502, alors que la conquête espagnole achève de s'imposer sur l'île, le légendaire Mencey Ichasagua aurait choisi ce territoire pour sa dernière retraite. La rumeur d'un code sacré dissimulé dans le paysage ne s'est jamais éteinte.",
       ],
       es: [
-        'Mucho antes de que Colón cruzara el Atlántico, los Guanches vivían en armonía con el paisaje volcánico. Navegaban por las estrellas, se comunicaban entre valles con el lenguaje silbado.',
-        'Cuando los españoles llegaron en 1496, un mundo se perdió. Pero no del todo. La tierra recuerda lo que los libros olvidaron.',
+        'Antes de las playas, antes de los hoteles, antes incluso de las primeras casas de pescadores, este territorio pertenecía a los Guanches — los habitantes originales de Tenerife, cuya civilización sigue siendo una de las más misteriosas del Atlántico.',
+        'En las laderas de la Montaña Guaza, sus huellas aún son visibles para quien se toma la molestia de acercarse. Estructuras de piedra seca. Cuevas. Puntos de vista estratégicos sobre el horizonte.',
+        'En 1502, el legendario Mencey Ichasagua habría elegido este territorio para su último retiro. El rumor de un código sagrado oculto en el paisaje nunca se ha extinguido.',
       ],
     },
     dates: [
-      { year: '200 BC', label: { en: 'Guanche settlement of Tenerife', fr: 'Peuplement Guanche de Tenerife', es: 'Asentamiento Guanche de Tenerife' } },
-      { year: '1496', label: { en: 'Spanish conquest — a culture vanishes', fr: 'Conquête espagnole — une culture disparaît', es: 'Conquista española — una cultura desaparece' } },
+      { year: 'XVe s.', label: { en: 'Guanche civilisation on the Guaza plateau', fr: 'Civilisation Guanche sur le plateau de Guaza', es: 'Civilización Guanche en la meseta de Guaza' } },
+      { year: '1502', label: { en: 'Resistance ends. The secret remains.', fr: "La résistance s'éteint. Le secret demeure.", es: 'La resistencia se apaga. El secreto permanece.' } },
+    ],
+    zones: [
+      {
+        id: 'urban',
+        tag: { en: 'Urban Act', fr: 'Acte Urbain', es: 'Acto Urbano' },
+        title: { en: 'Historic Los Cristianos', fr: 'Los Cristianos historique', es: 'Los Cristianos histórico' },
+        description: {
+          en: 'Start with the streets the guides never show. The real Los Cristianos, the one of fishermen and pioneers, the one that preceded everything.',
+          fr: 'Commencez par les rues que les guides ne montrent jamais. Le vrai Los Cristianos, celui des pêcheurs et des pionniers, celui qui a tout précédé.',
+          es: 'Comienza por las calles que las guías nunca muestran. El verdadero Los Cristianos, el de los pescadores y pioneros.',
+        },
+      },
+      {
+        id: 'mountain',
+        tag: { en: 'Wild Act', fr: 'Acte Sauvage', es: 'Acto Salvaje' },
+        title: { en: 'Montaña Guaza', fr: 'Montaña Guaza', es: 'Montaña Guaza' },
+        description: {
+          en: 'Leave the asphalt. The second act takes you to a protected volcanic mountain, territory of the ancients, ignored by almost all visitors.',
+          fr: "Quittez l'asphalte. Le second acte vous emmène sur une montagne volcanique protégée, territoire des anciens, ignorée par la quasi-totalité des visiteurs.",
+          es: 'Deja el asfalto. El segundo acto te lleva a una montaña volcánica protegida, territorio de los antiguos.',
+        },
+      },
     ],
     acts: [
       {
-        title: { en: 'The Harbour of Echoes', fr: 'Le Port des Échos', es: 'El Puerto de los Ecos' },
-        location: { en: 'Old fishing harbour', fr: 'Ancien port de pêche', es: 'Antiguo puerto pesquero' },
-        description: { en: 'Where fishermen once launched their boats, stone markings tell of a time before the harbour existed.', fr: "Là où les pêcheurs lançaient leurs barques, des marques de pierre racontent un temps d'avant le port.", es: 'Donde los pescadores lanzaban sus barcas, marcas de piedra cuentan un tiempo antes del puerto.' },
+        title: { en: 'The Old Village Sanctuary', fr: 'Le Sanctuaire du Vieux Village', es: 'El Santuario del Pueblo Viejo' },
+        location: { en: 'Plaza de la Iglesia · Los Cristianos', fr: 'Plaza de la Iglesia · Los Cristianos', es: 'Plaza de la Iglesia · Los Cristianos' },
+        description: { en: 'The spiritual heart of the fishermen. This church carries the scars of two centuries of transformation. A date inscribed in stone will deliver the first fragment of the code.', fr: "Le cœur spirituel des pêcheurs. Cette église porte les cicatrices de deux siècles de transformations. Une date inscrite dans la pierre vous livrera le premier fragment du code.", es: 'El corazón espiritual de los pescadores. Esta iglesia lleva las cicatrices de dos siglos de transformaciones.' },
+        zone: 'urban' as const,
       },
       {
-        title: { en: 'The Whistling Wall', fr: 'Le Mur Siffleur', es: 'El Muro Silbador' },
-        location: { en: 'Hidden passage in the old quarter', fr: 'Passage caché dans le vieux quartier', es: 'Pasaje oculto en el casco antiguo' },
-        description: { en: 'The Guanches used a whistled language — the Silbo — to communicate across ravines. This wall has acoustic properties no architect intended.', fr: "Les Guanches utilisaient un langage sifflé — le Silbo — pour communiquer entre ravins. Ce mur a des propriétés acoustiques qu'aucun architecte n'a prévues.", es: 'Los Guanches usaban un lenguaje silbado — el Silbo — para comunicarse entre barrancos.' },
+        title: { en: 'The Pioneer Alleys', fr: 'Les Ruelles des Pionniers', es: 'Los Callejones de los Pioneros' },
+        location: { en: 'Historic quarter · Pedestrian alleys', fr: 'Quartier historique · Ruelles piétonnes', es: 'Casco histórico · Callejones peatonales' },
+        description: { en: 'Far from the grand boulevards, streets still bear the names of those who built everything. A memorial plaque, a few palms, and the memory of a family who opened this territory to the world.', fr: "Loin des grands boulevards, des rues portent encore les noms de ceux qui ont tout construit. Une plaque commémorative, quelques palmiers, et la mémoire d'une famille qui a ouvert les portes de ce territoire au monde entier.", es: 'Lejos de los grandes bulevares, las calles aún llevan los nombres de quienes lo construyeron todo.' },
+        zone: 'urban' as const,
       },
       {
-        title: { en: 'The Forgotten Summit', fr: 'Le Sommet Oublié', es: 'La Cumbre Olvidada' },
-        location: { en: 'Mirador de los Guanches', fr: 'Mirador de los Guanches', es: 'Mirador de los Guanches' },
-        description: { en: 'From this vantage point, the ancient Guanches observed the movements of stars and ships. The carved symbols here form the key to the final code.', fr: "Depuis ce point de vue, les anciens Guanches observaient les mouvements des étoiles et des navires. Les symboles gravés ici forment la clé du code final.", es: 'Desde este mirador, los antiguos Guanches observaban los movimientos de estrellas y navíos.' },
+        title: { en: 'The First Jetty', fr: 'Le Premier Môle', es: 'El Primer Muelle' },
+        location: { en: 'Los Cristianos Port · Historic quay', fr: 'Port de Los Cristianos · Quai historique', es: 'Puerto de Los Cristianos · Muelle histórico' },
+        description: { en: 'This port has existed since the first sailors sought shelter in these waters. Modern concrete hides a centuries-old story. Look for what the conquest ships saw arriving — and what Ichasagua watched departing.', fr: "Ce port existe depuis que les premiers navigateurs ont cherché un abri dans ces eaux. Le béton moderne cache une histoire vieille de plusieurs siècles. Cherchez ce qu'Ichasagua, lui, regardait partir.", es: 'Este puerto existe desde que los primeros navegantes buscaron refugio en estas aguas.' },
+        zone: 'urban' as const,
+      },
+      {
+        title: { en: 'The Geological Ascent', fr: "L'Ascension Géologique", es: 'El Ascenso Geológico' },
+        location: { en: 'Slopes of Montaña Guaza · Natural Monument', fr: 'Flancs de la Montaña Guaza · Monument Naturel', es: 'Laderas de la Montaña Guaza · Monumento Natural' },
+        description: { en: 'The mountain is not made of the same material as the rest of the island. By touching its walls, you will understand why the Guanches chose it as their last fortress.', fr: "La montagne n'est pas faite du même matériau que le reste de l'île. En touchant ses parois, vous comprendrez pourquoi les Guanches l'ont choisie comme dernière forteresse.", es: 'La montaña no está hecha del mismo material que el resto de la isla.' },
+        zone: 'mountain' as const,
+      },
+      {
+        title: { en: 'Traces of the Ancients', fr: 'Les Traces des Anciens', es: 'Las Huellas de los Antiguos' },
+        location: { en: 'Plateau · Pre-Hispanic remains', fr: 'Plateau · Vestiges Préhispaniques', es: 'Meseta · Vestigios Prehispánicos' },
+        description: { en: 'Here, no one ever needed mortar to build. The structures were erected by the hands of the first inhabitants, following a logic that obeys only one law: orientation towards the white summit that dominates the horizon.', fr: "Ici, personne n'a jamais eu besoin de mortier. Les structures ont été érigées par les mains des premiers habitants, selon une logique qui n'obéit qu'à une seule loi : l'orientation vers ce sommet blanc qui domine l'horizon.", es: 'Aquí, nadie necesitó nunca mortero para construir. Las estructuras fueron erigidas por las manos de los primeros habitantes.' },
+        zone: 'mountain' as const,
+      },
+      {
+        title: { en: 'Where Sky Meets Earth', fr: 'Le Point où le Ciel touche la Terre', es: 'Donde el Cielo toca la Tierra' },
+        location: { en: 'Summit · 428 metres', fr: 'Sommet · 428 mètres', es: 'Cumbre · 428 metros' },
+        description: { en: 'At the summit awaits an official marker that geographers placed there — without knowing that Ichasagua had chosen this exact spot five centuries earlier. The final code is engraved in metal. But to read it, you must first earn the view.', fr: "Au sommet attend un repère officiel que les géographes ont planté là — sans savoir qu'Ichasagua avait choisi cet endroit exact cinq siècles plus tôt. Le code final est gravé dans le métal. Mais pour le lire, il faut d'abord mériter la vue.", es: 'En la cumbre espera un punto geodésico que los geógrafos colocaron allí — sin saber que Ichasagua había elegido ese lugar exacto cinco siglos antes.' },
+        zone: 'mountain' as const,
       },
     ],
     features: [
-      { icon: '🗺', title: { en: 'Off the beaten path', fr: 'Hors des sentiers battus', es: 'Fuera de los caminos trillados' }, description: { en: 'Discover the pre-Hispanic Los Cristianos that tourists never see.', fr: 'Découvrez le Los Cristianos préhispanique que les touristes ne voient jamais.', es: 'Descubre el Los Cristianos prehispánico que los turistas nunca ven.' } },
-      { icon: '📜', title: { en: 'Guanche heritage', fr: 'Héritage Guanche', es: 'Herencia Guanche' }, description: { en: 'Learn about the fascinating original culture of the Canary Islands through puzzles.', fr: "Découvrez la fascinante culture originelle des Canaries à travers les énigmes.", es: 'Aprende sobre la fascinante cultura original de las Canarias.' } },
-      { icon: '👁', title: { en: 'The town is the game', fr: 'La ville est le jeu', es: 'La ciudad es el juego' }, description: { en: 'Real places, real history, real mysteries woven into an immersive adventure.', fr: "Lieux réels, histoire vraie, mystères authentiques tissés dans une aventure immersive.", es: 'Lugares reales, historia real, misterios auténticos.' } },
-      { icon: '👨‍👩‍👧‍👦', title: { en: 'For all, without limits', fr: 'Pour tous, sans limite', es: 'Para todos, sin límite' }, description: { en: 'No player limit. The adventure grows with your group.', fr: "Pas de limite de joueurs. L'aventure grandit avec votre groupe.", es: 'Sin límite de jugadores. La aventura crece con tu grupo.' } },
+      { icon: '🏘', title: { en: 'Behind the scenes', fr: "L'envers du décor", es: 'El otro lado' }, description: { en: 'The historic alleys of Los Cristianos that 99% of visitors never see. A pioneers\' quarter preserved behind the tourist signs.', fr: "Les ruelles historiques de Los Cristianos que 99% des visiteurs ne voient jamais. Un quartier de pionniers préservé derrière les enseignes touristiques.", es: 'Los callejones históricos de Los Cristianos que el 99% de los visitantes nunca ven.' } },
+      { icon: '🏔', title: { en: 'A sacred mountain', fr: 'Une montagne sacrée', es: 'Una montaña sagrada' }, description: { en: 'Montaña Guaza, a protected natural monument, with its authentic Guanche remains. A volcanic landscape almost no tourist treads.', fr: "La Montaña Guaza, monument naturel protégé, avec ses vestiges guanches authentiques. Un paysage volcanique que presque aucun touriste ne foule.", es: 'La Montaña Guaza, monumento natural protegido, con sus vestigios guanches auténticos.' } },
+      { icon: '📜', title: { en: '100% real history', fr: 'Histoire 100% réelle', es: 'Historia 100% real' }, description: { en: 'Every clue is rooted in documented facts: Guanche archaeology, port history, memory of founding families.', fr: "Chaque indice s'ancre dans des faits documentés : archéologie guanche, histoire du port, mémoire des familles fondatrices.", es: 'Cada pista se basa en hechos documentados: arqueología guanche, historia del puerto.' } },
+      { icon: '👨‍👩‍👧‍👦', title: { en: 'No player limit', fr: 'Aucune limite de joueurs', es: 'Sin límite de jugadores' }, description: { en: 'Family, friends, colleagues — the more you are, the more perspectives multiply. Some clues can only be spotted by several people.', fr: "Famille, amis, collègues — plus vous êtes nombreux, plus les regards se multiplient. Certains indices ne se remarquent qu'à plusieurs.", es: 'Familia, amigos, colegas — cuantos más seáis, más perspectivas se multiplican.' } },
     ],
     infos: [
-      { icon: '🕐', label: { en: 'Duration', fr: 'Durée', es: 'Duración' }, value: { en: '1h – 1h30', fr: '1h – 1h30', es: '1h – 1h30' }, sub: { en: 'At your own pace', fr: 'À votre rythme', es: 'A tu ritmo' } },
+      { icon: '🕐', label: { en: 'Total duration', fr: 'Durée totale', es: 'Duración total' }, value: { en: '3h – 4h', fr: '3h – 4h', es: '3h – 4h' }, sub: { en: 'At your own pace', fr: 'À votre rythme', es: 'A tu ritmo' } },
       { icon: '👥', label: { en: 'Players', fr: 'Joueurs', es: 'Jugadores' }, value: { en: 'Unlimited', fr: 'Sans limite', es: 'Sin límite' }, sub: { en: 'From age 8', fr: 'Dès 8 ans', es: 'Desde 8 años' } },
-      { icon: '📍', label: { en: 'Distance', fr: 'Distance', es: 'Distancia' }, value: { en: '~2.5 km', fr: '~2,5 km', es: '~2,5 km' }, sub: { en: 'Los Cristianos', fr: 'Los Cristianos', es: 'Los Cristianos' } },
-      { icon: '☀️', label: { en: 'Best time', fr: 'Meilleur moment', es: 'Mejor momento' }, value: { en: 'Anytime', fr: 'Tout le temps', es: 'Cualquier hora' }, sub: { en: 'Morning ideal', fr: 'Matin idéal', es: 'Mañana ideal' } },
+      { icon: '📍', label: { en: 'Distance', fr: 'Distance', es: 'Distancia' }, value: { en: '3 – 4 km', fr: '3 – 4 km', es: '3 – 4 km' }, sub: { en: 'One-way to summit', fr: 'Aller simple sommet', es: 'Solo ida a la cumbre' } },
+      { icon: '🌅', label: { en: 'Best time', fr: 'Meilleur moment', es: 'Mejor momento' }, value: { en: 'Early morning', fr: 'Tôt le matin', es: 'Temprano por la mañana' }, sub: { en: 'Or late afternoon', fr: 'Ou fin d\'après-midi', es: 'O al atardecer' } },
       { icon: '🌐', label: { en: 'Languages', fr: 'Langues', es: 'Idiomas' }, value: { en: 'FR · EN · ES', fr: 'FR · EN · ES', es: 'FR · EN · ES' }, sub: { en: 'Others on request', fr: 'Autres sur demande', es: 'Otros bajo petición' } },
-      { icon: '♿', label: { en: 'Accessibility', fr: 'Accessibilité', es: 'Accesibilidad' }, value: { en: 'Mostly', fr: 'Majoritairement', es: 'Mayoritariamente' }, sub: { en: 'Flat route', fr: 'Parcours plat', es: 'Ruta plana' } },
+      { icon: '👟', label: { en: 'Equipment', fr: 'Équipement', es: 'Equipamiento' }, value: { en: 'Sport shoes', fr: 'Chaussures sport', es: 'Zapatillas deportivas' }, sub: { en: 'Required for mountain', fr: 'Obligatoires en montagne', es: 'Obligatorias en montaña' } },
     ],
-    motto: { en: 'The stones remember', fr: 'Les pierres se souviennent', es: 'Las piedras recuerdan' },
-    mottoSub: { en: '— A Guanche proverb', fr: '— Proverbe Guanche', es: '— Proverbio Guanche' },
+    warning: {
+      icon: '☀️',
+      title: { en: 'Important advice', fr: 'Conseil important', es: 'Consejo importante' },
+      body: {
+        en: 'The urban part of Los Cristianos is flat and ideal for everyone. The ascent of Montaña Guaza is rocky, shadeless and not accessible with a pushchair. Bring plenty of water, sun protection and start during cool hours. The game starts at the sea and ends at the summit — plan your return before sunset.',
+        fr: "La partie urbaine de Los Cristianos est plate et idéale pour tous. L'ascension de la Montaña Guaza est caillouteuse, sans ombre et non praticable en poussette. Prévoyez de l'eau en quantité, une protection solaire et réservez votre départ aux heures fraîches. Le jeu commence à la mer et finit au sommet — planifiez votre retour avant le coucher du soleil.",
+        es: 'La parte urbana de Los Cristianos es plana e ideal para todos. El ascenso a la Montaña Guaza es pedregoso, sin sombra y no accesible con cochecito. Traiga abundante agua, protección solar y empiece en las horas frescas.',
+      },
+    },
+    motto: { en: "Ichasagua never surrendered.", fr: "Ichasagua n'a jamais capitulé.", es: 'Ichasagua nunca capituló.' },
+    mottoSub: { en: '— His secret has been waiting since 1502', fr: '— Son secret attend depuis 1502', es: '— Su secreto espera desde 1502' },
     ctaBody: {
-      en: 'Before the cathedrals, before the harbours, before the tourist resorts — there was a people who spoke to the mountains. Their code has waited millennia for someone to crack it. Will you be the one?',
-      fr: "Avant les cathédrales, avant les ports, avant les stations balnéaires — il y avait un peuple qui parlait aux montagnes. Leur code attend depuis des millénaires que quelqu'un le déchiffre. Serez-vous celui-là ?",
-      es: 'Antes de las catedrales, antes de los puertos, antes de los complejos turísticos — había un pueblo que hablaba con las montañas. Su código ha esperado milenios. ¿Serás tú quien lo descifre?',
+      en: "For centuries, visitors have passed beneath his windows without ever looking up at the mountain. Without ever venturing into the alleys where history was written. You will be different. The code exists. The clues are there. All that is missing is you.",
+      fr: "Pendant des siècles, les visiteurs sont passés sous ses fenêtres sans jamais lever les yeux vers la montagne. Sans jamais s'enfoncer dans les ruelles où l'histoire s'est écrite. Vous serez différents. Le code existe. Les indices sont là. Il ne manque que vous.",
+      es: "Durante siglos, los visitantes han pasado bajo sus ventanas sin levantar la vista hacia la montaña. Sin adentrarse en los callejones donde se escribió la historia. Tú serás diferente. El código existe. Las pistas están ahí. Solo faltas tú.",
     },
   },
   {

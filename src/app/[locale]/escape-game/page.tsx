@@ -19,7 +19,7 @@ const escapeGames: EscapeGame[] = [
     id: 'ichasagua',
     slug: 'le-code-dichasagua',
     image: '/images/offers/escape.png',
-    duration: '1h30',
+    duration: '3h-4h',
   },
   {
     id: 'troisCles',

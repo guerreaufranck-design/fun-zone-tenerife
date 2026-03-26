@@ -178,37 +178,85 @@ export default function EscapeGameDetailPage() {
           <div className="mb-16 text-center">
             <p className="mb-4 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">The journey</p>
             <h2 className="font-serif text-2xl font-semibold text-[#f4ede0] sm:text-3xl">
-              {game.acts.length} acts. One secret.
+              {game.acts.length} steps. One secret.
             </h2>
           </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-[#c9a24b]/30 to-transparent md:left-8" />
+          {game.zones ? (
+            // Dual-zone layout (e.g. urban + mountain)
+            <>
+              {game.zones.map((zone) => {
+                const zoneActs = game.acts.filter((a) => a.zone === zone.id);
+                const isMountain = zone.id === 'mountain';
+                return (
+                  <div key={zone.id}>
+                    {/* Zone transition banner */}
+                    <div className="mb-10 border-y border-[#c9a24b]/10 bg-gradient-to-r from-[#3d9ca8]/5 via-[#7a4f2a]/10 to-[#3d9ca8]/5 px-6 py-10 text-center">
+                      <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#3d9ca8]">
+                        {t(zone.tag)}
+                      </p>
+                      <p className="font-serif text-lg font-semibold text-[#f4ede0]">{t(zone.title)}</p>
+                      <p className="mx-auto mt-2 max-w-xl font-serif text-sm italic text-[#ede0c8]/60">{t(zone.description)}</p>
+                    </div>
 
-            <div className="space-y-0">
-              {game.acts.map((act, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="grid grid-cols-[32px_1fr] gap-6 border-b border-[#c9a24b]/8 py-10 md:grid-cols-[64px_1fr] md:gap-9"
-                >
-                  <div className="flex justify-center pt-1">
-                    <div className="h-3.5 w-3.5 rounded-full bg-[#c9a24b] shadow-[0_0_20px_rgba(201,162,75,0.5)]" />
+                    <div className="relative mb-14">
+                      <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-[#c9a24b]/30 to-transparent md:left-8" />
+                      {zoneActs.map((act, i) => {
+                        const globalIndex = game.acts.indexOf(act);
+                        return (
+                          <motion.div
+                            key={globalIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="grid grid-cols-[32px_1fr] gap-6 border-b border-[#c9a24b]/8 py-10 md:grid-cols-[64px_1fr] md:gap-9"
+                          >
+                            <div className="flex justify-center pt-1">
+                              <div className={`h-3.5 w-3.5 rounded-full ${isMountain ? 'bg-[#c9a24b] shadow-[0_0_20px_rgba(201,162,75,0.5)]' : 'bg-[#3d9ca8] shadow-[0_0_20px_rgba(61,156,168,0.5)]'}`} />
+                            </div>
+                            <div>
+                              <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Step {globalIndex + 1}</p>
+                              <h3 className="mb-1 font-serif text-lg font-semibold text-[#f4ede0]">{t(act.title)}</h3>
+                              <p className={`mb-3 text-[10px] uppercase tracking-[0.2em] ${isMountain ? 'text-[#c9a24b]/60' : 'text-[#3d9ca8]/60'}`}>{t(act.location)}</p>
+                              <p className="font-serif text-base leading-relaxed text-[#ede0c8]/75">{t(act.description)}</p>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div>
-                    <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Act {i + 1}</p>
-                    <h3 className="mb-1 font-serif text-lg font-semibold text-[#f4ede0]">{t(act.title)}</h3>
-                    <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-[#c9a24b]/60">{t(act.location)}</p>
-                    <p className="font-serif text-base leading-relaxed text-[#ede0c8]/75">{t(act.description)}</p>
-                  </div>
-                </motion.div>
-              ))}
+                );
+              })}
+            </>
+          ) : (
+            // Standard single-zone layout
+            <div className="relative">
+              <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-[#c9a24b]/30 to-transparent md:left-8" />
+              <div className="space-y-0">
+                {game.acts.map((act, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="grid grid-cols-[32px_1fr] gap-6 border-b border-[#c9a24b]/8 py-10 md:grid-cols-[64px_1fr] md:gap-9"
+                  >
+                    <div className="flex justify-center pt-1">
+                      <div className="h-3.5 w-3.5 rounded-full bg-[#c9a24b] shadow-[0_0_20px_rgba(201,162,75,0.5)]" />
+                    </div>
+                    <div>
+                      <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Act {i + 1}</p>
+                      <h3 className="mb-1 font-serif text-lg font-semibold text-[#f4ede0]">{t(act.title)}</h3>
+                      <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-[#c9a24b]/60">{t(act.location)}</p>
+                      <p className="font-serif text-base leading-relaxed text-[#ede0c8]/75">{t(act.description)}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -288,6 +336,19 @@ export default function EscapeGameDetailPage() {
           Each phone receives a unique game code. Want to compete? Book multiple phones!
         </p>
       </section>
+
+      {/* WARNING */}
+      {game.warning && (
+        <section className="mx-auto max-w-3xl px-6 pb-16">
+          <div className="flex gap-4 border border-[#c9a24b]/20 border-l-[3px] border-l-[#c9a24b] bg-[#7a3012]/10 p-5">
+            <span className="flex-shrink-0 text-xl">{game.warning.icon}</span>
+            <div>
+              <p className="mb-1 font-serif text-sm font-semibold tracking-[0.1em] text-[#c9a24b]">{t(game.warning.title)}</p>
+              <p className="font-serif text-sm leading-relaxed text-[#ede0c8]/80">{t(game.warning.body)}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="relative overflow-hidden px-6 py-24 text-center">
