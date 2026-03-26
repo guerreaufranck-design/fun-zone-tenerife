@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
         const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://play.funzonetenerife.com';
 
         for (let i = 0; i < phoneCount; i++) {
-          const code = nanoid(8).toUpperCase();
+          const code = nanoid(12).toUpperCase();
 
           try {
             await sendEscapeGameCode({

@@ -162,7 +162,7 @@ export function EscapeGameCode({
             {/* Code box */}
             <Section style={codeBox}>
               <Text style={codeLabel}>{t.codeLabel}</Text>
-              <Text style={codeValue}>{code}</Text>
+              <Text style={codeValue}>{code.match(/.{1,4}/g)?.join('-') || code}</Text>
             </Section>
 
             {/* Game details */}
