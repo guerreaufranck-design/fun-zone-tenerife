@@ -1,10 +1,11 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Map, Clock, Smartphone } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, Map, Clock, Smartphone, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { getEscapeGameBySlug } from '@/data/escape-games';
@@ -32,6 +33,9 @@ const ui: Record<string, Record<string, string>> = {
   phones: { en: 'phones', fr: 'téléphones', es: 'teléfonos', de: 'Handys', it: 'telefoni' },
   pricingNote: { en: 'Each phone receives a unique game code. Want to compete? Book multiple phones!', fr: 'Chaque téléphone reçoit un code de jeu unique. Envie de compétition ? Réservez plusieurs téléphones !', es: 'Cada teléfono recibe un código único. ¿Quieres competir? ¡Reserva varios teléfonos!', de: 'Jedes Handy erhält einen einzigartigen Spielcode. Lust auf Wettbewerb? Buchen Sie mehrere Handys!', it: 'Ogni telefono riceve un codice unico. Vuoi competere? Prenota più telefoni!' },
   bookAdventure: { en: 'Book your adventure', fr: 'Réserver votre aventure', es: 'Reserva tu aventura', de: 'Abenteuer buchen', it: 'Prenota la tua avventura' },
+  bookNow: { en: 'Book now', fr: 'Réserver maintenant', es: 'Reservar ahora', de: 'Jetzt buchen', it: 'Prenota ora' },
+  from: { en: 'From', fr: 'À partir de', es: 'Desde', de: 'Ab', it: 'Da' },
+  perPhone: { en: '/phone', fr: '/téléphone', es: '/teléfono', de: '/Handy', it: '/telefono' },
   backToAll: { en: 'Back to all escape games', fr: 'Retour aux escape games', es: 'Volver a los escape games', de: 'Zurück zu allen Escape Games', it: 'Torna a tutti gli escape game' },
   discover: { en: 'Discover', fr: 'Découvrir', es: 'Descubrir', de: 'Entdecken', it: 'Scopri' },
   today: { en: 'Today', fr: "Aujourd'hui", es: 'Hoy', de: 'Heute', it: 'Oggi' },
@@ -55,8 +59,70 @@ export default function EscapeGameDetailPage() {
   const t = (field: Record<string, string>) => field[locale] || field['en'] || '';
   const u = (key: string) => ui[key]?.[locale] || ui[key]?.['en'] || key;
 
+  // Sticky booking card - appears after scrolling past hero
+  const [showSticky, setShowSticky] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const heroHeight = window.innerHeight * 0.7;
+      setShowSticky(scrollY > heroHeight);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
+      {/* STICKY BOOKING CARD */}
+      <AnimatePresence>
+        {showSticky && !dismissed && (
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 200, opacity: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-lg sm:bottom-6 sm:left-auto sm:right-6"
+          >
+            <div className="relative overflow-hidden rounded-2xl border border-[#c9a24b]/20 bg-[#0d0a07]/95 p-5 shadow-[0_-4px_40px_rgba(0,0,0,0.5),0_0_30px_rgba(201,162,75,0.08)] backdrop-blur-xl">
+              {/* Close button */}
+              <button
+                onClick={() => setDismissed(true)}
+                className="absolute right-3 top-3 text-[#6b5e52] transition-colors hover:text-[#c9a24b]"
+                aria-label="Close"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+              </button>
+
+              {/* Sparkle accent */}
+              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#c9a24b]/5 blur-2xl" />
+
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#c9a24b]/10">
+                  <Sparkles size={14} className="text-[#c9a24b]" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm leading-relaxed text-[#ede0c8]/80">
+                    {t(game.stickyMessage)}
+                  </p>
+                  <div className="mt-3 flex items-center gap-3">
+                    <a
+                      href={`/${locale}/book`}
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#c9a24b] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#0d0a07] transition-all hover:bg-[#e8c97a] hover:shadow-[0_0_20px_rgba(201,162,75,0.3)]"
+                    >
+                      {u('bookNow')}
+                    </a>
+                    <span className="text-xs text-[#6b5e52]">
+                      {u('from')} <span className="font-semibold text-[#c9a24b]">19€</span>{u('perPhone')}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* HERO */}
       <section className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
         {/* Background gradient */}

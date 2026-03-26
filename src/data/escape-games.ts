@@ -57,6 +57,7 @@ export interface EscapeGameData {
   mottoSub: Record<string, string>;
   ctaBody: Record<string, string>;
   accentColor?: string; // override default gold theme per game
+  stickyMessage: Record<string, string>;
 }
 
 export const escapeGamesData: EscapeGameData[] = [
@@ -209,6 +210,13 @@ export const escapeGamesData: EscapeGameData[] = [
       en: "— Garachico's motto · 'Glorious in its adversity'",
       fr: "— La devise de Garachico · « Glorieuse dans son adversité »",
       es: "— El lema de Garachico · 'Gloriosa en su adversidad'",
+    },
+    stickyMessage: {
+      en: "It's your turn! Discover Garachico while having fun and uncovering historical secrets still hidden from most. A town frozen in time awaits your investigation.",
+      fr: "À toi de jouer ! Découvre Garachico en t'amusant et en apprenant des faits historiques encore cachés du plus grand nombre. Une ville figée dans le temps attend ton enquête.",
+      es: "¡Te toca a ti! Descubre Garachico divirtiéndote y aprendiendo secretos históricos aún ocultos para la mayoría. Un pueblo congelado en el tiempo espera tu investigación.",
+      de: "Du bist dran! Entdecke Garachico mit Spaß und lerne historische Geheimnisse, die den meisten noch verborgen sind. Eine in der Zeit eingefrorene Stadt wartet auf deine Ermittlung.",
+      it: "Tocca a te! Scopri Garachico divertendoti e imparando segreti storici ancora nascosti ai più. Una città cristallizzata nel tempo attende la tua indagine.",
     },
     ctaBody: {
       en: 'Five centuries of resilience await you in these basalt alleys. The town has survived plague, pirates, fires and lava. It has kept its secrets intact for those who dare to seek them. Will you be among them?',
@@ -366,6 +374,13 @@ export const escapeGamesData: EscapeGameData[] = [
     },
     motto: { en: "Ichasagua never surrendered.", fr: "Ichasagua n'a jamais capitulé.", es: 'Ichasagua nunca capituló.' },
     mottoSub: { en: '— His secret has been waiting since 1502', fr: '— Son secret attend depuis 1502', es: '— Su secreto espera desde 1502' },
+    stickyMessage: {
+      en: "It's your turn! Explore Los Cristianos and Montaña Guaza while having fun and learning secrets the Guanches left behind centuries ago. An adventure from sea to summit awaits.",
+      fr: "À toi de jouer ! Explore Los Cristianos et la Montaña Guaza en t'amusant et en découvrant les secrets que les Guanches ont laissés il y a des siècles. Une aventure de la mer au sommet t'attend.",
+      es: "¡Te toca a ti! Explora Los Cristianos y la Montaña Guaza divirtiéndote y descubriendo secretos que los Guanches dejaron hace siglos. Una aventura del mar a la cumbre te espera.",
+      de: "Du bist dran! Erkunde Los Cristianos und Montaña Guaza mit Spaß und entdecke Geheimnisse, die die Guanchen vor Jahrhunderten hinterließen.",
+      it: "Tocca a te! Esplora Los Cristianos e la Montaña Guaza divertendoti e scoprendo segreti che i Guanci lasciarono secoli fa.",
+    },
     ctaBody: {
       en: "For centuries, visitors have passed beneath his windows without ever looking up at the mountain. Without ever venturing into the alleys where history was written. You will be different. The code exists. The clues are there. All that is missing is you.",
       fr: "Pendant des siècles, les visiteurs sont passés sous ses fenêtres sans jamais lever les yeux vers la montagne. Sans jamais s'enfoncer dans les ruelles où l'histoire s'est écrite. Vous serez différents. Le code existe. Les indices sont là. Il ne manque que vous.",
@@ -532,6 +547,13 @@ export const escapeGamesData: EscapeGameData[] = [
       de: '— Amaro Pargos Testament wartet seit 1747',
       it: '— Il testamento di Amaro Pargo attende dal 1747',
     },
+    stickyMessage: {
+      en: "It's your turn! Discover La Laguna while having fun and uncovering the secrets of the most famous corsair of the Canaries. A UNESCO city full of hidden stories awaits you.",
+      fr: "À toi de jouer ! Découvre La Laguna en t'amusant et en perçant les secrets du plus célèbre corsaire des Canaries. Une ville UNESCO pleine d'histoires cachées t'attend.",
+      es: "¡Te toca a ti! Descubre La Laguna divirtiéndote y desvelando los secretos del corsario más famoso de Canarias. Una ciudad UNESCO llena de historias ocultas te espera.",
+      de: "Du bist dran! Entdecke La Laguna mit Spaß und lüfte die Geheimnisse des berühmtesten Korsaren der Kanaren. Eine UNESCO-Stadt voller verborgener Geschichten erwartet dich.",
+      it: "Tocca a te! Scopri La Laguna divertendoti e svelando i segreti del corsaro più famoso delle Canarie. Una città UNESCO piena di storie nascoste ti aspetta.",
+    },
     ctaBody: {
       en: "La Laguna is a city that tourists walk through looking at their phones. This game forces you to look up — at the crests, the grilles, the charred arches, the tombstones. It is a city that has never stopped speaking. You just had to know how to listen.",
       fr: "La Laguna est une ville que les touristes traversent en regardant leur téléphone. Ce jeu vous oblige à lever les yeux — vers les blasons, les grilles, les arches calcinées, les dalles funéraires. C'est une ville qui n'a jamais cessé de parler. Il fallait juste savoir l'écouter.",
@@ -687,6 +709,13 @@ export const escapeGamesData: EscapeGameData[] = [
       es: '— Caraveo sabía que los mejores escondites siempre están a plena vista',
       de: '— Caraveo wusste, dass die besten Verstecke immer vor aller Augen liegen',
       it: '— Caraveo sapeva che i migliori nascondigli sono sempre in bella vista',
+    },
+    stickyMessage: {
+      en: "It's your turn! Discover Puerto de la Cruz while having fun and following the trail of Captain Caraveo through colourful murals and black basalt fortresses.",
+      fr: "À toi de jouer ! Découvre Puerto de la Cruz en t'amusant et en suivant la piste du capitaine Caraveo à travers les muraux colorés et les forteresses de basalte noir.",
+      es: "¡Te toca a ti! Descubre Puerto de la Cruz divirtiéndote y siguiendo la pista del capitán Caraveo a través de murales coloridos y fortalezas de basalto negro.",
+      de: "Du bist dran! Entdecke Puerto de la Cruz mit Spaß und folge der Spur von Kapitän Caraveo durch bunte Wandbilder und schwarze Basaltfestungen.",
+      it: "Tocca a te! Scopri Puerto de la Cruz divertendoti e seguendo la pista del capitano Caraveo attraverso murales colorati e fortezze di basalto nero.",
     },
     ctaBody: {
       en: "Sometimes all it takes is walking the right alleys, looking up at the right walls, and listening to what the black basalt stones have to say. Puerto de la Cruz was never just a seaside resort. It is a port with a memory. And that memory awaits you.",
