@@ -350,7 +350,6 @@
   },
   "escapeGames": {
     "outdoor": "Avventura all'aperto",
-    "teamBased": "A squadre (2-6 giocatori)",
     "selfPaced": "Esplorazione al proprio ritmo",
     "difficulty": "Difficoltà",
     "bookThis": "Prenota questa avventura",
@@ -377,6 +376,11 @@
       "location": "Garachico",
       "description": "Immergiti nella storia vulcanica di Garachico, una città distrutta e rinata dalla lava. Scopri il mistero di un'anima intrappolata tra le rovine e il mare in questa avventura atmosferica.",
       "difficultyLevel": "5"
-    }
+    },
+    "phoneRequired": "Smartphone necessario",
+    "pricingTitle": "Prezzi",
+    "phone": "telefono",
+    "phones": "telefoni",
+    "pricingNote": "Ogni telefono riceve un codice di gioco unico. Vuoi competere? Prenota più telefoni e gareggia!"
   }
 }

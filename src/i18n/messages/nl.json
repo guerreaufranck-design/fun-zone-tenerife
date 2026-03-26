@@ -350,7 +350,6 @@
   },
   "escapeGames": {
     "outdoor": "Buitenavontuur",
-    "teamBased": "Teamgebaseerd (2-6 spelers)",
     "selfPaced": "Verkenning op eigen tempo",
     "difficulty": "Moeilijkheid",
     "bookThis": "Boek dit avontuur",
@@ -377,6 +376,11 @@
       "location": "Garachico",
       "description": "Duik in de vulkanische geschiedenis van Garachico, een stad die is verwoest en herboren uit lava. Ontdek het mysterie van een ziel gevangen tussen ruïnes en zee.",
       "difficultyLevel": "5"
-    }
+    },
+    "phoneRequired": "Smartphone vereist",
+    "pricingTitle": "Prijzen",
+    "phone": "telefoon",
+    "phones": "telefoons",
+    "pricingNote": "Elke telefoon ontvangt een unieke spelcode. Wil je wedstrijden? Boek meerdere telefoons en race tegen elkaar!"
   }
 }

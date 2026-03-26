@@ -350,7 +350,6 @@
   },
   "escapeGames": {
     "outdoor": "Outdoor-Abenteuer",
-    "teamBased": "Teambasiert (2-6 Spieler)",
     "selfPaced": "Erkundung im eigenen Tempo",
     "difficulty": "Schwierigkeit",
     "bookThis": "Dieses Abenteuer buchen",
@@ -377,6 +376,11 @@
       "location": "Garachico",
       "description": "Tauchen Sie ein in die vulkanische Geschichte von Garachico, einer Stadt, die aus Lava zerstört und wiedergeboren wurde. Lüften Sie das Geheimnis einer Seele zwischen Ruinen und Meer.",
       "difficultyLevel": "5"
-    }
+    },
+    "phoneRequired": "Smartphone erforderlich",
+    "pricingTitle": "Preise",
+    "phone": "Handy",
+    "phones": "Handys",
+    "pricingNote": "Jedes Handy erhält einen einzigartigen Spielcode. Lust auf Wettbewerb? Buchen Sie mehrere Handys und messen Sie sich!"
   }
 }

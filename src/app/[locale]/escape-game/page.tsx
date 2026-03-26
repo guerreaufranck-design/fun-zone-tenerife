@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Users, Map, ArrowLeft } from 'lucide-react';
+import { Clock, MapPin, Map, ArrowLeft, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -11,7 +11,6 @@ interface EscapeGame {
   id: string;
   image: string;
   duration: string;
-  players: string;
 }
 
 const escapeGames: EscapeGame[] = [
@@ -19,26 +18,28 @@ const escapeGames: EscapeGame[] = [
     id: 'ichasagua',
     image: '/images/offers/escape.png',
     duration: '1h30',
-    players: '2-6',
   },
   {
     id: 'troisCles',
     image: '/images/offers/escape.png',
     duration: '2h30',
-    players: '2-6',
   },
   {
     id: 'bateria',
     image: '/images/offers/escape.png',
     duration: '1h45',
-    players: '2-6',
   },
   {
     id: 'cendres',
     image: '/images/offers/garachico.png',
     duration: '2h45',
-    players: '2-6',
   },
+];
+
+const pricing = [
+  { phones: 1, price: 19 },
+  { phones: 2, price: 25 },
+  { phones: 3, price: 35 },
 ];
 
 const cardVariants = {
@@ -53,7 +54,6 @@ const cardVariants = {
 export default function EscapeGamePage() {
   const t = useTranslations('activities');
   const tEscape = useTranslations('escapeGames');
-  const locale = useLocale();
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -71,7 +71,6 @@ export default function EscapeGamePage() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/60 to-transparent" />
 
-          {/* Pink glow */}
           <div
             className="absolute inset-0 opacity-20"
             style={{
@@ -127,14 +126,61 @@ export default function EscapeGamePage() {
                 {tEscape('outdoor')}
               </span>
               <span className="flex items-center gap-1.5">
-                <Users size={14} className="text-[#ff2d7b]" />
-                {tEscape('teamBased')}
+                <Smartphone size={14} className="text-[#ff2d7b]" />
+                {tEscape('phoneRequired')}
               </span>
               <span className="flex items-center gap-1.5">
                 <Clock size={14} className="text-[#ff2d7b]" />
                 {tEscape('selfPaced')}
               </span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h2 className="neon-glow-pink mb-6 text-center text-2xl font-bold text-white">
+              {tEscape('pricingTitle')}
+            </h2>
+            <div className="grid grid-cols-3 gap-4">
+              {pricing.map((tier, i) => (
+                <div
+                  key={tier.phones}
+                  className={`relative overflow-hidden rounded-2xl border p-5 text-center transition-all duration-300 ${
+                    i === 1
+                      ? 'border-[#ff2d7b]/50 bg-[#ff2d7b]/10 shadow-[0_0_30px_rgba(255,45,123,0.15)]'
+                      : 'border-white/10 bg-white/5'
+                  }`}
+                >
+                  {i === 1 && (
+                    <div className="absolute -right-8 top-2 rotate-45 bg-[#ff2d7b] px-8 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                      Popular
+                    </div>
+                  )}
+                  <div className="mb-2 flex items-center justify-center gap-1">
+                    {Array.from({ length: tier.phones }).map((_, idx) => (
+                      <Smartphone key={idx} size={18} className="text-[#ff2d7b]" />
+                    ))}
+                  </div>
+                  <p className="mb-1 text-xs text-white/50">
+                    {tier.phones} {tier.phones === 1 ? tEscape('phone') : tEscape('phones')}
+                  </p>
+                  <p className="text-3xl font-bold text-white">
+                    {tier.price}<span className="text-lg text-white/50">€</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-center text-xs text-white/40">
+              {tEscape('pricingNote')}
+            </p>
           </motion.div>
         </div>
       </section>
@@ -162,17 +208,10 @@ export default function EscapeGamePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent" />
 
-                {/* Badges */}
-                <div className="absolute right-3 top-3 flex gap-2">
+                <div className="absolute right-3 top-3">
                   <span className="flex items-center gap-1 rounded-full border border-[#ff2d7b]/30 bg-black/60 px-3 py-1 text-xs font-medium text-[#ff2d7b] backdrop-blur-sm">
                     <Clock size={12} />
                     {game.duration}
-                  </span>
-                </div>
-                <div className="absolute left-3 top-3">
-                  <span className="flex items-center gap-1 rounded-full border border-[#ff2d7b]/30 bg-black/60 px-3 py-1 text-xs font-medium text-[#ff2d7b] backdrop-blur-sm">
-                    <Users size={12} />
-                    {game.players}
                   </span>
                 </div>
               </div>
@@ -209,7 +248,7 @@ export default function EscapeGamePage() {
 
                 <Button
                   variant="outline"
-                  className="w-full border-[#ff2d7b]/30 text-[#ff2d7b] transition-all hover:bg-[#ff2d7b]/10 hover:border-[#ff2d7b]/50"
+                  className="w-full border-[#ff2d7b]/30 text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/50 hover:bg-[#ff2d7b]/10"
                   asChild
                 >
                   <Link href="/book">{tEscape('bookThis')}</Link>
