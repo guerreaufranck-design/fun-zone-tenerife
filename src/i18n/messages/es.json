@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - una aventura de escape al aire libre única",
       "description": "Embárcate en un juego de escape inmersivo al aire libre por las calles. Resuelve acertijos, descubre pistas y compite contra el reloj en esta aventura única."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Aventura al aire libre",
+    "teamBased": "En equipo (2-6 jugadores)",
+    "selfPaced": "Exploración a tu ritmo",
+    "difficulty": "Dificultad",
+    "bookThis": "Reservar esta aventura",
+    "ichasagua": {
+      "title": "El Código de Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Explora las calles de Los Cristianos y descubre el secreto ancestral del código Guanche. Descifra pistas ocultas en monumentos históricos y resuelve enigmas que revelan una leyenda olvidada.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "El Cofre de las Tres Llaves",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Recorre las calles Patrimonio de la Humanidad de La Laguna en busca de tres llaves legendarias. Cada llave desbloquea un nuevo capítulo de una intriga que atraviesa los siglos.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "El Botín de la Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Sigue la pista de un tesoro pirata escondido a lo largo de la costa de Puerto de la Cruz. Navega por el puerto histórico, descifra códigos marítimos y encuentra el botín perdido antes de que se acabe el tiempo.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "Las Cenizas del Alma",
+      "location": "Garachico",
+      "description": "Sumérgete en la historia volcánica de Garachico, un pueblo destruido y renacido de la lava. Descubre el misterio de un alma atrapada entre las ruinas y el mar en esta aventura atmosférica.",
+      "difficultyLevel": "5"
+    }
   }
 }

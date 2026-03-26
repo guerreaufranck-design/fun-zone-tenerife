@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - un'avventura di escape all'aperto unica",
       "description": "Imbarcati in un escape game immersivo all'aperto per le strade. Risolvi enigmi, scopri indizi e gareggia contro il tempo."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Avventura all'aperto",
+    "teamBased": "A squadre (2-6 giocatori)",
+    "selfPaced": "Esplorazione al proprio ritmo",
+    "difficulty": "Difficoltà",
+    "bookThis": "Prenota questa avventura",
+    "ichasagua": {
+      "title": "Il Codice di Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Esplora le strade di Los Cristianos e scopri l'antico segreto del codice Guanche. Decifra indizi nascosti nei monumenti storici e risolvi enigmi che rivelano una leggenda dimenticata.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "Lo Scrigno delle Tre Chiavi",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Percorri le strade Patrimonio dell'Umanità di La Laguna alla ricerca di tre chiavi leggendarie. Ogni chiave svela un nuovo capitolo di un'intrigo che attraversa i secoli.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "Il Bottino della Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Segui la pista di un tesoro pirata nascosto lungo la costa di Puerto de la Cruz. Naviga nel porto storico, decifra codici marittimi e trova il bottino perduto prima che scada il tempo.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "Le Ceneri dell'Anima",
+      "location": "Garachico",
+      "description": "Immergiti nella storia vulcanica di Garachico, una città distrutta e rinata dalla lava. Scopri il mistero di un'anima intrappolata tra le rovine e il mare in questa avventura atmosferica.",
+      "difficultyLevel": "5"
+    }
   }
 }

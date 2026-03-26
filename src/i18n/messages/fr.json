@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - une aventure d'escape en extérieur unique",
       "description": "Embarquez pour un escape game immersif en extérieur dans les rues. Résolvez des énigmes, découvrez des indices et affrontez le chrono dans cette aventure unique."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Aventure en extérieur",
+    "teamBased": "En équipe (2-6 joueurs)",
+    "selfPaced": "Exploration libre",
+    "difficulty": "Difficulté",
+    "bookThis": "Réserver cette aventure",
+    "ichasagua": {
+      "title": "Le Code d'Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Explorez les rues de Los Cristianos et percez le secret ancestral du code Guanche. Déchiffrez des indices cachés dans les monuments historiques et résolvez des énigmes révélant une légende oubliée.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "Le Coffre des Trois Clés",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Parcourez les rues classées au patrimoine mondial de La Laguna à la recherche de trois clés légendaires. Chaque clé déverrouille un nouveau chapitre d'une intrigue qui traverse les siècles.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "Le Butin de la Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Suivez la piste d'un trésor pirate caché le long de la côte de Puerto de la Cruz. Naviguez dans le port historique, déchiffrez les codes maritimes et trouvez le butin perdu avant la fin du temps.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "Les Cendres de l'Âme",
+      "location": "Garachico",
+      "description": "Plongez dans l'histoire volcanique de Garachico, une ville détruite et renaissante de la lave. Percez le mystère d'une âme piégée entre les ruines et la mer dans cette aventure atmosphérique.",
+      "difficultyLevel": "5"
+    }
   }
 }

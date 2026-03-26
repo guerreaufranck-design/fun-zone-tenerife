@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - een uniek outdoor escape-avontuur",
       "description": "Ga op een meeslepend outdoor escape game door de straten. Los puzzels op, ontdek aanwijzingen en race tegen de klok."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Buitenavontuur",
+    "teamBased": "Teamgebaseerd (2-6 spelers)",
+    "selfPaced": "Verkenning op eigen tempo",
+    "difficulty": "Moeilijkheid",
+    "bookThis": "Boek dit avontuur",
+    "ichasagua": {
+      "title": "De Code van Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Verken de straten van Los Cristianos en ontdek het eeuwenoude geheim van de Guanche-code. Ontcijfer aanwijzingen in historische monumenten en los puzzels op die een vergeten legende onthullen.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "De Kist van Drie Sleutels",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Dwaal door de UNESCO-straten van La Laguna op zoek naar drie legendarische sleutels. Elke sleutel opent een nieuw hoofdstuk van een eeuwenoud mysterie.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "De Buit van de Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Volg het spoor van een piratenschat langs de kust van Puerto de la Cruz. Navigeer door de historische haven, ontcijfer maritieme codes en vind de verloren buit voor de tijd op is.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "De As van de Ziel",
+      "location": "Garachico",
+      "description": "Duik in de vulkanische geschiedenis van Garachico, een stad die is verwoest en herboren uit lava. Ontdek het mysterie van een ziel gevangen tussen ruïnes en zee.",
+      "difficultyLevel": "5"
+    }
   }
 }

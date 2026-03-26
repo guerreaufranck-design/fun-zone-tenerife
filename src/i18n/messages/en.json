@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - an outdoor escape adventure like no other",
       "description": "Embark on an immersive outdoor escape game through the streets. Solve puzzles, uncover clues, and race against the clock in this unique adventure that combines exploration with brain-teasing challenges."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Outdoor adventure",
+    "teamBased": "Team-based (2-6 players)",
+    "selfPaced": "Self-paced exploration",
+    "difficulty": "Difficulty",
+    "bookThis": "Book this adventure",
+    "ichasagua": {
+      "title": "The Code of Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Explore the streets of Los Cristianos and uncover the ancient secret of the Guanche code. Decipher clues hidden in historical landmarks and solve puzzles that reveal a forgotten legend.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "The Chest of Three Keys",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Wander through the UNESCO World Heritage streets of La Laguna in search of three legendary keys. Each key unlocks a new chapter of an intrigue that has spanned centuries.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "The Loot of La Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Follow the trail of a pirate treasure hidden along the coast of Puerto de la Cruz. Navigate through the historic harbour, decipher maritime codes and find the lost loot before time runs out.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "The Ashes of the Soul",
+      "location": "Garachico",
+      "description": "Delve into the volcanic history of Garachico, a town destroyed and reborn from lava. Uncover the mystery of a soul trapped between the ruins and the sea in this atmospheric adventure.",
+      "difficultyLevel": "5"
+    }
   }
 }

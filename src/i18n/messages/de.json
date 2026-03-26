@@ -347,5 +347,36 @@
       "subtitle": "Tenerife Chronicle - ein einzigartiges Outdoor-Escape-Abenteuer",
       "description": "Begib dich auf ein immersives Outdoor-Escape-Game durch die Straßen. Löse Rätsel, entdecke Hinweise und kämpfe gegen die Zeit."
     }
+  },
+  "escapeGames": {
+    "outdoor": "Outdoor-Abenteuer",
+    "teamBased": "Teambasiert (2-6 Spieler)",
+    "selfPaced": "Erkundung im eigenen Tempo",
+    "difficulty": "Schwierigkeit",
+    "bookThis": "Dieses Abenteuer buchen",
+    "ichasagua": {
+      "title": "Der Code von Ichasagua",
+      "location": "Los Cristianos",
+      "description": "Erkunden Sie die Straßen von Los Cristianos und lüften Sie das uralte Geheimnis des Guanchen-Codes. Entschlüsseln Sie Hinweise in historischen Denkmälern und lösen Sie Rätsel einer vergessenen Legende.",
+      "difficultyLevel": "3"
+    },
+    "troisCles": {
+      "title": "Die Truhe der Drei Schlüssel",
+      "location": "San Cristóbal de La Laguna",
+      "description": "Wandern Sie durch die UNESCO-Welterbe-Straßen von La Laguna auf der Suche nach drei legendären Schlüsseln. Jeder Schlüssel eröffnet ein neues Kapitel einer jahrhundertealten Intrige.",
+      "difficultyLevel": "4"
+    },
+    "bateria": {
+      "title": "Die Beute der Batería",
+      "location": "Puerto de la Cruz",
+      "description": "Folgen Sie der Spur eines Piratenschatzes entlang der Küste von Puerto de la Cruz. Navigieren Sie durch den historischen Hafen, entschlüsseln Sie maritime Codes und finden Sie die verlorene Beute.",
+      "difficultyLevel": "3"
+    },
+    "cendres": {
+      "title": "Die Asche der Seele",
+      "location": "Garachico",
+      "description": "Tauchen Sie ein in die vulkanische Geschichte von Garachico, einer Stadt, die aus Lava zerstört und wiedergeboren wurde. Lüften Sie das Geheimnis einer Seele zwischen Ruinen und Meer.",
+      "difficultyLevel": "5"
+    }
   }
 }
