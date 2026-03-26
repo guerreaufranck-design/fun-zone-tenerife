@@ -5,7 +5,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { allocateLanes } from "@/lib/booking/lane-allocation";
 import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode } from "@/lib/email";
 import type { LaneType } from "@/lib/supabase/types";
-import { nanoid } from "nanoid";
+
 
 const ESCAPE_CITIES: Record<string, string> = {
   'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
@@ -19,6 +19,14 @@ const ESCAPE_DURATIONS: Record<string, string> = {
   'escape-trois-cles': '2-2h30',
   'escape-bateria': '1h30-2h',
   'escape-cendres': '2h30-3h',
+};
+
+// Mapping from offer slug to escape-game app gameId
+const ESCAPE_GAME_IDS: Record<string, string> = {
+  'escape-ichasagua': '11111111-1111-1111-1111-111111111111',
+  'escape-trois-cles': '22222222-2222-2222-2222-222222222222',
+  'escape-bateria': '33333333-3333-3333-3333-333333333333',
+  'escape-cendres': '44444444-4444-4444-4444-444444444444',
 };
 
 export async function POST(request: NextRequest) {
@@ -75,13 +83,35 @@ export async function POST(request: NextRequest) {
         const city = ESCAPE_CITIES[slug] || '';
         const duration = ESCAPE_DURATIONS[slug] || '2h';
 
-        // Generate unique codes for each phone
-        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://play.funzonetenerife.com';
+        // Generate codes via escape-game app API
+        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://escape-game-indol.vercel.app';
+        const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
+        const gameId = ESCAPE_GAME_IDS[slug] || '';
 
         for (let i = 0; i < phoneCount; i++) {
-          const code = nanoid(12).toUpperCase();
-
           try {
+            // Call escape-game app to generate a signed code + insert in its DB
+            const codeRes = await fetch(`${appUrl}/api/generate-code`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-secret': apiSecret,
+              },
+              body: JSON.stringify({
+                gameId,
+                customerEmail,
+                customerName: customerName || 'Player',
+              }),
+            });
+
+            if (!codeRes.ok) {
+              const errData = await codeRes.json().catch(() => ({}));
+              console.error(`Failed to generate code from escape app (phone ${i + 1}):`, errData);
+              continue;
+            }
+
+            const { code } = await codeRes.json();
+
             await sendEscapeGameCode({
               email: customerEmail,
               customerName: customerName || 'Player',
@@ -93,7 +123,7 @@ export async function POST(request: NextRequest) {
               language: locale,
             });
           } catch (emailError) {
-            console.error(`Failed to send escape game code email (phone ${i + 1}):`, emailError);
+            console.error(`Failed to process escape game code (phone ${i + 1}):`, emailError);
           }
         }
 
