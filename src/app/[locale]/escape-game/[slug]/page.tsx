@@ -61,7 +61,7 @@ export default function EscapeGameDetailPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* STICKY BOOKING CARD - always visible, follows scroll */}
-      <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-md sm:bottom-6 sm:left-auto sm:right-6 lg:bottom-8 lg:right-8">
+      <div className="fixed right-4 top-1/2 z-50 hidden w-80 -translate-y-1/2 lg:block">
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -93,6 +93,27 @@ export default function EscapeGameDetailPage() {
           </div>
         </motion.div>
       </div>
+
+      {/* MOBILE STICKY BOOKING - top bar, above WhatsApp */}
+      <div className="fixed left-0 right-0 top-14 z-50 px-3 lg:hidden">
+        <motion.div
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.2, type: 'spring', damping: 25, stiffness: 300 }}
+          className="flex items-center justify-between gap-3 rounded-xl border border-[#c9a24b]/20 bg-[#0d0a07]/95 px-4 py-2.5 shadow-lg backdrop-blur-xl"
+        >
+          <span className="text-xs text-[#6b5e52]">
+            {u('from')} <span className="font-semibold text-[#c9a24b]">19€</span>{u('perPhone')}
+          </span>
+          <a
+            href={`/${locale}/book`}
+            className="rounded-lg bg-[#c9a24b] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.1em] text-[#0a0800] transition-all hover:bg-[#e8c97a]"
+          >
+            {u('bookNow')}
+          </a>
+        </motion.div>
+      </div>
+
       {/* HERO */}
       <section className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-6 py-20 text-center">
         {/* Background image */}
