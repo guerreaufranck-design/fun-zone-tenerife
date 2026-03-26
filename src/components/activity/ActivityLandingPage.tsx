@@ -84,7 +84,7 @@ const activityConfigs: Record<ActivityType, ActivityConfig> = {
   },
   escape: {
     type: 'escape',
-    heroImage: '/images/offers/escape.png',
+    heroImage: '/images/offers/escapegame.png',
     accentColor: '#ff2d7b',
     glowClass: 'neon-glow-pink',
     icon: Map,

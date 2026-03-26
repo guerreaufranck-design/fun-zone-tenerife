@@ -71,7 +71,7 @@ export default function EscapeGamePage() {
       <section className="relative overflow-hidden">
         <div className="relative aspect-[21/9] w-full sm:aspect-[3/1]">
           <Image
-            src="/images/offers/escape.png"
+            src="/images/offers/escapegame.png"
             alt={t('escape.title')}
             fill
             priority

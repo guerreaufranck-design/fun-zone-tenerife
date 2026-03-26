@@ -32,7 +32,7 @@ const activities: Activity[] = [
   {
     id: 'escape',
     href: '/escape-game',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/escapegame.png',
     icon: Map,
     color: 'text-neon-pink',
     hoverColor: 'group-hover:text-neon-pink',
