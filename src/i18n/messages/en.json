@@ -109,7 +109,17 @@
     "doubleLaneNote": "Groups of 6+ will use 2 lanes for the best experience",
     "maxPlayers": "Maximum {max} players per session",
     "fromPerPerson": "From {amount} per person",
-    "category_escape": "Escape Game"
+    "category_escape": "Escape Game",
+    "escape_step1": "Choose your adventure",
+    "escape_step1Description": "Where do you want to play?",
+    "escape_step2": "How many teams?",
+    "escape_step2Description": "Each team gets their own phone with a unique game code. Want to compete? Book multiple teams!",
+    "escape_step3": "Your details",
+    "escape_step4": "Payment",
+    "escape_team": "team",
+    "escape_teams": "teams",
+    "escape_phonesNote": "1 team = 1 phone with a unique code. Unlimited players per team!",
+    "escape_payNow": "Pay now"
   },
   "bookingSuccess": {
     "title": "Booking Confirmed!",

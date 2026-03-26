@@ -109,7 +109,17 @@
     "doubleLaneNote": "Gruppen ab 6 Personen nutzen 2 Bahnen fuer das beste Erlebnis",
     "maxPlayers": "Maximal {max} Spieler pro Session",
     "fromPerPerson": "Ab {amount} pro Person",
-    "category_escape": "Escape Game"
+    "category_escape": "Escape Game",
+    "escape_step1": "Wähle dein Abenteuer",
+    "escape_step1Description": "Wo möchtest du spielen?",
+    "escape_step2": "Wie viele Teams?",
+    "escape_step2Description": "Jedes Team erhält ein eigenes Handy mit einem einzigartigen Spielcode. Lust auf Wettbewerb? Buche mehrere Teams!",
+    "escape_step3": "Deine Daten",
+    "escape_step4": "Zahlung",
+    "escape_team": "Team",
+    "escape_teams": "Teams",
+    "escape_phonesNote": "1 Team = 1 Handy mit einem einzigartigen Code. Unbegrenzte Spieler pro Team!",
+    "escape_payNow": "Jetzt bezahlen"
   },
   "bookingSuccess": {
     "title": "Buchung Bestaetigt!",

@@ -18,6 +18,7 @@ import {
   PartyPopper,
   BrainCircuit,
   Map as MapIcon,
+  Smartphone,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
@@ -120,7 +121,7 @@ function ExperienceIcon({ type, className }: { type: string; className?: string 
    STEP INDICATOR
    ============================================ */
 
-const steps = [
+const regularSteps = [
   { key: 'step1', icon: Axe },
   { key: 'step2', icon: Users },
   { key: 'step3', icon: Calendar },
@@ -128,8 +129,17 @@ const steps = [
   { key: 'step5', icon: CreditCard },
 ] as const;
 
-function StepIndicator({ currentStep }: { currentStep: number }) {
+const escapeSteps = [
+  { key: 'escape_step1', icon: MapIcon },
+  { key: 'escape_step2', icon: Smartphone },
+  { key: 'escape_step3', icon: Users },
+  { key: 'escape_step4', icon: CreditCard },
+] as const;
+
+function StepIndicator({ currentStep, isEscape = false }: { currentStep: number; isEscape?: boolean }) {
   const t = useTranslations('booking');
+
+  const steps = isEscape ? escapeSteps : regularSteps;
 
   return (
     <div className="flex items-center justify-center mb-8 overflow-x-auto pb-2">
@@ -230,6 +240,12 @@ export default function BookingWizard() {
   });
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loadingExperiences, setLoadingExperiences] = useState(true);
+
+  // Escape-specific state
+  const isEscape = selectedCategory === 'escape';
+  const [escapePhones, setEscapePhones] = useState(1);
+  const escapePricing = [{ phones: 1, price: 1900 }, { phones: 2, price: 2500 }, { phones: 3, price: 3500 }];
+  const escapePrice = escapePricing.find(p => p.phones === escapePhones)?.price ?? 1900;
 
   // Booking data
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
@@ -358,6 +374,14 @@ export default function BookingWizard() {
   };
 
   const canProceed = (): boolean => {
+    if (isEscape) {
+      switch (currentStep) {
+        case 1: return selectedExperience !== null;
+        case 2: return escapePhones >= 1 && escapePhones <= 3;
+        case 3: return customerName.trim() !== '' && customerEmail.trim() !== '' && customerPhone.trim() !== '';
+        default: return true;
+      }
+    }
     switch (currentStep) {
       case 1:
         return selectedExperience !== null;
@@ -496,7 +520,9 @@ export default function BookingWizard() {
   };
 
   const handleNext = () => {
-    if (currentStep === 4) {
+    if (isEscape && currentStep === 3) {
+      if (!validateDetails()) return;
+    } else if (!isEscape && currentStep === 4) {
       if (!validateDetails()) return;
     }
     goNext();
@@ -506,7 +532,220 @@ export default function BookingWizard() {
      RENDER STEPS
      ============================================ */
 
+  // Escape-specific location data
+  const escapeLocations: Record<string, string> = {
+    'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
+    'escape-trois-cles': 'San Cristóbal de La Laguna',
+    'escape-bateria': 'Puerto de la Cruz',
+    'escape-cendres': 'Garachico',
+  };
+
   const renderStep = () => {
+    // ===== ESCAPE GAME FLOW =====
+    if (isEscape) {
+      switch (currentStep) {
+        case 1: {
+          const escapeExperiences = experiences.filter(e => e.category === 'escape');
+          return (
+            <div className="space-y-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-heading font-bold neon-glow">{t('escape_step1')}</h2>
+                <p className="text-muted-foreground mt-2">{t('escape_step1Description')}</p>
+              </div>
+              {loadingExperiences ? (
+                <div className="flex items-center justify-center py-16">
+                  <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {escapeExperiences.map((exp) => {
+                    const isSelected = selectedExperience?.id === exp.id;
+                    const city = escapeLocations[exp.slug] || '';
+                    return (
+                      <motion.div key={exp.id} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <Card
+                          className={cn(
+                            'cursor-pointer transition-all duration-300 h-full',
+                            isSelected
+                              ? 'border-[#ff2d7b] shadow-[0_0_25px_rgba(255,45,123,0.25)] bg-[#ff2d7b]/5'
+                              : 'hover:border-[#ff2d7b]/40'
+                          )}
+                          onClick={() => setSelectedExperience(exp)}
+                        >
+                          <CardContent className="p-4 flex items-center gap-4">
+                            <div className={cn(
+                              'h-12 w-12 shrink-0 rounded-lg flex items-center justify-center transition-colors',
+                              isSelected ? 'bg-[#ff2d7b]/20 border border-[#ff2d7b]/40' : 'bg-muted border border-border'
+                            )}>
+                              <MapIcon className={cn('h-6 w-6', isSelected ? 'text-[#ff2d7b]' : 'text-muted-foreground')} />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h3 className={cn('font-heading font-semibold text-sm leading-tight', isSelected ? 'text-[#ff2d7b]' : 'text-foreground')}>
+                                {city}
+                              </h3>
+                              <p className="text-xs text-muted-foreground mt-0.5">{exp.title}</p>
+                              <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
+                                <Clock className="h-3 w-3" />
+                                <span>{exp.duration >= 60 ? `${(exp.duration / 60).toFixed(1).replace('.0','')}h` : `${exp.duration}min`}</span>
+                              </div>
+                            </div>
+                            {isSelected && (
+                              <div className="shrink-0">
+                                <div className="h-6 w-6 rounded-full bg-[#ff2d7b] flex items-center justify-center">
+                                  <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                              </div>
+                            )}
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        case 2:
+          return (
+            <div className="space-y-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-heading font-bold neon-glow">{t('escape_step2')}</h2>
+                <p className="text-muted-foreground mt-2">{t('escape_step2Description')}</p>
+              </div>
+              <div className="max-w-md mx-auto grid grid-cols-3 gap-4">
+                {escapePricing.map((tier) => (
+                  <motion.div key={tier.phones} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                    <Card
+                      className={cn(
+                        'cursor-pointer transition-all duration-300 text-center',
+                        escapePhones === tier.phones
+                          ? 'border-[#ff2d7b] shadow-[0_0_25px_rgba(255,45,123,0.25)] bg-[#ff2d7b]/5'
+                          : 'hover:border-[#ff2d7b]/40'
+                      )}
+                      onClick={() => setEscapePhones(tier.phones)}
+                    >
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-center gap-1 mb-2">
+                          {Array.from({ length: tier.phones }).map((_, i) => (
+                            <Smartphone key={i} size={20} className={escapePhones === tier.phones ? 'text-[#ff2d7b]' : 'text-muted-foreground'} />
+                          ))}
+                        </div>
+                        <p className="text-xs text-muted-foreground mb-1">
+                          {tier.phones} {tier.phones === 1 ? t('escape_team') : t('escape_teams')}
+                        </p>
+                        <p className="text-2xl font-heading font-bold" style={{ color: escapePhones === tier.phones ? '#ff2d7b' : undefined }}>
+                          {tier.price / 100}€
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="text-center text-xs text-muted-foreground mt-4">
+                {t('escape_phonesNote')}
+              </p>
+            </div>
+          );
+
+        case 3:
+          return (
+            <div className="space-y-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-heading font-bold neon-glow">{t('step4')}</h2>
+                <p className="text-muted-foreground mt-2">{t('step4Description')}</p>
+              </div>
+              <div className="max-w-md mx-auto space-y-4">
+                <div>
+                  <Label htmlFor="name">{t('name')} *</Label>
+                  <Input id="name" value={customerName} onChange={(e) => { setCustomerName(e.target.value); if (errors.name) setErrors(prev => ({...prev, name: false})); }} className={errors.name ? 'border-red-500' : ''} />
+                </div>
+                <div>
+                  <Label htmlFor="email">{t('email')} *</Label>
+                  <Input id="email" type="email" value={customerEmail} onChange={(e) => { setCustomerEmail(e.target.value); if (errors.email) setErrors(prev => ({...prev, email: false})); }} className={errors.email ? 'border-red-500' : ''} />
+                </div>
+                <div>
+                  <Label htmlFor="phone">{t('phone')} *</Label>
+                  <Input id="phone" type="tel" value={customerPhone} onChange={(e) => { setCustomerPhone(e.target.value); if (errors.phone) setErrors(prev => ({...prev, phone: false})); }} className={errors.phone ? 'border-red-500' : ''} />
+                </div>
+              </div>
+            </div>
+          );
+
+        case 4: {
+          const city = selectedExperience ? (escapeLocations[selectedExperience.slug] || '') : '';
+          return (
+            <div className="space-y-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-heading font-bold neon-glow">{t('escape_step4')}</h2>
+              </div>
+              <div className="max-w-md mx-auto">
+                <Card className="border-border/50">
+                  <CardContent className="p-6 space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">{t('escape_step1')}</span>
+                      <span className="font-medium">{city}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">{selectedExperience?.title}</span>
+                      <span className="font-medium">{selectedExperience ? `${(selectedExperience.duration / 60).toFixed(1).replace('.0','')}h` : ''}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">{t('escape_step2')}</span>
+                      <span className="font-medium">{escapePhones} {escapePhones === 1 ? t('escape_team') : t('escape_teams')}</span>
+                    </div>
+                    <div className="border-t border-border pt-3 flex justify-between">
+                      <span className="font-semibold">{t('total')}</span>
+                      <span className="text-xl font-heading font-bold text-[#ff2d7b]">{escapePrice / 100}€</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Button
+                  className="w-full mt-6 bg-[#ff2d7b] hover:bg-[#ff4d8b] text-white font-bold py-6 text-sm uppercase tracking-wider"
+                  onClick={async () => {
+                    setPaymentLoading(true);
+                    try {
+                      const res = await fetch('/api/escape-game/checkout', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          offerId: selectedExperience?.id,
+                          phones: escapePhones,
+                          customerName,
+                          customerEmail,
+                          customerPhone,
+                          locale,
+                        }),
+                      });
+                      const data = await res.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      }
+                    } catch (err) {
+                      console.error('Payment error:', err);
+                    } finally {
+                      setPaymentLoading(false);
+                    }
+                  }}
+                  disabled={paymentLoading}
+                >
+                  {paymentLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : `${t('escape_payNow')} — ${escapePrice / 100}€`}
+                </Button>
+              </div>
+            </div>
+          );
+        }
+
+        default:
+          return null;
+      }
+    }
+
+    // ===== REGULAR FLOW =====
     switch (currentStep) {
       /* --- Step 1: Choose Category then Experience --- */
       case 1: {
@@ -852,7 +1091,7 @@ export default function BookingWizard() {
 
   return (
     <div ref={wizardRef} className="w-full max-w-4xl mx-auto">
-      <StepIndicator currentStep={currentStep} />
+      <StepIndicator currentStep={currentStep} isEscape={isEscape} />
 
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
@@ -869,7 +1108,7 @@ export default function BookingWizard() {
       </AnimatePresence>
 
       {/* Navigation buttons */}
-      {currentStep < 5 && (
+      {currentStep < (isEscape ? 4 : 5) && (
         <div className="flex justify-between mt-8 pt-6 border-t border-border">
           <Button
             variant="ghost"
@@ -893,7 +1132,7 @@ export default function BookingWizard() {
         </div>
       )}
 
-      {currentStep === 5 && (
+      {currentStep === (isEscape ? 4 : 5) && (
         <div className="flex justify-start mt-8 pt-6 border-t border-border">
           <Button variant="ghost" onClick={goBack} className="gap-2">
             <ChevronLeft className="h-4 w-4" />

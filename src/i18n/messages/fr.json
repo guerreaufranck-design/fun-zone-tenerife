@@ -109,7 +109,17 @@
     "doubleLaneNote": "Les groupes de 6+ utiliseront 2 pistes pour une meilleure experience",
     "maxPlayers": "Maximum {max} joueurs par session",
     "fromPerPerson": "A partir de {amount} par personne",
-    "category_escape": "Escape Game"
+    "category_escape": "Escape Game",
+    "escape_step1": "Choisissez votre aventure",
+    "escape_step1Description": "Où voulez-vous jouer ?",
+    "escape_step2": "Combien d'équipes ?",
+    "escape_step2Description": "Chaque équipe reçoit son propre téléphone avec un code de jeu unique. Envie de compétition ? Réservez plusieurs équipes !",
+    "escape_step3": "Vos coordonnées",
+    "escape_step4": "Paiement",
+    "escape_team": "équipe",
+    "escape_teams": "équipes",
+    "escape_phonesNote": "1 équipe = 1 téléphone avec un code unique. Joueurs illimités par équipe !",
+    "escape_payNow": "Payer maintenant"
   },
   "bookingSuccess": {
     "title": "Reservation Confirmee !",
