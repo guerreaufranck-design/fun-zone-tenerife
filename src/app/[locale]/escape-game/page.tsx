@@ -195,13 +195,14 @@ export default function EscapeGamePage() {
       <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2">
           {escapeGames.map((game, i) => (
-            <motion.div
+            <motion.a
               key={game.id}
+              href={`/${locale}/escape-game/${game.slug}`}
               custom={i}
               initial="hidden"
               animate="visible"
               variants={cardVariants}
-              className="group relative overflow-hidden rounded-3xl border border-white/5 bg-[#111118] transition-all duration-500 hover:border-[#ff2d7b]/30 hover:shadow-[0_0_40px_rgba(255,45,123,0.15)]"
+              className="group relative block overflow-hidden rounded-3xl border border-white/5 bg-[#111118] transition-all duration-500 hover:border-[#ff2d7b]/30 hover:shadow-[0_0_40px_rgba(255,45,123,0.15)]"
             >
               {/* Image */}
               <div className="relative aspect-video overflow-hidden">
@@ -252,15 +253,11 @@ export default function EscapeGamePage() {
                   </div>
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full border-[#ff2d7b]/30 text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/50 hover:bg-[#ff2d7b]/10"
-                  asChild
-                >
-                  <a href={`/${locale}/escape-game/${game.slug}`}>{tEscape('bookThis')}</a>
-                </Button>
+                <span className="inline-flex w-full items-center justify-center rounded-md border border-[#ff2d7b]/30 px-4 py-2 text-sm font-medium text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/50 hover:bg-[#ff2d7b]/10">
+                  {tEscape('bookThis')}
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </section>
