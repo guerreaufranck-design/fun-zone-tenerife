@@ -107,7 +107,7 @@ export default function EscapeGameDetailPage() {
           />
         </div>
         {/* Dark overlay on image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0a07]/80 via-[#1a0e06]/70 to-[#0a0a0f]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0a07]/50 via-[#1a0e06]/55 to-[#0a0a0f]/90" />
 
         {/* Lava glow */}
         <div className="pointer-events-none absolute inset-0">
