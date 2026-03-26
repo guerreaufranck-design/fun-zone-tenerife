@@ -392,6 +392,8 @@
     "pricingTitle": "Tarifs",
     "phone": "téléphone",
     "phones": "téléphones",
-    "pricingNote": "Chaque téléphone reçoit un code de jeu unique. Envie de compétition ? Réservez plusieurs téléphones et faites la course !"
+    "pricingNote": "Chaque téléphone reçoit un code de jeu unique. Envie de compétition ? Réservez plusieurs téléphones et faites la course !",
+    "mostPopular": "Le plus populaire",
+    "badge_family": "Idéal en famille"
   }
 }

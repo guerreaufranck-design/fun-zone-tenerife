@@ -392,6 +392,8 @@
     "pricingTitle": "Pricing",
     "phone": "phone",
     "phones": "phones",
-    "pricingNote": "Each phone receives a unique game code. Want to compete? Book multiple phones and race each other!"
+    "pricingNote": "Each phone receives a unique game code. Want to compete? Book multiple phones and race each other!",
+    "mostPopular": "Most popular",
+    "badge_family": "Family friendly"
   }
 }

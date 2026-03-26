@@ -12,6 +12,8 @@ interface EscapeGame {
   slug: string;
   image: string;
   duration: string;
+  popular?: boolean;
+  badge?: string;
 }
 
 const escapeGames: EscapeGame[] = [
@@ -26,6 +28,7 @@ const escapeGames: EscapeGame[] = [
     slug: 'le-coffre-des-trois-cles',
     image: '/images/offers/la-laguna.png',
     duration: '2h30',
+    badge: 'family',
   },
   {
     id: 'bateria',
@@ -38,6 +41,7 @@ const escapeGames: EscapeGame[] = [
     slug: 'les-cendres-de-lame',
     image: '/images/offers/garachico.png',
     duration: '2h45',
+    popular: true,
   },
 ];
 
@@ -222,6 +226,13 @@ export default function EscapeGamePage() {
                       {game.duration}
                     </span>
                   </div>
+                  {(game.popular || game.badge) && (
+                    <div className="absolute left-3 top-3">
+                      <span className="rounded-full bg-[#ff2d7b] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,45,123,0.4)]">
+                        {game.popular ? tEscape('mostPopular') : game.badge ? tEscape(`badge_${game.badge}`) : ''}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
