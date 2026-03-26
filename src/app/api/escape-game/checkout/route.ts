@@ -83,6 +83,7 @@ export async function POST(request: NextRequest) {
         phones: String(phones),
         customerName,
         customerPhone: customerPhone ?? '',
+        locale: lang,
       },
       success_url: `${siteUrl}/${lang}/book/success?session_id={CHECKOUT_SESSION_ID}&type=escape`,
       cancel_url: `${siteUrl}/${lang}/book/cancel`,

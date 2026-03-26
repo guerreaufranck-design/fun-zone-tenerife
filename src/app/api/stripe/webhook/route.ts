@@ -3,8 +3,23 @@ import { headers } from "next/headers";
 import { getStripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { allocateLanes } from "@/lib/booking/lane-allocation";
-import { sendBookingConfirmation, sendAdminNewBookingNotification } from "@/lib/email";
+import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode } from "@/lib/email";
 import type { LaneType } from "@/lib/supabase/types";
+import { nanoid } from "nanoid";
+
+const ESCAPE_CITIES: Record<string, string> = {
+  'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
+  'escape-trois-cles': 'San Cristóbal de La Laguna',
+  'escape-bateria': 'Puerto de la Cruz',
+  'escape-cendres': 'Garachico',
+};
+
+const ESCAPE_DURATIONS: Record<string, string> = {
+  'escape-ichasagua': '3-4h',
+  'escape-trois-cles': '2-2h30',
+  'escape-bateria': '1h30-2h',
+  'escape-cendres': '2h30-3h',
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,8 +50,60 @@ export async function POST(request: NextRequest) {
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
-      const bookingId = session.metadata?.bookingId;
-      const paymentType = session.metadata?.paymentType;
+      const metadata = session.metadata || {};
+
+      // ===== ESCAPE GAME PAYMENT =====
+      if (metadata.type === 'escape_game') {
+        const { offerId, offerSlug, phones, customerName, customerPhone } = metadata;
+        const customerEmail = session.customer_email || '';
+        const locale = metadata.locale || 'en';
+        const phoneCount = parseInt(phones || '1', 10);
+
+        const supabase = createAdminClient();
+
+        // Fetch offer details
+        const { data: offer } = await supabase
+          .from('offers')
+          .select('title, slug')
+          .eq('id', offerId)
+          .single();
+
+        const slug = offerSlug || offer?.slug || '';
+        const gameName = (offer?.title as Record<string, string>)?.[locale]
+          ?? (offer?.title as Record<string, string>)?.['en']
+          ?? 'Escape Game';
+        const city = ESCAPE_CITIES[slug] || '';
+        const duration = ESCAPE_DURATIONS[slug] || '2h';
+
+        // Generate unique codes for each phone
+        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://play.funzonetenerife.com';
+
+        for (let i = 0; i < phoneCount; i++) {
+          const code = nanoid(8).toUpperCase();
+
+          try {
+            await sendEscapeGameCode({
+              email: customerEmail,
+              customerName: customerName || 'Player',
+              code,
+              gameName,
+              city,
+              estimatedDuration: duration,
+              appUrl,
+              language: locale,
+            });
+          } catch (emailError) {
+            console.error(`Failed to send escape game code email (phone ${i + 1}):`, emailError);
+          }
+        }
+
+        console.log(`Escape game payment processed: ${phoneCount} codes sent to ${customerEmail} for ${gameName}`);
+        return NextResponse.json({ received: true });
+      }
+
+      // ===== REGULAR BOOKING PAYMENT =====
+      const bookingId = metadata.bookingId;
+      const paymentType = metadata.paymentType;
 
       if (!bookingId) {
         console.error("No bookingId in session metadata");
