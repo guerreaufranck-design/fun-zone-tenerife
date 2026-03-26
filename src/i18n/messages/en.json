@@ -135,7 +135,13 @@
     "time": "Time",
     "addToCalendar": "Add to Calendar",
     "backToHome": "Back to Home",
-    "emailNote": "A confirmation email has been sent with all your booking details."
+    "emailNote": "A confirmation email has been sent with all your booking details.",
+    "escapeSubtitle": "Your escape game is ready! Check your email.",
+    "escapeNextSteps": "What happens next?",
+    "escapeInstruction1": "Check your email — you'll find a link and an activation code for each phone you booked.",
+    "escapeInstruction2": "Head to the starting point whenever you're ready. Open the link, enter your code, and the adventure begins!",
+    "escapeInstruction3": "You have 8 hours after activation to complete the escape. Take your time and enjoy!",
+    "escapeEmailNote": "The email with your game code(s) has been sent to your inbox. Check your spam folder if you don't see it."
   },
   "bookingCancel": {
     "title": "Booking Not Completed",

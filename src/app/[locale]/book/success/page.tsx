@@ -4,43 +4,32 @@ import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Check, Calendar, Clock, Users, Download, ArrowRight, X, Sparkles } from 'lucide-react';
+import { Check, Calendar, Clock, Users, Download, ArrowRight, Map, Smartphone } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useState } from 'react';
-
-const quizPopupText: Record<string, { headline: string; cta: string }> = {
-  en: { headline: 'COMING SOON: THE 1ST QUIZ ROOM IN TENERIFE!', cta: 'BOOK NOW!' },
-  es: { headline: 'PROXIMAMENTE: LA 1ª QUIZ ROOM DE TENERIFE!', cta: 'RESERVA AHORA!' },
-  fr: { headline: 'BIENTOT: LA 1ERE QUIZ ROOM DE TENERIFE!', cta: 'RESERVEZ MAINTENANT!' },
-  de: { headline: 'BALD: DER 1. QUIZ ROOM AUF TENERIFFA!', cta: 'JETZT BUCHEN!' },
-  nl: { headline: 'BINNENKORT: DE 1E QUIZ ROOM OP TENERIFE!', cta: 'BOEK NU!' },
-  it: { headline: 'PROSSIMAMENTE: LA 1ª QUIZ ROOM DI TENERIFE!', cta: 'PRENOTA ORA!' },
-};
 
 function BookingSuccessContent() {
   const t = useTranslations('bookingSuccess');
   const searchParams = useSearchParams();
-
   const locale = useLocale();
+
   const ref = searchParams.get('ref') ?? '';
   const experience = searchParams.get('experience') ?? '';
   const date = searchParams.get('date') ?? '';
   const time = searchParams.get('time') ?? '';
   const players = searchParams.get('players') ?? '';
-  const [showQuizPopup, setShowQuizPopup] = useState(true);
-  const quiz = quizPopupText[locale] ?? quizPopupText.en;
+  const isEscape = searchParams.get('type') === 'escape';
 
   const handleDownloadCalendar = () => {
     const startDate = date.replace(/-/g, '');
     const icsContent = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Axe Throwing Tenerife//Booking//EN',
+      'PRODID:-//Fun Zone Tenerife//Booking//EN',
       'BEGIN:VEVENT',
       `DTSTART:${startDate}T${(time.split(' - ')[0] || '18:00').replace(':', '')}00`,
-      `SUMMARY:Axe Throwing - ${experience}`,
+      `SUMMARY:Fun Zone Tenerife - ${experience}`,
       `DESCRIPTION:Booking ref: ${ref}. ${players} players.`,
       'LOCATION:Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas',
       'END:VEVENT',
@@ -51,7 +40,7 @@ function BookingSuccessContent() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `axe-throwing-${ref}.ics`;
+    link.download = `fun-zone-${ref}.ics`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -96,7 +85,9 @@ function BookingSuccessContent() {
           <h1 className="text-3xl sm:text-4xl font-heading font-bold neon-glow mb-3">
             {t('title')}
           </h1>
-          <p className="text-muted-foreground text-lg">{t('subtitle')}</p>
+          <p className="text-muted-foreground text-lg">
+            {isEscape ? t('escapeSubtitle') : t('subtitle')}
+          </p>
         </motion.div>
 
         {/* Booking details */}
@@ -107,17 +98,31 @@ function BookingSuccessContent() {
         >
           <Card className="border-primary/20 shadow-[0_0_20px_rgba(0,212,255,0.08)]">
             <CardContent className="pt-6 space-y-4">
-              {/* Booking ref */}
-              <div className="text-center pb-4 border-b border-border">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
-                  {t('bookingRef')}
-                </p>
-                <p className="text-2xl font-heading font-bold text-primary neon-glow tracking-wider">
-                  {ref}
-                </p>
-              </div>
+              {/* Booking ref - only for regular bookings */}
+              {ref && (
+                <div className="text-center pb-4 border-b border-border">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
+                    {t('bookingRef')}
+                  </p>
+                  <p className="text-2xl font-heading font-bold text-primary neon-glow tracking-wider">
+                    {ref}
+                  </p>
+                </div>
+              )}
 
-              {/* Details */}
+              {/* Escape game specific info */}
+              {isEscape && (
+                <div className="text-center pb-4 border-b border-border">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Map className="h-5 w-5 text-[#ff2d7b]" />
+                    <span className="text-sm font-semibold text-[#ff2d7b] uppercase tracking-wider">
+                      Escape Game
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Experience name */}
               {experience && (
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground text-sm">{t('experience')}</span>
@@ -125,7 +130,8 @@ function BookingSuccessContent() {
                 </div>
               )}
 
-              {players && (
+              {/* Players - regular bookings */}
+              {players && !isEscape && (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
                     <Users className="h-3.5 w-3.5" />
@@ -135,7 +141,8 @@ function BookingSuccessContent() {
                 </div>
               )}
 
-              {date && (
+              {/* Date - regular bookings */}
+              {date && !isEscape && (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
                     <Calendar className="h-3.5 w-3.5" />
@@ -145,7 +152,8 @@ function BookingSuccessContent() {
                 </div>
               )}
 
-              {time && (
+              {/* Time - regular bookings */}
+              {time && !isEscape && (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
                     <Clock className="h-3.5 w-3.5" />
@@ -158,6 +166,36 @@ function BookingSuccessContent() {
           </Card>
         </motion.div>
 
+        {/* Escape game instructions */}
+        {isEscape && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="mt-4"
+          >
+            <Card className="border-[#ff2d7b]/20 bg-[#ff2d7b]/5">
+              <CardContent className="pt-5 space-y-3">
+                <p className="text-sm font-semibold text-[#ff2d7b]">📧 {t('escapeNextSteps')}</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 font-bold text-[#ff2d7b]">1.</span>
+                    <span>{t('escapeInstruction1')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 font-bold text-[#ff2d7b]">2.</span>
+                    <span>{t('escapeInstruction2')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 font-bold text-[#ff2d7b]">3.</span>
+                    <span>{t('escapeInstruction3')}</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
         {/* Actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -165,15 +203,18 @@ function BookingSuccessContent() {
           transition={{ delay: 0.8 }}
           className="mt-6 space-y-3"
         >
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full gap-2"
-            onClick={handleDownloadCalendar}
-          >
-            <Download className="h-4 w-4" />
-            {t('addToCalendar')}
-          </Button>
+          {/* Calendar download - only for regular bookings with a date */}
+          {!isEscape && date && (
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full gap-2"
+              onClick={handleDownloadCalendar}
+            >
+              <Download className="h-4 w-4" />
+              {t('addToCalendar')}
+            </Button>
+          )}
 
           <Button variant="default" size="lg" className="w-full gap-2" asChild>
             <Link href="/">
@@ -190,73 +231,9 @@ function BookingSuccessContent() {
           transition={{ delay: 1 }}
           className="text-center text-muted-foreground text-sm mt-6"
         >
-          {t('emailNote')}
+          {isEscape ? t('escapeEmailNote') : t('emailNote')}
         </motion.p>
       </div>
-
-      {/* QuizzaBoom popup */}
-      {showQuizPopup && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2, type: 'spring', stiffness: 200, damping: 20 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-          onClick={() => setShowQuizPopup(false)}
-        >
-          <div
-            className="relative w-full max-w-md rounded-2xl border border-primary/30 bg-[#0d0d14] shadow-[0_0_40px_rgba(0,212,255,0.15)] overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setShowQuizPopup(false)}
-              className="absolute top-3 right-3 z-10 h-8 w-8 rounded-full bg-black/50 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-            >
-              <X className="h-4 w-4 text-white" />
-            </button>
-
-            {/* NEW badge */}
-            <div className="absolute top-3 left-3 z-10">
-              <div className="flex items-center gap-1 bg-gradient-to-r from-[#00d4ff] to-[#8b5cf6] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-[0_0_15px_rgba(0,212,255,0.4)]">
-                <Sparkles className="h-3 w-3" />
-                NEW
-              </div>
-            </div>
-
-            {/* Video */}
-            <div className="aspect-video bg-black">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/videos/logo-quizzaboom.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            {/* Content */}
-            <div className="p-5 text-center space-y-4">
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white leading-tight">
-                {quiz.headline}
-              </h3>
-
-              <a href={`/${locale}/experiences/quizzaboom-1h`}>
-                <Button
-                  variant="neon"
-                  size="lg"
-                  className="w-full text-base font-bold gap-2 mt-2"
-                  onClick={() => setShowQuizPopup(false)}
-                >
-                  {quiz.cta}
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 }

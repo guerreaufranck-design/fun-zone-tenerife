@@ -135,7 +135,13 @@
     "time": "Hora",
     "addToCalendar": "Anadir al Calendario",
     "backToHome": "Volver al Inicio",
-    "emailNote": "Se ha enviado un email de confirmacion con todos los detalles de tu reserva."
+    "emailNote": "Se ha enviado un email de confirmacion con todos los detalles de tu reserva.",
+    "escapeSubtitle": "¡Tu escape game está listo! Revisa tu email.",
+    "escapeNextSteps": "¿Qué sigue?",
+    "escapeInstruction1": "Revisa tu email — encontrarás un enlace y un código de activación para cada teléfono reservado.",
+    "escapeInstruction2": "Dirígete al punto de inicio cuando quieras. Abre el enlace, introduce tu código y ¡la aventura comienza!",
+    "escapeInstruction3": "Tienes 8 horas después de la activación para completar el escape. ¡Tómate tu tiempo y disfruta!",
+    "escapeEmailNote": "El email con tu(s) código(s) de juego ha sido enviado. Revisa tu carpeta de spam si no lo ves."
   },
   "bookingCancel": {
     "title": "Reserva No Completada",

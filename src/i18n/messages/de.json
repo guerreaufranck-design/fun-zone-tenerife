@@ -135,7 +135,13 @@
     "time": "Uhrzeit",
     "addToCalendar": "Zum Kalender Hinzufuegen",
     "backToHome": "Zurueck zur Startseite",
-    "emailNote": "Eine Bestaetigungsmail mit allen Buchungsdetails wurde versendet."
+    "emailNote": "Eine Bestaetigungsmail mit allen Buchungsdetails wurde versendet.",
+    "escapeSubtitle": "Ihr Escape Game ist bereit! Prüfen Sie Ihre E-Mail.",
+    "escapeNextSteps": "Was passiert als Nächstes?",
+    "escapeInstruction1": "Prüfen Sie Ihre E-Mail — Sie finden dort einen Link und einen Aktivierungscode für jedes gebuchte Handy.",
+    "escapeInstruction2": "Gehen Sie zum Startpunkt, wann immer Sie möchten. Öffnen Sie den Link, geben Sie Ihren Code ein, und das Abenteuer beginnt!",
+    "escapeInstruction3": "Sie haben 8 Stunden nach der Aktivierung, um das Escape abzuschließen. Nehmen Sie sich Zeit!",
+    "escapeEmailNote": "Die E-Mail mit Ihrem/Ihren Spielcode(s) wurde gesendet. Prüfen Sie Ihren Spam-Ordner."
   },
   "bookingCancel": {
     "title": "Buchung Nicht Abgeschlossen",
