@@ -16,6 +16,32 @@ const pricing = [
   { phones: 3, price: 35 },
 ];
 
+const ui: Record<string, Record<string, string>> = {
+  theExperience: { en: 'The experience', fr: "L'expérience", es: 'La experiencia', de: 'Das Erlebnis', it: "L'esperienza" },
+  trueHistory: { en: 'True history', fr: 'Histoire vraie', es: 'Historia real', de: 'Wahre Geschichte', it: 'Storia vera' },
+  theJourney: { en: 'The journey', fr: 'Le parcours', es: 'El recorrido', de: 'Die Route', it: 'Il percorso' },
+  stepsOneSecret: { en: 'steps. One secret.', fr: 'étapes. Un seul secret.', es: 'etapas. Un solo secreto.', de: 'Stationen. Ein Geheimnis.', it: 'tappe. Un solo segreto.' },
+  step: { en: 'Step', fr: 'Étape', es: 'Etapa', de: 'Station', it: 'Tappa' },
+  act: { en: 'Act', fr: 'Acte', es: 'Acto', de: 'Akt', it: 'Atto' },
+  whatMakesUnique: { en: 'What makes this game unique', fr: 'Ce qui rend ce jeu unique', es: 'Lo que hace único a este juego', de: 'Was dieses Spiel einzigartig macht', it: 'Cosa rende unico questo gioco' },
+  moreThan: { en: 'More than a scavenger hunt', fr: 'Bien plus qu\'un jeu de piste', es: 'Mucho más que una búsqueda del tesoro', de: 'Mehr als eine Schnitzeljagd', it: 'Molto più di una caccia al tesoro' },
+  practicalInfo: { en: 'Practical info', fr: 'Infos pratiques', es: 'Información práctica', de: 'Praktische Infos', it: 'Info pratiche' },
+  everythingToKnow: { en: 'Everything you need to know', fr: 'Tout ce qu\'il faut savoir', es: 'Todo lo que necesitas saber', de: 'Alles was Sie wissen müssen', it: 'Tutto quello che c\'è da sapere' },
+  pricingTitle: { en: 'Pricing', fr: 'Tarifs', es: 'Precios', de: 'Preise', it: 'Prezzi' },
+  phone: { en: 'phone', fr: 'téléphone', es: 'teléfono', de: 'Handy', it: 'telefono' },
+  phones: { en: 'phones', fr: 'téléphones', es: 'teléfonos', de: 'Handys', it: 'telefoni' },
+  pricingNote: { en: 'Each phone receives a unique game code. Want to compete? Book multiple phones!', fr: 'Chaque téléphone reçoit un code de jeu unique. Envie de compétition ? Réservez plusieurs téléphones !', es: 'Cada teléfono recibe un código único. ¿Quieres competir? ¡Reserva varios teléfonos!', de: 'Jedes Handy erhält einen einzigartigen Spielcode. Lust auf Wettbewerb? Buchen Sie mehrere Handys!', it: 'Ogni telefono riceve un codice unico. Vuoi competere? Prenota più telefoni!' },
+  bookAdventure: { en: 'Book your adventure', fr: 'Réserver votre aventure', es: 'Reserva tu aventura', de: 'Abenteuer buchen', it: 'Prenota la tua avventura' },
+  backToAll: { en: 'Back to all escape games', fr: 'Retour aux escape games', es: 'Volver a los escape games', de: 'Zurück zu allen Escape Games', it: 'Torna a tutti gli escape game' },
+  discover: { en: 'Discover', fr: 'Découvrir', es: 'Descubrir', de: 'Entdecken', it: 'Scopri' },
+  today: { en: 'Today', fr: "Aujourd'hui", es: 'Hoy', de: 'Heute', it: 'Oggi' },
+  yourInvestigation: { en: 'Your investigation begins', fr: 'Votre enquête commence', es: 'Tu investigación comienza', de: 'Ihre Ermittlung beginnt', it: 'La vostra indagine inizia' },
+  outdoor: { en: 'Outdoor', fr: 'En plein air', es: 'Al aire libre', de: 'Im Freien', it: "All'aperto" },
+  unlimitedPlayers: { en: 'Unlimited players', fr: 'Joueurs illimités', es: 'Jugadores ilimitados', de: 'Unbegrenzte Spieler', it: 'Giocatori illimitati' },
+  urbanAct: { en: 'Urban Act', fr: 'Acte Urbain', es: 'Acto Urbano', de: 'Städtischer Akt', it: 'Atto Urbano' },
+  wildAct: { en: 'Wild Act', fr: 'Acte Sauvage', es: 'Acto Salvaje', de: 'Wilder Akt', it: 'Atto Selvaggio' },
+};
+
 export default function EscapeGameDetailPage() {
   const params = useParams();
   const locale = useLocale();
@@ -27,6 +53,7 @@ export default function EscapeGameDetailPage() {
   }
 
   const t = (field: Record<string, string>) => field[locale] || field['en'] || '';
+  const u = (key: string) => ui[key]?.[locale] || ui[key]?.['en'] || key;
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -89,7 +116,7 @@ export default function EscapeGameDetailPage() {
 
           {/* Pills */}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {['🏛 Outdoor', `⏱ ${game.duration}`, '∞ Unlimited players', `📍 ${game.distance}`].map((pill) => (
+            {[`🏛 ${u('outdoor')}`, `⏱ ${game.duration}`, `∞ ${u('unlimitedPlayers')}`, `📍 ${game.distance}`].map((pill) => (
               <span key={pill} className="border border-[#c9a24b]/30 bg-[#c9a24b]/5 px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] text-[#c9a24b]">
                 {pill}
               </span>
@@ -104,7 +131,7 @@ export default function EscapeGameDetailPage() {
           transition={{ duration: 2, repeat: Infinity }}
         >
           <div className="h-10 w-px bg-gradient-to-b from-[#c9a24b] to-transparent" />
-          <span className="text-[9px] uppercase tracking-[0.3em] text-[#c9a24b]/50">Discover</span>
+          <span className="text-[9px] uppercase tracking-[0.3em] text-[#c9a24b]/50">{u('discover')}</span>
         </motion.div>
       </section>
 
@@ -123,7 +150,7 @@ export default function EscapeGameDetailPage() {
       {/* INTRO / EXPERIENCE */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">
-          The experience
+          {u('theExperience')}
           <span className="block h-px w-14 bg-[#c9a24b]/40" />
         </p>
         <h2 className="mb-6 font-serif text-2xl font-semibold text-[#f4ede0] sm:text-3xl">
@@ -149,15 +176,15 @@ export default function EscapeGameDetailPage() {
             ))}
             <div className="mx-auto my-2 h-px w-10 bg-[#c9a24b]/20" />
             <div className="relative z-10 text-center">
-              <p className="font-serif text-4xl font-bold text-[#c9a24b]/80 sm:text-5xl">Today</p>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Your investigation begins</p>
+              <p className="font-serif text-4xl font-bold text-[#c9a24b]/80 sm:text-5xl">{u('today')}</p>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">{u('yourInvestigation')}</p>
             </div>
           </div>
 
           {/* Text */}
           <div>
             <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">
-              True history
+              {u('trueHistory')}
               <span className="block h-px w-14 bg-[#c9a24b]/40" />
             </p>
             <h2 className="mb-6 font-serif text-2xl font-semibold text-[#f4ede0]">
@@ -176,9 +203,9 @@ export default function EscapeGameDetailPage() {
       <section className="bg-gradient-to-b from-[#0a0a0f] via-[#1a0808]/40 to-[#0a0a0f] py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-16 text-center">
-            <p className="mb-4 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">The journey</p>
+            <p className="mb-4 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">{u('theJourney')}</p>
             <h2 className="font-serif text-2xl font-semibold text-[#f4ede0] sm:text-3xl">
-              {game.acts.length} steps. One secret.
+              {game.acts.length} {u('stepsOneSecret')}
             </h2>
           </div>
 
@@ -216,7 +243,7 @@ export default function EscapeGameDetailPage() {
                               <div className={`h-3.5 w-3.5 rounded-full ${isMountain ? 'bg-[#c9a24b] shadow-[0_0_20px_rgba(201,162,75,0.5)]' : 'bg-[#3d9ca8] shadow-[0_0_20px_rgba(61,156,168,0.5)]'}`} />
                             </div>
                             <div>
-                              <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Step {globalIndex + 1}</p>
+                              <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">{u('step')} {globalIndex + 1}</p>
                               <h3 className="mb-1 font-serif text-lg font-semibold text-[#f4ede0]">{t(act.title)}</h3>
                               <p className={`mb-3 text-[10px] uppercase tracking-[0.2em] ${isMountain ? 'text-[#c9a24b]/60' : 'text-[#3d9ca8]/60'}`}>{t(act.location)}</p>
                               <p className="font-serif text-base leading-relaxed text-[#ede0c8]/75">{t(act.description)}</p>
@@ -247,7 +274,7 @@ export default function EscapeGameDetailPage() {
                       <div className="h-3.5 w-3.5 rounded-full bg-[#c9a24b] shadow-[0_0_20px_rgba(201,162,75,0.5)]" />
                     </div>
                     <div>
-                      <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">Act {i + 1}</p>
+                      <p className="mb-1 text-[10px] uppercase tracking-[0.3em] text-[#6b5e52]">{u('act')} {i + 1}</p>
                       <h3 className="mb-1 font-serif text-lg font-semibold text-[#f4ede0]">{t(act.title)}</h3>
                       <p className="mb-3 text-[10px] uppercase tracking-[0.2em] text-[#c9a24b]/60">{t(act.location)}</p>
                       <p className="font-serif text-base leading-relaxed text-[#ede0c8]/75">{t(act.description)}</p>
@@ -263,10 +290,10 @@ export default function EscapeGameDetailPage() {
       {/* FEATURES */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">
-          What makes this game unique
+          {u('whatMakesUnique')}
           <span className="block h-px w-14 bg-[#c9a24b]/40" />
         </p>
-        <h2 className="mb-12 font-serif text-2xl font-semibold text-[#f4ede0]">More than a scavenger hunt</h2>
+        <h2 className="mb-12 font-serif text-2xl font-semibold text-[#f4ede0]">{u('moreThan')}</h2>
 
         <div className="grid grid-cols-1 gap-px border border-[#c9a24b]/10 bg-[#c9a24b]/10 sm:grid-cols-2">
           {game.features.map((f, i) => (
@@ -283,10 +310,10 @@ export default function EscapeGameDetailPage() {
       {/* PRACTICAL INFO */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
         <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[#c9a24b]">
-          Practical info
+          {u('practicalInfo')}
           <span className="block h-px w-14 bg-[#c9a24b]/40" />
         </p>
-        <h2 className="mb-12 font-serif text-2xl font-semibold text-[#f4ede0]">Everything you need to know</h2>
+        <h2 className="mb-12 font-serif text-2xl font-semibold text-[#f4ede0]">{u('everythingToKnow')}</h2>
 
         <div className="grid grid-cols-2 gap-px border border-[#c9a24b]/10 bg-[#c9a24b]/10 sm:grid-cols-3 lg:grid-cols-6">
           {game.infos.map((info, i) => (
@@ -302,7 +329,7 @@ export default function EscapeGameDetailPage() {
 
       {/* PRICING */}
       <section className="mx-auto max-w-3xl px-6 pb-20">
-        <h2 className="mb-8 text-center font-serif text-2xl font-semibold text-[#f4ede0]">Pricing</h2>
+        <h2 className="mb-8 text-center font-serif text-2xl font-semibold text-[#f4ede0]">{u('pricingTitle')}</h2>
         <div className="grid grid-cols-3 gap-4">
           {pricing.map((tier, i) => (
             <div
@@ -324,7 +351,7 @@ export default function EscapeGameDetailPage() {
                 ))}
               </div>
               <p className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[#6b5e52]">
-                {tier.phones} {tier.phones === 1 ? 'phone' : 'phones'}
+                {tier.phones} {tier.phones === 1 ? u('phone') : u('phones')}
               </p>
               <p className="text-3xl font-bold text-[#f4ede0]">
                 {tier.price}<span className="text-base text-[#6b5e52]">€</span>
@@ -333,7 +360,7 @@ export default function EscapeGameDetailPage() {
           ))}
         </div>
         <p className="mt-4 text-center text-[10px] tracking-wide text-[#6b5e52]">
-          Each phone receives a unique game code. Want to compete? Book multiple phones!
+          {u('pricingNote')}
         </p>
       </section>
 
@@ -368,14 +395,14 @@ export default function EscapeGameDetailPage() {
             className="mt-10 bg-[#c9a24b] px-12 py-6 text-xs font-semibold uppercase tracking-[0.3em] text-[#0d0a07] transition-all hover:bg-[#e8c97a] hover:shadow-[0_0_40px_rgba(201,162,75,0.3)]"
             asChild
           >
-            <Link href="/book">Book your adventure</Link>
+            <Link href="/book">{u('bookAdventure')}</Link>
           </Button>
 
           <div className="mt-8">
             <Button variant="ghost" size="sm" asChild className="text-[#c9a24b]/50 hover:text-[#c9a24b]">
               <Link href="/escape-game">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to all escape games
+                {u('backToAll')}
               </Link>
             </Button>
           </div>

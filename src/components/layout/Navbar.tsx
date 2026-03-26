@@ -13,7 +13,6 @@ const languages = [
   { code: 'es', label: 'ES', flag: '🇪🇸' },
   { code: 'fr', label: 'FR', flag: '🇫🇷' },
   { code: 'de', label: 'DE', flag: '🇩🇪' },
-  { code: 'nl', label: 'NL', flag: '🇳🇱' },
   { code: 'it', label: 'IT', flag: '🇮🇹' },
 ] as const;
 
