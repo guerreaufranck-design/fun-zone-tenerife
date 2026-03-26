@@ -119,7 +119,11 @@
     "escape_team": "Team",
     "escape_teams": "Teams",
     "escape_phonesNote": "1 Team = 1 Handy mit einem einzigartigen Code. Unbegrenzte Spieler pro Team!",
-    "escape_payNow": "Jetzt bezahlen"
+    "escape_payNow": "Jetzt bezahlen",
+    "escape_howItWorks": "Wie funktioniert es?",
+    "escape_howStep1": "Nach der Zahlung erhalten Sie eine E-Mail mit einem Link und einem Aktivierungscode für jedes Handy.",
+    "escape_howStep2": "Gehen Sie zum Startpunkt, öffnen Sie den Link auf Ihrem Handy und geben Sie den Code ein, um das Spiel zu starten.",
+    "escape_howStep3": "Sie haben 8 Stunden, um das Escape nach der Code-Aktivierung abzuschließen. Spielen Sie in Ihrem Tempo!"
   },
   "bookingSuccess": {
     "title": "Buchung Bestaetigt!",

@@ -119,7 +119,11 @@
     "escape_team": "equipo",
     "escape_teams": "equipos",
     "escape_phonesNote": "1 equipo = 1 teléfono con un código único. ¡Jugadores ilimitados por equipo!",
-    "escape_payNow": "Pagar ahora"
+    "escape_payNow": "Pagar ahora",
+    "escape_howItWorks": "¿Cómo funciona?",
+    "escape_howStep1": "Después del pago, recibirás un email con un enlace y un código de activación para cada teléfono.",
+    "escape_howStep2": "Ve al punto de inicio, abre el enlace en tu teléfono e introduce el código para empezar el juego.",
+    "escape_howStep3": "Tienes 8 horas para completar el escape después de activar el código. ¡Juega a tu ritmo!"
   },
   "bookingSuccess": {
     "title": "Reserva Confirmada!",

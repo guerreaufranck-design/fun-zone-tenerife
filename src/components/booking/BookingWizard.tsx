@@ -704,6 +704,25 @@ export default function BookingWizard() {
                   </CardContent>
                 </Card>
 
+                {/* How it works notice */}
+                <div className="mt-6 rounded-xl border border-[#ff2d7b]/20 bg-[#ff2d7b]/5 p-4">
+                  <p className="mb-2 text-sm font-semibold text-[#ff2d7b]">📧 {t('escape_howItWorks')}</p>
+                  <ul className="space-y-1.5 text-xs text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-[#ff2d7b]">1.</span>
+                      <span>{t('escape_howStep1')}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-[#ff2d7b]">2.</span>
+                      <span>{t('escape_howStep2')}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-0.5 text-[#ff2d7b]">3.</span>
+                      <span>{t('escape_howStep3')}</span>
+                    </li>
+                  </ul>
+                </div>
+
                 <Button
                   className="w-full mt-6 bg-[#ff2d7b] hover:bg-[#ff4d8b] text-white font-bold py-6 text-sm uppercase tracking-wider"
                   onClick={async () => {
