@@ -17,7 +17,7 @@ import {
   Loader2,
   PartyPopper,
   BrainCircuit,
-  Map,
+  Map as MapIcon,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
@@ -71,7 +71,7 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { key: 'escape', icon: Map },
+  { key: 'escape', icon: MapIcon },
   { key: 'axe', icon: Axe },
   { key: 'ninja', icon: Swords },
   { key: 'darts', icon: Target },
@@ -110,7 +110,7 @@ function ExperienceIcon({ type, className }: { type: string; className?: string 
     case 'quiz':
       return <BrainCircuit className={className} />;
     case 'escape':
-      return <Map className={className} />;
+      return <MapIcon className={className} />;
     default:
       return <Axe className={className} />;
   }
