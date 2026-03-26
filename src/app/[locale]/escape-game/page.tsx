@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 interface EscapeGame {
   id: string;
+  slug: string;
   image: string;
   duration: string;
 }
@@ -16,21 +17,25 @@ interface EscapeGame {
 const escapeGames: EscapeGame[] = [
   {
     id: 'ichasagua',
+    slug: 'le-code-dichasagua',
     image: '/images/offers/escape.png',
     duration: '1h30',
   },
   {
     id: 'troisCles',
+    slug: 'le-coffre-des-trois-cles',
     image: '/images/offers/escape.png',
     duration: '2h30',
   },
   {
     id: 'bateria',
+    slug: 'le-butin-de-la-bateria',
     image: '/images/offers/escape.png',
     duration: '1h45',
   },
   {
     id: 'cendres',
+    slug: 'les-cendres-de-lame',
     image: '/images/offers/garachico.png',
     duration: '2h45',
   },
@@ -54,6 +59,7 @@ const cardVariants = {
 export default function EscapeGamePage() {
   const t = useTranslations('activities');
   const tEscape = useTranslations('escapeGames');
+  const locale = useLocale();
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -251,7 +257,7 @@ export default function EscapeGamePage() {
                   className="w-full border-[#ff2d7b]/30 text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/50 hover:bg-[#ff2d7b]/10"
                   asChild
                 >
-                  <Link href="/book">{tEscape('bookThis')}</Link>
+                  <a href={`/${locale}/escape-game/${game.slug}`}>{tEscape('bookThis')}</a>
                 </Button>
               </div>
             </motion.div>
