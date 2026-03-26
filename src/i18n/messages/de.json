@@ -108,7 +108,8 @@
     "closedMondays": "Montags geschlossen",
     "doubleLaneNote": "Gruppen ab 6 Personen nutzen 2 Bahnen fuer das beste Erlebnis",
     "maxPlayers": "Maximal {max} Spieler pro Session",
-    "fromPerPerson": "Ab {amount} pro Person"
+    "fromPerPerson": "Ab {amount} pro Person",
+    "category_escape": "Escape Game"
   },
   "bookingSuccess": {
     "title": "Buchung Bestaetigt!",

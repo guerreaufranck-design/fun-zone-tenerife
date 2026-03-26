@@ -108,7 +108,8 @@
     "closedMondays": "Closed on Mondays",
     "doubleLaneNote": "Groups of 6+ will use 2 lanes for the best experience",
     "maxPlayers": "Maximum {max} players per session",
-    "fromPerPerson": "From {amount} per person"
+    "fromPerPerson": "From {amount} per person",
+    "category_escape": "Escape Game"
   },
   "bookingSuccess": {
     "title": "Booking Confirmed!",

@@ -80,7 +80,7 @@ export default function EscapeGameDetailPage() {
               </p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href={`/${locale}/book`}
+                  href={`/${locale}/book?category=escape`}
                   className="inline-flex items-center gap-2 rounded-xl bg-[#c9a24b] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition-all hover:bg-[#e8c97a] hover:shadow-[0_0_20px_rgba(201,162,75,0.3)]"
                   style={{ color: '#0a0800' }}
                 >
@@ -107,7 +107,7 @@ export default function EscapeGameDetailPage() {
             {u('from')} <span className="font-semibold text-[#c9a24b]">19€</span>{u('perPhone')}
           </span>
           <a
-            href={`/${locale}/book`}
+            href={`/${locale}/book?category=escape`}
             className="rounded-lg bg-[#c9a24b] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.1em] transition-all hover:bg-[#e8c97a]"
             style={{ color: '#0a0800' }}
           >
@@ -462,7 +462,7 @@ export default function EscapeGameDetailPage() {
           </p>
 
           <a
-            href={`/${locale}/book`}
+            href={`/${locale}/book?category=escape`}
             className="mt-10 inline-block bg-[#c9a24b] px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] transition-all hover:bg-[#e8c97a] hover:shadow-[0_0_40px_rgba(201,162,75,0.3)]"
             style={{ color: '#0a0800' }}
           >

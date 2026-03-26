@@ -108,7 +108,8 @@
     "closedMondays": "Chiuso il lunedi",
     "doubleLaneNote": "I gruppi di 6+ utilizzeranno 2 corsie per la migliore esperienza",
     "maxPlayers": "Massimo {max} giocatori per sessione",
-    "fromPerPerson": "Da {amount} a persona"
+    "fromPerPerson": "Da {amount} a persona",
+    "category_escape": "Escape Game"
   },
   "bookingSuccess": {
     "title": "Prenotazione Confermata!",

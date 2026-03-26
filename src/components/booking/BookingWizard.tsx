@@ -17,6 +17,7 @@ import {
   Loader2,
   PartyPopper,
   BrainCircuit,
+  Map,
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
@@ -62,7 +63,7 @@ function getIconType(slug: string, laneType: string): string {
    CATEGORY SYSTEM
    ============================================ */
 
-type CategoryKey = 'axe' | 'ninja' | 'darts' | 'quiz' | 'events';
+type CategoryKey = 'axe' | 'ninja' | 'darts' | 'quiz' | 'escape' | 'events';
 
 interface Category {
   key: CategoryKey;
@@ -70,6 +71,7 @@ interface Category {
 }
 
 const categories: Category[] = [
+  { key: 'escape', icon: Map },
   { key: 'axe', icon: Axe },
   { key: 'ninja', icon: Swords },
   { key: 'darts', icon: Target },
@@ -78,6 +80,7 @@ const categories: Category[] = [
 ];
 
 function getCategory(slug: string, laneType: string): CategoryKey {
+  if (slug.includes('escape') || laneType === 'escape') return 'escape';
   if (slug.includes('quiz')) return 'quiz';
   if (slug.includes('ninja') || slug.includes('initiation')) return 'ninja';
   if (laneType === 'darts_pixels' || laneType === 'classic_darts') return 'darts';
@@ -106,6 +109,8 @@ function ExperienceIcon({ type, className }: { type: string; className?: string 
       return <Target className={className} />;
     case 'quiz':
       return <BrainCircuit className={className} />;
+    case 'escape':
+      return <Map className={className} />;
     default:
       return <Axe className={className} />;
   }
@@ -212,8 +217,17 @@ export default function BookingWizard() {
   const [direction, setDirection] = useState(1);
   const wizardRef = useRef<HTMLDivElement>(null);
 
-  // Category + Experiences from Supabase
-  const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(null);
+  // Category + Experiences from Supabase — support ?category=escape URL param
+  const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('category');
+      if (cat && ['axe', 'ninja', 'darts', 'quiz', 'escape', 'events'].includes(cat)) {
+        return cat as CategoryKey;
+      }
+    }
+    return null;
+  });
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loadingExperiences, setLoadingExperiences] = useState(true);
 
