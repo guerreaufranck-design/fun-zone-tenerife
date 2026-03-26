@@ -60,6 +60,13 @@ export function Navbar() {
       setLangDropdownOpen(false);
       return;
     }
+    // Handle escape-game/[slug] routes
+    const escapeMatch = currentPath.match(/^\/[a-z]{2}\/escape-game\/(.+)$/);
+    if (escapeMatch) {
+      window.location.href = `/${newLocale}/escape-game/${escapeMatch[1]}`;
+      setLangDropdownOpen(false);
+      return;
+    }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     router.replace(pathname as any, { locale: newLocale });
     setLangDropdownOpen(false);
