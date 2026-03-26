@@ -195,69 +195,77 @@ export default function EscapeGamePage() {
       <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2">
           {escapeGames.map((game, i) => (
-            <motion.a
+            <motion.div
               key={game.id}
-              href={`/${locale}/escape-game/${game.slug}`}
               custom={i}
               initial="hidden"
               animate="visible"
               variants={cardVariants}
-              className="group relative block overflow-hidden rounded-3xl border border-white/5 bg-[#111118] transition-all duration-500 hover:border-[#ff2d7b]/30 hover:shadow-[0_0_40px_rgba(255,45,123,0.15)]"
+              className="group relative overflow-hidden rounded-3xl border border-white/5 bg-[#111118] transition-all duration-500 hover:border-[#ff2d7b]/30 hover:shadow-[0_0_40px_rgba(255,45,123,0.15)]"
             >
-              {/* Image */}
-              <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={game.image}
-                  alt={tEscape(`${game.id}.title`)}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent" />
+              {/* Clickable area -> product page */}
+              <a href={`/${locale}/escape-game/${game.slug}`} className="block">
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={game.image}
+                    alt={tEscape(`${game.id}.title`)}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent" />
 
-                <div className="absolute right-3 top-3">
-                  <span className="flex items-center gap-1 rounded-full border border-[#ff2d7b]/30 bg-black/60 px-3 py-1 text-xs font-medium text-[#ff2d7b] backdrop-blur-sm">
-                    <Clock size={12} />
-                    {game.duration}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="neon-glow-pink mb-1 text-xl font-bold text-white sm:text-2xl">
-                  {tEscape(`${game.id}.title`)}
-                </h3>
-                <p className="mb-3 flex items-center gap-1.5 text-sm text-[#ff2d7b]/80">
-                  <MapPin size={14} />
-                  {tEscape(`${game.id}.location`)}
-                </p>
-                <p className="mb-5 text-sm leading-relaxed text-white/60">
-                  {tEscape(`${game.id}.description`)}
-                </p>
-
-                {/* Difficulty */}
-                <div className="mb-5 flex items-center gap-2">
-                  <span className="text-xs text-white/40">{tEscape('difficulty')}</span>
-                  <div className="flex gap-1">
-                    {Array.from({ length: 5 }).map((_, idx) => (
-                      <div
-                        key={idx}
-                        className={`h-2 w-5 rounded-full ${
-                          idx < Number(tEscape(`${game.id}.difficultyLevel`))
-                            ? 'bg-[#ff2d7b]'
-                            : 'bg-white/10'
-                        }`}
-                      />
-                    ))}
+                  <div className="absolute right-3 top-3">
+                    <span className="flex items-center gap-1 rounded-full border border-[#ff2d7b]/30 bg-black/60 px-3 py-1 text-xs font-medium text-[#ff2d7b] backdrop-blur-sm">
+                      <Clock size={12} />
+                      {game.duration}
+                    </span>
                   </div>
                 </div>
 
-                <span className="inline-flex w-full items-center justify-center rounded-md border border-[#ff2d7b]/30 px-4 py-2 text-sm font-medium text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/50 hover:bg-[#ff2d7b]/10">
+                {/* Content */}
+                <div className="px-6 pt-6">
+                  <h3 className="neon-glow-pink mb-1 text-xl font-bold text-white sm:text-2xl">
+                    {tEscape(`${game.id}.title`)}
+                  </h3>
+                  <p className="mb-3 flex items-center gap-1.5 text-sm text-[#ff2d7b]/80">
+                    <MapPin size={14} />
+                    {tEscape(`${game.id}.location`)}
+                  </p>
+                  <p className="mb-5 text-sm leading-relaxed text-white/60">
+                    {tEscape(`${game.id}.description`)}
+                  </p>
+
+                  {/* Difficulty */}
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="text-xs text-white/40">{tEscape('difficulty')}</span>
+                    <div className="flex gap-1">
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`h-2 w-5 rounded-full ${
+                            idx < Number(tEscape(`${game.id}.difficultyLevel`))
+                              ? 'bg-[#ff2d7b]'
+                              : 'bg-white/10'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Book button -> booking page (separate from card link) */}
+              <div className="px-6 pb-6">
+                <a
+                  href={`/${locale}/book?category=escape`}
+                  className="inline-flex w-full items-center justify-center rounded-md border border-[#ff2d7b]/30 bg-[#ff2d7b]/10 px-4 py-2.5 text-sm font-bold text-[#ff2d7b] transition-all hover:border-[#ff2d7b]/60 hover:bg-[#ff2d7b]/20"
+                >
                   {tEscape('bookThis')}
-                </span>
+                </a>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </section>
