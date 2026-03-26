@@ -374,7 +374,7 @@ export const escapeGamesData: EscapeGameData[] = [
   },
   {
     slug: 'le-coffre-des-trois-cles',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/la-laguna.png',
     duration: '2h – 2h30',
     distance: '~2.5 km',
     difficulty: 4,

@@ -24,7 +24,7 @@ const escapeGames: EscapeGame[] = [
   {
     id: 'troisCles',
     slug: 'le-coffre-des-trois-cles',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/la-laguna.png',
     duration: '2h30',
   },
   {
