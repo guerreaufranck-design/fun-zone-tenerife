@@ -564,7 +564,7 @@ export const escapeGamesData: EscapeGameData[] = [
   },
   {
     slug: 'le-butin-de-la-bateria',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/puerto.png',
     duration: '1h30 – 2h',
     distance: '~2 km',
     difficulty: 3,
