@@ -226,7 +226,7 @@ export const escapeGamesData: EscapeGameData[] = [
   },
   {
     slug: 'le-code-dichasagua',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/cristianos.png',
     duration: '3h – 4h',
     distance: '3 – 4 km',
     difficulty: 4,

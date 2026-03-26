@@ -18,7 +18,7 @@ const escapeGames: EscapeGame[] = [
   {
     id: 'ichasagua',
     slug: 'le-code-dichasagua',
-    image: '/images/offers/escape.png',
+    image: '/images/offers/cristianos.png',
     duration: '3h-4h',
   },
   {
