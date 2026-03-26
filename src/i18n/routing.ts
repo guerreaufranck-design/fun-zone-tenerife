@@ -100,7 +100,8 @@ export const routing = defineRouting({
     '/axe-throwing': '/axe-throwing',
     '/quiz-room': '/quiz-room',
     '/darts': '/darts',
-    '/escape-game': '/escape-game'
+    '/escape-game': '/escape-game',
+    '/escape-game/[slug]': '/escape-game/[slug]'
   }
 });
 
