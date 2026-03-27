@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage - all languages -->
   <url><loc>https://www.funzonetenerife.com/en</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/fr</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/es</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/de</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/it</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Escape Game category - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/escape-game</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/fr/escape-game</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/es/escape-game</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/de/escape-game</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/it/escape-game</loc><priority>0.95</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Escape Game products - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/escape-game/le-code-dichasagua</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/en/escape-game/le-coffre-des-trois-cles</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/en/escape-game/le-butin-de-la-bateria</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
@@ -30,19 +35,53 @@
   <url><loc>https://www.funzonetenerife.com/it/escape-game/le-coffre-des-trois-cles</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/it/escape-game/le-butin-de-la-bateria</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/it/escape-game/les-cendres-de-lame</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.funzonetenerife.com/en/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.funzonetenerife.com/fr/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.funzonetenerife.com/es/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Quiz Room - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/quiz-room</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/fr/quiz-room</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/es/quiz-room</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/quiz-room</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/quiz-room</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Axe Throwing - all languages -->
+  <url><loc>https://www.funzonetenerife.com/en/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/fr/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/es/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/axe-throwing</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Darts - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/darts</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/fr/darts</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/es/darts</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/darts</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/darts</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Experiences - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/experiences</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.funzonetenerife.com/fr/experiences</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.funzonetenerife.com/es/experiencias</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/es/experiences</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/experiences</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/experiences</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Book - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/fr/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/es/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Contact - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/fr/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/es/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- FAQ - all languages -->
   <url><loc>https://www.funzonetenerife.com/en/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/fr/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/es/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/de/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.funzonetenerife.com/it/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
 </urlset>
