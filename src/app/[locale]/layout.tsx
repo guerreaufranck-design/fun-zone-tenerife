@@ -9,19 +9,73 @@ import { Toaster } from '@/components/ui/toaster';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 
 export const metadata: Metadata = {
-  title: 'Fun Zone Tenerife | Axe Throwing & Quiz Room',
+  title: {
+    default: 'Fun Zone Tenerife | Outdoor Escape Games, Axe Throwing, Quiz Room & Darts',
+    template: '%s | Fun Zone Tenerife',
+  },
   description:
-    'Two unique experiences in one place! Axe Throwing and QuizzaBoom Quiz Room in Playa Las Americas, Tenerife. Book your session for an unforgettable adventure.',
-  metadataBase: new URL('https://funzonetenerife.com'),
+    'Outdoor escape games, axe throwing, interactive quiz room & darts in Playa de las Américas, Tenerife. Self-guided city games through historic towns — GPS puzzles, real history, unlimited players. Book your adventure!',
+  metadataBase: new URL('https://www.funzonetenerife.com'),
   verification: {
     google: 'TRPmuhCscyzIybPKovZQ5ZgCdTuYFFfD8M_JrDtpnb4',
   },
+  keywords: [
+    'outdoor escape game Tenerife', 'escape room Tenerife', 'city game Tenerife',
+    'street escape Canary Islands', 'scavenger hunt Tenerife', 'self-guided tour Tenerife',
+    'axe throwing Tenerife', 'things to do Tenerife', 'Tenerife activities',
+    'quiz room Tenerife', 'darts Tenerife', 'team building Tenerife',
+    'GPS adventure Tenerife', 'urban game Tenerife', 'Playa de las Americas activities',
+    'location-based entertainment', 'family activities Tenerife',
+    'Los Cristianos escape game', 'La Laguna escape game', 'Puerto de la Cruz escape game',
+    'Garachico escape game', 'Tenerife Chronicle', 'Guanche history',
+    'bachelor party Tenerife', 'corporate events Tenerife',
+    'escape game extérieur Tenerife', 'juego de escape Tenerife',
+    'Outdoor Escape Spiel Teneriffa', 'gioco di fuga Tenerife',
+  ],
+  alternates: {
+    canonical: 'https://www.funzonetenerife.com',
+    languages: {
+      en: 'https://www.funzonetenerife.com/en',
+      fr: 'https://www.funzonetenerife.com/fr',
+      es: 'https://www.funzonetenerife.com/es',
+      de: 'https://www.funzonetenerife.com/de',
+      it: 'https://www.funzonetenerife.com/it',
+    },
+  },
   openGraph: {
-    title: 'Fun Zone Tenerife | Axe Throwing & Quiz Room',
+    title: 'Fun Zone Tenerife | Outdoor Escape Games, Axe Throwing & More',
     description:
-      'Two unique experiences in one place! Axe Throwing and QuizzaBoom Quiz Room in Playa Las Americas, Tenerife.',
+      'Explore Tenerife like never before! Self-guided outdoor escape games through historic towns, axe throwing, quiz room & darts. GPS puzzles, real history, unlimited players.',
     type: 'website',
     siteName: 'Fun Zone Tenerife',
+    locale: 'en_US',
+    url: 'https://www.funzonetenerife.com',
+    images: [
+      {
+        url: '/images/offers/escapegame.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fun Zone Tenerife - Outdoor Escape Games & Activities',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fun Zone Tenerife | Outdoor Escape Games & Activities',
+    description:
+      'Self-guided outdoor escape games through historic Tenerife towns. GPS puzzles, real history, unlimited players. Plus axe throwing, quiz room & darts!',
+    images: ['/images/offers/escapegame.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

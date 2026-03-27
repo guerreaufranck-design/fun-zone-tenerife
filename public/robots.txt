@@ -1,0 +1,42 @@
+# Fun Zone Tenerife - Outdoor Escape Games, Axe Throwing, Darts & Quiz Room
+# https://www.funzonetenerife.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.funzonetenerife.com/sitemap.xml
+
+# Block admin and API routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /waiver/
+Disallow: /privacy/
+Disallow: /terms/
+
+# Allow LLM crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+
+User-agent: Anthropic-AI
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Bingbot
+Allow: /
