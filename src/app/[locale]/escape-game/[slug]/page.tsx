@@ -11,9 +11,9 @@ import { getEscapeGameBySlug } from '@/data/escape-games';
 import { notFound } from 'next/navigation';
 
 const pricing = [
-  { phones: 1, price: 19 },
-  { phones: 2, price: 25 },
-  { phones: 3, price: 35 },
+  { phones: 1, price: 25 },
+  { phones: 2, price: 35 },
+  { phones: 3, price: 45 },
 ];
 
 const ui: Record<string, Record<string, string>> = {

@@ -244,8 +244,8 @@ export default function BookingWizard() {
   // Escape-specific state
   const isEscape = selectedCategory === 'escape';
   const [escapePhones, setEscapePhones] = useState(1);
-  const escapePricing = [{ phones: 1, price: 1900 }, { phones: 2, price: 2500 }, { phones: 3, price: 3500 }];
-  const escapePrice = escapePricing.find(p => p.phones === escapePhones)?.price ?? 1900;
+  const escapePricing = [{ phones: 1, price: 2500 }, { phones: 2, price: 3500 }, { phones: 3, price: 4500 }];
+  const escapePrice = escapePricing.find(p => p.phones === escapePhones)?.price ?? 2500;
 
   // Booking data
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);

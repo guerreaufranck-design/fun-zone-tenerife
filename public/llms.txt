@@ -13,9 +13,9 @@ Our flagship product: self-guided outdoor escape games (city games / street esca
 - **The Ashes of the Soul** — Garachico (2.75h, difficulty 5/5). Uncover volcanic history in a town destroyed and reborn from lava. Most popular.
 
 ### Escape Game Pricing:
-- 1 phone (1 team): 19€
-- 2 phones (2 teams): 25€
-- 3 phones (3 teams): 35€
+- 1 phone (1 team): 25€
+- 2 phones (2 teams): 35€
+- 3 phones (3 teams): 45€
 
 ### Escape Game Technology:
 - Geofencing / GPS-triggered narrative

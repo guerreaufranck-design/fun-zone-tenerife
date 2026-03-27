@@ -46,9 +46,9 @@ const escapeGames: EscapeGame[] = [
 ];
 
 const pricing = [
-  { phones: 1, price: 19 },
-  { phones: 2, price: 25 },
-  { phones: 3, price: 35 },
+  { phones: 1, price: 25 },
+  { phones: 2, price: 35 },
+  { phones: 3, price: 45 },
 ];
 
 const cardVariants = {
