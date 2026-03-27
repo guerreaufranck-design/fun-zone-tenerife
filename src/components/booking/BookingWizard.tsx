@@ -73,10 +73,10 @@ interface Category {
 
 const categories: Category[] = [
   { key: 'escape', icon: MapIcon },
+  { key: 'quiz', icon: BrainCircuit },
   { key: 'axe', icon: Axe },
   { key: 'ninja', icon: Swords },
   { key: 'darts', icon: Target },
-  { key: 'quiz', icon: BrainCircuit },
   { key: 'events', icon: PartyPopper },
 ];
 
