@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description:
     'Two unique experiences in one place! Axe Throwing and QuizzaBoom Quiz Room in Playa Las Americas, Tenerife. Book your session for an unforgettable adventure.',
   metadataBase: new URL('https://funzonetenerife.com'),
+  verification: {
+    google: 'TRPmuhCscyzIybPKovZQ5ZgCdTuYFFfD8M_JrDtpnb4',
+  },
   openGraph: {
     title: 'Fun Zone Tenerife | Axe Throwing & Quiz Room',
     description:
