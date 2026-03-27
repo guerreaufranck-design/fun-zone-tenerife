@@ -105,6 +105,31 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <h3 className="mb-4 mt-8 text-sm font-semibold uppercase tracking-wider text-foreground">
+              Our sites
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://www.axethrowingtenerife.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
+                >
+                  Axe Throwing Tenerife
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.quizzaboom.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors duration-200 hover:text-neon-orange"
+                >
+                  QuizzaBoom
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Column 3: Contact Info */}
