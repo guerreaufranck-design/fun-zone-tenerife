@@ -5,7 +5,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Fun Zone Tenerife',
-  description: 'Outdoor escape games, axe throwing, quiz room & darts in Playa de las Américas, Tenerife. Self-guided city games through historic towns with GPS puzzles and real history.',
+  description: 'Four unique experiences in one place: Axe Throwing, Quiz Room, Darts & Escape Game in Playa Las Americas, Tenerife.',
   icons: {
     icon: '/favicon.png',
     apple: '/apple-touch-icon.png',
