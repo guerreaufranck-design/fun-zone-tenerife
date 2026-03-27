@@ -32,6 +32,10 @@ const offerImages: Record<string, string> = {
   'despedida': '/images/offers/despedida.jpg',
   'bachelor-party': '/images/offers/despedida.jpg',
   'quizzaboom-1h': '/images/offers/quizzaboom.png',
+  'escape-ichasagua': '/images/offers/cristianos.png',
+  'escape-trois-cles': '/images/offers/la-laguna.png',
+  'escape-bateria': '/images/offers/puerto.png',
+  'escape-cendres': '/images/offers/garachico.png',
 };
 
 type Category = 'all' | 'axe' | 'ninja' | 'darts' | 'quiz' | 'escape' | 'special';
