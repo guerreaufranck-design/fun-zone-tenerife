@@ -157,7 +157,7 @@ export default function ExperiencesPage() {
           laneType: offer.lane_type,
           maxPlayers: offer.max_players,
           minAge: offer.age_min,
-          fromPrice: calculateFromPrice(offer.id, pricing),
+          fromPrice: offer.slug.includes('escape') ? 25 : calculateFromPrice(offer.id, pricing),
           category,
           includes: (offer.includes as string[]) || [],
           icon: getIconForSlug(offer.slug),
@@ -335,7 +335,7 @@ export default function ExperiencesPage() {
                         <div className="text-lg font-bold" style={{ color: exp.color }}>
                           {tCommon('from')} &euro;{Math.round(exp.fromPrice)}
                           <span className="text-sm font-normal text-muted-foreground">
-                            /pp
+                            {exp.category === 'escape' ? '/team' : '/pp'}
                           </span>
                         </div>
                         <div className="flex gap-2">

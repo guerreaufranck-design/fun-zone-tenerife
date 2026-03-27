@@ -34,6 +34,10 @@ const offerImages: Record<string, string> = {
   'despedida': '/images/offers/despedida.jpg',
   'bachelor-party': '/images/offers/despedida.jpg',
   'quizzaboom-1h': '/images/offers/quizzaboom.png',
+  'escape-ichasagua': '/images/offers/cristianos.png',
+  'escape-trois-cles': '/images/offers/la-laguna.png',
+  'escape-bateria': '/images/offers/puerto.png',
+  'escape-cendres': '/images/offers/garachico.png',
 };
 
 function getIconForSlug(slug: string, laneType: string) {
@@ -65,6 +69,7 @@ interface MappedExperience {
   duration: string;
   players: string;
   priceFrom: number;
+  isEscape: boolean;
   image: string;
   color: string;
   icon: typeof Axe;
@@ -126,9 +131,13 @@ export default function ExperienceCards() {
 
       const mapped: MappedExperience[] = offersRes.data.map((offer) => {
         const pricing = pricingByOffer.get(offer.id) || [];
+        const isEscape = offer.slug.includes('escape');
         let minPricePerPerson = 0;
 
-        if (pricing.length > 0) {
+        if (isEscape) {
+          // Escape games: flat price per team (25€), not per person
+          minPricePerPerson = 25;
+        } else if (pricing.length > 0) {
           if (offer.lane_type === 'classic_darts') {
             minPricePerPerson = pricing[0].price_cents / 100;
           } else {
@@ -152,6 +161,7 @@ export default function ExperienceCards() {
           duration,
           players: `${offer.min_players}-${offer.max_players}`,
           priceFrom: Math.round(minPricePerPerson),
+          isEscape,
           image: offerImages[offer.slug] || '',
           color: getColorForSlug(offer.slug, offer.lane_type),
           icon: getIconForSlug(offer.slug, offer.lane_type),
@@ -267,7 +277,7 @@ export default function ExperienceCards() {
                             &euro;{exp.priceFrom}
                           </span>
                           <span className="text-xs text-muted-foreground">
-                            /{t('perPerson')}
+                            /{exp.isEscape ? t('perTeam') : t('perPerson')}
                           </span>
                         </div>
                         <span className="text-sm font-medium text-neon-blue transition-colors group-hover:text-white">
