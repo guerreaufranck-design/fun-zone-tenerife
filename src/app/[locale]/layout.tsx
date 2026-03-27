@@ -103,8 +103,39 @@ export default async function LocaleLayout({
   // Fetch messages for the current locale
   const messages = await getMessages();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: 'Fun Zone Tenerife',
+    description: 'Multi-activity entertainment venue offering outdoor escape games, axe throwing, interactive quiz room and darts in Playa de las Américas, Tenerife.',
+    url: 'https://www.funzonetenerife.com',
+    image: 'https://www.funzonetenerife.com/images/offers/escapegame.png',
+    telephone: '+34623362229',
+    email: 'axethrowingtenerife@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Avenida Arquitecto Gomez Cuesta 22, Zentral Center',
+      addressLocality: 'Playa de las Américas',
+      addressRegion: 'Santa Cruz de Tenerife',
+      postalCode: '38650',
+      addressCountry: 'ES',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 28.0564, longitude: -16.7248 },
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '14:00',
+      closes: '20:00',
+    }],
+    priceRange: '€€',
+  };
+
   return (
     <NextIntlClientProvider messages={messages}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main className="pt-16">{children}</main>
       <Footer />
