@@ -88,9 +88,10 @@ export async function POST(request: NextRequest) {
         const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
         const gameId = ESCAPE_GAME_IDS[slug] || '';
 
+        const generatedCodes: string[] = [];
+
         for (let i = 0; i < phoneCount; i++) {
           try {
-            // Call escape-game app to generate a signed code + insert in its DB
             const codeRes = await fetch(`${appUrl}/api/generate-code`, {
               method: 'POST',
               headers: {
@@ -111,6 +112,7 @@ export async function POST(request: NextRequest) {
             }
 
             const { code } = await codeRes.json();
+            generatedCodes.push(code);
 
             await sendEscapeGameCode({
               email: customerEmail,
@@ -125,6 +127,25 @@ export async function POST(request: NextRequest) {
           } catch (emailError) {
             console.error(`Failed to process escape game code (phone ${i + 1}):`, emailError);
           }
+        }
+
+        // Save order to Supabase for analytics
+        try {
+          await supabase.from('escape_orders').insert({
+            stripe_session_id: session.id,
+            offer_id: offerId,
+            offer_slug: slug,
+            game_name: gameName,
+            phones: phoneCount,
+            amount_cents: session.amount_total ?? 0,
+            customer_name: customerName || 'Player',
+            customer_email: customerEmail,
+            customer_phone: customerPhone || null,
+            locale,
+            codes: generatedCodes,
+          });
+        } catch (dbErr) {
+          console.error('Failed to save escape order:', dbErr);
         }
 
         console.log(`Escape game payment processed: ${phoneCount} codes sent to ${customerEmail} for ${gameName}`);

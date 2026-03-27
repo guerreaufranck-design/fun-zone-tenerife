@@ -22,12 +22,14 @@ import {
   Menu,
   X,
   ChevronLeft,
+  Map,
 } from 'lucide-react';
 import type { User } from '@supabase/supabase-js';
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+  { href: '/admin/escape-sales', label: 'Escape Sales', icon: Map },
   { href: '/admin/bookings', label: 'Bookings', icon: Calendar },
   { href: '/admin/offers', label: 'Offers', icon: Package },
   { href: '/admin/pricing', label: 'Dynamic Pricing', icon: TrendingUp },
