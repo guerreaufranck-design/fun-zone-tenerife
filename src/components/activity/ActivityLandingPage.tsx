@@ -35,6 +35,18 @@ const offerImages: Record<string, string> = {
   'despedida': '/images/offers/despedida.jpg',
   'bachelor-party': '/images/offers/despedida.jpg',
   'quizzaboom-1h': '/images/offers/quizzaboom.png',
+  'le-code-dichasagua': '/images/offers/cristianos.png',
+  'escape-ichasagua': '/images/offers/cristianos.png',
+  'ichasagua': '/images/offers/cristianos.png',
+  'le-coffre-des-trois-cles': '/images/offers/la-laguna.png',
+  'escape-laguna': '/images/offers/la-laguna.png',
+  'trois-cles': '/images/offers/la-laguna.png',
+  'le-butin-de-la-bateria': '/images/offers/puerto.png',
+  'escape-puerto': '/images/offers/puerto.png',
+  'bateria': '/images/offers/puerto.png',
+  'les-cendres-de-lame': '/images/offers/garachico.png',
+  'escape-garachico': '/images/offers/garachico.png',
+  'cendres': '/images/offers/garachico.png',
 };
 
 export type ActivityType = 'axe' | 'quiz' | 'darts' | 'escape';
