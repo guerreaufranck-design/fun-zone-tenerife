@@ -10,6 +10,9 @@ import {
   TrendingUp,
   Loader2,
   MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
 
 type Period = 'today' | 'week' | 'month' | 'year' | 'all';
@@ -81,10 +84,60 @@ const GAME_COLORS: Record<string, string> = {
   'escape-cendres': '#ff2d7b',
 };
 
+const ESCAPE_GAMES = [
+  { slug: 'escape-ichasagua', name: 'Le Code d\'Ichasagua', city: 'Los Cristianos' },
+  { slug: 'escape-trois-cles', name: 'Le Coffre des Trois Clés', city: 'La Laguna' },
+  { slug: 'escape-bateria', name: 'Le Butin de la Batería', city: 'Puerto de la Cruz' },
+  { slug: 'escape-cendres', name: 'Les Cendres de l\'Âme', city: 'Garachico' },
+];
+
+interface GygForm {
+  customerName: string;
+  customerEmail: string;
+  offerSlug: string;
+  phones: number;
+  locale: string;
+}
+
 export default function EscapeSalesPage() {
   const [period, setPeriod] = useState<Period>('month');
   const [orders, setOrders] = useState<EscapeOrder[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // GYG manual send state
+  const [gygForm, setGygForm] = useState<GygForm>({
+    customerName: '',
+    customerEmail: '',
+    offerSlug: 'escape-ichasagua',
+    phones: 1,
+    locale: 'en',
+  });
+  const [gygSending, setGygSending] = useState(false);
+  const [gygResult, setGygResult] = useState<{ success?: boolean; codes?: string[]; error?: string } | null>(null);
+
+  async function sendGygCode() {
+    setGygSending(true);
+    setGygResult(null);
+    try {
+      const res = await fetch('/api/admin/send-escape-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...gygForm, source: 'getyourguide' }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setGygResult({ success: true, codes: data.codes });
+        setGygForm(f => ({ ...f, customerName: '', customerEmail: '' }));
+        fetchData();
+      } else {
+        setGygResult({ error: data.error || 'Une erreur est survenue' });
+      }
+    } catch {
+      setGygResult({ error: 'Erreur réseau' });
+    } finally {
+      setGygSending(false);
+    }
+  }
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -149,6 +202,137 @@ export default function EscapeSalesPage() {
           ))}
         </div>
       </div>
+
+      {/* GYG Manual Send Card */}
+      <Card className="border-[#ff8c00]/30 bg-[#111118]">
+        <CardContent className="p-6">
+          <div className="mb-4 flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ff8c00]/10">
+              <Send className="h-4 w-4 text-[#ff8c00]" />
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Envoyer un code — Get Your Guide</h2>
+              <p className="text-xs text-muted-foreground">Réservation reçue via GYG ? Génère et envoie les codes au client.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Customer name */}
+            <div className="flex flex-col gap-1">
+              <label className="text-xs text-muted-foreground">Nom du client</label>
+              <input
+                type="text"
+                placeholder="John Smith"
+                value={gygForm.customerName}
+                onChange={e => setGygForm(f => ({ ...f, customerName: e.target.value }))}
+                className="rounded-lg border border-border/50 bg-[#0d0d14] px-3 py-2 text-sm text-white placeholder-muted-foreground focus:border-[#ff8c00]/50 focus:outline-none"
+              />
+            </div>
+
+            {/* Customer email */}
+            <div className="flex flex-col gap-1">
+              <label className="text-xs text-muted-foreground">Email du client</label>
+              <input
+                type="email"
+                placeholder="john@example.com"
+                value={gygForm.customerEmail}
+                onChange={e => setGygForm(f => ({ ...f, customerEmail: e.target.value }))}
+                className="rounded-lg border border-border/50 bg-[#0d0d14] px-3 py-2 text-sm text-white placeholder-muted-foreground focus:border-[#ff8c00]/50 focus:outline-none"
+              />
+            </div>
+
+            {/* Escape game */}
+            <div className="flex flex-col gap-1">
+              <label className="text-xs text-muted-foreground">Escape game</label>
+              <select
+                value={gygForm.offerSlug}
+                onChange={e => setGygForm(f => ({ ...f, offerSlug: e.target.value }))}
+                className="rounded-lg border border-border/50 bg-[#0d0d14] px-3 py-2 text-sm text-white focus:border-[#ff8c00]/50 focus:outline-none"
+              >
+                {ESCAPE_GAMES.map(g => (
+                  <option key={g.slug} value={g.slug}>{g.name} — {g.city}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Phones */}
+            <div className="flex flex-col gap-1">
+              <label className="text-xs text-muted-foreground">Nombre de téléphones</label>
+              <select
+                value={gygForm.phones}
+                onChange={e => setGygForm(f => ({ ...f, phones: parseInt(e.target.value) }))}
+                className="rounded-lg border border-border/50 bg-[#0d0d14] px-3 py-2 text-sm text-white focus:border-[#ff8c00]/50 focus:outline-none"
+              >
+                <option value={1}>1 téléphone — 1 équipe</option>
+                <option value={2}>2 téléphones — 2 équipes</option>
+                <option value={3}>3 téléphones — 3 équipes</option>
+              </select>
+            </div>
+
+            {/* Language */}
+            <div className="flex flex-col gap-1">
+              <label className="text-xs text-muted-foreground">Langue de l&apos;email</label>
+              <select
+                value={gygForm.locale}
+                onChange={e => setGygForm(f => ({ ...f, locale: e.target.value }))}
+                className="rounded-lg border border-border/50 bg-[#0d0d14] px-3 py-2 text-sm text-white focus:border-[#ff8c00]/50 focus:outline-none"
+              >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+              </select>
+            </div>
+
+            {/* Send button */}
+            <div className="flex items-end">
+              <button
+                onClick={sendGygCode}
+                disabled={gygSending || !gygForm.customerName || !gygForm.customerEmail}
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2 text-sm font-semibold text-black transition-all hover:bg-[#ff8c00]/80 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {gygSending ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Send className="h-4 w-4" />
+                )}
+                {gygSending ? 'Envoi en cours…' : 'Générer & Envoyer'}
+              </button>
+            </div>
+          </div>
+
+          {/* Result feedback */}
+          {gygResult && (
+            <div className={`mt-4 flex items-start gap-2 rounded-lg p-3 text-sm ${
+              gygResult.success
+                ? 'bg-green-500/10 text-green-400'
+                : 'bg-red-500/10 text-red-400'
+            }`}>
+              {gygResult.success ? (
+                <>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
+                  <div>
+                    <p className="font-medium">Codes envoyés avec succès !</p>
+                    <div className="mt-1 flex flex-wrap gap-2">
+                      {gygResult.codes?.map((code, i) => (
+                        <span key={i} className="rounded bg-white/10 px-2 py-0.5 font-mono text-xs text-white">
+                          {code}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                  <p>{gygResult.error}</p>
+                </>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
       {loading ? (
         <div className="flex items-center justify-center py-20">
