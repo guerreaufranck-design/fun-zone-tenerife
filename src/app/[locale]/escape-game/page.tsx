@@ -3,9 +3,10 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Map, ArrowLeft, Smartphone, Star, Tag, Calendar, Mail } from 'lucide-react';
+import { Clock, MapPin, Map, ArrowLeft, Smartphone, Star, Calendar, Mail, X, Minus, Plus, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface EscapeGame {
   id: string;
@@ -64,6 +65,33 @@ export default function EscapeGamePage() {
   const t = useTranslations('activities');
   const tEscape = useTranslations('escapeGames');
   const locale = useLocale();
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [phones, setPhones] = useState(1);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  async function handleIslandPassCheckout(e: React.FormEvent) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/island-pass/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phones, customerName: name, customerEmail: email, customerPhone: phone, locale }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Checkout failed');
+      window.location.href = data.url;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -263,17 +291,132 @@ export default function EscapeGamePage() {
                   </span>
                 </div>
 
-                <a
-                  href={`/${locale}/book?category=escape&pass=island`}
+                <button
+                  onClick={() => setModalOpen(true)}
                   className="flex-shrink-0 rounded-xl bg-[#ff2d7b] px-8 py-3 text-sm font-bold text-white shadow-[0_0_25px_rgba(255,45,123,0.5)] transition-all hover:bg-[#ff2d7b]/90 hover:shadow-[0_0_35px_rgba(255,45,123,0.7)]"
                 >
                   {tEscape('islandPass.cta')} →
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Island Pass Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setModalOpen(false)} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            className="relative w-full max-w-md overflow-hidden rounded-3xl border border-[#ff2d7b]/30 bg-[#0d0a10] shadow-[0_0_60px_rgba(255,45,123,0.3)]"
+          >
+            {/* Modal header */}
+            <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+              <div>
+                <h3 className="text-xl font-bold text-white">🏝️ {tEscape('islandPass.title')}</h3>
+                <p className="text-sm text-white/50">{tEscape('islandPass.subtitle')}</p>
+              </div>
+              <button onClick={() => setModalOpen(false)} className="rounded-full p-2 text-white/40 hover:bg-white/10 hover:text-white">
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleIslandPassCheckout} className="px-6 py-6 space-y-5">
+              {/* Phones selector */}
+              <div>
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-white/50">
+                  {tEscape('islandPass.phonesLabel') || 'Number of phones'}
+                </label>
+                <div className="flex items-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => setPhones(p => Math.max(1, p - 1))}
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10"
+                  >
+                    <Minus size={16} />
+                  </button>
+                  <div className="flex-1 text-center">
+                    <span className="text-3xl font-bold text-white">{phones}</span>
+                    <p className="text-xs text-white/40">{phones === 1 ? tEscape('phone') : tEscape('phones')}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPhones(p => Math.min(3, p + 1))}
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10"
+                  >
+                    <Plus size={16} />
+                  </button>
+                </div>
+                <p className="mt-2 text-center text-sm font-semibold text-[#ff2d7b]">
+                  Total: {phones * 79}€
+                </p>
+              </div>
+
+              {/* Name */}
+              <div>
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">
+                  {tEscape('islandPass.nameLabel') || 'Full name'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder="John Doe"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-[#ff2d7b]/50 focus:outline-none focus:ring-1 focus:ring-[#ff2d7b]/30"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">
+                  {tEscape('islandPass.emailLabel') || 'Email address'}
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="john@example.com"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-[#ff2d7b]/50 focus:outline-none focus:ring-1 focus:ring-[#ff2d7b]/30"
+                />
+                <p className="mt-1 text-xs text-white/30">
+                  {tEscape('islandPass.emailHint') || 'Your 4 activation codes will be sent here'}
+                </p>
+              </div>
+
+              {/* Phone (optional) */}
+              <div>
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/50">
+                  {tEscape('islandPass.phoneLabel') || 'Phone (optional)'}
+                </label>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  placeholder="+34 600 000 000"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-[#ff2d7b]/50 focus:outline-none focus:ring-1 focus:ring-[#ff2d7b]/30"
+                />
+              </div>
+
+              {error && (
+                <p className="rounded-xl bg-red-500/10 px-4 py-2 text-xs text-red-400">{error}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#ff2d7b] py-3.5 text-sm font-bold text-white shadow-[0_0_25px_rgba(255,45,123,0.4)] transition-all hover:bg-[#ff2d7b]/90 disabled:opacity-60"
+              >
+                {loading ? <Loader2 size={16} className="animate-spin" /> : null}
+                {loading ? '...' : `${tEscape('islandPass.cta')} — ${phones * 79}€`}
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      )}
 
       {/* Escape Games Grid */}
       <section className="px-4 pb-20 sm:px-6 lg:px-8">

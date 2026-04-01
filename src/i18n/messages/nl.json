@@ -397,7 +397,12 @@
       "cta": "Koop de pas",
       "tag1": "4 avonturen inbegrepen",
       "tag2": "12 maanden geldig",
-      "tag3": "Codes per e-mail"
+      "tag3": "Codes per e-mail",
+      "phonesLabel": "Aantal telefoons",
+      "nameLabel": "Volledige naam",
+      "emailLabel": "E-mailadres",
+      "emailHint": "Uw 4 activatiecodes worden hierheen gestuurd",
+      "phoneLabel": "Telefoon (optioneel)"
     }
   }
 }

@@ -418,7 +418,12 @@
       "cta": "Obtenir le pass",
       "tag1": "4 aventures incluses",
       "tag2": "Valable 12 mois",
-      "tag3": "Codes envoyés par email"
+      "tag3": "Codes envoyés par email",
+      "phonesLabel": "Nombre de téléphones",
+      "nameLabel": "Nom complet",
+      "emailLabel": "Adresse email",
+      "emailHint": "Vos 4 codes d'activation seront envoyés ici",
+      "phoneLabel": "Téléphone (optionnel)"
     }
   }
 }

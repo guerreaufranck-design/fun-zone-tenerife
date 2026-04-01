@@ -5,6 +5,7 @@ import { BookingModified } from "@/emails/BookingModified";
 import { WaiverConfirmation } from "@/emails/WaiverConfirmation";
 import { ReviewRequest } from "@/emails/ReviewRequest";
 import { EscapeGameCode } from "@/emails/EscapeGameCode";
+import IslandPassEmail, { type IslandPassGame } from "@/emails/IslandPassEmail";
 import { formatPrice, formatDate, formatTime } from "./utils";
 import type { Booking, Offer, MultilingualText } from "./supabase/types";
 
@@ -333,6 +334,36 @@ export async function sendEscapeGameCode(params: {
       gameName: params.gameName,
       city: params.city,
       estimatedDuration: params.estimatedDuration,
+      appUrl: params.appUrl,
+      language,
+    }),
+  });
+}
+
+export async function sendIslandPassEmail(params: {
+  email: string;
+  customerName: string;
+  games: IslandPassGame[];
+  appUrl: string;
+  language?: string;
+}): Promise<void> {
+  const language = params.language ?? "en";
+
+  const subjects: Record<string, string> = {
+    en: "🏝️ Your Island Pass — 4 escape games ready!",
+    es: "🏝️ Tu Island Pass — ¡4 escape games listos!",
+    fr: "🏝️ Votre Island Pass — 4 escape games prêts !",
+    de: "🏝️ Ihr Island Pass — 4 Escape Games bereit!",
+    it: "🏝️ Il tuo Island Pass — 4 escape game pronti!",
+  };
+
+  await getResend().emails.send({
+    from: "Escape Game Tenerife <bookings@axethrowingtenerife.com>",
+    to: params.email,
+    subject: subjects[language] ?? subjects.en,
+    react: IslandPassEmail({
+      customerName: params.customerName,
+      games: params.games,
       appUrl: params.appUrl,
       language,
     }),

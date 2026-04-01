@@ -418,7 +418,12 @@
       "cta": "Pass holen",
       "tag1": "4 Abenteuer inklusive",
       "tag2": "12 Monate gültig",
-      "tag3": "Codes per E-Mail"
+      "tag3": "Codes per E-Mail",
+      "phonesLabel": "Anzahl der Handys",
+      "nameLabel": "Vollständiger Name",
+      "emailLabel": "E-Mail-Adresse",
+      "emailHint": "Ihre 4 Aktivierungscodes werden hierher gesendet",
+      "phoneLabel": "Telefon (optional)"
     }
   }
 }

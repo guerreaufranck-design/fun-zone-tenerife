@@ -3,7 +3,8 @@ import { headers } from "next/headers";
 import { getStripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { allocateLanes } from "@/lib/booking/lane-allocation";
-import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode } from "@/lib/email";
+import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode, sendIslandPassEmail } from "@/lib/email";
+import { ESCAPE_GAMES } from "@/lib/escape-game";
 import type { LaneType } from "@/lib/supabase/types";
 
 
@@ -59,6 +60,85 @@ export async function POST(request: NextRequest) {
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       const metadata = session.metadata || {};
+
+      // ===== ISLAND PASS PAYMENT (4 escape games) =====
+      if (metadata.type === 'island_pass') {
+        const { phones, customerName, customerPhone } = metadata;
+        const customerEmail = session.customer_email || '';
+        const locale = metadata.locale || 'en';
+        const phoneCount = parseInt(phones || '1', 10);
+
+        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://escape-game-indol.vercel.app';
+        const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
+        const supabase = createAdminClient();
+
+        // For each phone, generate 4 codes (one per escape game)
+        for (let phoneIdx = 0; phoneIdx < phoneCount; phoneIdx++) {
+          const gameCodes: { gameName: string; city: string; estimatedDuration: string; code: string }[] = [];
+
+          for (const game of ESCAPE_GAMES) {
+            try {
+              const codeRes = await fetch(`${appUrl}/api/generate-code`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'x-api-secret': apiSecret },
+                body: JSON.stringify({ gameId: game.gameId, customerEmail, customerName: customerName || 'Player' }),
+              });
+
+              if (!codeRes.ok) {
+                console.error(`Island Pass: failed to generate code for ${game.city}`);
+                continue;
+              }
+
+              const { code } = await codeRes.json();
+              gameCodes.push({
+                gameName: game.title[locale] ?? game.title['en'] ?? game.city,
+                city: game.city,
+                estimatedDuration: game.estimatedDuration,
+                code,
+              });
+            } catch (e) {
+              console.error(`Island Pass: error generating code for ${game.city}:`, e);
+            }
+          }
+
+          // Send 1 email with all 4 codes
+          if (gameCodes.length > 0) {
+            try {
+              await sendIslandPassEmail({
+                email: customerEmail,
+                customerName: customerName || 'Player',
+                games: gameCodes,
+                appUrl,
+                language: locale,
+              });
+            } catch (e) {
+              console.error(`Island Pass: failed to send email (phone ${phoneIdx + 1}):`, e);
+            }
+
+            // Save to escape_orders (1 row per phone)
+            try {
+              await supabase.from('escape_orders').insert({
+                stripe_session_id: `${session.id}_phone${phoneIdx + 1}`,
+                offer_id: null,
+                offer_slug: 'island-pass',
+                game_name: 'Island Pass',
+                phones: 1,
+                amount_cents: Math.round((session.amount_total ?? 0) / phoneCount),
+                customer_name: customerName || 'Player',
+                customer_email: customerEmail,
+                customer_phone: customerPhone || null,
+                locale,
+                codes: gameCodes.map((g) => g.code),
+              });
+            } catch (dbErr) {
+              console.error('Island Pass: failed to save order:', dbErr);
+            }
+          }
+        }
+
+        console.log(`Island Pass processed: ${phoneCount} phone(s), ${phoneCount * 4} codes sent to ${customerEmail}`);
+        return NextResponse.json({ received: true });
+      }
 
       // ===== ESCAPE GAME PAYMENT =====
       if (metadata.type === 'escape_game') {
