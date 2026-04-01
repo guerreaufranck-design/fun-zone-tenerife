@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Map, ArrowLeft, Smartphone } from 'lucide-react';
+import { Clock, MapPin, Map, ArrowLeft, Smartphone, Star, Tag, Calendar, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -191,6 +191,86 @@ export default function EscapeGamePage() {
             <p className="mt-4 text-center text-xs text-white/40">
               {tEscape('pricingNote')}
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Island Pass */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="relative overflow-hidden rounded-3xl border border-[#ff2d7b]/40 bg-gradient-to-br from-[#1a0a12] via-[#120810] to-[#0a0a0f] p-1 shadow-[0_0_60px_rgba(255,45,123,0.2)]"
+          >
+            {/* Animated border glow */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#ff2d7b]/20 via-transparent to-[#ff2d7b]/10 blur-xl" />
+
+            <div className="relative rounded-[22px] bg-[#0d0a10] p-8 sm:p-10">
+              {/* Top row */}
+              <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                <div>
+                  <span className="mb-3 inline-block rounded-full border border-[#ff2d7b]/50 bg-[#ff2d7b]/10 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-[#ff2d7b]">
+                    ⭐ {tEscape('islandPass.badge')}
+                  </span>
+                  <h2 className="neon-glow-pink text-3xl font-bold text-white sm:text-4xl">
+                    🏝️ {tEscape('islandPass.title')}
+                  </h2>
+                  <p className="mt-1 text-lg font-medium text-white/60">
+                    {tEscape('islandPass.subtitle')}
+                  </p>
+                </div>
+
+                {/* Price block */}
+                <div className="flex-shrink-0 text-right">
+                  <div className="flex items-baseline justify-end gap-2">
+                    <span className="text-xl text-white/30 line-through">{tEscape('islandPass.originalPrice')}</span>
+                    <span className="text-5xl font-bold text-white">{tEscape('islandPass.price')}</span>
+                  </div>
+                  <p className="text-sm text-white/40">{tEscape('islandPass.perPhone')}</p>
+                  <span className="mt-1 inline-block rounded-full bg-[#ff2d7b] px-3 py-0.5 text-xs font-bold text-white shadow-[0_0_15px_rgba(255,45,123,0.5)]">
+                    {tEscape('islandPass.saving')}
+                  </span>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/60">
+                {tEscape('islandPass.description')}
+              </p>
+
+              {/* Cities */}
+              <p className="mb-6 flex flex-wrap items-center gap-1 text-sm font-medium text-[#ff2d7b]/80">
+                <MapPin size={14} className="flex-shrink-0" />
+                {tEscape('islandPass.locations')}
+              </p>
+
+              {/* Tags + CTA */}
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-wrap gap-2">
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
+                    <Star size={11} className="text-[#ff2d7b]" />
+                    {tEscape('islandPass.tag1')}
+                  </span>
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
+                    <Calendar size={11} className="text-[#ff2d7b]" />
+                    {tEscape('islandPass.tag2')}
+                  </span>
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
+                    <Mail size={11} className="text-[#ff2d7b]" />
+                    {tEscape('islandPass.tag3')}
+                  </span>
+                </div>
+
+                <a
+                  href={`/${locale}/book?category=escape&pass=island`}
+                  className="flex-shrink-0 rounded-xl bg-[#ff2d7b] px-8 py-3 text-sm font-bold text-white shadow-[0_0_25px_rgba(255,45,123,0.5)] transition-all hover:bg-[#ff2d7b]/90 hover:shadow-[0_0_35px_rgba(255,45,123,0.7)]"
+                >
+                  {tEscape('islandPass.cta')} →
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

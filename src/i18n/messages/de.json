@@ -404,6 +404,21 @@
     "phones": "Handys",
     "pricingNote": "Jedes Handy erhält einen einzigartigen Spielcode. Lust auf Wettbewerb? Buchen Sie mehrere Handys und messen Sie sich!",
     "mostPopular": "Am beliebtesten",
-    "badge_family": "Familienfreundlich"
+    "badge_family": "Familienfreundlich",
+    "islandPass": {
+      "badge": "EXKLUSIVES ANGEBOT",
+      "title": "Island Pass",
+      "subtitle": "Alle 4 Teneriffa-Abenteuer",
+      "description": "Erkunden Sie die gesamte Insel: Los Cristianos, La Laguna, Puerto de la Cruz und Garachico. Ein Pass für die gesamte Geheimgeschichte Teneriffas.",
+      "originalPrice": "100€",
+      "price": "79€",
+      "saving": "21€ sparen",
+      "perPhone": "pro Handy",
+      "locations": "Los Cristianos · La Laguna · Puerto de la Cruz · Garachico",
+      "cta": "Pass holen",
+      "tag1": "4 Abenteuer inklusive",
+      "tag2": "12 Monate gültig",
+      "tag3": "Codes per E-Mail"
+    }
   }
 }

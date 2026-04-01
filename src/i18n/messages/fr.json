@@ -404,6 +404,21 @@
     "phones": "téléphones",
     "pricingNote": "Chaque téléphone reçoit un code de jeu unique. Envie de compétition ? Réservez plusieurs téléphones et faites la course !",
     "mostPopular": "Le plus populaire",
-    "badge_family": "Idéal en famille"
+    "badge_family": "Idéal en famille",
+    "islandPass": {
+      "badge": "OFFRE EXCLUSIVE",
+      "title": "Island Pass",
+      "subtitle": "Les 4 aventures de Tenerife",
+      "description": "Explorez l'île entière : Los Cristianos, La Laguna, Puerto de la Cruz et Garachico. Un pass unique pour vivre toute l'histoire secrète de Tenerife.",
+      "originalPrice": "100€",
+      "price": "79€",
+      "saving": "Économisez 21€",
+      "perPhone": "par téléphone",
+      "locations": "Los Cristianos · La Laguna · Puerto de la Cruz · Garachico",
+      "cta": "Obtenir le pass",
+      "tag1": "4 aventures incluses",
+      "tag2": "Valable 12 mois",
+      "tag3": "Codes envoyés par email"
+    }
   }
 }

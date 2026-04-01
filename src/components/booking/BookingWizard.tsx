@@ -313,6 +313,9 @@ export default function BookingWizard() {
         if (pricing.length > 0) {
           if (offer.lane_type === 'classic_darts') {
             minPricePerPerson = pricing[0].price_cents / 100;
+          } else if (offer.lane_type === 'escape' || offer.slug.includes('escape')) {
+            // Escape games: flat team price, not per person
+            minPricePerPerson = Math.min(...pricing.map((p) => p.price_cents / 100));
           } else {
             minPricePerPerson = Math.min(
               ...pricing.map((p) => p.price_cents / p.players / 100)

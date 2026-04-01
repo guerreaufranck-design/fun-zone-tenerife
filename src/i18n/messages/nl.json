@@ -381,6 +381,23 @@
     "pricingTitle": "Prijzen",
     "phone": "telefoon",
     "phones": "telefoons",
-    "pricingNote": "Elke telefoon ontvangt een unieke spelcode. Wil je wedstrijden? Boek meerdere telefoons en race tegen elkaar!"
+    "pricingNote": "Elke telefoon ontvangt een unieke spelcode. Wil je wedstrijden? Boek meerdere telefoons en race tegen elkaar!",
+    "mostPopular": "Meest populair",
+    "badge_family": "Gezinsvriendelijk",
+    "islandPass": {
+      "badge": "EXCLUSIEF AANBOD",
+      "title": "Island Pass",
+      "subtitle": "Alle 4 avonturen van Tenerife",
+      "description": "Verken het hele eiland: Los Cristianos, La Laguna, Puerto de la Cruz en Garachico. Één pas voor de volledige geheime geschiedenis van Tenerife.",
+      "originalPrice": "100€",
+      "price": "79€",
+      "saving": "Bespaar 21€",
+      "perPhone": "per telefoon",
+      "locations": "Los Cristianos · La Laguna · Puerto de la Cruz · Garachico",
+      "cta": "Koop de pas",
+      "tag1": "4 avonturen inbegrepen",
+      "tag2": "12 maanden geldig",
+      "tag3": "Codes per e-mail"
+    }
   }
 }
