@@ -100,6 +100,7 @@ const blogSlugs = [
   'fun-center-tenerife-4-experiences',
   'quiz-room-tenerife-quizzaboom',
   'escape-game-tenerife-first-timers',
+  'escape-game-treasure-hunt-city-tour-tenerife',
   'evening-entertainment-tenerife-south',
   'date-night-ideas-tenerife',
   'evjf-evg-tenerife-activites-originales',

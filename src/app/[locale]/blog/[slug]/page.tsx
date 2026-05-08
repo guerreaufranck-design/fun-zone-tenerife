@@ -109,9 +109,7 @@ export default function BlogPostPage() {
         <div className="mx-auto max-w-3xl">
           <article className="space-y-6">
             {post.content.map((paragraph, index) => (
-              <p key={index} className="text-base leading-relaxed text-muted-foreground">
-                {paragraph}
-              </p>
+              <p key={index} className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
           </article>
 

@@ -80,6 +80,28 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: 'escape-game-treasure-hunt-city-tour-tenerife',
+    title: 'Escape Games, Treasure Hunts & Self-Guided City Tours in Tenerife: The Best Mystery Adventures',
+    excerpt:
+      'From indoor escape rooms to outdoor treasure hunts and self-guided city tours, Tenerife has something for every type of adventure seeker. Here is how to plan the ultimate mystery day.',
+    date: '2026-05-07',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#ff2d7b]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '7 min read',
+    content: [
+      'Tenerife is known for its beaches, its volcano, and its eternal sunshine. But underneath all that natural beauty, the island has quietly built up one of the most interesting scenes for mystery-based entertainment in the Canary Islands. Escape games, treasure hunts, and self-guided city tours have all found their place here — and they complement each other in ways that make for a genuinely spectacular day out.',
+      'Let\'s start with the indoor option: escape games. These are rooms where a group of 2 to 8 people are locked in a themed environment and given 60 minutes to solve a series of puzzles, find hidden clues, and ultimately "escape" before the clock runs out. The format has exploded globally over the past decade because it delivers something that most entertainment formats cannot — genuine teamwork under real pressure. You cannot coast in an escape room. Everyone has to contribute.',
+      'At Fun Zone Tenerife in Playa Las Americas, the escape game is one of four experiences available under one roof. The room has been designed with atmosphere and narrative at its core: you are not just solving puzzles in a generic space, you are moving through a story. The difficulty ramps as you progress, and the final challenge requires combining everything discovered throughout the session. It is the most consistently popular activity for groups who want to feel genuinely clever at the end of the night.',
+      'But escape games only scratch the surface of mystery-based entertainment. Treasure hunts take the same concept and blow it open into the real world. Instead of being confined to a room, you are navigating streets, landmarks, and hidden corners of a destination — following clues, decoding messages, and racing (sometimes against other teams) to the final location. They work brilliantly in Tenerife because the island has so much visual and cultural texture to work with.',
+      'The most exciting evolution of the treasure hunt format is the self-guided city tour. These are experiences where you download an app or receive a set of clues, then explore a destination at your own pace — stopping at hidden spots, solving riddles tied to real landmarks, and building a picture of a place that the average tourist never sees. They sit perfectly at the intersection of sightseeing and gaming. For travel enthusiasts looking for this kind of adventure-based exploration across destinations, <a href="https://www.oddballtrip.com" target="_blank" rel="noopener noreferrer">OddballTrip</a> is a great resource — they specialize in offbeat travel experiences and unconventional ways to discover places.',
+      'What makes self-guided city tours particularly well-suited to Tenerife is the contrast between the tourist-facing south and the atmospheric historic towns further north. Santa Cruz de Tenerife has a genuinely layered urban history with Art Deco architecture, hidden plazas, and street art that rewards exploration. La Laguna — a UNESCO World Heritage city — is practically built for treasure hunt formats with its colonial grid of streets, historic churches, and local secrets tucked down narrow alleys.',
+      'The best way to combine these formats on a Tenerife holiday is to structure them across a day. Start with a self-guided exploration in the morning — pick a town you have not visited, download a route or self-create one using a map and some local research, and spend two to three hours getting genuinely lost in it. Midday, recharge with food. Then in the evening, make your way to Fun Zone in Playa Las Americas for the indoor escape game, which pairs brilliantly with the puzzle-solving mindset you have already been building throughout the day.',
+      'Groups who do this kind of full-day mystery itinerary almost universally report it as one of their highlights of the trip — because it uses a consistent theme (exploration, discovery, problem-solving) to connect very different activities. You are not just ticking boxes on a list. You are building a narrative arc across a whole day.',
+      'One practical note: escape games in Tenerife book up quickly in the evenings, especially during high season. Book your Fun Zone slot in advance at funzonetenerife.com and plan your outdoor activities around it. The escape game is available for groups of 2 to 8 people and can be paired with axe throwing, QuizzaBoom or darts for a full evening. For the self-guided outdoor elements, the morning or late afternoon slots avoid the peak midday heat while keeping the light excellent for exploration.',
+    ],
+  },
+  {
     slug: 'evening-entertainment-tenerife-south',
     title: 'Evening Entertainment in Tenerife South: Beyond the Nightclubs',
     excerpt:
