@@ -45,6 +45,7 @@ export const activities: Activity[] = [
     isFunZone: true,
     bookUrl: '/book',
     location: 'Playa Las Americas',
+    image: '/images/offers/traditional-axe.jpg',
   },
   {
     slug: 'quiz-room-quizzaboom',
@@ -65,6 +66,7 @@ export const activities: Activity[] = [
     isFunZone: true,
     bookUrl: '/book',
     location: 'Playa Las Americas',
+    image: '/images/offers/quizzaboom.png',
   },
   {
     slug: 'escape-game',
@@ -85,6 +87,7 @@ export const activities: Activity[] = [
     isFunZone: true,
     bookUrl: '/book',
     location: 'Los Cristianos · La Laguna · Puerto de la Cruz · Garachico',
+    image: '/images/offers/escapegame.png',
   },
   {
     slug: 'darts',
@@ -105,6 +108,7 @@ export const activities: Activity[] = [
     isFunZone: true,
     bookUrl: '/book',
     location: 'Playa Las Americas',
+    image: '/images/offers/darts-classic.jpg',
   },
 
   // ─── Water & Sea ───────────────────────────────────────────────────────────
