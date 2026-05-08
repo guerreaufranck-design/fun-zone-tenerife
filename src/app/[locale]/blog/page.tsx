@@ -1,40 +1,57 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowRight, Tag } from 'lucide-react';
+import { blogPosts } from '@/lib/blog/posts';
+import { getAlternates, type Locale } from '@/lib/seo';
 
-const blogPosts = [
-  {
-    slug: 'top-10-tips-axe-throwing-beginners',
-    title: 'Top 10 Tips for Axe Throwing Beginners',
-    excerpt: 'New to axe throwing? Master the basics with our expert tips on grip, stance, and release technique. From choosing the right throw to reading the target, these tips will have you hitting bullseyes in no time.',
-    date: '2025-12-15',
-    category: 'Tips & Tricks',
-    gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
-    readTime: '5 min read',
+const blogMeta: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: 'Blog — Fun Zone Tenerife | Activities, Tips & Tenerife Guides',
+    description: 'The Fun Zone Tenerife blog: guides on things to do in Playa Las Americas, escape game tips, quiz room guides, evening entertainment ideas, and activity inspiration for your Tenerife holiday.',
   },
-  {
-    slug: 'axe-throwing-perfect-team-building',
-    title: 'Why Axe Throwing is the Perfect Team Building Activity',
-    excerpt: 'Looking for a team building activity that actually brings people together? Discover why companies are choosing axe throwing over escape rooms and paintball for their next corporate outing.',
-    date: '2025-11-28',
-    category: 'Team Building',
-    gradient: 'from-[#8b5cf6]/20 via-[#1a1a2e] to-[#0a0a0f]',
-    readTime: '4 min read',
+  es: {
+    title: 'Blog — Fun Zone Tenerife | Actividades, Consejos y Guías de Tenerife',
+    description: 'El blog de Fun Zone Tenerife: guías de qué hacer en Playa Las Américas, consejos para escape games, guías del quiz room e ideas de entretenimiento nocturno.',
   },
-  {
-    slug: 'history-axe-throwing-vikings-modern-sport',
-    title: 'The History of Axe Throwing: From Vikings to Modern Sport',
-    excerpt: 'Trace the fascinating journey of axe throwing from its origins as a Viking battle technique to one of the fastest-growing recreational sports in the world. A tale of warriors, lumberjacks, and modern athletes.',
-    date: '2025-11-10',
-    category: 'History',
-    gradient: 'from-[#ff6b00]/20 via-[#1a1a2e] to-[#0a0a0f]',
-    readTime: '6 min read',
+  fr: {
+    title: 'Blog — Fun Zone Tenerife | Activités, Conseils et Guides Tenerife',
+    description: 'Le blog de Fun Zone Tenerife : guides sur quoi faire à Playa Las Americas, conseils escape game, guides quiz room et idées de divertissement en soirée.',
   },
-];
+  de: {
+    title: 'Blog — Fun Zone Teneriffa | Aktivitäten, Tipps und Teneriffa-Guides',
+    description: 'Der Fun Zone Teneriffa Blog: Guides zu Aktivitäten in Playa Las Americas, Escape Game Tipps, Quiz Room Guides und Abendunterhaltungsideen.',
+  },
+  nl: {
+    title: 'Blog — Fun Zone Tenerife | Activiteiten, Tips en Tenerife Gidsen',
+    description: 'De Fun Zone Tenerife blog: gidsen over dingen te doen in Playa Las Americas, escape game tips, quiz room gidsen en avond entertainment ideeën.',
+  },
+  it: {
+    title: 'Blog — Fun Zone Tenerife | Attività, Consigli e Guide su Tenerife',
+    description: 'Il blog di Fun Zone Tenerife: guide su cosa fare a Playa Las Americas, consigli escape game, guide quiz room e idee di intrattenimento serale.',
+  },
+};
 
-const categories = ['All', 'Tips & Tricks', 'Team Building', 'History', 'Events'];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const l = locale as Locale;
+  const m = blogMeta[l] ?? blogMeta['en'];
+  const alternates = getAlternates('/blog');
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: { canonical: alternates.canonical, languages: alternates.languages },
+    openGraph: { title: m.title, description: m.description, url: alternates.canonical },
+  };
+}
+
+const categories = ['All', 'About Us', 'Experiences', 'Tips & Tricks', 'Things To Do', 'Couples', 'EVJF & EVG', 'Group Activities', 'Family', 'Eventos Especiales'];
 
 export default function BlogPage() {
   const t = useTranslations('blog');
@@ -69,7 +86,6 @@ export default function BlogPage() {
                   className="group block"
                 >
                   <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_20px_rgba(0,212,255,0.08)]">
-                    {/* Cover image placeholder */}
                     <div className={`relative aspect-[21/9] bg-gradient-to-br ${post.gradient}`}>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-sm text-white/10">Cover Image</span>
@@ -138,7 +154,7 @@ export default function BlogPage() {
                 <CardContent className="pt-6">
                   <h3 className="mb-4 text-lg font-bold text-white">Recent Posts</h3>
                   <div className="space-y-4">
-                    {blogPosts.map((post) => (
+                    {blogPosts.slice(0, 5).map((post) => (
                       <Link
                         key={post.slug}
                         href={{ pathname: '/blog/[slug]' as const, params: { slug: post.slug } }}
@@ -147,7 +163,7 @@ export default function BlogPage() {
                         <div className="flex gap-3">
                           <div className={`h-16 w-16 flex-shrink-0 rounded-lg bg-gradient-to-br ${post.gradient}`} />
                           <div className="flex-1">
-                            <h4 className="text-sm font-medium text-white transition-colors group-hover:text-[#00d4ff] line-clamp-2">
+                            <h4 className="line-clamp-2 text-sm font-medium text-white transition-colors group-hover:text-[#00d4ff]">
                               {post.title}
                             </h4>
                             <p className="mt-1 text-xs text-muted-foreground">
@@ -168,9 +184,9 @@ export default function BlogPage() {
               {/* CTA */}
               <Card className="border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118]">
                 <CardContent className="pt-6 text-center">
-                  <h3 className="mb-2 text-lg font-bold text-white">Ready to throw?</h3>
+                  <h3 className="mb-2 text-lg font-bold text-white">Ready for an adventure?</h3>
                   <p className="mb-4 text-sm text-muted-foreground">
-                    Book your axe throwing experience today.
+                    Book your Fun Zone experience today.
                   </p>
                   <Link
                     href="/book"

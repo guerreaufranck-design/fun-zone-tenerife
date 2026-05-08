@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -5,6 +6,51 @@ import {
   MapPin, Phone, Mail, Clock, MessageCircle,
   Instagram, Facebook, Navigation, ExternalLink,
 } from 'lucide-react';
+import { getAlternates, type Locale } from '@/lib/seo';
+
+const contactMeta: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
+    description: 'Contact Fun Zone Tenerife. Visit us at Zentral Center, Playa Las Americas. Call, WhatsApp or email to book your quiz room, axe throwing, escape game or darts session.',
+  },
+  es: {
+    title: 'Contacto Fun Zone Tenerife | Zentral Center, Playa Las Américas',
+    description: 'Contacta con Fun Zone Tenerife. Encuéntranos en el Zentral Center, Playa Las Américas. Llama, WhatsApp o email para reservar tu experiencia.',
+  },
+  fr: {
+    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
+    description: 'Contactez Fun Zone Tenerife. Retrouvez-nous au Zentral Center, Playa Las Americas. Appelez, WhatsApp ou email pour réserver votre expérience.',
+  },
+  de: {
+    title: 'Kontakt Fun Zone Teneriffa | Zentral Center, Playa Las Americas',
+    description: 'Kontaktieren Sie Fun Zone Teneriffa. Besuchen Sie uns im Zentral Center, Playa Las Americas. Anruf, WhatsApp oder E-Mail zur Buchung.',
+  },
+  nl: {
+    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
+    description: 'Neem contact op met Fun Zone Tenerife. Bezoek ons in het Zentral Center, Playa Las Americas. Bel, WhatsApp of e-mail voor een reservering.',
+  },
+  it: {
+    title: 'Contatti Fun Zone Tenerife | Zentral Center, Playa Las Americas',
+    description: 'Contatta Fun Zone Tenerife. Trovaci al Zentral Center, Playa Las Americas. Chiama, WhatsApp o email per prenotare la tua esperienza.',
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const l = locale as Locale;
+  const m = contactMeta[l] ?? contactMeta['en'];
+  const alternates = getAlternates('/contact');
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: { canonical: alternates.canonical, languages: alternates.languages },
+    openGraph: { title: m.title, description: m.description, url: alternates.canonical },
+  };
+}
 
 function TikTokIcon({ className }: { className?: string }) {
   return (

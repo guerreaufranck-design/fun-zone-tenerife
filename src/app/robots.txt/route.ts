@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const body = `# Robots.txt for Axe Throwing Tenerife
-# https://axethrowingtenerife.com
+  const body = `# Robots.txt for Fun Zone Tenerife
+# https://funzonetenerife.com
 
 User-agent: *
 Allow: /
@@ -38,7 +38,7 @@ User-agent: LinkedInBot
 Allow: /
 
 # Sitemap
-Sitemap: https://axethrowingtenerife.com/sitemap.xml
+Sitemap: https://funzonetenerife.com/sitemap.xml
 `;
 
   return new NextResponse(body, {

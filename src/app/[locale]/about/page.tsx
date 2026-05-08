@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
@@ -7,6 +8,51 @@ import {
   Target, Users, Star, Gamepad2,
 } from 'lucide-react';
 import Image from 'next/image';
+import { getAlternates, type Locale } from '@/lib/seo';
+
+const aboutMeta: Record<Locale, { title: string; description: string }> = {
+  en: {
+    title: 'About Fun Zone Tenerife | 4 Activities in Playa Las Americas',
+    description: 'Learn about Fun Zone Tenerife — the multi-activity entertainment venue bringing QuizzaBoom, Axe Throwing, Escape Game and Darts together in Playa Las Americas.',
+  },
+  es: {
+    title: 'Sobre Fun Zone Tenerife | 4 Actividades en Playa Las Américas',
+    description: 'Conoce Fun Zone Tenerife — el centro de entretenimiento multi-actividad con QuizzaBoom, Lanzamiento de Hachas, Escape Game y Dardos en Playa Las Américas.',
+  },
+  fr: {
+    title: 'À Propos de Fun Zone Tenerife | 4 Activités à Playa Las Americas',
+    description: 'Découvrez Fun Zone Tenerife — le centre de divertissement multi-activités avec QuizzaBoom, Lancer de Haches, Escape Game et Fléchettes à Playa Las Americas.',
+  },
+  de: {
+    title: 'Über Fun Zone Teneriffa | 4 Aktivitäten in Playa Las Americas',
+    description: 'Erfahren Sie mehr über Fun Zone Teneriffa — das Multi-Aktivitäts-Unterhaltungszentrum mit QuizzaBoom, Beilwerfen, Escape Game und Darts in Playa Las Americas.',
+  },
+  nl: {
+    title: 'Over Fun Zone Tenerife | 4 Activiteiten in Playa Las Americas',
+    description: 'Lees meer over Fun Zone Tenerife — het multi-activiteiten entertainment centrum met QuizzaBoom, Bijl Gooien, Escape Game en Darts in Playa Las Americas.',
+  },
+  it: {
+    title: 'Chi Siamo — Fun Zone Tenerife | 4 Attività a Playa Las Americas',
+    description: 'Scopri Fun Zone Tenerife — il centro di intrattenimento multi-attività con QuizzaBoom, Lancio delle Asce, Escape Game e Freccette a Playa Las Americas.',
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const l = locale as Locale;
+  const m = aboutMeta[l] ?? aboutMeta['en'];
+  const alternates = getAlternates('/about');
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: { canonical: alternates.canonical, languages: alternates.languages },
+    openGraph: { title: m.title, description: m.description, url: alternates.canonical },
+  };
+}
 
 const features = [
   {
