@@ -21,6 +21,7 @@ export interface Activity {
   isFunZone: boolean;
   bookUrl: string;
   location: string;
+  image?: string;
 }
 
 export const activities: Activity[] = [
@@ -126,6 +127,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/travelin-lady-tenerife-t392740/'),
     location: 'Los Cristianos',
+    image: '/images/activities/whale-watching-tenerife.avif',
   },
   {
     slug: 'catamaran-sunset-cruise-tenerife',
@@ -146,6 +148,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-ecocroisiere-d-observation-avec-repas-et-boissons-t395162/'),
     location: 'Los Cristianos',
+    image: '/images/activities/catamaran-sunset-cruise-tenerife.avif',
   },
   {
     slug: 'los-gigantes-boat-trip',
@@ -166,6 +169,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/los-gigantes-croisiere-d-observation-des-baleines-et-des-dauphins-avec-arret-baignade-t603483/'),
     location: 'Los Gigantes',
+    image: '/images/activities/los-gigantes-boat-trip.avif',
   },
   {
     slug: 'submarine-tour-tenerife',
@@ -186,6 +190,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/sud-de-tenerife-plongee-sous-marine-de-50-minutes-t3669/'),
     location: 'South Tenerife',
+    image: '/images/activities/submarine-tour-tenerife.avif',
   },
   {
     slug: 'jet-ski-tenerife',
@@ -206,6 +211,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-excursion-en-jet-ski-avec-excursion-en-quad-en-option-t317607/'),
     location: 'South Tenerife',
+    image: '/images/activities/jet-ski-tenerife.avif',
   },
   {
     slug: 'parasailing-tenerife',
@@ -226,6 +232,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('fuengirola-l1160/fuengirola-le-meilleur-parachute-ascensionnel-de-luxe-a-fuengirola-t918272/'),
     location: 'Tenerife',
+    image: '/images/activities/parasailing-tenerife.avif',
   },
   {
     slug: 'scuba-diving-tenerife',
@@ -246,6 +253,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-initiation-a-la-plongee-sous-marine-en-petits-groupes-t203269/'),
     location: 'South Tenerife',
+    image: '/images/activities/scuba-diving-tenerife.avif',
   },
   {
     slug: 'surf-lessons-tenerife',
@@ -266,6 +274,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-lecon-de-surf-pour-tous-les-niveaux-photos-incluses-t407915/'),
     location: 'Tenerife',
+    image: '/images/activities/surf-lessons-tenerife.avif',
   },
 
   // ─── Nature & Adventure ────────────────────────────────────────────────────
@@ -288,6 +297,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/mont-teide-visite-demi-journee-avec-billet-telepherique-t351351/'),
     location: 'Teide National Park',
+    image: '/images/activities/teide-cable-car-tour.avif',
   },
   {
     slug: 'teide-stargazing-tour',
@@ -308,6 +318,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-parc-national-de-teide-coucher-de-soleil-et-observation-des-etoiles-t457265/'),
     location: 'Teide National Park',
+    image: '/images/activities/teide-stargazing-tour.avif',
   },
   {
     slug: 'quad-buggy-tour-tenerife',
@@ -328,6 +339,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-visite-guidee-du-parc-national-du-teide-en-buggy-t369566/'),
     location: 'Teide National Park',
+    image: '/images/activities/quad-buggy-tour-tenerife.avif',
   },
   {
     slug: 'masca-gorge-hike',
@@ -348,6 +360,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-barranco-de-masca-randonnee-guidee-excursion-en-bateau-transport-t815057/'),
     location: 'Masca, North-West Tenerife',
+    image: '/images/activities/masca-gorge-hike.avif',
   },
   {
     slug: 'paragliding-tenerife',
@@ -368,6 +381,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-vol-en-parapente-tandem-avec-prise-en-charge-t499757/'),
     location: 'South Tenerife',
+    image: '/images/activities/paragliding-tenerife.avif',
   },
   {
     slug: 'horse-riding-tenerife',
@@ -388,6 +402,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-randonnee-a-cheval-avec-instructeur-t460664/'),
     location: 'Tenerife',
+    image: '/images/activities/horse-riding-tenerife.avif',
   },
   {
     slug: 'helicopter-tenerife',
@@ -408,6 +423,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-vol-en-helicoptere-t603941/'),
     location: 'Tenerife',
+    image: '/images/activities/helicopter-tenerife.avif',
   },
 
   // ─── Parks & Attractions ───────────────────────────────────────────────────
@@ -430,6 +446,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-billet-d-entree-au-loro-parque-t407432/'),
     location: 'Puerto de la Cruz',
+    image: '/images/activities/loro-parque-tickets.avif',
   },
   {
     slug: 'siam-park-tickets',
@@ -450,6 +467,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/billets-d-entree-au-parc-siam-t407436/'),
     location: 'Costa Adeje',
+    image: '/images/activities/siam-park-tickets.avif',
   },
   {
     slug: 'karting-tenerife',
@@ -470,6 +488,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/karting-club-tenerife-t74392/'),
     location: 'South Tenerife',
+    image: '/images/activities/karting-tenerife.avif',
   },
 
   // ─── Evenings & Shows ──────────────────────────────────────────────────────
@@ -492,6 +511,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tacoronte-visite-guidee-des-vignobles-avec-degustation-de-vins-et-de-fromages-t175413/'),
     location: 'Tacoronte',
+    image: '/images/activities/wine-tasting-tenerife.avif',
   },
   {
     slug: 'tenerife-north-day-trip',
@@ -512,6 +532,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/le-teide-et-le-nord-de-tenerife-grand-tour-t217542/'),
     location: 'Tenerife (island-wide)',
+    image: '/images/activities/tenerife-north-day-trip.avif',
   },
   {
     slug: 'flamenco-show-dinner-tenerife',
@@ -532,6 +553,7 @@ export const activities: Activity[] = [
     isFunZone: false,
     bookUrl: gyg('tenerife-l350/tenerife-diner-spectacle-scandal-entree-et-repas-5-plats-t418607/'),
     location: 'South Tenerife',
+    image: '/images/activities/flamenco-show-dinner-tenerife.avif',
   },
 ];
 

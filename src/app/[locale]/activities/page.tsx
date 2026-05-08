@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -107,11 +108,21 @@ export default function ActivitiesPage() {
                       className="group block"
                     >
                       <Card className="h-full overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_20px_rgba(0,212,255,0.08)]">
-                        {/* Gradient image placeholder */}
-                        <div className={`relative aspect-[16/9] bg-gradient-to-br ${activity.gradient}`}>
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-5xl">{activity.emoji}</span>
-                          </div>
+                        {/* Card image */}
+                        <div className={`relative aspect-[16/9] overflow-hidden bg-gradient-to-br ${activity.gradient}`}>
+                          {activity.image ? (
+                            <Image
+                              src={activity.image}
+                              alt={activity.name}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-5xl">{activity.emoji}</span>
+                            </div>
+                          )}
                           <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111118] to-transparent" />
                           {activity.isFunZone && (
                             <div className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-neon-orange px-2.5 py-1 text-xs font-bold text-white shadow-[0_0_10px_rgba(255,140,0,0.5)]">

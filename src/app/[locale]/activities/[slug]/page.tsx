@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
@@ -51,12 +52,23 @@ export default async function ActivityDetailPage({
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      {/* Hero gradient */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className={`relative aspect-[21/9] w-full bg-gradient-to-br ${activity.gradient} sm:aspect-[3/1]`}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-8xl opacity-30">{activity.emoji}</span>
-          </div>
+          {activity.image ? (
+            <Image
+              src={activity.image}
+              alt={activity.name}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-8xl opacity-30">{activity.emoji}</span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/50 to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
@@ -157,10 +169,20 @@ export default async function ActivityDetailPage({
                     className="group block"
                   >
                     <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20">
-                      <div className={`relative aspect-video bg-gradient-to-br ${rel.gradient}`}>
-                        <div className="absolute inset-0 flex items-center justify-center text-4xl">
-                          {rel.emoji}
-                        </div>
+                      <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${rel.gradient}`}>
+                        {rel.image ? (
+                          <Image
+                            src={rel.image}
+                            alt={rel.name}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            sizes="(max-width: 640px) 100vw, 33vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center text-4xl">
+                            {rel.emoji}
+                          </div>
+                        )}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#111118] to-transparent" />
                       </div>
                       <CardContent className="p-4">
