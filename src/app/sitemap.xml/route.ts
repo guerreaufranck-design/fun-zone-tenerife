@@ -19,6 +19,12 @@ const pages: SitemapEntry[] = [
     changefreq: 'weekly',
     priority: 0.9,
   },
+  {
+    path: '/activities',
+    localizedPaths: { en: '/activities', es: '/actividades', fr: '/activites', de: '/aktivitaeten', nl: '/activiteiten', it: '/attivita' },
+    changefreq: 'weekly',
+    priority: 0.9,
+  },
   { path: '/axe-throwing', changefreq: 'monthly', priority: 0.8 },
   { path: '/quiz-room', changefreq: 'monthly', priority: 0.8 },
   { path: '/darts', changefreq: 'monthly', priority: 0.8 },
@@ -50,6 +56,39 @@ const pages: SitemapEntry[] = [
     priority: 0.5,
   },
 ];
+
+const activitySlugs = [
+  'axe-throwing',
+  'quiz-room-quizzaboom',
+  'escape-game',
+  'darts',
+  'whale-watching-tenerife',
+  'catamaran-sunset-cruise-tenerife',
+  'los-gigantes-boat-trip',
+  'submarine-tour-tenerife',
+  'jet-ski-tenerife',
+  'parasailing-tenerife',
+  'scuba-diving-tenerife',
+  'surf-lessons-tenerife',
+  'teide-cable-car-tour',
+  'teide-stargazing-tour',
+  'quad-buggy-tour-tenerife',
+  'masca-gorge-hike',
+  'paragliding-tenerife',
+  'horse-riding-tenerife',
+  'helicopter-tenerife',
+  'loro-parque-tickets',
+  'siam-park-tickets',
+  'karting-tenerife',
+  'wine-tasting-tenerife',
+  'tenerife-north-day-trip',
+  'flamenco-show-dinner-tenerife',
+];
+
+const actLocalizedPaths: Record<(typeof locales)[number], string> = {
+  en: 'activities', es: 'actividades', fr: 'activites',
+  de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
+};
 
 const blogSlugs = [
   'fun-center-tenerife-4-experiences',
@@ -87,6 +126,22 @@ ${xhtmlLinks}
   </url>`;
 }
 
+function buildActivityEntry(slug: string): string {
+  const lastmod = new Date().toISOString().split('T')[0];
+  const xhtmlLinks = locales
+    .map((locale) => `    <xhtml:link rel="alternate" hreflang="${locale}" href="${BASE_URL}/${locale}/${actLocalizedPaths[locale]}/${slug}" />`)
+    .join('\n');
+
+  return `  <url>
+    <loc>${BASE_URL}/en/activities/${slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+${xhtmlLinks}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en/activities/${slug}" />
+  </url>`;
+}
+
 function buildBlogEntry(slug: string): string {
   const lastmod = new Date().toISOString().split('T')[0];
   const xhtmlLinks = locales
@@ -105,12 +160,14 @@ ${xhtmlLinks}
 
 export async function GET() {
   const pageUrls = pages.map(buildUrlEntry).join('\n');
+  const activityUrls = activitySlugs.map(buildActivityEntry).join('\n');
   const blogUrls = blogSlugs.map(buildBlogEntry).join('\n');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${pageUrls}
+${activityUrls}
 ${blogUrls}
 </urlset>`;
 

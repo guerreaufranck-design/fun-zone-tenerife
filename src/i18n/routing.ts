@@ -97,6 +97,22 @@ export const routing = defineRouting({
       nl: '/boeking/[ref]/wijzigen',
       it: '/prenotazione/[ref]/modifica'
     },
+    '/activities': {
+      en: '/activities',
+      es: '/actividades',
+      fr: '/activites',
+      de: '/aktivitaeten',
+      nl: '/activiteiten',
+      it: '/attivita'
+    },
+    '/activities/[slug]': {
+      en: '/activities/[slug]',
+      es: '/actividades/[slug]',
+      fr: '/activites/[slug]',
+      de: '/aktivitaeten/[slug]',
+      nl: '/activiteiten/[slug]',
+      it: '/attivita/[slug]'
+    },
     '/axe-throwing': '/axe-throwing',
     '/quiz-room': '/quiz-room',
     '/darts': '/darts',

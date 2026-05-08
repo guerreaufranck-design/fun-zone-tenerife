@@ -50,6 +50,14 @@ const localizedPaths: Record<string, Record<Locale, string>> = {
     nl: '/cadeaubon',
     it: '/buono-regalo',
   },
+  '/activities': {
+    en: '/activities',
+    es: '/actividades',
+    fr: '/activites',
+    de: '/aktivitaeten',
+    nl: '/activiteiten',
+    it: '/attivita',
+  },
   '/axe-throwing': {
     en: '/axe-throwing', es: '/axe-throwing', fr: '/axe-throwing',
     de: '/axe-throwing', nl: '/axe-throwing', it: '/axe-throwing',
@@ -87,6 +95,19 @@ export function getAlternates(path: string, slug?: string) {
     }
     languages['x-default'] = `${BASE_URL}/en/blog/${slug}`;
     return { canonical: `${BASE_URL}/en/blog/${slug}`, languages };
+  }
+
+  if (path === '/activities/[slug]' && slug) {
+    const languages: Record<string, string> = {};
+    const actPaths: Record<Locale, string> = {
+      en: 'activities', es: 'actividades', fr: 'activites',
+      de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
+    };
+    for (const locale of locales) {
+      languages[locale] = `${BASE_URL}/${locale}/${actPaths[locale]}/${slug}`;
+    }
+    languages['x-default'] = `${BASE_URL}/en/activities/${slug}`;
+    return { canonical: `${BASE_URL}/en/activities/${slug}`, languages };
   }
 
   if (path === '/escape-game/[slug]' && slug) {

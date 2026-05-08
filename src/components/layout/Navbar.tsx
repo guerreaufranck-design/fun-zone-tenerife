@@ -53,9 +53,19 @@ export function Navbar() {
       en: 'experiences', es: 'experiencias', fr: 'experiences',
       de: 'erlebnisse', nl: 'ervaringen', it: 'esperienze',
     };
+    const actSegments: Record<string, string> = {
+      en: 'activities', es: 'actividades', fr: 'activites',
+      de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
+    };
     const expMatch = currentPath.match(/^\/[a-z]{2}\/(?:experiences|experiencias|erlebnisse|ervaringen|esperienze)\/(.+)$/);
     if (expMatch) {
       window.location.href = `/${newLocale}/${expSegments[newLocale] ?? 'experiences'}/${expMatch[1]}`;
+      setLangDropdownOpen(false);
+      return;
+    }
+    const actMatch = currentPath.match(/^\/[a-z]{2}\/(?:activities|actividades|activites|aktivitaeten|activiteiten|attivita)\/(.+)$/);
+    if (actMatch) {
+      window.location.href = `/${newLocale}/${actSegments[newLocale] ?? 'activities'}/${actMatch[1]}`;
       setLangDropdownOpen(false);
       return;
     }
@@ -75,6 +85,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/experiences' as const, label: t('experiences') },
+    { href: '/activities' as const, label: t('activities') },
     { href: '/faq' as const, label: t('faq') },
     { href: '/contact' as const, label: t('contact') },
   ];
