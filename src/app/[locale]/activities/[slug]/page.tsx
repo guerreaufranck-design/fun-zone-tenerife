@@ -136,7 +136,7 @@ export default async function ActivityDetailPage({
               <p className="mb-6 text-sm text-muted-foreground">{activity.duration} · {activity.location}</p>
               {activity.isFunZone ? (
                 <Button asChild size="lg" className="!bg-neon-orange !text-white font-bold shadow-[0_0_20px_rgba(255,140,0,0.4)] hover:shadow-[0_0_30px_rgba(255,140,0,0.6)]">
-                  <Link href="/book">Book Direct — Best Price</Link>
+                  <Link href="/book">Book</Link>
                 </Button>
               ) : (
                 <a
@@ -145,14 +145,9 @@ export default async function ActivityDetailPage({
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#00d4ff] px-6 py-3 font-semibold text-[#0a0a0f] transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.5)]"
                 >
-                  Book on GetYourGuide
+                  Book
                   <ExternalLink className="h-4 w-4" />
                 </a>
-              )}
-              {!activity.isFunZone && (
-                <p className="mt-3 text-xs text-muted-foreground/60">
-                  You'll be redirected to GetYourGuide to complete your booking.
-                </p>
               )}
             </div>
           </div>

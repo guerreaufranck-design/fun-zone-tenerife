@@ -282,6 +282,39 @@ export default function ActivityLandingPage({ activityType }: ActivityLandingPag
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 sm:gap-3">
+            {[
+              '/images/gallery/gallery-1.jpg',
+              '/images/gallery/gallery-2.jpg',
+              '/images/gallery/gallery-3.jpg',
+              '/images/gallery/gallery-4.jpg',
+              '/images/gallery/gallery-5.jpg',
+              '/images/gallery/gallery-6.jpg',
+              '/images/gallery/gallery-7.jpg',
+              '/images/gallery/gallery-8.jpg',
+              '/images/gallery/gallery-9.jpg',
+              '/images/gallery/gallery-10.jpg',
+              '/images/gallery/gallery-11.jpg',
+              '/images/gallery/gallery-12.jpg',
+            ].map((src, i) => (
+              <div key={src} className="group relative aspect-square overflow-hidden rounded-lg">
+                <Image
+                  src={src}
+                  alt={`Fun Zone Tenerife ${i + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 33vw, (max-width: 768px) 25vw, 16vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Offers Grid */}
       <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

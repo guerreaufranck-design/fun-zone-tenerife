@@ -91,6 +91,12 @@ const actLocalizedPaths: Record<(typeof locales)[number], string> = {
 };
 
 const blogSlugs = [
+  'things-to-do-playa-las-americas-2025',
+  'whale-watching-tenerife-complete-guide',
+  'mount-teide-tenerife-visitor-guide',
+  'family-activities-tenerife-kids-2025',
+  'tenerife-bad-weather-rainy-day-activities',
+  'siam-park-tenerife-tips-guide',
   'fun-center-tenerife-4-experiences',
   'quiz-room-tenerife-quizzaboom',
   'escape-game-tenerife-first-timers',
