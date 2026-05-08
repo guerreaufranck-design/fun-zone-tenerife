@@ -6,6 +6,7 @@ import HowItWorks from '@/components/home/HowItWorks';
 import Testimonials from '@/components/home/Testimonials';
 import CTASection from '@/components/home/CTASection';
 import Gallery from '@/components/home/Gallery';
+import Partners from '@/components/home/Partners';
 import JsonLdLocalBusiness from '@/components/seo/JsonLdLocalBusiness';
 import { defaultMeta, getAlternates, type Locale } from '@/lib/seo';
 
@@ -80,6 +81,8 @@ export default function HomePage() {
       <section className="py-20 lg:py-24">
         <Gallery />
       </section>
+
+      <Partners />
     </>
   );
 }
