@@ -35,7 +35,7 @@ import PriceSummary from './PriceSummary';
 import PaymentChoice from './PaymentChoice';
 import {
   axeExternalBookUrl,
-  isAxeExternalCategory,
+  isExternalBookingCategory,
 } from '@/lib/booking/external';
 
 /* ============================================
@@ -232,25 +232,27 @@ export default function BookingWizard() {
   const wizardRef = useRef<HTMLDivElement>(null);
 
   // Category + Experiences from Supabase — support ?category=escape URL param.
-  // The axe tunnel (axe + ninja) is delegated to the external axe site, so we
-  // never pre-select it internally (see the redirect effect below).
+  // Every timed reservation (axe, ninja, darts, quiz, events) is delegated to the
+  // external axe site, so only the escape game is ever pre-selected internally
+  // (see the redirect effect below).
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const cat = params.get('category');
-      if (cat && ['darts', 'quiz', 'escape', 'events'].includes(cat)) {
+      if (cat === 'escape') {
         return cat as CategoryKey;
       }
     }
     return null;
   });
 
-  // Axe tunnel is booked exclusively on the external axe site — if someone lands
-  // on ?category=axe (or ninja), bounce them there before any internal booking.
+  // Anything sold as a date+time reservation is booked exclusively on the external
+  // axe site — if someone lands on such a ?category, bounce them there before any
+  // internal booking. Only the escape game (no date/time) stays internal.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const cat = new URLSearchParams(window.location.search).get('category');
-    if (isAxeExternalCategory(cat)) {
+    if (isExternalBookingCategory(cat)) {
       window.location.replace(axeExternalBookUrl(locale));
     }
   }, [locale]);
@@ -820,8 +822,9 @@ export default function BookingWizard() {
                       <Card
                         className="cursor-pointer transition-all duration-300 h-full hover:border-primary/40 hover:shadow-[0_0_15px_rgba(0,212,255,0.15)]"
                         onClick={() => {
-                          // Axe tunnel (axe + ninja) is booked on the external axe site
-                          if (isAxeExternalCategory(cat.key)) {
+                          // Timed reservations (axe, ninja, darts, quiz, events) are
+                          // booked on the external axe site; only escape stays internal.
+                          if (isExternalBookingCategory(cat.key)) {
                             window.location.href = axeExternalBookUrl(locale);
                             return;
                           }

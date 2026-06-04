@@ -150,8 +150,9 @@ interface ActivityLandingPageProps {
 
 export default function ActivityLandingPage({ activityType }: ActivityLandingPageProps) {
   const config = activityConfigs[activityType];
-  // Axe is booked exclusively on the external axe site — nothing internal.
-  const isAxe = activityType === 'axe';
+  // Timed reservations (axe, darts, quiz) are booked exclusively on the external
+  // axe site — nothing internal. Only the escape game (no date/time) stays internal.
+  const isExternalBooking = activityType !== 'escape';
   const t = useTranslations('activities');
   const tExp = useTranslations('experiences');
   const tCommon = useTranslations('common');
@@ -335,7 +336,7 @@ export default function ActivityLandingPage({ activityType }: ActivityLandingPag
               <h2 className="mb-2 text-xl font-bold text-white">{t('comingSoon')}</h2>
               <p className="text-muted-foreground">{t('comingSoonDesc')}</p>
               <Button variant="neon" className="mt-6" asChild>
-                {isAxe ? (
+                {isExternalBooking ? (
                   <a href={axeExternalBookUrl(locale)}>{tExp('bookNow')}</a>
                 ) : (
                   <Link href="/book">{tExp('bookNow')}</Link>
@@ -426,7 +427,7 @@ export default function ActivityLandingPage({ activityType }: ActivityLandingPag
                             </Link>
                           </Button>
                           <Button variant="outline" size="sm" asChild>
-                            {isAxe ? (
+                            {isExternalBooking ? (
                               <a href={axeExternalBookUrl(locale)}>{tExp('bookNow')}</a>
                             ) : (
                               <Link href="/book">{tExp('bookNow')}</Link>
