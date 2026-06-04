@@ -33,6 +33,10 @@ import TimeSlotPicker, { type TimeSlot } from './TimeSlotPicker';
 import PlayerSelector from './PlayerSelector';
 import PriceSummary from './PriceSummary';
 import PaymentChoice from './PaymentChoice';
+import {
+  axeExternalBookUrl,
+  isAxeExternalCategory,
+} from '@/lib/booking/external';
 
 /* ============================================
    EXPERIENCE TYPE (loaded from Supabase)
@@ -227,17 +231,29 @@ export default function BookingWizard() {
   const [direction, setDirection] = useState(1);
   const wizardRef = useRef<HTMLDivElement>(null);
 
-  // Category + Experiences from Supabase — support ?category=escape URL param
+  // Category + Experiences from Supabase — support ?category=escape URL param.
+  // The axe tunnel (axe + ninja) is delegated to the external axe site, so we
+  // never pre-select it internally (see the redirect effect below).
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const cat = params.get('category');
-      if (cat && ['axe', 'ninja', 'darts', 'quiz', 'escape', 'events'].includes(cat)) {
+      if (cat && ['darts', 'quiz', 'escape', 'events'].includes(cat)) {
         return cat as CategoryKey;
       }
     }
     return null;
   });
+
+  // Axe tunnel is booked exclusively on the external axe site — if someone lands
+  // on ?category=axe (or ninja), bounce them there before any internal booking.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const cat = new URLSearchParams(window.location.search).get('category');
+    if (isAxeExternalCategory(cat)) {
+      window.location.replace(axeExternalBookUrl(locale));
+    }
+  }, [locale]);
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loadingExperiences, setLoadingExperiences] = useState(true);
 
@@ -803,7 +819,14 @@ export default function BookingWizard() {
                     >
                       <Card
                         className="cursor-pointer transition-all duration-300 h-full hover:border-primary/40 hover:shadow-[0_0_15px_rgba(0,212,255,0.15)]"
-                        onClick={() => setSelectedCategory(cat.key)}
+                        onClick={() => {
+                          // Axe tunnel (axe + ninja) is booked on the external axe site
+                          if (isAxeExternalCategory(cat.key)) {
+                            window.location.href = axeExternalBookUrl(locale);
+                            return;
+                          }
+                          setSelectedCategory(cat.key);
+                        }}
                       >
                         <CardContent className="p-5 sm:p-6 flex flex-col items-center text-center gap-3">
                           <div className="h-14 w-14 rounded-xl bg-muted border border-border flex items-center justify-center">
