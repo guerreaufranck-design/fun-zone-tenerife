@@ -76,7 +76,7 @@ export const activities: Activity[] = [
       "Forget everything you think you know about Tenerife. Our outdoor escape games turn you into a real detective: decipher clues carved in stone, solve puzzles hidden in historic monuments, and uncover secrets that 99% of visitors never find. 4 adventures available across the island — all played at your own pace on your smartphone.",
     gradient: 'from-purple-900 to-pink-900',
     emoji: '🔍',
-    price: 'From €19',
+    price: 'From €25',
     duration: '1–4 hours',
     highlights: [
       '4 adventures across Tenerife',

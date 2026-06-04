@@ -87,7 +87,7 @@ export default function EscapeGameDetailPage() {
                   {u('bookNow')}
                 </a>
                 <span className="text-xs text-[#6b5e52]">
-                  {u('from')} <span className="font-semibold text-[#c9a24b]">19€</span>{u('perPhone')}
+                  {u('from')} <span className="font-semibold text-[#c9a24b]">25€</span>{u('perPhone')}
                 </span>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function EscapeGameDetailPage() {
           className="flex items-center justify-between gap-3 rounded-xl border border-[#c9a24b]/20 bg-[#0d0a07]/95 px-4 py-2.5 shadow-lg backdrop-blur-xl"
         >
           <span className="text-xs text-[#6b5e52]">
-            {u('from')} <span className="font-semibold text-[#c9a24b]">19€</span>{u('perPhone')}
+            {u('from')} <span className="font-semibold text-[#c9a24b]">25€</span>{u('perPhone')}
           </span>
           <a
             href={`/${locale}/book?category=escape`}
