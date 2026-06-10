@@ -163,7 +163,7 @@ export default function EscapeGameDetailPage() {
         >
           {/* Badge */}
           <div className="mb-10 inline-block border border-[#c9a24b]/60 px-5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#c9a24b]">
-            Escape Game · {t(game.location)} · Tenerife
+            Escape Game · {t(game.location)} · {game.island || 'Tenerife'}
           </div>
 
           {/* Eyebrow */}
