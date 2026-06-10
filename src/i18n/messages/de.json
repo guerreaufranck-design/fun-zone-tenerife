@@ -244,7 +244,7 @@
     "a18": "Mit einem Tag empfehlen wir: Morgen im Teide-Nationalpark (Seilbahn oder Buggy-Tour) für unvergessliche Aussichten über den Wolken, Nachmittag auf einer Walbeobachtungskreuzfahrt von Los Cristianos, dann Abend bei Fun Zone Teneriffa für Beilwerfen und QuizzaBoom. Ein langer aber extrem abwechslungsreicher Tag mit Teneriffas ikonischstem Naturwunder, Meerestierwelt und Indoor-Entertainment.",
     "q19": "Was kann man auf Teneriffa bei Regen oder schlechtem Wetter tun?",
     "a19": "Gute Neuigkeit: Der Süden Teneriffas hat selten wirklich schlechtes Wetter — er liegt im Regenschatten des Teides und bleibt meistens sonnig. Wenn das Wetter dreht, ist Fun Zone Teneriffa die nächstliegende Option — vier Indoor-Aktivitäten, fünf Minuten vom Strand. Indoor-Karting, Spa-Tage in Costa Adeje, Weinproben in Tacoronte und Loro Parque (größtenteils überdacht) sind ebenfalls hervorragende Optionen.",
-    "stillQuestions":"Noch Fragen?",
+    "stillQuestions": "Noch Fragen?",
     "stillQuestionsSubtitle": "Unser Team ist fuer dich da. Kontaktiere uns und wir melden uns schnellstmoeglich.",
     "contactUs": "Kontaktiere Uns"
   },
@@ -441,6 +441,10 @@
       "emailLabel": "E-Mail-Adresse",
       "emailHint": "Ihre 4 Aktivierungscodes werden hierher gesendet",
       "phoneLabel": "Telefon (optional)"
-    }
+    },
+    "otherIslandsTitle": "Spielen Sie auf einer anderen Insel?",
+    "otherIslandsSubtitle": "Selbstgeführte Outdoor-Escape-Games & Schatzsuchen auf den ganzen Kanaren, von unserem Reisepartner OddballTrip.",
+    "viewOnOddball": "Auf OddballTrip ansehen",
+    "bookedVia": "Selbstgeführt · Buchung auf OddballTrip"
   }
 }

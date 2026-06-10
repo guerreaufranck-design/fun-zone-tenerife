@@ -441,6 +441,10 @@
       "emailLabel": "Email address",
       "emailHint": "Your 4 activation codes will be sent here",
       "phoneLabel": "Phone (optional)"
-    }
+    },
+    "otherIslandsTitle": "Playing on another island?",
+    "otherIslandsSubtitle": "Self-guided outdoor escape games & treasure hunts across the Canaries, run by our travel partner OddballTrip.",
+    "viewOnOddball": "View on OddballTrip",
+    "bookedVia": "Self-guided · booked on OddballTrip"
   }
 }

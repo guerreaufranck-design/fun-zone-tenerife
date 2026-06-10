@@ -223,7 +223,7 @@
     "a18": "Met één dag suggereren we: ochtend in het Teide Nationaal Park (kabelbaan of buggy tour) voor onvergetelijke uitzichten boven de wolken, middag walvissen spotten cruise vanuit Los Cristianos, dan avond bij Fun Zone Tenerife voor bijl gooien en QuizzaBoom. Een lange maar gevarieerde dag die Tenerife's meest iconische natuur, zeeleven en indoor entertainment combineert.",
     "q19": "Wat kun je doen op Tenerife als het regent of slecht weer is?",
     "a19": "Goed nieuws: het zuiden van Tenerife heeft zelden echt slecht weer — het ligt beschut achter de Teide en blijft meestal zonnig. Als het weer omslaat is Fun Zone Tenerife de meest directe optie — vier indoor activiteiten op vijf minuten van het strand. Indoor karting, spa-dagen in Costa Adeje, wijnproeverijen in Tacoronte en Loro Parque (grotendeels overdekt) zijn ook uitstekende keuzes.",
-    "stillQuestions":"Nog vragen?",
+    "stillQuestions": "Nog vragen?",
     "stillQuestionsSubtitle": "Ons team staat voor je klaar. Neem contact op en we antwoorden zo snel mogelijk.",
     "contactUs": "Neem Contact Op"
   },
@@ -420,6 +420,10 @@
       "emailLabel": "E-mailadres",
       "emailHint": "Uw 4 activatiecodes worden hierheen gestuurd",
       "phoneLabel": "Telefoon (optioneel)"
-    }
+    },
+    "otherIslandsTitle": "Speel je op een ander eiland?",
+    "otherIslandsSubtitle": "Zelfgeleide outdoor-escapegames & speurtochten op de hele Canarische Eilanden, van onze reispartner OddballTrip.",
+    "viewOnOddball": "Bekijk op OddballTrip",
+    "bookedVia": "Zelfgeleid · boeken op OddballTrip"
   }
 }

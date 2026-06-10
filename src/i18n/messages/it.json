@@ -244,7 +244,7 @@
     "a18": "Con un solo giorno consigliamo: mattina al Parco Nazionale del Teide (funivia o tour in buggy) per viste indimenticabili sopra le nuvole, pomeriggio in crociera per l'avvistamento delle balene da Los Cristianos, poi serata a Fun Zone Tenerife per il lancio delle asce e QuizzaBoom. Una giornata intensa che combina il monumento naturale più iconico dell'isola, fauna marina selvatica e intrattenimento al coperto.",
     "q19": "Cosa fare a Tenerife quando piove o il tempo è brutto?",
     "a19": "Buone notizie: il sud di Tenerife ha raramente veramente cattivo tempo — si trova riparato dal Teide e rimane generalmente soleggiato. Quando il tempo cambia, Fun Zone Tenerife è l'opzione più immediata — quattro attività al coperto a cinque minuti dalla spiaggia. Il karting indoor, le spa di Costa Adeje, le degustazioni di vino a Tacoronte e il Loro Parque (in gran parte coperto) sono ottime alternative.",
-    "stillQuestions":"Hai ancora domande?",
+    "stillQuestions": "Hai ancora domande?",
     "stillQuestionsSubtitle": "Il nostro team e qui per aiutarti. Contattaci e ti risponderemo il prima possibile.",
     "contactUs": "Contattaci"
   },
@@ -441,6 +441,10 @@
       "emailLabel": "Indirizzo email",
       "emailHint": "I tuoi 4 codici di attivazione verranno inviati qui",
       "phoneLabel": "Telefono (opzionale)"
-    }
+    },
+    "otherIslandsTitle": "Giochi su un’altra isola?",
+    "otherIslandsSubtitle": "Escape game all’aperto e cacce al tesoro in autonomia in tutte le Canarie, dal nostro partner di viaggio OddballTrip.",
+    "viewOnOddball": "Vedi su OddballTrip",
+    "bookedVia": "In autonomia · prenotazione su OddballTrip"
   }
 }

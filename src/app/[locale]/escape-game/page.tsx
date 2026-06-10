@@ -3,10 +3,11 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Map, ArrowLeft, Smartphone, Star, Calendar, Mail, X, Minus, Plus, Loader2 } from 'lucide-react';
+import { Clock, MapPin, Map, ArrowLeft, Smartphone, Star, Calendar, Mail, X, Minus, Plus, Loader2, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { useState } from 'react';
+import { oddballIslands, oddballGamesByIsland, oddballGameUrl, ODDBALL_PRICE_FROM } from '@/data/oddball-games';
 
 interface EscapeGame {
   id: string;
@@ -64,6 +65,7 @@ const cardVariants = {
 export default function EscapeGamePage() {
   const t = useTranslations('activities');
   const tEscape = useTranslations('escapeGames');
+  const tCommon = useTranslations('common');
   const locale = useLocale();
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -500,6 +502,109 @@ export default function EscapeGamePage() {
                 </a>
               </div>
             </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Other Canary Islands — OddballTrip games */}
+      <section className="border-t border-white/5 bg-[#0c0c12] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 text-center">
+            <h2 className="neon-glow-pink mb-3 text-3xl font-bold text-white sm:text-4xl">
+              {tEscape('otherIslandsTitle')}
+            </h2>
+            <p className="mx-auto max-w-2xl text-base text-white/60">
+              {tEscape('otherIslandsSubtitle')}
+            </p>
+          </div>
+
+          {oddballIslands.map((island) => (
+            <div key={island.id} className="mb-12 last:mb-0">
+              <div className="mb-5 flex items-center gap-3">
+                <span className="text-2xl">{island.emoji}</span>
+                <div>
+                  <h3 className="text-xl font-bold text-white sm:text-2xl">{island.name[locale] ?? island.name.en}</h3>
+                  <p className="text-sm text-white/50">{island.tagline[locale] ?? island.tagline.en}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {oddballGamesByIsland(island.id).map((game, i) => (
+                  <motion.a
+                    key={game.slug}
+                    href={oddballGameUrl(game.slug)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-50px' }}
+                    variants={cardVariants}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#111118] transition-all duration-300 hover:border-[#ff2d7b]/30 hover:shadow-[0_0_30px_rgba(255,45,123,0.12)]"
+                  >
+                    {/* Hero photo */}
+                    <div className={`relative aspect-[16/9] overflow-hidden bg-gradient-to-br ${game.gradient}`}>
+                      <Image
+                        src={game.image}
+                        alt={game.name[locale] ?? game.name.en}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#111118] via-transparent to-transparent" />
+                      <div className="absolute right-3 top-3">
+                        <span className="flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm">
+                          <Clock size={11} />
+                          {game.duration}
+                        </span>
+                      </div>
+                      {game.popular && (
+                        <div className="absolute left-3 top-3">
+                          <span className="rounded-full bg-[#ff2d7b] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-[0_0_15px_rgba(255,45,123,0.4)]">
+                            {tEscape('mostPopular')}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col p-5">
+                      <h4 className="mb-1 text-lg font-bold text-white">{game.name[locale] ?? game.name.en}</h4>
+                      <p className="mb-2 flex items-center gap-1.5 text-xs text-[#ff2d7b]/80">
+                        <MapPin size={12} />
+                        {game.location[locale] ?? game.location.en}
+                      </p>
+                      <p className="mb-4 flex-1 text-sm leading-relaxed text-white/60">
+                        {game.description[locale] ?? game.description.en}
+                      </p>
+
+                      {/* Difficulty + price */}
+                      <div className="mb-4 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] text-white/40">{tEscape('difficulty')}</span>
+                          <div className="flex gap-1">
+                            {Array.from({ length: 5 }).map((_, idx) => (
+                              <div
+                                key={idx}
+                                className={`h-1.5 w-4 rounded-full ${idx < game.difficulty ? 'bg-[#ff2d7b]' : 'bg-white/10'}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <span className="text-sm font-bold text-white">{tCommon('from')} {ODDBALL_PRICE_FROM}</span>
+                      </div>
+
+                      {/* CTA */}
+                      <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-[#ff2d7b]/30 bg-[#ff2d7b]/10 px-4 py-2.5 text-sm font-bold text-[#ff2d7b] transition-all group-hover:border-[#ff2d7b]/60 group-hover:bg-[#ff2d7b]/20">
+                        {tEscape('viewOnOddball')}
+                        <ExternalLink size={14} />
+                      </span>
+                      <p className="mt-2 text-center text-[11px] text-white/30">{tEscape('bookedVia')}</p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
