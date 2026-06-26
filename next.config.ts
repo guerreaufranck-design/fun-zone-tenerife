@@ -13,6 +13,19 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Block vulnerability-scanner junk (e.g. /wp.php, /shell.php, /.env). These
+  // unknown single-segment paths otherwise fall through to the [locale] route
+  // and return a 500 (next-intl reads headers → static-to-dynamic error) instead
+  // of a clean response, which trips Vercel 5xx alerts. Bounce them to home.
+  async redirects() {
+    return [
+      {
+        source: '/:scan(.*\\.(?:php|asp|aspx|jsp|cgi|env|bak|sql))',
+        destination: '/',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
