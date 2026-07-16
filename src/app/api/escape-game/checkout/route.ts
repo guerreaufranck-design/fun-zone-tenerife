@@ -3,9 +3,9 @@ import { getStripe } from '@/lib/stripe';
 import { createAdminClient } from '@/lib/supabase/admin';
 
 const ESCAPE_PRICING: Record<number, number> = {
-  1: 1900, // 19€
-  2: 2500, // 25€
-  3: 3500, // 35€
+  1: 2500, // 25€
+  2: 3500, // 35€
+  3: 4500, // 45€
 };
 
 export async function POST(request: NextRequest) {
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
       process.env.NEXT_PUBLIC_SITE_URL ||
       (process.env.VERCEL_PROJECT_PRODUCTION_URL
         ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : 'https://www.funzonetenerife.com');
+        : 'https://funzonetenerife.com');
 
     // Create Stripe Checkout Session
     const session = await getStripe().checkout.sessions.create({
