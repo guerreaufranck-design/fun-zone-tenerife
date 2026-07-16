@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { sendEscapeGameCode } from '@/lib/email';
+import { createPartnerBooking, ODDBALL_SLUG_BY_OFFER, ESCAPE_PWA_URL } from '@/lib/oddballtrip';
+
+export const maxDuration = 300;
 
 const ESCAPE_CITIES: Record<string, string> = {
   'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
@@ -14,13 +17,6 @@ const ESCAPE_DURATIONS: Record<string, string> = {
   'escape-trois-cles': '2-2h30',
   'escape-bateria': '1h30-2h',
   'escape-cendres': '2h30-3h',
-};
-
-const ESCAPE_GAME_IDS: Record<string, string> = {
-  'escape-ichasagua': '11111111-1111-1111-1111-111111111111',
-  'escape-trois-cles': '22222222-2222-2222-2222-222222222222',
-  'escape-bateria': '33333333-3333-3333-3333-333333333333',
-  'escape-cendres': '44444444-4444-4444-4444-444444444444',
 };
 
 const ESCAPE_NAMES: Record<string, string> = {
@@ -50,52 +46,45 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid number of phones (1-3)' }, { status: 400 });
     }
 
-    const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://escape-game-indol.vercel.app';
-    const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
-    const gameId = ESCAPE_GAME_IDS[offerSlug] || '';
+    const oddballSlug = ODDBALL_SLUG_BY_OFFER[offerSlug];
     const gameName = ESCAPE_NAMES[offerSlug] || 'Escape Game';
     const city = ESCAPE_CITIES[offerSlug] || '';
     const duration = ESCAPE_DURATIONS[offerSlug] || '2h';
 
-    if (!gameId) {
+    if (!oddballSlug) {
       return NextResponse.json({ error: 'Unknown escape game slug' }, { status: 400 });
     }
 
     const generatedCodes: string[] = [];
     const errors: string[] = [];
+    // Unique base so each manual dispatch issues fresh codes (partner API is
+    // idempotent on partner_ref).
+    const refBase = `manual-${source}-${offerSlug}-${Date.now()}`;
 
     for (let i = 0; i < phones; i++) {
       try {
-        const codeRes = await fetch(`${appUrl}/api/generate-code`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-secret': apiSecret,
-          },
-          body: JSON.stringify({
-            gameId,
-            customerEmail,
-            customerName,
-          }),
+        const booking = await createPartnerBooking({
+          slug: oddballSlug,
+          customerEmail,
+          language: locale,
+          partnerRef: `${refBase}-p${i + 1}`,
         });
 
-        if (!codeRes.ok) {
-          const errData = await codeRes.json().catch(() => ({}));
-          errors.push(`Phone ${i + 1}: code generation failed — ${JSON.stringify(errData)}`);
+        if (booking.status === 'generating') {
+          errors.push(`Phone ${i + 1}: game still generating — retry shortly`);
           continue;
         }
 
-        const { code } = await codeRes.json();
-        generatedCodes.push(code);
+        generatedCodes.push(booking.code);
 
         await sendEscapeGameCode({
           email: customerEmail,
           customerName,
-          code,
+          code: booking.code,
           gameName,
           city,
           estimatedDuration: duration,
-          appUrl,
+          appUrl: ESCAPE_PWA_URL,
           language: locale,
         });
       } catch (err) {

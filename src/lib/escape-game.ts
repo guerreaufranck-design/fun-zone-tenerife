@@ -1,13 +1,17 @@
 /**
- * Integration with the Escape Game app.
- * Generates activation codes via API and sends them to customers.
+ * Escape game catalogue (Tenerife) — resold from OddballTrip.
+ *
+ * Codes are NOT generated here: each sale is declared to OddballTrip's partner
+ * API, which owns the games. See {@link file://./oddballtrip.ts}. This module
+ * only holds the display catalogue + the OddballTrip slug mapping used by the
+ * Island Pass flow (all four games in one purchase).
  */
 
-const ESCAPE_GAME_URL = process.env.ESCAPE_GAME_URL || "https://escape-game-indol.vercel.app";
-const ESCAPE_GAME_API_SECRET = process.env.ESCAPE_GAME_API_SECRET || "FZ-EG-2026-sEcReT";
-
 export interface EscapeGameProduct {
-  gameId: string;
+  /** Fun Zone offer slug (matches the `offers` table). */
+  offerSlug: string;
+  /** OddballTrip catalogue slug — the key the partner API expects. */
+  oddballSlug: string;
   title: Record<string, string>;
   city: string;
   estimatedDuration: string;
@@ -15,10 +19,13 @@ export interface EscapeGameProduct {
 
 /**
  * Available escape games on Tenerife.
+ * NOTE: "Les Cendres de l'Âme" (Garachico) has no game on OddballTrip yet — a
+ * sale returns 202 'generating' and is delivered once the game is built.
  */
 export const ESCAPE_GAMES: EscapeGameProduct[] = [
   {
-    gameId: "11111111-1111-1111-1111-111111111111",
+    offerSlug: "escape-ichasagua",
+    oddballSlug: "le-code-dichasagua",
     title: {
       fr: "Le Code d'Ichasagua",
       en: "The Code of Ichasagua",
@@ -30,7 +37,8 @@ export const ESCAPE_GAMES: EscapeGameProduct[] = [
     estimatedDuration: "1h30",
   },
   {
-    gameId: "22222222-2222-2222-2222-222222222222",
+    offerSlug: "escape-trois-cles",
+    oddballSlug: "le-coffre-des-trois-cles",
     title: {
       fr: "Le Coffre des Trois Cles",
       en: "The Chest of Three Keys",
@@ -42,7 +50,8 @@ export const ESCAPE_GAMES: EscapeGameProduct[] = [
     estimatedDuration: "2h30",
   },
   {
-    gameId: "33333333-3333-3333-3333-333333333333",
+    offerSlug: "escape-bateria",
+    oddballSlug: "le-butin-de-la-bateria",
     title: {
       fr: "Le Butin de la Bateria",
       en: "The Battery Bounty",
@@ -54,7 +63,8 @@ export const ESCAPE_GAMES: EscapeGameProduct[] = [
     estimatedDuration: "1h45",
   },
   {
-    gameId: "44444444-4444-4444-4444-444444444444",
+    offerSlug: "escape-cendres",
+    oddballSlug: "les-cendres-de-lame",
     title: {
       fr: "Les Cendres de l'Ame",
       en: "Ashes of the Soul",
@@ -68,40 +78,8 @@ export const ESCAPE_GAMES: EscapeGameProduct[] = [
 ];
 
 /**
- * Generate an activation code by calling the Escape Game API.
+ * Find an escape game product by its Fun Zone offer slug.
  */
-export async function generateEscapeGameCode(
-  gameId: string,
-  customerEmail?: string,
-  customerName?: string
-): Promise<{ code: string; gameId: string }> {
-  const res = await fetch(`${ESCAPE_GAME_URL}/api/generate-code`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-secret": ESCAPE_GAME_API_SECRET,
-    },
-    body: JSON.stringify({ gameId, customerEmail, customerName }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.error || `Failed to generate code: ${res.status}`);
-  }
-
-  return res.json();
-}
-
-/**
- * Get the escape game app URL with the code pre-filled.
- */
-export function getEscapeGameLink(): string {
-  return ESCAPE_GAME_URL;
-}
-
-/**
- * Find an escape game product by gameId.
- */
-export function findEscapeGame(gameId: string): EscapeGameProduct | undefined {
-  return ESCAPE_GAMES.find((g) => g.gameId === gameId);
+export function findEscapeGame(offerSlug: string): EscapeGameProduct | undefined {
+  return ESCAPE_GAMES.find((g) => g.offerSlug === offerSlug);
 }

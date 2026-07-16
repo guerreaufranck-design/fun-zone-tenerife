@@ -5,8 +5,13 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { allocateLanes } from "@/lib/booking/lane-allocation";
 import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode, sendIslandPassEmail } from "@/lib/email";
 import { ESCAPE_GAMES } from "@/lib/escape-game";
+import { createPartnerBooking, ODDBALL_SLUG_BY_OFFER, ESCAPE_PWA_URL } from "@/lib/oddballtrip";
 import type { LaneType } from "@/lib/supabase/types";
 
+// Escape-game code generation is delegated to OddballTrip's partner API, which
+// can synchronously pre-generate a game's audio on the first sale of a new
+// (game × language) pair. Give the webhook room so it doesn't abort mid-call.
+export const maxDuration = 300;
 
 const ESCAPE_CITIES: Record<string, string> = {
   'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
@@ -20,14 +25,6 @@ const ESCAPE_DURATIONS: Record<string, string> = {
   'escape-trois-cles': '2-2h30',
   'escape-bateria': '1h30-2h',
   'escape-cendres': '2h30-3h',
-};
-
-// Mapping from offer slug to escape-game app gameId
-const ESCAPE_GAME_IDS: Record<string, string> = {
-  'escape-ichasagua': '11111111-1111-1111-1111-111111111111',
-  'escape-trois-cles': '22222222-2222-2222-2222-222222222222',
-  'escape-bateria': '33333333-3333-3333-3333-333333333333',
-  'escape-cendres': '44444444-4444-4444-4444-444444444444',
 };
 
 export async function POST(request: NextRequest) {
@@ -68,33 +65,33 @@ export async function POST(request: NextRequest) {
         const locale = metadata.locale || 'en';
         const phoneCount = parseInt(phones || '1', 10);
 
-        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://escape-game-indol.vercel.app';
-        const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
+        const appUrl = ESCAPE_PWA_URL;
         const supabase = createAdminClient();
 
-        // For each phone, generate 4 codes (one per escape game)
+        // For each phone, generate 4 codes (one per escape game) via OddballTrip.
         for (let phoneIdx = 0; phoneIdx < phoneCount; phoneIdx++) {
           const gameCodes: { gameName: string; city: string; estimatedDuration: string; code: string }[] = [];
 
           for (const game of ESCAPE_GAMES) {
             try {
-              const codeRes = await fetch(`${appUrl}/api/generate-code`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'x-api-secret': apiSecret },
-                body: JSON.stringify({ gameId: game.gameId, customerEmail, customerName: customerName || 'Player' }),
+              const booking = await createPartnerBooking({
+                slug: game.oddballSlug,
+                customerEmail,
+                language: locale,
+                // one idempotency key per (session, phone, game)
+                partnerRef: `${session.id}_p${phoneIdx + 1}_${game.oddballSlug}`,
               });
 
-              if (!codeRes.ok) {
-                console.error(`Island Pass: failed to generate code for ${game.city}`);
+              if (booking.status === 'generating') {
+                console.error(`Island Pass: ${game.oddballSlug} not ready (generating) — will be delivered by webhook`);
                 continue;
               }
 
-              const { code } = await codeRes.json();
               gameCodes.push({
                 gameName: game.title[locale] ?? game.title['en'] ?? game.city,
                 city: game.city,
                 estimatedDuration: game.estimatedDuration,
-                code,
+                code: booking.code,
               });
             } catch (e) {
               console.error(`Island Pass: error generating code for ${game.city}:`, e);
@@ -163,67 +160,77 @@ export async function POST(request: NextRequest) {
         const city = ESCAPE_CITIES[slug] || '';
         const duration = ESCAPE_DURATIONS[slug] || '2h';
 
-        // Generate codes via escape-game app API
-        const appUrl = process.env.ESCAPE_GAME_APP_URL || 'https://escape-game-indol.vercel.app';
-        const apiSecret = process.env.CODE_API_SECRET || 'FZ-EG-2026-sEcReT';
-        const gameId = ESCAPE_GAME_IDS[slug] || '';
+        // Idempotency: Stripe retries the webhook if we're slow (code generation
+        // can take a while). If this session was already fulfilled, don't
+        // generate/email again.
+        const { data: existingOrder } = await supabase
+          .from('escape_orders')
+          .select('id, codes')
+          .eq('stripe_session_id', session.id)
+          .maybeSingle();
+        if (existingOrder && Array.isArray(existingOrder.codes) && existingOrder.codes.length >= phoneCount) {
+          console.log(`Escape order ${session.id} already fulfilled — skipping`);
+          return NextResponse.json({ received: true, alreadyProcessed: true });
+        }
 
+        // Generate codes via OddballTrip's partner API (Fun Zone is a reseller).
+        const oddballSlug = ODDBALL_SLUG_BY_OFFER[slug];
         const generatedCodes: string[] = [];
 
-        for (let i = 0; i < phoneCount; i++) {
-          try {
-            const codeRes = await fetch(`${appUrl}/api/generate-code`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'x-api-secret': apiSecret,
-              },
-              body: JSON.stringify({
-                gameId,
+        if (!oddballSlug) {
+          console.error(`Escape game: no OddballTrip slug mapped for offer "${slug}" — cannot generate code`);
+        } else {
+          for (let i = 0; i < phoneCount; i++) {
+            try {
+              const booking = await createPartnerBooking({
+                slug: oddballSlug,
                 customerEmail,
+                language: locale,
+                partnerRef: `${session.id}_p${i + 1}`,
+              });
+
+              if (booking.status === 'generating') {
+                console.error(`Escape game ${oddballSlug} not ready (generating) — code will be delivered by webhook`);
+                continue;
+              }
+
+              generatedCodes.push(booking.code);
+
+              await sendEscapeGameCode({
+                email: customerEmail,
                 customerName: customerName || 'Player',
-              }),
-            });
-
-            if (!codeRes.ok) {
-              const errData = await codeRes.json().catch(() => ({}));
-              console.error(`Failed to generate code from escape app (phone ${i + 1}):`, errData);
-              continue;
+                code: booking.code,
+                gameName,
+                city,
+                estimatedDuration: duration,
+                appUrl: ESCAPE_PWA_URL,
+                language: locale,
+              });
+            } catch (err) {
+              console.error(`Failed to generate/send escape code (phone ${i + 1}):`, err);
             }
-
-            const { code } = await codeRes.json();
-            generatedCodes.push(code);
-
-            await sendEscapeGameCode({
-              email: customerEmail,
-              customerName: customerName || 'Player',
-              code,
-              gameName,
-              city,
-              estimatedDuration: duration,
-              appUrl,
-              language: locale,
-            });
-          } catch (emailError) {
-            console.error(`Failed to process escape game code (phone ${i + 1}):`, emailError);
           }
         }
 
-        // Save order to Supabase for analytics
+        // Save (or update) the order for analytics + idempotency.
         try {
-          await supabase.from('escape_orders').insert({
-            stripe_session_id: session.id,
-            offer_id: offerId,
-            offer_slug: slug,
-            game_name: gameName,
-            phones: phoneCount,
-            amount_cents: session.amount_total ?? 0,
-            customer_name: customerName || 'Player',
-            customer_email: customerEmail,
-            customer_phone: customerPhone || null,
-            locale,
-            codes: generatedCodes,
-          });
+          if (existingOrder) {
+            await supabase.from('escape_orders').update({ codes: generatedCodes }).eq('id', existingOrder.id);
+          } else {
+            await supabase.from('escape_orders').insert({
+              stripe_session_id: session.id,
+              offer_id: offerId,
+              offer_slug: slug,
+              game_name: gameName,
+              phones: phoneCount,
+              amount_cents: session.amount_total ?? 0,
+              customer_name: customerName || 'Player',
+              customer_email: customerEmail,
+              customer_phone: customerPhone || null,
+              locale,
+              codes: generatedCodes,
+            });
+          }
         } catch (dbErr) {
           console.error('Failed to save escape order:', dbErr);
         }
