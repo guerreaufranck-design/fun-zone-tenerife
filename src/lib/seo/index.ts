@@ -74,6 +74,14 @@ const localizedPaths: Record<string, Record<Locale, string>> = {
     en: '/escape-game', es: '/escape-game', fr: '/escape-game',
     de: '/escape-game', nl: '/escape-game', it: '/escape-game',
   },
+  '/celebrations': {
+    en: '/stag-hen-party-tenerife',
+    es: '/despedidas-tenerife',
+    fr: '/evjf-evg-tenerife',
+    de: '/junggesellenabschied-teneriffa',
+    nl: '/vrijgezellenfeest-tenerife',
+    it: '/addio-nubilato-celibato-tenerife',
+  },
 };
 
 export function getAlternates(path: string, slug?: string) {

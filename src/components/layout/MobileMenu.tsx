@@ -76,6 +76,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const navLinks = [
     { href: '/experiences' as const, label: t('experiences') },
     { href: '/activities' as const, label: t('activities') },
+    { href: '/celebrations' as const, label: t('celebrations') },
     { href: '/book' as const, label: t('book') },
     { href: '/faq' as const, label: t('faq') },
     { href: '/contact' as const, label: t('contact') },

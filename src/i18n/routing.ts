@@ -117,7 +117,15 @@ export const routing = defineRouting({
     '/quiz-room': '/quiz-room',
     '/darts': '/darts',
     '/escape-game': '/escape-game',
-    '/escape-game/[slug]': '/escape-game/[slug]'
+    '/escape-game/[slug]': '/escape-game/[slug]',
+    '/celebrations': {
+      en: '/stag-hen-party-tenerife',
+      es: '/despedidas-tenerife',
+      fr: '/evjf-evg-tenerife',
+      de: '/junggesellenabschied-teneriffa',
+      nl: '/vrijgezellenfeest-tenerife',
+      it: '/addio-nubilato-celibato-tenerife'
+    }
   }
 });
 
