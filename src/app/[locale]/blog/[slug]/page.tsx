@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, Link2 } from 'lucide-react';
 import { blogPosts } from '@/lib/blog/posts';
+import RelatedActivities from '@/components/blog/RelatedActivities';
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -132,6 +133,9 @@ export default function BlogPostPage() {
               Copy Link
             </Button>
           </div>
+
+          {/* Affiliate cross-sell (GetYourGuide) */}
+          <RelatedActivities />
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
