@@ -234,7 +234,7 @@ export const activities: Activity[] = [
       'Safety equipment provided',
     ],
     isFunZone: false,
-    bookUrl: gyg('fuengirola-l1160/fuengirola-le-meilleur-parachute-ascensionnel-de-luxe-a-fuengirola-t918272/'),
+    bookUrl: gyg('tenerife-l350/tenerife-costa-adeje-parasailing-t550159/'),
     location: 'Tenerife',
     image: '/images/activities/parasailing-tenerife.avif',
   },
