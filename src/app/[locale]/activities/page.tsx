@@ -9,32 +9,32 @@ import { getAlternates, type Locale } from '@/lib/seo';
 
 const activitiesMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Things to Do in Tenerife | Best Activities & Experiences 2025',
+    title: 'Things to Do in Tenerife | Best Activities & Experiences 2026',
     description:
       'Discover the best activities in Tenerife: whale watching, axe throwing, quiz room, Teide cable car, catamaran cruises, jet ski, escape games and more. Book directly or via GetYourGuide.',
   },
   es: {
-    title: 'Qué Hacer en Tenerife | Mejores Actividades y Experiencias 2025',
+    title: 'Qué Hacer en Tenerife | Mejores Actividades y Experiencias 2026',
     description:
       'Descubre las mejores actividades en Tenerife: avistamiento de ballenas, lanzamiento de hachas, quiz room, teleférico del Teide, cruceros en catamarán, jet ski, escape games y más.',
   },
   fr: {
-    title: 'Que Faire à Tenerife | Meilleures Activités & Expériences 2025',
+    title: 'Que Faire à Tenerife | Meilleures Activités & Expériences 2026',
     description:
       'Découvrez les meilleures activités à Tenerife : observation des baleines, lancer de haches, quiz room, téléphérique du Teide, croisières catamaran, jet ski, escape games et plus encore.',
   },
   de: {
-    title: 'Aktivitäten auf Teneriffa | Beste Erlebnisse & Ausflüge 2025',
+    title: 'Aktivitäten auf Teneriffa | Beste Erlebnisse & Ausflüge 2026',
     description:
       'Entdecken Sie die besten Aktivitäten auf Teneriffa: Walbeobachtung, Beilwerfen, Quiz Room, Teide-Seilbahn, Katamaranausflüge, Jetski, Escape Games und vieles mehr.',
   },
   nl: {
-    title: 'Activiteiten op Tenerife | Beste Ervaringen & Uitjes 2025',
+    title: 'Activiteiten op Tenerife | Beste Ervaringen & Uitjes 2026',
     description:
       'Ontdek de beste activiteiten op Tenerife: walvissen spotten, bijl gooien, quiz room, Teide kabelbaan, catamaranreizen, jetski, escape games en meer.',
   },
   it: {
-    title: 'Cosa Fare a Tenerife | Le Migliori Attività ed Esperienze 2025',
+    title: 'Cosa Fare a Tenerife | Le Migliori Attività ed Esperienze 2026',
     description:
       "Scopri le migliori attività a Tenerife: avvistamento balene, lancio delle asce, quiz room, funivia del Teide, crociere in catamarano, moto d'acqua, escape games e altro ancora.",
   },
@@ -70,9 +70,38 @@ const categoryEmoji: Record<ActivityCategory, string> = {
   'Evenings & Shows': '🌙',
 };
 
-export default function ActivitiesPage() {
+// Localized /activities path segment per locale (mirror i18n/routing.ts).
+const activitiesSegment: Record<Locale, string> = {
+  en: 'activities', es: 'actividades', fr: 'activites',
+  de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
+};
+
+export default async function ActivitiesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const l = (locale as Locale) in activitiesSegment ? (locale as Locale) : 'en';
+  const seg = activitiesSegment[l];
+
+  // ItemList structured data — helps "things to do in Tenerife" rich results.
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Things to Do in Tenerife',
+    numberOfItems: activities.length,
+    itemListElement: activities.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.name,
+      url: `https://funzonetenerife.com/${l}/${seg}/${a.slug}`,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       {/* Hero */}
       <section className="relative overflow-hidden px-4 pb-8 pt-28 sm:px-6 sm:pt-32 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#0d0d1a] to-[#0a0a0f]" />
