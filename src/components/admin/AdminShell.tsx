@@ -17,6 +17,7 @@ import {
   Play,
   Shield,
   Receipt,
+  Percent,
   Settings,
   LogOut,
   Menu,
@@ -39,6 +40,7 @@ const navItems = [
   { href: '/admin/tiktok', label: 'TikTok', icon: Play },
   { href: '/admin/waivers', label: 'Waivers', icon: Shield },
   { href: '/admin/invoices', label: 'Invoices', icon: Receipt },
+  { href: '/admin/commissions', label: 'Commissions', icon: Percent },
   { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 
