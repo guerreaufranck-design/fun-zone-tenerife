@@ -24,7 +24,15 @@ export function isExternalBookingCategory(category: string | null | undefined): 
   );
 }
 
-/** Locale-aware book URL on the external axe site (both sites share next-intl locales). */
+/**
+ * Referral slug identifying Fun Zone as the OTA partner on the axe site. The
+ * axe booking flow reads `?ref=` and attributes the sale to this partner so the
+ * monthly commission can be reconciled. Must match a `partners.slug` there.
+ */
+export const AXE_PARTNER_REF = 'funzone';
+
+/** Locale-aware book URL on the external axe site, tagged with our partner ref. */
 export function axeExternalBookUrl(locale?: string): string {
-  return locale ? `${AXE_EXTERNAL_BASE}/${locale}/book` : `${AXE_EXTERNAL_BASE}/book`;
+  const base = locale ? `${AXE_EXTERNAL_BASE}/${locale}/book` : `${AXE_EXTERNAL_BASE}/book`;
+  return `${base}?ref=${AXE_PARTNER_REF}`;
 }
