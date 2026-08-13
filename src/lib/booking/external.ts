@@ -36,3 +36,22 @@ export function axeExternalBookUrl(locale?: string): string {
   const base = locale ? `${AXE_EXTERNAL_BASE}/${locale}/book` : `${AXE_EXTERNAL_BASE}/book`;
   return `${base}?ref=${AXE_PARTNER_REF}`;
 }
+
+/**
+ * Log an outbound click toward the axe site into Fun Zone's PRIVATE DB (traffic
+ * tracking Fun Zone keeps for itself). Fire-and-forget via sendBeacon so it
+ * survives the navigation that follows. Client-only; safe no-op on the server.
+ */
+export function trackAxeClick(info: { locale?: string; category?: string } = {}): void {
+  if (typeof navigator === 'undefined' || typeof navigator.sendBeacon !== 'function') return;
+  try {
+    const payload = JSON.stringify({
+      locale: info.locale,
+      category: info.category,
+      path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+    });
+    navigator.sendBeacon('/api/track/axe-click', new Blob([payload], { type: 'application/json' }));
+  } catch {
+    // tracking must never block navigation
+  }
+}

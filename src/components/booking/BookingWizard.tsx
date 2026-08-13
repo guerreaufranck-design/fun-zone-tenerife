@@ -36,6 +36,7 @@ import PaymentChoice from './PaymentChoice';
 import {
   axeExternalBookUrl,
   isExternalBookingCategory,
+  trackAxeClick,
 } from '@/lib/booking/external';
 
 /* ============================================
@@ -253,6 +254,7 @@ export default function BookingWizard() {
     if (typeof window === 'undefined') return;
     const cat = new URLSearchParams(window.location.search).get('category');
     if (isExternalBookingCategory(cat)) {
+      trackAxeClick({ locale, category: cat ?? undefined });
       window.location.replace(axeExternalBookUrl(locale));
     }
   }, [locale]);
@@ -825,6 +827,7 @@ export default function BookingWizard() {
                           // Timed reservations (axe, ninja, darts, quiz, events) are
                           // booked on the external axe site; only escape stays internal.
                           if (isExternalBookingCategory(cat.key)) {
+                            trackAxeClick({ locale, category: cat.key });
                             window.location.href = axeExternalBookUrl(locale);
                             return;
                           }

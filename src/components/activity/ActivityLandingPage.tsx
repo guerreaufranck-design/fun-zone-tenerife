@@ -15,7 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import { createClient } from '@/lib/supabase/client';
 import type { Offer, OfferPricing } from '@/lib/supabase/types';
 import Image from 'next/image';
-import { axeExternalBookUrl } from '@/lib/booking/external';
+import { axeExternalBookUrl, trackAxeClick } from '@/lib/booking/external';
 
 const offerImages: Record<string, string> = {
   'traditional-axe-1h': '/images/offers/traditional-axe.jpg',
@@ -337,7 +337,7 @@ export default function ActivityLandingPage({ activityType }: ActivityLandingPag
               <p className="text-muted-foreground">{t('comingSoonDesc')}</p>
               <Button variant="neon" className="mt-6" asChild>
                 {isExternalBooking ? (
-                  <a href={axeExternalBookUrl(locale)}>{tExp('bookNow')}</a>
+                  <a href={axeExternalBookUrl(locale)} onClick={() => trackAxeClick({ locale, category: activityType })}>{tExp('bookNow')}</a>
                 ) : (
                   <Link href="/book">{tExp('bookNow')}</Link>
                 )}
@@ -428,7 +428,7 @@ export default function ActivityLandingPage({ activityType }: ActivityLandingPag
                           </Button>
                           <Button variant="outline" size="sm" asChild>
                             {isExternalBooking ? (
-                              <a href={axeExternalBookUrl(locale)}>{tExp('bookNow')}</a>
+                              <a href={axeExternalBookUrl(locale)} onClick={() => trackAxeClick({ locale, category: activityType })}>{tExp('bookNow')}</a>
                             ) : (
                               <Link href="/book">{tExp('bookNow')}</Link>
                             )}

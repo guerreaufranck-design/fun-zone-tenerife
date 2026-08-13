@@ -1,4 +1,5 @@
 import { createAdminClient } from '@/lib/supabase/admin';
+import { getPrivateDb } from '@/lib/supabase/private';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const dynamic = 'force-dynamic';
@@ -8,6 +9,9 @@ const PARTNER_SLUG = 'funzone';
 
 function euros(cents: number) {
   return (cents / 100).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+}
+function pct(n: number) {
+  return `${(n * 100).toFixed(1)}%`;
 }
 
 interface ReferralBooking {
@@ -19,16 +23,13 @@ interface ReferralBooking {
   payment_status: string;
 }
 
-// Billable once the customer has at least paid the deposit.
 const BILLABLE_PAYMENT = new Set(['paid', 'partial']);
 
 export default async function CommissionsPage() {
   const supabase = createAdminClient();
 
-  // Reads the shared axe/funzone Supabase directly (referral_partner /
-  // referral_commission_pct come from migration 022, not yet in generated
-  // types → loose query). NOTE: after the axe sale separates the DB, switch
-  // this to the axe partner read-API.
+  // Sales (referred bookings) come from the shared axe DB. referral_partner /
+  // referral_commission_pct are from migration 022 → loose query.
   const { data } = await (supabase.from('bookings') as unknown as {
     select: (cols: string) => {
       eq: (col: string, val: string) => {
@@ -45,39 +46,64 @@ export default async function CommissionsPage() {
     Math.round((b.total_cents * (b.referral_commission_pct ?? 0)) / 100);
   const isBillable = (b: ReferralBooking) => BILLABLE_PAYMENT.has(b.payment_status);
 
-  const months = new Map<string, { sales: number; gross: number; commission: number }>();
+  const sales = new Map<string, { sales: number; gross: number; commission: number }>();
   for (const b of rows) {
     if (!isBillable(b)) continue;
     const month = b.booking_date.slice(0, 7);
-    const m = months.get(month) ?? { sales: 0, gross: 0, commission: 0 };
+    const m = sales.get(month) ?? { sales: 0, gross: 0, commission: 0 };
     m.sales += 1;
     m.gross += b.total_cents;
     m.commission += commissionOf(b);
-    months.set(month, m);
+    sales.set(month, m);
   }
-  const monthRows = [...months.entries()].sort((a, b) => b[0].localeCompare(a[0]));
-  const totalCommission = monthRows.reduce((s, [, m]) => s + m.commission, 0);
-  const totalGross = monthRows.reduce((s, [, m]) => s + m.gross, 0);
-  const totalSales = monthRows.reduce((s, [, m]) => s + m.sales, 0);
+
+  // Traffic (outbound clicks Fun Zone sent to axe) lives in Fun Zone's PRIVATE
+  // DB — never visible to the axe side.
+  const privateDb = getPrivateDb();
+  const clicksByMonth = new Map<string, number>();
+  let totalClicks = 0;
+  let privateConfigured = false;
+  if (privateDb) {
+    privateConfigured = true;
+    const { data: clicks } = await privateDb
+      .from('referral_clicks')
+      .select('created_at')
+      .eq('partner', PARTNER_SLUG);
+    for (const c of (clicks ?? []) as { created_at: string }[]) {
+      const month = (c.created_at ?? '').slice(0, 7);
+      if (!month) continue;
+      clicksByMonth.set(month, (clicksByMonth.get(month) ?? 0) + 1);
+      totalClicks += 1;
+    }
+  }
+
+  const allMonths = [...new Set([...sales.keys(), ...clicksByMonth.keys()])].sort((a, b) => b.localeCompare(a));
+  const totalSales = [...sales.values()].reduce((s, m) => s + m.sales, 0);
+  const totalCommission = [...sales.values()].reduce((s, m) => s + m.commission, 0);
+  const conversion = totalClicks > 0 ? totalSales / totalClicks : 0;
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-white">Mes commissions (Fun Zone)</h1>
+        <h1 className="text-2xl font-bold text-white">Mes commissions & trafic (Fun Zone)</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Ventes que Fun Zone a envoyées sur le site de lancer de haches (via <code>?ref=funzone</code>),
-          avec la commission due à 25 %. À facturer une fois par mois. Facturable dès l&apos;acompte payé.
+          Trafic que Fun Zone envoie sur le site de lancer de haches (via <code>?ref=funzone</code>) et
+          commission due à 25 %, à facturer chaque mois. Le trafic (clics) est privé à Fun Zone.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <Card>
+          <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Clics envoyés</CardTitle></CardHeader>
+          <CardContent><span className="text-2xl font-bold text-white">{privateConfigured ? totalClicks : '—'}</span></CardContent>
+        </Card>
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Ventes référées</CardTitle></CardHeader>
           <CardContent><span className="text-2xl font-bold text-white">{totalSales}</span></CardContent>
         </Card>
         <Card>
-          <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">CA généré (brut)</CardTitle></CardHeader>
-          <CardContent><span className="text-2xl font-bold text-white">{euros(totalGross)}</span></CardContent>
+          <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Conversion</CardTitle></CardHeader>
+          <CardContent><span className="text-2xl font-bold text-white">{privateConfigured ? pct(conversion) : '—'}</span></CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Commission à facturer</CardTitle></CardHeader>
@@ -85,31 +111,48 @@ export default async function CommissionsPage() {
         </Card>
       </div>
 
+      {!privateConfigured && (
+        <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-300">
+          Base privée non configurée : le suivi du trafic (clics) est désactivé. Renseigne
+          <code className="mx-1">FUNZONE_PRIVATE_SUPABASE_URL</code> et
+          <code className="mx-1">FUNZONE_PRIVATE_SUPABASE_SERVICE_KEY</code> pour l&apos;activer.
+        </p>
+      )}
+
       <Card>
-        <CardHeader><CardTitle>Par mois (à facturer)</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Par mois</CardTitle></CardHeader>
         <CardContent>
-          {monthRows.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Aucune vente référée pour le moment.</p>
+          {allMonths.length === 0 ? (
+            <p className="text-sm text-muted-foreground">Aucune donnée pour le moment.</p>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/50 text-left text-muted-foreground">
                     <th className="py-2 pr-4 font-medium">Mois</th>
+                    <th className="py-2 pr-4 font-medium">Clics</th>
                     <th className="py-2 pr-4 font-medium">Ventes</th>
+                    <th className="py-2 pr-4 font-medium">Conversion</th>
                     <th className="py-2 pr-4 font-medium">CA brut</th>
                     <th className="py-2 font-medium text-[#c9a24b]">Commission (25%)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {monthRows.map(([month, m]) => (
-                    <tr key={month} className="border-b border-border/30">
-                      <td className="py-2 pr-4 font-medium text-white">{month}</td>
-                      <td className="py-2 pr-4 text-muted-foreground">{m.sales}</td>
-                      <td className="py-2 pr-4 text-muted-foreground">{euros(m.gross)}</td>
-                      <td className="py-2 font-semibold text-[#c9a24b]">{euros(m.commission)}</td>
-                    </tr>
-                  ))}
+                  {allMonths.map((month) => {
+                    const s = sales.get(month) ?? { sales: 0, gross: 0, commission: 0 };
+                    const clicks = clicksByMonth.get(month) ?? 0;
+                    const conv = clicks > 0 ? s.sales / clicks : 0;
+                    return (
+                      <tr key={month} className="border-b border-border/30">
+                        <td className="py-2 pr-4 font-medium text-white">{month}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{privateConfigured ? clicks : '—'}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{s.sales}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{privateConfigured && clicks > 0 ? pct(conv) : '—'}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{euros(s.gross)}</td>
+                        <td className="py-2 font-semibold text-[#c9a24b]">{euros(s.commission)}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
