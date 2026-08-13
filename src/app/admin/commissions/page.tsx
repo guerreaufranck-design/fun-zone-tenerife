@@ -1,5 +1,5 @@
 import { createAdminClient } from '@/lib/supabase/admin';
-import { getPrivateDb } from '@/lib/supabase/private';
+import { getTrackingDb } from '@/lib/supabase/private';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const dynamic = 'force-dynamic';
@@ -59,22 +59,18 @@ export default async function CommissionsPage() {
 
   // Traffic (outbound clicks Fun Zone sent to axe) lives in Fun Zone's PRIVATE
   // DB — never visible to the axe side.
-  const privateDb = getPrivateDb();
+  const trackingDb = getTrackingDb();
   const clicksByMonth = new Map<string, number>();
   let totalClicks = 0;
-  let privateConfigured = false;
-  if (privateDb) {
-    privateConfigured = true;
-    const { data: clicks } = await privateDb
-      .from('referral_clicks')
-      .select('created_at')
-      .eq('partner', PARTNER_SLUG);
-    for (const c of (clicks ?? []) as { created_at: string }[]) {
-      const month = (c.created_at ?? '').slice(0, 7);
-      if (!month) continue;
-      clicksByMonth.set(month, (clicksByMonth.get(month) ?? 0) + 1);
-      totalClicks += 1;
-    }
+  const { data: clicks } = await trackingDb
+    .from('referral_clicks')
+    .select('created_at')
+    .eq('partner', PARTNER_SLUG);
+  for (const c of (clicks ?? []) as { created_at: string }[]) {
+    const month = (c.created_at ?? '').slice(0, 7);
+    if (!month) continue;
+    clicksByMonth.set(month, (clicksByMonth.get(month) ?? 0) + 1);
+    totalClicks += 1;
   }
 
   const allMonths = [...new Set([...sales.keys(), ...clicksByMonth.keys()])].sort((a, b) => b.localeCompare(a));
@@ -95,7 +91,7 @@ export default async function CommissionsPage() {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Clics envoyés</CardTitle></CardHeader>
-          <CardContent><span className="text-2xl font-bold text-white">{privateConfigured ? totalClicks : '—'}</span></CardContent>
+          <CardContent><span className="text-2xl font-bold text-white">{totalClicks}</span></CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Ventes référées</CardTitle></CardHeader>
@@ -103,21 +99,13 @@ export default async function CommissionsPage() {
         </Card>
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Conversion</CardTitle></CardHeader>
-          <CardContent><span className="text-2xl font-bold text-white">{privateConfigured ? pct(conversion) : '—'}</span></CardContent>
+          <CardContent><span className="text-2xl font-bold text-white">{pct(conversion)}</span></CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2"><CardTitle className="text-sm text-muted-foreground">Commission à facturer</CardTitle></CardHeader>
           <CardContent><span className="text-2xl font-bold text-[#c9a24b]">{euros(totalCommission)}</span></CardContent>
         </Card>
       </div>
-
-      {!privateConfigured && (
-        <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-300">
-          Base privée non configurée : le suivi du trafic (clics) est désactivé. Renseigne
-          <code className="mx-1">FUNZONE_PRIVATE_SUPABASE_URL</code> et
-          <code className="mx-1">FUNZONE_PRIVATE_SUPABASE_SERVICE_KEY</code> pour l&apos;activer.
-        </p>
-      )}
 
       <Card>
         <CardHeader><CardTitle>Par mois</CardTitle></CardHeader>
@@ -145,9 +133,9 @@ export default async function CommissionsPage() {
                     return (
                       <tr key={month} className="border-b border-border/30">
                         <td className="py-2 pr-4 font-medium text-white">{month}</td>
-                        <td className="py-2 pr-4 text-muted-foreground">{privateConfigured ? clicks : '—'}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{clicks}</td>
                         <td className="py-2 pr-4 text-muted-foreground">{s.sales}</td>
-                        <td className="py-2 pr-4 text-muted-foreground">{privateConfigured && clicks > 0 ? pct(conv) : '—'}</td>
+                        <td className="py-2 pr-4 text-muted-foreground">{clicks > 0 ? pct(conv) : '—'}</td>
                         <td className="py-2 pr-4 text-muted-foreground">{euros(s.gross)}</td>
                         <td className="py-2 font-semibold text-[#c9a24b]">{euros(s.commission)}</td>
                       </tr>

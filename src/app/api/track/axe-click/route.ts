@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPrivateDb } from '@/lib/supabase/private';
+import { getTrackingDb } from '@/lib/supabase/private';
 
 /**
  * POST /api/track/axe-click
@@ -12,8 +12,7 @@ import { getPrivateDb } from '@/lib/supabase/private';
  * arrive as text; parse defensively. No-ops when the private DB isn't set.
  */
 export async function POST(req: NextRequest) {
-  const db = getPrivateDb();
-  if (!db) return NextResponse.json({ ok: false, reason: 'not-configured' });
+  const db = getTrackingDb();
 
   let body: { locale?: string; path?: string; category?: string } = {};
   try {

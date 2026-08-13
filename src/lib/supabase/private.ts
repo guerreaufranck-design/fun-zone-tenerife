@@ -1,4 +1,5 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createAdminClient } from './admin';
 
 /**
  * Fun Zone's OWN private database — deliberately separate from the Supabase
@@ -22,4 +23,13 @@ export function hasPrivateDb(): boolean {
 export function getPrivateDb(): SupabaseClient | null {
   if (!URL || !KEY) return null;
   return createClient(URL, KEY, { auth: { persistSession: false } });
+}
+
+/**
+ * Where referral-traffic data is stored. Prefers the dedicated private DB when
+ * configured; otherwise falls back to the shared DB (current setup — Fun Zone
+ * still manages the axe database). Always returns a usable client.
+ */
+export function getTrackingDb(): SupabaseClient {
+  return getPrivateDb() ?? (createAdminClient() as unknown as SupabaseClient);
 }
