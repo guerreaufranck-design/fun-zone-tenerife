@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { createClient } from '@/lib/supabase/client';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Euro,
@@ -141,17 +140,16 @@ export default function EscapeSalesPage() {
 
   const fetchData = useCallback(async () => {
     setLoading(true);
-    const supabase = createClient();
     const range = getDateRange(period);
-
-    const { data } = await supabase
-      .from('escape_orders')
-      .select('*')
-      .gte('created_at', range.from + 'T00:00:00')
-      .lte('created_at', range.to + 'T23:59:59')
-      .order('created_at', { ascending: false });
-
-    setOrders(data || []);
+    try {
+      // Read via the admin API (service key) — escape_orders is RLS-protected,
+      // so a direct browser (anon) query returns an empty list.
+      const res = await fetch(`/api/admin/escape-orders?from=${range.from}&to=${range.to}`);
+      const data = await res.json();
+      setOrders(data.orders || []);
+    } catch {
+      setOrders([]);
+    }
     setLoading(false);
   }, [period]);
 

@@ -235,7 +235,13 @@ export async function POST(request: NextRequest) {
           console.error('Failed to save escape order:', dbErr);
         }
 
-        console.log(`Escape game payment processed: ${phoneCount} codes sent to ${customerEmail} for ${gameName}`);
+        if (generatedCodes.length < phoneCount) {
+          console.error(
+            `Escape game ${gameName}: only ${generatedCodes.length}/${phoneCount} code(s) generated for ${customerEmail} (session ${session.id}) — customer NOT fully delivered`
+          );
+        } else {
+          console.log(`Escape game payment processed: ${generatedCodes.length} code(s) sent to ${customerEmail} for ${gameName}`);
+        }
         return NextResponse.json({ received: true });
       }
 
