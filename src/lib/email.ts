@@ -237,6 +237,64 @@ export async function sendAdminNewBookingNotification(
   });
 }
 
+/**
+ * Admin alert for every escape-game / island-pass sale — so Fun Zone knows a
+ * sale happened even when something goes wrong. Clearly warns when the code(s)
+ * were NOT delivered, so the customer can be recovered manually.
+ */
+export async function sendEscapeAdminNotification(params: {
+  type: "escape_game" | "island_pass";
+  customerName: string;
+  customerEmail: string;
+  gameName: string;
+  locale: string;
+  expectedCodes: number;
+  codes: string[];
+  amountCents: number;
+}): Promise<void> {
+  const delivered = params.codes.length >= params.expectedCodes;
+  const amount = formatPrice(params.amountCents, "en");
+  const subject = delivered
+    ? `Vente escape — ${params.gameName} — ${params.customerName}`
+    : `⚠️ Vente escape SANS code livré — ${params.customerName} — À RATTRAPER`;
+  const banner = delivered
+    ? { bg: "#059669", text: "Nouvelle vente escape — code livré" }
+    : { bg: "#dc2626", text: "⚠️ Vente escape — CODE NON LIVRÉ (à rattraper)" };
+  const codesHtml = params.codes.length
+    ? params.codes.map((c) => `<code style="font-weight:700;color:#00d4ff">${c}</code>`).join(", ")
+    : `<span style="color:#f87171;font-weight:700">aucun (${params.codes.length}/${params.expectedCodes})</span>`;
+
+  const row = (label: string, value: string) =>
+    `<tr><td style="padding:6px 0;color:#9ca3af;width:140px">${label}</td><td style="padding:6px 0;font-weight:600">${value}</td></tr>`;
+
+  await getResend().emails.send({
+    from: FROM_EMAIL,
+    to: ADMIN_EMAIL,
+    subject,
+    html: `
+      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d14;color:#e5e5e5;border-radius:12px;overflow:hidden">
+        <div style="background:${banner.bg};padding:18px 24px"><h1 style="margin:0;font-size:18px;color:#fff">${banner.text}</h1></div>
+        <div style="padding:24px">
+          <table style="width:100%;border-collapse:collapse;font-size:14px">
+            ${row("Type", params.type === "island_pass" ? "Island Pass" : "Escape Game")}
+            ${row("Jeu", params.gameName)}
+            ${row("Client", params.customerName)}
+            ${row("Email", params.customerEmail)}
+            ${row("Langue", params.locale)}
+            ${row("Montant", amount)}
+            ${row("Codes", codesHtml)}
+          </table>
+          ${
+            delivered
+              ? ""
+              : `<p style="margin-top:16px;padding:12px;background:#dc262620;border-radius:8px;color:#fca5a5;font-size:13px">Le code n'a pas pu être généré automatiquement. Génère-le manuellement (back-office OddballTrip ou /admin/escape-sales) avec le jeu, la langue et l'email ci-dessus, puis envoie-le au client.</p>`
+          }
+        </div>
+      </div>
+    `,
+  });
+}
+
 export async function sendWaiverConfirmation(waiver: {
   waiver_ref: string;
   first_name: string;

@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { getStripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { allocateLanes } from "@/lib/booking/lane-allocation";
-import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode, sendIslandPassEmail } from "@/lib/email";
+import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode, sendIslandPassEmail, sendEscapeAdminNotification } from "@/lib/email";
 import { ESCAPE_GAMES } from "@/lib/escape-game";
 import { createPartnerBooking, ODDBALL_SLUG_BY_OFFER, ESCAPE_PWA_URL } from "@/lib/oddballtrip";
 import type { LaneType } from "@/lib/supabase/types";
@@ -69,6 +69,7 @@ export async function POST(request: NextRequest) {
         const supabase = createAdminClient();
 
         // For each phone, generate 4 codes (one per escape game) via OddballTrip.
+        const allIslandCodes: string[] = [];
         for (let phoneIdx = 0; phoneIdx < phoneCount; phoneIdx++) {
           const gameCodes: { gameName: string; city: string; estimatedDuration: string; code: string }[] = [];
 
@@ -97,6 +98,8 @@ export async function POST(request: NextRequest) {
               console.error(`Island Pass: error generating code for ${game.city}:`, e);
             }
           }
+
+          allIslandCodes.push(...gameCodes.map((g) => g.code));
 
           // Send 1 email with all 4 codes
           if (gameCodes.length > 0) {
@@ -133,7 +136,22 @@ export async function POST(request: NextRequest) {
           }
         }
 
-        console.log(`Island Pass processed: ${phoneCount} phone(s), ${phoneCount * 4} codes sent to ${customerEmail}`);
+        try {
+          await sendEscapeAdminNotification({
+            type: 'island_pass',
+            customerName: customerName || 'Player',
+            customerEmail,
+            gameName: 'Island Pass (4 jeux)',
+            locale,
+            expectedCodes: phoneCount * ESCAPE_GAMES.length,
+            codes: allIslandCodes,
+            amountCents: session.amount_total ?? 0,
+          });
+        } catch (notifyErr) {
+          console.error('Failed to send island-pass admin notification:', notifyErr);
+        }
+
+        console.log(`Island Pass processed: ${phoneCount} phone(s), ${allIslandCodes.length} code(s) sent to ${customerEmail}`);
         return NextResponse.json({ received: true });
       }
 
@@ -233,6 +251,23 @@ export async function POST(request: NextRequest) {
           }
         } catch (dbErr) {
           console.error('Failed to save escape order:', dbErr);
+        }
+
+        // Admin alert for EVERY escape sale (so Fun Zone always knows), with a
+        // clear warning when the code wasn't delivered.
+        try {
+          await sendEscapeAdminNotification({
+            type: 'escape_game',
+            customerName: customerName || 'Player',
+            customerEmail,
+            gameName,
+            locale,
+            expectedCodes: phoneCount,
+            codes: generatedCodes,
+            amountCents: session.amount_total ?? 0,
+          });
+        } catch (notifyErr) {
+          console.error('Failed to send escape admin notification:', notifyErr);
         }
 
         if (generatedCodes.length < phoneCount) {
