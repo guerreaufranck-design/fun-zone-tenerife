@@ -27,14 +27,30 @@ export const ESCAPE_PWA_URL = 'https://escape-game-indol.vercel.app';
 
 /**
  * Fun Zone escape offer slug → OddballTrip catalogue slug.
- * NOTE: `escape-cendres` (Garachico) has no game on OddballTrip yet, so a sale
- * of it returns 202 'generating' (or 404) — handled gracefully by the caller.
+ *
+ * Tenerife offers use `escape-*` slugs mapped to the OddballTrip game slug. The
+ * other Canary games (Gran Canaria, Lanzarote, Fuerteventura) are sold under
+ * the OddballTrip slug directly, so they map to themselves. OddballTrip
+ * generates the game on first sale in the customer's language, so an un-built
+ * game returns 202 'generating' and its code is delivered via the webhook.
  */
 export const ODDBALL_SLUG_BY_OFFER: Record<string, string> = {
+  // Tenerife
   'escape-ichasagua': 'le-code-dichasagua',
   'escape-trois-cles': 'le-coffre-des-trois-cles',
   'escape-bateria': 'le-butin-de-la-bateria',
   'escape-cendres': 'les-cendres-de-lame',
+  // Gran Canaria
+  'vegueta-et-colomb': 'vegueta-et-colomb',
+  'les-traces-guanches': 'les-traces-guanches',
+  'les-pirates-de-gran-canaria': 'les-pirates-de-gran-canaria',
+  'las-palmas-moderniste': 'las-palmas-moderniste',
+  // Lanzarote
+  'le-volcan-de-manrique': 'le-volcan-de-manrique',
+  'le-tresor-de-teguise': 'le-tresor-de-teguise',
+  // Fuerteventura
+  'la-conquete-normande': 'la-conquete-normande',
+  'les-sculptures-du-vent': 'les-sculptures-du-vent',
 };
 
 export type PartnerBookingResult =

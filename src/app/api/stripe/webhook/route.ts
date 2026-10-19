@@ -14,10 +14,22 @@ import type { LaneType } from "@/lib/supabase/types";
 export const maxDuration = 300;
 
 const ESCAPE_CITIES: Record<string, string> = {
+  // Tenerife
   'escape-ichasagua': 'Los Cristianos & Playa de las Américas',
   'escape-trois-cles': 'San Cristóbal de La Laguna',
   'escape-bateria': 'Puerto de la Cruz',
   'escape-cendres': 'Garachico',
+  // Gran Canaria
+  'vegueta-et-colomb': 'Las Palmas de Gran Canaria — Vegueta',
+  'les-traces-guanches': 'Las Palmas de Gran Canaria — Vegueta',
+  'les-pirates-de-gran-canaria': 'Las Palmas de Gran Canaria',
+  'las-palmas-moderniste': 'Las Palmas de Gran Canaria — Triana',
+  // Lanzarote
+  'le-volcan-de-manrique': 'Lanzarote — Tahíche · Timanfaya',
+  'le-tresor-de-teguise': 'Teguise (Lanzarote)',
+  // Fuerteventura
+  'la-conquete-normande': 'Betancuria (Fuerteventura)',
+  'les-sculptures-du-vent': 'Puerto del Rosario (Fuerteventura)',
 };
 
 const ESCAPE_DURATIONS: Record<string, string> = {
@@ -25,6 +37,14 @@ const ESCAPE_DURATIONS: Record<string, string> = {
   'escape-trois-cles': '2-2h30',
   'escape-bateria': '1h30-2h',
   'escape-cendres': '2h30-3h',
+  'vegueta-et-colomb': '1h30-2h',
+  'les-traces-guanches': '2h-2h30',
+  'les-pirates-de-gran-canaria': '1h30-2h',
+  'las-palmas-moderniste': '1h30-2h',
+  'le-volcan-de-manrique': '5h-8h',
+  'le-tresor-de-teguise': '1h30-2h',
+  'la-conquete-normande': '1h30-2h',
+  'les-sculptures-du-vent': '1h30-2h',
 };
 
 export async function POST(request: NextRequest) {
