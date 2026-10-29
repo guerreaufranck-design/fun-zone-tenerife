@@ -86,10 +86,15 @@ export default function BlogPage() {
                   className="group block"
                 >
                   <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_20px_rgba(0,212,255,0.08)]">
-                    <div className={`relative aspect-[21/9] bg-gradient-to-br ${post.gradient}`}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-sm text-white/10">Cover Image</span>
-                      </div>
+                    <div
+                      className={`relative aspect-[21/9] bg-gradient-to-br ${post.gradient} bg-cover bg-center`}
+                      style={post.image ? { backgroundImage: `url(${post.image})` } : undefined}
+                    >
+                      {!post.image && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-sm text-white/10">Cover Image</span>
+                        </div>
+                      )}
                       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111118] to-transparent" />
                       <div className="absolute left-4 top-4">
                         <Badge variant="neonBlue">{post.category}</Badge>
@@ -161,7 +166,10 @@ export default function BlogPage() {
                         className="group block"
                       >
                         <div className="flex gap-3">
-                          <div className={`h-16 w-16 flex-shrink-0 rounded-lg bg-gradient-to-br ${post.gradient}`} />
+                          <div
+                            className={`h-16 w-16 flex-shrink-0 rounded-lg bg-gradient-to-br ${post.gradient} bg-cover bg-center`}
+                            style={post.image ? { backgroundImage: `url(${post.image})` } : undefined}
+                          />
                           <div className="flex-1">
                             <h4 className="line-clamp-2 text-sm font-medium text-white transition-colors group-hover:text-[#00d4ff]">
                               {post.title}

@@ -8,6 +8,12 @@ export interface BlogPost {
   gradient: string;
   readTime: string;
   content: string[];
+  /**
+   * Optional cover image, served from /public (e.g. '/images/blog/best-beaches-tenerife.jpg').
+   * When set it is used for the card thumbnail, the article hero and the OpenGraph/Twitter
+   * preview. When omitted, the `gradient` placeholder is shown instead — nothing breaks.
+   */
+  image?: string;
 }
 
 export const blogPosts: BlogPost[] = [

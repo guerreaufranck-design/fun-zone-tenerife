@@ -50,7 +50,9 @@ export default function BlogPostPage() {
       url: 'https://funzonetenerife.com',
     },
     description: post.excerpt,
-    image: 'https://funzonetenerife.com/images/og-image.jpg',
+    image: post.image
+      ? `https://funzonetenerife.com${post.image}`
+      : 'https://funzonetenerife.com/images/og-image.jpg',
   };
 
   return (
@@ -62,10 +64,15 @@ export default function BlogPostPage() {
 
       {/* Cover image */}
       <section className="relative overflow-hidden">
-        <div className={`relative aspect-[21/9] w-full bg-gradient-to-br ${post.gradient} sm:aspect-[3/1]`}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-lg text-white/10">Cover Image</span>
-          </div>
+        <div
+          className={`relative aspect-[21/9] w-full bg-gradient-to-br ${post.gradient} bg-cover bg-center sm:aspect-[3/1]`}
+          style={post.image ? { backgroundImage: `url(${post.image})` } : undefined}
+        >
+          {!post.image && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-lg text-white/10">Cover Image</span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/50 to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
@@ -149,10 +156,15 @@ export default function BlogPostPage() {
                     className="group block"
                   >
                     <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_15px_rgba(0,212,255,0.08)]">
-                      <div className={`relative aspect-video bg-gradient-to-br ${related.gradient}`}>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs text-white/10">Cover Image</span>
-                        </div>
+                      <div
+                        className={`relative aspect-video bg-gradient-to-br ${related.gradient} bg-cover bg-center`}
+                        style={related.image ? { backgroundImage: `url(${related.image})` } : undefined}
+                      >
+                        {!related.image && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-xs text-white/10">Cover Image</span>
+                          </div>
+                        )}
                         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#111118] to-transparent" />
                       </div>
                       <CardContent className="pt-4">
