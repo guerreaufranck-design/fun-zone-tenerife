@@ -27,7 +27,7 @@ const byCategory = (cat: string) => GYG.filter((a) => a.category === cat);
 function pickForArticle(slug: string, category: string): Activity[] {
   const t = `${slug} ${category}`.toLowerCase();
   let pool: Activity[] = [];
-  if (/whale|dolphin|boat|catamaran|\bsea\b|snorkel|div(e|ing)|scuba|surf|jet.?ski|sail|gigantes|submarine|parasail|water/.test(t)) {
+  if (/whale|dolphin|boat|catamaran|\bsea\b|beach|coast|snorkel|div(e|ing)|scuba|surf|jet.?ski|sail|gigantes|submarine|parasail|water/.test(t)) {
     pool = byCategory('Water & Sea');
   } else if (/teide|stargaz|\bstar|hik(e|ing)|masca|quad|buggy|paraglid|horse|helicopter|nature|volcano|adventure|trek/.test(t)) {
     pool = byCategory('Nature & Adventure');
