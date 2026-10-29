@@ -17,6 +17,8 @@ export interface AudioGuideContent {
   intro: string;
   benefitsTitle: string;
   benefits: string[];
+  /** Heading for the per-city deep-link grid. */
+  citiesTitle: string;
   ctaTitle: string;
   ctaText: string;
   ctaButton: string;
@@ -24,6 +26,27 @@ export interface AudioGuideContent {
 
 /** External destination (self-guided audio guide of the Canary Islands). */
 export const LUME_URL = 'https://www.lume.travel/countries/spain/canary-islands';
+
+/** Lume origin for per-city deep links. */
+export const LUME_BASE = 'https://www.lume.travel';
+
+/**
+ * Lume's real per-city audio-guide pages (verified from lume.travel's own
+ * navigation). Each links to the city's deep page for contextual, relevant
+ * backlinks instead of a single country-level link. Names are proper nouns,
+ * so they read the same across all locales.
+ */
+export const LUME_CITIES: { name: string; path: string; island: string }[] = [
+  { name: 'Santa Cruz de Tenerife', path: '/santa-cruz-de-tenerife', island: 'Tenerife' },
+  { name: 'San Cristóbal de La Laguna', path: '/san-cristobal-de-la-laguna', island: 'Tenerife' },
+  { name: 'La Orotava', path: '/la-orotava', island: 'Tenerife' },
+  { name: 'Puerto de la Cruz', path: '/puerto-de-la-cruz', island: 'Tenerife' },
+  { name: 'Garachico', path: '/garachico', island: 'Tenerife' },
+  { name: 'Las Palmas de Gran Canaria', path: '/las-palmas-de-gran-canaria', island: 'Gran Canaria' },
+  { name: 'Arrecife', path: '/arrecife', island: 'Lanzarote' },
+  { name: 'Teguise', path: '/teguise', island: 'Lanzarote' },
+  { name: 'Betancuria', path: '/betancuria', island: 'Fuerteventura' },
+];
 
 export const audioGuide: Record<Locale, AudioGuideContent> = {
   en: {
@@ -45,6 +68,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Works offline on the road, no group and no fixed departure time.',
       'Covers Tenerife and the wider Canary Islands.',
     ],
+    citiesTitle: 'Explore city by city',
     ctaTitle: 'Start exploring with the audio guide',
     ctaText:
       'The Canary Islands audio guide is powered by Lume. Tap below to see the available routes and start listening.',
@@ -69,6 +93,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Funciona sin conexión en ruta, sin grupo ni hora fija de salida.',
       'Cubre Tenerife y el conjunto de las Islas Canarias.',
     ],
+    citiesTitle: 'Explora ciudad por ciudad',
     ctaTitle: 'Empieza a explorar con la audioguía',
     ctaText:
       'La audioguía de las Islas Canarias funciona con Lume. Pulsa abajo para ver las rutas disponibles y empezar a escuchar.',
@@ -93,6 +118,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Fonctionne hors ligne en route, sans groupe ni horaire de départ.',
       'Couvre Tenerife et l\'ensemble des Îles Canaries.',
     ],
+    citiesTitle: 'Explorez ville par ville',
     ctaTitle: 'Commencez à explorer avec l\'audioguide',
     ctaText:
       'L\'audioguide des Îles Canaries est proposé par Lume. Appuyez ci-dessous pour voir les itinéraires disponibles et commencer à écouter.',
@@ -117,6 +143,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Funktioniert offline unterwegs, ohne Gruppe und feste Abfahrtszeit.',
       'Deckt Teneriffa und die gesamten Kanarischen Inseln ab.',
     ],
+    citiesTitle: 'Stadt für Stadt entdecken',
     ctaTitle: 'Starte mit dem Audioguide',
     ctaText:
       'Der Audioguide der Kanarischen Inseln wird von Lume bereitgestellt. Tippe unten, um die verfügbaren Routen zu sehen und loszuhören.',
@@ -141,6 +168,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Werkt offline onderweg, zonder groep of vaste vertrektijd.',
       'Dekt Tenerife en de hele Canarische Eilanden.',
     ],
+    citiesTitle: 'Ontdek stad voor stad',
     ctaTitle: 'Begin met verkennen met de audiogids',
     ctaText:
       'De audiogids van de Canarische Eilanden wordt mogelijk gemaakt door Lume. Tik hieronder om de beschikbare routes te zien en te beginnen met luisteren.',
@@ -165,6 +193,7 @@ export const audioGuide: Record<Locale, AudioGuideContent> = {
       'Funziona offline in viaggio, senza gruppo né orario di partenza.',
       'Copre Tenerife e tutte le Isole Canarie.',
     ],
+    citiesTitle: 'Esplora città per città',
     ctaTitle: 'Inizia a esplorare con l\'audioguida',
     ctaText:
       'L\'audioguida delle Isole Canarie è offerta da Lume. Tocca qui sotto per vedere gli itinerari disponibili e iniziare ad ascoltare.',

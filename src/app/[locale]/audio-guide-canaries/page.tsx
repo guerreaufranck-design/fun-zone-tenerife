@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Headphones, MapPin, Clock, Wifi } from 'lucide-react';
 import { getAlternates, type Locale } from '@/lib/seo';
-import { audioGuide, LUME_URL } from '@/data/audio-guide';
+import { audioGuide, LUME_URL, LUME_BASE, LUME_CITIES } from '@/data/audio-guide';
 
 const LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'nl', 'it'];
 
@@ -95,6 +95,34 @@ export default async function AudioGuidePage({
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      {/* CITIES — per-city deep links to Lume */}
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-2xl font-bold text-[#00d4ff]">{c.citiesTitle}</h2>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {LUME_CITIES.map((city) => (
+              <a
+                key={city.path}
+                href={`${LUME_BASE}${city.path}`}
+                target="_blank"
+                rel="noopener nofollow sponsored"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-[#111118] p-4 transition-all hover:border-[#00d4ff]/40 hover:bg-[#15151f]"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#00d4ff]/10 text-[#00d4ff]">
+                    <MapPin size={16} />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold text-white group-hover:text-[#00d4ff]">{city.name}</span>
+                    <span className="block text-xs text-white/40">{city.island}</span>
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
