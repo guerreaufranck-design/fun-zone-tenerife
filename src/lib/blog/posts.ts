@@ -840,9 +840,63 @@ export const blogPosts: BlogPost[] = [
     content: [
       "Tous les beaux moments de voyage ne passent pas par un tour guidé avec un horaire fixe et un guide qui lève son parapluie. De plus en plus de voyageurs préfèrent explorer à leur rythme — et c'est exactement ce que permet un audioguide autoguidé. À Tenerife et dans le reste des Canaries, c'est une façon simple et abordable de comprendre ce que vous voyez, sans contrainte.",
       "Le principe est simple : au lieu de suivre un groupe, vous écoutez des récits géolocalisés sur votre téléphone pendant que vous vous baladez. L'histoire d'une vieille ville, la légende derrière une église, l'origine d'un volcan ou d'un quartier colonial : les explications arrivent au bon moment, au bon endroit, et vous restez totalement libre de vos pauses et de vos détours.",
-      "Pour Tenerife, le format est particulièrement adapté. L'île se visite très bien en voiture et regorge de lieux qui gagnent à être racontés : La Laguna et son centre classé à l'UNESCO, Garachico et son histoire liée au volcan, La Orotava et ses maisons seigneuriales, ou encore les villages de la côte. Un audioguide transforme une simple promenade en véritable découverte, sans réserver de créneau ni dépendre de la météo d'un groupe.",
+      "Pour Tenerife, le format est particulièrement adapté. L'île se visite très bien en voiture et regorge de lieux qui gagnent à être racontés : <a href=\"https://www.lume.travel/san-cristobal-de-la-laguna\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Laguna</a> et son centre classé à l'UNESCO, <a href=\"https://www.lume.travel/garachico\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Garachico</a> et son histoire liée au volcan, <a href=\"https://www.lume.travel/la-orotava\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Orotava</a> et ses maisons seigneuriales, ou encore <a href=\"https://www.lume.travel/puerto-de-la-cruz\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Puerto de la Cruz</a> sur la côte nord. Un audioguide transforme une simple promenade en véritable découverte, sans réserver de créneau ni dépendre de la météo d'un groupe.",
       "C'est précisément ce que propose <a href=\"https://www.lume.travel/countries/spain/canary-islands\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Lume avec son audioguide des Îles Canaries</a> : des itinéraires et des récits à écouter en autonomie, utilisables à votre rythme et souvent hors connexion une fois chargés. Idéal pour les voyageurs indépendants, les road trips en famille et tous ceux qui veulent profiter sans se presser.",
       "Notre conseil : combinez l'audioguide avec les incontournables de l'île. Le matin, une activité phare — observation des baleines, Teide, sortie en bateau — puis l'après-midi, une ville à explorer à votre rythme avec l'audioguide. Pour tout savoir et accéder aux itinéraires, voyez notre <a href=\"/fr/audioguide-iles-canaries\">page dédiée à l'audioguide des Canaries</a>, et retrouvez le reste de nos idées sur la page <a href=\"/fr/activites\">que faire à Tenerife</a>.",
+    ],
+  },
+  {
+    slug: 'canary-islands-audio-guide-lume',
+    title: 'Canary Islands Audio Guide: See Tenerife at Your Own Pace with Lume',
+    excerpt:
+      "Want to explore Tenerife without a guided tour or fixed schedule? Lume's self-guided Canary Islands audio guide tells the story of each place right on your phone. Here's how it works.",
+    date: '2026-10-29',
+    author: 'Fun Zone Tenerife',
+    category: 'Tips & Tricks',
+    gradient: 'from-[#39ff14]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    content: [
+      "Not every great travel moment needs a guided tour with a fixed time and a guide holding up an umbrella. More and more travellers prefer to explore at their own pace — and that is exactly what a self-guided audio guide lets you do. On Tenerife and across the Canary Islands, it is a simple, affordable way to understand what you are looking at, with no strings attached.",
+      "The idea is simple: instead of following a group, you listen to location-based stories on your phone as you wander. The history of an old town, the legend behind a church, the origin of a volcano or a colonial quarter — the explanations arrive at the right moment, in the right place, and you stay completely free to pause and detour as you like.",
+      "Tenerife suits the format especially well. The island is easy to explore by car and is full of places that come alive when they are narrated: <a href=\"https://www.lume.travel/san-cristobal-de-la-laguna\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Laguna</a> and its UNESCO-listed old town, <a href=\"https://www.lume.travel/garachico\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Garachico</a> and its volcano-shaped history, <a href=\"https://www.lume.travel/la-orotava\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Orotava</a> and its grand manor houses, or <a href=\"https://www.lume.travel/puerto-de-la-cruz\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Puerto de la Cruz</a> on the north coast. An audio guide turns a simple stroll into a real discovery, with no slot to book and no group's weather to depend on.",
+      "That is exactly what <a href=\"https://www.lume.travel/countries/spain/canary-islands\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Lume offers with its Canary Islands audio guide</a>: self-guided routes and stories you can listen to at your own pace, often offline once downloaded. Ideal for independent travellers, family road trips and anyone who wants to enjoy the island without rushing.",
+      "Our tip: pair the audio guide with the island's must-dos. In the morning, a signature activity — whale watching, Teide, a boat trip — then in the afternoon, a town to explore at your own pace with the audio guide. For everything you need to know and to access the routes, see our <a href=\"/en/audio-guide-canary-islands\">dedicated Canary Islands audio-guide page</a>, and find the rest of our ideas on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'audioguia-canarias-lume',
+    title: 'Audioguía de Canarias: visita Tenerife a tu ritmo con Lume',
+    excerpt:
+      "¿Quieres explorar Tenerife sin tour guiado ni horarios? La audioguía autoguiada de Canarias de Lume cuenta la historia de cada lugar en tu móvil. Así funciona.",
+    date: '2026-10-29',
+    author: 'Fun Zone Tenerife',
+    category: 'Tips & Tricks',
+    gradient: 'from-[#39ff14]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    content: [
+      "No todos los buenos momentos de viaje pasan por un tour guiado con un horario fijo y un guía levantando el paraguas. Cada vez más viajeros prefieren explorar a su ritmo, y eso es justo lo que permite una audioguía autoguiada. En Tenerife y en el resto de Canarias es una forma sencilla y económica de entender lo que estás viendo, sin ataduras.",
+      "La idea es simple: en lugar de seguir a un grupo, escuchas relatos geolocalizados en tu móvil mientras paseas. La historia de un casco antiguo, la leyenda de una iglesia, el origen de un volcán o de un barrio colonial: las explicaciones llegan en el momento justo, en el lugar justo, y tú mantienes total libertad para pararte y desviarte.",
+      "Tenerife encaja especialmente bien con este formato. La isla se recorre muy bien en coche y está llena de lugares que ganan al ser narrados: <a href=\"https://www.lume.travel/san-cristobal-de-la-laguna\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Laguna</a> y su casco histórico Patrimonio de la Humanidad, <a href=\"https://www.lume.travel/garachico\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Garachico</a> y su historia ligada al volcán, <a href=\"https://www.lume.travel/la-orotava\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Orotava</a> y sus casonas señoriales, o <a href=\"https://www.lume.travel/puerto-de-la-cruz\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Puerto de la Cruz</a> en la costa norte. Una audioguía convierte un simple paseo en un auténtico descubrimiento, sin reservar hora ni depender del tiempo de un grupo.",
+      "Eso es precisamente lo que ofrece <a href=\"https://www.lume.travel/countries/spain/canary-islands\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Lume con su audioguía de las Islas Canarias</a>: rutas y relatos autoguiados para escuchar a tu ritmo, a menudo sin conexión una vez descargados. Ideal para viajeros independientes, road trips en familia y cualquiera que quiera disfrutar sin prisas.",
+      "Nuestro consejo: combina la audioguía con los imprescindibles de la isla. Por la mañana, una actividad estrella — avistamiento de ballenas, el Teide, un paseo en barco — y por la tarde, un pueblo para explorar a tu ritmo con la audioguía. Para saberlo todo y acceder a las rutas, visita nuestra <a href=\"/es/audioguia-islas-canarias\">página dedicada a la audioguía de Canarias</a>, y encuentra el resto de nuestras ideas en la página <a href=\"/es/actividades\">qué hacer en Tenerife</a>.",
+    ],
+  },
+  {
+    slug: 'kanaren-audioguide-lume',
+    title: 'Kanaren-Audioguide: Teneriffa im eigenen Tempo entdecken mit Lume',
+    excerpt:
+      "Du willst Teneriffa ohne geführte Tour und feste Zeiten erkunden? Der selbstgeführte Kanaren-Audioguide von Lume erzählt die Geschichte jedes Orts direkt auf deinem Handy. So funktioniert's.",
+    date: '2026-10-29',
+    author: 'Fun Zone Tenerife',
+    category: 'Tips & Tricks',
+    gradient: 'from-[#39ff14]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    content: [
+      "Nicht jeder schöne Reisemoment braucht eine geführte Tour mit festem Zeitplan und einem Guide, der den Schirm hochhält. Immer mehr Reisende erkunden lieber im eigenen Tempo — und genau das ermöglicht ein selbstgeführter Audioguide. Auf Teneriffa und den übrigen Kanaren ist das eine einfache, günstige Art zu verstehen, was man gerade sieht, ganz ohne Verpflichtungen.",
+      "Das Prinzip ist simpel: Statt einer Gruppe zu folgen, hörst du beim Spazieren ortsbezogene Geschichten auf deinem Handy. Die Geschichte einer Altstadt, die Legende hinter einer Kirche, der Ursprung eines Vulkans oder eines Kolonialviertels — die Erklärungen kommen im richtigen Moment am richtigen Ort, und du bleibst völlig frei bei Pausen und Abstechern.",
+      "Teneriffa passt besonders gut zu diesem Format. Die Insel lässt sich hervorragend mit dem Auto erkunden und steckt voller Orte, die vom Erzählen gewinnen: <a href=\"https://www.lume.travel/san-cristobal-de-la-laguna\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Laguna</a> und seine UNESCO-Altstadt, <a href=\"https://www.lume.travel/garachico\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Garachico</a> und seine vom Vulkan geprägte Geschichte, <a href=\"https://www.lume.travel/la-orotava\" target=\"_blank\" rel=\"noopener nofollow sponsored\">La Orotava</a> und seine herrschaftlichen Häuser, oder <a href=\"https://www.lume.travel/puerto-de-la-cruz\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Puerto de la Cruz</a> an der Nordküste. Ein Audioguide macht aus einem einfachen Spaziergang eine echte Entdeckung — ohne Termin und ohne vom Wetter einer Gruppe abzuhängen.",
+      "Genau das bietet <a href=\"https://www.lume.travel/countries/spain/canary-islands\" target=\"_blank\" rel=\"noopener nofollow sponsored\">Lume mit seinem Kanaren-Audioguide</a>: selbstgeführte Routen und Geschichten zum Hören im eigenen Tempo, nach dem Download oft auch offline. Ideal für Individualreisende, Familien-Roadtrips und alle, die ohne Hast genießen wollen.",
+      "Unser Tipp: Kombiniere den Audioguide mit den Highlights der Insel. Vormittags eine Top-Aktivität — Walbeobachtung, Teide, eine Bootstour — und nachmittags eine Stadt, die du im eigenen Tempo mit dem Audioguide erkundest. Alles Wissenswerte und die Routen findest du auf unserer <a href=\"/de/audioguide-kanaren\">Seite zum Kanaren-Audioguide</a>, und die übrigen Ideen auf unserer Seite <a href=\"/de/aktivitaeten\">Aktivitäten auf Teneriffa</a>.",
     ],
   },
   {
@@ -940,6 +994,7 @@ const POST_LANG: Record<string, BlogLocale> = {
   'que-faire-tenerife': 'fr',
   'tenerife-avec-un-bebe': 'fr',
   // Spanish
+  'audioguia-canarias-lume': 'es',
   'despedida-soltera-tenerife-ideas': 'es',
   'mejor-epoca-viajar-tenerife': 'es',
   'tenerife-7-dias-itinerario': 'es',
@@ -948,6 +1003,7 @@ const POST_LANG: Record<string, BlogLocale> = {
   'que-hacer-tenerife': 'es',
   'tenerife-con-un-bebe': 'es',
   // German
+  'kanaren-audioguide-lume': 'de',
   'junggesellenabschied-teneriffa-ideen': 'de',
   'beste-reisezeit-teneriffa': 'de',
   'teneriffa-7-tage-route': 'de',
@@ -971,6 +1027,7 @@ const TRANSLATION_GROUPS: string[][] = [
   ['best-beaches-tenerife', 'mejores-playas-tenerife', 'plus-belles-plages-tenerife', 'schoenste-straende-teneriffa'],
   ['que-hacer-tenerife', 'que-faire-tenerife', 'teneriffa-sehenswuerdigkeiten'],
   ['tenerife-with-a-baby', 'tenerife-con-un-bebe', 'tenerife-avec-un-bebe', 'teneriffa-mit-baby'],
+  ['canary-islands-audio-guide-lume', 'audioguia-canarias-lume', 'audioguide-canaries-lume', 'kanaren-audioguide-lume'],
 ];
 
 export interface BlogAlternate {
