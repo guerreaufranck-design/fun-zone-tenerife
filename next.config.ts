@@ -38,6 +38,15 @@ const nextConfig: NextConfig = {
       { source: '/axe-throwing', destination: '/en/activities', permanent: true },
       { source: '/quiz-room', destination: '/en/activities', permanent: true },
       { source: '/darts', destination: '/en/activities', permanent: true },
+      // Retired venue-centric blog articles → activities directory (301).
+      { source: '/:locale/blog/evening-entertainment-tenerife-south', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/date-night-ideas-tenerife', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/group-games-tenerife-competitive', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/activities-teenagers-tenerife-south', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/indoor-activities-tenerife-all-weather', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/tenerife-bad-weather-rainy-day-activities', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/family-activities-tenerife-kids-2025', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/blog/things-to-do-playa-las-americas-2025', destination: '/:locale/activities', permanent: true },
     ];
   },
 };
