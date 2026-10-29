@@ -68,6 +68,7 @@ export function Footer() {
               {[
                 { href: '/activities' as const, label: tNav('activities') },
                 { href: '/escape-game' as const, label: 'Escape Games' },
+                { href: '/audio-guide-canaries' as const, label: 'Audio Guide' },
                 { href: '/blog' as const, label: tNav('blog') },
                 { href: '/faq' as const, label: tNav('faq') },
                 { href: '/about' as const, label: tNav('about') },

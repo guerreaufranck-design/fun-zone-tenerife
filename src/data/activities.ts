@@ -3,7 +3,6 @@ import { gygUrl } from '@/lib/gyg';
 const gyg = (path: string) => gygUrl(path, 'funzone-activities');
 
 export type ActivityCategory =
-  | 'Indoor Fun'
   | 'Water & Sea'
   | 'Nature & Adventure'
   | 'Parks & Attractions'
@@ -26,90 +25,27 @@ export interface Activity {
 }
 
 export const activities: Activity[] = [
-  // ─── Fun Zone (featured first) ────────────────────────────────────────────
-  {
-    slug: 'axe-throwing',
-    name: 'Axe Throwing',
-    category: 'Indoor Fun',
-    description:
-      'Unleash your inner Viking at Fun Zone Tenerife! Throw real axes at digital targets with 17+ interactive games. Expert coaches guide every session — no experience needed. Perfect for groups, date nights, stag & hen parties, and team building. Shurikens and ninja stars also available.',
-    gradient: 'from-orange-900 to-red-900',
-    emoji: '🪓',
-    price: 'From €23',
-    duration: '1–2 hours',
-    highlights: [
-      'Professional coaching included',
-      '17+ interactive games',
-      'Axes, shurikens & ninja stars',
-      'Up to 9 players per lane',
-    ],
-    isFunZone: true,
-    bookUrl: '/book',
-    location: 'Playa Las Americas',
-    image: '/images/offers/traditional-axe.jpg',
-  },
-  {
-    slug: 'quiz-room-quizzaboom',
-    name: 'Quiz Room QuizzaBoom',
-    category: 'Indoor Fun',
-    description:
-      "Welcome to QuizzaBoom — Tenerife's first interactive quiz room! Compete with your team on buzzer systems, giant screens and thousands of questions across pop culture, sport, history and more. Family-friendly from age 6. Ideal for birthdays, couples, groups and anyone who loves a brain workout.",
-    gradient: 'from-blue-900 to-violet-900',
-    emoji: '🧠',
-    price: 'From €19',
-    duration: '1 hour',
-    highlights: [
-      "Tenerife's first quiz room",
-      'Buzzer systems & giant screens',
-      'Thousands of questions, dozens of categories',
-      'Family-friendly from age 6',
-    ],
-    isFunZone: true,
-    bookUrl: '/book',
-    location: 'Playa Las Americas',
-    image: '/images/offers/quizzaboom.png',
-  },
+  // ─── Fun Zone own product (featured first) ──────────────────────────────────
   {
     slug: 'escape-game',
-    name: 'Escape Game Tenerife',
-    category: 'Indoor Fun',
+    name: 'Outdoor Escape Games',
+    category: 'Nature & Adventure',
     description:
-      "Forget everything you think you know about Tenerife. Our outdoor escape games turn you into a real detective: decipher clues carved in stone, solve puzzles hidden in historic monuments, and uncover secrets that 99% of visitors never find. 4 adventures available across the island — all played at your own pace on your smartphone.",
+      "Forget everything you think you know about Tenerife. Our outdoor escape games turn you into a real detective: decipher clues carved in stone, solve puzzles hidden in historic monuments, and uncover secrets that 99% of visitors never find. Adventures across the island — all played at your own pace on your smartphone, any day.",
     gradient: 'from-purple-900 to-pink-900',
     emoji: '🔍',
     price: 'From €25',
     duration: '1–4 hours',
     highlights: [
-      '4 adventures across Tenerife',
-      'Outdoor & self-paced',
+      'Self-guided adventures across Tenerife',
+      'Outdoor & self-paced, play any day',
       'Smartphone-based, no app needed',
-      'Unlimited players per team',
+      'Great for groups & stag/hen parties',
     ],
     isFunZone: true,
-    bookUrl: '/book',
+    bookUrl: '/escape-game',
     location: 'Los Cristianos · La Laguna · Puerto de la Cruz · Garachico',
     image: '/images/offers/escapegame.png',
-  },
-  {
-    slug: 'darts',
-    name: 'Darts & Darts Pixel',
-    category: 'Indoor Fun',
-    description:
-      'Choose between classic steel-tip dartboards and Darts Pixel — an interactive digital target experience with multiple game modes. Relaxed fun for all skill levels, from first-timers to competitive players. Great for couples, friends, and group sessions after dinner.',
-    gradient: 'from-teal-900 to-cyan-900',
-    emoji: '🎯',
-    price: 'From €15',
-    duration: '1 hour',
-    highlights: [
-      'Classic darts & digital Darts Pixel',
-      'Multiple game modes',
-      'All skill levels welcome',
-      'From age 8',
-    ],
-    isFunZone: true,
-    bookUrl: '/book',
-    location: 'Playa Las Americas',
-    image: '/images/offers/darts-classic.jpg',
   },
 
   // ─── Water & Sea ───────────────────────────────────────────────────────────
@@ -563,7 +499,6 @@ export const activities: Activity[] = [
 ];
 
 export const activityCategories: ActivityCategory[] = [
-  'Indoor Fun',
   'Water & Sea',
   'Nature & Adventure',
   'Parks & Attractions',

@@ -72,6 +72,14 @@ const localizedPaths: Record<string, Record<Locale, string>> = {
     nl: '/vrijgezellenfeest-tenerife',
     it: '/addio-nubilato-celibato-tenerife',
   },
+  '/audio-guide-canaries': {
+    en: '/audio-guide-canary-islands',
+    es: '/audioguia-islas-canarias',
+    fr: '/audioguide-iles-canaries',
+    de: '/audioguide-kanaren',
+    nl: '/audiogids-canarische-eilanden',
+    it: '/audioguida-isole-canarie',
+  },
 };
 
 export function getAlternates(path: string, slug?: string) {

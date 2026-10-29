@@ -11,37 +11,37 @@ const testimonials = [
     name: 'James R.',
     source: 'Google',
     rating: 5,
-    text: 'Absolutely incredible experience! The digital targets are next level and the staff were super friendly. Best activity we did in Tenerife!',
+    text: 'Booked a whale watching trip through this site — super easy and the best thing we did in Tenerife. Great tips for the rest of our trip too!',
   },
   {
     name: 'Sophie M.',
     source: 'TripAdvisor',
     rating: 5,
-    text: 'We came for my hen party and had the time of our lives. The ninja stars were so much fun. Already planning to come back!',
+    text: 'Did the outdoor escape game for my hen party — we split into teams and had the time of our lives exploring the old town. So much fun!',
   },
   {
     name: 'Carlos D.',
     source: 'Google',
     rating: 5,
-    text: 'Went with my family for a birthday celebration. The kids loved it and the coaches made everyone feel safe and confident. Amazing venue!',
+    text: 'Used the guide to plan a family day up at Mount Teide and a boat trip. Everything was easy to find and book. Perfect for first-timers.',
   },
   {
     name: 'Emma L.',
     source: 'TripAdvisor',
     rating: 5,
-    text: 'The premium 2-hour experience was worth every penny. So many different games and the competition mode was hilarious. 10/10!',
+    text: 'The catamaran sunset cruise we found here was worth every penny — dolphins, drinks and an amazing sunset. 10/10!',
   },
   {
     name: 'Thomas W.',
     source: 'Google',
     rating: 5,
-    text: 'Used it for our team building event - 15 colleagues had a blast. The setup is professional and the atmosphere is electric. Highly recommend!',
+    text: 'Organised a team day with the escape game and a jet ski session — 15 colleagues had a blast. Clear info and smooth booking throughout.',
   },
   {
     name: 'Lucia G.',
     source: 'Google',
     rating: 4,
-    text: 'Such a unique experience in Tenerife. The venue has an awesome vibe and the interactive scoring system makes it really competitive and fun.',
+    text: 'Such a handy guide to what to do in Tenerife. Honest recommendations and the booking links made the whole trip effortless.',
   },
 ];
 

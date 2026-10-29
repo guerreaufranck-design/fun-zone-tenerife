@@ -1,8 +1,19 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { motion, useInView, animate } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+
+type Loc = 'en' | 'es' | 'fr' | 'de' | 'nl' | 'it';
+
+const LABELS: Record<Loc, { activities: string; escapeGames: string; languages: string; averageRating: string }> = {
+  en: { activities: 'Activities & Tours', escapeGames: 'Escape Games', languages: 'Languages', averageRating: 'Average Rating' },
+  es: { activities: 'Actividades y Tours', escapeGames: 'Escape Games', languages: 'Idiomas', averageRating: 'Valoración Media' },
+  fr: { activities: 'Activités & Excursions', escapeGames: 'Escape Games', languages: 'Langues', averageRating: 'Note Moyenne' },
+  de: { activities: 'Aktivitäten & Touren', escapeGames: 'Escape Games', languages: 'Sprachen', averageRating: 'Ø Bewertung' },
+  nl: { activities: 'Activiteiten & Tours', escapeGames: 'Escape Games', languages: 'Talen', averageRating: 'Gem. Beoordeling' },
+  it: { activities: 'Attività e Tour', escapeGames: 'Escape Games', languages: 'Lingue', averageRating: 'Valutazione Media' },
+};
 
 interface CounterProps {
   target: number;
@@ -38,14 +49,15 @@ function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2, isInV
 }
 
 const stats = [
-  { key: 'interactiveGames', value: 17, prefix: '', suffix: '+' },
-  { key: 'throwingLanes', value: 4, prefix: '', suffix: '' },
-  { key: 'happyThrowers', value: 5000, prefix: '', suffix: '+' },
+  { key: 'activities', value: 20, prefix: '', suffix: '+' },
+  { key: 'escapeGames', value: 12, prefix: '', suffix: '' },
+  { key: 'languages', value: 6, prefix: '', suffix: '' },
   { key: 'averageRating', value: 4.9, prefix: '', suffix: '' },
-];
+] as const;
 
 export default function StatsSection() {
-  const t = useTranslations('stats');
+  const locale = (useLocale() as Loc) ?? 'en';
+  const labels = LABELS[locale] ?? LABELS.en;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
@@ -84,7 +96,7 @@ export default function StatsSection() {
                   )}
                 </div>
                 <div className="text-sm font-medium uppercase tracking-wider text-muted-foreground sm:text-base">
-                  {t(stat.key)}
+                  {labels[stat.key]}
                 </div>
               </motion.div>
             ))}

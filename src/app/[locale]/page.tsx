@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import SplitHero from '@/components/home/SplitHero';
-import ExperienceCards from '@/components/home/ExperienceCards';
+import ActivityHighlights from '@/components/home/ActivityHighlights';
 import StatsSection from '@/components/home/StatsSection';
 import HowItWorks from '@/components/home/HowItWorks';
 import Testimonials from '@/components/home/Testimonials';
 import CTASection from '@/components/home/CTASection';
-import Gallery from '@/components/home/Gallery';
 import JsonLdLocalBusiness from '@/components/seo/JsonLdLocalBusiness';
 import { defaultMeta, getAlternates, type Locale } from '@/lib/seo';
 
@@ -62,7 +61,7 @@ export default function HomePage() {
       <SplitHero />
 
       <section className="py-20 lg:py-24">
-        <ExperienceCards />
+        <ActivityHighlights />
       </section>
 
       <StatsSection />
@@ -76,10 +75,6 @@ export default function HomePage() {
       </section>
 
       <CTASection />
-
-      <section className="py-20 lg:py-24">
-        <Gallery />
-      </section>
     </>
   );
 }

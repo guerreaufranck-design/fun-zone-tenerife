@@ -38,6 +38,10 @@ const celebrationPaths: Record<Locale, string> = {
   en: '/stag-hen-party-tenerife', es: '/despedidas-tenerife', fr: '/evjf-evg-tenerife',
   de: '/junggesellenabschied-teneriffa', nl: '/vrijgezellenfeest-tenerife', it: '/addio-nubilato-celibato-tenerife',
 };
+const audioGuidePaths: Record<Locale, string> = {
+  en: '/audio-guide-canary-islands', es: '/audioguia-islas-canarias', fr: '/audioguide-iles-canaries',
+  de: '/audioguide-kanaren', nl: '/audiogids-canarische-eilanden', it: '/audioguida-isole-canarie',
+};
 
 // Helper: a route whose path segment is identical in every locale.
 function samePath(path: string): Record<Locale, string> {
@@ -125,6 +129,8 @@ export async function GET() {
   urlEntries.push(buildUrlEntry(activityPaths, 0.9, 'weekly'));
   // Stag & hen / EVG-EVJF pillar (high-intent group-celebration landing page)
   urlEntries.push(buildUrlEntry(celebrationPaths, 0.9, 'weekly'));
+  // Canary Islands audio-guide landing (links out to Lume)
+  urlEntries.push(buildUrlEntry(audioGuidePaths, 0.7, 'monthly'));
 
   // Category pages (same slug in every locale)
   urlEntries.push(buildUrlEntry(samePath('/escape-game'), 0.9, 'weekly'));

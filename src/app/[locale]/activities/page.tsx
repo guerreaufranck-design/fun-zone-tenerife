@@ -63,7 +63,6 @@ export async function generateMetadata({
 }
 
 const categoryEmoji: Record<ActivityCategory, string> = {
-  'Indoor Fun': '🎮',
   'Water & Sea': '🌊',
   'Nature & Adventure': '🏔️',
   'Parks & Attractions': '🎡',

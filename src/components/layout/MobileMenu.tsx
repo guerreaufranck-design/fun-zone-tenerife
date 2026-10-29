@@ -77,6 +77,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     { href: '/activities' as const, label: t('activities') },
     { href: '/escape-game' as const, label: 'Escape Games' },
     { href: '/celebrations' as const, label: t('celebrations') },
+    { href: '/audio-guide-canaries' as const, label: 'Audio Guide' },
     { href: '/blog' as const, label: t('blog') },
     { href: '/faq' as const, label: t('faq') },
     { href: '/contact' as const, label: t('contact') },
