@@ -1,5 +1,6 @@
-const GYG_PARTNER = 'VHOM8VQ';
-const gyg = (path: string) => `https://www.getyourguide.com/${path}?partner_id=${GYG_PARTNER}`;
+import { gygUrl } from '@/lib/gyg';
+// All activity affiliate links are tagged cmp=funzone-activities (see lib/gyg).
+const gyg = (path: string) => gygUrl(path, 'funzone-activities');
 
 export type ActivityCategory =
   | 'Indoor Fun'

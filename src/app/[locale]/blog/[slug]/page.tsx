@@ -134,8 +134,8 @@ export default function BlogPostPage() {
             </Button>
           </div>
 
-          {/* Affiliate cross-sell (GetYourGuide) */}
-          <RelatedActivities />
+          {/* Affiliate cross-sell (GetYourGuide) — contextual to this article */}
+          <RelatedActivities slug={post.slug} category={post.category} />
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (

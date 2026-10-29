@@ -5,6 +5,7 @@ import { Axe, MapPin, Brain, Target, Users, Sun, PartyPopper, Anchor } from 'luc
 import { getAlternates, type Locale } from '@/lib/seo';
 import { celebrations } from '@/data/celebrations';
 import { activities } from '@/data/activities';
+import { withGygCampaign } from '@/lib/gyg';
 
 const LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'nl', 'it'];
 
@@ -176,7 +177,7 @@ export default async function CelebrationsPage({
             {crossSell.map((a) => (
               <a
                 key={a.slug}
-                href={a.bookUrl}
+                href={withGygCampaign(a.bookUrl, 'funzone-evg')}
                 target="_blank"
                 rel="sponsored nofollow noopener"
                 className="group rounded-2xl border border-[#c9a24b]/15 bg-[#12100c] p-5 transition-all hover:border-[#c9a24b]/40"

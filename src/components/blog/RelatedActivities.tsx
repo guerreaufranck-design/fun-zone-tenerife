@@ -1,12 +1,13 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { activities } from '@/data/activities';
+import { activities, type Activity } from '@/data/activities';
+import { withGygCampaign } from '@/lib/gyg';
 
-// Curated, unambiguous GetYourGuide picks shown at the foot of every article.
-// Monetizes blog traffic without editing each post. rel="sponsored" per Google
-// affiliate-link guidance.
-const PICKS = ['teide-cable-car-tour', 'siam-park-tickets', 'jet-ski-tenerife', 'loro-parque-tickets'];
+// GetYourGuide cross-sell at the foot of every article, CONTEXTUAL to the
+// article's topic (a whale-watching article shows sea activities, a Teide
+// article shows nature activities…) so the links match buying intent. Tagged
+// cmp=funzone-blog so blog conversions are measurable in the GYG dashboard.
 
 const HEADINGS: Record<string, { title: string; note: string }> = {
   en: { title: 'Popular things to do in Tenerife', note: 'Booked via GetYourGuide (affiliate links)' },
@@ -17,12 +18,38 @@ const HEADINGS: Record<string, { title: string; note: string }> = {
   it: { title: 'Cosa fare a Tenerife', note: 'Prenotazioni via GetYourGuide (link di affiliazione)' },
 };
 
-export default function RelatedActivities() {
+const GYG = activities.filter((a) => !a.isFunZone);
+const bySlug = (slugs: string[]) =>
+  slugs.map((s) => GYG.find((a) => a.slug === s)).filter((a): a is Activity => Boolean(a));
+const byCategory = (cat: string) => GYG.filter((a) => a.category === cat);
+
+/** Choose up to 4 activities relevant to the article's topic. */
+function pickForArticle(slug: string, category: string): Activity[] {
+  const t = `${slug} ${category}`.toLowerCase();
+  let pool: Activity[] = [];
+  if (/whale|dolphin|boat|catamaran|\bsea\b|snorkel|div(e|ing)|scuba|surf|jet.?ski|sail|gigantes|submarine|parasail|water/.test(t)) {
+    pool = byCategory('Water & Sea');
+  } else if (/teide|stargaz|\bstar|hik(e|ing)|masca|quad|buggy|paraglid|horse|helicopter|nature|volcano|adventure|trek/.test(t)) {
+    pool = byCategory('Nature & Adventure');
+  } else if (/siam|loro|\bpark|family|kid|child|rainy|weather|teenager|teens/.test(t)) {
+    pool = [...byCategory('Parks & Attractions'), ...byCategory('Water & Sea')];
+  } else if (/stag|hen|despedida|evjf|\bevg\b|group|party|bachelor|squad|competitive/.test(t)) {
+    pool = bySlug(['jet-ski-tenerife', 'catamaran-sunset-cruise-tenerife', 'karting-tenerife', 'parasailing-tenerife']);
+  } else if (/wine|flamenco|dinner|show|night|evening|couple|date|romantic/.test(t)) {
+    pool = [...byCategory('Evenings & Shows'), ...byCategory('Water & Sea')];
+  }
+  if (pool.length < 4) {
+    pool = [...pool, ...bySlug(['teide-cable-car-tour', 'whale-watching-tenerife', 'siam-park-tickets', 'jet-ski-tenerife'])];
+  }
+  // de-dupe, keep order, cap at 4
+  const seen = new Set<string>();
+  return pool.filter((a) => !seen.has(a.slug) && seen.add(a.slug)).slice(0, 4);
+}
+
+export default function RelatedActivities({ slug = '', category = '' }: { slug?: string; category?: string }) {
   const locale = useLocale();
   const h = HEADINGS[locale] ?? HEADINGS.en;
-  const picks = PICKS.map((slug) => activities.find((a) => a.slug === slug)).filter(
-    (a): a is NonNullable<typeof a> => Boolean(a)
-  );
+  const picks = pickForArticle(slug, category);
   if (picks.length === 0) return null;
 
   return (
@@ -33,7 +60,7 @@ export default function RelatedActivities() {
         {picks.map((a) => (
           <a
             key={a.slug}
-            href={a.bookUrl}
+            href={withGygCampaign(a.bookUrl, 'funzone-blog')}
             target="_blank"
             rel="sponsored nofollow noopener"
             className="group rounded-xl border border-border/50 bg-[#111118] p-4 transition-all hover:border-[#00d4ff]/30"
