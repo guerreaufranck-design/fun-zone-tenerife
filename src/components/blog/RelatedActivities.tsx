@@ -27,11 +27,11 @@ const byCategory = (cat: string) => GYG.filter((a) => a.category === cat);
 function pickForArticle(slug: string, category: string): Activity[] {
   const t = `${slug} ${category}`.toLowerCase();
   let pool: Activity[] = [];
-  if (/whale|dolphin|boat|catamaran|\bsea\b|beach|coast|strand|strände|plage|snorkel|div(e|ing)|scuba|surf|jet.?ski|sail|gigantes|submarine|parasail|water/.test(t)) {
+  if (/whale|dolphin|boat|catamaran|\bsea\b|beach|coast|strand|strände|plage|playa|snorkel|div(e|ing)|scuba|surf|jet.?ski|sail|gigantes|submarine|parasail|water/.test(t)) {
     pool = byCategory('Water & Sea');
-  } else if (/teide|stargaz|\bstar|hik(e|ing)|wander|randonn|masca|quad|buggy|paraglid|horse|helicopter|nature|natur|volcano|volcan|vulkan|adventure|trek/.test(t)) {
+  } else if (/teide|stargaz|\bstar|hik(e|ing)|wander|randonn|masca|anaga|forest|bosque|quad|buggy|paraglid|horse|helicopter|nature|natur|volcano|volcan|vulkan|adventure|trek|day.?trip|excursion/.test(t)) {
     pool = byCategory('Nature & Adventure');
-  } else if (/siam|loro|\bpark|family|famille|familie|kid|child|kinder|enfant|rainy|weather|teenager|teens/.test(t)) {
+  } else if (/siam|loro|\bpark|family|famille|familie|familia|kid|child|kinder|enfant|niño|toddler|baby|rainy|weather|teenager|teens/.test(t)) {
     pool = [...byCategory('Parks & Attractions'), ...byCategory('Water & Sea')];
   } else if (/stag|hen|despedida|evjf|\bevg\b|jga|junggesell|group|party|bachelor|squad|competitive/.test(t)) {
     pool = bySlug(['jet-ski-tenerife', 'catamaran-sunset-cruise-tenerife', 'karting-tenerife', 'parasailing-tenerife']);
