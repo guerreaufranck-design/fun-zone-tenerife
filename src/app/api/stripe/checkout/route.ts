@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const experienceName =
       (offer?.title as Record<string, string>)?.[lang] ??
       (offer?.title as Record<string, string>)?.["en"] ??
-      "Axe Throwing Experience";
+      "Tenerife Experience";
 
     // Calculate amount based on payment type
     const amount =
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       process.env.NEXT_PUBLIC_SITE_URL ||
       (process.env.VERCEL_PROJECT_PRODUCTION_URL
         ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : "https://axe-throwing-tenerife.vercel.app");
+        : "https://funzonetenerife.com");
 
     // Create Stripe Checkout Session
     const session = await getStripe().checkout.sessions.create({

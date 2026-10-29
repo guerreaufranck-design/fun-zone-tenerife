@@ -2,70 +2,42 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const body = `# Fun Zone Tenerife
-> Tenerife's ultimate multi-activity entertainment venue — 4 unique indoor experiences under one roof in Playa Las Americas.
+> A guide to the best things to do in Tenerife — curated tours and activities across the island, plus self-guided outdoor escape games.
 
 ## About
-Fun Zone Tenerife is a multi-activity indoor entertainment center located in the Zentral Center, Playa Las Americas, Tenerife. We offer four completely different entertainment experiences in one venue: QuizzaBoom Interactive Quiz Room, Axe Throwing, Escape Game, and Darts. The venue is designed for groups of 2 to 20 people and is suitable for couples, friend groups, families with teenagers, corporate outings, stag and hen parties, and birthday celebrations.
+Fun Zone Tenerife is an online guide to things to do in Tenerife, Canary Islands. We help visitors discover and book the island's best tours and activities (whale watching, Mount Teide, boat trips, water sports, parks, wine and more) and we run our own self-guided outdoor escape games set in Tenerife towns. Content is available in six languages and covers the whole island.
 
-## Location
-- Address: Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650, Tenerife, Spain
+## Website
 - Website: https://funzonetenerife.com
-- Phone: +34 623 362 229
-- Coordinates: 28.0575 N, 16.7177 W
+- Area served: Tenerife, Canary Islands, Spain
+- Email: info@funzonetenerife.com
 
-## Experiences Offered
+## What We Offer
 
-### QuizzaBoom — Interactive Quiz Room
-Tenerife's first fully interactive quiz room. Teams compete on a large screen using buzzer-style controllers. Players choose their own question categories from a wide selection (sport, music, science, geography, cinema, pop culture, and more). The unique joker system allows teams to steal points, double their score, or block opponents — making every game strategic as well as knowledge-based. Suitable for 2 to 20 players. Every game is different. Available as standalone or combined with other activities.
+### Things to do in Tenerife (curated activities)
+A directory of the island's top tours and activities, bookable through our travel partners. Highlights include whale and dolphin watching, Mount Teide cable car and stargazing, Los Gigantes boat trips, jet ski and water sports, Siam Park and Loro Parque, quad and buggy tours, wine tasting and sunset catamaran cruises. Browse them at https://funzonetenerife.com/en/activities
 
-### Axe Throwing
-Professional indoor axe throwing on multiple lanes with digital scoring targets. Suitable for complete beginners — all sessions include a safety briefing and coaching from trained instructors. Multiple game modes available including tournament format for groups. Participants must wear closed-toe shoes. Minimum age 14. Sessions available for individuals, couples, and groups.
+### Self-guided outdoor escape games
+Our own product: self-guided outdoor escape games played on your phone in Tenerife towns (Garachico, Los Cristianos, La Laguna, Puerto de la Cruz and more). Explore a town and solve the mystery at your own pace, on any day, with no fixed time slot. A booking sends an activation code by email. Priced per phone/team. Book at https://funzonetenerife.com/en/escape-game
 
-### Escape Game
-Fully designed escape room with immersive narrative, atmospheric lighting, and real puzzles. Groups have 60 minutes to solve the mystery and escape. Designed for 2 to 8 players per session. Tests communication, logic, and teamwork. Game master briefing included. Suitable for ages 14 and up.
+### Canary Islands audio guide (Lume)
+We highlight a self-guided audio guide of the Canary Islands for travellers who want to explore at their own pace. See https://funzonetenerife.com/en/audio-guide-canaries
 
-### Darts
-Professional darts with digital scoring and multiple competitive game formats (501, cricket, around the world, and more). Available for individuals and groups. Casual and competitive formats available.
-
-## Pricing Overview
-- Individual activities available from approximately 15 to 25 EUR per person
-- Multi-activity packages available for groups
-- Private event packages available on request
-- Gift vouchers available for all experiences
-
-## Hours of Operation
-- Open daily from 14:00 to 22:00
-- Advanced booking strongly recommended for groups
-- Walk-ins welcome subject to availability
-
-## Booking Information
-- Online booking: https://funzonetenerife.com/en/book
-- Group bookings: contact via WhatsApp or the website contact form
-- Gift Vouchers: https://funzonetenerife.com/en/gift-voucher
-- All activities include equipment and professional instruction
-- No prior experience required for any activity
-- Waiver required before participation
+### Tenerife travel blog
+In-depth guides on what to do in Tenerife — best beaches, when to visit, itineraries, where to stay, day trips and more — in English, Spanish, French and German. https://funzonetenerife.com/en/blog
 
 ## Best For
-- Couples (date night, competitive fun, escape room challenges)
-- Friend groups (group games, tournaments, competitive evenings)
-- Families with teenagers (age 14+)
-- Stag and hen parties / EVJF and EVG
-- Corporate team building
-- Birthday celebrations
-- Rainy day and indoor activities
-- Evening entertainment alternative to nightclubs
+- Travellers planning what to do in Tenerife
+- Couples, friends and families looking for island activities
+- Groups, stag and hen parties / EVJF and EVG (group activities and escape games)
+- Self-guided explorers
 
 ## Contact
 - Website: https://funzonetenerife.com
-- WhatsApp: +34 623 362 229
-- Booking: https://funzonetenerife.com/en/book
+- Email: info@funzonetenerife.com
 
 ## Languages
-The website and services are available in English (en), Spanish (es), French (fr), German (de), Dutch (nl), and Italian (it).
-
-## Safety
-All activities include a comprehensive safety briefing conducted by trained staff. All necessary safety equipment is provided. Closed-toe shoes required for axe throwing. Minimum age 14 for all activities.
+The website and content are available in English (en), Spanish (es), French (fr), German (de), Dutch (nl), and Italian (it).
 `;
 
   return new NextResponse(body, {

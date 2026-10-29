@@ -60,18 +60,6 @@ const localizedPaths: Record<string, Record<Locale, string>> = {
     nl: '/activiteiten',
     it: '/attivita',
   },
-  '/axe-throwing': {
-    en: '/axe-throwing', es: '/axe-throwing', fr: '/axe-throwing',
-    de: '/axe-throwing', nl: '/axe-throwing', it: '/axe-throwing',
-  },
-  '/quiz-room': {
-    en: '/quiz-room', es: '/quiz-room', fr: '/quiz-room',
-    de: '/quiz-room', nl: '/quiz-room', it: '/quiz-room',
-  },
-  '/darts': {
-    en: '/darts', es: '/darts', fr: '/darts',
-    de: '/darts', nl: '/darts', it: '/darts',
-  },
   '/escape-game': {
     en: '/escape-game', es: '/escape-game', fr: '/escape-game',
     de: '/escape-game', nl: '/escape-game', it: '/escape-game',
@@ -144,33 +132,33 @@ export function getAlternates(path: string, slug?: string) {
 
 export const defaultMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Fun Zone Tenerife | Quiz Room, Axe Throwing, Escape Game & Darts',
+    title: 'Fun Zone Tenerife | Things to Do in Tenerife — Tours, Activities & Escape Games',
     description:
-      'Fun Zone Tenerife: 4 unique indoor experiences under one roof! QuizzaBoom Quiz Room, Axe Throwing, Escape Game & Darts in Playa Las Americas. Book your adventure today!',
+      'Your guide to the best things to do in Tenerife: top excursions and activities (whale watching, Teide, boat trips & more), self-guided outdoor escape games and island travel tips.',
   },
   es: {
-    title: 'Fun Zone Tenerife | Quiz Room, Lanzamiento de Hachas, Escape Game y Dardos',
+    title: 'Fun Zone Tenerife | Qué Hacer en Tenerife — Tours, Actividades y Escape Games',
     description:
-      '¡Fun Zone Tenerife: 4 experiencias únicas bajo un mismo techo! Quiz Room QuizzaBoom, Lanzamiento de Hachas, Escape Game y Dardos en Playa Las Américas. ¡Reserva tu aventura!',
+      'Tu guía de las mejores cosas que hacer en Tenerife: excursiones y actividades top (avistamiento de ballenas, Teide, paseos en barco…), escape games al aire libre y consejos de viaje.',
   },
   fr: {
-    title: 'Fun Zone Tenerife | Quiz Room, Lancer de Haches, Escape Game & Fléchettes',
+    title: 'Fun Zone Tenerife | Que Faire à Tenerife — Excursions, Activités & Escape Games',
     description:
-      'Fun Zone Tenerife : 4 expériences uniques en un seul endroit ! Quiz Room QuizzaBoom, Lancer de Haches, Escape Game & Fléchettes à Playa Las Americas. Réservez dès maintenant !',
+      'Votre guide des meilleures choses à faire à Tenerife : excursions et activités incontournables (baleines, Teide, sorties en bateau…), escape games outdoor et conseils de voyage.',
   },
   de: {
-    title: 'Fun Zone Teneriffa | Quiz Room, Beilwerfen, Escape Game & Darts',
+    title: 'Fun Zone Teneriffa | Aktivitäten auf Teneriffa — Touren, Ausflüge & Escape Games',
     description:
-      'Fun Zone Teneriffa: 4 einzigartige Indoor-Erlebnisse unter einem Dach! QuizzaBoom Quiz Room, Beilwerfen, Escape Game & Darts in Playa Las Americas. Jetzt buchen!',
+      'Dein Guide für die besten Aktivitäten auf Teneriffa: Top-Touren und Ausflüge (Wale, Teide, Bootstouren…), Outdoor-Escape-Games und Reisetipps für die Insel.',
   },
   nl: {
-    title: 'Fun Zone Tenerife | Quiz Room, Bijl Gooien, Escape Game & Darts',
+    title: 'Fun Zone Tenerife | Dingen om te Doen op Tenerife — Tours, Activiteiten & Escape Games',
     description:
-      'Fun Zone Tenerife: 4 unieke indoor ervaringen op één plek! QuizzaBoom Quiz Room, Bijl Gooien, Escape Game & Darts in Playa Las Americas. Boek jouw avontuur vandaag!',
+      'Jouw gids voor de leukste dingen om te doen op Tenerife: top excursies en activiteiten (walvissen, Teide, boottochten…), outdoor escape games en reistips.',
   },
   it: {
-    title: 'Fun Zone Tenerife | Quiz Room, Lancio delle Asce, Escape Game e Freccette',
+    title: 'Fun Zone Tenerife | Cosa Fare a Tenerife — Tour, Attività ed Escape Games',
     description:
-      'Fun Zone Tenerife: 4 esperienze uniche in un unico posto! QuizzaBoom Quiz Room, Lancio delle Asce, Escape Game e Freccette a Playa Las Americas. Prenota la tua avventura!',
+      'La tua guida alle migliori cose da fare a Tenerife: escursioni e attività top (balene, Teide, gite in barca…), escape games all’aperto e consigli di viaggio.',
   },
 };

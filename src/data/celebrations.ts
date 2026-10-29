@@ -1,8 +1,8 @@
 /**
  * Content for the stag & hen / EVG-EVJF pillar landing page (/celebrations,
- * localized slug per market). This is a conversion + SEO page: it funnels group
- * celebrations toward Fun Zone's own activities (axe throwing as the hero) and
- * cross-sells complementary GetYourGuide experiences (boat parties, jet ski…).
+ * localized slug per market). Conversion + SEO page: it funnels group
+ * celebrations toward self-guided outdoor escape games and hand-picked
+ * GetYourGuide group experiences (boat parties, jet ski, karting…).
  *
  * One rich, unique block per locale — never machine-duplicated — so each market
  * (UK/IE for EN, ES, FR, DE, NL, IT) ranks on its own high-intent keyword.
@@ -25,11 +25,7 @@ export interface CelebrationContent {
   intro: string;
   whyTitle: string;
   why: string[];
-  activitiesTitle: string;
-  /** Short pitch shown on the axe-throwing hero card. */
-  heroActivity: { name: string; pitch: string };
-  activities: { name: string; blurb: string }[];
-  /** Cross-sell (GetYourGuide) block. */
+  /** Cross-sell (GetYourGuide) group experiences block. */
   crossSellTitle: string;
   crossSellIntro: string;
   ctaTitle: string;
@@ -42,75 +38,48 @@ export interface CelebrationContent {
 export const celebrations: Record<Locale, CelebrationContent> = {
   en: {
     slug: 'stag-hen-party-tenerife',
-    seoTitle: 'Stag Do & Hen Party Tenerife | Group Activities in Playa Las Américas',
+    seoTitle: 'Stag Do & Hen Party Tenerife | Group Activities & Ideas',
     seoDescription:
-      'Planning a stag do or hen party in Tenerife? Axe throwing, escape games, quiz battles and boat parties in Playa Las Américas — unforgettable group activities, easy to book, all in one place.',
+      'Planning a stag do or hen party in Tenerife? Self-guided outdoor escape games, boat parties, jet ski, karting and more — unforgettable group activities, easy to book in one place.',
     keywords:
-      'stag do tenerife, hen party tenerife, stag weekend tenerife, hen do tenerife, group activities tenerife, stag activities playa las americas, hen party ideas tenerife south, bachelor party tenerife',
+      'stag do tenerife, hen party tenerife, stag weekend tenerife, hen do tenerife, group activities tenerife, bachelor party tenerife, bachelorette tenerife',
     h1: 'Stag Do & Hen Party Activities in Tenerife',
     subtitle:
-      'The south of Tenerife is the sunniest stag & hen playground in Europe — and Fun Zone Playa Las Américas is where the group actually has fun. Book the whole crew in minutes.',
+      'The south of Tenerife is the sunniest stag & hen playground in Europe. Here is how to put together a weekend the whole group actually remembers.',
     intro:
-      "Sun, cheap flights and a beachfront strip built for going out: it's no accident that thousands of UK and Irish stag and hen groups land in Tenerife South every year. But a weekend needs more than bars. Fun Zone gives your group a proper competitive session — axe throwing, escape games, quiz battles, darts — right in the heart of Playa Las Américas, minutes from the hotels and the nightlife. One booking, the whole squad sorted.",
+      "Sun, cheap flights and a beachfront strip built for going out: it's no accident that thousands of UK and Irish stag and hen groups land in Tenerife every year. But a great weekend needs more than bars. The two winners for groups are a self-guided outdoor escape game — split into teams and race around a real town solving the mystery on your phone — and a day out on the water. This page brings the best group activities together so you can book the whole crew in minutes.",
     whyTitle: 'Why Tenerife wins for stags & hens',
     why: [
       'Year-round sunshine — plan the weekend for any month, no rain-outs.',
       '2–4 hour flights from most UK & Irish airports, cheap and frequent.',
-      'Everything walkable in Playa Las Américas: hotels, beach, bars and activities.',
-      'Groups welcome — we handle 6 to 30+ players and split you into competing teams.',
-      'Prosecco on arrival, matching tees, custom challenges — we make the birthday/bride/groom the star.',
+      'Everything close in the south: hotels, beach, bars and activities.',
+      'Great for groups — escape games split you into competing teams, boats take the whole crew.',
+      'Easy to combine a daytime activity with the big night out.',
     ],
-    activitiesTitle: 'The activities your group will actually remember',
-    heroActivity: {
-      name: 'Axe Throwing',
-      pitch:
-        "The #1 stag & hen activity in Tenerife. Two-handed axes, digital targets, an instructor who runs the leaderboard and a natural rivalry that gets the whole group roaring. No experience needed — everyone's landing bullseyes within minutes.",
-    },
-    activities: [
-      {
-        name: 'Escape Games',
-        blurb:
-          'Outdoor treasure-hunt adventures across Tenerife — split into teams and race to crack the case on your phone, at your own pace.',
-      },
-      {
-        name: 'QuizzaBoom Quiz Room',
-        blurb:
-          "Tenerife's first interactive quiz room: buzzers, giant screens and thousands of questions. Perfect ice-breaker before the night out.",
-      },
-      {
-        name: 'Darts & Pixel Darts',
-        blurb:
-          'Classic and interactive electronic darts with 15+ game modes — casual, competitive and endlessly re-playable with a drink in hand.',
-      },
-    ],
-    crossSellTitle: 'Make it a full weekend',
+    crossSellTitle: 'Top group activities & experiences',
     crossSellIntro:
       'Add the water and adrenaline your group is here for. We hand-picked the best-rated Tenerife experiences for stag & hen groups — boat parties, catamaran cruises with drinks, jet ski, parasailing and more:',
-    ctaTitle: 'Get your group booked',
+    ctaTitle: 'Plan your group celebration',
     ctaText:
-      'Tell us your dates and headcount and we\'ll set up the perfect session. Axe throwing from just €25 per person — private group slots available.',
-    ctaButton: 'Book axe throwing',
+      'Start with a self-guided outdoor escape game (play any day, at your own pace, from €25 per team) and add a boat party or jet ski session for the full weekend.',
+    ctaButton: 'Book an escape game',
     faqTitle: 'Stag & hen party FAQs',
     faq: [
       {
-        q: 'How big a group can you take?',
-        a: 'From 6 up to 30+ players. We split larger groups into competing teams across multiple lanes so nobody stands around waiting.',
+        q: 'What are the best group activities for a stag or hen in Tenerife?',
+        a: 'A self-guided outdoor escape game is the perfect ice-breaker (teams, no fixed time, play any day), paired with a boat party, catamaran cruise, jet ski or karting for the adrenaline. You will find all of them on this page.',
       },
       {
-        q: 'Is axe throwing safe after a few drinks?',
-        a: 'A qualified instructor runs every session and controls the pace. We keep it fun and safe — but for the axe lanes we do ask throwers to be steady on their feet.',
+        q: 'How big a group can do an escape game?',
+        a: 'Any size — you simply book one phone/team per small group and set them off together. Larger crews split into competing teams and race to finish first.',
       },
       {
-        q: 'Can you organise something special for the bride or groom?',
-        a: "Absolutely — matching tees, prosecco on arrival, custom forfeits and a personalised leaderboard. Just tell us who the guest of honour is.",
-      },
-      {
-        q: 'Where are you and how do we get there?',
-        a: "We're in the heart of Playa Las Américas, walkable from most south-Tenerife hotels and a short taxi from Los Cristianos and Costa Adeje.",
+        q: 'Do we need to book a fixed time?',
+        a: 'No. The outdoor escape games are self-guided: you get an activation code by email and start whenever suits the group, any day. Boat trips and other GetYourGuide experiences have set departure times shown at booking.',
       },
       {
         q: 'How far in advance should we book?',
-        a: 'Weekends and peak season fill up fast — book your group at least a week ahead to guarantee your slot and lanes.',
+        a: 'Escape games can be booked last-minute, but boat parties and popular tours fill up in peak season — book those a week or two ahead to be safe.',
       },
     ],
   },
@@ -119,373 +88,238 @@ export const celebrations: Record<Locale, CelebrationContent> = {
     slug: 'despedidas-tenerife',
     seoTitle: 'Despedidas de Soltero y Soltera en Tenerife | Actividades de Grupo',
     seoDescription:
-      '¿Organizas una despedida de soltero o soltera en Tenerife? Lanzamiento de hachas, escape games, quiz y fiestas en barco en Playa Las Américas. Actividades de grupo inolvidables y fáciles de reservar.',
+      '¿Organizas una despedida de soltero o soltera en Tenerife? Escape games al aire libre, fiestas en barco, moto de agua, karting y más. Actividades de grupo inolvidables y fáciles de reservar.',
     keywords:
-      'despedida soltero tenerife, despedida soltera tenerife, despedidas tenerife, actividades grupo tenerife, despedida playa las americas, ideas despedida tenerife sur',
+      'despedida soltero tenerife, despedida soltera tenerife, despedidas tenerife, actividades grupo tenerife, ideas despedida tenerife sur',
     h1: 'Despedidas de Soltero y Soltera en Tenerife',
     subtitle:
-      'El sur de Tenerife es el mejor destino de despedidas de Europa — y Fun Zone Playa Las Américas es donde el grupo de verdad se divierte. Reserva a toda la cuadrilla en minutos.',
+      'El sur de Tenerife es el mejor destino de despedidas de Europa. Así organizas un fin de semana que el grupo recordará de verdad.',
     intro:
-      'Sol todo el año, vuelos baratos y una zona pensada para salir: no es casualidad que Tenerife Sur reciba cada año a miles de grupos de despedida. Pero un fin de semana necesita algo más que copas. Fun Zone ofrece a tu grupo una sesión competitiva de verdad — hachas, escape games, quiz, dardos — en pleno corazón de Playa Las Américas, a minutos de los hoteles y el ambiente nocturno. Una reserva y toda la cuadrilla lista.',
+      'Sol todo el año, vuelos baratos y una zona pensada para salir: no es casualidad que Tenerife reciba cada año a miles de grupos de despedida. Pero un buen fin de semana necesita algo más que copas. Las dos mejores opciones para grupos son un escape game al aire libre y autoguiado — os dividís en equipos y recorréis un pueblo resolviendo el misterio con el móvil — y un día en el mar. Aquí reunimos las mejores actividades de grupo para que reserves a toda la cuadrilla en minutos.',
     whyTitle: 'Por qué Tenerife gana para las despedidas',
     why: [
-      'Sol todo el año — organiza la despedida en cualquier mes, sin lluvia.',
-      'Vuelos cortos y baratos desde toda la península y Europa.',
-      'Todo a pie en Playa Las Américas: hoteles, playa, bares y actividades.',
-      'Grupos bienvenidos — de 6 a más de 30 jugadores, divididos en equipos que compiten.',
-      'Cava de bienvenida, camisetas a juego y retos personalizados para el protagonista.',
+      'Sol todo el año: elige cualquier mes, sin lluvia que estropee el plan.',
+      'Vuelos cortos, baratos y frecuentes desde toda Europa.',
+      'Todo cerca en el sur: hoteles, playa, ambiente y actividades.',
+      'Ideal para grupos: los escape games os dividen en equipos, los barcos llevan a toda la cuadrilla.',
+      'Fácil combinar una actividad de día con la gran noche.',
     ],
-    activitiesTitle: 'Las actividades que tu grupo recordará',
-    heroActivity: {
-      name: 'Lanzamiento de Hachas',
-      pitch:
-        'La actividad nº1 para despedidas en Tenerife. Hachas, dianas digitales, un monitor que lleva la clasificación y una rivalidad que enciende a todo el grupo. Sin experiencia — todos clavan dianas en minutos.',
-    },
-    activities: [
-      {
-        name: 'Escape Games',
-        blurb:
-          'Aventuras al aire libre por Tenerife: divididos en equipos, resolvéis el misterio desde el móvil y a vuestro ritmo.',
-      },
-      {
-        name: 'Quiz Room QuizzaBoom',
-        blurb:
-          'La primera sala de quiz interactiva de Tenerife: pulsadores, pantallas gigantes y miles de preguntas. El calentamiento perfecto.',
-      },
-      {
-        name: 'Dardos y Pixel Darts',
-        blurb:
-          'Dardos clásicos y electrónicos con más de 15 modos de juego — divertido, competitivo y con copa en mano.',
-      },
-    ],
-    crossSellTitle: 'Completa el fin de semana',
+    crossSellTitle: 'Las mejores actividades de grupo',
     crossSellIntro:
-      'Añade el agua y la adrenalina que busca tu grupo. Hemos seleccionado las mejores experiencias de Tenerife para despedidas — fiestas en barco, catamarán con bebidas, moto de agua, parasailing y más:',
-    ctaTitle: 'Reserva tu grupo',
+      'Añade el agua y la adrenalina que buscáis. Hemos seleccionado las experiencias mejor valoradas de Tenerife para despedidas: fiestas en barco, catamarán con copas, moto de agua, parasailing y más:',
+    ctaTitle: 'Organiza tu despedida',
     ctaText:
-      'Dinos las fechas y cuántos sois y te preparamos la sesión perfecta. Hachas desde 25 € por persona — con opción de grupo privado.',
-    ctaButton: 'Reservar hachas',
-    faqTitle: 'Preguntas frecuentes de despedidas',
+      'Empieza con un escape game al aire libre y autoguiado (cualquier día, a vuestro ritmo, desde 25€ por equipo) y añade una fiesta en barco o moto de agua para el fin de semana completo.',
+    ctaButton: 'Reservar un escape game',
+    faqTitle: 'Preguntas frecuentes sobre despedidas',
     faq: [
       {
-        q: '¿De qué tamaño puede ser el grupo?',
-        a: 'De 6 a más de 30 personas. Dividimos los grupos grandes en equipos en varias pistas para que nadie espere.',
+        q: '¿Cuáles son las mejores actividades de grupo para una despedida en Tenerife?',
+        a: 'Un escape game al aire libre y autoguiado es el mejor rompehielos (equipos, sin hora fija, cualquier día), junto con una fiesta en barco, catamarán, moto de agua o karting para la adrenalina. Las tienes todas en esta página.',
       },
       {
-        q: '¿Es seguro lanzar hachas tras unas copas?',
-        a: 'Un monitor cualificado dirige cada sesión y controla el ritmo. Es divertido y seguro, pero en las pistas de hachas pedimos que los lanzadores estén firmes.',
+        q: '¿Cuántas personas pueden hacer un escape game?',
+        a: 'Cualquier número: reservas un móvil/equipo por cada grupo pequeño y salís juntos. Los grupos grandes se dividen en equipos que compiten por terminar primero.',
       },
       {
-        q: '¿Podéis preparar algo especial para el protagonista?',
-        a: 'Por supuesto — camisetas a juego, cava de bienvenida, prendas personalizadas y clasificación con su nombre.',
+        q: '¿Hay que reservar una hora fija?',
+        a: 'No. Los escape games al aire libre son autoguiados: recibes un código por email y empezáis cuando queráis, cualquier día. Las excursiones en barco y otras experiencias tienen horarios de salida que se indican al reservar.',
       },
       {
-        q: '¿Dónde estáis y cómo se llega?',
-        a: 'En pleno Playa Las Américas, a pie desde la mayoría de hoteles del sur y a un taxi corto de Los Cristianos y Costa Adeje.',
-      },
-      {
-        q: '¿Con cuánta antelación reservar?',
-        a: 'Los fines de semana y la temporada alta se llenan rápido — reserva con al menos una semana de antelación.',
+        q: '¿Con cuánta antelación conviene reservar?',
+        a: 'Los escape games se pueden reservar en el último momento, pero las fiestas en barco y los tours populares se llenan en temporada alta: resérvalos con una o dos semanas de margen.',
       },
     ],
   },
 
   fr: {
     slug: 'evjf-evg-tenerife',
-    seoTitle: 'EVJF & EVG à Tenerife | Activités de Groupe à Playa Las Américas',
+    seoTitle: 'EVJF & EVG à Tenerife | Activités de Groupe & Idées',
     seoDescription:
-      'Vous organisez un EVJF ou un EVG à Tenerife ? Lancer de haches, escape games, quiz et boat party à Playa Las Américas. Des activités de groupe inoubliables, faciles à réserver.',
+      'Vous organisez un EVJF ou un EVG à Tenerife ? Escape games outdoor autoguidés, sorties en bateau, jet-ski, karting et plus — des activités de groupe inoubliables, faciles à réserver au même endroit.',
     keywords:
-      'evjf tenerife, evg tenerife, enterrement vie de jeune fille tenerife, enterrement vie de garcon tenerife, activités groupe tenerife, evjf playa las americas, idées evg tenerife',
-    h1: 'EVJF & EVG à Tenerife',
+      'evjf tenerife, evg tenerife, enterrement vie de jeune fille tenerife, enterrement vie de garcon tenerife, activites groupe tenerife, idees evjf evg tenerife',
+    h1: 'Activités EVJF & EVG à Tenerife',
     subtitle:
-      "Le sud de Tenerife est le spot enterrement de vie le plus ensoleillé d'Europe — et Fun Zone Playa Las Américas est là où le groupe s'éclate vraiment. Réservez toute la bande en quelques minutes.",
+      "Le sud de Tenerife est le spot EVJF/EVG le plus ensoleillé d'Europe. Voici comment composer un week-end que tout le groupe retiendra vraiment.",
     intro:
-      "Soleil toute l'année, vols pas chers et un front de mer fait pour sortir : ce n'est pas un hasard si des milliers de groupes EVJF et EVG débarquent chaque année à Tenerife Sud. Mais un week-end, ce n'est pas que des bars. Fun Zone offre à votre groupe une vraie session de défi — haches, escape games, quiz, fléchettes — en plein cœur de Playa Las Américas, à quelques minutes des hôtels et de la vie nocturne. Une seule réservation, toute la bande est calée.",
-    whyTitle: 'Pourquoi Tenerife gagne pour les EVJF / EVG',
+      "Du soleil, des vols pas chers et un front de mer fait pour sortir : ce n'est pas un hasard si des milliers de groupes débarquent à Tenerife chaque année. Mais un bon week-end, c'est plus que des bars. Les deux valeurs sûres pour un groupe : un escape game outdoor autoguidé — on se répartit en équipes et on parcourt une vraie ville en résolvant l'énigme sur le téléphone — et une journée sur l'eau. Cette page réunit les meilleures activités de groupe pour réserver toute la bande en quelques minutes.",
+    whyTitle: 'Pourquoi Tenerife gagne pour les EVJF & EVG',
     why: [
-      "Soleil toute l'année — organisez le week-end n'importe quel mois, sans pluie.",
-      'Vols courts et bon marché depuis toute la France et la Belgique.',
-      'Tout à pied à Playa Las Américas : hôtels, plage, bars et activités.',
-      'Groupes bienvenus — de 6 à plus de 30 joueurs, répartis en équipes qui s\'affrontent.',
-      'Prosecco à l\'arrivée, t-shirts assortis et défis personnalisés pour la/le futur(e) marié(e).',
+      "Du soleil toute l'année : choisissez n'importe quel mois, sans pluie.",
+      "Vols courts, fréquents et abordables depuis toute l'Europe.",
+      'Tout est proche dans le sud : hôtels, plage, ambiance et activités.',
+      'Parfait pour les groupes : les escape games forment des équipes, les bateaux embarquent toute la bande.',
+      'Facile de combiner une activité en journée avec la grande soirée.',
     ],
-    activitiesTitle: 'Les activités dont votre groupe se souviendra',
-    heroActivity: {
-      name: 'Lancer de Haches',
-      pitch:
-        "L'activité nº1 pour les EVJF/EVG à Tenerife. Haches, cibles digitales, un coach qui tient le classement et une rivalité qui embarque tout le groupe. Aucune expérience requise — tout le monde plante des mouches en quelques minutes.",
-    },
-    activities: [
-      {
-        name: 'Escape Games',
-        blurb:
-          "Des aventures en plein air à travers Tenerife : en équipes, résolvez l'enquête sur votre téléphone, à votre rythme.",
-      },
-      {
-        name: 'Quiz Room QuizzaBoom',
-        blurb:
-          'La première salle de quiz interactive de Tenerife : buzzers, écrans géants et des milliers de questions. Le warm-up parfait.',
-      },
-      {
-        name: 'Fléchettes & Pixel Darts',
-        blurb:
-          'Fléchettes classiques et électroniques avec plus de 15 modes de jeu — fun, compétitif, un verre à la main.',
-      },
-    ],
-    crossSellTitle: 'Complétez le week-end',
+    crossSellTitle: 'Les meilleures activités de groupe',
     crossSellIntro:
-      "Ajoutez l'eau et l'adrénaline que votre groupe est venu chercher. On a sélectionné les meilleures expériences de Tenerife pour les groupes EVJF/EVG — boat party, catamaran avec boissons, jet ski, parachute ascensionnel et plus :",
-    ctaTitle: 'Réservez votre groupe',
+      "Ajoutez l'eau et l'adrénaline que recherche votre groupe. Nous avons sélectionné les expériences les mieux notées de Tenerife pour les EVJF/EVG : soirées bateau, catamaran avec boissons, jet-ski, parachute ascensionnel et plus :",
+    ctaTitle: 'Organisez votre EVJF / EVG',
     ctaText:
-      'Donnez-nous vos dates et le nombre de participants, on prépare la session parfaite. Haches à partir de 25 € par personne — créneaux privés possibles.',
-    ctaButton: 'Réserver le lancer de haches',
-    faqTitle: 'Questions fréquentes EVJF / EVG',
+      "Commencez par un escape game outdoor autoguidé (n'importe quel jour, à votre rythme, à partir de 25€ par équipe) et ajoutez une sortie bateau ou jet-ski pour le week-end complet.",
+    ctaButton: 'Réserver un escape game',
+    faqTitle: 'Questions fréquentes EVJF & EVG',
     faq: [
       {
-        q: 'Quelle taille de groupe pouvez-vous accueillir ?',
-        a: 'De 6 à plus de 30 personnes. On répartit les grands groupes en équipes sur plusieurs pistes pour que personne n\'attende.',
+        q: 'Quelles sont les meilleures activités de groupe pour un EVJF ou EVG à Tenerife ?',
+        a: "Un escape game outdoor autoguidé est le parfait brise-glace (équipes, sans horaire fixe, n'importe quel jour), à combiner avec une soirée bateau, un catamaran, du jet-ski ou du karting pour l'adrénaline. Vous les trouvez tous sur cette page.",
       },
       {
-        q: 'Le lancer de haches est-il sûr après quelques verres ?',
-        a: "Un coach qualifié encadre chaque session et gère le rythme. C'est fun et sécurisé — mais sur les pistes de haches on demande aux lanceurs d'être stables.",
+        q: "Combien de personnes peuvent faire un escape game ?",
+        a: "Autant que vous voulez : vous réservez un téléphone/équipe par petit groupe et partez ensemble. Les grands groupes se répartissent en équipes qui courent pour finir en premier.",
       },
       {
-        q: 'Pouvez-vous prévoir quelque chose de spécial pour le/la futur(e) marié(e) ?',
-        a: 'Bien sûr — t-shirts assortis, prosecco à l\'arrivée, gages personnalisés et classement à son nom.',
+        q: 'Faut-il réserver un horaire précis ?',
+        a: "Non. Les escape games outdoor sont autoguidés : vous recevez un code par email et démarrez quand vous voulez, n'importe quel jour. Les sorties en bateau et autres expériences ont des horaires de départ indiqués à la réservation.",
       },
       {
-        q: 'Où êtes-vous et comment venir ?',
-        a: 'En plein Playa Las Américas, à pied depuis la plupart des hôtels du sud et à un court taxi de Los Cristianos et Costa Adeje.',
-      },
-      {
-        q: 'Combien de temps à l\'avance réserver ?',
-        a: 'Les week-ends et la haute saison partent vite — réservez votre groupe au moins une semaine à l\'avance.',
+        q: "Combien de temps à l'avance faut-il réserver ?",
+        a: 'Les escape games se réservent à la dernière minute, mais les soirées bateau et les tours populaires se remplissent en haute saison : réservez-les une à deux semaines à l\'avance.',
       },
     ],
   },
 
   de: {
     slug: 'junggesellenabschied-teneriffa',
-    seoTitle: 'Junggesellenabschied Teneriffa (JGA) | Gruppenaktivitäten Playa Las Américas',
+    seoTitle: 'Junggesellenabschied auf Teneriffa | Gruppenaktivitäten & Ideen',
     seoDescription:
-      'JGA auf Teneriffa geplant? Axtwerfen, Escape Games, Quiz und Bootspartys in Playa Las Américas. Unvergessliche Gruppenaktivitäten, einfach zu buchen.',
+      'Du planst einen JGA auf Teneriffa? Selbstgeführte Outdoor-Escape-Games, Bootspartys, Jetski, Karting und mehr — unvergessliche Gruppenaktivitäten, einfach an einem Ort zu buchen.',
     keywords:
-      'junggesellenabschied teneriffa, jga teneriffa, junggesellinnenabschied teneriffa, gruppenaktivitäten teneriffa, jga playa las americas, jga ideen teneriffa',
-    h1: 'Junggesellenabschied auf Teneriffa',
+      'junggesellenabschied teneriffa, jga teneriffa, junggesellinnenabschied teneriffa, gruppenaktivitaeten teneriffa, jga ideen teneriffa',
+    h1: 'Junggesellenabschied-Aktivitäten auf Teneriffa',
     subtitle:
-      'Der Süden Teneriffas ist das sonnigste JGA-Ziel Europas — und im Fun Zone Playa Las Américas hat die Gruppe wirklich Spaß. Bucht die ganze Truppe in wenigen Minuten.',
+      'Der Süden Teneriffas ist das sonnigste JGA-Revier Europas. So stellst du ein Wochenende zusammen, an das sich die ganze Gruppe wirklich erinnert.',
     intro:
-      'Sonne das ganze Jahr, günstige Flüge und eine Strandpromenade zum Feiern: Nicht ohne Grund landen jedes Jahr tausende JGA-Gruppen im Süden Teneriffas. Doch ein Wochenende braucht mehr als Bars. Fun Zone bietet eurer Gruppe eine echte Wettkampf-Session — Axtwerfen, Escape Games, Quiz, Darts — mitten in Playa Las Américas, nur Minuten von Hotels und Nachtleben entfernt. Eine Buchung, die ganze Truppe versorgt.',
-    whyTitle: 'Warum Teneriffa perfekt für den JGA ist',
+      'Sonne, günstige Flüge und eine Strandpromenade zum Ausgehen: Nicht ohne Grund landen jedes Jahr tausende JGA-Gruppen auf Teneriffa. Doch ein gutes Wochenende ist mehr als Bars. Die zwei Favoriten für Gruppen: ein selbstgeführtes Outdoor-Escape-Game — ihr teilt euch in Teams und löst das Rätsel beim Streifzug durch eine echte Stadt am Handy — und ein Tag auf dem Wasser. Diese Seite bündelt die besten Gruppenaktivitäten, damit du die ganze Truppe in Minuten buchst.',
+    whyTitle: 'Warum Teneriffa beim JGA gewinnt',
     why: [
-      'Sonne das ganze Jahr — plant das Wochenende in jedem Monat, ohne Regen.',
-      'Kurze, günstige Flüge aus dem ganzen deutschsprachigen Raum.',
-      'Alles fußläufig in Playa Las Américas: Hotels, Strand, Bars und Aktivitäten.',
-      'Gruppen willkommen — von 6 bis über 30 Spieler, aufgeteilt in konkurrierende Teams.',
-      'Sekt zur Begrüßung, passende Shirts und individuelle Challenges für die Hauptperson.',
+      'Sonne das ganze Jahr — plane jeden Monat, kein Regen-Risiko.',
+      'Kurze, günstige und häufige Flüge aus ganz Europa.',
+      'Alles nah im Süden: Hotels, Strand, Nightlife und Aktivitäten.',
+      'Ideal für Gruppen: Escape Games bilden Teams, Boote nehmen die ganze Truppe.',
+      'Tagsüber eine Aktivität, abends die große Nacht — leicht zu kombinieren.',
     ],
-    activitiesTitle: 'Die Aktivitäten, die eure Gruppe nie vergisst',
-    heroActivity: {
-      name: 'Axtwerfen',
-      pitch:
-        'Die Nr.1-JGA-Aktivität auf Teneriffa. Äxte, digitale Ziele, ein Trainer, der die Rangliste führt, und ein Wettkampf, der die ganze Gruppe mitreißt. Keine Erfahrung nötig — alle treffen innerhalb von Minuten ins Schwarze.',
-    },
-    activities: [
-      {
-        name: 'Escape Games',
-        blurb:
-          'Outdoor-Abenteuer quer über Teneriffa: in Teams löst ihr den Fall am Handy, in eurem eigenen Tempo.',
-      },
-      {
-        name: 'QuizzaBoom Quizraum',
-        blurb:
-          'Teneriffas erster interaktiver Quizraum: Buzzer, Großbildschirme und tausende Fragen. Der perfekte Aufwärmer.',
-      },
-      {
-        name: 'Darts & Pixel Darts',
-        blurb:
-          'Klassische und elektronische Darts mit über 15 Spielmodi — locker, kompetitiv, mit Drink in der Hand.',
-      },
-    ],
-    crossSellTitle: 'Macht ein ganzes Wochenende draus',
+    crossSellTitle: 'Die besten Gruppenaktivitäten',
     crossSellIntro:
-      'Ergänzt Wasser und Adrenalin. Wir haben die bestbewerteten Teneriffa-Erlebnisse für JGA-Gruppen ausgewählt — Bootspartys, Katamaran mit Getränken, Jetski, Parasailing und mehr:',
-    ctaTitle: 'Bucht eure Gruppe',
+      'Ergänze das Wasser und den Nervenkitzel, für die ihr hier seid. Wir haben die bestbewerteten Teneriffa-Erlebnisse für JGA-Gruppen ausgewählt: Bootspartys, Katamaran mit Getränken, Jetski, Parasailing und mehr:',
+    ctaTitle: 'Plane euren JGA',
     ctaText:
-      'Nennt uns Datum und Personenzahl, wir stellen die perfekte Session zusammen. Axtwerfen ab 25 € pro Person — private Gruppen-Slots möglich.',
-    ctaButton: 'Axtwerfen buchen',
+      'Startet mit einem selbstgeführten Outdoor-Escape-Game (jeden Tag, in eurem Tempo, ab 25€ pro Team) und ergänzt eine Bootsparty oder Jetski für das ganze Wochenende.',
+    ctaButton: 'Escape Game buchen',
     faqTitle: 'Häufige Fragen zum JGA',
     faq: [
       {
-        q: 'Wie groß darf die Gruppe sein?',
-        a: 'Von 6 bis über 30 Personen. Große Gruppen teilen wir in konkurrierende Teams auf mehreren Bahnen auf, damit niemand wartet.',
+        q: 'Was sind die besten Gruppenaktivitäten für einen JGA auf Teneriffa?',
+        a: 'Ein selbstgeführtes Outdoor-Escape-Game ist der perfekte Eisbrecher (Teams, keine feste Zeit, jeden Tag), dazu eine Bootsparty, ein Katamaran, Jetski oder Karting für den Nervenkitzel. Alle findest du auf dieser Seite.',
       },
       {
-        q: 'Ist Axtwerfen nach ein paar Drinks sicher?',
-        a: 'Ein qualifizierter Trainer leitet jede Session und steuert das Tempo. Es ist sicher und macht Spaß — auf den Axtbahnen bitten wir die Werfer aber, sicher auf den Beinen zu sein.',
+        q: 'Wie viele Personen können ein Escape Game spielen?',
+        a: 'Beliebig viele: Ihr bucht pro Kleingruppe ein Handy/Team und startet gemeinsam. Große Gruppen teilen sich in konkurrierende Teams, die um den schnellsten Abschluss wetteifern.',
       },
       {
-        q: 'Könnt ihr etwas Besonderes für die Hauptperson organisieren?',
-        a: 'Klar — passende Shirts, Sekt zur Begrüßung, individuelle Aufgaben und eine Rangliste mit ihrem Namen.',
+        q: 'Muss man eine feste Uhrzeit buchen?',
+        a: 'Nein. Die Outdoor-Escape-Games sind selbstgeführt: Ihr erhaltet einen Code per E-Mail und startet, wann es passt, an jedem Tag. Bootstouren und andere Erlebnisse haben feste Startzeiten, die bei der Buchung angezeigt werden.',
       },
       {
-        q: 'Wo seid ihr und wie kommen wir hin?',
-        a: 'Mitten in Playa Las Américas, fußläufig von den meisten Hotels im Süden und ein kurzes Taxi von Los Cristianos und Costa Adeje.',
-      },
-      {
-        q: 'Wie früh sollten wir buchen?',
-        a: 'Wochenenden und Hauptsaison sind schnell voll — bucht eure Gruppe mindestens eine Woche im Voraus.',
+        q: 'Wie früh sollte man buchen?',
+        a: 'Escape Games lassen sich kurzfristig buchen, aber Bootspartys und beliebte Touren sind in der Hochsaison schnell voll — bucht diese ein bis zwei Wochen im Voraus.',
       },
     ],
   },
 
   nl: {
     slug: 'vrijgezellenfeest-tenerife',
-    seoTitle: 'Vrijgezellenfeest Tenerife | Groepsactiviteiten in Playa Las Américas',
+    seoTitle: 'Vrijgezellenfeest op Tenerife | Groepsactiviteiten & Ideeën',
     seoDescription:
-      'Een vrijgezellenfeest op Tenerife plannen? Bijlwerpen, escape games, quiz en bootfeesten in Playa Las Américas. Onvergetelijke groepsactiviteiten, eenvoudig te boeken.',
+      'Plan je een vrijgezellenfeest op Tenerife? Zelfgeleide outdoor escape games, bootfeesten, jetski, karting en meer — onvergetelijke groepsactiviteiten, eenvoudig op één plek te boeken.',
     keywords:
-      'vrijgezellenfeest tenerife, vrijgezellenuitje tenerife, groepsactiviteiten tenerife, vrijgezellenfeest playa las americas, activiteiten groep tenerife',
-    h1: 'Vrijgezellenfeest op Tenerife',
+      'vrijgezellenfeest tenerife, vrijgezellenfeest ideeen tenerife, groepsactiviteiten tenerife, vrijgezellen tenerife zuid',
+    h1: 'Vrijgezellenfeest-activiteiten op Tenerife',
     subtitle:
-      'Het zuiden van Tenerife is de zonnigste vrijgezellenbestemming van Europa — en bij Fun Zone Playa Las Américas heeft de groep écht plezier. Boek de hele club in enkele minuten.',
+      'Het zuiden van Tenerife is het zonnigste vrijgezellen-walhalla van Europa. Zo stel je een weekend samen dat de hele groep echt onthoudt.',
     intro:
-      'Zon het hele jaar, goedkope vluchten en een boulevard om uit te gaan: niet voor niets landen er jaarlijks duizenden vrijgezellengroepen in het zuiden van Tenerife. Maar een weekend is meer dan bars. Fun Zone geeft je groep een echte wedstrijd-sessie — bijlwerpen, escape games, quiz, darts — midden in Playa Las Américas, op minuten van de hotels en het nachtleven. Eén boeking, de hele groep geregeld.',
+      'Zon, goedkope vluchten en een boulevard gemaakt om uit te gaan: niet voor niets landen er elk jaar duizenden vrijgezellengroepen op Tenerife. Maar een goed weekend is meer dan bars. De twee toppers voor groepen: een zelfgeleide outdoor escape game — verdeel in teams en los het mysterie op terwijl je door een echte stad trekt met je telefoon — en een dag op het water. Deze pagina bundelt de beste groepsactiviteiten zodat je de hele groep in minuten boekt.',
     whyTitle: 'Waarom Tenerife wint voor vrijgezellenfeesten',
     why: [
-      'Zon het hele jaar — plan het weekend in elke maand, geen regen.',
-      'Korte, goedkope vluchten vanuit heel Nederland en België.',
-      'Alles op loopafstand in Playa Las Américas: hotels, strand, bars en activiteiten.',
-      'Groepen welkom — van 6 tot 30+ spelers, verdeeld in strijdende teams.',
-      'Bubbels bij aankomst, bijpassende shirts en persoonlijke challenges voor de hoofdpersoon.',
+      'Het hele jaar zon — plan elke maand, geen regen die het verpest.',
+      'Korte, goedkope en frequente vluchten vanuit heel Europa.',
+      'Alles dichtbij in het zuiden: hotels, strand, nachtleven en activiteiten.',
+      'Ideaal voor groepen: escape games maken teams, boten nemen de hele groep mee.',
+      'Makkelijk een dagactiviteit te combineren met de grote avond.',
     ],
-    activitiesTitle: 'De activiteiten die je groep echt onthoudt',
-    heroActivity: {
-      name: 'Bijlwerpen',
-      pitch:
-        'De nummer 1 vrijgezellenactiviteit op Tenerife. Bijlen, digitale doelen, een instructeur die de ranglijst bijhoudt en een rivaliteit die de hele groep meesleept. Geen ervaring nodig — iedereen raakt binnen minuten de roos.',
-    },
-    activities: [
-      {
-        name: 'Escape Games',
-        blurb:
-          'Outdoor-avonturen door heel Tenerife: in teams los je de zaak op via je telefoon, in je eigen tempo.',
-      },
-      {
-        name: 'QuizzaBoom Quizroom',
-        blurb:
-          'De eerste interactieve quizroom van Tenerife: buzzers, grote schermen en duizenden vragen. De perfecte warming-up.',
-      },
-      {
-        name: 'Darts & Pixel Darts',
-        blurb:
-          'Klassieke en elektronische darts met 15+ speelmodi — casual, competitief en eindeloos herspeelbaar.',
-      },
-    ],
-    crossSellTitle: 'Maak er een heel weekend van',
+    crossSellTitle: 'De beste groepsactiviteiten',
     crossSellIntro:
-      'Voeg het water en de adrenaline toe waar je groep voor komt. We selecteerden de best beoordeelde Tenerife-ervaringen voor vrijgezellengroepen — bootfeesten, catamaran met drankjes, jetski, parasailing en meer:',
-    ctaTitle: 'Boek je groep',
+      'Voeg het water en de adrenaline toe waarvoor jullie komen. We kozen de best beoordeelde Tenerife-ervaringen voor vrijgezellengroepen: bootfeesten, catamaran met drankjes, jetski, parasailing en meer:',
+    ctaTitle: 'Plan jullie vrijgezellenfeest',
     ctaText:
-      'Geef ons je data en aantal en we stellen de perfecte sessie samen. Bijlwerpen vanaf € 25 per persoon — privé-groepsslots mogelijk.',
-    ctaButton: 'Bijlwerpen boeken',
+      'Begin met een zelfgeleide outdoor escape game (elke dag, in je eigen tempo, vanaf €25 per team) en voeg een bootfeest of jetski toe voor het complete weekend.',
+    ctaButton: 'Boek een escape game',
     faqTitle: 'Veelgestelde vragen vrijgezellenfeest',
     faq: [
       {
-        q: 'Hoe groot mag de groep zijn?',
-        a: 'Van 6 tot 30+ personen. Grote groepen splitsen we in strijdende teams over meerdere banen, zodat niemand staat te wachten.',
+        q: 'Wat zijn de beste groepsactiviteiten voor een vrijgezellenfeest op Tenerife?',
+        a: 'Een zelfgeleide outdoor escape game is de perfecte ijsbreker (teams, geen vaste tijd, elke dag), gecombineerd met een bootfeest, catamaran, jetski of karting voor de adrenaline. Je vindt ze allemaal op deze pagina.',
       },
       {
-        q: 'Is bijlwerpen veilig na een paar drankjes?',
-        a: 'Een gekwalificeerde instructeur leidt elke sessie en bepaalt het tempo. Het is veilig en leuk — op de bijlbanen vragen we werpers wel om stevig op hun benen te staan.',
+        q: 'Met hoeveel mensen kun je een escape game doen?',
+        a: 'Met elk aantal: je boekt één telefoon/team per kleine groep en vertrekt samen. Grote groepen splitsen in teams die racen om als eerste te finishen.',
       },
       {
-        q: 'Kunnen jullie iets speciaals regelen voor de hoofdpersoon?',
-        a: 'Zeker — bijpassende shirts, bubbels bij aankomst, persoonlijke opdrachten en een ranglijst op naam.',
+        q: 'Moet je een vaste tijd boeken?',
+        a: 'Nee. De outdoor escape games zijn zelfgeleid: je krijgt een code per e-mail en start wanneer het uitkomt, elke dag. Boottochten en andere ervaringen hebben vaste vertrektijden die bij het boeken worden getoond.',
       },
       {
-        q: 'Waar zitten jullie en hoe komen we er?',
-        a: 'Midden in Playa Las Américas, op loopafstand van de meeste hotels in het zuiden en een korte taxi vanaf Los Cristianos en Costa Adeje.',
-      },
-      {
-        q: 'Hoe ver vooruit moeten we boeken?',
-        a: 'Weekends en hoogseizoen zitten snel vol — boek je groep minstens een week van tevoren.',
+        q: 'Hoe ver van tevoren moet je boeken?',
+        a: 'Escape games kun je last-minute boeken, maar bootfeesten en populaire tours zitten in het hoogseizoen snel vol — boek die een à twee weken vooraf.',
       },
     ],
   },
 
   it: {
     slug: 'addio-nubilato-celibato-tenerife',
-    seoTitle: 'Addio al Nubilato e Celibato a Tenerife | Attività di Gruppo',
+    seoTitle: 'Addio al Nubilato e al Celibato a Tenerife | Attività di Gruppo',
     seoDescription:
-      'Organizzi un addio al nubilato o al celibato a Tenerife? Lancio delle asce, escape game, quiz e boat party a Playa Las Américas. Attività di gruppo indimenticabili, facili da prenotare.',
+      'Organizzi un addio al nubilato o al celibato a Tenerife? Escape games all’aperto autoguidati, feste in barca, moto d’acqua, karting e altro — attività di gruppo indimenticabili, facili da prenotare.',
     keywords:
-      'addio al nubilato tenerife, addio al celibato tenerife, attività di gruppo tenerife, addio nubilato playa las americas, idee addio al celibato tenerife',
+      'addio al nubilato tenerife, addio al celibato tenerife, attivita di gruppo tenerife, idee addio nubilato tenerife',
     h1: 'Addio al Nubilato e al Celibato a Tenerife',
     subtitle:
-      "Il sud di Tenerife è la meta di addio al nubilato/celibato più soleggiata d'Europa — e al Fun Zone Playa Las Américas il gruppo si diverte davvero. Prenota tutta la compagnia in pochi minuti.",
+      'Il sud di Tenerife è il paradiso più soleggiato d’Europa per gli addii. Ecco come costruire un weekend che il gruppo ricorderà davvero.',
     intro:
-      "Sole tutto l'anno, voli economici e un lungomare fatto per uscire: non è un caso che ogni anno migliaia di gruppi di addio al nubilato e al celibato atterrino nel sud di Tenerife. Ma un weekend è più di qualche bar. Fun Zone offre al tuo gruppo una vera sfida — asce, escape game, quiz, freccette — nel cuore di Playa Las Américas, a pochi minuti da hotel e vita notturna. Una prenotazione, tutta la compagnia sistemata.",
-    whyTitle: 'Perché Tenerife vince per l\'addio al nubilato/celibato',
+      'Sole, voli economici e un lungomare fatto per uscire: non è un caso che ogni anno migliaia di gruppi scelgano Tenerife per l’addio. Ma un bel weekend è più dei soli bar. Le due scelte vincenti per un gruppo: un escape game all’aperto autoguidato — vi dividete in squadre e attraversate una vera città risolvendo il mistero dal telefono — e una giornata in mare. Questa pagina riunisce le migliori attività di gruppo per prenotare tutta la compagnia in pochi minuti.',
+    whyTitle: 'Perché Tenerife vince per gli addii',
     why: [
-      "Sole tutto l'anno — organizza il weekend in qualsiasi mese, senza pioggia.",
-      'Voli brevi ed economici da tutta Italia.',
-      'Tutto a piedi a Playa Las Américas: hotel, spiaggia, bar e attività.',
-      'Gruppi benvenuti — da 6 a oltre 30 giocatori, divisi in squadre che competono.',
-      'Prosecco all\'arrivo, magliette coordinate e sfide personalizzate per il protagonista.',
+      'Sole tutto l’anno: scegli qualsiasi mese, senza pioggia a rovinare i piani.',
+      'Voli brevi, economici e frequenti da tutta Europa.',
+      'Tutto vicino nel sud: hotel, spiaggia, vita notturna e attività.',
+      'Ideale per i gruppi: gli escape games creano le squadre, le barche portano tutta la compagnia.',
+      'Facile unire un’attività di giorno alla grande serata.',
     ],
-    activitiesTitle: 'Le attività che il tuo gruppo ricorderà',
-    heroActivity: {
-      name: 'Lancio delle Asce',
-      pitch:
-        "L'attività n.1 per addii al nubilato/celibato a Tenerife. Asce, bersagli digitali, un istruttore che tiene la classifica e una rivalità che accende tutto il gruppo. Nessuna esperienza — tutti centrano il bersaglio in pochi minuti.",
-    },
-    activities: [
-      {
-        name: 'Escape Game',
-        blurb:
-          'Avventure all\'aperto in giro per Tenerife: in squadre, risolvete il caso dal telefono, al vostro ritmo.',
-      },
-      {
-        name: 'Quiz Room QuizzaBoom',
-        blurb:
-          'La prima quiz room interattiva di Tenerife: pulsanti, maxi schermi e migliaia di domande. Il riscaldamento perfetto.',
-      },
-      {
-        name: 'Freccette & Pixel Darts',
-        blurb:
-          'Freccette classiche ed elettroniche con oltre 15 modalità — divertenti, competitive, con un drink in mano.',
-      },
-    ],
-    crossSellTitle: 'Trasformalo in un weekend intero',
+    crossSellTitle: 'Le migliori attività di gruppo',
     crossSellIntro:
-      "Aggiungi l'acqua e l'adrenalina che il tuo gruppo cerca. Abbiamo selezionato le migliori esperienze di Tenerife per i gruppi — boat party, catamarano con drink, moto d'acqua, parasailing e altro:",
-    ctaTitle: 'Prenota il tuo gruppo',
+      'Aggiungi l’acqua e l’adrenalina che cercate. Abbiamo selezionato le esperienze più apprezzate di Tenerife per i gruppi: feste in barca, catamarano con drink, moto d’acqua, parasailing e altro:',
+    ctaTitle: 'Organizza il tuo addio',
     ctaText:
-      'Dicci le date e in quanti siete e prepariamo la sessione perfetta. Asce da 25 € a persona — slot privati disponibili.',
-    ctaButton: 'Prenota il lancio delle asce',
-    faqTitle: 'Domande frequenti addio al nubilato/celibato',
+      'Inizia con un escape game all’aperto autoguidato (ogni giorno, al vostro ritmo, da 25€ a squadra) e aggiungi una festa in barca o una moto d’acqua per il weekend completo.',
+    ctaButton: 'Prenota un escape game',
+    faqTitle: 'Domande frequenti sugli addii',
     faq: [
       {
-        q: 'Quanto può essere grande il gruppo?',
-        a: 'Da 6 a oltre 30 persone. Dividiamo i gruppi grandi in squadre su più piste così nessuno resta ad aspettare.',
+        q: 'Quali sono le migliori attività di gruppo per un addio a Tenerife?',
+        a: 'Un escape game all’aperto autoguidato è il rompighiaccio perfetto (squadre, senza orario fisso, ogni giorno), insieme a una festa in barca, un catamarano, una moto d’acqua o il karting per l’adrenalina. Le trovi tutte in questa pagina.',
       },
       {
-        q: 'È sicuro lanciare le asce dopo qualche drink?',
-        a: "Un istruttore qualificato guida ogni sessione e gestisce il ritmo. È sicuro e divertente — ma sulle piste delle asce chiediamo ai lanciatori di essere stabili.",
+        q: 'Quante persone possono fare un escape game?',
+        a: 'Qualsiasi numero: prenoti un telefono/squadra per ogni piccolo gruppo e partite insieme. I gruppi grandi si dividono in squadre che gareggiano per finire primi.',
       },
       {
-        q: 'Potete organizzare qualcosa di speciale per il protagonista?',
-        a: 'Certo — magliette coordinate, prosecco all\'arrivo, penitenze personalizzate e classifica con il suo nome.',
+        q: 'Bisogna prenotare un orario fisso?',
+        a: 'No. Gli escape games all’aperto sono autoguidati: ricevi un codice via email e parti quando vuoi, ogni giorno. Le gite in barca e le altre esperienze hanno orari di partenza indicati in fase di prenotazione.',
       },
       {
-        q: 'Dove siete e come si arriva?',
-        a: 'Nel cuore di Playa Las Américas, a piedi dalla maggior parte degli hotel del sud e un breve taxi da Los Cristianos e Costa Adeje.',
-      },
-      {
-        q: 'Con quanto anticipo prenotare?',
-        a: 'Weekend e alta stagione si riempiono in fretta — prenota il gruppo con almeno una settimana di anticipo.',
+        q: 'Con quanto anticipo conviene prenotare?',
+        a: 'Gli escape games si prenotano anche all’ultimo, ma le feste in barca e i tour più richiesti si riempiono in alta stagione: prenotali con una o due settimane di anticipo.',
       },
     ],
   },

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Target, Brain, Crosshair, Map, ChevronDown } from 'lucide-react';
+import { Target, Map, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
 const fadeInUp = {
@@ -40,42 +40,6 @@ const activities: Activity[] = [
     shadowColor: 'rgba(255,45,123,0.3)',
     overlayFrom: 'from-[#1a0a15]/70',
     overlayVia: 'via-[#1a0a15]/50',
-  },
-  {
-    id: 'quiz',
-    href: '/quiz-room',
-    image: '/images/offers/quizzaboom.png',
-    icon: Brain,
-    color: 'text-neon-violet',
-    hoverColor: 'group-hover:text-neon-violet',
-    glowClass: 'neon-glow-violet',
-    shadowColor: 'rgba(168,85,247,0.3)',
-    overlayFrom: 'from-[#1a0a2e]/70',
-    overlayVia: 'via-[#1a0a2e]/50',
-  },
-  {
-    id: 'axe',
-    href: '/axe-throwing',
-    image: '/images/offers/traditional-axe.jpg',
-    icon: Target,
-    color: 'text-neon-blue',
-    hoverColor: 'group-hover:text-neon-blue',
-    glowClass: 'neon-glow-blue',
-    shadowColor: 'rgba(0,212,255,0.3)',
-    overlayFrom: 'from-black/65',
-    overlayVia: 'via-black/45',
-  },
-  {
-    id: 'darts',
-    href: '/darts',
-    image: '/images/offers/darts-classic.jpg',
-    icon: Crosshair,
-    color: 'text-neon-green',
-    hoverColor: 'group-hover:text-neon-green',
-    glowClass: 'neon-glow-green',
-    shadowColor: 'rgba(57,255,20,0.3)',
-    overlayFrom: 'from-[#0a1a0a]/70',
-    overlayVia: 'via-[#0a1a0a]/50',
   },
 ];
 

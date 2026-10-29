@@ -113,9 +113,6 @@ export const routing = defineRouting({
       nl: '/activiteiten/[slug]',
       it: '/attivita/[slug]'
     },
-    '/axe-throwing': '/axe-throwing',
-    '/quiz-room': '/quiz-room',
-    '/darts': '/darts',
     '/escape-game': '/escape-game',
     '/escape-game/[slug]': '/escape-game/[slug]',
     '/celebrations': {

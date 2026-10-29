@@ -84,9 +84,10 @@ export function Navbar() {
   const currentLang = languages.find((l) => l.code === locale);
 
   const navLinks = [
-    { href: '/experiences' as const, label: t('experiences') },
     { href: '/activities' as const, label: t('activities') },
+    { href: '/escape-game' as const, label: 'Escape Games' },
     { href: '/celebrations' as const, label: t('celebrations') },
+    { href: '/blog' as const, label: t('blog') },
     { href: '/faq' as const, label: t('faq') },
     { href: '/contact' as const, label: t('contact') },
   ];
@@ -138,7 +139,7 @@ export function Navbar() {
 
             {/* Book Now CTA */}
             <Button asChild variant="default" size="sm" className="ml-2 !bg-neon-orange !text-white !border-neon-orange/60 font-bold shadow-[0_0_15px_rgba(255,140,0,0.4)] hover:!bg-neon-orange/90 hover:shadow-[0_0_25px_rgba(255,140,0,0.6)]">
-              <Link href="/book">{t('book')}</Link>
+              <Link href="/escape-game">{t('book')}</Link>
             </Button>
 
             {/* Language Selector */}

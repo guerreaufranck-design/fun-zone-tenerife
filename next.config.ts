@@ -24,6 +24,20 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: false,
       },
+      // The physical venue (axe throwing / quiz room / darts) has closed and
+      // axethrowingtenerife.com no longer operates. Permanently (301) redirect the
+      // dead product URLs to the activities directory so inbound links / SEO equity
+      // are preserved instead of 404ing. NOTE: /book is intentionally NOT redirected
+      // off-site anymore — it now serves the internal self-paced escape booking.
+      { source: '/:locale/axe-throwing', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/quiz-room', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/darts', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/experiences', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/experiences/quizzaboom-1h', destination: '/:locale/activities', permanent: true },
+      // Safety nets for any non-locale-prefixed legacy inbound links.
+      { source: '/axe-throwing', destination: '/en/activities', permanent: true },
+      { source: '/quiz-room', destination: '/en/activities', permanent: true },
+      { source: '/darts', destination: '/en/activities', permanent: true },
     ];
   },
 };

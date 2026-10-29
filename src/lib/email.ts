@@ -10,18 +10,18 @@ import { formatPrice, formatDate, formatTime } from "./utils";
 import type { Booking, Offer, MultilingualText } from "./supabase/types";
 
 const FROM_EMAIL =
-  "Axe Throwing Tenerife <bookings@axethrowingtenerife.com>";
+  "Fun Zone Tenerife <bookings@funzonetenerife.com>";
 
 function getOfferName(offer: Offer, language: string): string {
   const title = offer.title as MultilingualText;
-  return title[language] ?? title["en"] ?? "Axe Throwing Experience";
+  return title[language] ?? title["en"] ?? "Tenerife Experience";
 }
 
 function getSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL)
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-  return "https://axe-throwing-tenerife.vercel.app";
+  return "https://funzonetenerife.com";
 }
 
 export async function sendBookingConfirmation(
@@ -230,7 +230,7 @@ export async function sendAdminNewBookingNotification(
           </div>
         </div>
         <div style="padding: 16px 24px; text-align: center; font-size: 11px; color: #6b7280; border-top: 1px solid #1f2937;">
-          Axe Throwing Tenerife - Automated Notification
+          Fun Zone Tenerife - Automated Notification
         </div>
       </div>
     `,
@@ -341,11 +341,11 @@ export async function sendReviewRequest(waiver: {
   const language = waiver.language ?? "en";
 
   const subjects: Record<string, string> = {
-    en: "How was your axe throwing experience? 🪓",
-    es: "Como fue tu experiencia de lanzamiento de hacha? 🪓",
-    fr: "Comment etait votre lancer de hache ? 🪓",
-    de: "Wie war Ihr Axtwurf-Erlebnis? 🪓",
-    nl: "Hoe was je bijlwerp-ervaring? 🪓",
+    en: "How was your Tenerife experience? ⭐",
+    es: "¿Cómo fue tu experiencia en Tenerife? ⭐",
+    fr: "Comment était votre expérience à Tenerife ? ⭐",
+    de: "Wie war Ihr Teneriffa-Erlebnis? ⭐",
+    nl: "Hoe was je ervaring op Tenerife? ⭐",
   };
 
   await getResend().emails.send({
@@ -383,7 +383,7 @@ export async function sendEscapeGameCode(params: {
   };
 
   await getResend().emails.send({
-    from: "Escape Game Tenerife <bookings@axethrowingtenerife.com>",
+    from: "Escape Game Tenerife <bookings@funzonetenerife.com>",
     to: params.email,
     subject: subjects[language] ?? subjects.en,
     react: EscapeGameCode({
@@ -416,7 +416,7 @@ export async function sendIslandPassEmail(params: {
   };
 
   await getResend().emails.send({
-    from: "Escape Game Tenerife <bookings@axethrowingtenerife.com>",
+    from: "Escape Game Tenerife <bookings@funzonetenerife.com>",
     to: params.email,
     subject: subjects[language] ?? subjects.en,
     react: IslandPassEmail({

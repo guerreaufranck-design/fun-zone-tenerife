@@ -20,12 +20,12 @@ export async function generateMetadata({
   const alternates = getAlternates('/');
 
   const keywordsByLocale: Record<Locale, string> = {
-    en: 'fun zone tenerife, quiz room tenerife, quizzaboom tenerife, escape game tenerife, interactive entertainment tenerife, evening activities playa las americas, competitive games tenerife, group entertainment tenerife south, multi activity venue tenerife, date night tenerife',
-    es: 'fun zone tenerife, quiz room tenerife, escape game tenerife sur, entretenimiento grupos tenerife, actividades nocturnas playa las americas, juegos interactivos tenerife, sala quiz tenerife, centro ocio tenerife sur',
-    fr: 'fun zone tenerife, quiz room tenerife, escape game tenerife, quizzaboom, activités soirée tenerife, divertissement groupes tenerife, jeux interactifs tenerife playa las americas, activités originales tenerife',
-    de: 'fun zone teneriffa, quiz room teneriffa, escape game teneriffa, quizzaboom tenerife, abendaktivitäten teneriffa, gruppenaktivitäten teneriffa, unterhaltung playa las americas, interaktive spiele teneriffa',
-    nl: 'fun zone tenerife, quiz room tenerife, escape game tenerife, quizzaboom, avondactiviteiten tenerife, groepsactiviteiten playa las americas, interactieve spellen tenerife, entertainment tenerife',
-    it: 'fun zone tenerife, quiz room tenerife, escape game tenerife, quizzaboom, attività serali tenerife, giochi interattivi tenerife, intrattenimento gruppi playa las americas, attività originali tenerife',
+    en: 'things to do in tenerife, tenerife activities, tenerife excursions, tenerife tours, whale watching tenerife, mount teide, boat trips tenerife, escape game tenerife, tenerife travel guide',
+    es: 'que hacer en tenerife, actividades tenerife, excursiones tenerife, tours tenerife, avistamiento ballenas tenerife, teide, paseos en barco tenerife, escape game tenerife, guia de viaje tenerife',
+    fr: 'que faire a tenerife, activites tenerife, excursions tenerife, tours tenerife, observation baleines tenerife, teide, sorties bateau tenerife, escape game tenerife, guide voyage tenerife',
+    de: 'aktivitaeten teneriffa, was tun auf teneriffa, ausfluege teneriffa, touren teneriffa, wale beobachten teneriffa, teide, bootstouren teneriffa, escape game teneriffa, reisefuehrer teneriffa',
+    nl: 'dingen om te doen op tenerife, activiteiten tenerife, excursies tenerife, tours tenerife, walvissen spotten tenerife, teide, boottochten tenerife, escape game tenerife, reisgids tenerife',
+    it: 'cosa fare a tenerife, attivita tenerife, escursioni tenerife, tour tenerife, avvistamento balene tenerife, teide, gite in barca tenerife, escape game tenerife, guida di viaggio tenerife',
   };
 
   return {

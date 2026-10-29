@@ -3,34 +3,34 @@ import { getAlternates, type Locale } from '@/lib/seo';
 
 const bookMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Book Fun Zone Tenerife | Quiz Room, Axe Throwing, Escape Game & Darts',
+    title: 'Book an Escape Game in Tenerife | Fun Zone Tenerife',
     description:
-      'Book your Fun Zone Tenerife experience online in minutes. Quiz Room, Axe Throwing, Escape Game and Darts in Playa Las Americas. Secure your slot today!',
+      'Book a self-guided outdoor escape game in Tenerife in minutes. Explore a town, solve the mystery at your own pace, play any day — instant booking.',
   },
   es: {
-    title: 'Reservar Fun Zone Tenerife | Quiz Room, Hachas, Escape Game y Dardos',
+    title: 'Reserva un Escape Game en Tenerife | Fun Zone Tenerife',
     description:
-      'Reserva tu experiencia en Fun Zone Tenerife en minutos. Quiz Room, Lanzamiento de Hachas, Escape Game y Dardos en Playa Las Américas. ¡Asegura tu plaza hoy!',
+      'Reserva en minutos un escape game al aire libre y autoguiado en Tenerife. Recorre un pueblo y resuelve el misterio a tu ritmo, cualquier día. Reserva instantánea.',
   },
   fr: {
-    title: 'Réserver Fun Zone Tenerife | Quiz Room, Haches, Escape Game & Fléchettes',
+    title: 'Réservez un Escape Game à Tenerife | Fun Zone Tenerife',
     description:
-      'Réservez votre expérience à Fun Zone Tenerife en quelques minutes. Quiz Room, Lancer de Haches, Escape Game et Fléchettes à Playa Las Americas.',
+      'Réservez en quelques minutes un escape game outdoor autoguidé à Tenerife. Explorez une ville et résolvez le mystère à votre rythme, tous les jours. Réservation instantanée.',
   },
   de: {
-    title: 'Buchen Fun Zone Teneriffa | Quiz Room, Beilwerfen, Escape Game & Darts',
+    title: 'Escape Game auf Teneriffa buchen | Fun Zone Teneriffa',
     description:
-      'Buchen Sie Ihr Fun Zone Teneriffa Erlebnis online in Minuten. Quiz Room, Beilwerfen, Escape Game und Darts in Playa Las Americas.',
+      'Buche in Minuten ein selbstgeführtes Outdoor-Escape-Game auf Teneriffa. Erkunde eine Stadt und löse das Rätsel in deinem Tempo, an jedem Tag. Sofortbuchung.',
   },
   nl: {
-    title: 'Boeken Fun Zone Tenerife | Quiz Room, Bijl Gooien, Escape Game & Darts',
+    title: 'Boek een Escape Game op Tenerife | Fun Zone Tenerife',
     description:
-      'Boek uw Fun Zone Tenerife ervaring online in minuten. Quiz Room, Bijl Gooien, Escape Game en Darts in Playa Las Americas.',
+      'Boek in minuten een zelfgeleide outdoor escape game op Tenerife. Verken een stad en los het mysterie op in je eigen tempo, elke dag. Directe boeking.',
   },
   it: {
-    title: 'Prenota Fun Zone Tenerife | Quiz Room, Asce, Escape Game e Freccette',
+    title: 'Prenota un Escape Game a Tenerife | Fun Zone Tenerife',
     description:
-      'Prenota la tua esperienza a Fun Zone Tenerife in pochi minuti. Quiz Room, Lancio delle Asce, Escape Game e Freccette a Playa Las Americas.',
+      'Prenota in pochi minuti un escape game all’aperto e autoguidato a Tenerife. Esplora un paese e risolvi il mistero al tuo ritmo, ogni giorno. Prenotazione immediata.',
   },
 };
 

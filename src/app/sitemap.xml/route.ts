@@ -127,9 +127,6 @@ export async function GET() {
   urlEntries.push(buildUrlEntry(celebrationPaths, 0.9, 'weekly'));
 
   // Category pages (same slug in every locale)
-  urlEntries.push(buildUrlEntry(samePath('/axe-throwing'), 0.8, 'monthly'));
-  urlEntries.push(buildUrlEntry(samePath('/quiz-room'), 0.8, 'monthly'));
-  urlEntries.push(buildUrlEntry(samePath('/darts'), 0.8, 'monthly'));
   urlEntries.push(buildUrlEntry(samePath('/escape-game'), 0.9, 'weekly'));
 
   // Other localized static pages.

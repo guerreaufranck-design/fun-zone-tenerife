@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { Axe, MapPin, Brain, Target, Users, Sun, PartyPopper, Anchor } from 'lucide-react';
+import { MapPin, Users, Sun, PartyPopper, Anchor, Map as MapIcon } from 'lucide-react';
 import { getAlternates, type Locale } from '@/lib/seo';
 import { celebrations } from '@/data/celebrations';
 import { activities } from '@/data/activities';
@@ -9,7 +9,7 @@ import { withGygCampaign } from '@/lib/gyg';
 
 const LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'nl', 'it'];
 
-// GetYourGuide cross-sell picks (group/party-friendly water experiences).
+// GetYourGuide cross-sell picks (group/party-friendly experiences).
 const CROSS_SELL_SLUGS = [
   'catamaran-sunset-cruise-tenerife',
   'los-gigantes-boat-trip',
@@ -43,13 +43,10 @@ export async function generateMetadata({
       siteName: 'Fun Zone Tenerife',
       locale: l,
       type: 'website',
-      images: [{ url: 'https://funzonetenerife.com/images/offers/traditional-axe.jpg', width: 1200, height: 630 }],
+      images: [{ url: 'https://funzonetenerife.com/images/og-image.jpg', width: 1200, height: 630 }],
     },
   };
 }
-
-const ACTIVITY_ICONS = [MapPin, Brain, Target];
-const ACTIVITY_LINKS = ['/escape-game', '/quiz-room', '/darts'] as const;
 
 export default async function CelebrationsPage({
   params,
@@ -83,16 +80,16 @@ export default async function CelebrationsPage({
       <section className="relative overflow-hidden px-4 pt-28 pb-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#c9a24b]/30 bg-[#c9a24b]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#c9a24b]">
-            <PartyPopper size={14} /> Playa Las Américas · Tenerife
+            <PartyPopper size={14} /> Tenerife
           </span>
           <h1 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{c.h1}</h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#ede0c8]/80 sm:text-lg">{c.subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/axe-throwing"
+              href="/escape-game"
               className="inline-flex items-center gap-2 rounded-xl bg-[#c9a24b] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#0a0800] transition-all hover:bg-[#e8c97a]"
             >
-              <Axe size={18} /> {c.ctaButton}
+              <MapIcon size={18} /> {c.ctaButton}
             </Link>
             <Link
               href="/activities"
@@ -126,47 +123,24 @@ export default async function CelebrationsPage({
         </div>
       </section>
 
-      {/* ACTIVITIES */}
+      {/* FEATURED: self-guided escape games (own product) */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-2xl font-bold text-[#c9a24b]">{c.activitiesTitle}</h2>
-
-          {/* Axe hero card */}
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[#c9a24b]/30 bg-gradient-to-br from-[#1a140a] to-[#12100c] p-6 sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#c9a24b]/15 text-[#c9a24b]"><Axe size={24} /></span>
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#c9a24b]">#1</span>
-                <h3 className="text-xl font-bold">{c.heroActivity.name}</h3>
-              </div>
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-[#c9a24b]/30 bg-gradient-to-br from-[#1a140a] to-[#12100c] p-6 sm:p-8">
+          <div className="flex items-center gap-3">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#c9a24b]/15 text-[#c9a24b]"><MapIcon size={24} /></span>
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#c9a24b]">Fun Zone</span>
+              <h3 className="text-xl font-bold">Escape Games</h3>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-[#ede0c8]/80">{c.heroActivity.pitch}</p>
-            <Link href="/axe-throwing" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#c9a24b] hover:text-[#e8c97a]">
-              {c.ctaButton} →
-            </Link>
           </div>
-
-          {/* Other activities */}
-          <div className="mt-6 grid gap-5 sm:grid-cols-3">
-            {c.activities.map((act, i) => {
-              const Icon = ACTIVITY_ICONS[i] ?? Target;
-              return (
-                <Link
-                  key={act.name}
-                  href={ACTIVITY_LINKS[i] ?? '/activities'}
-                  className="group rounded-2xl border border-[#c9a24b]/15 bg-[#12100c] p-6 transition-all hover:border-[#c9a24b]/40"
-                >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#c9a24b]/10 text-[#c9a24b]"><Icon size={20} /></span>
-                  <h3 className="mt-4 font-bold text-[#ede0c8] group-hover:text-[#c9a24b]">{act.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#ede0c8]/70">{act.blurb}</p>
-                </Link>
-              );
-            })}
-          </div>
+          <p className="mt-4 text-sm leading-relaxed text-[#ede0c8]/80">{c.ctaText}</p>
+          <Link href="/escape-game" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#c9a24b] hover:text-[#e8c97a]">
+            {c.ctaButton} →
+          </Link>
         </div>
       </section>
 
-      {/* CROSS-SELL (GetYourGuide) */}
+      {/* GROUP ACTIVITIES (GetYourGuide) */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="flex items-center justify-center gap-2 text-center text-2xl font-bold text-[#c9a24b]">
@@ -199,8 +173,8 @@ export default async function CelebrationsPage({
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#ede0c8]/80">{c.ctaText}</p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/axe-throwing" className="inline-flex items-center gap-2 rounded-xl bg-[#c9a24b] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#0a0800] transition-all hover:bg-[#e8c97a]">
-              <Axe size={18} /> {c.ctaButton}
+            <Link href="/escape-game" className="inline-flex items-center gap-2 rounded-xl bg-[#c9a24b] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#0a0800] transition-all hover:bg-[#e8c97a]">
+              <MapIcon size={18} /> {c.ctaButton}
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-[#c9a24b]/30 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-[#c9a24b] transition-all hover:bg-[#c9a24b]/10">
               <MapPin size={16} /> {c.h1}
