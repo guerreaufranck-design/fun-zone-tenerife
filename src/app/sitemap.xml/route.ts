@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { activities } from '@/data/activities';
-import { blogPosts } from '@/lib/blog/posts';
+import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import { escapeGamesData } from '@/data/escape-games';
 
 // Force dynamic rendering so the route always reflects the current data set.
@@ -83,6 +83,37 @@ ${xhtmlLinks}${imageBlock}
     .join('\n');
 }
 
+// Blog articles are single-language: emit ONE self-canonical <url> at the
+// article's own language prefix, with hreflang alternates pointing only to real
+// translations (+ x-default). This prevents the same article being listed under
+// all 6 locale prefixes.
+function buildBlogEntry(slug: string, lastmod?: string): string {
+  const date = lastmod || new Date().toISOString().split('T')[0];
+  const lang = postLang(slug);
+  const alts = postAlternates(slug);
+
+  let xhtmlLinks = '';
+  if (alts.length > 1) {
+    xhtmlLinks =
+      '\n' +
+      alts
+        .map(
+          (a) =>
+            `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${BASE_URL}/${a.lang}/blog/${a.slug}" />`
+        )
+        .join('\n');
+    const xdef = alts.find((a) => a.lang === 'en') ?? alts.find((a) => a.slug === slug)!;
+    xhtmlLinks += `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/${xdef.lang}/blog/${xdef.slug}" />`;
+  }
+
+  return `  <url>
+    <loc>${BASE_URL}/${lang}/blog/${slug}</loc>
+    <lastmod>${date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>${xhtmlLinks}
+  </url>`;
+}
+
 export async function GET() {
   const urlEntries: string[] = [];
 
@@ -128,10 +159,9 @@ export async function GET() {
     urlEntries.push(buildUrlEntry(paths, 0.8, 'monthly', undefined, image));
   }
 
-  // Blog posts (same /blog/[slug] path in every locale)
+  // Blog posts — single-language, one self-canonical URL each + real hreflang.
   for (const post of blogPosts) {
-    const paths = samePath(`/blog/${post.slug}`);
-    urlEntries.push(buildUrlEntry(paths, 0.7, 'monthly', post.date));
+    urlEntries.push(buildBlogEntry(post.slug, post.date));
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

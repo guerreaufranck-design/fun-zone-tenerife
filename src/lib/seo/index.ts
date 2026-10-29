@@ -1,3 +1,5 @@
+import { postLang, postAlternates } from '@/lib/blog/posts';
+
 const BASE_URL = 'https://funzonetenerife.com';
 
 export const locales = ['en', 'es', 'fr', 'de', 'nl', 'it'] as const;
@@ -97,12 +99,17 @@ export function getAlternates(path: string, slug?: string) {
   }
 
   if (path === '/blog/[slug]' && slug) {
+    // Blog articles are single-language. Canonical points to the article's OWN
+    // language prefix, and hreflang lists only genuine translation siblings.
+    const lang = postLang(slug);
+    const alts = postAlternates(slug);
     const languages: Record<string, string> = {};
-    for (const locale of locales) {
-      languages[locale] = `${BASE_URL}/${locale}/blog/${slug}`;
+    for (const a of alts) {
+      languages[a.lang] = `${BASE_URL}/${a.lang}/blog/${a.slug}`;
     }
-    languages['x-default'] = `${BASE_URL}/en/blog/${slug}`;
-    return { canonical: `${BASE_URL}/en/blog/${slug}`, languages };
+    const xdef = alts.find((a) => a.lang === 'en') ?? alts.find((a) => a.slug === slug)!;
+    languages['x-default'] = `${BASE_URL}/${xdef.lang}/blog/${xdef.slug}`;
+    return { canonical: `${BASE_URL}/${lang}/blog/${slug}`, languages };
   }
 
   if (path === '/activities/[slug]' && slug) {

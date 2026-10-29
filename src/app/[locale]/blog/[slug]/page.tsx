@@ -1,19 +1,24 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, Link2 } from 'lucide-react';
-import { blogPosts } from '@/lib/blog/posts';
+import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, Link2, ChevronRight, Home } from 'lucide-react';
+import { blogPosts, postLang } from '@/lib/blog/posts';
 import RelatedActivities from '@/components/blog/RelatedActivities';
+
+const HOME_LABEL: Record<string, string> = {
+  en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', nl: 'Home', it: 'Home',
+};
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params.slug as string;
   const t = useTranslations('blog');
+  const locale = useLocale();
 
   const post = blogPosts.find((p) => p.slug === slug);
 
@@ -33,7 +38,26 @@ export default function BlogPostPage() {
     );
   }
 
-  const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  // Related articles: keep them in the SAME language as this article (so we
+  // never send a French reader to a German post), preferring the same category.
+  const lang = postLang(slug);
+  const sameLang = blogPosts.filter((p) => p.slug !== slug && postLang(p.slug) === lang);
+  const sameCategory = sameLang.filter((p) => p.category === post.category);
+  const relatedPosts = [
+    ...sameCategory,
+    ...sameLang.filter((p) => !sameCategory.includes(p)),
+  ].slice(0, 2);
+
+  const BASE_URL = 'https://funzonetenerife.com';
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: HOME_LABEL[locale] ?? 'Home', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/${locale}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/${locale}/blog/${slug}` },
+    ],
+  };
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -60,6 +84,10 @@ export default function BlogPostPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Cover image */}
@@ -115,6 +143,28 @@ export default function BlogPostPage() {
       {/* Article content */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
+          {/* Breadcrumb (fil d'Ariane) — reinforces internal linking + rich results */}
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+              <li>
+                <Link href="/" className="flex items-center gap-1 transition-colors hover:text-[#00d4ff]">
+                  <Home className="h-3.5 w-3.5" />
+                  {HOME_LABEL[locale] ?? 'Home'}
+                </Link>
+              </li>
+              <ChevronRight className="h-3.5 w-3.5 opacity-50" aria-hidden="true" />
+              <li>
+                <Link href="/blog" className="transition-colors hover:text-[#00d4ff]">
+                  Blog
+                </Link>
+              </li>
+              <ChevronRight className="h-3.5 w-3.5 opacity-50" aria-hidden="true" />
+              <li className="line-clamp-1 font-medium text-white" aria-current="page">
+                {post.title}
+              </li>
+            </ol>
+          </nav>
+
           <article className="space-y-6">
             {post.content.map((paragraph, index) => (
               <p key={index} className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />

@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, ArrowRight, Tag, ChevronRight, Home } from 'lucide-react';
 import { blogPosts } from '@/lib/blog/posts';
 import { getAlternates, type Locale } from '@/lib/seo';
+
+const HOME_LABEL: Record<string, string> = {
+  en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', nl: 'Home', it: 'Home',
+};
 
 const blogMeta: Record<Locale, { title: string; description: string }> = {
   en: {
@@ -55,13 +59,43 @@ const categories = ['All', 'About Us', 'Experiences', 'Tips & Tricks', 'Things T
 
 export default function BlogPage() {
   const t = useTranslations('blog');
+  const locale = useLocale();
+
+  const BASE_URL = 'https://funzonetenerife.com';
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: HOME_LABEL[locale] ?? 'Home', item: `${BASE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/${locale}/blog` },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden px-4 pb-8 pt-28 sm:px-6 sm:pt-32 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#0d0d1a] to-[#0a0a0f]" />
         <div className="absolute left-1/2 top-1/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8b5cf6]/5 blur-[120px]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted-foreground">
+              <li>
+                <Link href="/" className="flex items-center gap-1 transition-colors hover:text-[#00d4ff]">
+                  <Home className="h-3.5 w-3.5" />
+                  {HOME_LABEL[locale] ?? 'Home'}
+                </Link>
+              </li>
+              <ChevronRight className="h-3.5 w-3.5 opacity-50" aria-hidden="true" />
+              <li className="font-medium text-white" aria-current="page">Blog</li>
+            </ol>
+          </nav>
+        </div>
 
         <div className="relative z-10 mx-auto max-w-7xl text-center">
           <h1 className="neon-glow mb-4 text-4xl font-bold text-white sm:text-5xl">
