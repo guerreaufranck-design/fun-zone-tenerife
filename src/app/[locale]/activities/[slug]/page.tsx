@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ArrowRight, MapPin, Clock, Tag, CheckCircle2, ExternalLink, Star } from 'lucide-react';
 import { activities } from '@/data/activities';
-import { getAlternates } from '@/lib/seo';
+import { getAlternates, type Locale } from '@/lib/seo';
 import { gygTourId } from '@/lib/gyg';
 import GygAvailabilityWidget from '@/components/product/GygAvailabilityWidget';
 
@@ -21,7 +21,8 @@ export async function generateMetadata({
   if (!activity) return { title: 'Activity | Fun Zone Tenerife' };
 
   const title = `${activity.name} in Tenerife`;
-  const description = (activity.seoDescription ?? activity.description).slice(0, 160);
+  const seoDesc = activity.seoDescription?.[locale as Locale] ?? activity.seoDescription?.en;
+  const description = (seoDesc ?? activity.description).slice(0, 160);
   const alternates = getAlternates('/activities/[slug]', slug);
 
   return {
@@ -48,6 +49,12 @@ export default async function ActivityDetailPage({
 
   const tourId = activity.isFunZone ? null : gygTourId(activity.bookUrl);
 
+  // Per-locale content (falls back to English until translations are added).
+  const L = locale as Locale;
+  const body = activity.body?.[L] ?? activity.body?.en;
+  const faqs = activity.faqs?.[L] ?? activity.faqs?.en;
+  const seoDesc = activity.seoDescription?.[L] ?? activity.seoDescription?.en;
+
   // Structured data (helps rich results; no fabricated ratings).
   const base = 'https://funzonetenerife.com';
   const actPaths: Record<string, string> = {
@@ -73,7 +80,7 @@ export default async function ActivityDetailPage({
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: `${activity.name} in Tenerife`,
-      description: activity.seoDescription ?? activity.description,
+      description: seoDesc ?? activity.description,
       ...(activity.image ? { image: `${base}${activity.image}` } : {}),
       category: activity.category,
       ...(priceMatch
@@ -81,11 +88,11 @@ export default async function ActivityDetailPage({
         : {}),
     },
   ];
-  if (activity.faqs && activity.faqs.length > 0) {
+  if (faqs && faqs.length > 0) {
     jsonLd.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: activity.faqs.map((f) => ({
+      mainEntity: faqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
@@ -167,10 +174,19 @@ export default async function ActivityDetailPage({
           <div className="space-y-6">
             <p className="text-base leading-relaxed text-muted-foreground">{activity.description}</p>
 
+            {/* Booking widget inline, right after the intro: live dates/price
+                high on the page for conversion, while the full SEO copy keeps
+                flowing below it. */}
+            {isExternal && tourId && (
+              <div className="rounded-xl border border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118] p-4 sm:p-6">
+                <GygAvailabilityWidget tourId={tourId} locale={locale} bookUrl={activity.bookUrl} />
+              </div>
+            )}
+
             {/* Rich body (emotional, SEO) */}
-            {activity.body && activity.body.length > 0 && (
+            {body && body.length > 0 && (
               <div className="space-y-8 pt-2">
-                {activity.body.map((sec) => (
+                {body.map((sec) => (
                   <div key={sec.h}>
                     <h2 className="mb-3 text-xl font-bold text-white sm:text-2xl">{sec.h}</h2>
                     <div className="space-y-4">
@@ -208,8 +224,6 @@ export default async function ActivityDetailPage({
                 <Button asChild size="lg" className="!bg-neon-orange !text-white font-bold shadow-[0_0_20px_rgba(255,140,0,0.4)] hover:shadow-[0_0_30px_rgba(255,140,0,0.6)]">
                   <Link href="/book">Book</Link>
                 </Button>
-              ) : tourId ? (
-                <GygAvailabilityWidget tourId={tourId} locale={locale} bookUrl={activity.bookUrl} />
               ) : (
                 <a
                   href={activity.bookUrl}
@@ -217,7 +231,7 @@ export default async function ActivityDetailPage({
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#00d4ff] px-6 py-3 font-semibold text-[#0a0a0f] transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.5)]"
                 >
-                  Book
+                  Book on GetYourGuide
                   <ExternalLink className="h-4 w-4" />
                 </a>
               )}
@@ -225,11 +239,11 @@ export default async function ActivityDetailPage({
           </div>
 
           {/* FAQ */}
-          {activity.faqs && activity.faqs.length > 0 && (
+          {faqs && faqs.length > 0 && (
             <div className="mt-16">
               <h2 className="mb-6 text-2xl font-bold text-white">Frequently asked questions</h2>
               <div className="space-y-4">
-                {activity.faqs.map((f) => (
+                {faqs.map((f) => (
                   <div key={f.q} className="rounded-xl border border-border/50 bg-[#111118] p-5">
                     <h3 className="mb-2 text-base font-semibold text-white">{f.q}</h3>
                     <p

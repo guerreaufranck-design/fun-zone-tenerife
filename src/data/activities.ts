@@ -1,6 +1,14 @@
 import { gygUrl } from '@/lib/gyg';
+import type { Locale } from '@/lib/seo';
 // All activity affiliate links are tagged cmp=funzone-activities (see lib/gyg).
 const gyg = (path: string) => gygUrl(path, 'funzone-activities');
+
+/** Per-locale content. Only `en` is required for now; other locales slot in
+ *  during the localization phase without any refactor (the detail page falls
+ *  back to `en`). */
+export type Localized<T> = { en: T } & Partial<Record<Locale, T>>;
+export type ActivitySection = { h: string; p: string[] };
+export type ActivityFaq = { q: string; a: string };
 
 export type ActivityCategory =
   | 'Water & Sea'
@@ -22,12 +30,12 @@ export interface Activity {
   bookUrl: string;
   location: string;
   image?: string;
-  /** SEO: rich structured body for the detail page. Each section is an H2 + paragraphs; paragraphs may contain inline HTML (links, <strong>). */
-  body?: { h: string; p: string[] }[];
-  /** SEO: FAQ section rendered on the page + emitted as FAQPage JSON-LD. Answers may contain inline HTML. */
-  faqs?: { q: string; a: string }[];
-  /** SEO: custom meta description for the detail page (falls back to `description`). */
-  seoDescription?: string;
+  /** SEO: rich structured body for the detail page (per-locale). Each section is an H2 + paragraphs; paragraphs may contain inline HTML (links, <strong>). */
+  body?: Localized<ActivitySection[]>;
+  /** SEO: FAQ section rendered on the page + emitted as FAQPage JSON-LD (per-locale). Answers may contain inline HTML. */
+  faqs?: Localized<ActivityFaq[]>;
+  /** SEO: custom meta description for the detail page, per-locale (falls back to `description`). */
+  seoDescription?: Localized<string>;
 }
 
 export const activities: Activity[] = [
@@ -75,9 +83,11 @@ export const activities: Activity[] = [
     bookUrl: gyg('tenerife-l350/travelin-lady-tenerife-t392740/'),
     location: 'Los Cristianos',
     image: '/images/activities/whale-watching-tenerife.avif',
-    seoDescription:
-      'See wild dolphins and pilot whales up close on an unforgettable eco-cruise from Los Cristianos — one of the best things to do in Tenerife, all year round.',
-    body: [
+    seoDescription: {
+      en: 'See wild dolphins and pilot whales up close on an unforgettable eco-cruise from Los Cristianos — one of the best things to do in Tenerife, all year round.',
+    },
+    body: {
+      en: [
       {
         h: "The moment you'll still be talking about long after the tan has faded",
         p: [
@@ -101,11 +111,13 @@ export const activities: Activity[] = [
       {
         h: "Don't fly home without doing this",
         p: [
-          "Too many people spend a week by the pool and never know the giants of the Atlantic were swimming just offshore the whole time. Don't be one of them. Head out in the morning when the sea is glass-calm, pack sun cream and a light layer, and let the ocean do the rest. Want the full lowdown first? Read our <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">complete guide to whale watching in Tenerife</a>, or see the rest of our <a href=\"/en/activities\">things to do in Tenerife</a> — then pick your date below and make it real.",
+          "Too many people spend a week by the pool and never know the giants of the Atlantic were swimming just offshore the whole time. Don't be one of them. Head out in the morning when the sea is glass-calm, pack sun cream and a light layer, and let the ocean do the rest. Want the full lowdown first? Read our <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">complete guide to whale watching in Tenerife</a>, or see the rest of our <a href=\"/en/activities\">things to do in Tenerife</a> — then pick your date and make it real.",
         ],
       },
-    ],
-    faqs: [
+      ],
+    },
+    faqs: {
+      en: [
       {
         q: 'Will I definitely see whales and dolphins?',
         a: "No operator can guarantee sightings of wild animals, but because pilot whales and dolphins live in these waters all year, success rates off south Tenerife are very high and most trips see them. Many reputable companies offer a free second trip if nothing is spotted.",
@@ -126,7 +138,8 @@ export const activities: Activity[] = [
         q: 'How long does a whale watching trip last?',
         a: 'Typically two to three hours, including the sail out, time spent with the animals and often a swim stop in a sheltered bay.',
       },
-    ],
+      ],
+    },
   },
   {
     slug: 'catamaran-sunset-cruise-tenerife',
