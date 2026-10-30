@@ -3,7 +3,6 @@ import SplitHero from '@/components/home/SplitHero';
 import ActivityHighlights from '@/components/home/ActivityHighlights';
 import StatsSection from '@/components/home/StatsSection';
 import HowItWorks from '@/components/home/HowItWorks';
-import Testimonials from '@/components/home/Testimonials';
 import CTASection from '@/components/home/CTASection';
 import JsonLdLocalBusiness from '@/components/seo/JsonLdLocalBusiness';
 import { defaultMeta, getAlternates, type Locale } from '@/lib/seo';
@@ -68,10 +67,6 @@ export default function HomePage() {
 
       <section className="py-20 lg:py-24">
         <HowItWorks />
-      </section>
-
-      <section className="py-20 lg:py-24">
-        <Testimonials />
       </section>
 
       <CTASection />

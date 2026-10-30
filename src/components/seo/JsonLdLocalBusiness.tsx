@@ -18,13 +18,6 @@ export default function JsonLdLocalBusiness() {
         image: ['https://funzonetenerife.com/images/og-image.jpg'],
         logo: 'https://funzonetenerife.com/favicon.png',
         sameAs: ['https://www.instagram.com/funzonetenerife'],
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '5',
-          bestRating: '5',
-          worstRating: '1',
-          ratingCount: '48',
-        },
       },
       {
         '@type': 'WebSite',
