@@ -20,8 +20,8 @@ export async function generateMetadata({
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) return { title: 'Activity | Fun Zone Tenerife' };
 
-  const title = `${activity.name} in Tenerife | Fun Zone Tenerife`;
-  const description = activity.description.slice(0, 160);
+  const title = `${activity.name} in Tenerife`;
+  const description = (activity.seoDescription ?? activity.description).slice(0, 160);
   const alternates = getAlternates('/activities/[slug]', slug);
 
   return {
@@ -48,6 +48,51 @@ export default async function ActivityDetailPage({
 
   const tourId = activity.isFunZone ? null : gygTourId(activity.bookUrl);
 
+  // Structured data (helps rich results; no fabricated ratings).
+  const base = 'https://funzonetenerife.com';
+  const actPaths: Record<string, string> = {
+    en: 'activities', es: 'actividades', fr: 'activites',
+    de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
+  };
+  const actPath = actPaths[locale] ?? 'activities';
+  const pageUrl = `${base}/${locale}/${actPath}/${slug}`;
+  const priceMatch = activity.price.match(/(\d+)/);
+  const stripHtml = (s: string) => s.replace(/<[^>]+>/g, '');
+
+  const jsonLd: Record<string, unknown>[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${base}/${locale}` },
+        { '@type': 'ListItem', position: 2, name: 'Activities', item: `${base}/${locale}/${actPath}` },
+        { '@type': 'ListItem', position: 3, name: activity.name, item: pageUrl },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: `${activity.name} in Tenerife`,
+      description: activity.seoDescription ?? activity.description,
+      ...(activity.image ? { image: `${base}${activity.image}` } : {}),
+      category: activity.category,
+      ...(priceMatch
+        ? { offers: { '@type': 'Offer', price: priceMatch[1], priceCurrency: 'EUR', availability: 'https://schema.org/InStock', url: pageUrl } }
+        : {}),
+    },
+  ];
+  if (activity.faqs && activity.faqs.length > 0) {
+    jsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: activity.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
+      })),
+    });
+  }
+
   const related = activities
     .filter((a) => a.slug !== slug && a.category === activity.category)
     .slice(0, 3);
@@ -56,6 +101,7 @@ export default async function ActivityDetailPage({
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className={`relative aspect-[21/9] w-full bg-gradient-to-br ${activity.gradient} sm:aspect-[3/1]`}>
@@ -121,6 +167,26 @@ export default async function ActivityDetailPage({
           <div className="space-y-6">
             <p className="text-base leading-relaxed text-muted-foreground">{activity.description}</p>
 
+            {/* Rich body (emotional, SEO) */}
+            {activity.body && activity.body.length > 0 && (
+              <div className="space-y-8 pt-2">
+                {activity.body.map((sec) => (
+                  <div key={sec.h}>
+                    <h2 className="mb-3 text-xl font-bold text-white sm:text-2xl">{sec.h}</h2>
+                    <div className="space-y-4">
+                      {sec.p.map((para, i) => (
+                        <p
+                          key={i}
+                          className="text-base leading-relaxed text-muted-foreground [&_a]:font-medium [&_a]:text-[#00d4ff] [&_a:hover]:underline"
+                          dangerouslySetInnerHTML={{ __html: para }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             {/* Highlights */}
             <div className="rounded-xl border border-border/50 bg-[#111118] p-6">
               <h2 className="mb-4 text-lg font-bold text-white">What's included</h2>
@@ -157,6 +223,24 @@ export default async function ActivityDetailPage({
               )}
             </div>
           </div>
+
+          {/* FAQ */}
+          {activity.faqs && activity.faqs.length > 0 && (
+            <div className="mt-16">
+              <h2 className="mb-6 text-2xl font-bold text-white">Frequently asked questions</h2>
+              <div className="space-y-4">
+                {activity.faqs.map((f) => (
+                  <div key={f.q} className="rounded-xl border border-border/50 bg-[#111118] p-5">
+                    <h3 className="mb-2 text-base font-semibold text-white">{f.q}</h3>
+                    <p
+                      className="text-sm leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a:hover]:underline"
+                      dangerouslySetInnerHTML={{ __html: f.a }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Related activities */}
           {related.length > 0 && (

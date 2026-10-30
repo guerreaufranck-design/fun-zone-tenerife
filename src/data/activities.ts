@@ -22,6 +22,12 @@ export interface Activity {
   bookUrl: string;
   location: string;
   image?: string;
+  /** SEO: rich structured body for the detail page. Each section is an H2 + paragraphs; paragraphs may contain inline HTML (links, <strong>). */
+  body?: { h: string; p: string[] }[];
+  /** SEO: FAQ section rendered on the page + emitted as FAQPage JSON-LD. Answers may contain inline HTML. */
+  faqs?: { q: string; a: string }[];
+  /** SEO: custom meta description for the detail page (falls back to `description`). */
+  seoDescription?: string;
 }
 
 export const activities: Activity[] = [
@@ -69,6 +75,58 @@ export const activities: Activity[] = [
     bookUrl: gyg('tenerife-l350/travelin-lady-tenerife-t392740/'),
     location: 'Los Cristianos',
     image: '/images/activities/whale-watching-tenerife.avif',
+    seoDescription:
+      'See wild dolphins and pilot whales up close on an unforgettable eco-cruise from Los Cristianos — one of the best things to do in Tenerife, all year round.',
+    body: [
+      {
+        h: "The moment you'll still be talking about long after the tan has faded",
+        p: [
+          "Picture it: the engine falls quiet, and the only sound is the Atlantic lapping against the hull. Then, a few metres away, a fin breaks the surface. A pod of wild dolphins sweeps in to ride your bow wave, and just beyond them a family of pilot whales rises to breathe. Nobody on board says a word. This is the kind of memory people carry for years — the story they tell when someone asks what they did in Tenerife.",
+          "And the best part? It isn't a once-in-a-decade stroke of luck. In the channel between Tenerife and La Gomera, pilot whales and bottlenose dolphins live here all year round — one of the very few places on Earth where you can set out almost certain to see them. In 2021 these waters became the first Whale Heritage Site in Europe. Go once, and you'll understand why.",
+        ],
+      },
+      {
+        h: 'What the day actually feels like',
+        p: [
+          "You slip out of Los Cristianos or Puerto Colón and watch the resorts shrink behind you. Within half an hour the skipper eases off the throttle, everyone leans over the rail scanning the blue — and when that first dorsal fin appears, the whole boat lights up. Responsible crews hold their distance and let the animals come to you. More often than not, curious and close, they do.",
+          "Then the boat drifts into a hidden cove and you dive off the deck into water so clear it feels unreal — drink in hand, sun on your shoulders, nowhere else to be. Two or three hours, and it's over far too soon.",
+        ],
+      },
+      {
+        h: "Who it's for (hint: everyone)",
+        p: [
+          "Couples chasing a moment they'll frame. Parents who want to watch their kids' faces the instant the dolphins appear. Groups after the day they'll bring up at every reunion. The big catamarans are smooth and steady even if you're not a 'boat person', so no one has to sit it out. Make a whole day of the sea with a <a href=\"/en/activities/catamaran-sunset-cruise-tenerife\">catamaran sunset cruise</a>, or chase the towering cliffs on a <a href=\"/en/activities/los-gigantes-boat-trip\">Los Gigantes boat trip</a>.",
+        ],
+      },
+      {
+        h: "Don't fly home without doing this",
+        p: [
+          "Too many people spend a week by the pool and never know the giants of the Atlantic were swimming just offshore the whole time. Don't be one of them. Head out in the morning when the sea is glass-calm, pack sun cream and a light layer, and let the ocean do the rest. Want the full lowdown first? Read our <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">complete guide to whale watching in Tenerife</a>, or see the rest of our <a href=\"/en/activities\">things to do in Tenerife</a> — then pick your date below and make it real.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Will I definitely see whales and dolphins?',
+        a: "No operator can guarantee sightings of wild animals, but because pilot whales and dolphins live in these waters all year, success rates off south Tenerife are very high and most trips see them. Many reputable companies offer a free second trip if nothing is spotted.",
+      },
+      {
+        q: 'What is the best time of year for whale watching in Tenerife?',
+        a: "Any time of year works. The main species are resident, so sightings don't depend on the season. For the calmest sea, choose a morning departure and, if you can, a day with light winds.",
+      },
+      {
+        q: 'Where do the boats leave from?',
+        a: 'Most southern tours depart from Los Cristianos or Puerto Colón (Costa Adeje); some whale-and-dolphin trips also leave from Los Gigantes on the west coast.',
+      },
+      {
+        q: 'Is it suitable for young children?',
+        a: 'Yes. Larger catamarans are stable and family-friendly, with toilets and shade on board. Bring sun protection and, for very young children, their own snacks.',
+      },
+      {
+        q: 'How long does a whale watching trip last?',
+        a: 'Typically two to three hours, including the sail out, time spent with the animals and often a swim stop in a sheltered bay.',
+      },
+    ],
   },
   {
     slug: 'catamaran-sunset-cruise-tenerife',
