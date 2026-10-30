@@ -8,6 +8,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, ArrowRight, MapPin, Clock, Tag, CheckCircle2, ExternalLink, Star } from 'lucide-react';
 import { activities } from '@/data/activities';
 import { getAlternates } from '@/lib/seo';
+import { gygTourId } from '@/lib/gyg';
+import GygAvailabilityWidget from '@/components/product/GygAvailabilityWidget';
 
 export async function generateMetadata({
   params,
@@ -38,11 +40,13 @@ export async function generateMetadata({
 export default async function ActivityDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) notFound();
+
+  const tourId = activity.isFunZone ? null : gygTourId(activity.bookUrl);
 
   const related = activities
     .filter((a) => a.slug !== slug && a.category === activity.category)
@@ -138,6 +142,8 @@ export default async function ActivityDetailPage({
                 <Button asChild size="lg" className="!bg-neon-orange !text-white font-bold shadow-[0_0_20px_rgba(255,140,0,0.4)] hover:shadow-[0_0_30px_rgba(255,140,0,0.6)]">
                   <Link href="/book">Book</Link>
                 </Button>
+              ) : tourId ? (
+                <GygAvailabilityWidget tourId={tourId} locale={locale} bookUrl={activity.bookUrl} />
               ) : (
                 <a
                   href={activity.bookUrl}

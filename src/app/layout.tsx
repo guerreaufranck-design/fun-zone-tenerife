@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { spaceGrotesk, inter } from '@/lib/fonts';
 import { Analytics } from '@/components/Analytics';
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Fun Zone Tenerife',
   },
   description:
-    'Fun Zone Tenerife: 4 unique indoor experiences in Playa Las Americas — Quiz Room, Axe Throwing, Escape Game & Darts.',
+    'Fun Zone Tenerife: your guide to the best things to do in Tenerife — top tours and activities, self-guided outdoor escape games and island travel tips.',
   icons: {
     icon: '/favicon.png',
     apple: '/apple-touch-icon.png',
@@ -39,6 +40,14 @@ export default function RootLayout({
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <Analytics />
         {children}
+        {/* GetYourGuide integration analyzer: renders widgets and tracks views/
+            clicks on all GYG links (static cards included), tied to our partner id. */}
+        <Script
+          id="gyg-analytics"
+          src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+          data-gyg-partner-id="VHOM8VQ"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

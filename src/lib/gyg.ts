@@ -13,6 +13,17 @@ export function gygUrl(path: string, cmp = 'funzone-activities'): string {
   return `https://www.getyourguide.com/${path}?partner_id=${GYG_PARTNER}&cmp=${cmp}`;
 }
 
+/**
+ * Extract the numeric GetYourGuide tour id from a product URL or path.
+ * GYG slugs end with `-t<digits>` (e.g. `…travelin-lady-tenerife-t392740/`),
+ * which is the id the availability widget needs. Returns null for non-GYG urls
+ * (e.g. the internal `/escape-game` booking).
+ */
+export function gygTourId(url: string): string | null {
+  const m = url.match(/-t(\d+)(?:[/?#]|$)/);
+  return m ? m[1] : null;
+}
+
 /** Re-tag an existing GYG url with a placement campaign (set or replace `cmp`). */
 export function withGygCampaign(url: string, cmp: string): string {
   try {
