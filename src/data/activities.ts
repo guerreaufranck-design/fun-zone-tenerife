@@ -45,7 +45,7 @@ export const activities: Activity[] = [
     name: 'Outdoor Escape Games',
     category: 'Nature & Adventure',
     description:
-      "Forget everything you think you know about Tenerife. Our outdoor escape games turn you into a real detective: decipher clues carved in stone, solve puzzles hidden in historic monuments, and uncover secrets that 99% of visitors never find. Adventures across the island — all played at your own pace on your smartphone, any day.",
+      "Forget everything you think you know about Tenerife. Our outdoor escape games turn you into a real detective: decipher clues carved in stone, solve puzzles hidden in historic monuments, and uncover secrets that 99% of visitors never find. Adventures across the island, all played at your own pace on your smartphone, any day.",
     gradient: 'from-purple-900 to-pink-900',
     emoji: '🔍',
     price: 'From €25',
@@ -68,7 +68,7 @@ export const activities: Activity[] = [
     name: 'Whale & Dolphin Watching',
     category: 'Water & Sea',
     description:
-      "Spot wild dolphins and whales off the coast of Tenerife on a responsible eco-cruise. Tenerife is one of Europe's best year-round whale watching destinations — resident pods of pilot whales and bottlenose dolphins are regularly seen. Drinks and snacks included.",
+      "Spot wild dolphins and whales off the coast of Tenerife on a responsible eco-cruise. Tenerife is one of Europe's best year-round whale watching destinations, with resident pods of pilot whales and bottlenose dolphins seen regularly. Drinks and snacks included.",
     gradient: 'from-blue-900 to-cyan-900',
     emoji: '🐋',
     price: 'From €35',
@@ -84,22 +84,22 @@ export const activities: Activity[] = [
     location: 'Los Cristianos',
     image: '/images/activities/whale-watching-tenerife.avif',
     seoDescription: {
-      en: 'See wild dolphins and pilot whales up close on an unforgettable eco-cruise from Los Cristianos — one of the best things to do in Tenerife, all year round.',
+      en: "See wild dolphins and pilot whales up close on an eco cruise from Los Cristianos. It's one of the best things to do in Tenerife, and you can go any time of year.",
     },
     body: {
       en: [
       {
         h: "The moment you'll still be talking about long after the tan has faded",
         p: [
-          "Picture it: the engine falls quiet, and the only sound is the Atlantic lapping against the hull. Then, a few metres away, a fin breaks the surface. A pod of wild dolphins sweeps in to ride your bow wave, and just beyond them a family of pilot whales rises to breathe. Nobody on board says a word. This is the kind of memory people carry for years — the story they tell when someone asks what they did in Tenerife.",
-          "And the best part? It isn't a once-in-a-decade stroke of luck. In the channel between Tenerife and La Gomera, pilot whales and bottlenose dolphins live here all year round — one of the very few places on Earth where you can set out almost certain to see them. In 2021 these waters became the first Whale Heritage Site in Europe. Go once, and you'll understand why.",
+          "Picture it. The engine falls quiet and the only sound is the water lapping against the hull. Then, a few metres away, a fin breaks the surface. A pod of wild dolphins sweeps in to ride your bow wave, and just behind them a family of pilot whales rises to breathe. Nobody on the boat says a word. This is the kind of thing you remember for years, the story you tell when someone asks what you got up to in Tenerife.",
+          "And here is the best bit. It isn't a once in a lifetime fluke. In the channel between Tenerife and La Gomera, pilot whales and bottlenose dolphins live here all year round, which makes this one of the few places in the world where you can set off almost sure to see them. In 2021 these waters became the first Whale Heritage Site in Europe. Go once and you will get why.",
         ],
       },
       {
         h: 'What the day actually feels like',
         p: [
-          "You slip out of Los Cristianos or Puerto Colón and watch the resorts shrink behind you. Within half an hour the skipper eases off the throttle, everyone leans over the rail scanning the blue — and when that first dorsal fin appears, the whole boat lights up. Responsible crews hold their distance and let the animals come to you. More often than not, curious and close, they do.",
-          "Then the boat drifts into a hidden cove and you dive off the deck into water so clear it feels unreal — drink in hand, sun on your shoulders, nowhere else to be. Two or three hours, and it's over far too soon.",
+          "You head out of Los Cristianos or Puerto Colón and watch the resorts shrink behind you. After about half an hour the skipper eases off the throttle, everyone leans over the rail scanning the water, and the moment that first dorsal fin appears the whole boat lights up. The good crews keep their distance and let the animals come to you. More often than not, curious and close, they do.",
+          "Then the boat slips into a quiet cove and you jump off the deck into water so clear it barely looks real. Drink in hand, sun on your shoulders, nowhere else you need to be. Two or three hours later it's over, and it always feels too soon.",
         ],
       },
       {
@@ -111,7 +111,7 @@ export const activities: Activity[] = [
       {
         h: "Don't fly home without doing this",
         p: [
-          "Too many people spend a week by the pool and never know the giants of the Atlantic were swimming just offshore the whole time. Don't be one of them. Head out in the morning when the sea is glass-calm, pack sun cream and a light layer, and let the ocean do the rest. Want the full lowdown first? Read our <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">complete guide to whale watching in Tenerife</a>, or see the rest of our <a href=\"/en/activities\">things to do in Tenerife</a> — then pick your date and make it real.",
+          "Plenty of people spend a week by the pool and never realise the giants of the Atlantic were swimming just offshore the whole time. Don't be one of them. Go in the morning when the sea is calmest, pack sun cream and something to layer up, and let the ocean do the rest. Want the full picture before you book? Have a read of our <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">complete guide to whale watching in Tenerife</a>, or browse the rest of our <a href=\"/en/activities\">things to do in Tenerife</a>, then pick your date and make it happen.",
         ],
       },
       ],
@@ -167,7 +167,7 @@ export const activities: Activity[] = [
     name: 'Los Gigantes Cliffs Boat Trip',
     category: 'Water & Sea',
     description:
-      "Cruise beneath the dramatic 600-metre cliffs of Los Gigantes and swim in crystal-clear Atlantic waters. Spot dolphins and pilot whales along the way. One of Tenerife's most iconic boat trips — bring your camera!",
+      "Cruise beneath the dramatic 600-metre cliffs of Los Gigantes and swim in crystal-clear Atlantic waters. Spot dolphins and pilot whales along the way. One of Tenerife's most iconic boat trips, so bring your camera.",
     gradient: 'from-slate-900 to-blue-900',
     emoji: '⛰️',
     price: 'From €40',
@@ -316,7 +316,7 @@ export const activities: Activity[] = [
     name: 'Teide Sunset & Stargazing',
     category: 'Nature & Adventure',
     description:
-      "Watch one of the world's most spectacular sunsets from the top of a volcano, then stay for a professional stargazing session under some of Europe's clearest skies. Tenerife sits above the clouds at Teide — a UNESCO Starlight Reserve — making this one of the most memorable nights of your holiday.",
+      "Watch one of the world's most spectacular sunsets from the top of a volcano, then stay for a professional stargazing session under some of Europe's clearest skies. Tenerife sits above the clouds at Teide, a UNESCO Starlight Reserve, which makes this one of the most memorable nights of your holiday.",
     gradient: 'from-violet-900 to-indigo-900',
     emoji: '🌟',
     price: 'From €55',
@@ -358,7 +358,7 @@ export const activities: Activity[] = [
     name: 'Masca Gorge Hike',
     category: 'Nature & Adventure',
     description:
-      "Descend one of Tenerife's most dramatic gorges — the Barranco de Masca — from the picturesque mountain village all the way to the sea. A guided hike through spectacular volcanic rock formations, ending with a boat pickup. Considered one of the best hikes in the Canary Islands.",
+      "Descend one of Tenerife's most dramatic gorges, the Barranco de Masca, from the picturesque mountain village all the way to the sea. A guided hike through spectacular volcanic rock formations, ending with a boat pickup. Considered one of the best hikes in the Canary Islands.",
     gradient: 'from-lime-900 to-green-900',
     emoji: '🥾',
     price: 'From €60',
@@ -379,7 +379,7 @@ export const activities: Activity[] = [
     name: 'Paragliding Tandem Flight',
     category: 'Nature & Adventure',
     description:
-      'Soar above the cliffs and coastline of Tenerife on a tandem paragliding flight with a national champion pilot. Launch from the mountains and glide over beaches, volcanic peaks, and turquoise sea. No experience needed — your pilot does all the work.',
+      'Soar above the cliffs and coastline of Tenerife on a tandem paragliding flight with a national champion pilot. Launch from the mountains and glide over beaches, volcanic peaks, and turquoise sea. No experience needed, your pilot does all the work.',
     gradient: 'from-sky-900 to-indigo-900',
     emoji: '🦅',
     price: 'From €90',
@@ -421,7 +421,7 @@ export const activities: Activity[] = [
     name: 'Helicopter Flight over Tenerife',
     category: 'Nature & Adventure',
     description:
-      "See Tenerife from the air on an unforgettable helicopter flight. Fly over Mount Teide, the Las Cañadas crater, dramatic cliffs and pristine beaches. A truly bucket-list experience that gives you a completely new perspective on the island — something you simply can't get any other way.",
+      "See Tenerife from the air on an unforgettable helicopter flight. Fly over Mount Teide, the Las Cañadas crater, dramatic cliffs and pristine beaches. A truly bucket-list experience that gives you a completely new perspective on the island, something you simply can't get any other way.",
     gradient: 'from-zinc-900 to-slate-900',
     emoji: '🚁',
     price: 'From €150',
@@ -530,7 +530,7 @@ export const activities: Activity[] = [
     name: 'Tenerife North Island Tour',
     category: 'Evenings & Shows',
     description:
-      "Experience the lush, green side of Tenerife on a guided grand tour of the north. Visit Teide National Park, the UNESCO World Heritage city of La Laguna, Orotava Valley, cliffs at Masca, and the botanical gardens of Puerto de la Cruz — all in one unforgettable day.",
+      "Experience the lush, green side of Tenerife on a guided grand tour of the north. Visit Teide National Park, the UNESCO World Heritage city of La Laguna, Orotava Valley, cliffs at Masca, and the botanical gardens of Puerto de la Cruz, all in one unforgettable day.",
     gradient: 'from-emerald-900 to-green-900',
     emoji: '🗺️',
     price: 'From €45',
