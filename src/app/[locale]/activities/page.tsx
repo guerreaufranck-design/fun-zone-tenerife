@@ -75,6 +75,14 @@ const activitiesSegment: Record<Locale, string> = {
   de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
 };
 
+// GetYourGuide prices move, so cards link out to the live price instead of
+// showing a figure that can drift. Fun Zone's own activities keep their real,
+// fixed price (we control it).
+const SEE_PRICE: Record<Locale, string> = {
+  en: 'See the price', es: 'Ver el precio', fr: 'Voir le prix',
+  de: 'Preis ansehen', nl: 'Prijs bekijken', it: 'Vedi il prezzo',
+};
+
 export default async function ActivitiesPage({
   params,
 }: {
@@ -169,7 +177,9 @@ export default async function ActivitiesPage({
                             {activity.description}
                           </p>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-semibold text-white">{activity.price}</span>
+                            <span className="text-sm font-semibold text-white">
+                              {activity.isFunZone ? activity.price : SEE_PRICE[l]}
+                            </span>
                             <span className="flex items-center gap-1 text-sm font-medium text-[#00d4ff]">
                               {activity.isFunZone ? 'Book Direct' : 'See Details'}
                               <ArrowRight className="h-3.5 w-3.5" />

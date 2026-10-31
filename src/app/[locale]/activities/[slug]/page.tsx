@@ -55,6 +55,14 @@ export default async function ActivityDetailPage({
   const faqs = activity.faqs?.[L] ?? activity.faqs?.en;
   const seoDesc = activity.seoDescription?.[L] ?? activity.seoDescription?.en;
 
+  // GetYourGuide prices move; the live figure is in the availability widget
+  // below. Fun Zone's own activity keeps its real, fixed price.
+  const seePriceLabel: Record<Locale, string> = {
+    en: 'See the price', es: 'Ver el precio', fr: 'Voir le prix',
+    de: 'Preis ansehen', nl: 'Prijs bekijken', it: 'Vedi il prezzo',
+  };
+  const priceLabel = activity.isFunZone ? activity.price : (seePriceLabel[L] ?? seePriceLabel.en);
+
   // Structured data (helps rich results; no fabricated ratings).
   const base = 'https://funzonetenerife.com';
   const actPaths: Record<string, string> = {
@@ -159,7 +167,7 @@ export default async function ActivityDetailPage({
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Tag className="h-4 w-4" />
-                  {activity.price}
+                  {priceLabel}
                 </span>
               </div>
             </div>
@@ -218,7 +226,7 @@ export default async function ActivityDetailPage({
 
             {/* CTA */}
             <div className="rounded-xl border border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118] p-6 text-center">
-              <p className="mb-2 text-lg font-bold text-white">{activity.price}</p>
+              <p className="mb-2 text-lg font-bold text-white">{priceLabel}</p>
               <p className="mb-6 text-sm text-muted-foreground">{activity.duration} · {activity.location}</p>
               {activity.isFunZone ? (
                 <Button asChild size="lg" className="!bg-neon-orange !text-white font-bold shadow-[0_0_20px_rgba(255,140,0,0.4)] hover:shadow-[0_0_30px_rgba(255,140,0,0.6)]">
