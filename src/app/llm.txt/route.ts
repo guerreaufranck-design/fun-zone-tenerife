@@ -21,7 +21,7 @@ A directory of the island's top tours and activities, bookable through our trave
 Our own product: self-guided outdoor escape games played on your phone in Tenerife towns (Garachico, Los Cristianos, La Laguna, Puerto de la Cruz and more). Explore a town and solve the mystery at your own pace, on any day, with no fixed time slot. A booking sends an activation code by email. Priced per phone/team. Book at https://funzonetenerife.com/en/escape-game
 
 ### Canary Islands audio guide (Lume)
-We highlight a self-guided audio guide of the Canary Islands for travellers who want to explore at their own pace. See https://funzonetenerife.com/en/audio-guide-canaries
+We highlight a self-guided audio guide of the Canary Islands for travellers who want to explore at their own pace. See https://funzonetenerife.com/en/audio-guide-canary-islands
 
 ### Tenerife travel blog
 In-depth guides on what to do in Tenerife — best beaches, when to visit, itineraries, where to stay, day trips and more — in English, Spanish, French and German. https://funzonetenerife.com/en/blog
