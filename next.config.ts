@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
       { source: '/axe-throwing', destination: '/en/activities', permanent: true },
       { source: '/quiz-room', destination: '/en/activities', permanent: true },
       { source: '/darts', destination: '/en/activities', permanent: true },
+      // Non-locale-prefixed activity URLs (e.g. /activities/masca-gorge-hike).
+      // next-intl does not auto-prefix these dynamic paths, so they 404; send
+      // them to the English equivalent (GSC flagged two of these as 404).
+      { source: '/activities', destination: '/en/activities', permanent: true },
+      { source: '/activities/:slug', destination: '/en/activities/:slug', permanent: true },
       // Retired venue-centric blog articles → activities directory (301).
       { source: '/:locale/blog/evening-entertainment-tenerife-south', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/blog/date-night-ideas-tenerife', destination: '/:locale/activities', permanent: true },
