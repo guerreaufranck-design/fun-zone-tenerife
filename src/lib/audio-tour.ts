@@ -171,6 +171,54 @@ export const CITY_META: CityMeta[] = [
       { src: '/images/audio-tour/santa-cruz/las-teresitas.jpg', label: 'Playa de Las Teresitas', credit: 'Mike Peel, CC BY-SA 4.0, via Wikimedia Commons' },
     ],
   },
+  {
+    slug: 'la-laguna',
+    displayName: 'San Cristóbal de La Laguna',
+    fulfilmentSlug: 'san-cristobal-de-la-laguna',
+    geo: { latitude: 28.4853, longitude: -16.3167 },
+    mapQuery: 'San Cristóbal de La Laguna',
+    photos: [
+      { src: '/images/audio-tour/la-laguna/catedral.jpg', label: 'Catedral de La Laguna', credit: 'Koppchen, CC BY 3.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/la-laguna/concepcion-tower.jpg', label: 'Iglesia de la Concepción', credit: 'Falk2 (Falk Arnhold), CC BY-SA 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/la-laguna/casa-capitanes.jpg', label: 'Casa de los Capitanes Generales', credit: 'Maesi64, CC0, via Wikimedia Commons' },
+    ],
+  },
+  {
+    slug: 'la-orotava',
+    displayName: 'La Orotava',
+    fulfilmentSlug: 'la-orotava',
+    geo: { latitude: 28.3906, longitude: -16.5247 },
+    mapQuery: 'La Orotava, Tenerife',
+    photos: [
+      { src: '/images/audio-tour/la-orotava/casa-balcones.jpg', label: 'Casa de los Balcones', credit: 'Diego Delso, delso.photo, CC BY-SA, via Wikimedia Commons' },
+      { src: '/images/audio-tour/la-orotava/corpus-carpet.jpg', label: 'Corpus Christi sand carpet', credit: 'MariMateo, CC BY-SA 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/la-orotava/panorama.jpg', label: 'La Orotava and its valley', credit: 'JosuHdez, public domain, via Wikimedia Commons' },
+    ],
+  },
+  {
+    slug: 'puerto-de-la-cruz',
+    displayName: 'Puerto de la Cruz',
+    fulfilmentSlug: 'puerto-de-la-cruz',
+    geo: { latitude: 28.414, longitude: -16.548 },
+    mapQuery: 'Puerto de la Cruz, Tenerife',
+    photos: [
+      { src: '/images/audio-tour/puerto-de-la-cruz/lago-martianez.jpg', label: 'Lago Martiánez', credit: 'Fry72, CC BY-SA 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/puerto-de-la-cruz/teide-town.jpg', label: 'Teide above Puerto de la Cruz', credit: 'Mrgnr0, CC BY-SA 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/puerto-de-la-cruz/playa-jardin.jpg', label: 'Playa Jardín and Castillo de San Felipe', credit: 'Kawon Kez Sel, CC0, via Wikimedia Commons' },
+    ],
+  },
+  {
+    slug: 'garachico',
+    displayName: 'Garachico',
+    fulfilmentSlug: 'garachico',
+    geo: { latitude: 28.3722, longitude: -16.7639 },
+    mapQuery: 'Garachico, Tenerife',
+    photos: [
+      { src: '/images/audio-tour/garachico/roque.jpg', label: 'Garachico and its Roque', credit: 'Diego Delso, delso.photo, CC BY-SA, via Wikimedia Commons' },
+      { src: '/images/audio-tour/garachico/caleton.jpg', label: 'El Caletón natural pools', credit: 'Diego Delso, delso.photo, CC BY-SA, via Wikimedia Commons' },
+      { src: '/images/audio-tour/garachico/castillo.jpg', label: 'Castillo de San Miguel', credit: '-wuppertaler, CC BY 4.0, via Wikimedia Commons' },
+    ],
+  },
 ];
 
 export function getCityMeta(slug: string): CityMeta | undefined {
