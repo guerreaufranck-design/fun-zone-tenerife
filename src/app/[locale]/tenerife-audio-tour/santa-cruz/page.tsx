@@ -1,9 +1,17 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { Headphones, MapPin, Clock, Wifi, Compass, Lock, ChevronRight, Globe } from 'lucide-react';
 import { type Locale } from '@/lib/seo';
 import AudioTourPurchase from '@/components/product/AudioTourPurchase';
+import AudioTourStickyBar from '@/components/product/AudioTourStickyBar';
 import { AUDIO_TOUR_PRICE, TOUR_LANGUAGES } from '@/lib/audio-tour';
+
+const photos = [
+  { src: '/images/audio-tour/santa-cruz/auditorio.jpg', alt: 'Auditorio de Tenerife, Santa Cruz de Tenerife', credit: 'Diego Delso, CC BY-SA 3.0, via Wikimedia Commons' },
+  { src: '/images/audio-tour/santa-cruz/plaza-espana.jpg', alt: 'Plaza de España, Santa Cruz de Tenerife', credit: 'Mike Peel, CC BY-SA 4.0, via Wikimedia Commons' },
+  { src: '/images/audio-tour/santa-cruz/las-teresitas.jpg', alt: 'Playa de Las Teresitas, Santa Cruz de Tenerife', credit: 'Mike Peel, CC BY-SA 4.0, via Wikimedia Commons' },
+];
 
 const BASE = 'https://funzonetenerife.com';
 const PATH = '/tenerife-audio-tour/santa-cruz';
@@ -169,8 +177,30 @@ export default async function SantaCruzAudioTourPage({
         </div>
       </section>
 
-      {/* Purchase */}
+      {/* Photo gallery (Wikimedia Commons, credited) */}
       <section className="px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-3">
+          {photos.map((p) => (
+            <figure key={p.src} className="group relative overflow-hidden rounded-xl border border-border/50">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              </div>
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-2 text-[10px] text-white/60">
+                {p.credit}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* Purchase */}
+      <section id="buy" className="scroll-mt-24 px-4 pb-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl">
           <AudioTourPurchase city="Santa Cruz de Tenerife" citySlug="santa-cruz-de-tenerife" />
         </div>
@@ -247,6 +277,29 @@ export default async function SantaCruzAudioTourPage({
         </div>
       </section>
 
+      {/* Map */}
+      <section className="px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="flex items-center gap-2 text-2xl font-bold text-white">
+            <MapPin size={20} className="text-[#00d4ff]" /> Where is Santa Cruz de Tenerife?
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/70">
+            Santa Cruz sits on the north-east coast of Tenerife, the largest of Spain&apos;s Canary Islands, off the north-west coast of Africa. It is the island&apos;s capital and main port, about an hour by road from the southern resorts.
+          </p>
+          <div className="mt-5 overflow-hidden rounded-2xl border border-border/50">
+            <iframe
+              title="Map of Santa Cruz de Tenerife"
+              src="https://www.google.com/maps?q=Santa%20Cruz%20de%20Tenerife&z=12&output=embed"
+              width="100%"
+              height="340"
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)' }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Bonus anecdotes */}
       <section className="px-4 pb-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-2xl border border-[#8b5cf6]/20 bg-gradient-to-br from-[#8b5cf6]/5 to-[#111118] p-6 sm:p-8">
@@ -298,6 +351,8 @@ export default async function SantaCruzAudioTourPage({
           </div>
         </div>
       </section>
+
+      <AudioTourStickyBar city="Santa Cruz de Tenerife" />
     </div>
   );
 }

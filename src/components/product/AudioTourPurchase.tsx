@@ -31,7 +31,7 @@ export default function AudioTourPurchase({
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#00d4ff]">City Pass</p>
           <h3 className="mt-1 text-lg font-bold text-white">{city}: self-guided audio tour</h3>
-          <p className="mt-1 text-xs text-white/50">Valid 1 day · offline · augmented-reality guide</p>
+          <p className="mt-1 text-xs text-white/50">Code valid 1 year · 12h once activated · offline</p>
         </div>
         <div className="text-right">
           <p className="text-3xl font-bold text-white">€{total}</p>
