@@ -4,12 +4,19 @@ import { useEffect, useState } from 'react';
 import { Headphones, Ticket, WifiOff, ArrowRight } from 'lucide-react';
 import { AUDIO_TOUR_PRICE } from '@/lib/audio-tour';
 
+export interface StickyLabels {
+  reassure1: string;
+  reassure2: string;
+  onePrice: string;
+  cta: string;
+}
+
 /**
  * Sticky purchase bar that slides up once the visitor scrolls past the hero,
- * mirroring Lume's bottom bar. The CTA scrolls to the on-page purchase block
+ * mirroring the reference layout. The CTA scrolls to the on-page purchase block
  * (id="buy").
  */
-export default function AudioTourStickyBar({ city }: { city: string }) {
+export default function AudioTourStickyBar({ city, labels }: { city: string; labels: StickyLabels }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -31,20 +38,20 @@ export default function AudioTourStickyBar({ city }: { city: string }) {
           <span className="truncate">{city}</span>
         </div>
         <div className="hidden flex-1 items-center gap-5 text-xs text-white/55 lg:flex">
-          <span className="flex items-center gap-1.5"><Ticket size={13} className="text-[#00d4ff]" /> No booking · code valid 1 year · 12h once activated</span>
-          <span className="flex items-center gap-1.5"><WifiOff size={13} className="text-[#00d4ff]" /> Download on Wi-Fi, walk offline</span>
+          <span className="flex items-center gap-1.5"><Ticket size={13} className="text-[#00d4ff]" /> {labels.reassure1}</span>
+          <span className="flex items-center gap-1.5"><WifiOff size={13} className="text-[#00d4ff]" /> {labels.reassure2}</span>
         </div>
         <div className="flex flex-1 items-center justify-end gap-3 lg:flex-none">
           <div className="text-right leading-tight">
             <span className="block text-lg font-bold text-white">€{AUDIO_TOUR_PRICE}</span>
-            <span className="block text-[10px] uppercase tracking-wider text-white/40">one price</span>
+            <span className="block text-[10px] uppercase tracking-wider text-white/40">{labels.onePrice}</span>
           </div>
           <button
             type="button"
             onClick={toBuy}
             className="inline-flex items-center gap-2 rounded-xl bg-[#00d4ff] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a0f] transition-all hover:bg-[#33ddff] sm:text-sm"
           >
-            Get the key <ArrowRight size={15} />
+            {labels.cta} <ArrowRight size={15} />
           </button>
         </div>
       </div>
