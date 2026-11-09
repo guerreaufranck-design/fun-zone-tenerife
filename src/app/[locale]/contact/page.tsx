@@ -1,37 +1,36 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  MapPin, Phone, Mail, Clock, MessageCircle,
-  Instagram, Facebook, Navigation, ExternalLink,
+  Mail, MessageCircle, Instagram, ExternalLink, Clock, Compass, Puzzle,
 } from 'lucide-react';
 import { getAlternates, type Locale } from '@/lib/seo';
 
 const contactMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
-    description: 'Contact Fun Zone Tenerife. Visit us at Zentral Center, Playa Las Americas. Call, WhatsApp or email to book your quiz room, axe throwing, escape game or darts session.',
+    title: 'Contact Fun Zone Tenerife | Activities & Escape Games',
+    description: 'Get in touch with Fun Zone Tenerife. Questions about the best things to do in Tenerife, your booking or our outdoor escape games? Email or WhatsApp us.',
   },
   es: {
-    title: 'Contacto Fun Zone Tenerife | Zentral Center, Playa Las Américas',
-    description: 'Contacta con Fun Zone Tenerife. Encuéntranos en el Zentral Center, Playa Las Américas. Llama, WhatsApp o email para reservar tu experiencia.',
+    title: 'Contacto Fun Zone Tenerife | Actividades y Escape Games',
+    description: 'Ponte en contacto con Fun Zone Tenerife. ¿Dudas sobre qué hacer en Tenerife, tu reserva o nuestros escape games al aire libre? Escríbenos por email o WhatsApp.',
   },
   fr: {
-    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
-    description: 'Contactez Fun Zone Tenerife. Retrouvez-nous au Zentral Center, Playa Las Americas. Appelez, WhatsApp ou email pour réserver votre expérience.',
+    title: 'Contact Fun Zone Tenerife | Activités & Escape Games',
+    description: 'Contactez Fun Zone Tenerife. Une question sur les activités à Tenerife, votre réservation ou nos escape games outdoor ? Email ou WhatsApp.',
   },
   de: {
-    title: 'Kontakt Fun Zone Teneriffa | Zentral Center, Playa Las Americas',
-    description: 'Kontaktieren Sie Fun Zone Teneriffa. Besuchen Sie uns im Zentral Center, Playa Las Americas. Anruf, WhatsApp oder E-Mail zur Buchung.',
+    title: 'Kontakt Fun Zone Teneriffa | Aktivitäten & Escape Games',
+    description: 'Kontaktieren Sie Fun Zone Teneriffa. Fragen zu Aktivitäten auf Teneriffa, Ihrer Buchung oder unseren Outdoor-Escape-Games? E-Mail oder WhatsApp.',
   },
   nl: {
-    title: 'Contact Fun Zone Tenerife | Zentral Center, Playa Las Americas',
-    description: 'Neem contact op met Fun Zone Tenerife. Bezoek ons in het Zentral Center, Playa Las Americas. Bel, WhatsApp of e-mail voor een reservering.',
+    title: 'Contact Fun Zone Tenerife | Activiteiten & Escape Games',
+    description: 'Neem contact op met Fun Zone Tenerife. Vragen over activiteiten op Tenerife, je boeking of onze outdoor escape games? Mail of WhatsApp ons.',
   },
   it: {
-    title: 'Contatti Fun Zone Tenerife | Zentral Center, Playa Las Americas',
-    description: 'Contatta Fun Zone Tenerife. Trovaci al Zentral Center, Playa Las Americas. Chiama, WhatsApp o email per prenotare la tua esperienza.',
+    title: 'Contatti Fun Zone Tenerife | Attività & Escape Games',
+    description: 'Contatta Fun Zone Tenerife. Domande sulle attività a Tenerife, sulla tua prenotazione o sui nostri escape game all\'aperto? Scrivici via email o WhatsApp.',
   },
 };
 
@@ -52,53 +51,30 @@ export async function generateMetadata({
   };
 }
 
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.17V11.9a4.84 4.84 0 01-3.77-1.44V6.69h3.77z" />
-    </svg>
-  );
-}
-
 const contactDetails = [
-  {
-    icon: MapPin,
-    label: 'Address',
-    value: 'Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650',
-    color: '#00d4ff',
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+34 623 362 229',
-    href: 'tel:+34623362229',
-    color: '#8b5cf6',
-  },
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@axethrowingtenerife.com',
-    href: 'mailto:info@axethrowingtenerife.com',
+    value: 'info@funzonetenerife.com',
+    href: 'mailto:info@funzonetenerife.com',
     color: '#00d4ff',
   },
   {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    value: '+34 623 362 229',
+    href: 'https://wa.me/34623362229',
+    color: '#25D366',
+  },
+  {
     icon: Clock,
-    label: 'Opening Hours',
-    value: 'Tue - Sun: 2PM - 8PM\nClosed on Mondays',
+    label: 'Response time',
+    value: 'We usually reply within a few hours, 7 days a week.',
     color: '#ff6b00',
   },
 ];
 
-const socialLinks = [
-  { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/axethrowingtenerife', color: '#E1306C' },
-  { icon: TikTokIcon, label: 'TikTok', href: 'https://tiktok.com/@axethrowingtenerife', color: '#ffffff' },
-  { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/axethrowingtenerife', color: '#1877F2' },
-];
-
 export default function ContactPage() {
-  const t = useTranslations('contact');
-  const tFooter = useTranslations('footer');
-
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Hero */}
@@ -108,10 +84,10 @@ export default function ContactPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl text-center">
           <h1 className="neon-glow mb-4 text-4xl font-bold text-white sm:text-5xl">
-            {t('title')}
+            Get in touch
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            {t('subtitle')}
+            Questions about things to do in Tenerife, your booking, or our outdoor escape games? We are happy to help.
           </p>
         </div>
       </section>
@@ -141,6 +117,8 @@ export default function ContactPage() {
                         {item.href ? (
                           <a
                             href={item.href}
+                            target={item.href.startsWith('http') ? '_blank' : undefined}
+                            rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                             className="text-muted-foreground transition-colors hover:text-[#00d4ff]"
                           >
                             {item.value}
@@ -159,23 +137,17 @@ export default function ContactPage() {
               {/* Social Links */}
               <Card className="border-border/50 bg-[#111118]">
                 <CardContent className="pt-6">
-                  <h3 className="mb-4 font-semibold text-white">{tFooter('followUs')}</h3>
+                  <h3 className="mb-4 font-semibold text-white">Follow us</h3>
                   <div className="flex gap-3">
-                    {socialLinks.map((social) => {
-                      const Icon = social.icon;
-                      return (
-                        <a
-                          key={social.label}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-[#0a0a0f] transition-all duration-300 hover:border-[#00d4ff]/30 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]"
-                          aria-label={social.label}
-                        >
-                          <Icon className="h-5 w-5 text-white/70" />
-                        </a>
-                      );
-                    })}
+                    <a
+                      href="https://instagram.com/funzonetenerife"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-[#0a0a0f] transition-all duration-300 hover:border-[#00d4ff]/30 hover:shadow-[0_0_15px_rgba(0,212,255,0.1)]"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="h-5 w-5 text-white/70" />
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -200,33 +172,30 @@ export default function ContactPage() {
               </a>
             </div>
 
-            {/* Map */}
-            <div className="space-y-4">
-              <Card className="overflow-hidden border-border/50 bg-[#111118]">
-                <div className="aspect-square w-full sm:aspect-video lg:aspect-square">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1760.5!2d-16.7286292!3d28.057948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a971a1b1e98ab%3A0x875a801337f2167e!2sAxe%20Throwing%20Tenerife!5e0!3m2!1sen!2ses"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)' }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Axe Throwing Tenerife Location"
-                  />
-                </div>
+            {/* Planning your trip */}
+            <div>
+              <Card className="h-full border-border/50 bg-[#111118]">
+                <CardContent className="flex h-full flex-col justify-center gap-6 p-8 sm:p-10">
+                  <h2 className="text-2xl font-bold text-white">Planning your trip?</h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    You do not need to email us to book. Browse the island&apos;s best activities or jump straight into one of our outdoor escape games.
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    <Button variant="neon" size="lg" asChild>
+                      <Link href="/activities">
+                        <Compass className="mr-2 h-5 w-5" />
+                        See all activities
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                      <Link href="/escape-game">
+                        <Puzzle className="mr-2 h-5 w-5" />
+                        Outdoor escape games
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
               </Card>
-
-              <Button variant="outline" size="lg" className="w-full" asChild>
-                <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=28.057948,-16.7286292"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Navigation className="mr-2 h-5 w-5" />
-                  {t('getDirections')}
-                </a>
-              </Button>
             </div>
           </div>
         </div>

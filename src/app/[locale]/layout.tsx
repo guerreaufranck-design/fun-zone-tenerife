@@ -44,7 +44,7 @@ export async function generateMetadata({
           url: 'https://funzonetenerife.com/images/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'Fun Zone Tenerife — Quiz Room, Axe Throwing, Escape Game & Darts',
+          alt: 'Fun Zone Tenerife — Things to Do in Tenerife',
         },
       ],
     },

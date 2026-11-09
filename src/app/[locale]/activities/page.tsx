@@ -11,32 +11,32 @@ const activitiesMeta: Record<Locale, { title: string; description: string }> = {
   en: {
     title: 'Things to Do in Tenerife | Best Activities & Experiences 2026',
     description:
-      'Discover the best activities in Tenerife: whale watching, axe throwing, quiz room, Teide cable car, catamaran cruises, jet ski, escape games and more. Book directly or via GetYourGuide.',
+      'Discover the best activities in Tenerife: whale watching, Teide cable car, catamaran cruises, jet ski, Siam Park, outdoor escape games and more. Book directly or via GetYourGuide.',
   },
   es: {
     title: 'Qué Hacer en Tenerife | Mejores Actividades y Experiencias 2026',
     description:
-      'Descubre las mejores actividades en Tenerife: avistamiento de ballenas, lanzamiento de hachas, quiz room, teleférico del Teide, cruceros en catamarán, jet ski, escape games y más.',
+      'Descubre las mejores actividades en Tenerife: avistamiento de ballenas, teleférico del Teide, cruceros en catamarán, jet ski, Siam Park, escape games al aire libre y más.',
   },
   fr: {
     title: 'Que Faire à Tenerife | Meilleures Activités & Expériences 2026',
     description:
-      'Découvrez les meilleures activités à Tenerife : observation des baleines, lancer de haches, quiz room, téléphérique du Teide, croisières catamaran, jet ski, escape games et plus encore.',
+      'Découvrez les meilleures activités à Tenerife : observation des baleines, téléphérique du Teide, croisières catamaran, jet ski, Siam Park, escape games outdoor et plus encore.',
   },
   de: {
     title: 'Aktivitäten auf Teneriffa | Beste Erlebnisse & Ausflüge 2026',
     description:
-      'Entdecken Sie die besten Aktivitäten auf Teneriffa: Walbeobachtung, Beilwerfen, Quiz Room, Teide-Seilbahn, Katamaranausflüge, Jetski, Escape Games und vieles mehr.',
+      'Entdecken Sie die besten Aktivitäten auf Teneriffa: Walbeobachtung, Teide-Seilbahn, Katamaranausflüge, Jetski, Siam Park, Outdoor-Escape-Games und vieles mehr.',
   },
   nl: {
     title: 'Activiteiten op Tenerife | Beste Ervaringen & Uitjes 2026',
     description:
-      'Ontdek de beste activiteiten op Tenerife: walvissen spotten, bijl gooien, quiz room, Teide kabelbaan, catamaranreizen, jetski, escape games en meer.',
+      'Ontdek de beste activiteiten op Tenerife: walvissen spotten, Teide kabelbaan, catamaranreizen, jetski, Siam Park, outdoor escape games en meer.',
   },
   it: {
     title: 'Cosa Fare a Tenerife | Le Migliori Attività ed Esperienze 2026',
     description:
-      "Scopri le migliori attività a Tenerife: avvistamento balene, lancio delle asce, quiz room, funivia del Teide, crociere in catamarano, moto d'acqua, escape games e altro ancora.",
+      "Scopri le migliori attività a Tenerife: avvistamento balene, funivia del Teide, crociere in catamarano, moto d'acqua, Siam Park, escape game all'aperto e altro ancora.",
   },
 };
 
@@ -118,8 +118,8 @@ export default async function ActivitiesPage({
             Things to Do in Tenerife
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Handpicked activities for every taste — from indoor thrills to epic outdoor adventures.
-            Fun Zone experiences featured first, all other activities bookable via GetYourGuide.
+            Handpicked activities for every taste, from boat trips and Mount Teide to self-guided
+            outdoor escape games. Our escape games featured first, everything else bookable via GetYourGuide.
           </p>
         </div>
       </section>

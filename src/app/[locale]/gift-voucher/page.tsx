@@ -346,7 +346,7 @@ export default function GiftVoucherPage() {
                 ) : (
                   <Button variant="neon" size="lg" disabled={!canProceed()} onClick={() => {
                     // TODO: integrate Stripe for gift vouchers
-                    window.location.href = `mailto:axethrowingtenerife@gmail.com?subject=Gift Voucher Request&body=Experience: ${selected?.title}%0AQuantity: ${quantity}%0ARecipient: ${recipientName}%0AEmail: ${recipientEmail}%0AMessage: ${personalMessage}%0ATotal: €${totalPrice}`;
+                    window.location.href = `mailto:info@funzonetenerife.com?subject=Gift Voucher Request&body=Experience: ${selected?.title}%0AQuantity: ${quantity}%0ARecipient: ${recipientName}%0AEmail: ${recipientEmail}%0AMessage: ${personalMessage}%0ATotal: €${totalPrice}`;
                   }}>
                     <CreditCard className="mr-2 h-5 w-5" />
                     {t('pay')} €{totalPrice}

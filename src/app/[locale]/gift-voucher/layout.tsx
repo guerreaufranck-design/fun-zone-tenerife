@@ -5,32 +5,32 @@ const voucherMeta: Record<Locale, { title: string; description: string }> = {
   en: {
     title: 'Gift Vouchers Fun Zone Tenerife | Give the Gift of Adventure',
     description:
-      'Give the gift of an unforgettable experience! Fun Zone Tenerife gift vouchers for Quiz Room, Axe Throwing, Escape Game or Darts. Instant email delivery. Perfect for any occasion.',
+      'Give the gift of an unforgettable experience! Fun Zone Tenerife gift vouchers for outdoor escape games and top island activities. Instant email delivery. Perfect for any occasion.',
   },
   es: {
     title: 'Tarjetas Regalo Fun Zone Tenerife | Regala una Aventura',
     description:
-      '¡Regala una experiencia inolvidable! Tarjetas regalo Fun Zone Tenerife para Quiz Room, Lanzamiento de Hachas, Escape Game o Dardos. Entrega instantánea por email.',
+      '¡Regala una experiencia inolvidable! Tarjetas regalo Fun Zone Tenerife para escape games al aire libre y las mejores actividades de la isla. Entrega instantánea por email.',
   },
   fr: {
     title: 'Bons Cadeaux Fun Zone Tenerife | Offrez une Aventure',
     description:
-      'Offrez une expérience inoubliable ! Bons cadeaux Fun Zone Tenerife pour Quiz Room, Lancer de Haches, Escape Game ou Fléchettes. Livraison instantanée par email.',
+      'Offrez une expérience inoubliable ! Bons cadeaux Fun Zone Tenerife pour les escape games outdoor et les meilleures activités de l\'île. Livraison instantanée par email.',
   },
   de: {
     title: 'Geschenkgutscheine Fun Zone Teneriffa | Schenken Sie ein Abenteuer',
     description:
-      'Verschenken Sie ein unvergessliches Erlebnis! Fun Zone Teneriffa Gutscheine für Quiz Room, Beilwerfen, Escape Game oder Darts. Sofortige E-Mail-Lieferung.',
+      'Verschenken Sie ein unvergessliches Erlebnis! Fun Zone Teneriffa Gutscheine für Outdoor-Escape-Games und die besten Aktivitäten der Insel. Sofortige E-Mail-Lieferung.',
   },
   nl: {
     title: 'Cadeaubonnen Fun Zone Tenerife | Geef een Avontuur Cadeau',
     description:
-      'Geef een onvergetelijke ervaring cadeau! Fun Zone Tenerife cadeaubonnen voor Quiz Room, Bijl Gooien, Escape Game of Darts. Directe levering per e-mail.',
+      'Geef een onvergetelijke ervaring cadeau! Fun Zone Tenerife cadeaubonnen voor outdoor escape games en de leukste activiteiten van het eiland. Directe levering per e-mail.',
   },
   it: {
     title: 'Buoni Regalo Fun Zone Tenerife | Regala un\'Avventura',
     description:
-      'Regala un\'esperienza indimenticabile! Buoni regalo Fun Zone Tenerife per Quiz Room, Lancio delle Asce, Escape Game o Freccette. Consegna istantanea via email.',
+      'Regala un\'esperienza indimenticabile! Buoni regalo Fun Zone Tenerife per escape game all\'aperto e le migliori attività dell\'isola. Consegna istantanea via email.',
   },
 };
 

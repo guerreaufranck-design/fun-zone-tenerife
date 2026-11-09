@@ -1,39 +1,37 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Monitor, GraduationCap, Sparkles, Package,
-  Target, Users, Star, Gamepad2,
+  Compass, Puzzle, ShieldCheck, Ticket,
+  Map, Globe, Star, Layers,
 } from 'lucide-react';
-import Image from 'next/image';
 import { getAlternates, type Locale } from '@/lib/seo';
 
 const aboutMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'About Fun Zone Tenerife | 4 Activities in Playa Las Americas',
-    description: 'Learn about Fun Zone Tenerife — the multi-activity entertainment venue bringing QuizzaBoom, Axe Throwing, Escape Game and Darts together in Playa Las Americas.',
+    title: 'About Fun Zone Tenerife | Your Guide to the Best Things to Do',
+    description: 'Fun Zone Tenerife is your honest guide to the best things to do in Tenerife: handpicked tours and activities plus our own self-guided outdoor escape games.',
   },
   es: {
-    title: 'Sobre Fun Zone Tenerife | 4 Actividades en Playa Las Américas',
-    description: 'Conoce Fun Zone Tenerife — el centro de entretenimiento multi-actividad con QuizzaBoom, Lanzamiento de Hachas, Escape Game y Dardos en Playa Las Américas.',
+    title: 'Sobre Fun Zone Tenerife | Tu Guía de Qué Hacer en la Isla',
+    description: 'Fun Zone Tenerife es tu guía honesta de las mejores cosas que hacer en Tenerife: tours y actividades seleccionados y nuestros escape games al aire libre.',
   },
   fr: {
-    title: 'À Propos de Fun Zone Tenerife | 4 Activités à Playa Las Americas',
-    description: 'Découvrez Fun Zone Tenerife — le centre de divertissement multi-activités avec QuizzaBoom, Lancer de Haches, Escape Game et Fléchettes à Playa Las Americas.',
+    title: 'À Propos de Fun Zone Tenerife | Votre Guide des Activités',
+    description: 'Fun Zone Tenerife est votre guide honnête des meilleures choses à faire à Tenerife : excursions et activités sélectionnées et nos escape games outdoor.',
   },
   de: {
-    title: 'Über Fun Zone Teneriffa | 4 Aktivitäten in Playa Las Americas',
-    description: 'Erfahren Sie mehr über Fun Zone Teneriffa — das Multi-Aktivitäts-Unterhaltungszentrum mit QuizzaBoom, Beilwerfen, Escape Game und Darts in Playa Las Americas.',
+    title: 'Über Fun Zone Teneriffa | Dein Guide für Aktivitäten',
+    description: 'Fun Zone Teneriffa ist dein ehrlicher Guide für die besten Aktivitäten auf Teneriffa: handverlesene Touren plus unsere eigenen Outdoor-Escape-Games.',
   },
   nl: {
-    title: 'Over Fun Zone Tenerife | 4 Activiteiten in Playa Las Americas',
-    description: 'Lees meer over Fun Zone Tenerife — het multi-activiteiten entertainment centrum met QuizzaBoom, Bijl Gooien, Escape Game en Darts in Playa Las Americas.',
+    title: 'Over Fun Zone Tenerife | Jouw Gids voor Activiteiten',
+    description: 'Fun Zone Tenerife is jouw eerlijke gids voor de leukste dingen om te doen op Tenerife: zorgvuldig gekozen tours plus onze eigen outdoor escape games.',
   },
   it: {
-    title: 'Chi Siamo — Fun Zone Tenerife | 4 Attività a Playa Las Americas',
-    description: 'Scopri Fun Zone Tenerife — il centro di intrattenimento multi-attività con QuizzaBoom, Lancio delle Asce, Escape Game e Freccette a Playa Las Americas.',
+    title: 'Chi Siamo, Fun Zone Tenerife | La Tua Guida alle Attività',
+    description: 'Fun Zone Tenerife è la tua guida onesta alle migliori cose da fare a Tenerife: tour ed esperienze selezionati e i nostri escape game all\'aperto.',
   },
 };
 
@@ -56,41 +54,39 @@ export async function generateMetadata({
 
 const features = [
   {
-    icon: Monitor,
-    title: 'Interactive Digital Targets',
-    description: '17+ game modes on state-of-the-art digital targets. From zombie apocalypse to tic-tac-toe, every throw is an immersive experience with real-time scoring and animations.',
+    icon: Compass,
+    title: 'Handpicked, not padded out',
+    description: 'We do not list everything under the sun. We pick the tours and experiences that are actually worth your time and money, so you spend less time comparing and more time enjoying the island.',
     color: '#00d4ff',
   },
   {
-    icon: GraduationCap,
-    title: 'Expert Instructors',
-    description: 'Our certified coaches guide you from your very first throw to advanced techniques. Whether you are a beginner or looking to compete, our team ensures you get the most from every session.',
+    icon: Puzzle,
+    title: 'Our own outdoor escape games',
+    description: 'Fun Zone runs self-guided outdoor escape games across real Tenerife towns. No venue, no fixed times. You play at your own pace, any day, with your phone and the streets as the board.',
     color: '#8b5cf6',
   },
   {
-    icon: Sparkles,
-    title: 'Premium Venue & Atmosphere',
-    description: 'Step into an immersive, nightclub-inspired arena with neon lighting, premium sound system, and a vibe that sets us apart. This is not your average activity center.',
-    color: '#ff6b00',
+    icon: ShieldCheck,
+    title: 'Honest recommendations',
+    description: 'We only point you to operators we would send our own friends to. When something is a tourist trap, we leave it off. The goal is a trip you remember for the right reasons.',
+    color: '#00ff88',
   },
   {
-    icon: Package,
-    title: 'All-Inclusive Experiences',
-    description: 'Everything is included: equipment, coaching, safety gear, and in our premium packages, drinks and snacks. Just show up and throw. We handle the rest.',
-    color: '#00ff88',
+    icon: Ticket,
+    title: 'Easy, secure booking',
+    description: 'Most activities are booked through GetYourGuide, with free cancellation on many of them. Our escape games are booked directly. Either way it takes a couple of minutes.',
+    color: '#ff6b00',
   },
 ];
 
 const stats = [
-  { icon: Gamepad2, value: '17+', label: 'Interactive Games' },
-  { icon: Target, value: '4', label: 'Throwing Lanes' },
-  { icon: Users, value: '5,000+', label: 'Happy Throwers' },
-  { icon: Star, value: '4.9', label: 'Average Rating' },
+  { icon: Layers, value: '4', label: 'Activity Categories' },
+  { icon: Map, value: '4', label: 'Escape Game Towns' },
+  { icon: Globe, value: '6', label: 'Languages' },
+  { icon: Star, value: 'Island-wide', label: 'Coverage' },
 ];
 
 export default function AboutPage() {
-  const t = useTranslations('about');
-
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Hero */}
@@ -101,10 +97,10 @@ export default function AboutPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl text-center">
           <h1 className="neon-glow mb-4 text-4xl font-bold text-white sm:text-5xl md:text-6xl">
-            {t('title')}
+            About Fun Zone Tenerife
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            {t('subtitle')}
+            Your guide to the best things to do in Tenerife, from the people who actually live the island.
           </p>
         </div>
       </section>
@@ -117,13 +113,13 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white sm:text-3xl">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Born from a passion for adrenaline and unforgettable experiences, Axe Throwing Tenerife opened its doors in the heart of Playa Las Americas to bring something truly unique to the island. We are not just an activity venue; we are a destination where ancient warrior traditions meet cutting-edge entertainment technology.
+                  Fun Zone Tenerife started with a simple frustration. Planning a trip to the island meant wading through endless listings, fake reviews and tours that looked nothing like the photos. We wanted one place that just told you, honestly, what is worth doing.
                 </p>
                 <p>
-                  Our founders envisioned a space where anyone, from complete beginners to competitive throwers, could experience the thrill of axe throwing in a premium, immersive environment. Inspired by the gaming arcades and nightlife culture of Tenerife, we designed a venue that feels more like stepping into a futuristic arena than a traditional activity center.
+                  So that is what we built. A curated guide to the best activities in Tenerife, from whale watching and Teide at sunset to boat trips, jet skis and the parks the kids will not stop talking about. We point you to the operators we trust, and you book in a couple of taps.
                 </p>
                 <p>
-                  Located in the vibrant Zentral Center, our venue features state-of-the-art interactive digital targets, professional-grade throwing equipment, and an atmosphere that turns every visit into an event. Whether you are celebrating a birthday, bonding with your team, or simply looking for something extraordinary to do, we have created the perfect space for it.
+                  Alongside the guide we run our own thing too: self-guided outdoor escape games across towns like Los Cristianos, La Laguna, Puerto de la Cruz and Garachico. They turn an ordinary walk into a hunt for clues and hidden stories, played at your own pace, any day of the week. No screens, no walls, just you and the island.
                 </p>
               </div>
             </CardContent>
@@ -174,21 +170,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Photo */}
-      <section className="px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/50">
-            <Image
-              src="/images/about-team.jpg"
-              alt="Axe Throwing Tenerife Team"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 900px"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Stats */}
       <section className="relative overflow-hidden">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-[#00d4ff]/40 to-transparent" />
@@ -220,17 +201,17 @@ export default function AboutPage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="neon-glow mb-6 text-3xl font-bold text-white sm:text-4xl">
-            Ready to Experience the Thrill?
+            Ready to explore Tenerife?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Book your axe throwing session today and discover why we are Tenerife&apos;s number one rated activity venue.
+            Browse the island&apos;s best activities, or turn a town into your own adventure with an outdoor escape game.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button variant="neon" size="xl" asChild>
-              <Link href="/book">Book Now</Link>
+              <Link href="/activities">See all activities</Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link href="/experiences">Our Experiences</Link>
+              <Link href="/escape-game">Outdoor escape games</Link>
             </Button>
           </div>
         </div>
