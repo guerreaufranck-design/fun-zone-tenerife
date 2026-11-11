@@ -1,14 +1,18 @@
-# Fun Zone Tenerife — Location-Based Entertainment Hub
+# Fun Zone Tenerife — Things To Do in Tenerife
 # https://funzonetenerife.com
 
-> Fun Zone Tenerife is a multi-activity entertainment venue in Playa de las Américas, Tenerife (Canary Islands, Spain). We offer four distinct experiences: outdoor escape games across Tenerife's historic towns, axe throwing, interactive quiz rooms, and darts (classic & pixel). Perfect for tourists, families, corporate team building, bachelor parties, and group events.
+> Fun Zone Tenerife is an online guide to the best things to do in Tenerife (Canary Islands, Spain): curated tours and activities across the island, our own self-guided outdoor escape games, and self-guided city audio tours. Content is available in six languages and covers the whole island. Perfect for travellers, couples, families and groups.
 
-## Outdoor Escape Games — Tenerife Chronicle
-Our flagship product: self-guided outdoor escape games (city games / street escapes) set in real Tenerife towns. Players use their smartphones (BYOD model) to solve GPS-triggered puzzles tied to real historical facts. No time pressure — self-paced exploration. Unlimited players per code. Available in 5 languages (EN, FR, ES, DE, IT).
+## Things To Do in Tenerife (curated activities)
+A directory of the island's top tours and activities, bookable through our travel partners (GetYourGuide). Highlights include whale and dolphin watching, Mount Teide cable car and stargazing, Los Gigantes boat trips, jet ski and water sports, Siam Park and Loro Parque, quad and buggy tours, wine tasting and sunset catamaran cruises.
+- Browse: https://funzonetenerife.com/en/activities
+
+## Outdoor Escape Games (our own product)
+Self-guided outdoor escape games (city games / street escapes) set in real Tenerife towns. Players use their own smartphones (BYOD) to solve GPS-triggered puzzles tied to real historical facts. No fixed time slot, played at your own pace on any day. An activation code is delivered by email after payment. Priced per phone/team (from 25€).
 
 ### Available Escape Games:
 - **The Code of Ichasagua** — Los Cristianos & Montaña Guaza (3-4h, difficulty 3/5). Explore the Guanche civilization's last stronghold. Urban + mountain trail.
-- **The Chest of Three Keys** — San Cristóbal de La Laguna, UNESCO World Heritage (2-2.5h, difficulty 4/5). Follow corsair Amaro Pargo's legacy through the historic city center. Fully flat, accessible.
+- **The Chest of Three Keys** — San Cristóbal de La Laguna, UNESCO World Heritage (2-2.5h, difficulty 4/5). Follow corsair Amaro Pargo's legacy through the historic city centre. Fully flat, accessible.
 - **The Loot of La Batería** — Puerto de la Cruz (1.75h, difficulty 3/5). Track pirate treasure along the historic harbour and botanical gardens.
 - **The Ashes of the Soul** — Garachico (2.75h, difficulty 5/5). Uncover volcanic history in a town destroyed and reborn from lava. Most popular.
 
@@ -19,36 +23,32 @@ Our flagship product: self-guided outdoor escape games (city games / street esca
 
 ### Escape Game Technology:
 - Geofencing / GPS-triggered narrative
-- Self-guided / self-hosted tour (no game master needed)
+- Self-guided (no game master needed)
 - BYOD (Bring Your Own Device) — smartphone required
-- 8-hour activation window after code redemption
+- Activation window after code redemption
 - Activation code delivered by email after payment
+- Book: https://funzonetenerife.com/en/escape-game
 
-## Axe Throwing
-Indoor axe throwing lanes in Playa de las Américas. Traditional axes, ninja stars, shurikens. Professional coaching included. No experience needed. From 12€/person.
-- Traditional Axe Throwing (1h)
-- Ninja Axe + Shurikens (1h, 2h)
-- Premium Experience (2h)
+## City Audio Tours (Canary Islands)
+Self-guided GPS audio tours of Canary Islands towns, narrated in your language, played offline at your own pace. Tenerife, Gran Canaria, Lanzarote and Fuerteventura cities, 12€ per activation code.
+- Browse: https://funzonetenerife.com/en/canary-islands-audio-tour
+- Canary Islands audio guide (Lume): https://funzonetenerife.com/en/audio-guide-canary-islands
 
-## Quiz Room — QuizzaBoom
-Tenerife's first interactive quiz room with buzzer systems, giant screens, thousands of questions. From 12€/person.
+## Tenerife Travel Blog
+In-depth guides on what to do in Tenerife — best beaches, when to visit, itineraries, where to stay, day trips, group celebrations and more — in English, Spanish, French and German.
+- https://funzonetenerife.com/en/blog
 
-## Darts
-Classic steel-tip dartboards and revolutionary Darts Pixel (interactive digital targets). From 5€/person.
+## Best For
+- Travellers planning what to do in Tenerife
+- Couples, friends and families looking for island activities
+- Groups, stag and hen parties / EVJF and EVG (group activities and escape games)
+- Self-guided explorers
 
-## Special Events
-- Corporate Team Building (B2B)
-- Birthday Parties (kids & adults)
-- Bachelor/Bachelorette Parties (Despedida de Soltera/Soltero)
-
-## Practical Information
-- **Address:** Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650, Tenerife
-- **Opening Hours:** Tuesday-Sunday, 2PM-8PM. Closed Mondays.
-- **Phone:** +34 623 362 229
-- **Email:** axethrowingtenerife@gmail.com
-- **Languages:** English, French, Spanish, German, Italian
-- **Booking:** https://funzonetenerife.com/en/book
-- **Escape Games:** https://funzonetenerife.com/en/escape-game
+## Contact
+- Website: https://funzonetenerife.com
+- Area served: Tenerife, Canary Islands, Spain
+- Email: info@funzonetenerife.com
+- Languages: English (en), Spanish (es), French (fr), German (de), Dutch (nl), Italian (it)
 
 ## Industry Keywords
-Location-Based Entertainment (LBE), outdoor escape room, city games, urban games, street escape, city hunt, scavenger hunt, experience-driven entertainment, self-guided tour, GPS adventure, phygital experience, augmented reality tourism, Tenerife activities, things to do in Tenerife, Canary Islands entertainment.
+Things to do in Tenerife, Tenerife activities, tours and activities Tenerife, outdoor escape game, city games, self-guided tour, GPS adventure, Tenerife audio tour, Canary Islands activities, whale watching Tenerife, Mount Teide tour.

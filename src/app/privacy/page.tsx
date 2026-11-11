@@ -13,10 +13,10 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-semibold text-white mt-8">1. Responsable del Tratamiento</h2>
           <p>
-            El responsable del tratamiento de los datos personales es Axe Throwing Tenerife, con domicilio en
+            El responsable del tratamiento de los datos personales es Fun Zone Tenerife, con domicilio en
             Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650, Santa Cruz de Tenerife, Espana.
           </p>
-          <p>Correo electronico: axethrowingtenerife@gmail.com</p>
+          <p>Correo electronico: info@funzonetenerife.com</p>
           <p>Telefono: +34 623 362 229</p>
 
           <h2 className="text-xl font-semibold text-white mt-8">2. Datos que Recopilamos</h2>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
             <li><strong>Portabilidad:</strong> recibir sus datos en un formato estructurado y de uso comun.</li>
           </ul>
           <p>
-            Para ejercer estos derechos, envie un correo electronico a axethrowingtenerife@gmail.com indicando
+            Para ejercer estos derechos, envie un correo electronico a info@funzonetenerife.com indicando
             el derecho que desea ejercer y adjuntando una copia de su documento de identidad.
           </p>
           <p>
@@ -138,7 +138,7 @@ export default function PrivacyPage() {
             Para cualquier consulta relacionada con la proteccion de sus datos personales, puede contactarnos en:
           </p>
           <ul className="list-none space-y-1">
-            <li>Email: axethrowingtenerife@gmail.com</li>
+            <li>Email: info@funzonetenerife.com</li>
             <li>Telefono: +34 623 362 229</li>
             <li>Direccion: Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650</li>
           </ul>

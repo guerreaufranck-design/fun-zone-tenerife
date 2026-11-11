@@ -14,27 +14,27 @@ import { getAlternates, type Locale } from '@/lib/seo';
 const faqMeta: Record<Locale, { title: string; description: string }> = {
   en: {
     title: 'FAQ — Fun Zone Tenerife',
-    description: 'All your questions about Fun Zone Tenerife answered: age requirements, group bookings, how QuizzaBoom works, escape game difficulty, cancellation policy and more.',
+    description: 'Answers about Fun Zone Tenerife: how our self-guided outdoor escape games work, booking tours and activities, city audio tours, languages, age and group bookings.',
   },
   es: {
     title: 'Preguntas Frecuentes — Fun Zone Tenerife',
-    description: 'Todas tus preguntas sobre Fun Zone Tenerife: edad mínima, reservas de grupo, cómo funciona QuizzaBoom, dificultad del escape game, cancelaciones y más.',
+    description: 'Respuestas sobre Fun Zone Tenerife: cómo funcionan los escape games al aire libre autoguiados, reservas de tours y actividades, audioguías de ciudad, idiomas, edad y grupos.',
   },
   fr: {
     title: 'FAQ — Fun Zone Tenerife',
-    description: 'Toutes vos questions sur Fun Zone Tenerife : âge minimum, réservations de groupe, fonctionnement de QuizzaBoom, difficulté de l\'escape game, annulations et plus.',
+    description: 'Réponses sur Fun Zone Tenerife : comment fonctionnent nos escape games en plein air autoguidés, réservation de tours et activités, audioguides de ville, langues, âge et groupes.',
   },
   de: {
     title: 'FAQ — Fun Zone Teneriffa',
-    description: 'Alle Fragen zu Fun Zone Teneriffa: Mindestalter, Gruppenbuchungen, wie QuizzaBoom funktioniert, Escape Game Schwierigkeit, Stornierungsbedingungen und mehr.',
+    description: 'Antworten zu Fun Zone Teneriffa: wie unsere selbstgeführten Outdoor-Escape-Games funktionieren, Buchung von Touren und Aktivitäten, Stadt-Audiotouren, Sprachen, Alter und Gruppen.',
   },
   nl: {
     title: 'FAQ — Fun Zone Tenerife',
-    description: 'Al je vragen over Fun Zone Tenerife beantwoord: leeftijdsvereisten, groepsboekingen, hoe QuizzaBoom werkt, moeilijkheid escape game, annuleringsbeleid en meer.',
+    description: 'Antwoorden over Fun Zone Tenerife: hoe onze zelfgeleide outdoor-escapegames werken, tours en activiteiten boeken, stadsaudiotours, talen, leeftijd en groepen.',
   },
   it: {
     title: 'FAQ — Fun Zone Tenerife',
-    description: 'Tutte le domande su Fun Zone Tenerife: età minima, prenotazioni di gruppo, come funziona QuizzaBoom, difficoltà dell\'escape game, cancellazione e altro.',
+    description: 'Risposte su Fun Zone Tenerife: come funzionano i nostri escape game all\'aperto autoguidati, prenotazione di tour e attività, audioguide di città, lingue, età e gruppi.',
   },
 };
 
@@ -55,7 +55,7 @@ export async function generateMetadata({
   };
 }
 
-const faqIds = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19'];
+const faqIds = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12'];
 
 export default function FAQPage() {
   const t = useTranslations('faq');

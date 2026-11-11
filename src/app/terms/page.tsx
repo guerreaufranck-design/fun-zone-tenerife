@@ -13,18 +13,17 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-semibold text-white mt-8">1. Identificacion del Titular</h2>
           <p>
-            El presente sitio web es propiedad y esta operado por Axe Throwing Tenerife (en adelante, &quot;la Empresa&quot;),
+            El presente sitio web es propiedad y esta operado por Fun Zone Tenerife (en adelante, &quot;la Empresa&quot;),
             con domicilio en Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650, Santa Cruz de Tenerife, Espana.
           </p>
-          <p>Correo electronico: axethrowingtenerife@gmail.com</p>
+          <p>Correo electronico: info@funzonetenerife.com</p>
           <p>Telefono: +34 623 362 229</p>
 
           <h2 className="text-xl font-semibold text-white mt-8">2. Objeto y Ambito de Aplicacion</h2>
           <p>
             Las presentes Condiciones Generales regulan el acceso y uso del sitio web, asi como la contratacion de los servicios
-            ofrecidos por la Empresa, incluyendo sesiones de lanzamiento de hacha, lanzamiento ninja (shuriken y cuchillos),
-            dardos interactivos (Darts Pixels y Classic Darts), eventos especiales (cumpleanos, despedidas, team building)
-            y la venta de bonos regalo.
+            ofrecidos por la Empresa, incluyendo juegos de escape al aire libre autoguiados, la reserva de tours y
+            actividades en Tenerife a traves de nuestros socios, audioguias de ciudad y la venta de bonos regalo.
           </p>
           <p>
             El acceso y uso del sitio web implica la aceptacion plena y sin reservas de todas las condiciones aqui establecidas.
@@ -33,8 +32,9 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-white mt-8">3. Servicios y Reservas</h2>
           <h3 className="text-lg font-medium text-white mt-4">3.1. Descripcion de los servicios</h3>
           <p>
-            Axe Throwing Tenerife ofrece experiencias de lanzamiento de hacha, shuriken, cuchillos y dardos en un entorno
-            interactivo con dianas digitales. Los servicios incluyen coaching profesional, equipamiento y medidas de seguridad.
+            Fun Zone Tenerife ofrece juegos de escape al aire libre autoguiados que se juegan en el movil del cliente
+            en pueblos de Tenerife, a su propio ritmo y sin horario fijo. Ademas, actua como guia y agente de reserva de
+            tours y actividades operados por terceros, y ofrece audioguias de ciudad y bonos regalo.
           </p>
           <h3 className="text-lg font-medium text-white mt-4">3.2. Proceso de reserva</h3>
           <p>
@@ -44,9 +44,8 @@ export default function TermsPage() {
           </p>
           <h3 className="text-lg font-medium text-white mt-4">3.3. Pago</h3>
           <p>
-            El pago se realiza mediante tarjeta de credito/debito a traves de la plataforma segura Stripe. El cliente puede
-            optar por el pago completo o un deposito del 20% del precio total, abonando el resto a su llegada al establecimiento.
-            Los precios incluyen IVA (IGIC en Canarias) cuando corresponda.
+            El pago se realiza en su totalidad mediante tarjeta de credito/debito a traves de la plataforma segura Stripe
+            en el momento de la reserva. Los precios incluyen el IGIC (impuesto canario) cuando corresponda.
           </p>
 
           <h2 className="text-xl font-semibold text-white mt-8">4. Politica de Cancelacion y Modificacion</h2>
@@ -58,22 +57,18 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-semibold text-white mt-8">5. Requisitos de Participacion</h2>
           <ul className="list-disc pl-6 space-y-2">
-            <li>La edad minima para lanzamiento de hacha y shuriken es de 14 anos (menores acompanados por un adulto).</li>
-            <li>Los participantes de 8 a 14 anos pueden practicar unicamente tiro con arco con flechas de ventosa.</li>
-            <li>Es obligatorio llevar calzado cerrado. No se permiten sandalias, chanclas ni tacones.</li>
-            <li>Los participantes no deben estar bajo los efectos del alcohol o drogas.</li>
-            <li>Es obligatorio firmar la Decharge de Responsabilite (waiver) antes de cada sesion.</li>
+            <li>La edad minima recomendada para los juegos de escape es de 12 anos; los menores deben ir acompanados de un adulto.</li>
+            <li>Se requiere al menos un smartphone con conexion a internet y bateria suficiente por equipo.</li>
+            <li>Los juegos de escape se desarrollan en espacios publicos al aire libre; los participantes son responsables de respetar las normas de trafico y de su propia seguridad durante el recorrido.</li>
+            <li>Para las actividades y tours reservados a traves de terceros se aplican, ademas, las condiciones del operador correspondiente.</li>
           </ul>
 
           <h2 className="text-xl font-semibold text-white mt-8">6. Seguridad y Responsabilidad</h2>
           <p>
-            Los participantes se comprometen a seguir todas las instrucciones del personal y las normas de seguridad del
-            establecimiento. La Empresa no se hace responsable de lesiones causadas por el incumplimiento de las normas
-            de seguridad o por comportamiento imprudente de los participantes.
-          </p>
-          <p>
-            Todos los participantes deben firmar un formulario de descargo de responsabilidad antes de la actividad.
-            Este formulario constituye un acuerdo vinculante entre el participante y la Empresa.
+            Los juegos de escape son autoguiados y se desarrollan en la via publica. Los participantes se comprometen a
+            respetar las normas de trafico y de seguridad vial y a actuar con prudencia durante el recorrido. La Empresa
+            no se hace responsable de lesiones o danos causados por un comportamiento imprudente o por el incumplimiento
+            de las normas de seguridad por parte de los participantes.
           </p>
 
           <h2 className="text-xl font-semibold text-white mt-8">7. Bonos Regalo</h2>
@@ -86,7 +81,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-white mt-8">8. Propiedad Intelectual</h2>
           <p>
             Todos los contenidos del sitio web (textos, imagenes, logotipos, videos, diseno grafico, codigo fuente)
-            son propiedad de Axe Throwing Tenerife o de sus licenciantes y estan protegidos por las leyes de propiedad
+            son propiedad de Fun Zone Tenerife o de sus licenciantes y estan protegidos por las leyes de propiedad
             intelectual. Queda prohibida su reproduccion, distribucion o modificacion sin autorizacion previa por escrito.
           </p>
 
@@ -109,7 +104,7 @@ export default function TermsPage() {
             Para cualquier consulta relacionada con estas Condiciones Generales, puede contactarnos en:
           </p>
           <ul className="list-none space-y-1">
-            <li>Email: axethrowingtenerife@gmail.com</li>
+            <li>Email: info@funzonetenerife.com</li>
             <li>Telefono: +34 623 362 229</li>
             <li>Direccion: Avenida Arquitecto Gomez Cuesta 22, Zentral Center, Playa Las Americas, Arona 38650</li>
           </ul>
