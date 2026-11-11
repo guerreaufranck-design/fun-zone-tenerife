@@ -6,14 +6,6 @@ export const locales = ['en', 'es', 'fr', 'de', 'nl', 'it'] as const;
 export type Locale = (typeof locales)[number];
 
 const localizedPaths: Record<string, Record<Locale, string>> = {
-  '/experiences': {
-    en: '/experiences',
-    es: '/experiencias',
-    fr: '/experiences',
-    de: '/erlebnisse',
-    nl: '/ervaringen',
-    it: '/esperienze',
-  },
   '/book': {
     en: '/book',
     es: '/reservar',

@@ -38,12 +38,12 @@ const translations = {
     modifyText: "Contact us to modify or cancel your booking:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Location",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spain",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spain",
     safetyTitle: "Safety Reminder",
     safetyText:
       "Closed-toe shoes are required. No open-toed sandals or flip-flops. Participants must not be under the influence of alcohol or drugs. Minimum age restrictions apply.",
     contactText: "Questions? Contact us at",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   es: {
     preview: "Tu reserva esta confirmada!",
@@ -67,12 +67,12 @@ const translations = {
     modifyText: "Contactanos para modificar o cancelar tu reserva:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Ubicacion",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espana",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espana",
     safetyTitle: "Recordatorio de Seguridad",
     safetyText:
       "Se requiere calzado cerrado. No se permiten sandalias ni chancletas. Los participantes no deben estar bajo los efectos del alcohol o drogas. Se aplican restricciones de edad minima.",
     contactText: "Preguntas? Contactanos en",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   fr: {
     preview: "Votre reservation est confirmee !",
@@ -96,12 +96,12 @@ const translations = {
     modifyText: "Contactez-nous pour modifier ou annuler votre reservation :",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Adresse",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espagne",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espagne",
     safetyTitle: "Rappel de Securite",
     safetyText:
       "Des chaussures fermees sont obligatoires. Pas de sandales ouvertes ni de tongs. Les participants ne doivent pas etre sous l'influence d'alcool ou de drogues. Des restrictions d'age minimum s'appliquent.",
     contactText: "Des questions ? Contactez-nous a",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   de: {
     preview: "Ihre Buchung ist bestatigt!",
@@ -125,12 +125,12 @@ const translations = {
     modifyText: "Kontaktieren Sie uns, um Ihre Buchung zu andern oder zu stornieren:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Standort",
-    locationAddress: "Axe Throwing Tenerife, Teneriffa, Spanien",
+    locationAddress: "Fun Zone Tenerife, Teneriffa, Spanien",
     safetyTitle: "Sicherheitshinweis",
     safetyText:
       "Geschlossene Schuhe sind erforderlich. Keine offenen Sandalen oder Flip-Flops. Teilnehmer durfen nicht unter dem Einfluss von Alkohol oder Drogen stehen. Es gelten Mindestaltersbeschrankungen.",
     contactText: "Fragen? Kontaktieren Sie uns unter",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   nl: {
     preview: "Je boeking is bevestigd!",
@@ -154,12 +154,12 @@ const translations = {
     modifyText: "Neem contact met ons op om je boeking te wijzigen of te annuleren:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Locatie",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spanje",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spanje",
     safetyTitle: "Veiligheidsherinnering",
     safetyText:
       "Gesloten schoenen zijn verplicht. Geen open sandalen of slippers. Deelnemers mogen niet onder invloed van alcohol of drugs zijn. Minimale leeftijdsbeperkingen zijn van toepassing.",
     contactText: "Vragen? Neem contact met ons op via",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
 };
 
@@ -204,7 +204,7 @@ export function BookingConfirmation({
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <Heading style={logo}>AXE THROWING TENERIFE</Heading>
+            <Heading style={logo}>FUN ZONE TENERIFE</Heading>
           </Section>
 
           {/* Title */}
@@ -302,8 +302,8 @@ export function BookingConfirmation({
             </Heading>
             <Text style={text}>{t.modifyText}</Text>
             <Text style={text}>
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={text}>
@@ -322,7 +322,7 @@ export function BookingConfirmation({
             </Heading>
             <Text style={text}>{t.locationAddress}</Text>
             <Link
-              href="https://maps.google.com/?q=Axe+Throwing+Tenerife"
+              href="https://maps.google.com/?q=Fun+Zone+Tenerife"
               style={link}
             >
               Google Maps
@@ -345,8 +345,8 @@ export function BookingConfirmation({
           <Section style={footer_}>
             <Text style={footerText}>
               {t.contactText}{" "}
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={footerBrand}>{t.footer}</Text>

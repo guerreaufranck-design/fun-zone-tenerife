@@ -28,7 +28,7 @@ const translations = {
     time: "Time",
     players: "Players",
     locationTitle: "Location",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spain",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spain",
     viewMap: "View on Google Maps",
     safetyTitle: "Safety Rules",
     safetyRules: [
@@ -42,7 +42,7 @@ const translations = {
     modifyText: "Contact us to modify your booking:",
     modifyPhone: "+34 623 362 229",
     contactText: "Questions? Contact us at",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
     seeYou: "See you tomorrow!",
   },
   es: {
@@ -57,7 +57,7 @@ const translations = {
     time: "Hora",
     players: "Jugadores",
     locationTitle: "Ubicacion",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espana",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espana",
     viewMap: "Ver en Google Maps",
     safetyTitle: "Reglas de Seguridad",
     safetyRules: [
@@ -71,7 +71,7 @@ const translations = {
     modifyText: "Contactanos para modificar tu reserva:",
     modifyPhone: "+34 623 362 229",
     contactText: "Preguntas? Contactanos en",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
     seeYou: "Nos vemos manana!",
   },
   fr: {
@@ -86,7 +86,7 @@ const translations = {
     time: "Heure",
     players: "Joueurs",
     locationTitle: "Adresse",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espagne",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espagne",
     viewMap: "Voir sur Google Maps",
     safetyTitle: "Regles de Securite",
     safetyRules: [
@@ -100,7 +100,7 @@ const translations = {
     modifyText: "Contactez-nous pour modifier votre reservation :",
     modifyPhone: "+34 623 362 229",
     contactText: "Des questions ? Contactez-nous a",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
     seeYou: "A demain !",
   },
   de: {
@@ -115,7 +115,7 @@ const translations = {
     time: "Uhrzeit",
     players: "Spieler",
     locationTitle: "Standort",
-    locationAddress: "Axe Throwing Tenerife, Teneriffa, Spanien",
+    locationAddress: "Fun Zone Tenerife, Teneriffa, Spanien",
     viewMap: "Auf Google Maps anzeigen",
     safetyTitle: "Sicherheitsregeln",
     safetyRules: [
@@ -129,7 +129,7 @@ const translations = {
     modifyText: "Kontaktieren Sie uns, um Ihre Buchung zu andern:",
     modifyPhone: "+34 623 362 229",
     contactText: "Fragen? Kontaktieren Sie uns unter",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
     seeYou: "Bis morgen!",
   },
   nl: {
@@ -144,7 +144,7 @@ const translations = {
     time: "Tijd",
     players: "Spelers",
     locationTitle: "Locatie",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spanje",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spanje",
     viewMap: "Bekijk op Google Maps",
     safetyTitle: "Veiligheidsregels",
     safetyRules: [
@@ -158,7 +158,7 @@ const translations = {
     modifyText: "Neem contact met ons op om je boeking te wijzigen:",
     modifyPhone: "+34 623 362 229",
     contactText: "Vragen? Neem contact met ons op via",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
     seeYou: "Tot morgen!",
   },
 };
@@ -194,7 +194,7 @@ export function BookingReminder({
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <Heading style={logoStyle}>AXE THROWING TENERIFE</Heading>
+            <Heading style={logoStyle}>FUN ZONE TENERIFE</Heading>
           </Section>
 
           {/* Title */}
@@ -250,7 +250,7 @@ export function BookingReminder({
             </Heading>
             <Text style={text}>{t.locationAddress}</Text>
             <Link
-              href="https://maps.google.com/?q=Axe+Throwing+Tenerife"
+              href="https://maps.google.com/?q=Fun+Zone+Tenerife"
               style={link}
             >
               {t.viewMap}
@@ -280,8 +280,8 @@ export function BookingReminder({
             </Heading>
             <Text style={text}>{t.modifyText}</Text>
             <Text style={text}>
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={text}>
@@ -302,8 +302,8 @@ export function BookingReminder({
           <Section style={footer_}>
             <Text style={footerText}>
               {t.contactText}{" "}
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={footerBrand}>{t.footer}</Text>

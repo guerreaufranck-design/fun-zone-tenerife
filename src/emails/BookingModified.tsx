@@ -34,9 +34,9 @@ const translations = {
     modifyText: "Contact us to modify your booking:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Location",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spain",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spain",
     contactText: "Questions? Contact us at",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   es: {
     preview: "Tu reserva ha sido modificada",
@@ -56,9 +56,9 @@ const translations = {
     modifyText: "Contactanos para modificar tu reserva:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Ubicacion",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espana",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espana",
     contactText: "Preguntas? Contactanos en",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   fr: {
     preview: "Votre reservation a ete modifiee",
@@ -78,9 +78,9 @@ const translations = {
     modifyText: "Contactez-nous pour modifier votre reservation :",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Adresse",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Espagne",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Espagne",
     contactText: "Des questions ? Contactez-nous a",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   de: {
     preview: "Ihre Buchung wurde geandert",
@@ -100,9 +100,9 @@ const translations = {
     modifyText: "Kontaktieren Sie uns, um Ihre Buchung zu andern:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Standort",
-    locationAddress: "Axe Throwing Tenerife, Teneriffa, Spanien",
+    locationAddress: "Fun Zone Tenerife, Teneriffa, Spanien",
     contactText: "Fragen? Kontaktieren Sie uns unter",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   nl: {
     preview: "Je boeking is gewijzigd",
@@ -122,9 +122,9 @@ const translations = {
     modifyText: "Neem contact met ons op om je boeking te wijzigen:",
     modifyPhone: "+34 623 362 229",
     locationTitle: "Locatie",
-    locationAddress: "Axe Throwing Tenerife, Tenerife, Spanje",
+    locationAddress: "Fun Zone Tenerife, Tenerife, Spanje",
     contactText: "Vragen? Neem contact met ons op via",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
 };
 
@@ -163,7 +163,7 @@ export function BookingModified({
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <Heading style={logoStyle}>AXE THROWING TENERIFE</Heading>
+            <Heading style={logoStyle}>FUN ZONE TENERIFE</Heading>
           </Section>
 
           {/* Title */}
@@ -249,8 +249,8 @@ export function BookingModified({
             </Heading>
             <Text style={text}>{t.modifyText}</Text>
             <Text style={text}>
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={text}>
@@ -269,7 +269,7 @@ export function BookingModified({
             </Heading>
             <Text style={text}>{t.locationAddress}</Text>
             <Link
-              href="https://maps.google.com/?q=Axe+Throwing+Tenerife"
+              href="https://maps.google.com/?q=Fun+Zone+Tenerife"
               style={link}
             >
               Google Maps
@@ -282,8 +282,8 @@ export function BookingModified({
           <Section style={footer_}>
             <Text style={footerText}>
               {t.contactText}{" "}
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={footerBrand}>{t.footer}</Text>

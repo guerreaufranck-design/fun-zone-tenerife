@@ -37,7 +37,7 @@ const translations = {
     keepEmail:
       "Please keep this email as proof of your signed waiver. You may be asked to present it upon arrival.",
     contactText: "Questions? Contact us at",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   es: {
     preview: "Tu exencion de responsabilidad ha sido firmada",
@@ -60,7 +60,7 @@ const translations = {
     keepEmail:
       "Guarda este correo como prueba de tu exencion firmada. Puede que te lo pidan a tu llegada.",
     contactText: "Preguntas? Contactanos en",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   fr: {
     preview: "Votre decharge de responsabilite a ete signee",
@@ -83,7 +83,7 @@ const translations = {
     keepEmail:
       "Conservez cet email comme preuve de votre decharge signee. Il pourra vous etre demande a votre arrivee.",
     contactText: "Des questions ? Contactez-nous a",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   de: {
     preview: "Ihre Haftungsverzichtserklarung wurde unterzeichnet",
@@ -106,7 +106,7 @@ const translations = {
     keepEmail:
       "Bitte bewahren Sie diese E-Mail als Nachweis Ihrer unterzeichneten Verzichtserklarung auf. Sie kann bei Ankunft verlangt werden.",
     contactText: "Fragen? Kontaktieren Sie uns unter",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   nl: {
     preview: "Je aansprakelijkheidsverklaring is ondertekend",
@@ -129,7 +129,7 @@ const translations = {
     keepEmail:
       "Bewaar deze e-mail als bewijs van je ondertekende verklaring. Het kan worden gevraagd bij aankomst.",
     contactText: "Vragen? Neem contact met ons op via",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
 };
 
@@ -164,7 +164,7 @@ export function WaiverConfirmation({
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <Heading style={logo}>AXE THROWING TENERIFE</Heading>
+            <Heading style={logo}>FUN ZONE TENERIFE</Heading>
           </Section>
 
           {/* Title */}
@@ -255,8 +255,8 @@ export function WaiverConfirmation({
           <Section style={footer_}>
             <Text style={footerText}>
               {t.contactText}{" "}
-              <Link href="mailto:info@axethrowingtenerife.com" style={link}>
-                info@axethrowingtenerife.com
+              <Link href="mailto:info@funzonetenerife.com" style={link}>
+                info@funzonetenerife.com
               </Link>
             </Text>
             <Text style={footerBrand}>{t.footer}</Text>

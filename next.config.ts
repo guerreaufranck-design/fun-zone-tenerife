@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
       { source: '/:locale/quiz-room', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/darts', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/experiences', destination: '/:locale/activities', permanent: true },
-      { source: '/:locale/experiences/quizzaboom-1h', destination: '/:locale/activities', permanent: true },
+      { source: '/:locale/experiences/:slug', destination: '/:locale/activities', permanent: true },
       // Safety nets for any non-locale-prefixed legacy inbound links.
       { source: '/axe-throwing', destination: '/en/activities', permanent: true },
       { source: '/quiz-room', destination: '/en/activities', permanent: true },

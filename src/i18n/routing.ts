@@ -17,22 +17,6 @@ export const routing = defineRouting({
     '/lanzarote-audio-tour/[city]': '/lanzarote-audio-tour/[city]',
     '/fuerteventura-audio-tour': '/fuerteventura-audio-tour',
     '/fuerteventura-audio-tour/[city]': '/fuerteventura-audio-tour/[city]',
-    '/experiences': {
-      en: '/experiences',
-      es: '/experiencias',
-      fr: '/experiences',
-      de: '/erlebnisse',
-      nl: '/ervaringen',
-      it: '/esperienze'
-    },
-    '/experiences/[slug]': {
-      en: '/experiences/[slug]',
-      es: '/experiencias/[slug]',
-      fr: '/experiences/[slug]',
-      de: '/erlebnisse/[slug]',
-      nl: '/ervaringen/[slug]',
-      it: '/esperienze/[slug]'
-    },
     '/book': {
       en: '/book',
       es: '/reservar',

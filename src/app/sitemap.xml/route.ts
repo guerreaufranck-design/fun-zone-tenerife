@@ -15,10 +15,6 @@ type ChangeFreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly
 const MAIN_LOCALE: Locale = 'en';
 
 // Localized path segments per route (mirror src/i18n/routing.ts).
-const experiencePaths: Record<Locale, string> = {
-  en: '/experiences', es: '/experiencias', fr: '/experiences',
-  de: '/erlebnisse', nl: '/ervaringen', it: '/esperienze',
-};
 const activityPaths: Record<Locale, string> = {
   en: '/activities', es: '/actividades', fr: '/activites',
   de: '/aktivitaeten', nl: '/activiteiten', it: '/attivita',
@@ -126,7 +122,6 @@ export async function GET() {
   urlEntries.push(buildUrlEntry(samePath(''), 1.0, 'weekly'));
 
   // Localized marketing pages
-  urlEntries.push(buildUrlEntry(experiencePaths, 0.9, 'weekly'));
   urlEntries.push(buildUrlEntry(activityPaths, 0.9, 'weekly'));
   // Stag & hen / EVG-EVJF pillar (high-intent group-celebration landing page)
   urlEntries.push(buildUrlEntry(celebrationPaths, 0.9, 'weekly'));

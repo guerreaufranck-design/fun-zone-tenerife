@@ -25,7 +25,7 @@ const translations = {
     cta: "Leave a Review",
     thanks: "Thanks a million, you legend!",
     ps: "P.S. We promise no axes will be thrown at you for leaving an honest review.",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   es: {
     preview: "Como fue tu experiencia de lanzamiento de hacha?",
@@ -37,7 +37,7 @@ const translations = {
     cta: "Dejar una Resena",
     thanks: "Mil gracias, eres una leyenda!",
     ps: "P.D. Prometemos que no te lanzaremos hachas por dejar una resena honesta.",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   fr: {
     preview: "Comment etait votre experience de lancer de hache ?",
@@ -49,7 +49,7 @@ const translations = {
     cta: "Laisser un Avis",
     thanks: "Merci mille fois, vous etes une legende !",
     ps: "P.S. On promet de ne pas vous lancer de haches pour un avis honnete.",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   de: {
     preview: "Wie war Ihr Axtwurf-Erlebnis?",
@@ -61,7 +61,7 @@ const translations = {
     cta: "Bewertung Abgeben",
     thanks: "Tausend Dank, du Legende!",
     ps: "P.S. Wir versprechen, keine Axte auf dich zu werfen fur eine ehrliche Bewertung.",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
   nl: {
     preview: "Hoe was je bijlwerp-ervaring?",
@@ -73,7 +73,7 @@ const translations = {
     cta: "Laat een Review Achter",
     thanks: "Duizendmaal dank, jij legende!",
     ps: "P.S. We beloven geen bijlen naar je te gooien voor een eerlijke review.",
-    footer: "Axe Throwing Tenerife",
+    footer: "Fun Zone Tenerife",
   },
 };
 
