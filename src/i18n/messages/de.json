@@ -252,9 +252,18 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Tipps, Geschichten und Neuigkeiten aus der Welt des Axtwerfens",
+    "subtitle": "Guides, Tipps und Geschichten für Ihren Teneriffa-Urlaub",
     "readMore": "Weiterlesen",
-    "publishedOn": "Veroeffentlicht am"
+    "publishedOn": "Veroeffentlicht am",
+    "backToBlog": "Zurück zum Blog",
+    "relatedArticles": "Ähnliche Artikel",
+    "shareArticle": "Diesen Artikel teilen",
+    "copyLink": "Link kopieren",
+    "categories": "Kategorien",
+    "recentPosts": "Neueste Beiträge",
+    "ctaTitle": "Bereit für ein Abenteuer?",
+    "ctaSubtitle": "Buchen Sie noch heute Ihr Fun Zone Erlebnis.",
+    "bookNow": "Jetzt buchen"
   },
   "contact": {
     "title": "Kontakt",

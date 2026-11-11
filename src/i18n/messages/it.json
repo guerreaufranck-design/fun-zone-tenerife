@@ -252,9 +252,18 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Consigli, storie e novita dal mondo del lancio dell'ascia",
+    "subtitle": "Guide, consigli e racconti per la tua vacanza a Tenerife",
     "readMore": "Leggi di Piu",
-    "publishedOn": "Pubblicato il"
+    "publishedOn": "Pubblicato il",
+    "backToBlog": "Torna al blog",
+    "relatedArticles": "Articoli correlati",
+    "shareArticle": "Condividi questo articolo",
+    "copyLink": "Copia link",
+    "categories": "Categorie",
+    "recentPosts": "Articoli recenti",
+    "ctaTitle": "Pronto per l'avventura?",
+    "ctaSubtitle": "Prenota oggi la tua esperienza Fun Zone.",
+    "bookNow": "Prenota"
   },
   "contact": {
     "title": "Contattaci",

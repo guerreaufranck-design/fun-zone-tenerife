@@ -252,9 +252,18 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Tips, stories, and news from the world of axe throwing",
+    "subtitle": "Guides, tips and stories for your Tenerife holiday",
     "readMore": "Read More",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "backToBlog": "Back to Blog",
+    "relatedArticles": "Related Articles",
+    "shareArticle": "Share this article",
+    "copyLink": "Copy Link",
+    "categories": "Categories",
+    "recentPosts": "Recent Posts",
+    "ctaTitle": "Ready for an adventure?",
+    "ctaSubtitle": "Book your Fun Zone experience today.",
+    "bookNow": "Book Now"
   },
   "contact": {
     "title": "Contact Us",

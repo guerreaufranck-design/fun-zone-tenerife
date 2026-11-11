@@ -245,9 +245,18 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Tips, verhalen en nieuws uit de wereld van het bijlwerpen",
+    "subtitle": "Gidsen, tips en verhalen voor je vakantie op Tenerife",
     "readMore": "Lees Meer",
-    "publishedOn": "Gepubliceerd op"
+    "publishedOn": "Gepubliceerd op",
+    "backToBlog": "Terug naar blog",
+    "relatedArticles": "Gerelateerde artikelen",
+    "shareArticle": "Deel dit artikel",
+    "copyLink": "Link kopiëren",
+    "categories": "Categorieën",
+    "recentPosts": "Recente berichten",
+    "ctaTitle": "Klaar voor avontuur?",
+    "ctaSubtitle": "Boek vandaag je Fun Zone-ervaring.",
+    "bookNow": "Boeken"
   },
   "contact": {
     "title": "Contact",

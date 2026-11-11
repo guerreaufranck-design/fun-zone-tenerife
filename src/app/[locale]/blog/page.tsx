@@ -4,7 +4,7 @@ import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowRight, Tag, ChevronRight, Home } from 'lucide-react';
-import { blogPosts } from '@/lib/blog/posts';
+import { blogPosts, postLang } from '@/lib/blog/posts';
 import { getAlternates, type Locale } from '@/lib/seo';
 
 const HOME_LABEL: Record<string, string> = {
@@ -61,6 +61,14 @@ export default function BlogPage() {
   const t = useTranslations('blog');
   const locale = useLocale();
 
+  // Only show articles written in the current language. Locales with no native
+  // articles yet (it, nl) fall back to English rather than an empty page. Newest
+  // first. This is what fixes the "all languages mixed" blog homepage.
+  const localePosts = blogPosts.filter((p) => postLang(p.slug) === locale);
+  const posts = (localePosts.length ? localePosts : blogPosts.filter((p) => postLang(p.slug) === 'en'))
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
+
   const BASE_URL = 'https://funzonetenerife.com';
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -113,7 +121,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {/* Blog Posts */}
             <div className="space-y-8 lg:col-span-2">
-              {blogPosts.map((post) => (
+              {posts.map((post) => (
                 <Link
                   key={post.slug}
                   href={{ pathname: '/blog/[slug]' as const, params: { slug: post.slug } }}
@@ -139,7 +147,7 @@ export default function BlogPage() {
                       <div className="mb-3 flex items-center gap-4 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <Calendar className="h-3.5 w-3.5" />
-                          {new Date(post.date).toLocaleDateString('en-US', {
+                          {new Date(post.date).toLocaleDateString(locale, {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
@@ -173,7 +181,7 @@ export default function BlogPage() {
                 <CardContent className="pt-6">
                   <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-white">
                     <Tag className="h-5 w-5 text-[#00d4ff]" />
-                    Categories
+                    {t('categories')}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
@@ -191,9 +199,9 @@ export default function BlogPage() {
               {/* Recent Posts */}
               <Card className="border-border/50 bg-[#111118]">
                 <CardContent className="pt-6">
-                  <h3 className="mb-4 text-lg font-bold text-white">Recent Posts</h3>
+                  <h3 className="mb-4 text-lg font-bold text-white">{t('recentPosts')}</h3>
                   <div className="space-y-4">
-                    {blogPosts.slice(0, 5).map((post) => (
+                    {posts.slice(0, 5).map((post) => (
                       <Link
                         key={post.slug}
                         href={{ pathname: '/blog/[slug]' as const, params: { slug: post.slug } }}
@@ -209,7 +217,7 @@ export default function BlogPage() {
                               {post.title}
                             </h4>
                             <p className="mt-1 text-xs text-muted-foreground">
-                              {new Date(post.date).toLocaleDateString('en-US', {
+                              {new Date(post.date).toLocaleDateString(locale, {
                                 month: 'short',
                                 day: 'numeric',
                                 year: 'numeric',
@@ -226,15 +234,15 @@ export default function BlogPage() {
               {/* CTA */}
               <Card className="border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118]">
                 <CardContent className="pt-6 text-center">
-                  <h3 className="mb-2 text-lg font-bold text-white">Ready for an adventure?</h3>
+                  <h3 className="mb-2 text-lg font-bold text-white">{t('ctaTitle')}</h3>
                   <p className="mb-4 text-sm text-muted-foreground">
-                    Book your Fun Zone experience today.
+                    {t('ctaSubtitle')}
                   </p>
                   <Link
                     href="/book"
                     className="inline-flex items-center gap-2 rounded-lg bg-[#00d4ff] px-4 py-2 text-sm font-semibold text-[#0a0a0f] transition-all hover:shadow-[0_0_15px_rgba(0,212,255,0.4)]"
                   >
-                    Book Now
+                    {t('bookNow')}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </CardContent>

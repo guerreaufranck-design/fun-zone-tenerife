@@ -252,9 +252,18 @@
   },
   "blog": {
     "title": "Blog",
-    "subtitle": "Conseils, recits et actualites du monde du lancer de hache",
+    "subtitle": "Guides, conseils et récits pour vos vacances à Tenerife",
     "readMore": "Lire la Suite",
-    "publishedOn": "Publie le"
+    "publishedOn": "Publie le",
+    "backToBlog": "Retour au blog",
+    "relatedArticles": "Articles liés",
+    "shareArticle": "Partager cet article",
+    "copyLink": "Copier le lien",
+    "categories": "Catégories",
+    "recentPosts": "Articles récents",
+    "ctaTitle": "Prêt pour l'aventure ?",
+    "ctaSubtitle": "Réservez votre expérience Fun Zone dès aujourd'hui.",
+    "bookNow": "Réserver"
   },
   "contact": {
     "title": "Contactez-nous",

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Menu, Globe, ChevronDown } from 'lucide-react';
 import { Link, useRouter, usePathname } from '@/i18n/routing';
+import { translatedSlug, type BlogLocale } from '@/lib/blog/lang';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { MobileMenu } from '@/components/layout/MobileMenu';
@@ -73,6 +74,15 @@ export function Navbar() {
     const escapeMatch = currentPath.match(/^\/[a-z]{2}\/escape-game\/(.+)$/);
     if (escapeMatch) {
       window.location.href = `/${newLocale}/escape-game/${escapeMatch[1]}`;
+      setLangDropdownOpen(false);
+      return;
+    }
+    // Blog articles are single-language: jump to the translated article if one
+    // exists, otherwise fall back to the blog hub (never a wrong-locale 404).
+    const blogMatch = currentPath.match(/^\/[a-z]{2}\/blog\/(.+)$/);
+    if (blogMatch) {
+      const target = translatedSlug(blogMatch[1], newLocale as BlogLocale);
+      window.location.href = target ? `/${newLocale}/blog/${target}` : `/${newLocale}/blog`;
       setLangDropdownOpen(false);
       return;
     }

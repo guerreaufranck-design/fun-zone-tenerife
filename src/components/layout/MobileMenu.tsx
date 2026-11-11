@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { X, Globe, ChevronDown, Instagram } from 'lucide-react';
 import { Link, useRouter, usePathname } from '@/i18n/routing';
+import { translatedSlug, type BlogLocale } from '@/lib/blog/lang';
 import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -61,6 +62,16 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     const actMatch = currentPath.match(/^\/[a-z]{2}\/(?:activities|actividades|activites|aktivitaeten|activiteiten|attivita)\/(.+)$/);
     if (actMatch) {
       window.location.href = `/${newLocale}/${actSegments[newLocale] ?? 'activities'}/${actMatch[1]}`;
+      setLangOpen(false);
+      onClose();
+      return;
+    }
+    // Blog articles are single-language: jump to the translated article if one
+    // exists, otherwise fall back to the blog hub (never a wrong-locale 404).
+    const blogMatch = currentPath.match(/^\/[a-z]{2}\/blog\/(.+)$/);
+    if (blogMatch) {
+      const target = translatedSlug(blogMatch[1], newLocale as BlogLocale);
+      window.location.href = target ? `/${newLocale}/blog/${target}` : `/${newLocale}/blog`;
       setLangOpen(false);
       onClose();
       return;

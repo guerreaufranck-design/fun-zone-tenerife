@@ -1,42 +1,80 @@
-'use client';
-
-import { useParams } from 'next/navigation';
-import { useTranslations, useLocale } from 'next-intl';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, Link2, ChevronRight, Home } from 'lucide-react';
-import { blogPosts, postLang } from '@/lib/blog/posts';
+import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, ChevronRight, Home } from 'lucide-react';
+import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import RelatedActivities from '@/components/blog/RelatedActivities';
+import CopyLinkButton from '@/components/blog/CopyLinkButton';
+
+const BASE_URL = 'https://funzonetenerife.com';
 
 const HOME_LABEL: Record<string, string> = {
   en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', nl: 'Home', it: 'Home',
 };
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  const t = useTranslations('blog');
-  const locale = useLocale();
+// Each article exists ONLY at its own-language prefix. generateStaticParams runs
+// once per locale (it receives the parent locale), so we emit a slug only when
+// the article is written in that locale. With dynamicParams = false, the same
+// article under a wrong locale (e.g. /fr/blog/<english-slug>) returns 404
+// instead of serving duplicate, wrong-language content.
+export const dynamicParams = false;
+
+// Return the full (locale, slug) pairs so each article is built ONLY at its own
+// language prefix (no cross-product with every locale). With dynamicParams =
+// false, any other locale prefix 404s instead of serving duplicate content.
+export function generateStaticParams() {
+  return blogPosts.map((p) => ({ locale: postLang(p.slug), slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post || postLang(slug) !== locale) return {};
+
+  const canonical = `${BASE_URL}/${locale}/blog/${slug}`;
+  const alts = postAlternates(slug);
+  const languages: Record<string, string> = {};
+  for (const a of alts) languages[a.lang] = `${BASE_URL}/${a.lang}/blog/${a.slug}`;
+  const xDefault = alts.find((a) => a.lang === 'en') ?? alts.find((a) => a.slug === slug)!;
+  languages['x-default'] = `${BASE_URL}/${xDefault.lang}/blog/${xDefault.slug}`;
+
+  const image = post.image ? `${BASE_URL}${post.image}` : `${BASE_URL}/images/og-image.jpg`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical, languages },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: canonical,
+      type: 'article',
+      publishedTime: post.date,
+      images: [{ url: image, width: 1200, height: 630 }],
+    },
+    twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt, images: [image] },
+  };
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('blog');
 
   const post = blogPosts.find((p) => p.slug === slug);
-
-  if (!post) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold text-white">Post not found</h1>
-          <Button variant="outline" asChild>
-            <Link href="/blog">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
-            </Link>
-          </Button>
-        </div>
-      </div>
-    );
-  }
+  if (!post || postLang(slug) !== locale) notFound();
 
   // Related articles: keep them in the SAME language as this article (so we
   // never send a French reader to a German post), preferring the same category.
@@ -48,7 +86,12 @@ export default function BlogPostPage() {
     ...sameLang.filter((p) => !sameCategory.includes(p)),
   ].slice(0, 2);
 
-  const BASE_URL = 'https://funzonetenerife.com';
+  const dateLabel = new Date(post.date).toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -64,31 +107,18 @@ export default function BlogPostPage() {
     '@type': 'Article',
     headline: post.title,
     datePublished: post.date,
-    author: {
-      '@type': 'Organization',
-      name: post.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Fun Zone Tenerife',
-      url: 'https://funzonetenerife.com',
-    },
+    inLanguage: lang,
+    author: { '@type': 'Organization', name: post.author },
+    publisher: { '@type': 'Organization', name: 'Fun Zone Tenerife', url: BASE_URL },
+    mainEntityOfPage: `${BASE_URL}/${locale}/blog/${slug}`,
     description: post.excerpt,
-    image: post.image
-      ? `https://funzonetenerife.com${post.image}`
-      : 'https://funzonetenerife.com/images/og-image.jpg',
+    image: post.image ? `${BASE_URL}${post.image}` : `${BASE_URL}/images/og-image.jpg`,
   };
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Cover image */}
       <section className="relative overflow-hidden">
@@ -108,7 +138,7 @@ export default function BlogPostPage() {
               <Button variant="ghost" size="sm" asChild className="mb-4">
                 <Link href="/blog">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Blog
+                  {t('backToBlog')}
                 </Link>
               </Button>
               <Badge variant="neonBlue" className="mb-4">
@@ -124,11 +154,7 @@ export default function BlogPostPage() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                  {dateLabel}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />
@@ -175,20 +201,9 @@ export default function BlogPostPage() {
           <div className="mt-12 flex items-center justify-between border-t border-border/50 pt-6">
             <span className="flex items-center gap-2 text-sm font-medium text-white">
               <Share2 className="h-4 w-4" />
-              Share this article
+              {t('shareArticle')}
             </span>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                if (typeof navigator !== 'undefined') {
-                  navigator.clipboard.writeText(window.location.href);
-                }
-              }}
-            >
-              <Link2 className="mr-2 h-4 w-4" />
-              Copy Link
-            </Button>
+            <CopyLinkButton label={t('copyLink')} />
           </div>
 
           {/* Affiliate cross-sell (GetYourGuide) — contextual to this article */}
@@ -197,7 +212,7 @@ export default function BlogPostPage() {
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
             <div className="mt-16">
-              <h2 className="mb-8 text-2xl font-bold text-white">Related Articles</h2>
+              <h2 className="mb-8 text-2xl font-bold text-white">{t('relatedArticles')}</h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {relatedPosts.map((related) => (
                   <Link
@@ -219,7 +234,7 @@ export default function BlogPostPage() {
                       </div>
                       <CardContent className="pt-4">
                         <p className="mb-2 text-xs text-muted-foreground">
-                          {new Date(related.date).toLocaleDateString('en-US', {
+                          {new Date(related.date).toLocaleDateString(locale, {
                             month: 'short',
                             day: 'numeric',
                             year: 'numeric',
