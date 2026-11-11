@@ -46,7 +46,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const m = blogMeta[l] ?? blogMeta['en'];
-  const alternates = getAlternates('/blog');
+  const alternates = getAlternates('/blog', undefined, locale);
   return {
     title: m.title,
     description: m.description,

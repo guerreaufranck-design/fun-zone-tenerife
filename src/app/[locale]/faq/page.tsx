@@ -13,27 +13,27 @@ import { getAlternates, type Locale } from '@/lib/seo';
 
 const faqMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'FAQ — Fun Zone Tenerife',
+    title: 'FAQ',
     description: 'Answers about Fun Zone Tenerife: how our self-guided outdoor escape games work, booking tours and activities, city audio tours, languages, age and group bookings.',
   },
   es: {
-    title: 'Preguntas Frecuentes — Fun Zone Tenerife',
+    title: 'Preguntas Frecuentes',
     description: 'Respuestas sobre Fun Zone Tenerife: cómo funcionan los escape games al aire libre autoguiados, reservas de tours y actividades, audioguías de ciudad, idiomas, edad y grupos.',
   },
   fr: {
-    title: 'FAQ — Fun Zone Tenerife',
+    title: 'FAQ',
     description: 'Réponses sur Fun Zone Tenerife : comment fonctionnent nos escape games en plein air autoguidés, réservation de tours et activités, audioguides de ville, langues, âge et groupes.',
   },
   de: {
-    title: 'FAQ — Fun Zone Teneriffa',
+    title: 'FAQ',
     description: 'Antworten zu Fun Zone Teneriffa: wie unsere selbstgeführten Outdoor-Escape-Games funktionieren, Buchung von Touren und Aktivitäten, Stadt-Audiotouren, Sprachen, Alter und Gruppen.',
   },
   nl: {
-    title: 'FAQ — Fun Zone Tenerife',
+    title: 'FAQ',
     description: 'Antwoorden over Fun Zone Tenerife: hoe onze zelfgeleide outdoor-escapegames werken, tours en activiteiten boeken, stadsaudiotours, talen, leeftijd en groepen.',
   },
   it: {
-    title: 'FAQ — Fun Zone Tenerife',
+    title: 'FAQ',
     description: 'Risposte su Fun Zone Tenerife: come funzionano i nostri escape game all\'aperto autoguidati, prenotazione di tour e attività, audioguide di città, lingue, età e gruppi.',
   },
 };
@@ -46,7 +46,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const m = faqMeta[l] ?? faqMeta['en'];
-  const alternates = getAlternates('/faq');
+  const alternates = getAlternates('/faq', undefined, locale);
   return {
     title: m.title,
     description: m.description,

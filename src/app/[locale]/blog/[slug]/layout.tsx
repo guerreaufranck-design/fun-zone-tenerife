@@ -14,7 +14,7 @@ export async function generateMetadata({
     return { title: 'Blog | Fun Zone Tenerife' };
   }
 
-  const alternates = getAlternates('/blog/[slug]', slug);
+  const alternates = getAlternates('/blog/[slug]', slug, locale);
   const ogImage = post.image
     ? `https://funzonetenerife.com${post.image}`
     : 'https://funzonetenerife.com/images/og-image.jpg';

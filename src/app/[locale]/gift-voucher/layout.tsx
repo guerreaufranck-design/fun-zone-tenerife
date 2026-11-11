@@ -3,34 +3,34 @@ import { getAlternates, type Locale } from '@/lib/seo';
 
 const voucherMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Gift Vouchers Fun Zone Tenerife | Give the Gift of Adventure',
+    title: 'Gift Vouchers',
     description:
-      'Give the gift of an unforgettable experience! Fun Zone Tenerife gift vouchers for outdoor escape games and top island activities. Instant email delivery. Perfect for any occasion.',
+      'Give the gift of adventure in Tenerife: a Fun Zone gift voucher for a self-guided outdoor escape game or an island activity. Valid 12 months.',
   },
   es: {
-    title: 'Tarjetas Regalo Fun Zone Tenerife | Regala una Aventura',
+    title: 'Tarjetas Regalo',
     description:
-      '¡Regala una experiencia inolvidable! Tarjetas regalo Fun Zone Tenerife para escape games al aire libre y las mejores actividades de la isla. Entrega instantánea por email.',
+      'Regala aventura en Tenerife: una tarjeta regalo Fun Zone para un escape game al aire libre o una actividad en la isla. Válida 12 meses.',
   },
   fr: {
-    title: 'Bons Cadeaux Fun Zone Tenerife | Offrez une Aventure',
+    title: 'Bons Cadeaux',
     description:
-      'Offrez une expérience inoubliable ! Bons cadeaux Fun Zone Tenerife pour les escape games outdoor et les meilleures activités de l\'île. Livraison instantanée par email.',
+      'Offrez de l’aventure à Tenerife : un bon cadeau Fun Zone pour un escape game en plein air ou une activité de l’île. Valable 12 mois.',
   },
   de: {
-    title: 'Geschenkgutscheine Fun Zone Teneriffa | Schenken Sie ein Abenteuer',
+    title: 'Geschenkgutscheine',
     description:
-      'Verschenken Sie ein unvergessliches Erlebnis! Fun Zone Teneriffa Gutscheine für Outdoor-Escape-Games und die besten Aktivitäten der Insel. Sofortige E-Mail-Lieferung.',
+      'Verschenke Abenteuer auf Teneriffa: ein Fun-Zone-Geschenkgutschein für ein Outdoor-Escape-Game oder eine Inselaktivität. 12 Monate gültig.',
   },
   nl: {
-    title: 'Cadeaubonnen Fun Zone Tenerife | Geef een Avontuur Cadeau',
+    title: 'Cadeaubonnen',
     description:
-      'Geef een onvergetelijke ervaring cadeau! Fun Zone Tenerife cadeaubonnen voor outdoor escape games en de leukste activiteiten van het eiland. Directe levering per e-mail.',
+      'Geef avontuur op Tenerife cadeau: een Fun Zone-cadeaubon voor een outdoor escape game of een eilandactiviteit. 12 maanden geldig.',
   },
   it: {
-    title: 'Buoni Regalo Fun Zone Tenerife | Regala un\'Avventura',
+    title: 'Buoni Regalo',
     description:
-      'Regala un\'esperienza indimenticabile! Buoni regalo Fun Zone Tenerife per escape game all\'aperto e le migliori attività dell\'isola. Consegna istantanea via email.',
+      'Regala avventura a Tenerife: un buono regalo Fun Zone per un escape game all’aperto o un’attività sull’isola. Valido 12 mesi.',
   },
 };
 
@@ -40,10 +40,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const l = locale as Locale;
-  const m = voucherMeta[l] ?? voucherMeta['en'];
-  const alternates = getAlternates('/gift-voucher');
-
+  const m = voucherMeta[locale as Locale] ?? voucherMeta.en;
+  const alternates = getAlternates('/gift-voucher', undefined, locale);
   return {
     title: m.title,
     description: m.description,
@@ -58,5 +56,5 @@ export async function generateMetadata({
 }
 
 export default function GiftVoucherLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return children;
 }

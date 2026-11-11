@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = (locale as Locale) in audioGuide ? (locale as Locale) : 'en';
   const c = audioGuide[l];
-  const alternates = getAlternates('/audio-guide-canaries');
+  const alternates = getAlternates('/audio-guide-canaries', undefined, locale);
 
   return {
     title: c.seoTitle,

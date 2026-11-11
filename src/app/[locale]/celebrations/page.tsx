@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = (locale as Locale) in celebrations ? (locale as Locale) : 'en';
   const c = celebrations[l];
-  const alternates = getAlternates('/celebrations');
+  const alternates = getAlternates('/celebrations', undefined, locale);
 
   return {
     title: c.seoTitle,

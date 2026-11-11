@@ -74,16 +74,25 @@ const localizedPaths: Record<string, Record<Locale, string>> = {
   },
 };
 
-export function getAlternates(path: string, slug?: string) {
+/**
+ * Canonical + hreflang for a route. The canonical is SELF-referential (the
+ * current `locale`'s own URL), not always the English one, so Google indexes
+ * every language version; hreflang links the translations. Pass the page's
+ * locale; it defaults to 'en' for safety.
+ */
+export function getAlternates(path: string, slug?: string, locale: string = 'en') {
+  const canonicalFor = (languages: Record<string, string>) =>
+    languages[locale] ?? languages['en'] ?? languages['x-default'];
+
   const paths = localizedPaths[path];
 
   if (paths) {
     const languages: Record<string, string> = {};
-    for (const locale of locales) {
-      languages[locale] = `${BASE_URL}/${locale}${paths[locale]}`;
+    for (const l of locales) {
+      languages[l] = `${BASE_URL}/${l}${paths[l]}`;
     }
     languages['x-default'] = `${BASE_URL}/en${paths['en']}`;
-    return { canonical: `${BASE_URL}/en${paths['en']}`, languages };
+    return { canonical: canonicalFor(languages), languages };
   }
 
   if (path === '/blog/[slug]' && slug) {
@@ -106,28 +115,28 @@ export function getAlternates(path: string, slug?: string) {
       en: 'activities', es: 'actividades', fr: 'activites',
       de: 'aktivitaeten', nl: 'activiteiten', it: 'attivita',
     };
-    for (const locale of locales) {
-      languages[locale] = `${BASE_URL}/${locale}/${actPaths[locale]}/${slug}`;
+    for (const l of locales) {
+      languages[l] = `${BASE_URL}/${l}/${actPaths[l]}/${slug}`;
     }
     languages['x-default'] = `${BASE_URL}/en/activities/${slug}`;
-    return { canonical: `${BASE_URL}/en/activities/${slug}`, languages };
+    return { canonical: canonicalFor(languages), languages };
   }
 
   if (path === '/escape-game/[slug]' && slug) {
     const languages: Record<string, string> = {};
-    for (const locale of locales) {
-      languages[locale] = `${BASE_URL}/${locale}/escape-game/${slug}`;
+    for (const l of locales) {
+      languages[l] = `${BASE_URL}/${l}/escape-game/${slug}`;
     }
     languages['x-default'] = `${BASE_URL}/en/escape-game/${slug}`;
-    return { canonical: `${BASE_URL}/en/escape-game/${slug}`, languages };
+    return { canonical: canonicalFor(languages), languages };
   }
 
   const languages: Record<string, string> = {};
-  for (const locale of locales) {
-    languages[locale] = `${BASE_URL}/${locale}${path}`;
+  for (const l of locales) {
+    languages[l] = `${BASE_URL}/${l}${path}`;
   }
   languages['x-default'] = `${BASE_URL}/en${path}`;
-  return { canonical: `${BASE_URL}/en${path}`, languages };
+  return { canonical: canonicalFor(languages), languages };
 }
 
 export const defaultMeta: Record<Locale, { title: string; description: string }> = {

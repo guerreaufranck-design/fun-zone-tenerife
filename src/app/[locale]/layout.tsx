@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const meta = defaultMeta[l] ?? defaultMeta['en'];
-  const alternates = getAlternates('/');
+  const alternates = getAlternates('/', undefined, locale);
 
   return {
     title: {

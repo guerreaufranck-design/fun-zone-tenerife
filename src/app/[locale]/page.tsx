@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const meta = defaultMeta[l] ?? defaultMeta['en'];
-  const alternates = getAlternates('/');
+  const alternates = getAlternates('/', undefined, locale);
 
   const keywordsByLocale: Record<Locale, string> = {
     en: 'things to do in tenerife, tenerife activities, tenerife excursions, tenerife tours, whale watching tenerife, mount teide, boat trips tenerife, escape game tenerife, tenerife travel guide',

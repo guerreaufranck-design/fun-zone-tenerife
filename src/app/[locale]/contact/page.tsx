@@ -42,7 +42,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const m = contactMeta[l] ?? contactMeta['en'];
-  const alternates = getAlternates('/contact');
+  const alternates = getAlternates('/contact', undefined, locale);
   return {
     title: m.title,
     description: m.description,

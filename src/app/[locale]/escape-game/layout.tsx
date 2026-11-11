@@ -1,42 +1,36 @@
 import type { Metadata } from 'next';
 import { getAlternates, type Locale } from '@/lib/seo';
 
-const escapeMeta: Record<Locale, { title: string; description: string; keywords: string }> = {
+const escapeMeta: Record<Locale, { title: string; description: string }> = {
   en: {
-    title: 'Escape Game Tenerife | Escape Room at Fun Zone Playa Las Americas',
+    title: 'Outdoor Escape Games in Tenerife',
     description:
-      'Play our immersive escape game in Tenerife. 60 minutes, real puzzles, atmospheric design. Can your team solve the mystery? Book your escape room at Fun Zone, Playa Las Americas.',
-    keywords: 'escape game tenerife, escape room tenerife south, escape room playa las americas, fun zone escape game, immersive escape game tenerife, group escape room tenerife, escape game activity tenerife',
+      'Self-guided outdoor escape games across Tenerife and the Canary Islands. Explore a real town on your phone, solve the mystery at your own pace, and play any day.',
   },
   es: {
-    title: 'Escape Game Tenerife | Sala de Escape en Fun Zone Playa Las Américas',
+    title: 'Escape Games al Aire Libre en Tenerife',
     description:
-      'Juega nuestro escape game inmersivo en Tenerife. 60 minutos, puzzles reales, diseño atmosférico. ¿Tu grupo puede resolver el misterio? Reserva en Fun Zone, Playa Las Américas.',
-    keywords: 'escape game tenerife, sala escape tenerife sur, escape room playa las americas, escape game fun zone tenerife',
+      'Escape games al aire libre y autoguiados por Tenerife y Canarias. Recorre un pueblo real con el móvil y resuelve el misterio a tu ritmo, cualquier día.',
   },
   fr: {
-    title: 'Escape Game Tenerife | Salle d\'Évasion à Fun Zone Playa Las Americas',
+    title: 'Escape Games en Plein Air à Tenerife',
     description:
-      'Jouez à notre escape game immersif à Tenerife. 60 minutes, vrais puzzles, design atmosphérique. Votre équipe peut-elle résoudre le mystère ? Fun Zone, Playa Las Americas.',
-    keywords: 'escape game tenerife, salle évasion tenerife, escape room playa las americas, fun zone escape game tenerife',
+      'Escape games outdoor autoguidés à Tenerife et aux Canaries. Explorez une vraie ville sur votre téléphone et résolvez le mystère à votre rythme, tous les jours.',
   },
   de: {
-    title: 'Escape Game Teneriffa | Escape Room bei Fun Zone Playa Las Americas',
+    title: 'Outdoor-Escape-Games auf Teneriffa',
     description:
-      'Spielen Sie unser immersives Escape Game in Teneriffa. 60 Minuten, echte Rätsel, atmosphärisches Design. Kann Ihr Team das Geheimnis lösen? Fun Zone, Playa Las Americas.',
-    keywords: 'escape game teneriffa, escape room teneriffa, escape room playa las americas, fun zone escape game',
+      'Selbstgeführte Outdoor-Escape-Games auf Teneriffa und den Kanaren. Erkunde eine echte Stadt per Handy und löse das Rätsel in deinem Tempo, an jedem Tag.',
   },
   nl: {
-    title: 'Escape Game Tenerife | Escape Room bij Fun Zone Playa Las Americas',
+    title: 'Outdoor Escape Games op Tenerife',
     description:
-      'Speel ons meeslepende escape game op Tenerife. 60 minuten, echte puzzels, atmosferisch ontwerp. Kan uw team het mysterie oplossen? Fun Zone, Playa Las Americas.',
-    keywords: 'escape game tenerife, escape room tenerife, escape room playa las americas, fun zone escape game',
+      'Zelfgeleide outdoor escape games op Tenerife en de Canarische Eilanden. Verken een echt stadje met je telefoon en los het mysterie op in je eigen tempo, elke dag.',
   },
   it: {
-    title: 'Escape Game Tenerife | Stanza di Fuga a Fun Zone Playa Las Americas',
+    title: 'Escape Game all’Aperto a Tenerife',
     description:
-      'Gioca al nostro escape game immersivo a Tenerife. 60 minuti, veri enigmi, design atmosferico. Il tuo gruppo riesce a risolvere il mistero? Fun Zone, Playa Las Americas.',
-    keywords: 'escape game tenerife, escape room tenerife, escape room playa las americas, fun zone escape game',
+      'Escape game all’aperto e autoguidati a Tenerife e alle Canarie. Esplora un vero paese con il telefono e risolvi il mistero al tuo ritmo, ogni giorno.',
   },
 };
 
@@ -46,14 +40,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const l = locale as Locale;
-  const m = escapeMeta[l] ?? escapeMeta['en'];
-  const alternates = getAlternates('/escape-game');
-
+  const m = escapeMeta[locale as Locale] ?? escapeMeta.en;
+  const alternates = getAlternates('/escape-game', undefined, locale);
   return {
     title: m.title,
     description: m.description,
-    keywords: m.keywords,
     alternates: { canonical: alternates.canonical, languages: alternates.languages },
     openGraph: {
       title: m.title,
@@ -65,5 +56,5 @@ export async function generateMetadata({
 }
 
 export default function EscapeGameLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return children;
 }

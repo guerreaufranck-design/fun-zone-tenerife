@@ -48,7 +48,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const l = locale as Locale;
   const m = activitiesMeta[l] ?? activitiesMeta['en'];
-  const alternates = getAlternates('/activities');
+  const alternates = getAlternates('/activities', undefined, locale);
   return {
     title: m.title,
     description: m.description,

@@ -23,7 +23,7 @@ export async function generateMetadata({
   const title = `${activity.name} in Tenerife`;
   const seoDesc = activity.seoDescription?.[locale as Locale] ?? activity.seoDescription?.en;
   const description = (seoDesc ?? activity.description).slice(0, 160);
-  const alternates = getAlternates('/activities/[slug]', slug);
+  const alternates = getAlternates('/activities/[slug]', slug, locale);
 
   return {
     title,
