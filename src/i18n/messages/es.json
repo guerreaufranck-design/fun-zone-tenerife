@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Cuatro experiencias unicas en un lugar inolvidable",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Libera tu vikingo interior con hachas, shurikens y mas",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Pon a prueba tus conocimientos en la primera quiz room de Tenerife",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Dardos clasicos y Darts Pixel - la mejor experiencia de bar",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - una aventura de escape al aire libre unica",
-    "discover": "Descubrir"
-  },
   "nav": {
     "home": "Inicio",
     "experiences": "Experiencias",
@@ -24,12 +12,6 @@
     "about": "Sobre Nosotros",
     "giftVoucher": "Tarjeta Regalo",
     "language": "Idioma"
-  },
-  "hero": {
-    "title": "Despierta al Vikingo que Llevas Dentro",
-    "subtitle": "Vive la emocion del lanzamiento de hacha en el corazon de Tenerife. Perfecto para grupos, citas y momentos inolvidables.",
-    "cta": "Reservar Ahora",
-    "secondaryCta": "Nuestras Experiencias"
   },
   "experiences": {
     "title": "Nuestras Experiencias",
@@ -322,26 +304,6 @@
     "photoConsentYes": "Si, adelante!",
     "photoConsentNo": "No, gracias"
   },
-  "stats": {
-    "interactiveGames": "Juegos Interactivos",
-    "throwingLanes": "Pistas de Lanzamiento",
-    "happyThrowers": "Lanzadores Felices",
-    "averageRating": "Valoracion Media"
-  },
-  "howItWorks": {
-    "title": "Como Funciona",
-    "subtitle": "Tres simples pasos para una experiencia inolvidable",
-    "step1Title": "Elige Tu Experiencia",
-    "step1Description": "Explora nuestra gama de experiencias de lanzamiento de hacha y ninja. Desde sesiones para principiantes hasta aventuras premium de 2 horas.",
-    "step2Title": "Reserva Tu Horario",
-    "step2Description": "Elige tu fecha y hora preferidas. Paga un pequeno deposito online y el resto cuando llegues.",
-    "step3Title": "Lanza y Disfruta!",
-    "step3Description": "Nuestros entrenadores expertos te ensenaran todo. No se necesita experiencia - solo trae tu espiritu competitivo!"
-  },
-  "testimonials": {
-    "title": "Lo Que Dicen Nuestros Lanzadores",
-    "subtitle": "Opiniones reales de nuestros increibles invitados"
-  },
   "cta": {
     "title": "Listo Para Lanzar?",
     "subtitle": "Reserva tu experiencia de lanzamiento de hacha hoy y crea recuerdos que duraran toda la vida.",
@@ -352,11 +314,6 @@
   "gallery": {
     "title": "Galeria",
     "subtitle": "Momentos de pura adrenalina"
-  },
-  "quizzaboom": {
-    "comingSoon": "Proximamente",
-    "headline": "Apertura de la 1a Quiz Room de Tenerife!",
-    "bookNow": "Reserva Ahora!"
   },
   "activities": {
     "backToHome": "Volver al inicio",

@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Quattro esperienze uniche in un luogo indimenticabile",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Libera il tuo Vichingo interiore con asce, shuriken e altro",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Metti alla prova le tue conoscenze nella prima quiz room di Tenerife",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Freccette classiche e Darts Pixel - l'esperienza bar definitiva",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - un'avventura escape game all'aperto unica",
-    "discover": "Scopri"
-  },
   "nav": {
     "home": "Home",
     "experiences": "Esperienze",
@@ -24,12 +12,6 @@
     "about": "Chi Siamo",
     "giftVoucher": "Buono Regalo",
     "language": "Lingua"
-  },
-  "hero": {
-    "title": "Risveglia il Vichingo che E' in Te",
-    "subtitle": "Vivi l'emozione del lancio dell'ascia nel cuore di Tenerife. Perfetto per gruppi, serate romantiche e momenti indimenticabili.",
-    "cta": "Prenota Ora",
-    "secondaryCta": "Le Nostre Esperienze"
   },
   "experiences": {
     "title": "Le Nostre Esperienze",
@@ -322,26 +304,6 @@
     "photoConsentYes": "Si, certo!",
     "photoConsentNo": "No, grazie"
   },
-  "stats": {
-    "interactiveGames": "Giochi Interattivi",
-    "throwingLanes": "Corsie di Lancio",
-    "happyThrowers": "Lanciatori Soddisfatti",
-    "averageRating": "Valutazione Media"
-  },
-  "howItWorks": {
-    "title": "Come Funziona",
-    "subtitle": "Tre semplici passi per un'esperienza indimenticabile",
-    "step1Title": "Scegli la Tua Esperienza",
-    "step1Description": "Esplora la nostra gamma di esperienze di lancio dell'ascia e ninja. Dalle sessioni per principianti alle avventure premium di 2 ore.",
-    "step2Title": "Prenota il Tuo Slot",
-    "step2Description": "Scegli la data e l'ora preferite. Paga un piccolo acconto online e il resto al tuo arrivo.",
-    "step3Title": "Lancia e Divertiti!",
-    "step3Description": "I nostri coach esperti ti insegneranno tutto. Nessuna esperienza necessaria - porta solo il tuo spirito competitivo!"
-  },
-  "testimonials": {
-    "title": "Cosa Dicono i Nostri Lanciatori",
-    "subtitle": "Recensioni vere dai nostri fantastici ospiti"
-  },
   "cta": {
     "title": "Pronto a Lanciare?",
     "subtitle": "Prenota oggi la tua esperienza di lancio dell'ascia e crea ricordi che dureranno tutta la vita.",
@@ -352,11 +314,6 @@
   "gallery": {
     "title": "Galleria",
     "subtitle": "Momenti di pura adrenalina"
-  },
-  "quizzaboom": {
-    "comingSoon": "Prossimamente",
-    "headline": "La 1a Quiz Room di Tenerife sta aprendo!",
-    "bookNow": "Prenota Ora!"
   },
   "activities": {
     "backToHome": "Torna alla home",

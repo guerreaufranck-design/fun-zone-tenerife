@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Vier einzigartige Erlebnisse an einem unvergesslichen Ort",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Entfessle deinen inneren Wikinger mit Axten, Shurikens und mehr",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Teste dein Wissen in Tenerifas erstem interaktiven Quizraum",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Klassische Darts und Darts Pixel - das ultimative Bar-Erlebnis",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - ein einzigartiges Outdoor-Escape-Abenteuer",
-    "discover": "Entdecken"
-  },
   "nav": {
     "home": "Startseite",
     "experiences": "Erlebnisse",
@@ -24,12 +12,6 @@
     "about": "Ueber Uns",
     "giftVoucher": "Geschenkgutschein",
     "language": "Sprache"
-  },
-  "hero": {
-    "title": "Entfessle den Wikinger in Dir",
-    "subtitle": "Erlebe den Nervenkitzel des Axtwerfens im Herzen von Teneriffa. Perfekt fuer Gruppen, Paare und unvergessliche Momente.",
-    "cta": "Jetzt Buchen",
-    "secondaryCta": "Unsere Erlebnisse"
   },
   "experiences": {
     "title": "Unsere Erlebnisse",
@@ -322,26 +304,6 @@
     "photoConsentYes": "Ja, gerne!",
     "photoConsentNo": "Nein, danke"
   },
-  "stats": {
-    "interactiveGames": "Interaktive Spiele",
-    "throwingLanes": "Wurfbahnen",
-    "happyThrowers": "Zufriedene Werfer",
-    "averageRating": "Durchschnittsbewertung"
-  },
-  "howItWorks": {
-    "title": "So Funktioniert's",
-    "subtitle": "Drei einfache Schritte zu einem unvergesslichen Erlebnis",
-    "step1Title": "Waehle Dein Erlebnis",
-    "step1Description": "Entdecke unsere Auswahl an Axtwurf- und Ninja-Erlebnissen. Von anfaengerfreundlichen Sessions bis hin zu Premium-2-Stunden-Abenteuern.",
-    "step2Title": "Buche Deinen Slot",
-    "step2Description": "Waehle dein bevorzugtes Datum und deine Uhrzeit. Zahle eine kleine Anzahlung online und den Rest bei Ankunft.",
-    "step3Title": "Wirf und Geniesse!",
-    "step3Description": "Unsere erfahrenen Trainer bringen dir alles bei. Keine Erfahrung noetig - bring einfach deinen Kampfgeist mit!"
-  },
-  "testimonials": {
-    "title": "Was Unsere Werfer Sagen",
-    "subtitle": "Echte Bewertungen von unseren grossartigen Gaesten"
-  },
   "cta": {
     "title": "Bereit Zum Werfen?",
     "subtitle": "Buche noch heute dein Axtwurf-Erlebnis und schaffe Erinnerungen, die ein Leben lang halten.",
@@ -352,11 +314,6 @@
   "gallery": {
     "title": "Galerie",
     "subtitle": "Momente purer Adrenalin"
-  },
-  "quizzaboom": {
-    "comingSoon": "Bald",
-    "headline": "Der 1. Quiz Room auf Teneriffa eroffnet!",
-    "bookNow": "Jetzt Buchen!"
   },
   "activities": {
     "backToHome": "Zurück zur Startseite",

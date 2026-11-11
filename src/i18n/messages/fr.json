@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Quatre experiences uniques dans un lieu inoubliable",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Liberez votre Viking interieur avec haches, shurikens et plus",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Testez vos connaissances dans la premiere quiz room de Tenerife",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Flechettes classiques et Darts Pixel - l'experience bar ultime",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - une aventure d'escape game en exterieur unique",
-    "discover": "Decouvrir"
-  },
   "nav": {
     "home": "Accueil",
     "experiences": "Experiences",
@@ -24,12 +12,6 @@
     "about": "A Propos",
     "giftVoucher": "Bon Cadeau",
     "language": "Langue"
-  },
-  "hero": {
-    "title": "Reveillez le Viking qui Sommeille en Vous",
-    "subtitle": "Vivez le frisson du lancer de hache au coeur de Tenerife. Ideal pour les groupes, les soirees en duo et les moments inoubliables.",
-    "cta": "Reserver Maintenant",
-    "secondaryCta": "Nos Experiences"
   },
   "experiences": {
     "title": "Nos Experiences",
@@ -322,26 +304,6 @@
     "photoConsentYes": "Oui, avec plaisir !",
     "photoConsentNo": "Non, merci"
   },
-  "stats": {
-    "interactiveGames": "Jeux Interactifs",
-    "throwingLanes": "Pistes de Lancer",
-    "happyThrowers": "Lanceurs Satisfaits",
-    "averageRating": "Note Moyenne"
-  },
-  "howItWorks": {
-    "title": "Comment Ca Marche",
-    "subtitle": "Trois etapes simples pour une experience inoubliable",
-    "step1Title": "Choisissez Votre Experience",
-    "step1Description": "Parcourez notre gamme d'experiences de lancer de hache et ninja. Des sessions pour debutants aux aventures premium de 2 heures.",
-    "step2Title": "Reservez Votre Creneau",
-    "step2Description": "Choisissez votre date et heure preferees. Payez un petit acompte en ligne et le reste a votre arrivee.",
-    "step3Title": "Lancez et Profitez !",
-    "step3Description": "Nos coachs experts vous apprendront tout. Aucune experience necessaire - apportez juste votre esprit de competition !"
-  },
-  "testimonials": {
-    "title": "Ce Que Disent Nos Lanceurs",
-    "subtitle": "De vrais avis de nos super clients"
-  },
   "cta": {
     "title": "Pret a Lancer ?",
     "subtitle": "Reservez votre experience de lancer de hache aujourd'hui et creez des souvenirs inoubliables.",
@@ -352,11 +314,6 @@
   "gallery": {
     "title": "Galerie",
     "subtitle": "Des moments d'adrenaline pure"
-  },
-  "quizzaboom": {
-    "comingSoon": "Bientot",
-    "headline": "Ouverture de la 1ere Quiz Room de Tenerife !",
-    "bookNow": "Reservez Maintenant !"
   },
   "activities": {
     "backToHome": "Retour à l'accueil",

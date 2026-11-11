@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Vier unieke ervaringen op een onvergetelijke plek",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Laat je innerlijke Viking los met bijlen, shurikens en meer",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Test je kennis in Tenerife's eerste interactieve quizruimte",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Klassiek darts en Darts Pixel - de ultieme barervaring",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - een uniek outdoor escape avontuur",
-    "discover": "Ontdekken"
-  },
   "nav": {
     "home": "Home",
     "experiences": "Ervaringen",
@@ -24,12 +12,6 @@
     "about": "Over Ons",
     "giftVoucher": "Cadeaubon",
     "language": "Taal"
-  },
-  "hero": {
-    "title": "Laat de Viking in Je Los",
-    "subtitle": "Beleef de spanning van bijlwerpen in het hart van Tenerife. Perfect voor groepen, date-avonden en onvergetelijke momenten.",
-    "cta": "Nu Boeken",
-    "secondaryCta": "Onze Ervaringen"
   },
   "experiences": {
     "title": "Onze Ervaringen",
@@ -315,26 +297,6 @@
     "photoConsentYes": "Ja, ga ervoor!",
     "photoConsentNo": "Nee, bedankt"
   },
-  "stats": {
-    "interactiveGames": "Interactieve Spellen",
-    "throwingLanes": "Werpbanen",
-    "happyThrowers": "Tevreden Werpers",
-    "averageRating": "Gemiddelde Beoordeling"
-  },
-  "howItWorks": {
-    "title": "Hoe Het Werkt",
-    "subtitle": "Drie eenvoudige stappen naar een onvergetelijke ervaring",
-    "step1Title": "Kies Je Ervaring",
-    "step1Description": "Bekijk ons aanbod van bijlwerp- en ninja-ervaringen. Van beginnersvriendelijke sessies tot premium 2-uur avonturen.",
-    "step2Title": "Boek Je Tijdslot",
-    "step2Description": "Kies je gewenste datum en tijd. Betaal een kleine aanbetaling online en de rest bij aankomst.",
-    "step3Title": "Gooi en Geniet!",
-    "step3Description": "Onze ervaren coaches leren je alles. Geen ervaring nodig - breng gewoon je competitieve spirit mee!"
-  },
-  "testimonials": {
-    "title": "Wat Onze Werpers Zeggen",
-    "subtitle": "Echte beoordelingen van onze geweldige gasten"
-  },
   "cta": {
     "title": "Klaar Om Te Gooien?",
     "subtitle": "Boek vandaag nog je bijlwerp-ervaring en creeer herinneringen die een leven lang meegaan.",
@@ -345,11 +307,6 @@
   "gallery": {
     "title": "Galerij",
     "subtitle": "Momenten van pure adrenaline"
-  },
-  "quizzaboom": {
-    "comingSoon": "Binnenkort",
-    "headline": "De 1e Quiz Room van Tenerife opent!",
-    "bookNow": "Boek Nu!"
   },
   "activities": {
     "backToHome": "Terug naar home",

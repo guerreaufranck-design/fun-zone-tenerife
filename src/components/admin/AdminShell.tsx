@@ -99,7 +99,7 @@ export function AdminShell({ user, children }: AdminShellProps) {
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-border/50">
           <Link href="/admin" className="flex items-center gap-2">
-            <span className="text-lg font-bold text-primary neon-glow">AXT</span>
+            <span className="text-lg font-bold text-primary neon-glow">FZ</span>
             <span className="text-sm text-muted-foreground">Admin</span>
           </Link>
           <button

@@ -1,16 +1,4 @@
 {
-  "splitHero": {
-    "subtitle": "Four unique experiences, one unforgettable place",
-    "axeTitle": "AXE THROWING",
-    "axeSubtitle": "Unleash your inner Viking with axes, shurikens and more",
-    "quizTitle": "QUIZ ROOM",
-    "quizSubtitle": "Test your knowledge in Tenerife's first interactive quiz room",
-    "dartsTitle": "DARTS",
-    "dartsSubtitle": "Classic darts and Darts Pixel - the ultimate bar game experience",
-    "escapeTitle": "ESCAPE GAME",
-    "escapeSubtitle": "Tenerife Chronicle - an outdoor escape adventure like no other",
-    "discover": "Discover"
-  },
   "nav": {
     "home": "Home",
     "experiences": "Experiences",
@@ -24,12 +12,6 @@
     "about": "About Us",
     "giftVoucher": "Gift Voucher",
     "language": "Language"
-  },
-  "hero": {
-    "title": "Unleash Your Inner Viking",
-    "subtitle": "Experience the thrill of axe throwing in the heart of Tenerife. Perfect for groups, date nights, and unforgettable moments.",
-    "cta": "Book Now",
-    "secondaryCta": "Our Experiences"
   },
   "experiences": {
     "title": "Our Experiences",
@@ -322,26 +304,6 @@
     "photoConsentYes": "Yes, go for it!",
     "photoConsentNo": "No, thanks"
   },
-  "stats": {
-    "interactiveGames": "Interactive Games",
-    "throwingLanes": "Throwing Lanes",
-    "happyThrowers": "Happy Throwers",
-    "averageRating": "Average Rating"
-  },
-  "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "Three simple steps to an unforgettable experience",
-    "step1Title": "Choose Your Experience",
-    "step1Description": "Browse our range of axe throwing and ninja experiences. From beginner-friendly sessions to premium 2-hour adventures.",
-    "step2Title": "Book Your Slot",
-    "step2Description": "Pick your preferred date and time. Pay a small deposit online and the rest when you arrive.",
-    "step3Title": "Throw & Enjoy!",
-    "step3Description": "Our expert coaches will teach you everything. No experience needed - just bring your competitive spirit!"
-  },
-  "testimonials": {
-    "title": "What Throwers Say",
-    "subtitle": "Real reviews from our amazing guests"
-  },
   "cta": {
     "title": "Ready to Throw?",
     "subtitle": "Book your axe throwing experience today and create memories that will last a lifetime.",
@@ -352,11 +314,6 @@
   "gallery": {
     "title": "Gallery",
     "subtitle": "Moments of pure adrenaline"
-  },
-  "quizzaboom": {
-    "comingSoon": "Coming Soon",
-    "headline": "The 1st Quiz Room in Tenerife is opening!",
-    "bookNow": "Book Now!"
   },
   "activities": {
     "backToHome": "Back to Home",

@@ -146,7 +146,7 @@ export async function sendAdminNewBookingNotification(
 ): Promise<void> {
   const language = booking.language ?? "en";
   const offerName = getOfferName(offer, language);
-  const laneType = (offer.lane_type as string) || "axe";
+  const laneType = (offer.lane_type as string) || "escape";
   const totalPaid =
     booking.payment_type === "full"
       ? formatPrice(booking.total_cents, "en")
