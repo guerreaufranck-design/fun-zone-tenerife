@@ -6,6 +6,10 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   pathnames: {
     '/': '/',
+    // Audio tours use the same literal path in every locale (hreflang is built
+    // by hand in the page); registering them here lets typed <Link> target them.
+    '/tenerife-audio-tour': '/tenerife-audio-tour',
+    '/tenerife-audio-tour/[city]': '/tenerife-audio-tour/[city]',
     '/experiences': {
       en: '/experiences',
       es: '/experiencias',
