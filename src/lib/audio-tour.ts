@@ -255,8 +255,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Number of codes',
     oneCodeHint: 'One code activates the tour for one person.',
     buyLabel: 'Buy for',
-    pendingNote:
-      'Secure checkout is being finalised. Your code and tour are delivered instantly by email once live.',
+    pendingNote: 'Redirecting to secure payment…',
     deliveryNote: 'Instant email delivery · activation code generated on purchase',
     lessCodesAria: 'Fewer codes',
     moreCodesAria: 'More codes',
@@ -290,8 +289,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Nombre de codes',
     oneCodeHint: 'Un code active la visite pour une personne.',
     buyLabel: 'Acheter pour',
-    pendingNote:
-      'Le paiement sécurisé est en cours de finalisation. Votre code et votre visite seront envoyés instantanément par e-mail dès sa mise en ligne.',
+    pendingNote: 'Redirection vers le paiement sécurisé…',
     deliveryNote: 'Livraison instantanée par e-mail · code d’activation généré à l’achat',
     lessCodesAria: 'Moins de codes',
     moreCodesAria: 'Plus de codes',
@@ -325,8 +323,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Número de códigos',
     oneCodeHint: 'Un código activa el tour para una persona.',
     buyLabel: 'Comprar por',
-    pendingNote:
-      'El pago seguro se está terminando de configurar. Tu código y tu tour se envían al instante por correo electrónico en cuanto esté disponible.',
+    pendingNote: 'Redirigiendo al pago seguro…',
     deliveryNote: 'Entrega instantánea por correo · código de activación generado en la compra',
     lessCodesAria: 'Menos códigos',
     moreCodesAria: 'Más códigos',
@@ -360,8 +357,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Anzahl der Codes',
     oneCodeHint: 'Ein Code aktiviert die Tour für eine Person.',
     buyLabel: 'Kaufen für',
-    pendingNote:
-      'Die sichere Bezahlung wird gerade fertiggestellt. Ihr Code und Ihre Tour werden sofort per E-Mail geliefert, sobald es live ist.',
+    pendingNote: 'Weiterleitung zur sicheren Zahlung…',
     deliveryNote: 'Sofortige Lieferung per E-Mail · Aktivierungscode beim Kauf erstellt',
     lessCodesAria: 'Weniger Codes',
     moreCodesAria: 'Mehr Codes',
@@ -395,8 +391,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Numero di codici',
     oneCodeHint: 'Un codice attiva il tour per una persona.',
     buyLabel: 'Acquista per',
-    pendingNote:
-      'Il pagamento sicuro è in fase di completamento. Il codice e il tour vengono inviati subito via e-mail non appena sarà attivo.',
+    pendingNote: 'Reindirizzamento al pagamento sicuro…',
     deliveryNote: 'Consegna immediata via e-mail · codice di attivazione generato all’acquisto',
     lessCodesAria: 'Meno codici',
     moreCodesAria: 'Più codici',
@@ -430,8 +425,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     numberOfCodesLabel: 'Aantal codes',
     oneCodeHint: 'Eén code activeert de tour voor één persoon.',
     buyLabel: 'Koop voor',
-    pendingNote:
-      'De beveiligde betaling wordt nog afgerond. Je code en tour worden direct per e-mail geleverd zodra dit live is.',
+    pendingNote: 'Doorsturen naar de beveiligde betaling…',
     deliveryNote: 'Directe levering per e-mail · activeringscode aangemaakt bij aankoop',
     lessCodesAria: 'Minder codes',
     moreCodesAria: 'Meer codes',

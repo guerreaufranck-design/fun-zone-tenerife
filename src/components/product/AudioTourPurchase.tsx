@@ -20,14 +20,20 @@ export interface PurchaseLabels {
   moreCodesAria: string;
 }
 
+/** Lume issues at most 6 codes per order. */
+const MAX_CODES = 6;
+
 export default function AudioTourPurchase({
   city,
   citySlug,
+  locale,
   labels,
 }: {
   city: string;
-  /** Fulfilment slug, passed to checkout → fulfilment API. */
+  /** Route slug (e.g. "santa-cruz"); resolved to the Lume slug server-side. */
   citySlug: string;
+  /** UI locale, for the checkout success/cancel URLs + Stripe page language. */
+  locale: string;
   labels: PurchaseLabels;
 }) {
   const [lang, setLang] = useState('en');
@@ -36,13 +42,27 @@ export default function AudioTourPurchase({
 
   const total = AUDIO_TOUR_PRICE * qty;
 
-  const buy = () => {
-    // Checkout is wired in phase 2 (Stripe session → webhook → fulfilment API
-    // returns the codes). For now the pilot only validates the UI.
+  const buy = async () => {
+    // Create a Stripe Checkout session, then redirect to Stripe's hosted page.
+    // After payment, the webhook + confirmation page call Lume, which emails
+    // the activation code to the customer and returns the code(s).
     setPending(true);
-    // Intended call: POST /api/audio-tour/checkout { citySlug, lang, qty }
+    try {
+      const res = await fetch('/api/audio-tour/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ citySlug, language: lang, quantity: qty, locale }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data?.url) {
+        window.location.href = data.url as string;
+        return;
+      }
+      setPending(false);
+    } catch {
+      setPending(false);
+    }
     void city;
-    void citySlug;
   };
 
   return (
@@ -93,9 +113,9 @@ export default function AudioTourPurchase({
             <span className="w-10 text-center text-base font-bold text-white">{qty}</span>
             <button
               type="button"
-              onClick={() => setQty((q) => Math.min(20, q + 1))}
+              onClick={() => setQty((q) => Math.min(MAX_CODES, q + 1))}
               className="flex h-11 w-11 items-center justify-center text-white/70 transition-colors hover:text-[#00d4ff] disabled:opacity-30"
-              disabled={qty >= 20}
+              disabled={qty >= MAX_CODES}
               aria-label={labels.moreCodesAria}
             >
               <Plus size={16} />

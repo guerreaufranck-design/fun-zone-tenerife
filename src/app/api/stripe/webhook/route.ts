@@ -6,6 +6,8 @@ import { allocateLanes } from "@/lib/booking/lane-allocation";
 import { sendBookingConfirmation, sendAdminNewBookingNotification, sendEscapeGameCode, sendIslandPassEmail, sendEscapeAdminNotification } from "@/lib/email";
 import { ESCAPE_GAMES } from "@/lib/escape-game";
 import { createPartnerBooking, ODDBALL_SLUG_BY_OFFER, ESCAPE_PWA_URL } from "@/lib/oddballtrip";
+import { createLumeOrder, audioTourExternalOrderId } from "@/lib/lume";
+import { getCityMeta } from "@/lib/audio-tour";
 import type { LaneType } from "@/lib/supabase/types";
 
 // Escape-game code generation is delegated to OddballTrip's partner API, which
@@ -297,6 +299,48 @@ export async function POST(request: NextRequest) {
         } else {
           console.log(`Escape game payment processed: ${generatedCodes.length} code(s) sent to ${customerEmail} for ${gameName}`);
         }
+        return NextResponse.json({ received: true });
+      }
+
+      // ===== AUDIO TOUR PAYMENT (Lume reseller) =====
+      if (metadata.type === 'audio_tour') {
+        const citySlug = metadata.citySlug || '';
+        const language = (metadata.language || 'en').toLowerCase();
+        const quantity = Math.max(1, Math.min(6, parseInt(metadata.quantity || '1', 10)));
+        const email = session.customer_details?.email || session.customer_email || '';
+        const name = session.customer_details?.name || undefined;
+
+        // citySlug is the ROUTE slug; map to the Lume fulfilment slug.
+        const meta = getCityMeta(citySlug);
+        if (!meta) {
+          console.error(`Audio tour: unknown citySlug "${citySlug}" (session ${session.id})`);
+          return NextResponse.json({ received: true });
+        }
+        if (!email) {
+          console.error(`Audio tour: no customer email on session ${session.id} — Lume cannot deliver`);
+          return NextResponse.json({ received: true });
+        }
+
+        // Fulfilment: declare the sale to Lume. Lume generates the tour (if the
+        // city is new), EMAILS the code to the customer, and returns the code(s).
+        // We do NOT send any email ourselves (Lume does). Idempotent on
+        // externalOrderId, so Stripe retries + the confirmation page are safe.
+        try {
+          const result = await createLumeOrder({
+            externalOrderId: audioTourExternalOrderId(session.id, meta.fulfilmentSlug),
+            citySlug: meta.fulfilmentSlug,
+            email,
+            language,
+            quantity,
+            name,
+          });
+          console.log(
+            `Audio tour ${meta.displayName}: Lume ${result.status}${result.duplicate ? ' (duplicate)' : ''}, ${result.codes.length} code(s) for ${email} (session ${session.id})`
+          );
+        } catch (err) {
+          console.error(`Audio tour: Lume order FAILED for ${email} (session ${session.id}) — customer paid but not delivered:`, err);
+        }
+
         return NextResponse.json({ received: true });
       }
 

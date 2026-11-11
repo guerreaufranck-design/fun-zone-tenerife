@@ -207,7 +207,7 @@ export default async function CityAudioTourPage({
       {/* Purchase */}
       <section id="buy" className="scroll-mt-24 px-4 pb-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl">
-          <AudioTourPurchase city={name} citySlug={meta.fulfilmentSlug} labels={purchaseLabels} />
+          <AudioTourPurchase city={name} citySlug={city} locale={locale} labels={purchaseLabels} />
         </div>
       </section>
 
@@ -321,7 +321,7 @@ export default async function CityAudioTourPage({
           <h2 className="text-2xl font-bold text-white">{copy.ctaHeading}</h2>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/70">{copy.ctaIntro}</p>
           <div className="mt-6">
-            <AudioTourPurchase city={name} citySlug={meta.fulfilmentSlug} labels={purchaseLabels} />
+            <AudioTourPurchase city={name} citySlug={city} locale={locale} labels={purchaseLabels} />
           </div>
         </div>
       </section>
