@@ -35,7 +35,7 @@
   },
   "booking": {
     "title": "Buche Dein Erlebnis",
-    "subtitle": "Reserviere deine Axtwerf-Session in wenigen Schritten",
+    "subtitle": "Buchen Sie Ihr Escape Game in wenigen Schritten",
     "step1": "Erlebnis",
     "step2": "Spieler",
     "step3": "Datum & Uhrzeit",
@@ -112,7 +112,7 @@
   },
   "bookingSuccess": {
     "title": "Buchung Bestaetigt!",
-    "subtitle": "Deine Axtwerf-Session ist reserviert",
+    "subtitle": "Ihr Escape Game ist reserviert",
     "bookingRef": "Buchungsreferenz",
     "experience": "Erlebnis",
     "players": "Spieler",
@@ -185,7 +185,7 @@
     "player": "Spieler",
     "players": "Spieler",
     "whatsappTooltip": "Brauchen Sie Hilfe? Schreiben Sie uns!",
-    "whatsappMessage": "Hallo! Ich möchte eine Axtwurf-Session buchen."
+    "whatsappMessage": "Hallo! Ich möchte ein Escape Game buchen."
   },
   "faq": {
     "title": "Häufige Fragen",

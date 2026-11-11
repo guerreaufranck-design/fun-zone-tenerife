@@ -35,7 +35,7 @@
   },
   "booking": {
     "title": "Book Your Experience",
-    "subtitle": "Reserve your axe throwing session in just a few steps",
+    "subtitle": "Reserve your escape game in just a few steps",
     "step1": "Experience",
     "step2": "Players",
     "step3": "Date & Time",
@@ -112,7 +112,7 @@
   },
   "bookingSuccess": {
     "title": "Booking Confirmed!",
-    "subtitle": "Your axe throwing session is reserved",
+    "subtitle": "Your escape game is reserved",
     "bookingRef": "Booking Reference",
     "experience": "Experience",
     "players": "Players",
@@ -185,7 +185,7 @@
     "player": "player",
     "players": "players",
     "whatsappTooltip": "Need help? Chat with us!",
-    "whatsappMessage": "Hi! I'd like to book an axe throwing session."
+    "whatsappMessage": "Hi! I'd like to book an escape game."
   },
   "faq": {
     "title": "Frequently Asked Questions",

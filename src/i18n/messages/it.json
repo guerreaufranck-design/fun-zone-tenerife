@@ -35,7 +35,7 @@
   },
   "booking": {
     "title": "Prenota la Tua Esperienza",
-    "subtitle": "Prenota la tua sessione di lancio dell'ascia in pochi passi",
+    "subtitle": "Prenota il tuo escape game in pochi passi",
     "step1": "Esperienza",
     "step2": "Giocatori",
     "step3": "Data e Ora",
@@ -112,7 +112,7 @@
   },
   "bookingSuccess": {
     "title": "Prenotazione Confermata!",
-    "subtitle": "La tua sessione di lancio dell'ascia e prenotata",
+    "subtitle": "Il tuo escape game è prenotato",
     "bookingRef": "Riferimento Prenotazione",
     "experience": "Esperienza",
     "players": "Giocatori",
@@ -185,7 +185,7 @@
     "player": "giocatore",
     "players": "giocatori",
     "whatsappTooltip": "Hai bisogno di aiuto? Scrivici!",
-    "whatsappMessage": "Ciao! Vorrei prenotare una sessione di lancio dell'ascia."
+    "whatsappMessage": "Ciao! Vorrei prenotare un escape game."
   },
   "faq": {
     "title": "Domande frequenti",

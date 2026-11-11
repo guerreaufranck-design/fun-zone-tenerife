@@ -49,7 +49,7 @@
     "escape_howStep2": "Ga naar het startpunt, open de link op je telefoon en voer de code in om het spel te starten.",
     "escape_howStep3": "Je hebt 8 uur om de escape te voltooien na het activeren van de code. Speel op je eigen tempo!",
     "title": "Boek Je Ervaring",
-    "subtitle": "Reserveer je bijlwerp-sessie in slechts een paar stappen",
+    "subtitle": "Reserveer je escape game in een paar stappen",
     "step1": "Ervaring",
     "step2": "Spelers",
     "step3": "Datum & Tijd",
@@ -111,7 +111,7 @@
   },
   "bookingSuccess": {
     "title": "Boeking Bevestigd!",
-    "subtitle": "Je bijlwerp-sessie is gereserveerd",
+    "subtitle": "Je escape game is gereserveerd",
     "bookingRef": "Boekingsreferentie",
     "experience": "Ervaring",
     "players": "Spelers",
@@ -178,7 +178,7 @@
     "player": "speler",
     "players": "spelers",
     "whatsappTooltip": "Hulp nodig? Stuur ons een bericht!",
-    "whatsappMessage": "Hallo! Ik wil graag een bijlwerpen sessie boeken."
+    "whatsappMessage": "Hallo! Ik wil graag een escape game boeken."
   },
   "faq": {
     "title": "Veelgestelde vragen",

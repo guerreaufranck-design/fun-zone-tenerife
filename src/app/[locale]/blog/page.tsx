@@ -14,27 +14,27 @@ const HOME_LABEL: Record<string, string> = {
 const blogMeta: Record<Locale, { title: string; description: string }> = {
   en: {
     title: 'Blog — Fun Zone Tenerife | Activities, Tips & Tenerife Guides',
-    description: 'The Fun Zone Tenerife blog: guides on things to do in Playa Las Americas, escape game tips, quiz room guides, evening entertainment ideas, and activity inspiration for your Tenerife holiday.',
+    description: 'The Fun Zone Tenerife blog: guides to the best things to do in Tenerife — beaches, Mount Teide, whale watching, itineraries, escape games and travel tips.',
   },
   es: {
     title: 'Blog — Fun Zone Tenerife | Actividades, Consejos y Guías de Tenerife',
-    description: 'El blog de Fun Zone Tenerife: guías de qué hacer en Playa Las Américas, consejos para escape games, guías del quiz room e ideas de entretenimiento nocturno.',
+    description: 'El blog de Fun Zone Tenerife: guías de las mejores cosas que hacer en Tenerife — playas, el Teide, avistamiento de cetáceos, itinerarios, escape games y consejos de viaje.',
   },
   fr: {
     title: 'Blog — Fun Zone Tenerife | Activités, Conseils et Guides Tenerife',
-    description: 'Le blog de Fun Zone Tenerife : guides sur quoi faire à Playa Las Americas, conseils escape game, guides quiz room et idées de divertissement en soirée.',
+    description: 'Le blog de Fun Zone Tenerife : guides des meilleures choses à faire à Tenerife — plages, Teide, observation des baleines, itinéraires, escape games et conseils de voyage.',
   },
   de: {
     title: 'Blog — Fun Zone Teneriffa | Aktivitäten, Tipps und Teneriffa-Guides',
-    description: 'Der Fun Zone Teneriffa Blog: Guides zu Aktivitäten in Playa Las Americas, Escape Game Tipps, Quiz Room Guides und Abendunterhaltungsideen.',
+    description: 'Der Fun Zone Teneriffa Blog: Guides zu den besten Aktivitäten auf Teneriffa — Strände, Teide, Walbeobachtung, Routen, Escape Games und Reisetipps.',
   },
   nl: {
     title: 'Blog — Fun Zone Tenerife | Activiteiten, Tips en Tenerife Gidsen',
-    description: 'De Fun Zone Tenerife blog: gidsen over dingen te doen in Playa Las Americas, escape game tips, quiz room gidsen en avond entertainment ideeën.',
+    description: 'De Fun Zone Tenerife blog: gidsen voor de leukste dingen om te doen op Tenerife — stranden, de Teide, walvissen spotten, routes, escape games en reistips.',
   },
   it: {
     title: 'Blog — Fun Zone Tenerife | Attività, Consigli e Guide su Tenerife',
-    description: 'Il blog di Fun Zone Tenerife: guide su cosa fare a Playa Las Americas, consigli escape game, guide quiz room e idee di intrattenimento serale.',
+    description: 'Il blog di Fun Zone Tenerife: guide alle cose migliori da fare a Tenerife — spiagge, Teide, avvistamento dei cetacei, itinerari, escape game e consigli di viaggio.',
   },
 };
 

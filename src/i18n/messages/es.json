@@ -35,7 +35,7 @@
   },
   "booking": {
     "title": "Reserva tu Experiencia",
-    "subtitle": "Reserva tu sesion de lanzamiento de hacha en pocos pasos",
+    "subtitle": "Reserva tu escape game en pocos pasos",
     "step1": "Experiencia",
     "step2": "Jugadores",
     "step3": "Fecha y Hora",
@@ -112,7 +112,7 @@
   },
   "bookingSuccess": {
     "title": "Reserva Confirmada!",
-    "subtitle": "Tu sesion de lanzamiento de hacha esta reservada",
+    "subtitle": "Tu escape game está reservado",
     "bookingRef": "Referencia de Reserva",
     "experience": "Experiencia",
     "players": "Jugadores",
@@ -185,7 +185,7 @@
     "player": "jugador",
     "players": "jugadores",
     "whatsappTooltip": "Necesitas ayuda? Escríbenos!",
-    "whatsappMessage": "Hola! Me gustaría reservar una sesión de lanzamiento de hachas."
+    "whatsappMessage": "¡Hola! Me gustaría reservar un escape game."
   },
   "faq": {
     "title": "Preguntas frecuentes",

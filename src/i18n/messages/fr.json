@@ -35,7 +35,7 @@
   },
   "booking": {
     "title": "Reservez Votre Experience",
-    "subtitle": "Reservez votre session de lancer de hache en quelques etapes",
+    "subtitle": "Réservez votre escape game en quelques étapes",
     "step1": "Experience",
     "step2": "Joueurs",
     "step3": "Date et Heure",
@@ -112,7 +112,7 @@
   },
   "bookingSuccess": {
     "title": "Reservation Confirmee !",
-    "subtitle": "Votre session de lancer de hache est reservee",
+    "subtitle": "Votre escape game est réservé",
     "bookingRef": "Reference de Reservation",
     "experience": "Experience",
     "players": "Joueurs",
@@ -185,7 +185,7 @@
     "player": "joueur",
     "players": "joueurs",
     "whatsappTooltip": "Besoin d'aide ? Ecrivez-nous !",
-    "whatsappMessage": "Bonjour ! J'aimerais réserver une session de lancer de hache."
+    "whatsappMessage": "Bonjour ! J'aimerais réserver un escape game."
   },
   "faq": {
     "title": "Questions fréquentes",
