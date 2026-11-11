@@ -7,6 +7,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import { HtmlLang } from '@/components/HtmlLang';
 import { defaultMeta, getAlternates, type Locale } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <HtmlLang locale={locale} />
       <Navbar />
       <main className="pt-16">{children}</main>
       <Footer />
