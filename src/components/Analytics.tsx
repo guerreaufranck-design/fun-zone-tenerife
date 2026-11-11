@@ -3,10 +3,27 @@
 import Script from 'next/script';
 
 const TIKTOK_ID = 'D7CJOI3C77UFT36K64B0';
+// GA4 Measurement ID for the "Fun Zone Tenerife" property (funzonetenerife.com
+// web stream). Public by design (it ships in the page); no secret here.
+const GA_ID = 'G-DCNGGKBTSB';
 
 export function Analytics() {
   return (
     <>
+      {/* Google Analytics 4 */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga4" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}
+      </Script>
+
       {/* TikTok Pixel */}
       <Script id="tiktok-pixel" strategy="afterInteractive">
         {`
