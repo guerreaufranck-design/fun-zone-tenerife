@@ -1,5 +1,5 @@
 # Fun Zone Tenerife — Location-Based Entertainment Hub
-# https://www.funzonetenerife.com
+# https://funzonetenerife.com
 
 > Fun Zone Tenerife is a multi-activity entertainment venue in Playa de las Américas, Tenerife (Canary Islands, Spain). We offer four distinct experiences: outdoor escape games across Tenerife's historic towns, axe throwing, interactive quiz rooms, and darts (classic & pixel). Perfect for tourists, families, corporate team building, bachelor parties, and group events.
 
@@ -47,8 +47,8 @@ Classic steel-tip dartboards and revolutionary Darts Pixel (interactive digital 
 - **Phone:** +34 623 362 229
 - **Email:** axethrowingtenerife@gmail.com
 - **Languages:** English, French, Spanish, German, Italian
-- **Booking:** https://www.funzonetenerife.com/en/book
-- **Escape Games:** https://www.funzonetenerife.com/en/escape-game
+- **Booking:** https://funzonetenerife.com/en/book
+- **Escape Games:** https://funzonetenerife.com/en/escape-game
 
 ## Industry Keywords
 Location-Based Entertainment (LBE), outdoor escape room, city games, urban games, street escape, city hunt, scavenger hunt, experience-driven entertainment, self-guided tour, GPS adventure, phygital experience, augmented reality tourism, Tenerife activities, things to do in Tenerife, Canary Islands entertainment.

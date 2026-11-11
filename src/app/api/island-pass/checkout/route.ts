@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
       process.env.NEXT_PUBLIC_SITE_URL ||
       (process.env.VERCEL_PROJECT_PRODUCTION_URL
         ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : 'https://www.funzonetenerife.com');
+        : 'https://funzonetenerife.com');
 
     const session = await getStripe().checkout.sessions.create({
       mode: 'payment',
