@@ -158,7 +158,7 @@ export interface AudioTourUi {
  * City metadata (locale-invariant)
  * ------------------------------------------------------------------ */
 
-export const CITY_META: CityMeta[] = [
+const TENERIFE_CITIES: CityMeta[] = [
   {
     slug: 'santa-cruz',
     displayName: 'Santa Cruz de Tenerife',
@@ -221,8 +221,134 @@ export const CITY_META: CityMeta[] = [
   },
 ];
 
+/** Locale-invariant data for one island (a `/{slug}-audio-tour` section). */
+export interface IslandMeta {
+  /** Island slug, e.g. `tenerife`. Internal key, not a URL on its own. */
+  slug: string;
+  /** Hub route + next-intl pathname, e.g. `/tenerife-audio-tour`. */
+  routeBase: string;
+  /** The `[city]` pathname literal registered in routing.ts, for typed links. */
+  cityPathname: string;
+  /** Island name shown in the badge + breadcrumb, per locale. Proper noun, rarely translated. */
+  regionName: Partial<Record<Locale, string>> & { en: string };
+  cities: CityMeta[];
+}
+
+const GRAN_CANARIA_CITIES: CityMeta[] = [
+  {
+    slug: 'las-palmas',
+    displayName: 'Las Palmas de Gran Canaria',
+    fulfilmentSlug: 'las-palmas-de-gran-canaria',
+    geo: { latitude: 28.1010, longitude: -15.4160 },
+    mapQuery: 'Vegueta, Las Palmas de Gran Canaria',
+    photos: [
+      { src: '/images/audio-tour/las-palmas/catedral.jpg', label: 'Catedral de Santa Ana', credit: 'El observante, CC BY-SA 2.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/las-palmas/casa-colon.jpg', label: 'Casa de Colón', credit: 'Clemensfranz, CC BY-SA 3.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/las-palmas/las-canteras.jpg', label: 'Playa de Las Canteras', credit: 'Nicolas Vigier, CC0, via Wikimedia Commons' },
+    ],
+  },
+];
+
+const LANZAROTE_CITIES: CityMeta[] = [
+  {
+    slug: 'arrecife',
+    displayName: 'Arrecife',
+    fulfilmentSlug: 'arrecife',
+    geo: { latitude: 28.9630, longitude: -13.5477 },
+    mapQuery: 'Arrecife, Lanzarote',
+    photos: [
+      { src: '/images/audio-tour/arrecife/san-gabriel.jpg', label: 'Castillo de San Gabriel', credit: 'Frank Vincentz, CC BY-SA 3.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/arrecife/charco-san-gines.jpg', label: 'Charco de San Ginés', credit: 'Averater, CC BY-SA 3.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/arrecife/san-jose.jpg', label: 'Castillo de San José', credit: 'Frank Vincentz, CC BY-SA 3.0, via Wikimedia Commons' },
+    ],
+  },
+  {
+    slug: 'teguise',
+    displayName: 'Teguise',
+    fulfilmentSlug: 'teguise',
+    geo: { latitude: 29.0605, longitude: -13.5637 },
+    mapQuery: 'Villa de Teguise, Lanzarote',
+    photos: [
+      { src: '/images/audio-tour/teguise/santa-barbara.jpg', label: 'Castillo de Santa Bárbara', credit: 'H. Zell, CC BY-SA 3.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/teguise/guadalupe.jpg', label: 'Iglesia de Nuestra Señora de Guadalupe', credit: 'Dguendel, CC BY 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/teguise/palacio-spinola.jpg', label: 'Palacio Spínola', credit: 'Dguendel, CC BY 4.0, via Wikimedia Commons' },
+    ],
+  },
+];
+
+const FUERTEVENTURA_CITIES: CityMeta[] = [
+  {
+    slug: 'betancuria',
+    displayName: 'Betancuria',
+    fulfilmentSlug: 'betancuria',
+    geo: { latitude: 28.4256, longitude: -14.0617 },
+    mapQuery: 'Betancuria, Fuerteventura',
+    photos: [
+      { src: '/images/audio-tour/betancuria/santa-maria.jpg', label: 'Iglesia de Santa María de Betancuria', credit: 'Cappo80, CC0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/betancuria/san-buenaventura.jpg', label: 'Convento de San Buenaventura', credit: 'Genet, CC BY-SA 4.0, via Wikimedia Commons' },
+      { src: '/images/audio-tour/betancuria/valle.jpg', label: 'Betancuria and its valley', credit: 'mroszewski, CC BY-SA 3.0, via Wikimedia Commons' },
+    ],
+  },
+];
+
+export const ISLANDS: IslandMeta[] = [
+  {
+    slug: 'tenerife',
+    routeBase: '/tenerife-audio-tour',
+    cityPathname: '/tenerife-audio-tour/[city]',
+    regionName: { en: 'Tenerife', de: 'Teneriffa' },
+    cities: TENERIFE_CITIES,
+  },
+  {
+    slug: 'gran-canaria',
+    routeBase: '/gran-canaria-audio-tour',
+    cityPathname: '/gran-canaria-audio-tour/[city]',
+    regionName: { en: 'Gran Canaria' },
+    cities: GRAN_CANARIA_CITIES,
+  },
+  {
+    slug: 'lanzarote',
+    routeBase: '/lanzarote-audio-tour',
+    cityPathname: '/lanzarote-audio-tour/[city]',
+    regionName: { en: 'Lanzarote' },
+    cities: LANZAROTE_CITIES,
+  },
+  {
+    slug: 'fuerteventura',
+    routeBase: '/fuerteventura-audio-tour',
+    cityPathname: '/fuerteventura-audio-tour/[city]',
+    regionName: { en: 'Fuerteventura' },
+    cities: FUERTEVENTURA_CITIES,
+  },
+];
+
+/**
+ * Backward-compatible flat list of Tenerife cities. The Tenerife hub and the
+ * sitemap iterate this directly; new islands use their own `island.cities`.
+ */
+export const CITY_META: CityMeta[] = TENERIFE_CITIES;
+
+export function getIsland(slug: string): IslandMeta | undefined {
+  return ISLANDS.find((i) => i.slug === slug);
+}
+
+/** Island name for the given locale, falling back to English. */
+export function islandRegion(island: IslandMeta, locale: string): string {
+  return island.regionName[locale as Locale] ?? island.regionName.en;
+}
+
+/** Find a city by slug across every island (city slugs are globally unique). */
 export function getCityMeta(slug: string): CityMeta | undefined {
-  return CITY_META.find((c) => c.slug === slug);
+  for (const island of ISLANDS) {
+    const city = island.cities.find((c) => c.slug === slug);
+    if (city) return city;
+  }
+  return undefined;
+}
+
+/** The island a given city slug belongs to. */
+export function getIslandOfCity(slug: string): IslandMeta | undefined {
+  return ISLANDS.find((i) => i.cities.some((c) => c.slug === slug));
 }
 
 /* ------------------------------------------------------------------ *

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { activities } from '@/data/activities';
 import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import { escapeGamesData } from '@/data/escape-games';
-import { CITY_META } from '@/lib/audio-tour';
+import { ISLANDS } from '@/lib/audio-tour';
 
 // Force dynamic rendering so the route always reflects the current data set.
 export const dynamic = 'force-dynamic';
@@ -133,13 +133,17 @@ export async function GET() {
   // Canary Islands audio-guide landing (links out to Lume)
   urlEntries.push(buildUrlEntry(audioGuidePaths, 0.7, 'monthly'));
 
-  // Tenerife city audio tours: hub + 5 cities (same literal path in every locale)
-  urlEntries.push(buildUrlEntry(samePath('/tenerife-audio-tour'), 0.8, 'weekly'));
-  for (const city of CITY_META) {
-    const image = city.photos[0]?.src ? `${BASE_URL}${city.photos[0].src}` : undefined;
-    urlEntries.push(
-      buildUrlEntry(samePath(`/tenerife-audio-tour/${city.slug}`), 0.8, 'monthly', undefined, image)
-    );
+  // Canary Islands city audio tours: archipelago hub + per-island hubs + cities
+  // (each a literal path shared across every locale).
+  urlEntries.push(buildUrlEntry(samePath('/canary-islands-audio-tour'), 0.8, 'weekly'));
+  for (const island of ISLANDS) {
+    urlEntries.push(buildUrlEntry(samePath(island.routeBase), 0.8, 'weekly'));
+    for (const city of island.cities) {
+      const image = city.photos[0]?.src ? `${BASE_URL}${city.photos[0].src}` : undefined;
+      urlEntries.push(
+        buildUrlEntry(samePath(`${island.routeBase}/${city.slug}`), 0.8, 'monthly', undefined, image)
+      );
+    }
   }
 
   // Category pages (same slug in every locale)

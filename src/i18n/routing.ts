@@ -8,8 +8,15 @@ export const routing = defineRouting({
     '/': '/',
     // Audio tours use the same literal path in every locale (hreflang is built
     // by hand in the page); registering them here lets typed <Link> target them.
+    '/canary-islands-audio-tour': '/canary-islands-audio-tour',
     '/tenerife-audio-tour': '/tenerife-audio-tour',
     '/tenerife-audio-tour/[city]': '/tenerife-audio-tour/[city]',
+    '/gran-canaria-audio-tour': '/gran-canaria-audio-tour',
+    '/gran-canaria-audio-tour/[city]': '/gran-canaria-audio-tour/[city]',
+    '/lanzarote-audio-tour': '/lanzarote-audio-tour',
+    '/lanzarote-audio-tour/[city]': '/lanzarote-audio-tour/[city]',
+    '/fuerteventura-audio-tour': '/fuerteventura-audio-tour',
+    '/fuerteventura-audio-tour/[city]': '/fuerteventura-audio-tour/[city]',
     '/experiences': {
       en: '/experiences',
       es: '/experiencias',

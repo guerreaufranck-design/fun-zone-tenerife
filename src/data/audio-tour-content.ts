@@ -16,6 +16,2030 @@ import type { CityCopy } from '@/lib/audio-tour';
 type CityStore = Partial<Record<Locale, CityCopy>> & { en: CityCopy };
 
 export const CITY_CONTENT: Record<string, CityStore> = {
+  'betancuria': {
+    en: {
+      metaTitle: 'Betancuria Audio Tour · Self-Guided Walk in Fuerteventura',
+      metaDescription:
+        'A self-guided GPS audio tour of Betancuria, the old capital of Fuerteventura. Walk its church, convent ruins and valley at your own pace with native-voice stories in 32 languages, offline and with an AR guide.',
+      keywords:
+        'betancuria audio tour, self-guided tour betancuria, fuerteventura walking tour, things to do fuerteventura, audio guide fuerteventura',
+      ogTitle: 'Betancuria Audio Tour | Fun Zone Tenerife',
+      ogDescription:
+        'Walk Betancuria, the old capital of Fuerteventura, at your own pace with native-voice stories in 32 languages, offline, with an augmented-reality guide.',
+      heroIntro:
+        'A self-guided GPS audio walk through the old capital of Fuerteventura. A village hidden in a mountain valley to escape the pirates, a church that was once a bishop’s seat and the ruins of one of the first convents in the islands, told in your ear right where it all happened.',
+      postcardHeading: 'Betancuria, the version the postcards leave out',
+      postcardIntro:
+        'Not the glossy shots. The stories even locals walk past without knowing, whispered in your ear on the exact spot they belong to. Here are three. Many more wait inside the tour.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'This modest village church once held the seat of a bishopric that governed almost every Canary Island, a role it kept for barely seven years before it vanished.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'A short walk from the village stand the broken walls of one of the first convents in the Canaries, left roofless after a single brutal night in 1593.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Two giant bronze kings stand alone on a windswept ridge outside the village, the last native rulers of an island that a long stone wall once split in two.',
+        },
+      ],
+      storyTitle: 'The story of Betancuria',
+      storyIntro: [
+        'Betancuria is a tiny whitewashed village set deep in a green valley in the mountains of Fuerteventura. For more than four centuries it was the island’s capital, yet today it is the smallest municipality in the whole of the Canary Islands. Palm trees, a handsome old church and quiet lanes make it one of the most picturesque corners of the archipelago.',
+        'It was founded in 1404 by the Norman knight Jean de Béthencourt, who gave the place his name. He chose this sheltered inland valley on purpose, for its fresh water and fertile soil, but above all because a hidden site far from the coast offered some protection from the pirates who haunted these waters.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'A capital that outran its own defences',
+          paragraphs: [
+            'The hidden-valley plan never fully worked. European and North African corsairs reached Betancuria more than once, and in 1593 a raid attributed to the corsair Xabán Arráez fell on the town and left it in ruins. The great church of Santa María was sacked and later rebuilt in the seventeenth century, while the convent of San Buenaventura on the edge of the village was left a roofless shell that still stands today.',
+            'Despite the raids, Betancuria remained the island’s capital until 1834, when the seat of power moved away to Antigua and later Puerto del Rosario. The village simply stopped growing, which is why its old heart has survived so intact. Its historic centre is protected, and the church, the convent ruins and the little archaeology museum tell the whole story within a short walk.',
+          ],
+        },
+        {
+          heading: 'Kings, cheese and an older island',
+          paragraphs: [
+            'Long before the conquest, Fuerteventura was home to the Majos, its aboriginal people, and was split into two kingdoms by a long stone wall across the island. Just outside Betancuria, two towering bronze statues honour the last native kings, Guise and Ayose, remembered by tradition as the rulers of the two halves, Guise in the north and Ayose in the south.',
+            'The valley around the village is bare, volcanic and grazed by goats, and those goats give Fuerteventura its most famous product: Majorero cheese, the first Spanish goat’s cheese to earn a protected designation of origin. Pair it with gofio, the toasted meal that has been a Canarian staple since aboriginal times, and you taste the island at its most traditional.',
+          ],
+        },
+        {
+          heading: 'What to look out for',
+          paragraphs: [
+            'Start at the church of Santa María in the heart of the village, then follow the lane to the roofless ruins of the Convento de San Buenaventura and the small hermitage beside it. Visit the archaeology museum for the island’s deep past, and drive up to the Mirador de Guise y Ayose for the two kings and a sweeping view over the valley. Keep an eye out for local Majorero cheese along the way.',
+          ],
+        },
+      ],
+      mapHeading: 'Where is Betancuria?',
+      mapIntro:
+        'Betancuria lies inland in the mountainous centre-west of Fuerteventura, the most easterly of Spain’s Canary Islands and the closest to the African coast. It is a short, scenic drive from the island’s capital Puerto del Rosario and from the southern resorts.',
+      bonusHeading: 'Three things most visitors never learn',
+      bonus: [
+        {
+          lead: 'A capital that hid, and was found anyway.',
+          text:
+            'Béthencourt tucked his capital deep in a mountain valley to hide it from raiders. Yet in 1593 corsairs marched inland and sacked it all the same, proving the hidden-valley strategy a costly failure.',
+        },
+        {
+          lead: 'A cathedral that lasted seven years.',
+          text:
+            'In 1424 the pope made the village church of Santa María the seat of a bishopric covering almost all the Canary Islands. The bishopric was abolished in 1431, so Betancuria was a cathedral town for barely seven years.',
+        },
+        {
+          lead: 'The smallest town in the Canaries.',
+          text:
+            'Once the capital of a whole island, Betancuria is today the least populated municipality in the entire Canary archipelago, home to only a few hundred people, which is exactly why its old heart feels frozen in time.',
+        },
+      ],
+      langHeading: 'Betancuria in your language, all 32',
+      ctaHeading: 'Get the key to Betancuria',
+      ctaIntro:
+        'Pick your stops, start walking, and let the voice reveal what everyone else walks straight past.',
+    },
+    fr: {
+      metaTitle: 'Visite audio de Betancuria · En autonomie, Fuerteventura',
+      metaDescription:
+        'Une visite audio GPS en autonomie de Betancuria, l’ancienne capitale de Fuerteventura. Parcourez son église, les ruines de son couvent et sa vallée à votre rythme avec des récits en voix native dans 32 langues, hors ligne et avec un guide en réalité augmentée.',
+      keywords:
+        'visite audio betancuria, visite autoguidée betancuria, visite à pied fuerteventura, que faire à fuerteventura, audioguide fuerteventura',
+      ogTitle: 'Visite audio de Betancuria | Fun Zone Tenerife',
+      ogDescription:
+        'Parcourez Betancuria, l’ancienne capitale de Fuerteventura, à votre rythme avec des récits en voix native dans 32 langues, hors ligne, avec un guide en réalité augmentée.',
+      heroIntro:
+        'Une balade audio GPS en autonomie à travers l’ancienne capitale de Fuerteventura. Un village caché dans une vallée de montagne pour échapper aux pirates, une église qui fut un siège épiscopal et les ruines de l’un des premiers couvents des îles, racontés à votre oreille là où tout s’est passé.',
+      postcardHeading: 'Betancuria, la version que les cartes postales oublient',
+      postcardIntro:
+        'Pas les clichés sur papier glacé. Les histoires que même les habitants longent sans les connaître, murmurées à votre oreille à l’endroit exact où elles ont eu lieu. En voici trois. Beaucoup d’autres vous attendent dans la visite.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'Cette modeste église de village abrita jadis le siège d’un évêché qui gouvernait presque toutes les îles Canaries, un rôle qu’elle ne conserva que sept ans avant qu’il ne disparaisse.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'À deux pas du village se dressent les murs brisés de l’un des premiers couvents des Canaries, laissé sans toit après une seule nuit brutale en 1593.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Deux rois de bronze géants se tiennent seuls sur une crête battue par les vents, aux portes du village, derniers souverains autochtones d’une île qu’un long mur de pierre sépara jadis en deux.',
+        },
+      ],
+      storyTitle: 'L’histoire de Betancuria',
+      storyIntro: [
+        'Betancuria est un minuscule village blanchi niché au fond d’une vallée verdoyante, dans les montagnes de Fuerteventura. Pendant plus de quatre siècles, elle fut la capitale de l’île, et pourtant c’est aujourd’hui la plus petite commune de toutes les îles Canaries. Des palmiers, une belle vieille église et des ruelles tranquilles en font l’un des coins les plus pittoresques de l’archipel.',
+        'Elle fut fondée en 1404 par le chevalier normand Jean de Béthencourt, qui lui donna son nom. Il choisit à dessein cette vallée abritée de l’intérieur, pour son eau douce et sa terre fertile, mais surtout parce qu’un site caché, loin de la côte, offrait une certaine protection contre les pirates qui hantaient ces eaux.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Une capitale rattrapée malgré ses défenses',
+          paragraphs: [
+            'La stratégie de la vallée cachée ne fonctionna jamais tout à fait. Des corsaires européens et nord-africains atteignirent Betancuria à plusieurs reprises, et en 1593 un raid attribué au corsaire Xabán Arráez s’abattit sur la ville et la laissa en ruines. La grande église de Santa María fut mise à sac puis reconstruite au XVIIe siècle, tandis que le couvent de San Buenaventura, en lisière du village, resta une coque sans toit qui se dresse encore aujourd’hui.',
+            'Malgré les raids, Betancuria demeura la capitale de l’île jusqu’en 1834, lorsque le siège du pouvoir partit pour Antigua puis Puerto del Rosario. Le village cessa simplement de grandir, et c’est pourquoi son vieux cœur a si bien survécu. Son centre historique est protégé, et l’église, les ruines du couvent et le petit musée d’archéologie racontent toute l’histoire en une courte promenade.',
+          ],
+        },
+        {
+          heading: 'Des rois, du fromage et une île plus ancienne',
+          paragraphs: [
+            'Bien avant la conquête, Fuerteventura était la terre des Majos, son peuple autochtone, et se trouvait divisée en deux royaumes par un long mur de pierre traversant l’île. Juste à la sortie de Betancuria, deux imposantes statues de bronze honorent les derniers rois natifs, Guise et Ayose, que la tradition présente comme les souverains des deux moitiés, Guise au nord et Ayose au sud.',
+            'La vallée autour du village est nue, volcanique et parcourue par les chèvres, et ces chèvres donnent à Fuerteventura son produit le plus célèbre : le fromage Majorero, premier fromage de chèvre espagnol à obtenir une appellation d’origine protégée. Accompagnez-le de gofio, la farine grillée qui est un aliment de base canarien depuis l’époque autochtone, et vous goûtez l’île dans ce qu’elle a de plus traditionnel.',
+          ],
+        },
+        {
+          heading: 'À ne pas manquer',
+          paragraphs: [
+            'Commencez par l’église de Santa María au cœur du village, puis suivez le chemin jusqu’aux ruines sans toit du Convento de San Buenaventura et à la petite chapelle voisine. Visitez le musée d’archéologie pour le passé lointain de l’île, et montez au Mirador de Guise y Ayose pour les deux rois et une vue ample sur la vallée. Guettez le fromage Majorero local au passage.',
+          ],
+        },
+      ],
+      mapHeading: 'Où se trouve Betancuria ?',
+      mapIntro:
+        'Betancuria se trouve à l’intérieur des terres, dans le centre-ouest montagneux de Fuerteventura, la plus orientale des îles Canaries espagnoles et la plus proche de la côte africaine. Elle est à une courte route panoramique de la capitale de l’île, Puerto del Rosario, et des stations balnéaires du sud.',
+      bonusHeading: 'Trois choses que la plupart des visiteurs ignorent',
+      bonus: [
+        {
+          lead: 'Une capitale cachée, et pourtant trouvée.',
+          text:
+            'Béthencourt nicha sa capitale au fond d’une vallée de montagne pour la dissimuler aux pillards. Pourtant, en 1593, les corsaires remontèrent dans les terres et la mirent à sac tout de même, prouvant l’échec coûteux de la stratégie de la vallée cachée.',
+        },
+        {
+          lead: 'Une cathédrale qui dura sept ans.',
+          text:
+            'En 1424, le pape fit de l’église villageoise de Santa María le siège d’un évêché couvrant presque toutes les îles Canaries. L’évêché fut supprimé en 1431 : Betancuria ne fut donc ville de cathédrale que sept ans à peine.',
+        },
+        {
+          lead: 'La plus petite ville des Canaries.',
+          text:
+            'Jadis capitale de toute une île, Betancuria est aujourd’hui la commune la moins peuplée de l’archipel des Canaries, avec seulement quelques centaines d’habitants, et c’est précisément pour cela que son vieux cœur semble figé dans le temps.',
+        },
+      ],
+      langHeading: 'Betancuria dans votre langue, les 32',
+      ctaHeading: 'Obtenez la clé de Betancuria',
+      ctaIntro:
+        'Choisissez vos étapes, commencez à marcher, et laissez la voix révéler ce que tout le monde longe sans le voir.',
+    },
+    es: {
+      metaTitle: 'Audioguía de Betancuria · Autoguiada, Fuerteventura',
+      metaDescription:
+        'Una audioguía GPS autoguiada de Betancuria, la antigua capital de Fuerteventura. Recorre su iglesia, las ruinas del convento y el valle a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión y con guía de realidad aumentada.',
+      keywords:
+        'audioguía betancuria, ruta autoguiada betancuria, ruta a pie fuerteventura, qué ver en fuerteventura, audioguía fuerteventura',
+      ogTitle: 'Audioguía de Betancuria | Fun Zone Tenerife',
+      ogDescription:
+        'Recorre Betancuria, la antigua capital de Fuerteventura, a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión, con guía de realidad aumentada.',
+      heroIntro:
+        'Un paseo con audioguía GPS autoguiada por la antigua capital de Fuerteventura. Un pueblo escondido en un valle de montaña para huir de los piratas, una iglesia que fue sede episcopal y las ruinas de uno de los primeros conventos de las islas, narrados a tu oído justo donde ocurrió todo.',
+      postcardHeading: 'Betancuria, la versión que las postales se saltan',
+      postcardIntro:
+        'No las fotos de revista. Las historias por las que hasta los vecinos pasan sin saberlo, susurradas a tu oído en el punto exacto al que pertenecen. Aquí tienes tres. Muchas más te esperan en el tour.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'Esta modesta iglesia de pueblo acogió un día la sede de un obispado que gobernaba casi todas las Islas Canarias, un papel que apenas conservó siete años antes de desaparecer.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'A un paso del pueblo se alzan los muros rotos de uno de los primeros conventos de Canarias, que quedó sin techo tras una sola noche brutal en 1593.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Dos reyes de bronce gigantes se alzan solos en una loma batida por el viento, a las afueras del pueblo, últimos soberanos aborígenes de una isla que un largo muro de piedra partió un día en dos.',
+        },
+      ],
+      storyTitle: 'La historia de Betancuria',
+      storyIntro: [
+        'Betancuria es un pueblecito blanco encajado en lo hondo de un valle verde, en las montañas de Fuerteventura. Durante más de cuatro siglos fue la capital de la isla y, sin embargo, hoy es el municipio más pequeño de todas las Islas Canarias. Las palmeras, una hermosa iglesia vieja y sus calles tranquilas lo convierten en uno de los rincones más pintorescos del archipiélago.',
+        'Fue fundada en 1404 por el caballero normando Jean de Béthencourt, que le dio su nombre. Eligió a propósito este valle resguardado del interior, por su agua dulce y su tierra fértil, pero sobre todo porque un lugar oculto, lejos de la costa, ofrecía cierta protección frente a los piratas que acechaban estas aguas.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Una capital alcanzada pese a sus defensas',
+          paragraphs: [
+            'El plan del valle escondido nunca funcionó del todo. Corsarios europeos y norteafricanos llegaron a Betancuria más de una vez, y en 1593 un asalto atribuido al corsario Xabán Arráez cayó sobre la villa y la dejó en ruinas. La gran iglesia de Santa María fue saqueada y luego reconstruida en el siglo XVII, mientras que el convento de San Buenaventura, al borde del pueblo, quedó como un cascarón sin techo que aún sigue en pie.',
+            'Pese a los asaltos, Betancuria siguió siendo la capital de la isla hasta 1834, cuando la sede del poder se trasladó a Antigua y más tarde a Puerto del Rosario. El pueblo sencillamente dejó de crecer, y por eso su viejo corazón ha sobrevivido tan intacto. Su centro histórico está protegido, y la iglesia, las ruinas del convento y el pequeño museo de arqueología cuentan toda la historia en un corto paseo.',
+          ],
+        },
+        {
+          heading: 'Reyes, queso y una isla más antigua',
+          paragraphs: [
+            'Mucho antes de la conquista, Fuerteventura era tierra de los majos, su pueblo aborigen, y estaba dividida en dos reinos por un largo muro de piedra que cruzaba la isla. Justo a las afueras de Betancuria, dos imponentes estatuas de bronce honran a los últimos reyes nativos, Guise y Ayose, recordados por la tradición como señores de las dos mitades, Guise en el norte y Ayose en el sur.',
+            'El valle que rodea el pueblo es pelado, volcánico y pastado por las cabras, y esas cabras dan a Fuerteventura su producto más célebre: el queso majorero, el primer queso de cabra español en lograr una denominación de origen protegida. Acompáñalo con gofio, la harina tostada que es alimento básico canario desde tiempos aborígenes, y saboreas la isla en su versión más tradicional.',
+          ],
+        },
+        {
+          heading: 'En qué fijarte',
+          paragraphs: [
+            'Empieza en la iglesia de Santa María, en el corazón del pueblo, y luego sigue el camino hasta las ruinas sin techo del Convento de San Buenaventura y la pequeña ermita contigua. Visita el museo de arqueología para asomarte al pasado remoto de la isla, y sube al Mirador de Guise y Ayose por los dos reyes y una amplia vista del valle. Fíjate en el queso majorero local por el camino.',
+          ],
+        },
+      ],
+      mapHeading: '¿Dónde está Betancuria?',
+      mapIntro:
+        'Betancuria está tierra adentro, en el centro-oeste montañoso de Fuerteventura, la más oriental de las Islas Canarias y la más cercana a la costa africana. Queda a un corto y bonito trayecto en coche de la capital de la isla, Puerto del Rosario, y de las zonas turísticas del sur.',
+      bonusHeading: 'Tres cosas que casi ningún visitante descubre',
+      bonus: [
+        {
+          lead: 'Una capital que se escondió, y aun así la hallaron.',
+          text:
+            'Béthencourt metió su capital en lo hondo de un valle de montaña para ocultarla de los asaltantes. Y, sin embargo, en 1593 los corsarios subieron tierra adentro y la saquearon igual, demostrando el costoso fracaso de la estrategia del valle escondido.',
+        },
+        {
+          lead: 'Una catedral que duró siete años.',
+          text:
+            'En 1424 el papa hizo de la iglesia del pueblo, Santa María, la sede de un obispado que abarcaba casi todas las Islas Canarias. El obispado se suprimió en 1431, así que Betancuria fue villa de catedral apenas siete años.',
+        },
+        {
+          lead: 'El pueblo más pequeño de Canarias.',
+          text:
+            'Antaño capital de toda una isla, Betancuria es hoy el municipio menos poblado de todo el archipiélago canario, con apenas unos cientos de habitantes, y justo por eso su viejo corazón parece detenido en el tiempo.',
+        },
+      ],
+      langHeading: 'Betancuria en tu idioma, los 32',
+      ctaHeading: 'Consigue la llave de Betancuria',
+      ctaIntro:
+        'Elige tus paradas, echa a andar y deja que la voz te revele lo que todos pasan de largo.',
+    },
+    de: {
+      metaTitle: 'Audiotour Betancuria · Selbstgeführt, Fuerteventura',
+      metaDescription:
+        'Eine selbstgeführte GPS-Audiotour durch Betancuria, die alte Hauptstadt Fuerteventuras. Erkunden Sie Kirche, Klosterruine und Tal in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline und mit AR-Guide.',
+      keywords:
+        'audiotour betancuria, selbstgeführte tour betancuria, stadtrundgang fuerteventura, sehenswürdigkeiten fuerteventura, audioguide fuerteventura',
+      ogTitle: 'Audiotour Betancuria | Fun Zone Tenerife',
+      ogDescription:
+        'Erkunden Sie Betancuria, die alte Hauptstadt Fuerteventuras, in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline, mit Augmented-Reality-Guide.',
+      heroIntro:
+        'Ein selbstgeführter GPS-Audiospaziergang durch die alte Hauptstadt Fuerteventuras. Ein Dorf, versteckt in einem Bergtal, um den Piraten zu entgehen, eine Kirche, die einst Bischofssitz war, und die Ruinen eines der ersten Klöster der Inseln, erzählt in Ihrem Ohr genau dort, wo alles geschah.',
+      postcardHeading: 'Betancuria, die Version, die auf keiner Postkarte steht',
+      postcardIntro:
+        'Nicht die Hochglanzbilder. Die Geschichten, an denen selbst Einheimische ahnungslos vorbeigehen, geflüstert in Ihr Ohr an genau dem Ort, zu dem sie gehören. Hier sind drei. Viele weitere warten in der Tour.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'Diese bescheidene Dorfkirche beherbergte einst den Sitz eines Bistums, das fast jede Kanarische Insel verwaltete, eine Rolle, die sie kaum sieben Jahre innehatte, ehe sie verschwand.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'Ein kurzer Weg vom Dorf entfernt stehen die zerborstenen Mauern eines der ersten Klöster der Kanaren, nach einer einzigen brutalen Nacht im Jahr 1593 ohne Dach zurückgelassen.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Zwei riesige bronzene Könige stehen allein auf einem windigen Kamm vor dem Dorf, die letzten einheimischen Herrscher einer Insel, die eine lange Steinmauer einst in zwei Teile trennte.',
+        },
+      ],
+      storyTitle: 'Die Geschichte von Betancuria',
+      storyIntro: [
+        'Betancuria ist ein winziges weißes Dorf, tief in einem grünen Tal in den Bergen Fuerteventuras gelegen. Mehr als vier Jahrhunderte lang war es die Hauptstadt der Insel, und doch ist es heute die kleinste Gemeinde der gesamten Kanarischen Inseln. Palmen, eine schöne alte Kirche und stille Gassen machen es zu einem der malerischsten Winkel des Archipels.',
+        'Gegründet wurde es 1404 vom normannischen Ritter Jean de Béthencourt, der dem Ort seinen Namen gab. Er wählte dieses geschützte Tal im Landesinneren mit Bedacht, wegen seines Süßwassers und fruchtbaren Bodens, vor allem aber, weil ein verborgener Ort fern der Küste einen gewissen Schutz vor den Piraten bot, die diese Gewässer heimsuchten.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Eine Hauptstadt, die trotz ihrer Deckung eingeholt wurde',
+          paragraphs: [
+            'Der Plan vom versteckten Tal ging nie ganz auf. Europäische und nordafrikanische Korsaren erreichten Betancuria mehr als einmal, und 1593 traf ein dem Korsaren Xabán Arráez zugeschriebener Überfall die Stadt und legte sie in Trümmer. Die große Kirche Santa María wurde geplündert und später im 17. Jahrhundert wieder aufgebaut, während das Kloster San Buenaventura am Dorfrand als dachlose Hülle zurückblieb, die bis heute steht.',
+            'Trotz der Überfälle blieb Betancuria bis 1834 Hauptstadt der Insel, als der Sitz der Macht nach Antigua und später nach Puerto del Rosario wechselte. Das Dorf hörte schlicht auf zu wachsen, weshalb sein alter Kern so unversehrt überdauert hat. Sein historischer Ortskern steht unter Schutz, und Kirche, Klosterruine und das kleine Archäologiemuseum erzählen die ganze Geschichte in kurzem Fußweg.',
+          ],
+        },
+        {
+          heading: 'Könige, Käse und eine ältere Insel',
+          paragraphs: [
+            'Lange vor der Eroberung war Fuerteventura die Heimat der Majos, seines eingeborenen Volkes, und durch eine lange Steinmauer quer über die Insel in zwei Königreiche geteilt. Gleich außerhalb von Betancuria ehren zwei hoch aufragende Bronzestatuen die letzten einheimischen Könige, Guise und Ayose, die die Überlieferung als Herrscher der beiden Hälften erinnert, Guise im Norden und Ayose im Süden.',
+            'Das Tal rund um das Dorf ist kahl, vulkanisch und von Ziegen beweidet, und diese Ziegen geben Fuerteventura sein berühmtestes Erzeugnis: den Majorero-Käse, den ersten spanischen Ziegenkäse mit geschützter Ursprungsbezeichnung. Dazu gofio, das geröstete Mehl, das seit der Zeit der Ureinwohner ein kanarisches Grundnahrungsmittel ist, und Sie schmecken die Insel von ihrer traditionellsten Seite.',
+          ],
+        },
+        {
+          heading: 'Worauf Sie achten sollten',
+          paragraphs: [
+            'Beginnen Sie an der Kirche Santa María im Herzen des Dorfes, dann folgen Sie dem Weg zu den dachlosen Ruinen des Convento de San Buenaventura und der kleinen Kapelle daneben. Besuchen Sie das Archäologiemuseum für die ferne Vergangenheit der Insel, und fahren Sie hinauf zum Mirador de Guise y Ayose für die zwei Könige und einen weiten Blick über das Tal. Halten Sie unterwegs Ausschau nach dem lokalen Majorero-Käse.',
+          ],
+        },
+      ],
+      mapHeading: 'Wo liegt Betancuria?',
+      mapIntro:
+        'Betancuria liegt im Binnenland, im bergigen Zentrum-Westen Fuerteventuras, der östlichsten der spanischen Kanarischen Inseln und der dem afrikanischen Festland nächsten. Es ist eine kurze, landschaftlich reizvolle Fahrt von der Inselhauptstadt Puerto del Rosario und von den Ferienorten im Süden entfernt.',
+      bonusHeading: 'Drei Dinge, die die meisten Besucher nie erfahren',
+      bonus: [
+        {
+          lead: 'Eine Hauptstadt, die sich versteckte und doch gefunden wurde.',
+          text:
+            'Béthencourt barg seine Hauptstadt tief in einem Bergtal, um sie vor Räubern zu verstecken. Und doch zogen 1593 Korsaren ins Landesinnere und plünderten sie dennoch, was die kostspielige Vergeblichkeit der Strategie des versteckten Tals bewies.',
+        },
+        {
+          lead: 'Eine Kathedrale, die sieben Jahre währte.',
+          text:
+            'Im Jahr 1424 machte der Papst die Dorfkirche Santa María zum Sitz eines Bistums, das fast alle Kanarischen Inseln umfasste. Das Bistum wurde 1431 aufgehoben, Betancuria war also kaum sieben Jahre lang eine Kathedralenstadt.',
+        },
+        {
+          lead: 'Die kleinste Stadt der Kanaren.',
+          text:
+            'Einst Hauptstadt einer ganzen Insel, ist Betancuria heute die bevölkerungsärmste Gemeinde des gesamten Kanaren-Archipels, mit nur wenigen Hundert Einwohnern, und genau deshalb wirkt ihr alter Kern wie in der Zeit stehengeblieben.',
+        },
+      ],
+      langHeading: 'Betancuria in Ihrer Sprache, alle 32',
+      ctaHeading: 'Holen Sie sich den Schlüssel zu Betancuria',
+      ctaIntro:
+        'Wählen Sie Ihre Stationen, gehen Sie los, und lassen Sie die Stimme enthüllen, woran alle anderen vorbeigehen.',
+    },
+    it: {
+      metaTitle: 'Audioguida di Betancuria · Autoguidata, Fuerteventura',
+      metaDescription:
+        'Un tour audio GPS in autonomia a Betancuria, l’antica capitale di Fuerteventura. Percorri la chiesa, le rovine del convento e la valle al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline e con guida in realtà aumentata.',
+      keywords:
+        'audioguida betancuria, tour autoguidato betancuria, tour a piedi fuerteventura, cosa vedere a fuerteventura, audioguida fuerteventura',
+      ogTitle: 'Audioguida di Betancuria | Fun Zone Tenerife',
+      ogDescription:
+        'Percorri Betancuria, l’antica capitale di Fuerteventura, al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline, con guida in realtà aumentata.',
+      heroIntro:
+        'Una passeggiata con audioguida GPS in autonomia nell’antica capitale di Fuerteventura. Un villaggio nascosto in una valle di montagna per sfuggire ai pirati, una chiesa che fu sede vescovile e le rovine di uno dei primi conventi delle isole, raccontati al tuo orecchio proprio dove tutto è accaduto.',
+      postcardHeading: 'Betancuria, la versione che le cartoline tralasciano',
+      postcardIntro:
+        'Non le foto patinate. Le storie davanti a cui passano persino gli abitanti senza saperlo, sussurrate al tuo orecchio nel punto esatto a cui appartengono. Eccone tre. Molte altre ti aspettano nel tour.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'Questa modesta chiesa di paese ospitò un tempo la sede di un vescovado che governava quasi ogni isola delle Canarie, un ruolo che conservò appena sette anni prima di svanire.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'A pochi passi dal paese sorgono i muri spezzati di uno dei primi conventi delle Canarie, lasciato senza tetto dopo una sola notte brutale nel 1593.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Due giganteschi re di bronzo si ergono soli su un crinale battuto dal vento, alle porte del paese, ultimi sovrani aborigeni di un’isola che un lungo muro di pietra divise un tempo in due.',
+        },
+      ],
+      storyTitle: 'La storia di Betancuria',
+      storyIntro: [
+        'Betancuria è un minuscolo villaggio bianco incastonato in fondo a una valle verde, tra le montagne di Fuerteventura. Per più di quattro secoli fu la capitale dell’isola, eppure oggi è il comune più piccolo di tutte le Isole Canarie. Le palme, una bella chiesa antica e i vicoli tranquilli ne fanno uno degli angoli più pittoreschi dell’arcipelago.',
+        'Fu fondata nel 1404 dal cavaliere normanno Jean de Béthencourt, che le diede il nome. Scelse di proposito questa valle riparata dell’entroterra, per la sua acqua dolce e il terreno fertile, ma soprattutto perché un luogo nascosto, lontano dalla costa, offriva una certa protezione dai pirati che infestavano queste acque.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Una capitale raggiunta nonostante le difese',
+          paragraphs: [
+            'Il piano della valle nascosta non funzionò mai del tutto. Corsari europei e nordafricani raggiunsero Betancuria più di una volta, e nel 1593 un’incursione attribuita al corsaro Xabán Arráez si abbatté sulla cittadina e la ridusse in rovina. La grande chiesa di Santa María fu saccheggiata e poi ricostruita nel Seicento, mentre il convento di San Buenaventura, al margine del paese, rimase un guscio senza tetto che si erge ancora oggi.',
+            'Nonostante le incursioni, Betancuria restò capitale dell’isola fino al 1834, quando la sede del potere si spostò ad Antigua e poi a Puerto del Rosario. Il paese smise semplicemente di crescere, ed è per questo che il suo vecchio cuore è sopravvissuto così intatto. Il suo centro storico è tutelato, e la chiesa, le rovine del convento e il piccolo museo archeologico raccontano l’intera storia in una breve passeggiata.',
+          ],
+        },
+        {
+          heading: 'Re, formaggio e un’isola più antica',
+          paragraphs: [
+            'Molto prima della conquista, Fuerteventura era terra dei Majos, il suo popolo aborigeno, ed era divisa in due regni da un lungo muro di pietra che attraversava l’isola. Appena fuori Betancuria, due imponenti statue di bronzo onorano gli ultimi re nativi, Guise e Ayose, ricordati dalla tradizione come signori delle due metà, Guise a nord e Ayose a sud.',
+            'La valle attorno al paese è spoglia, vulcanica e brucata dalle capre, e proprio quelle capre danno a Fuerteventura il suo prodotto più celebre: il formaggio Majorero, il primo formaggio caprino spagnolo a ottenere una denominazione di origine protetta. Accompagnalo con il gofio, la farina tostata che è un alimento base canario fin dai tempi degli aborigeni, e assapori l’isola nella sua veste più tradizionale.',
+          ],
+        },
+        {
+          heading: 'Cosa cercare',
+          paragraphs: [
+            'Comincia dalla chiesa di Santa María nel cuore del paese, poi segui la stradina fino alle rovine senza tetto del Convento de San Buenaventura e alla piccola cappella accanto. Visita il museo archeologico per il passato remoto dell’isola, e sali al Mirador de Guise y Ayose per i due re e un’ampia veduta sulla valle. Tieni d’occhio il formaggio Majorero locale lungo il cammino.',
+          ],
+        },
+      ],
+      mapHeading: 'Dove si trova Betancuria?',
+      mapIntro:
+        'Betancuria si trova nell’entroterra, nel centro-ovest montuoso di Fuerteventura, la più orientale delle Isole Canarie spagnole e la più vicina alla costa africana. È a un breve e panoramico tragitto in auto dalla capitale dell’isola, Puerto del Rosario, e dalle località balneari del sud.',
+      bonusHeading: 'Tre cose che quasi nessun visitatore scopre',
+      bonus: [
+        {
+          lead: 'Una capitale che si nascose, e fu trovata lo stesso.',
+          text:
+            'Béthencourt infilò la sua capitale in fondo a una valle di montagna per nasconderla ai predoni. Eppure nel 1593 i corsari risalirono l’entroterra e la saccheggiarono comunque, dimostrando il costoso fallimento della strategia della valle nascosta.',
+        },
+        {
+          lead: 'Una cattedrale che durò sette anni.',
+          text:
+            'Nel 1424 il papa fece della chiesa del paese, Santa María, la sede di un vescovado che comprendeva quasi tutte le Isole Canarie. Il vescovado fu soppresso nel 1431, così Betancuria fu città di cattedrale appena sette anni.',
+        },
+        {
+          lead: 'Il paese più piccolo delle Canarie.',
+          text:
+            'Un tempo capitale di un’intera isola, Betancuria è oggi il comune meno popoloso dell’intero arcipelago canario, con solo poche centinaia di abitanti, ed è proprio per questo che il suo vecchio cuore sembra fermo nel tempo.',
+        },
+      ],
+      langHeading: 'Betancuria nella tua lingua, tutte e 32',
+      ctaHeading: 'Prendi la chiave di Betancuria',
+      ctaIntro:
+        'Scegli le tue tappe, mettiti in cammino e lascia che la voce ti riveli ciò che tutti gli altri oltrepassano senza vedere.',
+    },
+    nl: {
+      metaTitle: 'Audiotour Betancuria · Zelfgeleid, Fuerteventura',
+      metaDescription:
+        'Een zelfgeleide gps-audiotour door Betancuria, de oude hoofdstad van Fuerteventura. Loop langs de kerk, kloosterruïne en vallei op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline en met AR-gids.',
+      keywords:
+        'audiotour betancuria, zelfgeleide tour betancuria, stadswandeling fuerteventura, bezienswaardigheden fuerteventura, audiogids fuerteventura',
+      ogTitle: 'Audiotour Betancuria | Fun Zone Tenerife',
+      ogDescription:
+        'Loop Betancuria, de oude hoofdstad van Fuerteventura, op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline, met augmented-reality-gids.',
+      heroIntro:
+        'Een zelfgeleide gps-audiowandeling door de oude hoofdstad van Fuerteventura. Een dorp verscholen in een bergdal om aan de piraten te ontsnappen, een kerk die ooit een bisschopszetel was en de ruïnes van een van de eerste kloosters van de eilanden, verteld in je oor precies waar het gebeurde.',
+      postcardHeading: 'Betancuria, de versie die de ansichtkaarten weglaten',
+      postcardIntro:
+        'Niet de glossy plaatjes. De verhalen waar zelfs bewoners onwetend langslopen, gefluisterd in je oor op de exacte plek waar ze thuishoren. Hier zijn er drie. Veel meer wachten in de tour.',
+      secrets: [
+        {
+          place: 'Iglesia de Santa María',
+          teaser:
+            'Dit bescheiden dorpskerkje herbergde ooit de zetel van een bisdom dat vrijwel elk Canarisch eiland bestuurde, een rol die het amper zeven jaar behield voordat die verdween.',
+        },
+        {
+          place: 'Convento de San Buenaventura',
+          teaser:
+            'Op een steenworp van het dorp staan de gebroken muren van een van de eerste kloosters van de Canarische Eilanden, zonder dak achtergelaten na één brute nacht in 1593.',
+        },
+        {
+          place: 'Mirador de Guise y Ayose',
+          teaser:
+            'Twee reusachtige bronzen koningen staan alleen op een winderige bergrug buiten het dorp, de laatste inheemse heersers van een eiland dat een lange stenen muur ooit in tweeën deelde.',
+        },
+      ],
+      storyTitle: 'Het verhaal van Betancuria',
+      storyIntro: [
+        'Betancuria is een piepklein wit dorp, diep weggestopt in een groene vallei in de bergen van Fuerteventura. Ruim vier eeuwen lang was het de hoofdstad van het eiland, en toch is het vandaag de kleinste gemeente van alle Canarische Eilanden. Palmbomen, een fraaie oude kerk en stille straatjes maken het tot een van de meest pittoreske hoekjes van de archipel.',
+        'Het werd in 1404 gesticht door de Normandische ridder Jean de Béthencourt, die het zijn naam gaf. Hij koos deze beschutte vallei in het binnenland met opzet, om haar zoete water en vruchtbare grond, maar vooral omdat een verborgen plek ver van de kust enige bescherming bood tegen de piraten die deze wateren teisterden.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Een hoofdstad die ondanks haar dekking werd ingehaald',
+          paragraphs: [
+            'Het plan van de verborgen vallei werkte nooit helemaal. Europese en Noord-Afrikaanse kapers bereikten Betancuria meer dan eens, en in 1593 trof een aan de kaper Xabán Arráez toegeschreven rooftocht het stadje en legde het in puin. De grote kerk van Santa María werd geplunderd en later in de zeventiende eeuw herbouwd, terwijl het klooster van San Buenaventura aan de rand van het dorp als een dakloze schil achterbleef die er nog altijd staat.',
+            'Ondanks de rooftochten bleef Betancuria tot 1834 de hoofdstad van het eiland, toen de zetel van de macht naar Antigua en later Puerto del Rosario verhuisde. Het dorp hield simpelweg op met groeien, en daarom is het oude hart zo gaaf bewaard gebleven. Het historische centrum is beschermd, en de kerk, de kloosterruïne en het kleine archeologiemuseum vertellen het hele verhaal op korte loopafstand.',
+          ],
+        },
+        {
+          heading: 'Koningen, kaas en een ouder eiland',
+          paragraphs: [
+            'Lang voor de verovering was Fuerteventura het land van de Majos, zijn inheemse volk, en werd het door een lange stenen muur dwars over het eiland in twee koninkrijken verdeeld. Net buiten Betancuria eren twee torenhoge bronzen standbeelden de laatste inheemse koningen, Guise en Ayose, door de overlevering herinnerd als heersers van de twee helften, Guise in het noorden en Ayose in het zuiden.',
+            'De vallei rond het dorp is kaal, vulkanisch en begraasd door geiten, en die geiten geven Fuerteventura zijn beroemdste product: de Majorero-kaas, de eerste Spaanse geitenkaas met een beschermde oorsprongsbenaming. Combineer die met gofio, het geroosterde meel dat sinds de tijd van de oorspronkelijke bewoners een Canarisch basisvoedsel is, en je proeft het eiland op zijn meest traditionele.',
+          ],
+        },
+        {
+          heading: 'Waar je op moet letten',
+          paragraphs: [
+            'Begin bij de kerk van Santa María in het hart van het dorp, volg dan het weggetje naar de dakloze ruïnes van het Convento de San Buenaventura en het kapelletje ernaast. Bezoek het archeologiemuseum voor het verre verleden van het eiland, en rijd omhoog naar de Mirador de Guise y Ayose voor de twee koningen en een weids uitzicht over de vallei. Houd onderweg de lokale Majorero-kaas in de gaten.',
+          ],
+        },
+      ],
+      mapHeading: 'Waar ligt Betancuria?',
+      mapIntro:
+        'Betancuria ligt in het binnenland, in het bergachtige midden-westen van Fuerteventura, het meest oostelijke van de Spaanse Canarische Eilanden en het dichtst bij de Afrikaanse kust. Het ligt op een korte, schilderachtige rit van de eilandhoofdstad Puerto del Rosario en van de badplaatsen in het zuiden.',
+      bonusHeading: 'Drie dingen die bijna geen bezoeker ontdekt',
+      bonus: [
+        {
+          lead: 'Een hoofdstad die zich verstopte en toch werd gevonden.',
+          text:
+            'Béthencourt stopte zijn hoofdstad diep in een bergdal om haar voor rovers te verbergen. Toch trokken in 1593 kapers het binnenland in en plunderden haar alsnog, wat het kostbare falen van de verborgen-valleistrategie bewees.',
+        },
+        {
+          lead: 'Een kathedraal die zeven jaar duurde.',
+          text:
+            'In 1424 maakte de paus van het dorpskerkje Santa María de zetel van een bisdom dat vrijwel alle Canarische Eilanden omvatte. Het bisdom werd in 1431 opgeheven, dus Betancuria was amper zeven jaar een kathedraalstad.',
+        },
+        {
+          lead: 'Het kleinste stadje van de Canarische Eilanden.',
+          text:
+            'Ooit hoofdstad van een heel eiland, is Betancuria vandaag de dunstbevolkte gemeente van de hele Canarische archipel, met slechts enkele honderden inwoners, en juist daarom voelt het oude hart als stilgezet in de tijd.',
+        },
+      ],
+      langHeading: 'Betancuria in jouw taal, alle 32',
+      ctaHeading: 'Haal de sleutel tot Betancuria',
+      ctaIntro:
+        'Kies je stops, begin te lopen en laat de stem onthullen wat iedereen straal voorbijloopt.',
+    },
+  },
+  'teguise': {
+    en: {
+      metaTitle: 'Teguise Audio Tour · Self-Guided Walk in Lanzarote',
+      metaDescription:
+        'A self-guided GPS audio tour of Teguise, the old capital of Lanzarote. Walk its whitewashed streets, plaza and pirate castle at your own pace with native-voice stories in 32 languages, offline and with an AR guide.',
+      keywords:
+        'teguise audio tour, self-guided tour teguise, villa de teguise walking tour, things to do lanzarote, audio guide lanzarote',
+      ogTitle: 'Teguise Audio Tour | Fun Zone Tenerife',
+      ogDescription:
+        'Walk Teguise, the old capital of Lanzarote, at your own pace with native-voice stories in 32 languages, offline, with an augmented-reality guide.',
+      heroIntro:
+        'A self-guided GPS audio walk through the first capital of Lanzarote. A whitewashed inland town named after an aboriginal princess, a pirate castle on a volcano and an alley that remembers a bloody night, told in your ear right where it all happened.',
+      postcardHeading: 'Teguise, the version the postcards leave out',
+      postcardIntro:
+        'Not the glossy shots. The stories even locals walk past without knowing, whispered in your ear on the exact spot they belong to. Here are three. Many more wait inside the tour.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'On the rim of an extinct volcano above the town stands a fortress that was once an early-warning tower against corsairs. Today it guards a very fitting treasure: the only museum of piracy in the Canary Islands.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'One narrow whitewashed lane behind the main church carries a chilling name, the Alley of Blood. Local memory ties it to a night when raiders came over the hills.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Behind an elegant eighteenth-century front on the main square hides the home of the timple, the little five-string instrument at the heart of Canarian music, which this town calls its own.',
+        },
+      ],
+      storyTitle: 'The story of Teguise',
+      storyIntro: [
+        'Teguise, often called the Villa de Teguise, is the old capital of Lanzarote and one of the oldest towns in the Canary Islands. It sits inland, away from the sea, a cluster of whitewashed houses and quiet squares beneath an extinct volcano. Its historic centre is among the best preserved in the archipelago, and on Sunday mornings its streets fill with one of the largest craft markets in the islands.',
+        'The town took shape in the early fifteenth century, after the Norman conquest of Lanzarote. By tradition it is named after Teguise, daughter of the island’s last aboriginal king Guadarfía, who is said to have married Maciot de Béthencourt, nephew of the conqueror. Historians treat the story as legend as much as fact, but the name has stuck for six centuries.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'A capital built inland',
+          paragraphs: [
+            'For hundreds of years Teguise was the seat of Lanzarote’s government and church, deliberately set inland and out of sight of the sea. The reason was simple: the coast was raided again and again by corsairs, and a hidden inland capital was safer than a port. Only in the mid-nineteenth century did the island finally move its capital down to the growing harbour town of Arrecife.',
+            'The danger was real. In 1586 a fierce raid, remembered locally as the work of the corsair Morato Arráez, fell on the town, and islanders fled to the fortress on the hill. Local legend ties the grim name of the Callejón de la Sangre, the Alley of Blood, to the raids of this age. On the main square, the mother church of Nuestra Señora de Guadalupe has been damaged and rebuilt across the centuries.',
+          ],
+        },
+        {
+          heading: 'The castle on the volcano',
+          paragraphs: [
+            'Above the town, on the rim of the Guanapay volcano, stands the Castillo de Santa Bárbara. It began as a simple fifteenth-century watchtower and was rebuilt as a fortress in the sixteenth century, a place where townspeople could shelter when the alarm was raised. After the pirate age ended it fell out of use, and for a time around 1899 it even served as a military pigeon loft before passing to the town.',
+            'Today the fortress holds the Museo de la Piratería, the only piracy museum in the Canaries, a fitting use for a building raised to watch for raiders. The climb is rewarded with a wide view over the island, the town below and the volcanic cones all around.',
+          ],
+        },
+        {
+          heading: 'What to look out for',
+          paragraphs: [
+            'Wander the whitewashed lanes around the Plaza de la Constitución, with the church of Guadalupe and the old convents of San Francisco and Santo Domingo nearby. Step into the Palacio Spínola to find the Casa-Museo del Timple, dedicated to the small Canarian instrument this town is proud to call its own. Then climb to the Castillo de Santa Bárbara for the view and the pirate museum. Come on a Sunday and the famous market takes over the streets.',
+          ],
+        },
+      ],
+      mapHeading: 'Where is Teguise?',
+      mapIntro:
+        'Teguise lies inland in the north of Lanzarote, the most north-easterly of Spain’s Canary Islands, off the north-west coast of Africa. It is a short drive from the capital Arrecife and from the resort of Costa Teguise on the coast, which shares its name but is a separate, modern place.',
+      bonusHeading: 'Three things most visitors never learn',
+      bonus: [
+        {
+          lead: 'The castle became a pigeon loft.',
+          text:
+            'Once the pirate threat faded, the mighty watchtower on the volcano lost its purpose. Around 1899 it was turned into a military pigeon loft, a strange second life for a fortress, before the town took it over and made it a museum.',
+        },
+        {
+          lead: 'A princess may have named the town.',
+          text:
+            'By tradition the name Teguise comes from an aboriginal princess, daughter of the island’s last native king, said to have married the conqueror’s nephew. Historians are not sure the marriage ever happened, but the name has outlived every doubt.',
+        },
+        {
+          lead: 'The cradle of the timple.',
+          text:
+            'The timple, the small five-string instrument that gives Canarian folk music its bright, jangling sound, is traditionally said to have been born in Teguise. The town now guards its story in a museum inside an old noble house.',
+        },
+      ],
+      langHeading: 'Teguise in your language, all 32',
+      ctaHeading: 'Get the key to Teguise',
+      ctaIntro:
+        'Pick your stops, start walking, and let the voice reveal what everyone else walks straight past.',
+    },
+    fr: {
+      metaTitle: 'Visite audio de Teguise · En autonomie, Lanzarote',
+      metaDescription:
+        'Une visite audio GPS en autonomie de Teguise, l’ancienne capitale de Lanzarote. Parcourez ses ruelles blanchies, sa place et son château de pirates à votre rythme avec des récits en voix native dans 32 langues, hors ligne et avec un guide en réalité augmentée.',
+      keywords:
+        'visite audio teguise, visite autoguidée teguise, visite à pied villa de teguise, que faire à lanzarote, audioguide lanzarote',
+      ogTitle: 'Visite audio de Teguise | Fun Zone Tenerife',
+      ogDescription:
+        'Parcourez Teguise, l’ancienne capitale de Lanzarote, à votre rythme avec des récits en voix native dans 32 langues, hors ligne, avec un guide en réalité augmentée.',
+      heroIntro:
+        'Une balade audio GPS en autonomie à travers la première capitale de Lanzarote. Une ville blanche de l’intérieur qui doit son nom à une princesse autochtone, un château de pirates sur un volcan et une ruelle qui se souvient d’une nuit sanglante, racontés à votre oreille là où tout s’est passé.',
+      postcardHeading: 'Teguise, la version que les cartes postales oublient',
+      postcardIntro:
+        'Pas les clichés sur papier glacé. Les histoires que même les habitants longent sans les connaître, murmurées à votre oreille à l’endroit exact où elles ont eu lieu. En voici trois. Beaucoup d’autres vous attendent dans la visite.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'Sur le rebord d’un volcan éteint, au-dessus de la ville, se dresse une forteresse qui fut jadis une tour de guet contre les corsaires. Elle veille aujourd’hui sur un trésor bien choisi : le seul musée de la piraterie des îles Canaries.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'Une étroite ruelle blanchie derrière l’église principale porte un nom glaçant : la ruelle du Sang. La mémoire locale la relie à une nuit où les pillards sont descendus des collines.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Derrière une élégante façade du XVIIIe siècle, sur la grande place, se cache la maison du timple, le petit instrument à cinq cordes au cœur de la musique canarienne, que cette ville revendique comme le sien.',
+        },
+      ],
+      storyTitle: 'L’histoire de Teguise',
+      storyIntro: [
+        'Teguise, souvent appelée la Villa de Teguise, est l’ancienne capitale de Lanzarote et l’une des plus vieilles villes des îles Canaries. Elle se tient à l’intérieur des terres, loin de la mer, un ensemble de maisons blanchies et de places tranquilles au pied d’un volcan éteint. Son centre historique compte parmi les mieux conservés de l’archipel, et le dimanche matin ses rues se remplissent de l’un des plus grands marchés d’artisanat des îles.',
+        'La ville prend forme au début du XVe siècle, après la conquête normande de Lanzarote. Selon la tradition, elle doit son nom à Teguise, fille du dernier roi autochtone de l’île, Guadarfía, que l’on dit mariée à Maciot de Béthencourt, neveu du conquérant. Les historiens voient dans cette histoire autant de légende que de fait, mais le nom tient depuis six siècles.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Une capitale bâtie dans les terres',
+          paragraphs: [
+            'Pendant des siècles, Teguise fut le siège du gouvernement et de l’Église de Lanzarote, volontairement établie à l’intérieur, hors de vue de la mer. La raison était simple : la côte était pillée sans cesse par les corsaires, et une capitale cachée dans les terres valait mieux qu’un port. Ce n’est qu’au milieu du XIXe siècle que l’île déplaça enfin sa capitale vers le port grandissant d’Arrecife.',
+            'Le danger était réel. En 1586, un raid féroce, que la mémoire locale attribue au corsaire Morato Arráez, s’abattit sur la ville, et les insulaires se réfugièrent dans la forteresse sur la colline. La légende locale rattache le nom sinistre du Callejón de la Sangre, la ruelle du Sang, aux raids de cette époque. Sur la grande place, l’église mère de Nuestra Señora de Guadalupe a été endommagée et reconstruite au fil des siècles.',
+          ],
+        },
+        {
+          heading: 'Le château sur le volcan',
+          paragraphs: [
+            'Au-dessus de la ville, sur le rebord du volcan Guanapay, se dresse le Castillo de Santa Bárbara. Simple tour de guet au XVe siècle, il fut reconstruit en forteresse au XVIe siècle, un lieu où les habitants pouvaient se réfugier quand l’alerte était donnée. L’ère des pirates passée, il tomba en désuétude, et vers 1899 il servit même un temps de pigeonnier militaire avant de revenir à la ville.',
+            'Aujourd’hui, la forteresse abrite le Museo de la Piratería, le seul musée de la piraterie des Canaries, un usage tout trouvé pour un édifice bâti pour guetter les pillards. La montée est récompensée par une large vue sur l’île, la ville en contrebas et les cônes volcaniques alentour.',
+          ],
+        },
+        {
+          heading: 'À ne pas manquer',
+          paragraphs: [
+            'Flânez dans les ruelles blanchies autour de la Plaza de la Constitución, avec l’église de Guadalupe et les anciens couvents de San Francisco et Santo Domingo tout près. Entrez au Palacio Spínola pour y trouver la Casa-Museo del Timple, dédiée au petit instrument canarien dont cette ville s’enorgueillit. Montez ensuite au Castillo de Santa Bárbara pour la vue et le musée des pirates. Venez un dimanche et le célèbre marché envahit les rues.',
+          ],
+        },
+      ],
+      mapHeading: 'Où se trouve Teguise ?',
+      mapIntro:
+        'Teguise se trouve à l’intérieur des terres, dans le nord de Lanzarote, la plus au nord-est des îles Canaries espagnoles, au large du nord-ouest de l’Afrique. Elle est à quelques minutes en voiture de la capitale Arrecife et de la station balnéaire de Costa Teguise sur la côte, qui partage son nom mais en est un lieu distinct et moderne.',
+      bonusHeading: 'Trois choses que la plupart des visiteurs ignorent',
+      bonus: [
+        {
+          lead: 'Le château devint un pigeonnier.',
+          text:
+            'La menace des pirates dissipée, la puissante tour de guet sur le volcan perdit sa raison d’être. Vers 1899, elle fut transformée en pigeonnier militaire, étrange seconde vie pour une forteresse, avant que la ville ne la reprenne pour en faire un musée.',
+        },
+        {
+          lead: 'Une princesse aurait donné son nom à la ville.',
+          text:
+            'Selon la tradition, le nom de Teguise vient d’une princesse autochtone, fille du dernier roi natif de l’île, que l’on dit mariée au neveu du conquérant. Les historiens doutent que ce mariage ait eu lieu, mais le nom a survécu à tous les doutes.',
+        },
+        {
+          lead: 'Le berceau du timple.',
+          text:
+            'Le timple, le petit instrument à cinq cordes qui donne à la musique traditionnelle canarienne son timbre clair et pétillant, serait né à Teguise selon la tradition. La ville en garde désormais l’histoire dans un musée installé dans une ancienne demeure noble.',
+        },
+      ],
+      langHeading: 'Teguise dans votre langue, les 32',
+      ctaHeading: 'Obtenez la clé de Teguise',
+      ctaIntro:
+        'Choisissez vos étapes, commencez à marcher, et laissez la voix révéler ce que tout le monde longe sans le voir.',
+    },
+    es: {
+      metaTitle: 'Audioguía de Teguise · Autoguiada, Lanzarote',
+      metaDescription:
+        'Una audioguía GPS autoguiada de Teguise, la antigua capital de Lanzarote. Recorre sus calles blancas, la plaza y el castillo de piratas a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión y con guía de realidad aumentada.',
+      keywords:
+        'audioguía teguise, ruta autoguiada teguise, ruta a pie villa de teguise, qué ver en lanzarote, audioguía lanzarote',
+      ogTitle: 'Audioguía de Teguise | Fun Zone Tenerife',
+      ogDescription:
+        'Recorre Teguise, la antigua capital de Lanzarote, a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión, con guía de realidad aumentada.',
+      heroIntro:
+        'Un paseo con audioguía GPS autoguiada por la primera capital de Lanzarote. Un pueblo blanco del interior que debe su nombre a una princesa aborigen, un castillo de piratas sobre un volcán y un callejón que recuerda una noche de sangre, narrados a tu oído justo donde ocurrió todo.',
+      postcardHeading: 'Teguise, la versión que las postales se saltan',
+      postcardIntro:
+        'No las fotos de revista. Las historias por las que hasta los vecinos pasan sin saberlo, susurradas a tu oído en el punto exacto al que pertenecen. Aquí tienes tres. Muchas más te esperan en el tour.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'En el borde de un volcán apagado, sobre el pueblo, se alza una fortaleza que fue torre de vigía contra los corsarios. Hoy custodia un tesoro muy apropiado: el único museo de la piratería de las Islas Canarias.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'Un callejón estrecho y encalado tras la iglesia principal lleva un nombre que hiela: el callejón de la Sangre. La memoria local lo une a una noche en que los asaltantes bajaron de los montes.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Tras una elegante fachada del siglo XVIII, en la plaza mayor, se esconde la casa del timple, el pequeño instrumento de cinco cuerdas que late en el corazón de la música canaria, que este pueblo reivindica como suyo.',
+        },
+      ],
+      storyTitle: 'La historia de Teguise',
+      storyIntro: [
+        'Teguise, a menudo llamada la Villa de Teguise, es la antigua capital de Lanzarote y uno de los pueblos más viejos de las Islas Canarias. Se asienta tierra adentro, lejos del mar, un conjunto de casas blancas y plazas tranquilas al pie de un volcán apagado. Su centro histórico está entre los mejor conservados del archipiélago, y los domingos por la mañana sus calles se llenan con uno de los mayores mercados de artesanía de las islas.',
+        'El pueblo toma forma a comienzos del siglo XV, tras la conquista normanda de Lanzarote. Según la tradición, debe su nombre a Teguise, hija del último rey aborigen de la isla, Guadarfía, de quien se dice que se casó con Maciot de Béthencourt, sobrino del conquistador. Los historiadores ven en el relato tanto leyenda como hecho, pero el nombre perdura desde hace seis siglos.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Una capital levantada tierra adentro',
+          paragraphs: [
+            'Durante siglos Teguise fue la sede del gobierno y de la Iglesia de Lanzarote, situada a propósito tierra adentro y oculta del mar. La razón era sencilla: la costa sufría asaltos una y otra vez de los corsarios, y una capital escondida en el interior era más segura que un puerto. Solo a mediados del siglo XIX la isla trasladó por fin su capital al creciente puerto de Arrecife.',
+            'El peligro era real. En 1586 un feroz asalto, que la memoria local atribuye al corsario Morato Arráez, cayó sobre el pueblo, y los isleños huyeron a la fortaleza del cerro. La leyenda local liga el nombre sombrío del Callejón de la Sangre a los asaltos de aquella época. En la plaza mayor, la iglesia matriz de Nuestra Señora de Guadalupe fue dañada y reconstruida a lo largo de los siglos.',
+          ],
+        },
+        {
+          heading: 'El castillo sobre el volcán',
+          paragraphs: [
+            'Sobre el pueblo, en el borde del volcán de Guanapay, se alza el Castillo de Santa Bárbara. Nació como una sencilla torre de vigía en el siglo XV y fue reconstruido como fortaleza en el XVI, un lugar donde los vecinos podían refugiarse cuando sonaba la alarma. Acabada la era de los piratas cayó en desuso, y hacia 1899 llegó a servir de palomar militar antes de pasar al pueblo.',
+            'Hoy la fortaleza alberga el Museo de la Piratería, el único museo de la piratería de Canarias, un uso perfecto para un edificio levantado para vigilar a los asaltantes. La subida se premia con una amplia vista de la isla, el pueblo a los pies y los conos volcánicos alrededor.',
+          ],
+        },
+        {
+          heading: 'En qué fijarte',
+          paragraphs: [
+            'Piérdete por las calles blancas en torno a la Plaza de la Constitución, con la iglesia de Guadalupe y los antiguos conventos de San Francisco y Santo Domingo muy cerca. Entra en el Palacio Spínola para ver la Casa-Museo del Timple, dedicada al pequeño instrumento canario que este pueblo se enorgullece de llamar suyo. Luego sube al Castillo de Santa Bárbara por las vistas y el museo de piratas. Ven un domingo y el famoso mercadillo toma las calles.',
+          ],
+        },
+      ],
+      mapHeading: '¿Dónde está Teguise?',
+      mapIntro:
+        'Teguise se encuentra tierra adentro, en el norte de Lanzarote, la más nororiental de las Islas Canarias, frente a la costa noroeste de África. Está a pocos minutos en coche de la capital, Arrecife, y de la zona turística de Costa Teguise en la costa, que comparte su nombre pero es un lugar distinto y moderno.',
+      bonusHeading: 'Tres cosas que casi ningún visitante descubre',
+      bonus: [
+        {
+          lead: 'El castillo se volvió palomar.',
+          text:
+            'Desvanecida la amenaza pirata, la poderosa torre de vigía sobre el volcán perdió su sentido. Hacia 1899 se convirtió en palomar militar, extraña segunda vida para una fortaleza, antes de que el pueblo la recuperara y la hiciera museo.',
+        },
+        {
+          lead: 'Quizá una princesa dio nombre al pueblo.',
+          text:
+            'Según la tradición, el nombre de Teguise viene de una princesa aborigen, hija del último rey nativo de la isla, de quien se dice que se casó con el sobrino del conquistador. Los historiadores dudan de que esa boda ocurriera, pero el nombre ha sobrevivido a toda duda.',
+        },
+        {
+          lead: 'La cuna del timple.',
+          text:
+            'El timple, el pequeño instrumento de cinco cuerdas que da a la música popular canaria su sonido claro y tintineante, según la tradición nació en Teguise. El pueblo guarda ahora su historia en un museo dentro de una vieja casa noble.',
+        },
+      ],
+      langHeading: 'Teguise en tu idioma, los 32',
+      ctaHeading: 'Consigue la llave de Teguise',
+      ctaIntro:
+        'Elige tus paradas, echa a andar y deja que la voz te revele lo que todos pasan de largo.',
+    },
+    de: {
+      metaTitle: 'Audiotour Teguise · Selbstgeführt, Lanzarote',
+      metaDescription:
+        'Eine selbstgeführte GPS-Audiotour durch Teguise, die alte Hauptstadt Lanzarotes. Erkunden Sie die weißen Gassen, den Platz und die Piratenburg in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline und mit AR-Guide.',
+      keywords:
+        'audiotour teguise, selbstgeführte tour teguise, stadtrundgang villa de teguise, sehenswürdigkeiten lanzarote, audioguide lanzarote',
+      ogTitle: 'Audiotour Teguise | Fun Zone Tenerife',
+      ogDescription:
+        'Erkunden Sie Teguise, die alte Hauptstadt Lanzarotes, in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline, mit Augmented-Reality-Guide.',
+      heroIntro:
+        'Ein selbstgeführter GPS-Audiospaziergang durch die erste Hauptstadt Lanzarotes. Eine weiße Stadt im Binnenland, benannt nach einer eingeborenen Prinzessin, eine Piratenburg auf einem Vulkan und eine Gasse, die sich an eine blutige Nacht erinnert, erzählt in Ihrem Ohr genau dort, wo alles geschah.',
+      postcardHeading: 'Teguise, die Version, die auf keiner Postkarte steht',
+      postcardIntro:
+        'Nicht die Hochglanzbilder. Die Geschichten, an denen selbst Einheimische ahnungslos vorbeigehen, geflüstert in Ihr Ohr an genau dem Ort, zu dem sie gehören. Hier sind drei. Viele weitere warten in der Tour.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'Auf dem Rand eines erloschenen Vulkans über der Stadt steht eine Festung, die einst ein Frühwarnturm gegen Korsaren war. Heute hütet sie einen sehr passenden Schatz: das einzige Piraterie-Museum der Kanarischen Inseln.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'Eine schmale, weiß getünchte Gasse hinter der Hauptkirche trägt einen eisigen Namen: die Gasse des Blutes. Die örtliche Erinnerung verbindet sie mit einer Nacht, in der die Räuber über die Hügel kamen.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Hinter einer eleganten Fassade des 18. Jahrhunderts am Hauptplatz verbirgt sich das Haus des Timple, des kleinen fünfsaitigen Instruments im Herzen der kanarischen Musik, das diese Stadt ihr Eigen nennt.',
+        },
+      ],
+      storyTitle: 'Die Geschichte von Teguise',
+      storyIntro: [
+        'Teguise, oft Villa de Teguise genannt, ist die alte Hauptstadt Lanzarotes und eine der ältesten Städte der Kanarischen Inseln. Sie liegt im Binnenland, fern vom Meer, ein Geflecht weißer Häuser und stiller Plätze am Fuß eines erloschenen Vulkans. Ihr historischer Kern zählt zu den besterhaltenen des Archipels, und an Sonntagvormittagen füllen sich ihre Gassen mit einem der größten Kunsthandwerksmärkte der Inseln.',
+        'Die Stadt entstand im frühen 15. Jahrhundert, nach der normannischen Eroberung Lanzarotes. Der Überlieferung nach ist sie nach Teguise benannt, der Tochter des letzten eingeborenen Königs der Insel, Guadarfía, die Maciot de Béthencourt, den Neffen des Eroberers, geheiratet haben soll. Historiker sehen darin ebenso Legende wie Tatsache, doch der Name hält seit sechs Jahrhunderten.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Eine Hauptstadt im Binnenland',
+          paragraphs: [
+            'Jahrhundertelang war Teguise der Sitz von Regierung und Kirche Lanzarotes, bewusst im Binnenland und außer Sichtweite des Meeres angelegt. Der Grund war einfach: die Küste wurde immer wieder von Korsaren überfallen, und eine versteckte Hauptstadt im Landesinneren war sicherer als ein Hafen. Erst Mitte des 19. Jahrhunderts verlegte die Insel ihre Hauptstadt schließlich in die wachsende Hafenstadt Arrecife.',
+            'Die Gefahr war real. 1586 traf ein heftiger Überfall, den die örtliche Erinnerung dem Korsaren Morato Arráez zuschreibt, die Stadt, und die Insulaner flohen in die Festung auf dem Hügel. Die örtliche Legende verbindet den düsteren Namen des Callejón de la Sangre, der Gasse des Blutes, mit den Überfällen jener Zeit. Am Hauptplatz wurde die Mutterkirche Nuestra Señora de Guadalupe über die Jahrhunderte beschädigt und wieder aufgebaut.',
+          ],
+        },
+        {
+          heading: 'Die Burg auf dem Vulkan',
+          paragraphs: [
+            'Über der Stadt, auf dem Rand des Vulkans Guanapay, steht das Castillo de Santa Bárbara. Es begann als schlichter Wachturm im 15. Jahrhundert und wurde im 16. Jahrhundert zur Festung ausgebaut, ein Ort, an dem die Bewohner Zuflucht fanden, wenn Alarm geschlagen wurde. Nach dem Ende der Piratenzeit verfiel es, und um 1899 diente es sogar eine Zeit lang als militärischer Taubenschlag, ehe es an die Stadt überging.',
+            'Heute beherbergt die Festung das Museo de la Piratería, das einzige Piraterie-Museum der Kanaren, eine passende Nutzung für einen Bau, der errichtet wurde, um nach Räubern Ausschau zu halten. Der Aufstieg wird mit einem weiten Blick über die Insel belohnt, die Stadt zu Füßen und ringsum die Vulkankegel.',
+          ],
+        },
+        {
+          heading: 'Worauf Sie achten sollten',
+          paragraphs: [
+            'Schlendern Sie durch die weißen Gassen rund um die Plaza de la Constitución, mit der Kirche von Guadalupe und den alten Klöstern San Francisco und Santo Domingo in der Nähe. Treten Sie in den Palacio Spínola, wo das Casa-Museo del Timple dem kleinen kanarischen Instrument gewidmet ist, das diese Stadt stolz ihr Eigen nennt. Steigen Sie dann zum Castillo de Santa Bárbara hinauf für die Aussicht und das Piratenmuseum. Kommen Sie an einem Sonntag, und der berühmte Markt erobert die Straßen.',
+          ],
+        },
+      ],
+      mapHeading: 'Wo liegt Teguise?',
+      mapIntro:
+        'Teguise liegt im Binnenland im Norden Lanzarotes, der nordöstlichsten der spanischen Kanarischen Inseln, vor der Nordwestküste Afrikas. Es ist nur eine kurze Fahrt von der Hauptstadt Arrecife und vom Küstenort Costa Teguise entfernt, der seinen Namen teilt, aber ein eigener, moderner Ort ist.',
+      bonusHeading: 'Drei Dinge, die die meisten Besucher nie erfahren',
+      bonus: [
+        {
+          lead: 'Die Burg wurde zum Taubenschlag.',
+          text:
+            'Als die Piratengefahr schwand, verlor der mächtige Wachturm auf dem Vulkan seinen Zweck. Um 1899 wurde er zum militärischen Taubenschlag, ein seltsames zweites Leben für eine Festung, ehe die Stadt ihn übernahm und zum Museum machte.',
+        },
+        {
+          lead: 'Vielleicht gab eine Prinzessin der Stadt den Namen.',
+          text:
+            'Der Überlieferung nach stammt der Name Teguise von einer eingeborenen Prinzessin, Tochter des letzten einheimischen Königs der Insel, die den Neffen des Eroberers geheiratet haben soll. Historiker bezweifeln, dass diese Heirat je stattfand, doch der Name hat jeden Zweifel überlebt.',
+        },
+        {
+          lead: 'Die Wiege des Timple.',
+          text:
+            'Der Timple, das kleine fünfsaitige Instrument, das der kanarischen Volksmusik ihren hellen, klimpernden Klang gibt, soll der Überlieferung nach in Teguise entstanden sein. Die Stadt bewahrt seine Geschichte heute in einem Museum in einem alten Herrenhaus.',
+        },
+      ],
+      langHeading: 'Teguise in Ihrer Sprache, alle 32',
+      ctaHeading: 'Holen Sie sich den Schlüssel zu Teguise',
+      ctaIntro:
+        'Wählen Sie Ihre Stationen, gehen Sie los, und lassen Sie die Stimme enthüllen, woran alle anderen vorbeigehen.',
+    },
+    it: {
+      metaTitle: 'Audioguida di Teguise · Autoguidata, Lanzarote',
+      metaDescription:
+        'Un tour audio GPS in autonomia a Teguise, l’antica capitale di Lanzarote. Percorri le vie bianche, la piazza e il castello dei pirati al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline e con guida in realtà aumentata.',
+      keywords:
+        'audioguida teguise, tour autoguidato teguise, tour a piedi villa de teguise, cosa vedere a lanzarote, audioguida lanzarote',
+      ogTitle: 'Audioguida di Teguise | Fun Zone Tenerife',
+      ogDescription:
+        'Percorri Teguise, l’antica capitale di Lanzarote, al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline, con guida in realtà aumentata.',
+      heroIntro:
+        'Una passeggiata con audioguida GPS in autonomia nella prima capitale di Lanzarote. Un paese bianco dell’entroterra che deve il nome a una principessa aborigena, un castello dei pirati su un vulcano e un vicolo che ricorda una notte di sangue, raccontati al tuo orecchio proprio dove tutto è accaduto.',
+      postcardHeading: 'Teguise, la versione che le cartoline tralasciano',
+      postcardIntro:
+        'Non le foto patinate. Le storie davanti a cui passano persino gli abitanti senza saperlo, sussurrate al tuo orecchio nel punto esatto a cui appartengono. Eccone tre. Molte altre ti aspettano nel tour.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'Sull’orlo di un vulcano spento, sopra il paese, sorge una fortezza che un tempo fu torre di avvistamento contro i corsari. Oggi custodisce un tesoro quanto mai adatto: l’unico museo della pirateria delle Isole Canarie.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'Uno stretto vicolo imbiancato dietro la chiesa principale porta un nome agghiacciante: il vicolo del Sangue. La memoria locale lo lega a una notte in cui i predoni scesero dalle colline.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Dietro un’elegante facciata del Settecento, sulla piazza principale, si cela la casa del timple, il piccolo strumento a cinque corde nel cuore della musica canaria, che questo paese rivendica come proprio.',
+        },
+      ],
+      storyTitle: 'La storia di Teguise',
+      storyIntro: [
+        'Teguise, spesso chiamata Villa de Teguise, è l’antica capitale di Lanzarote e uno dei paesi più antichi delle Isole Canarie. Sorge nell’entroterra, lontano dal mare, un insieme di case bianche e piazze tranquille ai piedi di un vulcano spento. Il suo centro storico è tra i meglio conservati dell’arcipelago, e la domenica mattina le sue vie si riempiono di uno dei più grandi mercati di artigianato delle isole.',
+        'Il paese prende forma all’inizio del Quattrocento, dopo la conquista normanna di Lanzarote. Secondo la tradizione deve il nome a Teguise, figlia dell’ultimo re aborigeno dell’isola, Guadarfía, che si dice abbia sposato Maciot de Béthencourt, nipote del conquistatore. Gli storici vi vedono tanto leggenda quanto fatto, ma il nome resiste da sei secoli.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Una capitale costruita nell’entroterra',
+          paragraphs: [
+            'Per secoli Teguise fu sede del governo e della Chiesa di Lanzarote, posta di proposito nell’entroterra e al riparo dalla vista del mare. Il motivo era semplice: la costa veniva saccheggiata di continuo dai corsari, e una capitale nascosta all’interno era più sicura di un porto. Solo a metà Ottocento l’isola trasferì infine la capitale nel crescente porto di Arrecife.',
+            'Il pericolo era reale. Nel 1586 una feroce incursione, che la memoria locale attribuisce al corsaro Morato Arráez, si abbatté sul paese, e gli isolani fuggirono nella fortezza sul colle. La leggenda locale lega il cupo nome del Callejón de la Sangre, il vicolo del Sangue, alle incursioni di quell’epoca. Sulla piazza principale, la chiesa madre di Nuestra Señora de Guadalupe fu danneggiata e ricostruita nel corso dei secoli.',
+          ],
+        },
+        {
+          heading: 'Il castello sul vulcano',
+          paragraphs: [
+            'Sopra il paese, sull’orlo del vulcano Guanapay, sorge il Castillo de Santa Bárbara. Nacque come semplice torre di avvistamento nel Quattrocento e fu ricostruito come fortezza nel Cinquecento, un luogo dove gli abitanti potevano rifugiarsi quando scattava l’allarme. Finita l’era dei pirati cadde in disuso, e verso il 1899 servì persino per un po’ da colombaia militare prima di passare al paese.',
+            'Oggi la fortezza ospita il Museo de la Piratería, l’unico museo della pirateria delle Canarie, un uso perfetto per un edificio innalzato per vigilare sui predoni. La salita è ripagata da un’ampia veduta sull’isola, il paese ai piedi e i coni vulcanici tutt’intorno.',
+          ],
+        },
+        {
+          heading: 'Cosa cercare',
+          paragraphs: [
+            'Perditi tra le vie bianche attorno alla Plaza de la Constitución, con la chiesa di Guadalupe e gli antichi conventi di San Francisco e Santo Domingo lì vicino. Entra nel Palacio Spínola per trovare la Casa-Museo del Timple, dedicata al piccolo strumento canario che questo paese è orgoglioso di chiamare suo. Poi sali al Castillo de Santa Bárbara per il panorama e il museo dei pirati. Vieni di domenica e il celebre mercato invade le strade.',
+          ],
+        },
+      ],
+      mapHeading: 'Dove si trova Teguise?',
+      mapIntro:
+        'Teguise si trova nell’entroterra, nel nord di Lanzarote, la più nord-orientale delle Isole Canarie spagnole, al largo della costa nord-occidentale dell’Africa. È a pochi minuti d’auto dalla capitale Arrecife e dalla località balneare di Costa Teguise sulla costa, che ne condivide il nome ma è un luogo distinto e moderno.',
+      bonusHeading: 'Tre cose che quasi nessun visitatore scopre',
+      bonus: [
+        {
+          lead: 'Il castello divenne una colombaia.',
+          text:
+            'Svanita la minaccia dei pirati, la possente torre di avvistamento sul vulcano perse il suo scopo. Verso il 1899 fu trasformata in colombaia militare, strana seconda vita per una fortezza, prima che il paese la riprendesse e ne facesse un museo.',
+        },
+        {
+          lead: 'Forse una principessa diede il nome al paese.',
+          text:
+            'Secondo la tradizione il nome Teguise viene da una principessa aborigena, figlia dell’ultimo re nativo dell’isola, che si dice abbia sposato il nipote del conquistatore. Gli storici dubitano che quel matrimonio sia mai avvenuto, ma il nome è sopravvissuto a ogni dubbio.',
+        },
+        {
+          lead: 'La culla del timple.',
+          text:
+            'Il timple, il piccolo strumento a cinque corde che dà alla musica popolare canaria il suo suono chiaro e tintinnante, secondo la tradizione nacque a Teguise. Il paese ne custodisce ora la storia in un museo dentro un’antica casa nobiliare.',
+        },
+      ],
+      langHeading: 'Teguise nella tua lingua, tutte e 32',
+      ctaHeading: 'Prendi la chiave di Teguise',
+      ctaIntro:
+        'Scegli le tue tappe, mettiti in cammino e lascia che la voce ti riveli ciò che tutti gli altri oltrepassano senza vedere.',
+    },
+    nl: {
+      metaTitle: 'Audiotour Teguise · Zelfgeleid, Lanzarote',
+      metaDescription:
+        'Een zelfgeleide gps-audiotour door Teguise, de oude hoofdstad van Lanzarote. Loop door de witte straten, het plein en het piratenkasteel op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline en met AR-gids.',
+      keywords:
+        'audiotour teguise, zelfgeleide tour teguise, stadswandeling villa de teguise, bezienswaardigheden lanzarote, audiogids lanzarote',
+      ogTitle: 'Audiotour Teguise | Fun Zone Tenerife',
+      ogDescription:
+        'Loop Teguise, de oude hoofdstad van Lanzarote, op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline, met augmented-reality-gids.',
+      heroIntro:
+        'Een zelfgeleide gps-audiowandeling door de eerste hoofdstad van Lanzarote. Een wit binnenlandstadje vernoemd naar een inheemse prinses, een piratenkasteel op een vulkaan en een steegje dat een bloedige nacht herinnert, verteld in je oor precies waar het gebeurde.',
+      postcardHeading: 'Teguise, de versie die de ansichtkaarten weglaten',
+      postcardIntro:
+        'Niet de glossy plaatjes. De verhalen waar zelfs bewoners onwetend langslopen, gefluisterd in je oor op de exacte plek waar ze thuishoren. Hier zijn er drie. Veel meer wachten in de tour.',
+      secrets: [
+        {
+          place: 'Castillo de Santa Bárbara',
+          teaser:
+            'Op de rand van een uitgedoofde vulkaan boven het stadje staat een fort dat ooit een vroegwaarschuwingstoren tegen kapers was. Vandaag bewaakt het een heel toepasselijke schat: het enige piraterijmuseum van de Canarische Eilanden.',
+        },
+        {
+          place: 'Callejón de la Sangre',
+          teaser:
+            'Een smal, witgekalkt steegje achter de hoofdkerk draagt een ijzingwekkende naam: het steegje van het Bloed. De plaatselijke herinnering verbindt het met een nacht waarin de rovers over de heuvels kwamen.',
+        },
+        {
+          place: 'Palacio Spínola',
+          teaser:
+            'Achter een elegante achttiende-eeuwse gevel aan het hoofdplein schuilt het huis van de timple, het kleine vijfsnarige instrument in het hart van de Canarische muziek, dat dit stadje het zijne noemt.',
+        },
+      ],
+      storyTitle: 'Het verhaal van Teguise',
+      storyIntro: [
+        'Teguise, vaak de Villa de Teguise genoemd, is de oude hoofdstad van Lanzarote en een van de oudste stadjes van de Canarische Eilanden. Het ligt in het binnenland, weg van de zee, een cluster witte huizen en stille pleinen aan de voet van een uitgedoofde vulkaan. Het historische centrum behoort tot de best bewaarde van de archipel, en op zondagochtend vullen de straten zich met een van de grootste ambachtsmarkten van de eilanden.',
+        'Het stadje kreeg vorm in het begin van de vijftiende eeuw, na de Normandische verovering van Lanzarote. Volgens de overlevering is het vernoemd naar Teguise, dochter van de laatste inheemse koning van het eiland, Guadarfía, die naar verluidt trouwde met Maciot de Béthencourt, neef van de veroveraar. Historici zien er evenveel legende als feit in, maar de naam houdt al zes eeuwen stand.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Een hoofdstad in het binnenland',
+          paragraphs: [
+            'Eeuwenlang was Teguise de zetel van het bestuur en de kerk van Lanzarote, bewust in het binnenland en uit het zicht van de zee gelegd. De reden was simpel: de kust werd keer op keer door kapers geplunderd, en een verborgen hoofdstad in het binnenland was veiliger dan een haven. Pas halverwege de negentiende eeuw verplaatste het eiland zijn hoofdstad eindelijk naar de groeiende havenstad Arrecife.',
+            'Het gevaar was echt. In 1586 trof een felle rooftocht, die de plaatselijke herinnering toeschrijft aan de kaper Morato Arráez, het stadje, en de eilanders vluchtten naar het fort op de heuvel. De plaatselijke legende verbindt de grimmige naam van de Callejón de la Sangre, het steegje van het Bloed, met de rooftochten van die tijd. Aan het hoofdplein werd de moederkerk Nuestra Señora de Guadalupe door de eeuwen heen beschadigd en herbouwd.',
+          ],
+        },
+        {
+          heading: 'Het kasteel op de vulkaan',
+          paragraphs: [
+            'Boven het stadje, op de rand van de Guanapay-vulkaan, staat het Castillo de Santa Bárbara. Het begon als een eenvoudige vijftiende-eeuwse wachttoren en werd in de zestiende eeuw tot fort herbouwd, een plek waar de bewoners konden schuilen als er alarm werd geslagen. Na het einde van het piratentijdperk raakte het in onbruik, en rond 1899 diende het zelfs een tijd als militaire duiventil voordat het aan het stadje overging.',
+            'Vandaag herbergt het fort het Museo de la Piratería, het enige piraterijmuseum van de Canarische Eilanden, een passende bestemming voor een gebouw dat werd opgetrokken om rovers in de gaten te houden. De klim wordt beloond met een weids uitzicht over het eiland, het stadje aan je voeten en de vulkaankegels rondom.',
+          ],
+        },
+        {
+          heading: 'Waar je op moet letten',
+          paragraphs: [
+            'Dwaal door de witte straatjes rond de Plaza de la Constitución, met de kerk van Guadalupe en de oude kloosters San Francisco en Santo Domingo vlakbij. Stap het Palacio Spínola binnen voor de Casa-Museo del Timple, gewijd aan het kleine Canarische instrument dat dit stadje met trots het zijne noemt. Klim daarna naar het Castillo de Santa Bárbara voor het uitzicht en het piratenmuseum. Kom op een zondag en de beroemde markt neemt de straten over.',
+          ],
+        },
+      ],
+      mapHeading: 'Waar ligt Teguise?',
+      mapIntro:
+        'Teguise ligt in het binnenland in het noorden van Lanzarote, het meest noordoostelijke van de Spaanse Canarische Eilanden, voor de noordwestkust van Afrika. Het ligt op korte rijafstand van de hoofdstad Arrecife en van de badplaats Costa Teguise aan de kust, die de naam deelt maar een aparte, moderne plek is.',
+      bonusHeading: 'Drie dingen die bijna geen bezoeker ontdekt',
+      bonus: [
+        {
+          lead: 'Het kasteel werd een duiventil.',
+          text:
+            'Toen de piratendreiging wegebde, verloor de machtige wachttoren op de vulkaan zijn doel. Rond 1899 werd hij tot militaire duiventil gemaakt, een vreemd tweede leven voor een fort, voordat het stadje het overnam en er een museum van maakte.',
+        },
+        {
+          lead: 'Misschien gaf een prinses het stadje zijn naam.',
+          text:
+            'Volgens de overlevering komt de naam Teguise van een inheemse prinses, dochter van de laatste inheemse koning van het eiland, die naar verluidt trouwde met de neef van de veroveraar. Historici betwijfelen of dat huwelijk ooit plaatsvond, maar de naam heeft elke twijfel overleefd.',
+        },
+        {
+          lead: 'De bakermat van de timple.',
+          text:
+            'De timple, het kleine vijfsnarige instrument dat de Canarische volksmuziek haar heldere, rinkelende klank geeft, is volgens de overlevering in Teguise ontstaan. Het stadje bewaart het verhaal nu in een museum in een oud herenhuis.',
+        },
+      ],
+      langHeading: 'Teguise in jouw taal, alle 32',
+      ctaHeading: 'Haal de sleutel tot Teguise',
+      ctaIntro:
+        'Kies je stops, begin te lopen en laat de stem onthullen wat iedereen straal voorbijloopt.',
+    },
+  },
+  'arrecife': {
+    en: {
+      metaTitle: 'Arrecife Audio Tour · Self-Guided Walk in Lanzarote',
+      metaDescription:
+        'A self-guided GPS audio tour of Arrecife, capital of Lanzarote. Walk the seafront, castles and lagoon at your own pace with native-voice stories in 32 languages, offline and with an AR guide.',
+      keywords:
+        'arrecife audio tour, self-guided tour arrecife, lanzarote walking tour, things to do arrecife lanzarote, audio guide lanzarote',
+      ogTitle: 'Arrecife Audio Tour | Fun Zone Tenerife',
+      ogDescription:
+        'Walk Arrecife, the capital of Lanzarote, at your own pace with native-voice stories in 32 languages, offline, with an augmented-reality guide.',
+      heroIntro:
+        'A self-guided GPS audio walk through the capital of Lanzarote. A town named after its reefs, two sea forts, a tidal lagoon full of fishing boats and the birthplace of the artist who shaped the whole island, told in your ear right where it all happened.',
+      postcardHeading: 'Arrecife, the version the postcards leave out',
+      postcardIntro:
+        'Not the glossy shots. The stories even locals walk past without knowing, whispered in your ear on the exact spot they belong to. Here are three. Many more wait inside the tour.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'A small fort guards the harbour from its own islet, reached by a little drawbridge. Look down as you cross and you will spot the two stone balls that gave the bridge its odd nickname.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'This handsome fortress was raised during a famine to give starving islanders work, which is why locals called it something far darker than its saint’s name. Two centuries on, its purpose was turned completely upside down.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Twice a day this little lagoon in the heart of town quietly fills and empties with the tide, and the painted fishing boats resting on its water are where the whole city began.',
+        },
+      ],
+      storyTitle: 'The story of Arrecife',
+      storyIntro: [
+        'Arrecife is the capital and main port of Lanzarote, a low, sun-bleached town strung along the island’s east coast. Its name comes from the Spanish word for reef: a line of black volcanic reefs runs just offshore, and behind them boats could shelter and hide. The old town is flat and compact, easy to walk, and wrapped around a saltwater lagoon rather than a grand square.',
+        'For centuries Arrecife was only a small fishing and trading port, while the island’s capital sat safely inland at Teguise, out of reach of the corsairs who raided the coast. Only in 1852, with the age of piracy long over, did Arrecife finally take the capital’s crown and begin to grow into the town you walk today.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Two castles against the sea',
+          paragraphs: [
+            'The older of the two forts, the Castillo de San Gabriel, sits on a small islet at the harbour mouth and was built in the sixteenth century to fend off pirates. It is reached by a slender causeway and drawbridge, the Puente de las Bolas, named for the pair of stone spheres on its pillars and often called the only bridge of its kind in the Canaries. Today the fort holds the town’s history museum.',
+            'The grander Castillo de San José was built in the 1770s on the orders of King Carlos III. Because it was raised during a hard famine to give hungry islanders paid work, locals nicknamed it the Fortress of Hunger. In the 1970s the artist César Manrique restored it and turned it into a museum of contemporary art, the MIAC, so a symbol of hunger became a temple of modern art.',
+          ],
+        },
+        {
+          heading: 'A lagoon, a church and an artist',
+          paragraphs: [
+            'At the heart of town lies the Charco de San Ginés, a tidal saltwater lagoon that fills and empties with the sea twice a day, ringed by small fishing boats and low white houses. This was the site of the first fishermen’s huts, the seed from which the city grew. A short walk away stands the Iglesia de San Ginés, the town’s mother church, dedicated to its patron.',
+            'Arrecife’s most famous son is César Manrique, born here in 1919, the painter and architect whose vision gave Lanzarote its low white houses, its ban on roadside billboards and its fusion of art with the volcanic landscape. Walk the town with his name in mind and you start to see his hand everywhere, from the castle museum to the look of the streets themselves.',
+          ],
+        },
+        {
+          heading: 'What to look out for',
+          paragraphs: [
+            'Start at the Charco de San Ginés and follow the water to the seafront, then cross the Puente de las Bolas to the Castillo de San Gabriel for the view back over the town. Walk the palm-lined avenue for the Gran Hotel, the island’s tallest building, and the calm town beach of Playa del Reducto. The Castillo de San José and its art museum sit a little further along the shore to the north.',
+          ],
+        },
+      ],
+      mapHeading: 'Where is Arrecife?',
+      mapIntro:
+        'Arrecife lies on the east coast of Lanzarote, the most north-easterly of Spain’s Canary Islands, off the north-west coast of Africa. It is the island’s capital, main port and the gateway for most visitors, with the airport just to the south-west.',
+      bonusHeading: 'Three things most visitors never learn',
+      bonus: [
+        {
+          lead: 'The hunger that built a fortress.',
+          text:
+            'The Castillo de San José was raised during an eighteenth-century famine specifically to give starving islanders paid work, which is why it was nicknamed the Fortress of Hunger. Two hundred years later César Manrique filled it with modern art.',
+        },
+        {
+          lead: 'Einstein’s Canarian host came from here.',
+          text:
+            'The physicist Blas Cabrera, Spain’s leading expert on magnetism, was born in Arrecife in 1878 and personally hosted Albert Einstein during his 1923 visit to Spain. A world-class scientist from this small port town.',
+        },
+        {
+          lead: 'The capital hid inland for centuries.',
+          text:
+            'Pirate raids were so fierce that Lanzarote kept its capital safely inland at Teguise for generations. Only in 1852, with the corsairs long gone, did the coastal port of Arrecife dare to become the island’s capital.',
+        },
+      ],
+      langHeading: 'Arrecife in your language, all 32',
+      ctaHeading: 'Get the key to Arrecife',
+      ctaIntro:
+        'Pick your stops, start walking, and let the voice reveal what everyone else walks straight past.',
+    },
+    fr: {
+      metaTitle: 'Visite audio d’Arrecife · En autonomie, Lanzarote',
+      metaDescription:
+        'Une visite audio GPS en autonomie d’Arrecife, capitale de Lanzarote. Parcourez le front de mer, les châteaux et la lagune à votre rythme avec des récits en voix native dans 32 langues, hors ligne et avec un guide en réalité augmentée.',
+      keywords:
+        'visite audio arrecife, visite autoguidée arrecife, visite à pied lanzarote, que faire à arrecife lanzarote, audioguide lanzarote',
+      ogTitle: 'Visite audio d’Arrecife | Fun Zone Tenerife',
+      ogDescription:
+        'Parcourez Arrecife, la capitale de Lanzarote, à votre rythme avec des récits en voix native dans 32 langues, hors ligne, avec un guide en réalité augmentée.',
+      heroIntro:
+        'Une balade audio GPS en autonomie à travers la capitale de Lanzarote. Une ville qui doit son nom à ses récifs, deux forts maritimes, une lagune à marée pleine de barques de pêche et la ville natale de l’artiste qui a façonné toute l’île, racontés à votre oreille là où tout s’est passé.',
+      postcardHeading: 'Arrecife, la version que les cartes postales oublient',
+      postcardIntro:
+        'Pas les clichés sur papier glacé. Les histoires que même les habitants longent sans les connaître, murmurées à votre oreille à l’endroit exact où elles ont eu lieu. En voici trois. Beaucoup d’autres vous attendent dans la visite.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'Un petit fort garde le port depuis son propre îlot, que l’on rejoint par un pont-levis. Baissez les yeux en traversant et vous repérerez les deux boules de pierre qui ont donné au pont son surnom singulier.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'Cette belle forteresse fut élevée pendant une famine pour donner du travail à des insulaires affamés, d’où un surnom bien plus sombre que celui de son saint. Deux siècles plus tard, sa raison d’être a été complètement renversée.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Deux fois par jour, cette petite lagune au cœur de la ville se remplit et se vide avec la marée, et les barques de pêche colorées posées sur son eau sont le point de départ de toute la cité.',
+        },
+      ],
+      storyTitle: 'L’histoire d’Arrecife',
+      storyIntro: [
+        'Arrecife est la capitale et le port principal de Lanzarote, une ville basse et blanchie de soleil étirée le long de la côte est de l’île. Son nom vient du mot espagnol pour récif : une ligne de récifs volcaniques noirs court juste au large, et derrière eux les bateaux pouvaient s’abriter et se cacher. La vieille ville est plate et compacte, facile à parcourir à pied, enroulée autour d’une lagune salée plutôt que d’une grande place.',
+        'Pendant des siècles, Arrecife ne fut qu’un petit port de pêche et de commerce, tandis que la capitale de l’île restait à l’abri dans les terres, à Teguise, hors d’atteinte des corsaires qui pillaient la côte. Ce n’est qu’en 1852, l’âge de la piraterie bien révolu, qu’Arrecife reçut enfin la couronne de capitale et commença à devenir la ville que vous parcourez aujourd’hui.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Deux châteaux face à la mer',
+          paragraphs: [
+            'Le plus ancien des deux forts, le Castillo de San Gabriel, se dresse sur un petit îlot à l’entrée du port et fut bâti au XVIe siècle pour repousser les pirates. On y accède par une mince chaussée et un pont-levis, le Puente de las Bolas, nommé d’après les deux sphères de pierre de ses piliers et souvent présenté comme le seul pont de ce genre aux Canaries. Aujourd’hui, le fort abrite le musée d’histoire de la ville.',
+            'Le Castillo de San José, plus imposant, fut construit dans les années 1770 sur ordre du roi Charles III. Comme il fut élevé pendant une dure famine pour donner du travail rémunéré aux insulaires affamés, on le surnomma la forteresse de la Faim. Dans les années 1970, l’artiste César Manrique le restaura et en fit un musée d’art contemporain, le MIAC : un symbole de la faim devint ainsi un temple de l’art moderne.',
+          ],
+        },
+        {
+          heading: 'Une lagune, une église et un artiste',
+          paragraphs: [
+            'Au cœur de la ville s’étend le Charco de San Ginés, une lagune d’eau salée qui se remplit et se vide avec la mer deux fois par jour, cernée de petites barques de pêche et de maisons basses et blanches. C’est ici que se trouvaient les premières cabanes de pêcheurs, la graine dont la ville est née. À quelques pas se dresse l’Iglesia de San Ginés, l’église mère de la ville, dédiée à son patron.',
+            'Le fils le plus célèbre d’Arrecife est César Manrique, né ici en 1919, peintre et architecte dont la vision a donné à Lanzarote ses maisons basses et blanches, son interdiction des panneaux publicitaires et sa fusion de l’art avec le paysage volcanique. Parcourez la ville en pensant à son nom et vous verrez sa main partout, du musée du château à l’allure même des rues.',
+          ],
+        },
+        {
+          heading: 'À ne pas manquer',
+          paragraphs: [
+            'Commencez au Charco de San Ginés et suivez l’eau jusqu’au front de mer, puis franchissez le Puente de las Bolas vers le Castillo de San Gabriel pour la vue sur la ville. Parcourez l’avenue bordée de palmiers pour le Gran Hotel, le plus haut bâtiment de l’île, et la plage tranquille de Playa del Reducto. Le Castillo de San José et son musée d’art se trouvent un peu plus loin sur la côte, vers le nord.',
+          ],
+        },
+      ],
+      mapHeading: 'Où se trouve Arrecife ?',
+      mapIntro:
+        'Arrecife se situe sur la côte est de Lanzarote, la plus au nord-est des îles Canaries espagnoles, au large du nord-ouest de l’Afrique. C’est la capitale et le port principal de l’île, et la porte d’entrée de la plupart des visiteurs, l’aéroport se trouvant juste au sud-ouest.',
+      bonusHeading: 'Trois choses que la plupart des visiteurs ignorent',
+      bonus: [
+        {
+          lead: 'La faim qui a bâti une forteresse.',
+          text:
+            'Le Castillo de San José fut élevé pendant une famine du XVIIIe siècle précisément pour donner du travail rémunéré aux insulaires affamés, d’où son surnom de forteresse de la Faim. Deux cents ans plus tard, César Manrique l’a rempli d’art moderne.',
+        },
+        {
+          lead: 'L’hôte canarien d’Einstein venait d’ici.',
+          text:
+            'Le physicien Blas Cabrera, le plus grand spécialiste espagnol du magnétisme, est né à Arrecife en 1878 et reçut personnellement Albert Einstein lors de sa visite en Espagne en 1923. Un savant de rang mondial issu de cette petite ville portuaire.',
+        },
+        {
+          lead: 'La capitale s’est cachée dans les terres pendant des siècles.',
+          text:
+            'Les raids de pirates étaient si violents que Lanzarote garda sa capitale à l’abri, dans les terres à Teguise, pendant des générations. Ce n’est qu’en 1852, les corsaires disparus depuis longtemps, que le port côtier d’Arrecife osa devenir la capitale de l’île.',
+        },
+      ],
+      langHeading: 'Arrecife dans votre langue, les 32',
+      ctaHeading: 'Obtenez la clé d’Arrecife',
+      ctaIntro:
+        'Choisissez vos étapes, commencez à marcher, et laissez la voix révéler ce que tout le monde longe sans le voir.',
+    },
+    es: {
+      metaTitle: 'Audioguía de Arrecife · Autoguiada, Lanzarote',
+      metaDescription:
+        'Una audioguía GPS autoguiada de Arrecife, capital de Lanzarote. Recorre el paseo marítimo, los castillos y el charco a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión y con guía de realidad aumentada.',
+      keywords:
+        'audioguía arrecife, ruta autoguiada arrecife, ruta a pie lanzarote, qué ver en arrecife lanzarote, audioguía lanzarote',
+      ogTitle: 'Audioguía de Arrecife | Fun Zone Tenerife',
+      ogDescription:
+        'Recorre Arrecife, la capital de Lanzarote, a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión, con guía de realidad aumentada.',
+      heroIntro:
+        'Un paseo con audioguía GPS autoguiada por la capital de Lanzarote. Una ciudad que debe su nombre a sus arrecifes, dos castillos junto al mar, un charco de marea lleno de barcas de pesca y la cuna del artista que dio forma a toda la isla, narrados a tu oído justo donde ocurrió todo.',
+      postcardHeading: 'Arrecife, la versión que las postales se saltan',
+      postcardIntro:
+        'No las fotos de revista. Las historias por las que hasta los vecinos pasan sin saberlo, susurradas a tu oído en el punto exacto al que pertenecen. Aquí tienes tres. Muchas más te esperan en el tour.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'Un pequeño castillo guarda el puerto desde su propio islote, al que se llega por un puente levadizo. Mira al cruzar y verás las dos bolas de piedra que dieron al puente su curioso apodo.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'Esta hermosa fortaleza se levantó durante una hambruna para dar trabajo a isleños muertos de hambre, de ahí un apodo mucho más oscuro que el de su santo. Dos siglos después, su razón de ser se puso del todo del revés.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Dos veces al día este pequeño charco en el corazón de la ciudad se llena y se vacía con la marea, y las barcas de pesca pintadas que descansan en su agua son donde empezó toda la ciudad.',
+        },
+      ],
+      storyTitle: 'La historia de Arrecife',
+      storyIntro: [
+        'Arrecife es la capital y el puerto principal de Lanzarote, una ciudad baja y blanqueada por el sol que se extiende a lo largo de la costa este de la isla. Su nombre viene de la palabra arrecife: una línea de arrecifes volcánicos negros corre justo frente a la orilla, y tras ellos los barcos podían resguardarse y esconderse. El casco antiguo es llano y compacto, fácil de recorrer a pie, y envuelve un charco de agua salada en lugar de una gran plaza.',
+        'Durante siglos Arrecife fue solo un pequeño puerto de pesca y comercio, mientras la capital de la isla permanecía a salvo tierra adentro, en Teguise, lejos de los corsarios que asaltaban la costa. Solo en 1852, con la era de la piratería muy atrás, Arrecife recibió por fin la corona de capital y empezó a convertirse en la ciudad que hoy recorres.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Dos castillos frente al mar',
+          paragraphs: [
+            'El más antiguo de los dos, el Castillo de San Gabriel, se alza en un islote a la entrada del puerto y se construyó en el siglo XVI para rechazar a los piratas. Se llega por una estrecha calzada y un puente levadizo, el Puente de las Bolas, llamado así por las dos esferas de piedra de sus pilares y considerado a menudo el único puente de su clase en Canarias. Hoy el castillo acoge el museo de historia de la ciudad.',
+            'El más imponente Castillo de San José se construyó en la década de 1770 por orden del rey Carlos III. Como se levantó durante una dura hambruna para dar trabajo pagado a los isleños hambrientos, el pueblo lo apodó la Fortaleza del Hambre. En los años setenta el artista César Manrique lo restauró y lo convirtió en un museo de arte contemporáneo, el MIAC, así que un símbolo del hambre se volvió un templo del arte moderno.',
+          ],
+        },
+        {
+          heading: 'Un charco, una iglesia y un artista',
+          paragraphs: [
+            'En el corazón de la ciudad está el Charco de San Ginés, un charco de agua salada que se llena y se vacía con el mar dos veces al día, rodeado de pequeñas barcas de pesca y casas bajas y blancas. Aquí estuvieron las primeras chozas de pescadores, la semilla de la que creció la ciudad. A un paso se alza la Iglesia de San Ginés, la iglesia matriz, dedicada a su patrón.',
+            'El hijo más célebre de Arrecife es César Manrique, nacido aquí en 1919, el pintor y arquitecto cuya visión dio a Lanzarote sus casas bajas y blancas, su prohibición de las vallas publicitarias y su fusión del arte con el paisaje volcánico. Recorre la ciudad con su nombre en mente y empezarás a ver su mano por todas partes, del museo del castillo al propio aspecto de las calles.',
+          ],
+        },
+        {
+          heading: 'En qué fijarte',
+          paragraphs: [
+            'Empieza en el Charco de San Ginés y sigue el agua hasta el paseo marítimo, luego cruza el Puente de las Bolas hasta el Castillo de San Gabriel para ver la ciudad a tus espaldas. Recorre la avenida de palmeras hacia el Gran Hotel, el edificio más alto de la isla, y la tranquila playa urbana del Reducto. El Castillo de San José y su museo de arte quedan un poco más allá, hacia el norte, junto a la costa.',
+          ],
+        },
+      ],
+      mapHeading: '¿Dónde está Arrecife?',
+      mapIntro:
+        'Arrecife está en la costa este de Lanzarote, la más nororiental de las Islas Canarias, frente a la costa noroeste de África. Es la capital y el puerto principal de la isla, y la puerta de entrada de la mayoría de los visitantes, con el aeropuerto justo al suroeste.',
+      bonusHeading: 'Tres cosas que casi ningún visitante descubre',
+      bonus: [
+        {
+          lead: 'El hambre que levantó una fortaleza.',
+          text:
+            'El Castillo de San José se levantó durante una hambruna del siglo XVIII precisamente para dar trabajo pagado a los isleños hambrientos, de ahí el apodo de Fortaleza del Hambre. Doscientos años después, César Manrique lo llenó de arte moderno.',
+        },
+        {
+          lead: 'El anfitrión canario de Einstein era de aquí.',
+          text:
+            'El físico Blas Cabrera, la mayor autoridad española en magnetismo, nació en Arrecife en 1878 y recibió personalmente a Albert Einstein durante su visita a España en 1923. Un científico de talla mundial salido de esta pequeña ciudad portuaria.',
+        },
+        {
+          lead: 'La capital se escondió tierra adentro durante siglos.',
+          text:
+            'Los ataques de los piratas eran tan feroces que Lanzarote mantuvo su capital a salvo tierra adentro, en Teguise, durante generaciones. Solo en 1852, con los corsarios ya desaparecidos, el puerto costero de Arrecife se atrevió a convertirse en capital de la isla.',
+        },
+      ],
+      langHeading: 'Arrecife en tu idioma, los 32',
+      ctaHeading: 'Consigue la llave de Arrecife',
+      ctaIntro:
+        'Elige tus paradas, echa a andar y deja que la voz te revele lo que todos pasan de largo.',
+    },
+    de: {
+      metaTitle: 'Audiotour Arrecife · Selbstgeführt, Lanzarote',
+      metaDescription:
+        'Eine selbstgeführte GPS-Audiotour durch Arrecife, die Hauptstadt Lanzarotes. Erkunden Sie Uferpromenade, Kastelle und Lagune in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline und mit AR-Guide.',
+      keywords:
+        'audiotour arrecife, selbstgeführte tour arrecife, stadtrundgang lanzarote, sehenswürdigkeiten arrecife lanzarote, audioguide lanzarote',
+      ogTitle: 'Audiotour Arrecife | Fun Zone Tenerife',
+      ogDescription:
+        'Erkunden Sie Arrecife, die Hauptstadt Lanzarotes, in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline, mit Augmented-Reality-Guide.',
+      heroIntro:
+        'Ein selbstgeführter GPS-Audiospaziergang durch die Hauptstadt Lanzarotes. Eine Stadt, benannt nach ihren Riffen, zwei Seeforts, eine Gezeitenlagune voller Fischerboote und die Geburtsstadt des Künstlers, der die ganze Insel prägte, erzählt in Ihrem Ohr genau dort, wo alles geschah.',
+      postcardHeading: 'Arrecife, die Version, die auf keiner Postkarte steht',
+      postcardIntro:
+        'Nicht die Hochglanzbilder. Die Geschichten, an denen selbst Einheimische ahnungslos vorbeigehen, geflüstert in Ihr Ohr an genau dem Ort, zu dem sie gehören. Hier sind drei. Viele weitere warten in der Tour.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'Ein kleines Fort bewacht den Hafen von seiner eigenen Insel aus, erreichbar über eine kleine Zugbrücke. Schauen Sie beim Überqueren nach unten, und Sie entdecken die zwei Steinkugeln, die der Brücke ihren seltsamen Beinamen gaben.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'Diese stattliche Festung entstand während einer Hungersnot, um hungernden Insulanern Arbeit zu geben, daher ein weit düsterer Name als der ihres Heiligen. Zwei Jahrhunderte später wurde ihr Zweck völlig auf den Kopf gestellt.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Zweimal täglich füllt und leert sich diese kleine Lagune mitten in der Stadt mit den Gezeiten, und die bunten Fischerboote auf ihrem Wasser sind der Ort, an dem die ganze Stadt begann.',
+        },
+      ],
+      storyTitle: 'Die Geschichte von Arrecife',
+      storyIntro: [
+        'Arrecife ist die Hauptstadt und der wichtigste Hafen Lanzarotes, eine niedrige, sonnengebleichte Stadt entlang der Ostküste der Insel. Ihr Name kommt vom spanischen Wort für Riff: eine Linie schwarzer Vulkanriffe verläuft dicht vor der Küste, und dahinter konnten Boote Schutz finden und sich verstecken. Die Altstadt ist flach und kompakt, bequem zu Fuß, und legt sich um eine Salzwasserlagune statt um einen großen Platz.',
+        'Jahrhundertelang war Arrecife nur ein kleiner Fischer- und Handelshafen, während die Inselhauptstadt sicher im Binnenland in Teguise lag, außer Reichweite der Korsaren, die die Küste überfielen. Erst 1852, als die Zeit der Piraterie längst vorbei war, erhielt Arrecife endlich die Krone der Hauptstadt und begann, zu der Stadt zu wachsen, die Sie heute durchstreifen.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Zwei Kastelle gegen das Meer',
+          paragraphs: [
+            'Das ältere der beiden Forts, das Castillo de San Gabriel, steht auf einer kleinen Insel an der Hafeneinfahrt und wurde im 16. Jahrhundert zur Abwehr von Piraten errichtet. Man erreicht es über einen schmalen Damm und eine Zugbrücke, den Puente de las Bolas, benannt nach den zwei Steinkugeln auf seinen Pfeilern und oft als einzige Brücke ihrer Art auf den Kanaren bezeichnet. Heute beherbergt das Fort das Stadtgeschichtsmuseum.',
+            'Das stattlichere Castillo de San José entstand in den 1770er-Jahren auf Befehl von König Karl III. Weil es während einer schweren Hungersnot gebaut wurde, um hungernden Insulanern bezahlte Arbeit zu geben, nannten die Einheimischen es die Festung des Hungers. In den 1970er-Jahren restaurierte der Künstler César Manrique es und machte daraus ein Museum für zeitgenössische Kunst, das MIAC: aus einem Sinnbild des Hungers wurde ein Tempel der modernen Kunst.',
+          ],
+        },
+        {
+          heading: 'Eine Lagune, eine Kirche und ein Künstler',
+          paragraphs: [
+            'Im Herzen der Stadt liegt der Charco de San Ginés, eine Gezeiten-Salzwasserlagune, die sich zweimal täglich mit dem Meer füllt und leert, umgeben von kleinen Fischerbooten und niedrigen weißen Häusern. Hier standen die ersten Fischerhütten, der Keim, aus dem die Stadt wuchs. Ganz in der Nähe steht die Iglesia de San Ginés, die Mutterkirche der Stadt, ihrem Patron geweiht.',
+            'Arrecifes berühmtester Sohn ist César Manrique, hier 1919 geboren, der Maler und Architekt, dessen Vision Lanzarote seine niedrigen weißen Häuser, sein Verbot von Werbetafeln und seine Verschmelzung von Kunst und Vulkanlandschaft gab. Gehen Sie mit seinem Namen im Kopf durch die Stadt, und Sie sehen seine Handschrift überall, vom Burgmuseum bis zum Aussehen der Straßen selbst.',
+          ],
+        },
+        {
+          heading: 'Worauf Sie achten sollten',
+          paragraphs: [
+            'Beginnen Sie am Charco de San Ginés und folgen Sie dem Wasser bis zur Uferpromenade, dann über den Puente de las Bolas zum Castillo de San Gabriel für den Blick zurück auf die Stadt. Gehen Sie die palmengesäumte Allee entlang zum Gran Hotel, dem höchsten Gebäude der Insel, und zum ruhigen Stadtstrand Playa del Reducto. Das Castillo de San José und sein Kunstmuseum liegen ein Stück weiter die Küste hinauf im Norden.',
+          ],
+        },
+      ],
+      mapHeading: 'Wo liegt Arrecife?',
+      mapIntro:
+        'Arrecife liegt an der Ostküste Lanzarotes, der nordöstlichsten der spanischen Kanarischen Inseln, vor der Nordwestküste Afrikas. Es ist die Hauptstadt und der wichtigste Hafen der Insel und das Eingangstor für die meisten Besucher, der Flughafen liegt gleich im Südwesten.',
+      bonusHeading: 'Drei Dinge, die die meisten Besucher nie erfahren',
+      bonus: [
+        {
+          lead: 'Der Hunger, der eine Festung baute.',
+          text:
+            'Das Castillo de San José wurde während einer Hungersnot im 18. Jahrhundert eigens errichtet, um hungernden Insulanern bezahlte Arbeit zu geben, daher der Beiname Festung des Hungers. Zweihundert Jahre später füllte César Manrique es mit moderner Kunst.',
+        },
+        {
+          lead: 'Einsteins kanarischer Gastgeber stammte von hier.',
+          text:
+            'Der Physiker Blas Cabrera, Spaniens führender Magnetismus-Fachmann, wurde 1878 in Arrecife geboren und empfing Albert Einstein persönlich während dessen Spanien-Reise 1923. Ein Wissenschaftler von Weltrang aus dieser kleinen Hafenstadt.',
+        },
+        {
+          lead: 'Die Hauptstadt versteckte sich jahrhundertelang im Binnenland.',
+          text:
+            'Die Piratenüberfälle waren so heftig, dass Lanzarote seine Hauptstadt über Generationen sicher im Binnenland in Teguise hielt. Erst 1852, als die Korsaren längst verschwunden waren, wagte es der Küstenhafen Arrecife, Inselhauptstadt zu werden.',
+        },
+      ],
+      langHeading: 'Arrecife in Ihrer Sprache, alle 32',
+      ctaHeading: 'Holen Sie sich den Schlüssel zu Arrecife',
+      ctaIntro:
+        'Wählen Sie Ihre Stationen, gehen Sie los, und lassen Sie die Stimme enthüllen, woran alle anderen vorbeigehen.',
+    },
+    it: {
+      metaTitle: 'Audioguida di Arrecife · Autoguidata, Lanzarote',
+      metaDescription:
+        'Un tour audio GPS in autonomia ad Arrecife, capitale di Lanzarote. Percorri il lungomare, i castelli e la laguna al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline e con guida in realtà aumentata.',
+      keywords:
+        'audioguida arrecife, tour autoguidato arrecife, tour a piedi lanzarote, cosa vedere ad arrecife lanzarote, audioguida lanzarote',
+      ogTitle: 'Audioguida di Arrecife | Fun Zone Tenerife',
+      ogDescription:
+        'Percorri Arrecife, la capitale di Lanzarote, al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline, con guida in realtà aumentata.',
+      heroIntro:
+        'Una passeggiata con audioguida GPS in autonomia nella capitale di Lanzarote. Una città che deve il nome ai suoi scogli, due forti sul mare, una laguna di marea piena di barche da pesca e la città natale dell’artista che ha plasmato l’intera isola, raccontati al tuo orecchio proprio dove tutto è accaduto.',
+      postcardHeading: 'Arrecife, la versione che le cartoline tralasciano',
+      postcardIntro:
+        'Non le foto patinate. Le storie davanti a cui passano persino gli abitanti senza saperlo, sussurrate al tuo orecchio nel punto esatto a cui appartengono. Eccone tre. Molte altre ti aspettano nel tour.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'Un piccolo forte sorveglia il porto dal suo isolotto, raggiungibile con un ponte levatoio. Guarda in basso mentre lo attraversi e noterai le due sfere di pietra che diedero al ponte il suo curioso soprannome.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'Questa bella fortezza fu eretta durante una carestia per dare lavoro agli isolani affamati, da qui un soprannome assai più cupo di quello del suo santo. Due secoli dopo, il suo scopo è stato del tutto capovolto.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Due volte al giorno questa piccola laguna nel cuore della città si riempie e si svuota con la marea, e le barche da pesca dipinte posate sulla sua acqua sono il punto in cui nacque tutta la città.',
+        },
+      ],
+      storyTitle: 'La storia di Arrecife',
+      storyIntro: [
+        'Arrecife è la capitale e il porto principale di Lanzarote, una città bassa e sbiancata dal sole distesa lungo la costa orientale dell’isola. Il suo nome viene dalla parola spagnola per scoglio: una linea di scogli vulcanici neri corre appena al largo, e dietro di essi le barche potevano ripararsi e nascondersi. Il centro storico è piatto e compatto, facile da girare a piedi, e avvolge una laguna salata invece di una grande piazza.',
+        'Per secoli Arrecife fu solo un piccolo porto di pesca e commercio, mentre la capitale dell’isola restava al sicuro nell’entroterra, a Teguise, fuori dalla portata dei corsari che saccheggiavano la costa. Solo nel 1852, con l’età della pirateria ormai alle spalle, Arrecife ricevette infine la corona di capitale e cominciò a diventare la città che percorri oggi.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Due castelli contro il mare',
+          paragraphs: [
+            'Il più antico dei due forti, il Castillo de San Gabriel, sorge su un isolotto all’imboccatura del porto e fu costruito nel Cinquecento per respingere i pirati. Vi si accede tramite una stretta strada rialzata e un ponte levatoio, il Puente de las Bolas, chiamato così per le due sfere di pietra sui suoi pilastri e spesso definito l’unico ponte del suo genere alle Canarie. Oggi il forte ospita il museo di storia della città.',
+            'Il più imponente Castillo de San José fu costruito negli anni Settanta del Settecento per ordine del re Carlo III. Poiché fu eretto durante una dura carestia per dare lavoro retribuito agli isolani affamati, la gente lo soprannominò la Fortezza della Fame. Negli anni Settanta del Novecento l’artista César Manrique lo restaurò e lo trasformò in un museo d’arte contemporanea, il MIAC: così un simbolo della fame divenne un tempio dell’arte moderna.',
+          ],
+        },
+        {
+          heading: 'Una laguna, una chiesa e un artista',
+          paragraphs: [
+            'Nel cuore della città si trova il Charco de San Ginés, una laguna d’acqua salata che si riempie e si svuota con il mare due volte al giorno, circondata da piccole barche da pesca e case basse e bianche. Qui sorgevano le prime capanne dei pescatori, il seme da cui crebbe la città. A pochi passi si erge l’Iglesia de San Ginés, la chiesa madre della città, dedicata al suo patrono.',
+            'Il figlio più celebre di Arrecife è César Manrique, nato qui nel 1919, il pittore e architetto la cui visione diede a Lanzarote le sue case basse e bianche, il suo divieto di cartelloni pubblicitari e la sua fusione tra arte e paesaggio vulcanico. Gira la città pensando al suo nome e inizierai a vedere la sua mano ovunque, dal museo del castello all’aspetto stesso delle strade.',
+          ],
+        },
+        {
+          heading: 'Cosa cercare',
+          paragraphs: [
+            'Comincia al Charco de San Ginés e segui l’acqua fino al lungomare, poi attraversa il Puente de las Bolas verso il Castillo de San Gabriel per la vista sulla città alle tue spalle. Percorri il viale di palme verso il Gran Hotel, l’edificio più alto dell’isola, e la tranquilla spiaggia urbana di Playa del Reducto. Il Castillo de San José e il suo museo d’arte si trovano un po’ più avanti lungo la costa, verso nord.',
+          ],
+        },
+      ],
+      mapHeading: 'Dove si trova Arrecife?',
+      mapIntro:
+        'Arrecife si trova sulla costa orientale di Lanzarote, la più nord-orientale delle Isole Canarie spagnole, al largo della costa nord-occidentale dell’Africa. È la capitale e il porto principale dell’isola, nonché la porta d’ingresso per la maggior parte dei visitatori, con l’aeroporto subito a sud-ovest.',
+      bonusHeading: 'Tre cose che quasi nessun visitatore scopre',
+      bonus: [
+        {
+          lead: 'La fame che costruì una fortezza.',
+          text:
+            'Il Castillo de San José fu eretto durante una carestia del Settecento proprio per dare lavoro retribuito agli isolani affamati, da cui il soprannome di Fortezza della Fame. Duecento anni dopo, César Manrique la riempì d’arte moderna.',
+        },
+        {
+          lead: 'L’ospite canario di Einstein veniva da qui.',
+          text:
+            'Il fisico Blas Cabrera, massima autorità spagnola sul magnetismo, nacque ad Arrecife nel 1878 e ospitò personalmente Albert Einstein durante la sua visita in Spagna nel 1923. Uno scienziato di livello mondiale uscito da questa piccola città portuale.',
+        },
+        {
+          lead: 'La capitale si nascose nell’entroterra per secoli.',
+          text:
+            'Le incursioni dei pirati erano così feroci che Lanzarote tenne la capitale al sicuro nell’entroterra, a Teguise, per generazioni. Solo nel 1852, con i corsari ormai scomparsi, il porto costiero di Arrecife osò diventare capitale dell’isola.',
+        },
+      ],
+      langHeading: 'Arrecife nella tua lingua, tutte e 32',
+      ctaHeading: 'Prendi la chiave di Arrecife',
+      ctaIntro:
+        'Scegli le tue tappe, mettiti in cammino e lascia che la voce ti riveli ciò che tutti gli altri oltrepassano senza vedere.',
+    },
+    nl: {
+      metaTitle: 'Audiotour Arrecife · Zelfgeleid, Lanzarote',
+      metaDescription:
+        'Een zelfgeleide gps-audiotour door Arrecife, de hoofdstad van Lanzarote. Loop de boulevard, kastelen en lagune op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline en met AR-gids.',
+      keywords:
+        'audiotour arrecife, zelfgeleide tour arrecife, stadswandeling lanzarote, bezienswaardigheden arrecife lanzarote, audiogids lanzarote',
+      ogTitle: 'Audiotour Arrecife | Fun Zone Tenerife',
+      ogDescription:
+        'Loop Arrecife, de hoofdstad van Lanzarote, op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline, met augmented-reality-gids.',
+      heroIntro:
+        'Een zelfgeleide gps-audiowandeling door de hoofdstad van Lanzarote. Een stad vernoemd naar haar riffen, twee zeeforten, een getijdenlagune vol vissersboten en de geboortestad van de kunstenaar die het hele eiland vormgaf, verteld in je oor precies waar het gebeurde.',
+      postcardHeading: 'Arrecife, de versie die de ansichtkaarten weglaten',
+      postcardIntro:
+        'Niet de glossy plaatjes. De verhalen waar zelfs bewoners onwetend langslopen, gefluisterd in je oor op de exacte plek waar ze thuishoren. Hier zijn er drie. Veel meer wachten in de tour.',
+      secrets: [
+        {
+          place: 'Castillo de San Gabriel',
+          teaser:
+            'Een klein fort bewaakt de haven vanaf zijn eigen eilandje, bereikbaar via een ophaalbruggetje. Kijk omlaag als je oversteekt en je ziet de twee stenen ballen die de brug haar vreemde bijnaam gaven.',
+        },
+        {
+          place: 'Castillo de San José',
+          teaser:
+            'Dit statige fort werd opgetrokken tijdens een hongersnood om uitgehongerde eilanders werk te geven, vandaar een veel duisterder naam dan die van zijn heilige. Twee eeuwen later werd zijn bestemming volledig omgekeerd.',
+        },
+        {
+          place: 'Charco de San Ginés',
+          teaser:
+            'Twee keer per dag loopt deze kleine lagune in het hart van de stad vol en weer leeg met het getij, en de geschilderde vissersboten op haar water zijn waar de hele stad begon.',
+        },
+      ],
+      storyTitle: 'Het verhaal van Arrecife',
+      storyIntro: [
+        'Arrecife is de hoofdstad en de belangrijkste haven van Lanzarote, een lage, door de zon gebleekte stad langs de oostkust van het eiland. De naam komt van het Spaanse woord voor rif: een lijn zwarte vulkanische riffen loopt vlak voor de kust, en daarachter konden boten schuilen en zich verbergen. De oude stad is vlak en compact, prettig te belopen, en vouwt zich rond een zoutwaterlagune in plaats van een groot plein.',
+        'Eeuwenlang was Arrecife maar een kleine vissers- en handelshaven, terwijl de hoofdstad van het eiland veilig in het binnenland lag, in Teguise, buiten bereik van de kapers die de kust plunderden. Pas in 1852, toen het tijdperk van de piraterij allang voorbij was, kreeg Arrecife eindelijk de hoofdstedelijke kroon en groeide het uit tot de stad die je vandaag doorkruist.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Twee kastelen tegen de zee',
+          paragraphs: [
+            'Het oudste van de twee forten, het Castillo de San Gabriel, staat op een klein eilandje bij de havenmond en werd in de zestiende eeuw gebouwd om piraten af te weren. Je bereikt het via een smalle dam en ophaalbrug, de Puente de las Bolas, genoemd naar de twee stenen bollen op de pijlers en vaak de enige brug van zijn soort op de Canarische Eilanden genoemd. Vandaag herbergt het fort het stadsgeschiedenismuseum.',
+            'Het statigere Castillo de San José werd in de jaren 1770 gebouwd in opdracht van koning Karel III. Omdat het werd opgetrokken tijdens een zware hongersnood om uitgehongerde eilanders betaald werk te geven, noemden de bewoners het het Fort van de Honger. In de jaren zeventig restaureerde kunstenaar César Manrique het en maakte er een museum voor hedendaagse kunst van, het MIAC, zodat een zinnebeeld van honger een tempel van moderne kunst werd.',
+          ],
+        },
+        {
+          heading: 'Een lagune, een kerk en een kunstenaar',
+          paragraphs: [
+            'In het hart van de stad ligt de Charco de San Ginés, een getijden-zoutwaterlagune die zich twee keer per dag met de zee vult en leegt, omringd door kleine vissersboten en lage witte huizen. Hier stonden de eerste vissershutten, het zaad waaruit de stad groeide. Op een steenworp staat de Iglesia de San Ginés, de moederkerk van de stad, gewijd aan haar patroon.',
+            'Arrecifes beroemdste zoon is César Manrique, hier geboren in 1919, de schilder en architect wiens visie Lanzarote zijn lage witte huizen, zijn verbod op reclameborden en zijn versmelting van kunst met het vulkanische landschap gaf. Loop door de stad met zijn naam in gedachten en je ziet zijn hand overal, van het kasteelmuseum tot het aanzien van de straten zelf.',
+          ],
+        },
+        {
+          heading: 'Waar je op moet letten',
+          paragraphs: [
+            'Begin bij de Charco de San Ginés en volg het water naar de boulevard, steek dan de Puente de las Bolas over naar het Castillo de San Gabriel voor het uitzicht terug op de stad. Loop de met palmen omzoomde laan af naar het Gran Hotel, het hoogste gebouw van het eiland, en het rustige stadsstrand Playa del Reducto. Het Castillo de San José en zijn kunstmuseum liggen een stukje verderop langs de kust naar het noorden.',
+          ],
+        },
+      ],
+      mapHeading: 'Waar ligt Arrecife?',
+      mapIntro:
+        'Arrecife ligt aan de oostkust van Lanzarote, het meest noordoostelijke van de Spaanse Canarische Eilanden, voor de noordwestkust van Afrika. Het is de hoofdstad en de belangrijkste haven van het eiland en de toegangspoort voor de meeste bezoekers, met de luchthaven net ten zuidwesten.',
+      bonusHeading: 'Drie dingen die bijna geen bezoeker ontdekt',
+      bonus: [
+        {
+          lead: 'De honger die een fort bouwde.',
+          text:
+            'Het Castillo de San José werd tijdens een hongersnood in de achttiende eeuw juist opgetrokken om uitgehongerde eilanders betaald werk te geven, vandaar de bijnaam Fort van de Honger. Tweehonderd jaar later vulde César Manrique het met moderne kunst.',
+        },
+        {
+          lead: 'Einsteins Canarische gastheer kwam hiervandaan.',
+          text:
+            'De natuurkundige Blas Cabrera, Spanjes grootste kenner van magnetisme, werd in 1878 in Arrecife geboren en ontving Albert Einstein persoonlijk tijdens diens bezoek aan Spanje in 1923. Een wetenschapper van wereldklasse uit deze kleine havenstad.',
+        },
+        {
+          lead: 'De hoofdstad hield zich eeuwenlang in het binnenland schuil.',
+          text:
+            'De piratenaanvallen waren zo hevig dat Lanzarote zijn hoofdstad generaties lang veilig in het binnenland hield, in Teguise. Pas in 1852, toen de kapers allang verdwenen waren, durfde de kusthaven Arrecife hoofdstad van het eiland te worden.',
+        },
+      ],
+      langHeading: 'Arrecife in jouw taal, alle 32',
+      ctaHeading: 'Haal de sleutel tot Arrecife',
+      ctaIntro:
+        'Kies je stops, begin te lopen en laat de stem onthullen wat iedereen straal voorbijloopt.',
+    },
+  },
+  'las-palmas': {
+    en: {
+      metaTitle: 'Las Palmas de Gran Canaria Audio Tour · Self-Guided Walk',
+      metaDescription:
+        'A self-guided GPS audio tour of old Las Palmas de Gran Canaria. Walk Vegueta and Triana at your own pace with native-voice stories in 32 languages, offline and with an AR guide.',
+      keywords:
+        'las palmas de gran canaria audio tour, self-guided tour las palmas, vegueta walking tour, things to do gran canaria, audio guide gran canaria',
+      ogTitle: 'Las Palmas de Gran Canaria Audio Tour | Fun Zone Tenerife',
+      ogDescription:
+        'Walk the old quarters of Las Palmas de Gran Canaria at your own pace with native-voice stories in 32 languages, offline, with an augmented-reality guide.',
+      heroIntro:
+        'A self-guided GPS audio walk through the two old quarters of Gran Canaria’s capital, Vegueta and Triana. The spot where the city was founded, Columbus’s Atlantic stopover and the dogs that gave the islands their name, told in your ear right where it all happened.',
+      postcardHeading: 'Las Palmas, the version the postcards leave out',
+      postcardIntro:
+        'Not the glossy shots. The stories even locals walk past without knowing, whispered in your ear on the exact spot they belong to. Here are three. Many more wait inside the tour.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Eight dark dogs sit in a row before the cathedral, and nobody is quite sure why. Their secret reaches back to the Roman name for these islands, and it has nothing to do with the little yellow bird.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'Most visitors photograph the stern stone front and move on. Step inside and the columns fan open above your head like a petrified palm grove, a quiet nod to the city’s own name.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'The grand cathedral is not where the city began. That honour belongs to a small, plain chapel nearby, where tradition says a certain sailor prayed before heading west in 1492.',
+        },
+      ],
+      storyTitle: 'The story of Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas is the capital of Gran Canaria and the largest city in the Canary Islands. Its historic heart is split in two by the old Guiniguada ravine: Vegueta, the cobbled colonial core where the city was founded, and Triana, the merchants’ and shopping quarter just across the water. Almost everything worth seeing in the old town is within an easy walk.',
+        'It began on 24 June 1478, when Juan Rejón came ashore at the mouth of the Guiniguada with a small force and founded the Real de Las Palmas. The conquest of Gran Canaria took about five years of hard fighting before the island was folded into the Crown of Castile in 1483. The San Juan festival each June still marks the founding date.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'A rehearsal for the New World',
+          paragraphs: [
+            'Vegueta was one of the first European towns built on Atlantic soil, and in many ways a rehearsal for the colonial cities Spain would later raise across the Americas. In 1492 Christopher Columbus anchored here to repair the rudder of the Pinta before crossing the ocean, and called again on the way home. The Casa de Colón, on the site of the old governor’s residence, still carries his name.',
+            'At the centre stands the Cathedral of Santa Ana, begun around 1500. Its Gothic core was finished by 1570, then given a severe neoclassical stone face in the eighteenth century, so the building you see today is essentially Gothic within and neoclassical without. It was the only cathedral in the Canaries until 1819, and its palm-like interior columns echo the name Las Palmas.',
+          ],
+        },
+        {
+          heading: 'Dogs, writers and raiders',
+          paragraphs: [
+            'The name Canary Islands most likely comes from the Latin Canariae Insulae, the Islands of the Dogs, after the large dogs early visitors reported here. The famous little canary bird is named after the islands, not the other way round, so the row of dogs before the cathedral is, in a sense, the true origin of the name.',
+            'Triana gave Spain one of its greatest novelists, Benito Pérez Galdós, born here in 1843, whose birth house is now a museum. The quarter has also seen its share of danger from the sea: in 1595 Sir Francis Drake was beaten back from these shores, and in 1599 a Dutch fleet under Pieter van der Does burned part of the town before being driven off.',
+          ],
+        },
+        {
+          heading: 'What to look out for',
+          paragraphs: [
+            'Begin in Vegueta on the Plaza de Santa Ana, between the cathedral and the dogs, then wander the lanes to the Casa de Colón and the Canarian art behind the old façade of the CAAM. Cross into Triana for the Pérez Galdós house and the shops of Calle Triana. When you want sand and sea, the long city beach of Las Canteras, sheltered by its natural reef, lies a short way north.',
+          ],
+        },
+      ],
+      mapHeading: 'Where is Las Palmas de Gran Canaria?',
+      mapIntro:
+        'Las Palmas sits on the north-east tip of Gran Canaria, a round volcanic island at the centre of Spain’s Canary archipelago, off the north-west coast of Africa. It is the island’s capital and main port, with the old quarters of Vegueta and Triana set just back from the harbour.',
+      bonusHeading: 'Three things most visitors never learn',
+      bonus: [
+        {
+          lead: 'The bird is named after the dogs.',
+          text:
+            'The canary you picture in a cage takes its name from these islands, which the Romans called the Islands of the Dogs. So the dogs guarding the cathedral are, in a way, the real canaries.',
+        },
+        {
+          lead: 'A cathedral that changed its face.',
+          text:
+            'Santa Ana began as a Gothic church around 1500 and was finished inside by 1570, then given an entirely different neoclassical front in the eighteenth century. Walk in and back out and you cross three centuries of changing taste in a single doorway.',
+        },
+        {
+          lead: 'Drake’s run of luck ran out here.',
+          text:
+            'The English corsair who had terrorised Spanish ports was repelled from Las Palmas in 1595 by a modest, largely civilian defence. He sailed on to the Caribbean and was dead of disease within months.',
+        },
+      ],
+      langHeading: 'Las Palmas in your language, all 32',
+      ctaHeading: 'Get the key to Las Palmas',
+      ctaIntro:
+        'Pick your stops, start walking, and let the voice reveal what everyone else walks straight past.',
+    },
+    fr: {
+      metaTitle: 'Visite audio de Las Palmas de Gran Canaria · En autonomie',
+      metaDescription:
+        'Une visite audio GPS en autonomie du vieux Las Palmas de Gran Canaria. Parcourez Vegueta et Triana à votre rythme avec des récits en voix native dans 32 langues, hors ligne et avec un guide en réalité augmentée.',
+      keywords:
+        'visite audio las palmas gran canaria, visite autoguidée las palmas, visite à pied vegueta, que faire à grande canarie, audioguide gran canaria',
+      ogTitle: 'Visite audio de Las Palmas de Gran Canaria | Fun Zone Tenerife',
+      ogDescription:
+        'Parcourez les vieux quartiers de Las Palmas de Gran Canaria à votre rythme avec des récits en voix native dans 32 langues, hors ligne, avec un guide en réalité augmentée.',
+      heroIntro:
+        'Une balade audio GPS en autonomie à travers les deux vieux quartiers de la capitale de Grande Canarie, Vegueta et Triana. Le lieu de fondation de la ville, l’escale atlantique de Colomb et les chiens qui ont donné leur nom aux îles, racontés à votre oreille là où tout s’est passé.',
+      postcardHeading: 'Las Palmas, la version que les cartes postales oublient',
+      postcardIntro:
+        'Pas les clichés sur papier glacé. Les histoires que même les habitants longent sans les connaître, murmurées à votre oreille à l’endroit exact où elles ont eu lieu. En voici trois. Beaucoup d’autres vous attendent dans la visite.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Huit chiens sombres s’alignent devant la cathédrale, et personne ne sait vraiment pourquoi. Leur secret remonte au nom romain de ces îles, et n’a rien à voir avec le petit oiseau jaune.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'La plupart des visiteurs photographient l’austère façade de pierre et passent leur chemin. Entrez, et les colonnes s’ouvrent au-dessus de vous comme une palmeraie pétrifiée, clin d’œil discret au nom même de la ville.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'Ce n’est pas la grande cathédrale qui a vu naître la ville. Cet honneur revient à une petite chapelle toute simple, tout près, où la tradition veut qu’un certain marin ait prié avant de mettre le cap à l’ouest en 1492.',
+        },
+      ],
+      storyTitle: 'L’histoire de Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas est la capitale de Grande Canarie et la plus grande ville des îles Canaries. Son cœur historique est coupé en deux par l’ancien ravin du Guiniguada : Vegueta, le noyau colonial pavé où la ville fut fondée, et Triana, le quartier des marchands et des boutiques, juste de l’autre côté. Presque tout ce qui mérite d’être vu dans la vieille ville se fait aisément à pied.',
+        'Tout commence le 24 juin 1478, quand Juan Rejón débarque à l’embouchure du Guiniguada avec une petite troupe et fonde le Real de Las Palmas. La conquête de Grande Canarie demanda environ cinq ans de rudes combats avant que l’île ne soit rattachée à la Couronne de Castille en 1483. La fête de la Saint-Jean, chaque mois de juin, marque encore la date de fondation.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Une répétition pour le Nouveau Monde',
+          paragraphs: [
+            'Vegueta fut l’une des premières villes européennes bâties sur une terre atlantique, et à bien des égards une répétition des villes coloniales que l’Espagne élèverait plus tard à travers les Amériques. En 1492, Christophe Colomb jeta l’ancre ici pour réparer le gouvernail de la Pinta avant de traverser l’océan, et y fit de nouveau escale au retour. La Casa de Colón, sur l’emplacement de l’ancienne résidence du gouverneur, porte toujours son nom.',
+            'En son centre se dresse la cathédrale de Santa Ana, commencée vers 1500. Son noyau gothique fut achevé vers 1570, puis habillé d’une sévère façade néoclassique en pierre au XVIIIe siècle : l’édifice que vous voyez aujourd’hui est pour l’essentiel gothique à l’intérieur et néoclassique à l’extérieur. Elle resta la seule cathédrale des Canaries jusqu’en 1819, et ses colonnes intérieures en forme de palmier font écho au nom de Las Palmas.',
+          ],
+        },
+        {
+          heading: 'Des chiens, des écrivains et des corsaires',
+          paragraphs: [
+            'Le nom d’îles Canaries vient probablement du latin Canariae Insulae, les îles des Chiens, d’après les grands chiens que les premiers visiteurs y signalèrent. Le célèbre petit canari tient son nom des îles, et non l’inverse : la rangée de chiens devant la cathédrale est donc, en un sens, la véritable origine du nom.',
+            'Triana a donné à l’Espagne l’un de ses plus grands romanciers, Benito Pérez Galdós, né ici en 1843, dont la maison natale est aujourd’hui un musée. Le quartier a aussi connu le danger venu de la mer : en 1595, Sir Francis Drake fut repoussé de ces rivages, et en 1599 une flotte hollandaise menée par Pieter van der Does brûla une partie de la ville avant d’être chassée.',
+          ],
+        },
+        {
+          heading: 'À ne pas manquer',
+          paragraphs: [
+            'Commencez à Vegueta sur la Plaza de Santa Ana, entre la cathédrale et les chiens, puis flânez dans les ruelles jusqu’à la Casa de Colón et à l’art canarien caché derrière l’ancienne façade du CAAM. Passez à Triana pour la maison de Pérez Galdós et les boutiques de la Calle Triana. Pour le sable et la mer, la longue plage urbaine de Las Canteras, protégée par son récif naturel, se trouve un peu plus au nord.',
+          ],
+        },
+      ],
+      mapHeading: 'Où se trouve Las Palmas de Gran Canaria ?',
+      mapIntro:
+        'Las Palmas occupe la pointe nord-est de Grande Canarie, île volcanique arrondie au centre de l’archipel espagnol des Canaries, au large du nord-ouest de l’Afrique. C’est la capitale et le port principal de l’île, avec les vieux quartiers de Vegueta et Triana juste en retrait du port.',
+      bonusHeading: 'Trois choses que la plupart des visiteurs ignorent',
+      bonus: [
+        {
+          lead: 'L’oiseau doit son nom aux chiens.',
+          text:
+            'Le canari que vous imaginez en cage tire son nom de ces îles, que les Romains appelaient les îles des Chiens. Les chiens qui gardent la cathédrale sont donc, en quelque sorte, les vrais canaris.',
+        },
+        {
+          lead: 'Une cathédrale qui a changé de visage.',
+          text:
+            'Santa Ana naquit église gothique vers 1500 et fut achevée à l’intérieur vers 1570, avant de recevoir une façade néoclassique toute différente au XVIIIe siècle. En entrant puis en ressortant, vous traversez trois siècles de goûts changeants en une seule porte.',
+        },
+        {
+          lead: 'La chance de Drake s’est arrêtée ici.',
+          text:
+            'Le corsaire anglais qui avait terrorisé les ports espagnols fut repoussé de Las Palmas en 1595 par une défense modeste et surtout civile. Il poursuivit vers les Caraïbes et mourut de maladie quelques mois plus tard.',
+        },
+      ],
+      langHeading: 'Las Palmas dans votre langue, les 32',
+      ctaHeading: 'Obtenez la clé de Las Palmas',
+      ctaIntro:
+        'Choisissez vos étapes, commencez à marcher, et laissez la voix révéler ce que tout le monde longe sans le voir.',
+    },
+    es: {
+      metaTitle: 'Audioguía de Las Palmas de Gran Canaria · Autoguiada',
+      metaDescription:
+        'Una audioguía GPS autoguiada del casco antiguo de Las Palmas de Gran Canaria. Recorre Vegueta y Triana a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión y con guía de realidad aumentada.',
+      keywords:
+        'audioguía las palmas de gran canaria, ruta autoguiada las palmas, ruta a pie vegueta, qué ver en gran canaria, audioguía gran canaria',
+      ogTitle: 'Audioguía de Las Palmas de Gran Canaria | Fun Zone Tenerife',
+      ogDescription:
+        'Recorre los barrios antiguos de Las Palmas de Gran Canaria a tu ritmo con relatos en voz nativa en 32 idiomas, sin conexión, con guía de realidad aumentada.',
+      heroIntro:
+        'Un paseo con audioguía GPS autoguiada por los dos barrios antiguos de la capital de Gran Canaria, Vegueta y Triana. El lugar donde se fundó la ciudad, la escala atlántica de Colón y los perros que dieron nombre a las islas, narrados a tu oído justo donde ocurrió todo.',
+      postcardHeading: 'Las Palmas, la versión que las postales se saltan',
+      postcardIntro:
+        'No las fotos de revista. Las historias por las que hasta los vecinos pasan sin saberlo, susurradas a tu oído en el punto exacto al que pertenecen. Aquí tienes tres. Muchas más te esperan en el tour.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Ocho perros oscuros se alinean ante la catedral, y nadie sabe muy bien por qué. Su secreto se remonta al nombre romano de estas islas, y no tiene nada que ver con el pajarito amarillo.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'La mayoría fotografía la severa fachada de piedra y sigue su camino. Entra y las columnas se abren sobre tu cabeza como un palmeral petrificado, un guiño callado al propio nombre de la ciudad.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'La ciudad no nació en la gran catedral. Ese honor es de una pequeña ermita sencilla, muy cerca, donde la tradición dice que cierto marino rezó antes de poner rumbo al oeste en 1492.',
+        },
+      ],
+      storyTitle: 'La historia de Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas es la capital de Gran Canaria y la mayor ciudad de las Islas Canarias. Su corazón histórico lo parte en dos el antiguo barranco del Guiniguada: Vegueta, el núcleo colonial empedrado donde se fundó la ciudad, y Triana, el barrio de comerciantes y tiendas, justo al otro lado. Casi todo lo que merece verse en el casco antiguo queda a un paseo cómodo.',
+        'Empezó el 24 de junio de 1478, cuando Juan Rejón desembarcó en la desembocadura del Guiniguada con una pequeña tropa y fundó el Real de Las Palmas. La conquista de Gran Canaria costó unos cinco años de duros combates antes de que la isla se incorporara a la Corona de Castilla en 1483. La fiesta de San Juan, cada junio, aún marca la fecha de la fundación.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Un ensayo para el Nuevo Mundo',
+          paragraphs: [
+            'Vegueta fue una de las primeras ciudades europeas levantadas en suelo atlántico y, en muchos sentidos, un ensayo de las ciudades coloniales que España alzaría después por toda América. En 1492 Cristóbal Colón fondeó aquí para reparar el timón de la Pinta antes de cruzar el océano, y volvió a recalar a la vuelta. La Casa de Colón, en el solar de la antigua residencia del gobernador, aún lleva su nombre.',
+            'En su centro se alza la catedral de Santa Ana, iniciada hacia 1500. Su núcleo gótico se terminó hacia 1570 y luego recibió una severa fachada neoclásica de piedra en el siglo XVIII, así que el edificio que ves hoy es gótico por dentro y neoclásico por fuera. Fue la única catedral de Canarias hasta 1819, y sus columnas interiores, como palmeras, hacen eco al nombre de Las Palmas.',
+          ],
+        },
+        {
+          heading: 'Perros, escritores y corsarios',
+          paragraphs: [
+            'El nombre de Islas Canarias viene probablemente del latín Canariae Insulae, las islas de los Perros, por los grandes perros que describieron los primeros visitantes. El famoso canario toma su nombre de las islas, y no al revés: la hilera de perros ante la catedral es, en cierto modo, el verdadero origen del nombre.',
+            'Triana dio a España a uno de sus mayores novelistas, Benito Pérez Galdós, nacido aquí en 1843, cuya casa natal es hoy un museo. El barrio también conoció el peligro llegado del mar: en 1595 Sir Francis Drake fue rechazado de estas costas, y en 1599 una flota holandesa al mando de Pieter van der Does quemó parte de la ciudad antes de ser expulsada.',
+          ],
+        },
+        {
+          heading: 'En qué fijarte',
+          paragraphs: [
+            'Empieza en Vegueta, en la Plaza de Santa Ana, entre la catedral y los perros, y luego piérdete por las calles hasta la Casa de Colón y el arte canario tras la vieja fachada del CAAM. Cruza a Triana para ver la casa de Pérez Galdós y las tiendas de la Calle Triana. Cuando quieras arena y mar, la larga playa urbana de Las Canteras, resguardada por su arrecife natural, queda un poco al norte.',
+          ],
+        },
+      ],
+      mapHeading: '¿Dónde está Las Palmas de Gran Canaria?',
+      mapIntro:
+        'Las Palmas ocupa el extremo nororiental de Gran Canaria, una isla volcánica y redondeada en el centro del archipiélago canario, frente a la costa noroeste de África. Es la capital y el puerto principal de la isla, con los barrios antiguos de Vegueta y Triana justo detrás del muelle.',
+      bonusHeading: 'Tres cosas que casi ningún visitante descubre',
+      bonus: [
+        {
+          lead: 'El pájaro se llama así por los perros.',
+          text:
+            'El canario que imaginas en una jaula toma su nombre de estas islas, que los romanos llamaron islas de los Perros. Así que los perros que guardan la catedral son, en cierto modo, los verdaderos canarios.',
+        },
+        {
+          lead: 'Una catedral que cambió de cara.',
+          text:
+            'Santa Ana nació iglesia gótica hacia 1500 y se terminó por dentro hacia 1570, para recibir luego una fachada neoclásica muy distinta en el siglo XVIII. Al entrar y volver a salir, cruzas tres siglos de gustos cambiantes en una sola puerta.',
+        },
+        {
+          lead: 'Aquí se acabó la suerte de Drake.',
+          text:
+            'El corsario inglés que había aterrorizado los puertos españoles fue rechazado de Las Palmas en 1595 por una defensa modesta y sobre todo civil. Siguió rumbo al Caribe y murió de enfermedad pocos meses después.',
+        },
+      ],
+      langHeading: 'Las Palmas en tu idioma, los 32',
+      ctaHeading: 'Consigue la llave de Las Palmas',
+      ctaIntro:
+        'Elige tus paradas, echa a andar y deja que la voz te revele lo que todos pasan de largo.',
+    },
+    de: {
+      metaTitle: 'Audiotour Las Palmas de Gran Canaria · Selbstgeführt',
+      metaDescription:
+        'Eine selbstgeführte GPS-Audiotour durch die Altstadt von Las Palmas de Gran Canaria. Erkunden Sie Vegueta und Triana in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline und mit AR-Guide.',
+      keywords:
+        'audiotour las palmas de gran canaria, selbstgeführte tour las palmas, stadtrundgang vegueta, sehenswürdigkeiten gran canaria, audioguide gran canaria',
+      ogTitle: 'Audiotour Las Palmas de Gran Canaria | Fun Zone Tenerife',
+      ogDescription:
+        'Erkunden Sie die Altstadtviertel von Las Palmas de Gran Canaria in Ihrem Tempo mit Erzählungen von Muttersprachlern in 32 Sprachen, offline, mit Augmented-Reality-Guide.',
+      heroIntro:
+        'Ein selbstgeführter GPS-Audiospaziergang durch die beiden Altstadtviertel der Hauptstadt Gran Canarias, Vegueta und Triana. Der Gründungsort der Stadt, Kolumbus’ Atlantik-Zwischenstopp und die Hunde, die den Inseln ihren Namen gaben, erzählt in Ihrem Ohr genau dort, wo alles geschah.',
+      postcardHeading: 'Las Palmas, die Version, die auf keiner Postkarte steht',
+      postcardIntro:
+        'Nicht die Hochglanzbilder. Die Geschichten, an denen selbst Einheimische ahnungslos vorbeigehen, geflüstert in Ihr Ohr an genau dem Ort, zu dem sie gehören. Hier sind drei. Viele weitere warten in der Tour.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Acht dunkle Hunde sitzen in einer Reihe vor der Kathedrale, und niemand weiß genau, warum. Ihr Geheimnis reicht bis zum römischen Namen dieser Inseln zurück und hat nichts mit dem kleinen gelben Vogel zu tun.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'Die meisten fotografieren die strenge Steinfront und ziehen weiter. Treten Sie ein, und die Säulen öffnen sich über Ihnen wie ein versteinerter Palmenhain, ein leiser Verweis auf den Namen der Stadt.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'Nicht die große Kathedrale ist der Ursprung der Stadt. Diese Ehre gebührt einer kleinen, schlichten Kapelle ganz in der Nähe, in der laut Überlieferung ein gewisser Seefahrer betete, bevor er 1492 nach Westen aufbrach.',
+        },
+      ],
+      storyTitle: 'Die Geschichte von Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas ist die Hauptstadt Gran Canarias und die größte Stadt der Kanarischen Inseln. Ihr historisches Herz teilt die alte Schlucht des Guiniguada in zwei Hälften: Vegueta, den gepflasterten kolonialen Kern, in dem die Stadt gegründet wurde, und Triana, das Händler- und Einkaufsviertel gleich gegenüber. Fast alles Sehenswerte der Altstadt liegt bequem zu Fuß.',
+        'Es begann am 24. Juni 1478, als Juan Rejón mit einer kleinen Truppe an der Mündung des Guiniguada an Land ging und das Real de Las Palmas gründete. Die Eroberung Gran Canarias kostete etwa fünf Jahre harter Kämpfe, ehe die Insel 1483 der Krone von Kastilien angegliedert wurde. Das Johannisfest jeden Juni erinnert noch an das Gründungsdatum.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Eine Probe für die Neue Welt',
+          paragraphs: [
+            'Vegueta war eine der ersten europäischen Städte auf atlantischem Boden und in vielem eine Probe für die Kolonialstädte, die Spanien später in ganz Amerika errichten sollte. 1492 ankerte Christoph Kolumbus hier, um das Ruder der Pinta zu reparieren, bevor er den Ozean überquerte, und legte auf dem Rückweg erneut an. Die Casa de Colón, auf dem Grund der einstigen Statthalterresidenz, trägt bis heute seinen Namen.',
+            'In ihrer Mitte erhebt sich die Kathedrale Santa Ana, um 1500 begonnen. Ihr gotischer Kern war um 1570 vollendet und erhielt dann im 18. Jahrhundert eine strenge klassizistische Steinfassade, sodass der Bau, den Sie heute sehen, innen im Kern gotisch und außen klassizistisch ist. Bis 1819 war sie die einzige Kathedrale der Kanaren, und ihre palmenartigen Innensäulen greifen den Namen Las Palmas auf.',
+          ],
+        },
+        {
+          heading: 'Hunde, Dichter und Freibeuter',
+          paragraphs: [
+            'Der Name Kanarische Inseln stammt wahrscheinlich vom lateinischen Canariae Insulae, den Inseln der Hunde, nach den großen Hunden, von denen frühe Besucher berichteten. Der berühmte kleine Kanarienvogel ist nach den Inseln benannt, nicht umgekehrt: die Hundereihe vor der Kathedrale ist somit gewissermaßen der wahre Ursprung des Namens.',
+            'Triana schenkte Spanien einen seiner größten Romanciers, Benito Pérez Galdós, hier 1843 geboren, dessen Geburtshaus heute ein Museum ist. Auch die Gefahr von See kannte das Viertel: 1595 wurde Sir Francis Drake von dieser Küste zurückgeschlagen, und 1599 brannte eine niederländische Flotte unter Pieter van der Does einen Teil der Stadt nieder, ehe sie vertrieben wurde.',
+          ],
+        },
+        {
+          heading: 'Worauf Sie achten sollten',
+          paragraphs: [
+            'Beginnen Sie in Vegueta auf der Plaza de Santa Ana, zwischen Kathedrale und Hunden, und schlendern Sie dann durch die Gassen zur Casa de Colón und zur kanarischen Kunst hinter der alten Fassade des CAAM. Hinüber nach Triana führt der Weg zum Pérez-Galdós-Haus und zu den Läden der Calle Triana. Wer Sand und Meer sucht, findet den langen Stadtstrand Las Canteras, geschützt von seinem natürlichen Riff, ein Stück weiter nördlich.',
+          ],
+        },
+      ],
+      mapHeading: 'Wo liegt Las Palmas de Gran Canaria?',
+      mapIntro:
+        'Las Palmas liegt an der Nordostspitze Gran Canarias, einer runden Vulkaninsel im Zentrum des spanischen Kanaren-Archipels vor der Nordwestküste Afrikas. Es ist die Hauptstadt und der wichtigste Hafen der Insel, mit den Altstadtvierteln Vegueta und Triana gleich hinter dem Hafen.',
+      bonusHeading: 'Drei Dinge, die die meisten Besucher nie erfahren',
+      bonus: [
+        {
+          lead: 'Der Vogel ist nach den Hunden benannt.',
+          text:
+            'Der Kanarienvogel, den Sie sich im Käfig vorstellen, hat seinen Namen von diesen Inseln, die die Römer Inseln der Hunde nannten. Die Hunde, die die Kathedrale bewachen, sind also in gewisser Weise die wahren Kanarien.',
+        },
+        {
+          lead: 'Eine Kathedrale, die ihr Gesicht wechselte.',
+          text:
+            'Santa Ana begann um 1500 als gotische Kirche und war um 1570 innen fertig, erhielt dann aber im 18. Jahrhundert eine ganz andere, klassizistische Front. Wer hinein- und wieder hinausgeht, durchquert in einer einzigen Tür drei Jahrhunderte wechselnden Geschmacks.',
+        },
+        {
+          lead: 'Hier endete Drakes Glückssträhne.',
+          text:
+            'Der englische Freibeuter, der spanische Häfen in Angst versetzt hatte, wurde 1595 von einer bescheidenen, überwiegend zivilen Verteidigung aus Las Palmas zurückgeschlagen. Er segelte weiter in die Karibik und starb binnen Monaten an einer Krankheit.',
+        },
+      ],
+      langHeading: 'Las Palmas in Ihrer Sprache, alle 32',
+      ctaHeading: 'Holen Sie sich den Schlüssel zu Las Palmas',
+      ctaIntro:
+        'Wählen Sie Ihre Stationen, gehen Sie los, und lassen Sie die Stimme enthüllen, woran alle anderen vorbeigehen.',
+    },
+    it: {
+      metaTitle: 'Audioguida di Las Palmas de Gran Canaria · Autoguidata',
+      metaDescription:
+        'Un tour audio GPS in autonomia nel centro storico di Las Palmas de Gran Canaria. Percorri Vegueta e Triana al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline e con guida in realtà aumentata.',
+      keywords:
+        'audioguida las palmas de gran canaria, tour autoguidato las palmas, tour a piedi vegueta, cosa vedere a gran canaria, audioguida gran canaria',
+      ogTitle: 'Audioguida di Las Palmas de Gran Canaria | Fun Zone Tenerife',
+      ogDescription:
+        'Percorri i quartieri antichi di Las Palmas de Gran Canaria al tuo ritmo con racconti a voce madrelingua in 32 lingue, offline, con guida in realtà aumentata.',
+      heroIntro:
+        'Una passeggiata con audioguida GPS in autonomia nei due quartieri antichi della capitale di Gran Canaria, Vegueta e Triana. Il luogo in cui nacque la città, lo scalo atlantico di Colombo e i cani che diedero il nome alle isole, raccontati al tuo orecchio proprio dove tutto è accaduto.',
+      postcardHeading: 'Las Palmas, la versione che le cartoline tralasciano',
+      postcardIntro:
+        'Non le foto patinate. Le storie davanti a cui passano persino gli abitanti senza saperlo, sussurrate al tuo orecchio nel punto esatto a cui appartengono. Eccone tre. Molte altre ti aspettano nel tour.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Otto cani scuri sono allineati davanti alla cattedrale, e nessuno sa bene perché. Il loro segreto risale al nome romano di queste isole, e non ha nulla a che vedere con il piccolo uccello giallo.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'I più fotografano la severa facciata di pietra e proseguono. Entra, e le colonne si aprono sopra la tua testa come un palmeto pietrificato, un richiamo discreto al nome stesso della città.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'La città non nacque nella grande cattedrale. Quell’onore spetta a una piccola cappella semplice, lì vicino, dove la tradizione vuole che un certo marinaio abbia pregato prima di puntare a ovest nel 1492.',
+        },
+      ],
+      storyTitle: 'La storia di Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas è la capitale di Gran Canaria e la città più grande delle Isole Canarie. Il suo cuore storico è diviso in due dall’antico burrone del Guiniguada: Vegueta, il nucleo coloniale lastricato dove la città fu fondata, e Triana, il quartiere dei mercanti e dei negozi, proprio di fronte. Quasi tutto ciò che merita nel centro storico si raggiunge con una comoda passeggiata.',
+        'Tutto cominciò il 24 giugno 1478, quando Juan Rejón sbarcò alla foce del Guiniguada con una piccola truppa e fondò il Real de Las Palmas. La conquista di Gran Canaria richiese circa cinque anni di aspri combattimenti prima che l’isola fosse unita alla Corona di Castiglia nel 1483. La festa di San Giovanni, ogni giugno, segna ancora la data di fondazione.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Una prova per il Nuovo Mondo',
+          paragraphs: [
+            'Vegueta fu una delle prime città europee costruite su suolo atlantico e, per molti versi, una prova delle città coloniali che la Spagna avrebbe poi innalzato in tutte le Americhe. Nel 1492 Cristoforo Colombo gettò l’ancora qui per riparare il timone della Pinta prima di attraversare l’oceano, e fece di nuovo scalo al ritorno. La Casa de Colón, sul sito dell’antica residenza del governatore, porta ancora il suo nome.',
+            'Al centro si erge la cattedrale di Santa Ana, iniziata intorno al 1500. Il suo nucleo gotico fu terminato verso il 1570 e poi rivestito di una severa facciata neoclassica in pietra nel Settecento, così l’edificio che vedi oggi è in sostanza gotico dentro e neoclassico fuori. Fu l’unica cattedrale delle Canarie fino al 1819, e le sue colonne interne a forma di palma richiamano il nome Las Palmas.',
+          ],
+        },
+        {
+          heading: 'Cani, scrittori e corsari',
+          paragraphs: [
+            'Il nome Isole Canarie viene probabilmente dal latino Canariae Insulae, le isole dei Cani, per i grandi cani che i primi visitatori vi segnalarono. Il celebre canarino prende nome dalle isole, non il contrario: la fila di cani davanti alla cattedrale è dunque, in un certo senso, la vera origine del nome.',
+            'Triana diede alla Spagna uno dei suoi massimi romanzieri, Benito Pérez Galdós, nato qui nel 1843, la cui casa natale è oggi un museo. Il quartiere conobbe anche il pericolo dal mare: nel 1595 Sir Francis Drake fu respinto da queste coste, e nel 1599 una flotta olandese guidata da Pieter van der Does bruciò parte della città prima di essere scacciata.',
+          ],
+        },
+        {
+          heading: 'Cosa cercare',
+          paragraphs: [
+            'Comincia a Vegueta sulla Plaza de Santa Ana, tra la cattedrale e i cani, poi perditi tra i vicoli fino alla Casa de Colón e all’arte canaria dietro l’antica facciata del CAAM. Passa a Triana per la casa di Pérez Galdós e i negozi della Calle Triana. Quando vuoi sabbia e mare, la lunga spiaggia urbana di Las Canteras, riparata dal suo scoglio naturale, è poco più a nord.',
+          ],
+        },
+      ],
+      mapHeading: 'Dove si trova Las Palmas de Gran Canaria?',
+      mapIntro:
+        'Las Palmas occupa la punta nord-orientale di Gran Canaria, un’isola vulcanica rotondeggiante al centro dell’arcipelago spagnolo delle Canarie, al largo della costa nord-occidentale dell’Africa. È la capitale e il porto principale dell’isola, con i quartieri antichi di Vegueta e Triana appena dietro il porto.',
+      bonusHeading: 'Tre cose che quasi nessun visitatore scopre',
+      bonus: [
+        {
+          lead: 'L’uccello prende nome dai cani.',
+          text:
+            'Il canarino che immagini in gabbia prende nome da queste isole, che i Romani chiamarono isole dei Cani. I cani che custodiscono la cattedrale sono dunque, in un certo senso, i veri canarini.',
+        },
+        {
+          lead: 'Una cattedrale che cambiò volto.',
+          text:
+            'Santa Ana nacque chiesa gotica intorno al 1500 e fu terminata all’interno verso il 1570, per ricevere poi una facciata neoclassica del tutto diversa nel Settecento. Entrando e uscendo, attraversi tre secoli di gusti mutevoli in una sola porta.',
+        },
+        {
+          lead: 'Qui finì la fortuna di Drake.',
+          text:
+            'Il corsaro inglese che aveva terrorizzato i porti spagnoli fu respinto da Las Palmas nel 1595 da una difesa modesta e soprattutto civile. Proseguì verso i Caraibi e morì di malattia pochi mesi dopo.',
+        },
+      ],
+      langHeading: 'Las Palmas nella tua lingua, tutte e 32',
+      ctaHeading: 'Prendi la chiave di Las Palmas',
+      ctaIntro:
+        'Scegli le tue tappe, mettiti in cammino e lascia che la voce ti riveli ciò che tutti gli altri oltrepassano senza vedere.',
+    },
+    nl: {
+      metaTitle: 'Audiotour Las Palmas de Gran Canaria · Zelfgeleid',
+      metaDescription:
+        'Een zelfgeleide gps-audiotour door de oude stad van Las Palmas de Gran Canaria. Loop Vegueta en Triana op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline en met AR-gids.',
+      keywords:
+        'audiotour las palmas de gran canaria, zelfgeleide tour las palmas, stadswandeling vegueta, bezienswaardigheden gran canaria, audiogids gran canaria',
+      ogTitle: 'Audiotour Las Palmas de Gran Canaria | Fun Zone Tenerife',
+      ogDescription:
+        'Loop de oude wijken van Las Palmas de Gran Canaria op je eigen tempo met verhalen in moedertaalstem in 32 talen, offline, met augmented-reality-gids.',
+      heroIntro:
+        'Een zelfgeleide gps-audiowandeling door de twee oude wijken van de hoofdstad van Gran Canaria, Vegueta en Triana. De plek waar de stad werd gesticht, Columbus’ Atlantische tussenstop en de honden die de eilanden hun naam gaven, verteld in je oor precies waar het gebeurde.',
+      postcardHeading: 'Las Palmas, de versie die de ansichtkaarten weglaten',
+      postcardIntro:
+        'Niet de glossy plaatjes. De verhalen waar zelfs bewoners onwetend langslopen, gefluisterd in je oor op de exacte plek waar ze thuishoren. Hier zijn er drie. Veel meer wachten in de tour.',
+      secrets: [
+        {
+          place: 'Plaza de Santa Ana',
+          teaser:
+            'Acht donkere honden zitten op een rij voor de kathedraal, en niemand weet precies waarom. Hun geheim reikt terug tot de Romeinse naam van deze eilanden, en heeft niets met het kleine gele vogeltje te maken.',
+        },
+        {
+          place: 'Catedral de Santa Ana',
+          teaser:
+            'De meesten fotograferen de strenge stenen voorgevel en lopen door. Ga naar binnen en de zuilen waaieren boven je open als een versteend palmbos, een stille knipoog naar de naam van de stad zelf.',
+        },
+        {
+          place: 'Ermita de San Antonio Abad',
+          teaser:
+            'De stad is niet in de grote kathedraal ontstaan. Die eer komt toe aan een klein, sober kapelletje vlakbij, waar de overlevering zegt dat een zekere zeeman bad voordat hij in 1492 koers naar het westen zette.',
+        },
+      ],
+      storyTitle: 'Het verhaal van Las Palmas de Gran Canaria',
+      storyIntro: [
+        'Las Palmas is de hoofdstad van Gran Canaria en de grootste stad van de Canarische Eilanden. Het historische hart wordt in tweeën gedeeld door de oude ravijn van de Guiniguada: Vegueta, de geplaveide koloniale kern waar de stad werd gesticht, en Triana, de koopmans- en winkelwijk net aan de overkant. Vrijwel alles wat de moeite waard is in de oude stad ligt op loopafstand.',
+        'Het begon op 24 juni 1478, toen Juan Rejón met een kleine troep aan land kwam bij de monding van de Guiniguada en het Real de Las Palmas stichtte. De verovering van Gran Canaria kostte zo’n vijf jaar harde strijd voordat het eiland in 1483 bij de Kroon van Castilië werd gevoegd. Het Sint-Jansfeest in juni markeert nog altijd de stichtingsdatum.',
+      ],
+      storyBlocks: [
+        {
+          heading: 'Een repetitie voor de Nieuwe Wereld',
+          paragraphs: [
+            'Vegueta was een van de eerste Europese steden op Atlantische bodem en in veel opzichten een repetitie voor de koloniale steden die Spanje later door heel Amerika zou bouwen. In 1492 ankerde Christoffel Columbus hier om het roer van de Pinta te herstellen voor hij de oceaan overstak, en deed op de terugweg opnieuw aan. De Casa de Colón, op de plek van de oude gouverneurswoning, draagt nog altijd zijn naam.',
+            'In het midden verrijst de kathedraal van Santa Ana, rond 1500 begonnen. De gotische kern was rond 1570 klaar en kreeg in de achttiende eeuw een strenge neoklassieke stenen voorgevel, zodat het gebouw dat je nu ziet vanbinnen in wezen gotisch en vanbuiten neoklassiek is. Tot 1819 was het de enige kathedraal van de Canarische Eilanden, en de palmachtige binnenzuilen weerklinken de naam Las Palmas.',
+          ],
+        },
+        {
+          heading: 'Honden, schrijvers en kapers',
+          paragraphs: [
+            'De naam Canarische Eilanden komt waarschijnlijk van het Latijnse Canariae Insulae, de Eilanden van de Honden, naar de grote honden waarover vroege bezoekers berichtten. Het beroemde kanarievogeltje is naar de eilanden genoemd, niet andersom: de rij honden voor de kathedraal is dus in zekere zin de echte oorsprong van de naam.',
+            'Triana schonk Spanje een van zijn grootste romanschrijvers, Benito Pérez Galdós, hier geboren in 1843, wiens geboortehuis nu een museum is. De wijk kende ook gevaar van zee: in 1595 werd Sir Francis Drake van deze kust teruggeslagen, en in 1599 brandde een Nederlandse vloot onder Pieter van der Does een deel van de stad plat voordat ze werd verjaagd.',
+          ],
+        },
+        {
+          heading: 'Waar je op moet letten',
+          paragraphs: [
+            'Begin in Vegueta op de Plaza de Santa Ana, tussen de kathedraal en de honden, en dwaal dan door de steegjes naar de Casa de Colón en de Canarische kunst achter de oude gevel van het CAAM. Steek over naar Triana voor het huis van Pérez Galdós en de winkels van de Calle Triana. Wil je zand en zee, dan ligt het lange stadsstrand Las Canteras, beschut door zijn natuurlijke rif, een stukje noordelijker.',
+          ],
+        },
+      ],
+      mapHeading: 'Waar ligt Las Palmas de Gran Canaria?',
+      mapIntro:
+        'Las Palmas ligt op de noordoostpunt van Gran Canaria, een rond vulkanisch eiland in het midden van de Spaanse Canarische archipel, voor de noordwestkust van Afrika. Het is de hoofdstad en de belangrijkste haven van het eiland, met de oude wijken Vegueta en Triana net achter de haven.',
+      bonusHeading: 'Drie dingen die bijna geen bezoeker ontdekt',
+      bonus: [
+        {
+          lead: 'De vogel is naar de honden genoemd.',
+          text:
+            'De kanarie die je je in een kooi voorstelt, dankt zijn naam aan deze eilanden, die de Romeinen de Eilanden van de Honden noemden. De honden die de kathedraal bewaken zijn dus in zekere zin de echte kanaries.',
+        },
+        {
+          lead: 'Een kathedraal die van gezicht veranderde.',
+          text:
+            'Santa Ana begon rond 1500 als gotische kerk en was vanbinnen rond 1570 af, maar kreeg in de achttiende eeuw een heel andere, neoklassieke voorgevel. Wie naar binnen en weer naar buiten loopt, doorkruist in één deuropening drie eeuwen wisselende smaak.',
+        },
+        {
+          lead: 'Hier eindigde Drakes geluk.',
+          text:
+            'De Engelse kaper die Spaanse havens had geterroriseerd, werd in 1595 door een bescheiden, grotendeels burgerlijke verdediging uit Las Palmas teruggeslagen. Hij voer door naar de Caraïben en was binnen maanden aan ziekte bezweken.',
+        },
+      ],
+      langHeading: 'Las Palmas in jouw taal, alle 32',
+      ctaHeading: 'Haal de sleutel tot Las Palmas',
+      ctaIntro:
+        'Kies je stops, begin te lopen en laat de stem onthullen wat iedereen straal voorbijloopt.',
+    },
+  },
   'santa-cruz': {
     en: {
       metaTitle: 'Santa Cruz de Tenerife Audio Tour · Self-Guided Walk',
