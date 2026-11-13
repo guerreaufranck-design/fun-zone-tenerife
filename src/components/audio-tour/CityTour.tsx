@@ -96,6 +96,7 @@ export async function CityTourPage({
     oneCodeHint: ui.oneCodeHint,
     buyLabel: ui.buyLabel,
     pendingNote: ui.pendingNote,
+    errorNote: ui.errorNote,
     deliveryNote: ui.deliveryNote,
     lessCodesAria: ui.lessCodesAria,
     moreCodesAria: ui.moreCodesAria,
@@ -228,7 +229,7 @@ export async function CityTourPage({
       {/* Purchase */}
       <section id="buy" className="scroll-mt-24 px-4 pb-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl">
-          <AudioTourPurchase city={name} citySlug={city} locale={locale} labels={purchaseLabels} />
+          <AudioTourPurchase city={name} citySlug={city} locale={locale} labels={purchaseLabels} listenForStickyBuy />
         </div>
       </section>
 

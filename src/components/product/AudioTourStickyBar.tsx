@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Headphones, Ticket, WifiOff, ArrowRight } from 'lucide-react';
 import { AUDIO_TOUR_PRICE } from '@/lib/audio-tour';
+import { STICKY_BUY_EVENT } from '@/components/product/AudioTourPurchase';
 
 export interface StickyLabels {
   reassure1: string;
@@ -13,8 +14,10 @@ export interface StickyLabels {
 
 /**
  * Sticky purchase bar that slides up once the visitor scrolls past the hero,
- * mirroring the reference layout. The CTA scrolls to the on-page purchase block
- * (id="buy").
+ * mirroring the reference layout. The CTA fires STICKY_BUY_EVENT, which the
+ * on-page purchase card (id="buy") answers by scrolling into view and starting
+ * Stripe checkout — so "get the key" actually opens payment, even when the card
+ * is already on screen (where a plain scroll would be a no-op).
  */
 export default function AudioTourStickyBar({ city, labels }: { city: string; labels: StickyLabels }) {
   const [show, setShow] = useState(false);
@@ -26,7 +29,9 @@ export default function AudioTourStickyBar({ city, labels }: { city: string; lab
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toBuy = () => document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toBuy = () => {
+    if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(STICKY_BUY_EVENT));
+  };
 
   return (
     <div

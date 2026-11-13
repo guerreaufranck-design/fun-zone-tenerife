@@ -144,6 +144,7 @@ export interface AudioTourUi {
   oneCodeHint: string;
   buyLabel: string;
   pendingNote: string;
+  errorNote: string;
   deliveryNote: string;
   lessCodesAria: string;
   moreCodesAria: string;
@@ -382,6 +383,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'One code activates the tour for one person.',
     buyLabel: 'Buy for',
     pendingNote: 'Redirecting to secure payment…',
+    errorNote: 'Payment could not start. Please try again or contact us.',
     deliveryNote: 'Instant email delivery · activation code generated on purchase',
     lessCodesAria: 'Fewer codes',
     moreCodesAria: 'More codes',
@@ -416,6 +418,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'Un code active la visite pour une personne.',
     buyLabel: 'Acheter pour',
     pendingNote: 'Redirection vers le paiement sécurisé…',
+    errorNote: 'Le paiement n’a pas pu démarrer. Réessayez ou contactez-nous.',
     deliveryNote: 'Livraison instantanée par e-mail · code d’activation généré à l’achat',
     lessCodesAria: 'Moins de codes',
     moreCodesAria: 'Plus de codes',
@@ -450,6 +453,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'Un código activa el tour para una persona.',
     buyLabel: 'Comprar por',
     pendingNote: 'Redirigiendo al pago seguro…',
+    errorNote: 'No se pudo iniciar el pago. Inténtalo de nuevo o contáctanos.',
     deliveryNote: 'Entrega instantánea por correo · código de activación generado en la compra',
     lessCodesAria: 'Menos códigos',
     moreCodesAria: 'Más códigos',
@@ -484,6 +488,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'Ein Code aktiviert die Tour für eine Person.',
     buyLabel: 'Kaufen für',
     pendingNote: 'Weiterleitung zur sicheren Zahlung…',
+    errorNote: 'Die Zahlung konnte nicht gestartet werden. Bitte erneut versuchen oder uns kontaktieren.',
     deliveryNote: 'Sofortige Lieferung per E-Mail · Aktivierungscode beim Kauf erstellt',
     lessCodesAria: 'Weniger Codes',
     moreCodesAria: 'Mehr Codes',
@@ -518,6 +523,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'Un codice attiva il tour per una persona.',
     buyLabel: 'Acquista per',
     pendingNote: 'Reindirizzamento al pagamento sicuro…',
+    errorNote: 'Impossibile avviare il pagamento. Riprova o contattaci.',
     deliveryNote: 'Consegna immediata via e-mail · codice di attivazione generato all’acquisto',
     lessCodesAria: 'Meno codici',
     moreCodesAria: 'Più codici',
@@ -552,6 +558,7 @@ export const UI_STRINGS: Partial<Record<Locale, AudioTourUi>> & { en: AudioTourU
     oneCodeHint: 'Eén code activeert de tour voor één persoon.',
     buyLabel: 'Koop voor',
     pendingNote: 'Doorsturen naar de beveiligde betaling…',
+    errorNote: 'De betaling kon niet starten. Probeer het opnieuw of neem contact op.',
     deliveryNote: 'Directe levering per e-mail · activeringscode aangemaakt bij aankoop',
     lessCodesAria: 'Minder codes',
     moreCodesAria: 'Meer codes',

@@ -1,8 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Headphones, Minus, Plus, Globe } from 'lucide-react';
 import { AUDIO_TOUR_PRICE, TOUR_LANGUAGES } from '@/lib/audio-tour';
+
+/** Event the sticky bar fires to drive the on-page purchase card's checkout. */
+export const STICKY_BUY_EVENT = 'audiotour:sticky-buy';
 
 export interface PurchaseLabels {
   cityPassTag: string;
@@ -15,6 +18,7 @@ export interface PurchaseLabels {
   oneCodeHint: string;
   buyLabel: string;
   pendingNote: string;
+  errorNote: string;
   deliveryNote: string;
   lessCodesAria: string;
   moreCodesAria: string;
@@ -28,6 +32,7 @@ export default function AudioTourPurchase({
   citySlug,
   locale,
   labels,
+  listenForStickyBuy = false,
 }: {
   city: string;
   /** Route slug (e.g. "santa-cruz"); resolved to the Lume slug server-side. */
@@ -35,10 +40,17 @@ export default function AudioTourPurchase({
   /** UI locale, for the checkout success/cancel URLs + Stripe page language. */
   locale: string;
   labels: PurchaseLabels;
+  /**
+   * When true, this card responds to the sticky bar's "get the key" button by
+   * scrolling itself into view and starting checkout. Only ONE card on a page
+   * should opt in, to avoid creating duplicate Stripe sessions.
+   */
+  listenForStickyBuy?: boolean;
 }) {
   const [lang, setLang] = useState('en');
   const [qty, setQty] = useState(1);
   const [pending, setPending] = useState(false);
+  const [error, setError] = useState(false);
 
   const total = AUDIO_TOUR_PRICE * qty;
 
@@ -47,6 +59,7 @@ export default function AudioTourPurchase({
     // After payment, the webhook + confirmation page call Lume, which emails
     // the activation code to the customer and returns the code(s).
     setPending(true);
+    setError(false);
     try {
       const res = await fetch('/api/audio-tour/checkout', {
         method: 'POST',
@@ -59,11 +72,28 @@ export default function AudioTourPurchase({
         return;
       }
       setPending(false);
+      setError(true);
     } catch {
       setPending(false);
+      setError(true);
     }
     void city;
   };
+
+  // Keep a live ref so the (stable) event listener always calls the latest buy,
+  // which closes over the current language / quantity.
+  const buyRef = useRef(buy);
+  buyRef.current = buy;
+
+  useEffect(() => {
+    if (!listenForStickyBuy) return;
+    const handler = () => {
+      document.getElementById('buy')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      void buyRef.current();
+    };
+    window.addEventListener(STICKY_BUY_EVENT, handler);
+    return () => window.removeEventListener(STICKY_BUY_EVENT, handler);
+  }, [listenForStickyBuy]);
 
   return (
     <div className="rounded-2xl border border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118] p-6 sm:p-8">
@@ -129,12 +159,16 @@ export default function AudioTourPurchase({
       <button
         type="button"
         onClick={buy}
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#00d4ff] px-7 py-4 text-sm font-bold uppercase tracking-[0.15em] text-[#0a0a0f] transition-all hover:bg-[#33ddff]"
+        disabled={pending}
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[#00d4ff] px-7 py-4 text-sm font-bold uppercase tracking-[0.15em] text-[#0a0a0f] transition-all hover:bg-[#33ddff] disabled:opacity-60"
       >
         <Headphones size={18} /> {labels.buyLabel} €{total}
       </button>
       {pending && (
         <p className="mt-3 text-center text-xs text-white/50">{labels.pendingNote}</p>
+      )}
+      {error && !pending && (
+        <p role="alert" className="mt-3 text-center text-xs font-medium text-red-400">{labels.errorNote}</p>
       )}
       <p className="mt-3 text-center text-[11px] text-white/30">{labels.deliveryNote}</p>
     </div>

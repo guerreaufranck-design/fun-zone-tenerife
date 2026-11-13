@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getStripe } from '@/lib/stripe';
-import { AUDIO_TOUR_PRICE, TOUR_LANGUAGES, getCityMeta } from '@/lib/audio-tour';
+import { AUDIO_TOUR_PRICE, TOUR_LANGUAGES, getCityMeta, getIslandOfCity } from '@/lib/audio-tour';
 import { LUME_MAX_QUANTITY } from '@/lib/lume';
 
 /**
@@ -69,8 +69,11 @@ export async function POST(request: NextRequest) {
         quantity: String(qty),
         locale: uiLocale,
       },
+      // The confirmation page is shared by every island (it fulfils from the
+      // session metadata). The cancel URL must return to the city's OWN island
+      // route, else other-island buyers land on a 404.
       success_url: `${siteUrl}/${uiLocale}/tenerife-audio-tour/confirmation?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/${uiLocale}/tenerife-audio-tour/${meta.slug}`,
+      cancel_url: `${siteUrl}/${uiLocale}${getIslandOfCity(meta.slug)?.routeBase ?? '/tenerife-audio-tour'}/${meta.slug}`,
       currency: 'eur',
       // Stripe Checkout collects the customer email itself; the webhook +
       // confirmation page read it from the completed session and pass it to Lume.
