@@ -3,8 +3,9 @@ import { Link } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import { Headphones, CheckCircle2, Clock, ArrowRight, Mail } from 'lucide-react';
 import { getStripe } from '@/lib/stripe';
-import { getCityMeta } from '@/lib/audio-tour';
+import { getCityMeta, AUDIO_TOUR_PRICE } from '@/lib/audio-tour';
 import { createLumeOrder, audioTourExternalOrderId, LUME_ACTIVATE_URL } from '@/lib/lume';
+import TrackPurchase from '@/components/analytics/TrackPurchase';
 
 // Confirmation is per-order and must never be prerendered or indexed.
 export const dynamic = 'force-dynamic';
@@ -151,6 +152,14 @@ export default async function AudioTourConfirmationPage({
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] px-4 pt-28 pb-20 text-white sm:px-6">
+      {hasCodes && sessionId && (
+        <TrackPurchase
+          transactionId={sessionId}
+          value={AUDIO_TOUR_PRICE * codes.length}
+          city={cityName}
+          quantity={codes.length}
+        />
+      )}
       <div className="mx-auto max-w-xl">
         <div className="rounded-2xl border border-[#00d4ff]/20 bg-gradient-to-br from-[#00d4ff]/5 to-[#111118] p-6 sm:p-8">
           <div className="flex items-center gap-3">

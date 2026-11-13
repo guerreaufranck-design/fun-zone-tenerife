@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Headphones, Minus, Plus, Globe } from 'lucide-react';
 import { AUDIO_TOUR_PRICE, TOUR_LANGUAGES } from '@/lib/audio-tour';
+import { track } from '@/lib/analytics';
 
 /** Event the sticky bar fires to drive the on-page purchase card's checkout. */
 export const STICKY_BUY_EVENT = 'audiotour:sticky-buy';
@@ -60,6 +61,13 @@ export default function AudioTourPurchase({
     // the activation code to the customer and returns the code(s).
     setPending(true);
     setError(false);
+    track('audio_tour_begin_checkout', {
+      city_slug: citySlug,
+      tour_language: lang,
+      quantity: qty,
+      value: total,
+      currency: 'EUR',
+    });
     try {
       const res = await fetch('/api/audio-tour/checkout', {
         method: 'POST',

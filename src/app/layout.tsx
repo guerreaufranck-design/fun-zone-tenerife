@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { spaceGrotesk, inter } from '@/lib/fonts';
 import { Analytics } from '@/components/Analytics';
+import AnalyticsEvents from '@/components/AnalyticsEvents';
 
 import './globals.css';
 
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-background font-body text-foreground antialiased">
         <Analytics />
+        <AnalyticsEvents />
         {children}
         {/* GetYourGuide integration analyzer: renders widgets and tracks views/
             clicks on all GYG links (static cards included), tied to our partner id. */}
