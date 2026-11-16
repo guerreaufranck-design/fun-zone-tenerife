@@ -1409,6 +1409,63 @@ export const activities: Activity[] = [
       ],
     },
   },
+  {
+    slug: 'camel-experience-tenerife',
+    name: 'Tenerife Camel Experience',
+    category: 'Nature & Adventure',
+    description:
+      "Ride a camel through the volcanic, sun-baked landscape of southern Tenerife. A gentle, family-friendly experience aboard calm dromedaries, with sweeping views, photo stops and a proper 'are we still in Europe?' moment.",
+    gradient: 'from-amber-900 to-orange-900',
+    emoji: '🐪',
+    price: 'See the price',
+    duration: '1–2 hours',
+    highlights: [
+      'Camel ride through volcanic desert scenery',
+      'Gentle & family-friendly, great with kids',
+      'Plenty of photo stops',
+      'A fun, different break from the beach',
+    ],
+    isFunZone: false,
+    bookUrl: gyg('tenerife-l350/tenerife-camel-experience-t739746/'),
+    location: 'Tenerife',
+    image: '/images/activities/camel-experience-tenerife.avif',
+    seoDescription: {
+      en: "Ride a camel across the volcanic south of Tenerife on a gentle, family-friendly experience. One of the island's most unexpected things to do, with great photos and easy-going fun for all ages.",
+    },
+    body: {
+      en: [
+        {
+          h: 'Southern Tenerife looks nothing like the postcards here',
+          p: [
+            "Away from the pools and the promenades, the south of Tenerife turns dry, volcanic and strangely cinematic: ochre earth, black lava and cactus against a hard blue sky. Climb onto a camel, feel that first lurching step as it rises, and the whole scene tips into something you did not expect to be doing on a beach holiday. For a few minutes you are swaying through what looks far more like North Africa than the Canary Islands.",
+            "The dromedaries here are calm, used to people and led at an easy pace, so there is no drama, just the slow rock of the ride and scenery that makes every photo look better than it has any right to.",
+          ],
+        },
+        {
+          h: 'What the experience actually feels like',
+          p: [
+            "You meet the camels, get a quick hand up into the saddle, and set off in a gentle train along the trail. It is unhurried by design. You take in the views, the handlers keep everything safe and steady, and there are natural stops to catch the landscape and the animals on camera. It is the kind of thing that gets the biggest laughs and the best pictures of the whole trip.",
+            "Check the live times, meeting point and what is included for your date on the booking panel below, then pick your slot.",
+          ],
+        },
+        {
+          h: "Who it's for (hint: everyone)",
+          p: [
+            "Families with kids who will talk about it for weeks. Couples after a photo that is not just another beach selfie. And groups, stag and hen crowds included, after a genuinely different, slightly ridiculous, brilliant hour before the evening kicks off. Make a day of the island's wilder side with a <a href=\"/en/activities/quad-buggy-tour-tenerife\">quad or buggy tour</a>, or browse the rest of our <a href=\"/en/activities\">things to do in Tenerife</a>.",
+          ],
+        },
+      ],
+    },
+    faqs: {
+      en: [
+        { q: 'Is the camel experience suitable for children?', a: 'Yes. The camels are calm and led at walking pace by handlers, and it is one of the most popular activities with families. Any minimum age or height for your specific tour is shown on the booking panel.' },
+        { q: 'Where in Tenerife does it take place?', a: 'Camel experiences run in the arid, volcanic south of the island. The exact meeting point, and whether hotel transfers are included, are shown on the booking panel for your date.' },
+        { q: 'Do I need any experience to ride a camel?', a: 'None at all. The dromedaries are used to visitors and led throughout, so you just sit back, hold on and enjoy the ride.' },
+        { q: 'What should I bring?', a: 'Sun cream, a hat, water and a phone or camera. Closed shoes are comfier than flip-flops, and light long sleeves help in the midday sun.' },
+        { q: 'How long does it last?', a: 'Plan for roughly one to two hours including the ride and photo stops. The exact duration for your tour is shown when you book.' },
+      ],
+    },
+  },
 ];
 
 export const activityCategories: ActivityCategory[] = [
