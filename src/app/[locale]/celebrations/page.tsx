@@ -5,9 +5,21 @@ import { MapPin, Users, Sun, PartyPopper, Anchor, Map as MapIcon } from 'lucide-
 import { getAlternates, type Locale } from '@/lib/seo';
 import { celebrations } from '@/data/celebrations';
 import { activities } from '@/data/activities';
+import { blogPosts, postLang } from '@/lib/blog/posts';
 import { withGygCampaign } from '@/lib/gyg';
 
 const LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'nl', 'it'];
+
+// Internal-linking: the group/stag/hen blog guides that pair with this page.
+const GROUP_CATEGORIES = ['EVJF & EVG', 'Stag & Hen'];
+const GUIDES_LABELS: Record<string, { title: string; cta: string }> = {
+  en: { title: 'Group planning guides', cta: 'Read the guide' },
+  es: { title: 'Guías para organizar tu despedida', cta: 'Leer la guía' },
+  fr: { title: 'Nos guides EVJF & EVG', cta: 'Lire le guide' },
+  de: { title: 'Guides für die Planung', cta: 'Zum Guide' },
+  nl: { title: 'Planningsgidsen', cta: 'Lees de gids' },
+  it: { title: 'Guide per organizzare', cta: 'Leggi la guida' },
+};
 
 // GetYourGuide cross-sell picks (group/party-friendly experiences).
 const CROSS_SELL_SLUGS = [
@@ -61,6 +73,12 @@ export default async function CelebrationsPage({
   const crossSell = CROSS_SELL_SLUGS
     .map((slug) => activities.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
+
+  // Group/stag/hen blog guides in THIS language (internal links, hub -> spoke).
+  const guides = GUIDES_LABELS[l];
+  const groupGuides = blogPosts.filter(
+    (p) => GROUP_CATEGORIES.includes(p.category) && postLang(p.slug) === l,
+  );
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -164,6 +182,30 @@ export default async function CelebrationsPage({
           </div>
         </div>
       </section>
+
+      {/* PLANNING GUIDES (internal links to the group blog cluster) */}
+      {groupGuides.length > 0 && (
+        <section className="px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="flex items-center justify-center gap-2 text-center text-2xl font-bold text-[#c9a24b]">
+              <MapIcon size={22} /> {guides.title}
+            </h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {groupGuides.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={{ pathname: '/blog/[slug]' as const, params: { slug: p.slug } }}
+                  className="group rounded-2xl border border-[#c9a24b]/15 bg-[#12100c] p-5 transition-all hover:border-[#c9a24b]/40"
+                >
+                  <h3 className="font-bold leading-snug text-[#ede0c8] group-hover:text-[#c9a24b]">{p.title}</h3>
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-[#ede0c8]/65">{p.excerpt}</p>
+                  <span className="mt-3 inline-block text-xs font-bold text-[#c9a24b]">{guides.cta} →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="px-4 py-14 sm:px-6 lg:px-8">

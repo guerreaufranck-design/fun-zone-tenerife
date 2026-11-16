@@ -38,6 +38,22 @@ export async function generateMetadata({
   };
 }
 
+// Activities that suit groups / stag / hen trips — these link to the EVG
+// celebrations hub (internal), so the activity cluster feeds the money page.
+const GROUP_FRIENDLY = new Set([
+  'jet-ski-tenerife', 'karting-tenerife', 'catamaran-sunset-cruise-tenerife', 'parasailing-tenerife',
+  'los-gigantes-boat-trip', 'quad-buggy-tour-tenerife', 'scuba-diving-tenerife', 'surf-lessons-tenerife',
+  'paragliding-tenerife', 'flamenco-show-dinner-tenerife', 'wine-tasting-tenerife', 'camel-experience-tenerife',
+]);
+const GROUP_PROMPT: Record<Locale, { text: string; cta: string }> = {
+  en: { text: 'Organising a group, stag or hen trip?', cta: 'See our group & celebration ideas' },
+  es: { text: '¿Organizas una despedida o un viaje de grupo?', cta: 'Ver ideas para grupos y despedidas' },
+  fr: { text: 'Vous organisez un EVJF, EVG ou un voyage de groupe ?', cta: 'Voir nos idées groupes & EVJF/EVG' },
+  de: { text: 'Plant ihr einen Gruppen- oder JGA-Trip?', cta: 'Ideen für Gruppen & JGA ansehen' },
+  nl: { text: 'Organiseer je een groeps- of vrijgezellenreis?', cta: 'Bekijk onze groepsideeën' },
+  it: { text: 'Organizzi un addio al nubilato o un viaggio di gruppo?', cta: 'Vedi le idee per gruppi' },
+};
+
 export default async function ActivityDetailPage({
   params,
 }: {
@@ -261,6 +277,21 @@ export default async function ActivityDetailPage({
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Group / stag / hen → EVG celebrations hub (internal link) */}
+          {GROUP_FRIENDLY.has(activity.slug) && (
+            <div className="mt-16">
+              <Link
+                href="/celebrations"
+                className="flex flex-col items-start gap-3 rounded-2xl border border-[#00d4ff]/20 bg-[#111118] p-6 transition-all hover:border-[#00d4ff]/40 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <span className="text-base font-semibold text-white">{(GROUP_PROMPT[L] ?? GROUP_PROMPT.en).text}</span>
+                <span className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[#00d4ff]">
+                  {(GROUP_PROMPT[L] ?? GROUP_PROMPT.en).cta} <ArrowRight size={16} />
+                </span>
+              </Link>
             </div>
           )}
 
