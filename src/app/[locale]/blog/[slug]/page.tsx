@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
@@ -123,10 +124,18 @@ export default async function BlogPostPage({
       {/* Cover image */}
       <section className="relative overflow-hidden">
         <div
-          className={`relative aspect-[21/9] w-full bg-gradient-to-br ${post.gradient} bg-cover bg-center sm:aspect-[3/1]`}
-          style={post.image ? { backgroundImage: `url(${post.image})` } : undefined}
+          className={`relative aspect-[21/9] w-full bg-gradient-to-br ${post.gradient} sm:aspect-[3/1]`}
         >
-          {!post.image && (
+          {post.image ? (
+            <Image
+              src={post.image}
+              alt={post.imageAlt ?? post.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-lg text-white/10">Cover Image</span>
             </div>
@@ -222,10 +231,17 @@ export default async function BlogPostPage({
                   >
                     <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_15px_rgba(0,212,255,0.08)]">
                       <div
-                        className={`relative aspect-video bg-gradient-to-br ${related.gradient} bg-cover bg-center`}
-                        style={related.image ? { backgroundImage: `url(${related.image})` } : undefined}
+                        className={`relative aspect-video bg-gradient-to-br ${related.gradient}`}
                       >
-                        {!related.image && (
+                        {related.image ? (
+                          <Image
+                            src={related.image}
+                            alt={related.imageAlt ?? related.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-cover"
+                          />
+                        ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
                             <span className="text-xs text-white/10">Cover Image</span>
                           </div>

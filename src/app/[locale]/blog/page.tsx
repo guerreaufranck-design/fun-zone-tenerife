@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
@@ -129,10 +130,17 @@ export default function BlogPage() {
                 >
                   <Card className="overflow-hidden border-border/50 bg-[#111118] transition-all duration-300 hover:border-[#00d4ff]/20 hover:shadow-[0_0_20px_rgba(0,212,255,0.08)]">
                     <div
-                      className={`relative aspect-[21/9] bg-gradient-to-br ${post.gradient} bg-cover bg-center`}
-                      style={post.image ? { backgroundImage: `url(${post.image})` } : undefined}
+                      className={`relative aspect-[21/9] bg-gradient-to-br ${post.gradient}`}
                     >
-                      {!post.image && (
+                      {post.image ? (
+                        <Image
+                          src={post.image}
+                          alt={post.imageAlt ?? post.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 33vw"
+                          className="object-cover"
+                        />
+                      ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <span className="text-sm text-white/10">Cover Image</span>
                         </div>

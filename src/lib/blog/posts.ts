@@ -14,11 +14,15 @@ export interface BlogPost {
    * preview. When omitted, the `gradient` placeholder is shown instead — nothing breaks.
    */
   image?: string;
+  /** Descriptive alt text for the cover image (image SEO). Falls back to the title. */
+  imageAlt?: string;
 }
 
 export const blogPosts: BlogPost[] = [
   {
     slug: 'escape-game-tenerife-first-timers',
+    image: '/images/blog/escape-game-tenerife-first-timers.avif',
+    imageAlt: 'Coastal town in Tenerife',
     title: "Playing Your First Escape Game in Tenerife: What to Expect",
     excerpt:
       'Never done an escape room before? Here is your complete beginner\'s guide to playing your first escape game in Tenerife — what happens, how to win, and why it is so addictive.',
@@ -42,6 +46,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'escape-game-treasure-hunt-city-tour-tenerife',
+    image: '/images/blog/escape-game-treasure-hunt-city-tour-tenerife.avif',
+    imageAlt: 'Puerto de la Cruz old town and coastline, Tenerife',
     title: 'Escape Games, Treasure Hunts & Self-Guided City Tours in Tenerife: The Best Mystery Adventures',
     excerpt:
       'From indoor escape rooms to outdoor treasure hunts and self-guided city tours, Tenerife has something for every type of adventure seeker. Here is how to plan the ultimate mystery day.',
@@ -64,6 +70,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'evjf-evg-tenerife-activites-originales',
+    image: '/images/blog/evjf-evg-tenerife-activites-originales.avif',
+    imageAlt: 'Group of friends having fun on the beach',
     title: 'EVJF & EVG à Tenerife : 8 Activités pour une Célébration Inoubliable',
     excerpt:
       'Vous organisez un EVJF ou EVG à Tenerife ? Voici les 8 meilleures activités originales pour une fête mémorable sous le soleil des Canaries.',
@@ -87,6 +95,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'whale-watching-tenerife-complete-guide',
+    image: '/images/blog/whale-watching-tenerife-complete-guide.avif',
+    imageAlt: 'Whale-watching boat and a whale at sea off Tenerife',
     title: 'Whale Watching in Tenerife: Complete Guide to the Best Tours',
     excerpt:
       'Tenerife is one of the best places in Europe to see wild whales and dolphins year-round. Here is everything you need to know before you book your boat trip.',
@@ -109,6 +119,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'mount-teide-tenerife-visitor-guide',
+    image: '/images/blog/mount-teide-tenerife-visitor-guide.avif',
+    imageAlt: 'Volcanic mountain peak at dawn, Tenerife',
     title: "Mount Teide Tenerife: Cable Car, Stargazing Tours & Visitor Guide",
     excerpt:
       "Spain's highest peak is also one of the world's most visited volcanoes. Here's everything you need to know before visiting Mount Teide — cable car, stargazing, permits and practical tips.",
@@ -131,6 +143,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'siam-park-tenerife-tips-guide',
+    image: '/images/blog/siam-park-tenerife-tips-guide.avif',
+    imageAlt: 'Colourful outdoor water park with slides',
     title: "Siam Park Tenerife: Tips, Best Rides & Everything You Need to Know",
     excerpt:
       "Is Siam Park really the world's best water park? How do you avoid the queues? What rides should you prioritise? We answer every question first-timers have before visiting.",
@@ -153,6 +167,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'despedida-soltera-tenerife-ideas',
+    image: '/images/blog/despedida-soltera-tenerife-ideas.avif',
+    imageAlt: 'Friends enjoying drinks on the beach',
     title: 'Despedida de Soltera en Tenerife: Ideas Originales para una Noche Especial',
     excerpt:
       'Organiza la mejor despedida de soltera en Tenerife con estas ideas originales. Más que discotecas: experiencias que el grupo recordará para siempre.',
@@ -175,6 +191,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'stag-do-tenerife-guide',
+    image: '/images/blog/stag-do-tenerife-guide.avif',
+    imageAlt: 'Group of friends having drinks on a beach',
     title: 'Stag Do in Tenerife: The Ultimate Guide to Activities, Nightlife & Planning',
     excerpt:
       'Everything you need to plan an epic stag do in Tenerife — the best group activities, where to go out in Playa Las Americas, and how to sort the whole crew without the stress.',
@@ -196,6 +214,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'hen-party-tenerife-ideas',
+    image: '/images/blog/hen-party-tenerife-ideas.avif',
+    imageAlt: 'Friends dancing on the beach at sunset',
     title: 'Hen Party in Tenerife: The Best Activities & Ideas for an Epic Weekend',
     excerpt:
       'Planning a hen party in Tenerife? Here are the best group activities, the perfect weekend structure, and the ideas that turn a good hen do into an unforgettable one.',
@@ -216,6 +236,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'junggesellenabschied-teneriffa-ideen',
+    image: '/images/blog/junggesellenabschied-teneriffa-ideen.avif',
+    imageAlt: 'Friends toasting at an outdoor party',
     title: 'Junggesellenabschied auf Teneriffa: Die besten Ideen & Aktivitäten',
     excerpt:
       'JGA auf Teneriffa geplant? Die besten Gruppenaktivitäten, der perfekte Wochenend-Ablauf und die Ideen, die aus einem guten Junggesellenabschied einen unvergesslichen machen.',
@@ -236,6 +258,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'best-beaches-tenerife',
+    image: '/images/blog/best-beaches-tenerife.avif',
+    imageAlt: 'Golden sand beach at Playa de las Teresitas, Tenerife',
     title: 'The Best Beaches in Tenerife: Black Sand, Golden Bays & Hidden Coves',
     excerpt:
       'From the golden sands of Playa de las Teresitas to wild volcanic coves, here are the best beaches in Tenerife — and the activities that make the most of the coast.',
@@ -256,6 +280,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-tenerife',
+    image: '/images/blog/best-time-to-visit-tenerife.avif',
+    imageAlt: 'Sunset over the Tenerife coast',
     title: 'The Best Time to Visit Tenerife: A Month-by-Month Weather Guide',
     excerpt:
       'Tenerife is a year-round destination — but every month has its own character. Here is when to go for sun, lower prices, whales, carnival or hiking.',
@@ -276,6 +302,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-7-day-itinerary',
+    image: '/images/blog/tenerife-7-day-itinerary.avif',
+    imageAlt: 'Aerial view of the Tenerife coastline',
     title: 'The Perfect 7-Day Tenerife Itinerary: One Week, Island Highlights',
     excerpt:
       'A balanced week in Tenerife — Teide, whales, beaches, the wild north and a few adrenaline hits — with a ready-made day-by-day plan.',
@@ -297,6 +325,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'where-to-stay-tenerife',
+    image: '/images/blog/where-to-stay-tenerife.avif',
+    imageAlt: 'Resort swimming pool in Tenerife',
     title: 'Where to Stay in Tenerife: The Best Areas for Every Kind of Trip',
     excerpt:
       'South for sun and nightlife, north for culture and green landscapes — here is where to stay in Tenerife depending on who you are travelling with.',
@@ -317,6 +347,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'getting-around-tenerife',
+    image: '/images/blog/getting-around-tenerife.avif',
+    imageAlt: 'Car on a winding coastal road in Tenerife',
     title: 'Getting Around Tenerife: Car Hire, Buses, Taxis & Transfers',
     excerpt:
       'Should you rent a car in Tenerife or rely on buses and taxis? A straight-talking guide to getting around the island without stress.',
@@ -337,6 +369,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'masca-gorge-hike-tenerife',
+    image: '/images/blog/masca-gorge-hike-tenerife.avif',
+    imageAlt: 'Mountain village in the Masca valley, Tenerife',
     title: 'Hiking the Masca Gorge: Tenerife\'s Most Spectacular Trail',
     excerpt:
       'The Masca gorge is the most dramatic hike in Tenerife — a descent through a hidden canyon to the sea. Here is how to do it, plus the best other trails on the island.',
@@ -357,6 +391,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'los-gigantes-tenerife-guide',
+    image: '/images/blog/los-gigantes-tenerife-guide.avif',
+    imageAlt: 'Los Gigantes cliffs rising from the sea, Tenerife',
     title: 'Los Gigantes, Tenerife: The Giant Cliffs, Boat Trips & Whales',
     excerpt:
       'Towering 600 metres straight out of the Atlantic, the cliffs of Los Gigantes are one of Tenerife\'s great sights. Here is how to see them — and what else the west coast offers.',
@@ -377,6 +413,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-carnival-guide',
+    image: '/images/blog/tenerife-carnival-guide.avif',
+    imageAlt: 'Colourful carnival costume in a street parade',
     title: 'The Carnival of Santa Cruz de Tenerife: The Ultimate Guide',
     excerpt:
       'Second only to Rio, the Carnival of Santa Cruz de Tenerife is one of the biggest street parties on Earth. Here is when it happens and how to experience it.',
@@ -397,6 +435,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'loro-parque-tenerife-guide',
+    image: '/images/blog/loro-parque-tenerife-guide.avif',
+    imageAlt: 'Colourful parrot perched on a branch',
     title: 'Loro Parque Tenerife: Tickets, Tips & What to See',
     excerpt:
       'Regularly rated one of the best zoos in the world, Loro Parque is a Tenerife must-do. Here is what to see, how to get tickets, and how to make the most of your day.',
@@ -416,6 +456,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-nightlife-guide',
+    image: '/images/blog/tenerife-nightlife-guide.avif',
+    imageAlt: 'Moody nightclub scene with cocktail lighting',
     title: 'Tenerife Nightlife: The Best Bars, Clubs & Evening Fun in the South',
     excerpt:
       'From beachfront cocktail bars to the famous Veronicas strip, here is the lowdown on Tenerife nightlife — plus the activities that make a night out even better.',
@@ -436,6 +478,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'beste-reisezeit-teneriffa',
+    image: '/images/blog/beste-reisezeit-teneriffa.avif',
+    imageAlt: 'Sunset over the Tenerife coast',
     title: 'Beste Reisezeit für Teneriffa: Der Monat-für-Monat-Wetterguide',
     excerpt:
       'Teneriffa ist ein Ganzjahresziel – doch jeder Monat hat seinen eigenen Charakter. Wann du für Sonne, günstige Preise, Wale oder Karneval reisen solltest.',
@@ -456,6 +500,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'teneriffa-7-tage-route',
+    image: '/images/blog/teneriffa-7-tage-route.avif',
+    imageAlt: 'Aerial view of the Tenerife coastline',
     title: 'Teneriffa in 7 Tagen: Die perfekte Rundreise für eine Woche',
     excerpt:
       'Eine ausgewogene Woche auf Teneriffa – Teide, Wale, Strände, der wilde Norden und etwas Adrenalin – mit fertigem Tag-für-Tag-Plan.',
@@ -477,6 +523,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'wo-uebernachten-teneriffa',
+    image: '/images/blog/wo-uebernachten-teneriffa.avif',
+    imageAlt: 'Resort swimming pool in Tenerife',
     title: 'Wo auf Teneriffa übernachten: Die besten Regionen für jede Reise',
     excerpt:
       'Süden für Sonne und Nachtleben, Norden für Kultur und grüne Landschaften – wo du auf Teneriffa übernachten solltest, je nachdem mit wem du reist.',
@@ -497,6 +545,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'schoenste-straende-teneriffa',
+    image: '/images/blog/schoenste-straende-teneriffa.avif',
+    imageAlt: 'Golden sand beach at Playa de las Teresitas, Tenerife',
     title: 'Die schönsten Strände Teneriffas: Schwarzer Sand, goldene Buchten & versteckte Ecken',
     excerpt:
       'Vom goldenen Sand der Playa de las Teresitas bis zu wilden Vulkanbuchten – die schönsten Strände Teneriffas und die Aktivitäten rund ums Meer.',
@@ -517,6 +567,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'teneriffa-sehenswuerdigkeiten',
+    image: '/images/blog/teneriffa-sehenswuerdigkeiten.avif',
+    imageAlt: 'Aerial view of the Tenerife coastline',
     title: 'Teneriffa Sehenswürdigkeiten: Die Top-Highlights der Insel',
     excerpt:
       'Vom Teide über die Klippen von Los Gigantes bis zur Altstadt von La Laguna – die wichtigsten Sehenswürdigkeiten Teneriffas auf einen Blick.',
@@ -537,6 +589,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'meilleure-periode-tenerife',
+    image: '/images/blog/meilleure-periode-tenerife.avif',
+    imageAlt: 'Sunset over the Tenerife coast',
     title: 'Quelle est la meilleure période pour visiter Tenerife ? Le guide mois par mois',
     excerpt:
       "Tenerife se visite toute l'année, mais chaque mois a son caractère. Quand partir pour le soleil, les petits prix, les baleines ou le carnaval.",
@@ -557,6 +611,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-7-jours-itineraire',
+    image: '/images/blog/tenerife-7-jours-itineraire.avif',
+    imageAlt: 'Aerial view of the Tenerife coastline',
     title: 'Tenerife en 7 jours : l\'itinéraire parfait pour une semaine',
     excerpt:
       "Une semaine équilibrée à Tenerife — le Teide, les baleines, les plages, le nord sauvage et une dose d'adrénaline — avec un programme jour par jour clé en main.",
@@ -578,6 +634,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ou-loger-tenerife',
+    image: '/images/blog/ou-loger-tenerife.avif',
+    imageAlt: 'Resort swimming pool in Tenerife',
     title: 'Où loger à Tenerife : les meilleures régions selon votre voyage',
     excerpt:
       "Le sud pour le soleil et la vie nocturne, le nord pour la culture et les paysages verts — où séjourner à Tenerife selon avec qui vous voyagez.",
@@ -598,6 +656,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'plus-belles-plages-tenerife',
+    image: '/images/blog/plus-belles-plages-tenerife.avif',
+    imageAlt: 'Golden sand beach at Playa de las Teresitas, Tenerife',
     title: 'Les plus belles plages de Tenerife : sable noir, criques dorées et coins secrets',
     excerpt:
       "Du sable doré de la Playa de las Teresitas aux criques volcaniques sauvages — les plus belles plages de Tenerife et les activités autour de la mer.",
@@ -618,6 +678,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'que-faire-tenerife',
+    image: '/images/blog/que-faire-tenerife.avif',
+    imageAlt: 'Aerial view of a coastal town in Tenerife',
     title: 'Que faire à Tenerife : les incontournables de l\'île',
     excerpt:
       "Du Teide aux falaises de Los Gigantes en passant par la vieille ville de La Laguna — les sites et activités incontournables de Tenerife en un coup d'œil.",
@@ -638,6 +700,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'mejor-epoca-viajar-tenerife',
+    image: '/images/blog/mejor-epoca-viajar-tenerife.avif',
+    imageAlt: 'Sunset over the Tenerife coast',
     title: '¿Cuál es la mejor época para viajar a Tenerife? Guía mes a mes',
     excerpt:
       'Tenerife se visita todo el año, pero cada mes tiene su carácter. Cuándo ir para sol, precios bajos, ballenas o carnaval.',
@@ -658,6 +722,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-7-dias-itinerario',
+    image: '/images/blog/tenerife-7-dias-itinerario.avif',
+    imageAlt: 'Aerial view of the Tenerife coastline',
     title: 'Tenerife en 7 días: el itinerario perfecto para una semana',
     excerpt:
       'Una semana equilibrada en Tenerife — el Teide, las ballenas, las playas, el norte salvaje y algo de adrenalina — con un plan día a día listo para usar.',
@@ -679,6 +745,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'donde-alojarse-tenerife',
+    image: '/images/blog/donde-alojarse-tenerife.avif',
+    imageAlt: 'Resort swimming pool in Tenerife',
     title: 'Dónde alojarse en Tenerife: las mejores zonas según tu viaje',
     excerpt:
       'El sur para sol y vida nocturna, el norte para cultura y paisajes verdes — dónde alojarse en Tenerife según con quién viajes.',
@@ -699,6 +767,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'mejores-playas-tenerife',
+    image: '/images/blog/mejores-playas-tenerife.avif',
+    imageAlt: 'Golden sand beach at Playa de las Teresitas, Tenerife',
     title: 'Las mejores playas de Tenerife: arena negra, calas doradas y rincones secretos',
     excerpt:
       'De la arena dorada de la Playa de las Teresitas a las calas volcánicas salvajes — las mejores playas de Tenerife y las actividades en torno al mar.',
@@ -719,6 +789,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'que-hacer-tenerife',
+    image: '/images/blog/que-hacer-tenerife.avif',
+    imageAlt: 'Aerial view of a coastal town in Tenerife',
     title: 'Qué hacer en Tenerife: los imprescindibles de la isla',
     excerpt:
       'Del Teide a los acantilados de Los Gigantes, pasando por el casco antiguo de La Laguna — los lugares y actividades imprescindibles de Tenerife de un vistazo.',
@@ -739,6 +811,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'teide-stargazing-tenerife',
+    image: '/images/blog/teide-stargazing-tenerife.avif',
+    imageAlt: 'Milky Way night sky over the mountains',
     title: 'Stargazing on Mount Teide: Tenerife\'s Dark-Sky Guide',
     excerpt:
       'Tenerife has some of the clearest night skies on Earth. How and where to stargaze on Mount Teide, from free viewpoints to guided tours.',
@@ -757,6 +831,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-with-toddlers',
+    image: '/images/blog/tenerife-with-toddlers.avif',
+    imageAlt: 'Family-friendly beach in the south of Tenerife',
     title: 'Tenerife with Toddlers: A Stress-Free Guide for Young Families',
     excerpt:
       'Calm beaches, short drives and toddler-friendly attractions — how to plan a Tenerife trip with babies and young children that actually works.',
@@ -775,6 +851,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-day-trips',
+    image: '/images/blog/tenerife-day-trips.avif',
+    imageAlt: 'Scenic coastal landscape in the Canary Islands',
     title: 'The Best Day Trips in Tenerife: Beyond the Resort',
     excerpt:
       'The island is small enough to explore from a single base. The best day trips in Tenerife — Teide, Masca, the green north and Los Gigantes.',
@@ -793,6 +871,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'anaga-rural-park-tenerife',
+    image: '/images/blog/anaga-rural-park-tenerife.avif',
+    imageAlt: 'Misty laurel forest trail in the mountains',
     title: 'Anaga Rural Park: Tenerife\'s Ancient Laurel Forest',
     excerpt:
       'A prehistoric cloud forest, hidden villages and black-sand beaches — a guide to hiking and exploring the Anaga Rural Park in north-east Tenerife.',
@@ -811,6 +891,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-vs-gran-canaria',
+    image: '/images/blog/tenerife-vs-gran-canaria.avif',
+    imageAlt: 'Coastal viewpoint over Tenerife',
     title: 'Tenerife vs Gran Canaria: Which Canary Island Should You Choose?',
     excerpt:
       'The two biggest Canary Islands compared — beaches, weather, scenery, nightlife and family appeal — to help you decide where to book.',
@@ -829,6 +911,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'audioguide-canaries-lume',
+    image: '/images/blog/audioguide-canaries-lume.avif',
+    imageAlt: 'Auditorio de Tenerife in Santa Cruz',
     title: 'Audioguide des Canaries : visiter Tenerife à son rythme avec Lume',
     excerpt:
       "Envie d'explorer Tenerife sans tour guidé ni horaires ? L'audioguide autoguidé des Canaries de Lume raconte l'histoire des lieux directement sur votre téléphone. Mode d'emploi.",
@@ -847,6 +931,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'canary-islands-audio-guide-lume',
+    image: '/images/blog/canary-islands-audio-guide-lume.avif',
+    imageAlt: 'Auditorio de Tenerife in Santa Cruz',
     title: 'Canary Islands Audio Guide: See Tenerife at Your Own Pace with Lume',
     excerpt:
       "Want to explore Tenerife without a guided tour or fixed schedule? Lume's self-guided Canary Islands audio guide tells the story of each place right on your phone. Here's how it works.",
@@ -865,6 +951,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'audioguia-canarias-lume',
+    image: '/images/blog/audioguia-canarias-lume.avif',
+    imageAlt: 'Auditorio de Tenerife in Santa Cruz',
     title: 'Audioguía de Canarias: visita Tenerife a tu ritmo con Lume',
     excerpt:
       "¿Quieres explorar Tenerife sin tour guiado ni horarios? La audioguía autoguiada de Canarias de Lume cuenta la historia de cada lugar en tu móvil. Así funciona.",
@@ -883,6 +971,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'kanaren-audioguide-lume',
+    image: '/images/blog/kanaren-audioguide-lume.avif',
+    imageAlt: 'Auditorio de Tenerife in Santa Cruz',
     title: 'Kanaren-Audioguide: Teneriffa im eigenen Tempo entdecken mit Lume',
     excerpt:
       "Du willst Teneriffa ohne geführte Tour und feste Zeiten erkunden? Der selbstgeführte Kanaren-Audioguide von Lume erzählt die Geschichte jedes Orts direkt auf deinem Handy. So funktioniert's.",
@@ -901,6 +991,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-with-a-baby',
+    image: '/images/blog/tenerife-with-a-baby.avif',
+    imageAlt: 'Calm aerial beach view in Tenerife',
     title: 'Tenerife with a Baby: A Stress-Free Guide for New Parents',
     excerpt:
       "Warm weather, short flights and easy logistics make Tenerife a great first trip with a baby. What to do, what to pack — and how to rent the bulky gear instead of flying with it.",
@@ -919,6 +1011,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-avec-un-bebe',
+    image: '/images/blog/tenerife-avec-un-bebe.avif',
+    imageAlt: 'Calm aerial beach view in Tenerife',
     title: 'Tenerife avec un bébé : le guide serein pour jeunes parents',
     excerpt:
       "Climat doux, vols courts et logistique simple : Tenerife est idéale pour un premier voyage avec bébé. Quoi faire, quoi emporter — et comment louer le matériel encombrant plutôt que de le transporter.",
@@ -937,6 +1031,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'tenerife-con-un-bebe',
+    image: '/images/blog/tenerife-con-un-bebe.avif',
+    imageAlt: 'Calm aerial beach view in Tenerife',
     title: 'Tenerife con un bebé: la guía sin estrés para padres primerizos',
     excerpt:
       "Clima cálido, vuelos cortos y logística sencilla hacen de Tenerife un primer viaje ideal con un bebé. Qué hacer, qué llevar — y cómo alquilar el equipo voluminoso en vez de cargar con él.",
@@ -955,6 +1051,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'teneriffa-mit-baby',
+    image: '/images/blog/teneriffa-mit-baby.avif',
+    imageAlt: 'Calm aerial beach view in Tenerife',
     title: 'Teneriffa mit Baby: Der entspannte Guide für frischgebackene Eltern',
     excerpt:
       "Mildes Klima, kurze Flüge und einfache Logistik machen Teneriffa zur idealen ersten Reise mit Baby. Was ihr unternehmen könnt, was ihr einpackt — und wie ihr sperriges Zubehör mietet statt es mitzuschleppen.",
