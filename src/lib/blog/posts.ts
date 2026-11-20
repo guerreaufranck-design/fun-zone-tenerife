@@ -16,6 +16,18 @@ export interface BlogPost {
   image?: string;
   /** Descriptive alt text for the cover image (image SEO). Falls back to the title. */
   imageAlt?: string;
+  /**
+   * Optional booking widget placed in the MIDDLE of the article (rendered by
+   * <InlineWidget>). Either a raw GetYourGuide embed (`embed`, e.g. a city
+   * widget) or one of our existing activities (`activitySlug`), inserted after
+   * paragraph index `afterParagraph`.
+   */
+  widget?: {
+    activitySlug?: string;
+    embed?: string;
+    afterParagraph: number;
+    cmp?: string;
+  };
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1067,6 +1079,230 @@ export const blogPosts: BlogPost[] = [
       "Gemeinsam gibt es viel zu erleben. Eine kurze, ruhige <a href=\"/de/aktivitaeten/whale-watching-tenerife\">Walbeobachtungstour</a> auf einem größeren, stabilen Boot eignet sich gut (nehmt eine kurze Fahrt an einem ruhigen Vormittag), Spaziergänge an der Promenade, die botanischen Gärten im Norden und einfach entspannte Strandvormittage. Haltet die Fahrten kurz und plant den Tag um den Mittagsschlaf — mehr Ideen auf unserer Seite <a href=\"/de/aktivitaeten\">Aktivitäten auf Teneriffa</a>.",
       "Die größte praktische Hürde mit Baby ist das Zubehör. Mit Reisebett, Kinderwagen, Autositz und Hochstuhl zu fliegen ist teuer, sperrig und stressig — und Airlines beschädigen sie regelmäßig. Die einfachere Lösung: Baby-Ausstattung vor Ort mieten und sie in der Unterkunft vorfinden. Wir empfehlen <a href=\"https://babytravelrental.com\" target=\"_blank\" rel=\"noopener\">babytravelrental.com</a> für saubere, sicherheitsgeprüfte Reisebetten, Kinderwagen, Autositze, Hochstühle und mehr, geliefert im ganzen Süden Teneriffas.",
       "Noch ein paar Tipps: Die Sonne ist selbst im Winter stark — packt Sonnencreme mit hohem Schutz, einen Hut und ein Sonnensegel für den Wagen ein; Apotheken sind hervorragend und für alles Vergessene gut sortiert; und die meisten Restaurants empfangen Babys herzlich. Regelt die Logistik vorab — mietet das Zubehör, bucht ein, zwei ruhige Aktivitäten — und Teneriffa mit Baby wird die sonnige Auszeit, die frischgebackene Eltern wirklich brauchen.",
+    ],
+  },
+  {
+    slug: 'los-cristianos-tenerife-things-to-do',
+    image: '/images/blog/los-cristianos-tenerife-things-to-do.avif',
+    imageAlt: 'Los Cristianos harbour and golden beach, south Tenerife',
+    title: 'Los Cristianos, Tenerife: Best Things to Do, Beaches & Group Trips',
+    excerpt:
+      "A laid-back harbour town with two golden beaches, the island's best whale watching and an easy base for stag, hen and group weekends. Here is what to do in Los Cristianos.",
+    date: '2026-11-19',
+    author: 'Fun Zone Tenerife',
+    category: 'Group Activities',
+    gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '7 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="103407" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-los-cristianos',
+    },
+    content: [
+      "Los Cristianos is where the south of Tenerife started. Long before Playa de las Americas was built next door, this was a quiet fishing village — and it has kept more of that character than any other resort on the south coast. Today it blends a working harbour, two of the island's best town beaches, and a relaxed promenade lined with restaurants, making it the easiest and most good-natured base for a first trip to Tenerife or a group getaway.",
+      "The two beaches are the heart of the town. Playa de los Cristianos, right by the harbour, is calm and shallow — ideal for families and early-morning swims. A short walk along the promenade brings you to Playa de las Vistas, a wide crescent of imported golden sand with a landmark water fountain offshore, calm roped-off swimming zones and full facilities. Both fly the Blue Flag, and the flat seafront path connecting them is perfect for a slow evening stroll.",
+      "Los Cristianos is also the launch point for the island's best days on the water. The harbour is the main departure port for <a href=\"/en/activities/whale-watching-tenerife\">whale and dolphin watching</a> — the deep channel just offshore holds resident pilot whales year-round, so sightings are close to guaranteed (see our full <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">whale watching guide</a>). From the same harbour you can take a <a href=\"/en/activities/catamaran-sunset-cruise-tenerife\">catamaran sunset cruise</a> with food and drinks, or head out on a <a href=\"/en/activities/jet-ski-tenerife\">jet ski</a>.",
+      "The quickest way to see exactly what is bookable from Los Cristianos — with live dates and prices — is the list below:",
+      "For stag, hen and group trips, Los Cristianos is a smart choice: it has the group-friendly activities without the full-throttle party intensity of its neighbour. A catamaran cruise with an open bar is the classic group booking, but the real icebreaker is our <a href=\"/en/escape-game\">outdoor escape game</a> — a self-guided treasure hunt you play on your phones around the town, splitting into teams and solving clues at your own pace. It gets everyone talking within minutes and slots easily into a weekend. See all our group ideas on the <a href=\"/en/celebrations\">celebrations &amp; groups</a> page.",
+      "In the evening, Los Cristianos leans towards relaxed harbour dining rather than nightclubs. The fish restaurants around the old port serve the day's catch, and the pedestrian streets behind the beach are full of easy-going terraces. For a bigger night out, the clubs of Playa de las Americas are a 15-minute taxi away — close enough to visit, far enough to sleep.",
+      "Getting here is simple: Los Cristianos is about 20 minutes from Tenerife South (TFS) airport, and the town itself is flat and walkable. It is also the ferry gateway to La Gomera. If you are comparing south-coast bases, read our guides to neighbouring <a href=\"/en/blog/playa-de-las-americas-tenerife-guide\">Playa de las Americas</a> and <a href=\"/en/blog/costa-adeje-tenerife-things-to-do\">Costa Adeje</a>, and browse every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'playa-de-las-americas-tenerife-guide',
+    image: '/images/blog/playa-de-las-americas-tenerife-guide.avif',
+    imageAlt: 'Playa de las Americas beach and resort seafront, Tenerife',
+    title: 'Playa de las Americas: Beaches, Nightlife & Stag/Hen Guide (Tenerife)',
+    excerpt:
+      "Tenerife's liveliest resort — big beaches by day, the island's biggest nightlife by night, and the go-to base for stag and hen weekends. Your complete Las Americas guide.",
+    date: '2026-11-18',
+    author: 'Fun Zone Tenerife',
+    category: 'Group Activities',
+    gradient: 'from-[#ff2d7b]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '7 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="113947" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-las-americas',
+    },
+    content: [
+      "Playa de las Americas is Tenerife's entertainment capital. Purpose-built for tourism in the boom years, it has no pretence of being an old Canarian town — and that is exactly the point. If you want big beaches in the day, water sports on tap, and the island's densest concentration of bars and clubs at night, this is where you base yourself. It is also the number-one choice for UK stag and hen weekends, for reasons we will come to.",
+      "By day, the resort runs on its beaches. Playa de Troya, El Camison and the sheltered Playa del Bobo give you soft sand, sun loungers and calm swimming, all backed by promenade cafes. The seafront is a hub for watersports: you can book a <a href=\"/en/activities/jet-ski-tenerife\">jet ski safari</a>, go <a href=\"/en/activities/parasailing-tenerife\">parasailing</a> over the bay, or take a boat trip out to spot dolphins.",
+      "By night, Las Americas is the island's nightlife engine. The infamous Veronicas strip packs bars and clubs into a few neon-lit blocks, there is a casino for a change of pace, and the choice of restaurants runs from late-night grills to international chains. Whatever time you surface, something is open.",
+      "Here is everything bookable from Las Americas, with live availability and prices:",
+      "This is why Las Americas has become the stag and hen capital of the Canaries: cheap flights, all-inclusive hotels, guaranteed sun and the biggest nightlife on the island, all in one walkable resort. The groups that get it right pair the nights out with a shared daytime activity — a catamaran booze cruise, <a href=\"/en/activities/karting-tenerife\">go-karting</a>, jet skis, or our <a href=\"/en/escape-game\">outdoor escape game</a> to kick off the weekend and get a big group bonded before the first night out. We pull the best of these together on our <a href=\"/en/celebrations\">stag, hen &amp; group</a> page.",
+      "Food in Las Americas is unapologetically international — steakhouses, Italian, Indian, British pubs and late-night eats all within a short walk. It is not the place to chase authentic guachinche cooking (head to the north for that), but for feeding a hungry group at midnight, nowhere on the island is easier.",
+      "Las Americas sits right in the middle of the south coast, bordering <a href=\"/en/blog/los-cristianos-tenerife-things-to-do\">Los Cristianos</a> on one side and the smarter <a href=\"/en/blog/costa-adeje-tenerife-things-to-do\">Costa Adeje</a> on the other — you can walk between all three along the promenade. It is about 15 minutes from Tenerife South airport. Browse every experience you can add to your trip on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'costa-adeje-tenerife-things-to-do',
+    image: '/images/blog/costa-adeje-tenerife-things-to-do.avif',
+    imageAlt: 'Costa Adeje beach and marina with luxury hotels, Tenerife',
+    title: 'Costa Adeje, Tenerife: Things to Do, Beaches & Siam Park',
+    excerpt:
+      'The upscale end of the south — designer beaches, Siam Park, and polished restaurants, with easy access to whale watching and group days out. Costa Adeje, explained.',
+    date: '2026-11-17',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#8b5cf6]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="148464" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-costa-adeje',
+    },
+    content: [
+      "Costa Adeje is the south coast grown up. Newer, cleaner and noticeably more upmarket than neighbouring Playa de las Americas, it is where Tenerife keeps its five-star hotels, designer beaches and best restaurants. If you want the reliable southern sunshine without the Veronicas strip on your doorstep, this is the resort to pick — and it is still only minutes from everything.",
+      "The headline attraction is Siam Park, regularly voted the best water park in the world. Its Thai-themed slides, wave pool and lazy river sit on the hillside above the resort, and it is comfortably a full day out for families, couples and groups alike. Skip-the-line <a href=\"/en/activities/siam-park-tickets\">Siam Park tickets</a> are the single most popular booking in the area.",
+      "Costa Adeje's beaches are its other calling card. Playa del Duque is the smartest — golden sand, boardwalks and beach clubs — while Fañabe and La Pinta give you long, family-friendly stretches with calm water. The marina at Puerto Colon is the departure point for <a href=\"/en/activities/whale-watching-tenerife\">whale watching</a>, <a href=\"/en/activities/catamaran-sunset-cruise-tenerife\">catamaran cruises</a> and <a href=\"/en/activities/parasailing-tenerife\">parasailing</a>.",
+      "Here is what you can book around Costa Adeje right now, with live dates and prices:",
+      "For groups and celebrations, Costa Adeje offers a more refined take on the stag, hen or team trip: a catamaran charter from Puerto Colon, a group day at Siam Park, polished dining, and our self-guided <a href=\"/en/escape-game\">outdoor escape game</a> to bring everyone together on arrival. It is the base of choice for groups who want the fun without the rowdiness — see more ideas on the <a href=\"/en/celebrations\">celebrations &amp; groups</a> page.",
+      "The resort also has the best concentration of restaurants in the south, from beachfront seafood to fine dining in the hotels, plus the nearby <a href=\"/en/activities/flamenco-show-dinner-tenerife\">flamenco dinner show</a> for a classic Spanish evening. Nights are more about long dinners and cocktail terraces than clubs.",
+      "Costa Adeje is roughly 10–15 minutes from Tenerife South airport and flows straight into <a href=\"/en/blog/playa-de-las-americas-tenerife-guide\">Playa de las Americas</a>, so you get the quieter base with the livelier resort on your doorstep. It is also the natural launch pad for west-coast trips to <a href=\"/en/blog/los-gigantes-tenerife-things-to-do\">Los Gigantes</a> and the Masca valley. See everything you can do on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'puerto-de-la-cruz-tenerife-things-to-do',
+    image: '/images/blog/puerto-de-la-cruz-tenerife-things-to-do.avif',
+    imageAlt: 'Puerto de la Cruz old town, coast and Teide behind, north Tenerife',
+    title: "Puerto de la Cruz: Things to Do in Tenerife's Historic North Resort",
+    excerpt:
+      'The north\'s grand old resort town — Loro Parque, black-sand beaches, botanical gardens and real Canarian character. The complete Puerto de la Cruz guide.',
+    date: '2026-11-16',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#39ff14]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '7 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="4994" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-puerto-cruz',
+    },
+    content: [
+      "Puerto de la Cruz was Tenerife's first tourist town, and it still feels like a real place rather than a purpose-built resort. On the lush green north coast, it is cooler, greener and more atmospheric than the south — a working town of historic plazas, a fishing harbour, grand old hotels and genuine Canarian life, with Mount Teide rising behind it.",
+      "The town's biggest draw is Loro Parque, consistently rated one of the best animal parks in Europe, with orcas, dolphins, penguins and the world's largest indoor penguinarium. It sits at the western edge of town and is an easy full day out. Book <a href=\"/en/activities/loro-parque-tickets\">Loro Parque tickets</a> in advance to skip the queue.",
+      "Because the north coast is rugged, Puerto de la Cruz made its own beaches. The star is the Lago Martianez, a complex of seawater pools and landscaped islands designed by Canarian artist Cesar Manrique — a genuine landmark. For sand, Playa Jardin offers black volcanic beach backed by gardens, with calmer swimming than the exposed open coast.",
+      "Here is what you can book around Puerto de la Cruz, with live availability:",
+      "The old town rewards slow exploration: the harbour and Plaza del Charco, the 17th-century Casa de la Aduana, hillside streets of balconied Canarian houses, and the superb Jardin Botanico with its two-century-old trees. The best way to piece it together is the self-guided <a href=\"/en/tenerife-audio-tour/puerto-de-la-cruz\">Puerto de la Cruz audio walking tour</a>, which narrates the history as you wander.",
+      "Puerto de la Cruz also makes an excellent base for the north and centre of the island. The historic town of <a href=\"/en/tenerife-audio-tour/la-orotava\">La Orotava</a> is a short hop inland, the <a href=\"/en/activities/teide-cable-car-tour\">Teide cable car</a> is reachable via the scenic north road, and the dramatic Masca valley lies to the west.",
+      "Getting here takes about 40 minutes from the south resorts or the airport, and the town is compact and walkable once you arrive. If you are touring the north, pair it with the island capital <a href=\"/en/blog/santa-cruz-de-tenerife-things-to-do\">Santa Cruz</a> and UNESCO-listed <a href=\"/en/blog/la-laguna-tenerife-things-to-do\">La Laguna</a>. Find every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'santa-cruz-de-tenerife-things-to-do',
+    image: '/images/blog/santa-cruz-de-tenerife-things-to-do.avif',
+    imageAlt: 'Santa Cruz de Tenerife waterfront and Auditorio, Tenerife',
+    title: 'Santa Cruz de Tenerife: Things to Do in the Island Capital',
+    excerpt:
+      'Tenerife\'s capital is an underrated city break — Art Deco streets, a world-famous carnival, great shopping and the striking Auditorio. What to do in Santa Cruz.',
+    date: '2026-11-15',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="4993" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-santa-cruz',
+    },
+    content: [
+      "Most visitors to Tenerife never give the capital a day, and that is their loss. Santa Cruz de Tenerife is a real, working city — not a resort — with elegant boulevards, Art Deco and modernist architecture, excellent shopping and one of the world's great carnivals. For a change from the beach, it makes a genuinely good city break.",
+      "The city's signature landmark is the Auditorio de Tenerife, Santiago Calatrava's sweeping white concert hall on the waterfront — one of the most photographed buildings in Spain. Around it you will find the leafy Plaza de Espana with its artificial lake, the ornate Mercado de Nuestra Senora de Africa food market, the TEA contemporary art centre and the palm-filled Palmetum botanical garden built on a reclaimed landfill.",
+      "Santa Cruz is a city that rewards walking, with layered history, hidden plazas and a strong street-art scene. The easiest way to decode it is the self-guided <a href=\"/en/tenerife-audio-tour/santa-cruz\">Santa Cruz audio walking tour</a> — and if you enjoy that puzzle-solving, exploratory style of sightseeing, see our guide to <a href=\"/en/blog/escape-game-treasure-hunt-city-tour-tenerife\">escape games, treasure hunts and self-guided city tours</a>.",
+      "Here is what you can book from Santa Cruz, with live dates and prices:",
+      "Just outside the city is one of the island's finest beaches: Playa de las Teresitas at San Andres, a curve of golden Saharan sand backed by palms and protected by a breakwater, with calm water ideal for swimming. It is a world away from the city centre and features in our roundup of the <a href=\"/en/blog/best-beaches-tenerife\">best beaches in Tenerife</a>.",
+      "If you can time it, visit during Carnaval (February) — the Santa Cruz carnival is the second largest in the world after Rio, taking over the whole city for two weeks of costumes, music and street parties. Outside carnival season the city is calmer but still lively, with good restaurants and a relaxed Spanish rhythm.",
+      "Santa Cruz sits on the north-east coast, right next to Tenerife North (TFN) airport, and is linked to UNESCO-listed <a href=\"/en/blog/la-laguna-tenerife-things-to-do\">La Laguna</a> by a 20-minute tram — the two pair perfectly into a single day. Combine it with nearby <a href=\"/en/blog/puerto-de-la-cruz-tenerife-things-to-do\">Puerto de la Cruz</a>, and browse every experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'la-laguna-tenerife-things-to-do',
+    image: '/images/blog/la-laguna-tenerife-things-to-do.avif',
+    imageAlt: 'Colourful colonial street in La Laguna old town, Tenerife',
+    title: 'San Cristóbal de La Laguna: Tenerife\'s UNESCO Old Town',
+    excerpt:
+      'A UNESCO World Heritage city of colourful colonial streets, student bars and historic churches — and the perfect place for a self-guided wander. La Laguna, explored.',
+    date: '2026-11-14',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#ff6b00]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="350" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-la-laguna',
+    },
+    content: [
+      "San Cristobal de La Laguna — just La Laguna to everyone who lives there — was Tenerife's first capital and is now a UNESCO World Heritage Site. Its perfectly preserved colonial grid, laid out in the 15th century, became the template for cities across Spanish America. Add a big university, and you get a rare combination: a living museum that is also young, lively and full of cheap tapas bars.",
+      "The old town is the attraction. Wander Calle San Agustin past pastel-coloured mansions with carved wooden balconies and hidden interior patios, visit the cathedral and the Iglesia de la Concepcion — whose tower you can climb for a rooftop view over the grid — and simply let yourself get lost in the grid of straight, handsome streets.",
+      "La Laguna is practically built for self-guided exploration. The flat, walkable grid and the density of history make it ideal, and the easiest way to bring it to life is the <a href=\"/en/tenerife-audio-tour/la-laguna\">La Laguna audio walking tour</a>. If you like discovering a town through clues and stories, our guide to <a href=\"/en/blog/escape-game-treasure-hunt-city-tour-tenerife\">treasure hunts and self-guided city tours</a> is a good companion read.",
+      "Here is what you can book around La Laguna, with live availability:",
+      "La Laguna eats and drinks well. The student population keeps prices low and the bars full, and the surrounding Tacoronte-Acentejo hills are Tenerife's oldest wine region — a <a href=\"/en/activities/wine-tasting-tenerife\">vineyard tour with wine and cheese tasting</a> pairs naturally with a day in the old town. For food, look for traditional guachinches serving home cooking and local wine.",
+      "The city also sits at the doorstep of the Anaga rural park, a UNESCO Biosphere Reserve of ancient laurel forest and dramatic ridges — one of the most beautiful hiking areas in the Canaries, and an easy add-on for a second day.",
+      "La Laguna is next to Tenerife North airport and a 20-minute tram ride from the capital, <a href=\"/en/blog/santa-cruz-de-tenerife-things-to-do\">Santa Cruz</a> — do both in a day. It also pairs well with <a href=\"/en/blog/puerto-de-la-cruz-tenerife-things-to-do\">Puerto de la Cruz</a> on a north-coast itinerary. See every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'los-gigantes-tenerife-things-to-do',
+    image: '/images/blog/los-gigantes-tenerife-things-to-do.avif',
+    imageAlt: 'The giant cliffs of Los Gigantes rising from the sea, west Tenerife',
+    title: 'Los Gigantes, Tenerife: Giant Cliffs, Boat Trips & Whale Watching',
+    excerpt:
+      "A dramatic west-coast resort beneath 600-metre sea cliffs — the launch point for the island's best boat trips, whale watching and Masca adventures. Los Gigantes guide.",
+    date: '2026-11-13',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#8b5cf6]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="91695" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-los-gigantes',
+    },
+    content: [
+      "Los Gigantes is the most dramatic setting of any resort in Tenerife. The town sits at the foot of the Acantilados de los Gigantes — the 'Cliffs of the Giants' — a wall of sheer volcanic rock that drops up to 600 metres straight into the Atlantic. It is quieter and more scenic than the big southern resorts, built around a pretty marina on the west coast.",
+      "The main event here is getting out on the water. Boat trips from the marina take you along the base of the cliffs — a genuinely awe-inspiring perspective you cannot get from land — combined with whale and dolphin watching in some of the calmest, clearest water on the island, and a swim stop in a hidden bay. The <a href=\"/en/activities/los-gigantes-boat-trip\">Los Gigantes cliffs boat trip</a> is the signature excursion.",
+      "The town's beach, Playa de los Guios, is a small cove of black volcanic sand directly beneath the cliffs — striking rather than sprawling. For more space, the neighbouring Playa de la Arena is a wider Blue Flag black-sand beach a few minutes away.",
+      "Here is what you can book from Los Gigantes, with live dates and prices:",
+      "Los Gigantes is also the gateway to Masca, the remote mountain village often called Tenerife's Machu Picchu, and the spectacular <a href=\"/en/activities/masca-gorge-hike\">Masca gorge hike</a> that descends through a ravine to the sea — where a boat collects walkers and returns them to the marina. It is one of the island's great adventure days.",
+      "The clear, deep water also makes this one of the best places on Tenerife for <a href=\"/en/activities/scuba-diving-tenerife\">scuba diving</a>, and because the town faces west, it serves up some of the finest sunsets on the island — best enjoyed from a terrace above the marina or from the deck of a late-afternoon boat.",
+      "Los Gigantes is about 40 minutes up the coast from the southern resorts, making it an easy day trip or a quieter base. Pair it with <a href=\"/en/blog/costa-adeje-tenerife-things-to-do\">Costa Adeje</a> for the best of the west and south, and see every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+    ],
+  },
+  {
+    slug: 'el-medano-tenerife-things-to-do',
+    image: '/images/blog/el-medano-tenerife-things-to-do.avif',
+    imageAlt: 'Windsurfers on the natural beach at El Medano with Montaña Roja, Tenerife',
+    title: 'El Médano, Tenerife: Windsurf Capital & Bohemian Beach Town',
+    excerpt:
+      "The island's windsurfing and kitesurfing capital — long natural beaches, a laid-back bohemian vibe and the best wind in the Canaries. Your guide to El Médano.",
+    date: '2026-11-12',
+    author: 'Fun Zone Tenerife',
+    category: 'Things To Do',
+    gradient: 'from-[#ff2d7b]/20 via-[#1a1a2e] to-[#0a0a0f]',
+    readTime: '6 min read',
+    widget: {
+      embed:
+        '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="91836" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
+      afterParagraph: 3,
+      cmp: 'funzone-blog-el-medano',
+    },
+    content: [
+      "El Medano is Tenerife's antidote to the high-rise resorts. On the south-east corner of the island, this low-rise town has kept a bohemian, distinctly Spanish feel — think surf shops, beach bars and a buzzy main square rather than nightclubs and chain hotels. It is built around two things: the island's longest natural beaches, and the best wind in the Canaries.",
+      "That wind makes El Medano a world-class destination for windsurfing and kitesurfing. The bay fills with sails on any breezy afternoon, international competitions are held here, and a cluster of schools will get beginners up and riding. If the wind is not your thing, the Atlantic swell also makes this a good spot to learn to surf — book a <a href=\"/en/activities/surf-lessons-tenerife\">surf lesson</a> suitable for all levels.",
+      "The beaches are unusually natural for the south: long, undeveloped stretches of sand rather than engineered resort coves. Dominating the bay is Montana Roja, a rust-red volcanic cone you can walk up in under an hour for sweeping coastal views, with the wild Playa de la Tejita stretching out beneath it.",
+      "Here is what you can book around El Medano, with live availability:",
+      "The town itself is all about the relaxed vibe — a pedestrian square spilling over with cafe terraces, beach bars for sundowners, and a yoga-and-surf crowd that gives the place a gentle, creative energy. It is the complete opposite of <a href=\"/en/blog/playa-de-las-americas-tenerife-guide\">Playa de las Americas</a>, and many repeat visitors to Tenerife end up here.",
+      "El Medano is also the most convenient town on the island for arrivals and departures: it is barely five minutes from Tenerife South airport, which makes it a great first or last night of a trip.",
+      "From here the rest of the south is within easy reach — <a href=\"/en/blog/los-cristianos-tenerife-things-to-do\">Los Cristianos</a> is 15 minutes west, and the <a href=\"/en/activities/teide-cable-car-tour\">Teide cable car</a> is a classic day trip inland. Browse every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
     ],
   },
 ];

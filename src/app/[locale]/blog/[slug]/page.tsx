@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Fragment } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -9,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, ChevronRight, Home } from 'lucide-react';
 import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import RelatedActivities from '@/components/blog/RelatedActivities';
+import InlineWidget from '@/components/blog/InlineWidget';
 import CopyLinkButton from '@/components/blog/CopyLinkButton';
 
 const BASE_URL = 'https://funzonetenerife.com';
@@ -202,7 +204,12 @@ export default async function BlogPostPage({
 
           <article className="space-y-6">
             {post.content.map((paragraph, index) => (
-              <p key={index} className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />
+              <Fragment key={index}>
+                <p className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                {post.widget && post.widget.afterParagraph === index && (
+                  <InlineWidget widget={post.widget} locale={locale} />
+                )}
+              </Fragment>
             ))}
           </article>
 
