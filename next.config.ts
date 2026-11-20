@@ -46,6 +46,10 @@ const nextConfig: NextConfig = {
       // Retired venue-centric blog articles → activities directory (301).
       // Deduplicated: old Los Gigantes guide -> the new city guide (keeps SEO equity).
       { source: '/:locale/blog/los-gigantes-tenerife-guide', destination: '/:locale/blog/los-gigantes-tenerife-things-to-do', permanent: true },
+      // Stag/hen: retired combined "ideas" guides -> the localized stag & hen hub page.
+      { source: '/fr/blog/evjf-evg-tenerife-activites-originales', destination: '/fr/evjf-evg-tenerife', permanent: true },
+      { source: '/es/blog/despedida-soltera-tenerife-ideas', destination: '/es/despedidas-tenerife', permanent: true },
+      { source: '/de/blog/junggesellenabschied-teneriffa-ideen', destination: '/de/junggesellenabschied-teneriffa', permanent: true },
       { source: '/:locale/blog/evening-entertainment-tenerife-south', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/blog/date-night-ideas-tenerife', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/blog/group-games-tenerife-competitive', destination: '/:locale/activities', permanent: true },

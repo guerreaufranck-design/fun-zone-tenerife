@@ -12,7 +12,6 @@ export type BlogLocale = 'en' | 'es' | 'fr' | 'de' | 'nl' | 'it';
 // Non-English articles (verified from article content). Everything else is 'en'.
 const POST_LANG: Record<string, BlogLocale> = {
   // French
-  'evjf-evg-tenerife-activites-originales': 'fr',
   'audioguide-canaries-lume': 'fr',
   'meilleure-periode-tenerife': 'fr',
   'tenerife-7-jours-itineraire': 'fr',
@@ -118,7 +117,6 @@ const POST_LANG: Record<string, BlogLocale> = {
   'teneriffa-oder-gran-canaria': 'de',
   // Spanish
   'audioguia-canarias-lume': 'es',
-  'despedida-soltera-tenerife-ideas': 'es',
   'mejor-epoca-viajar-tenerife': 'es',
   'tenerife-7-dias-itinerario': 'es',
   'donde-alojarse-tenerife': 'es',
@@ -127,7 +125,6 @@ const POST_LANG: Record<string, BlogLocale> = {
   'tenerife-con-un-bebe': 'es',
   // German
   'kanaren-audioguide-lume': 'de',
-  'junggesellenabschied-teneriffa-ideen': 'de',
   'beste-reisezeit-teneriffa': 'de',
   'teneriffa-7-tage-route': 'de',
   'wo-uebernachten-teneriffa': 'de',
@@ -178,6 +175,19 @@ const POST_LANG: Record<string, BlogLocale> = {
   'dove-alloggiare-tenerife': 'it',
   'audioguida-canarie-lume': 'it',
   'tenerife-con-un-neonato': 'it',
+  // Celebrations + things-to-do batch
+  'enterrement-vie-garcon-tenerife': 'fr',
+  'enterrement-vie-jeune-fille-tenerife': 'fr',
+  'despedida-soltero-tenerife-guia': 'es',
+  'despedida-soltera-tenerife-guia': 'es',
+  'junggesellenabschied-teneriffa-guide': 'de',
+  'junggesellinnenabschied-teneriffa-ideen': 'de',
+  'vrijgezellenfeest-mannen-tenerife': 'nl',
+  'vrijgezellenfeest-vrouwen-tenerife': 'nl',
+  'wat-te-doen-tenerife': 'nl',
+  'addio-al-celibato-tenerife-guida': 'it',
+  'addio-al-nubilato-tenerife-idee': 'it',
+  'cosa-fare-tenerife': 'it',
 };
 
 /** The language a blog article is written in. */
@@ -192,7 +202,7 @@ const TRANSLATION_GROUPS: string[][] = [
   ['tenerife-7-day-itinerary', 'tenerife-7-dias-itinerario', 'tenerife-7-jours-itineraire', 'teneriffa-7-tage-route', 'tenerife-7-dagen-route', 'tenerife-itinerario-7-giorni'],
   ['where-to-stay-tenerife', 'donde-alojarse-tenerife', 'ou-loger-tenerife', 'wo-uebernachten-teneriffa', 'waar-verblijven-tenerife', 'dove-alloggiare-tenerife'],
   ['best-beaches-tenerife', 'mejores-playas-tenerife', 'plus-belles-plages-tenerife', 'schoenste-straende-teneriffa', 'mooiste-stranden-tenerife', 'migliori-spiagge-tenerife'],
-  ['que-hacer-tenerife', 'que-faire-tenerife', 'teneriffa-sehenswuerdigkeiten'],
+  ['que-hacer-tenerife', 'que-faire-tenerife', 'teneriffa-sehenswuerdigkeiten', 'things-to-do-tenerife', 'wat-te-doen-tenerife', 'cosa-fare-tenerife'],
   ['tenerife-with-a-baby', 'tenerife-con-un-bebe', 'tenerife-avec-un-bebe', 'teneriffa-mit-baby', 'tenerife-met-een-baby', 'tenerife-con-un-neonato'],
   ['canary-islands-audio-guide-lume', 'audioguia-canarias-lume', 'audioguide-canaries-lume', 'kanaren-audioguide-lume', 'audiogids-canarische-eilanden-lume', 'audioguida-canarie-lume'],
   // City guides (EN original + FR/ES/DE/NL/IT translations)
@@ -221,6 +231,9 @@ const TRANSLATION_GROUPS: string[][] = [
   ['tenerife-day-trips', 'excursions-journee-tenerife', 'excursiones-un-dia-tenerife', 'teneriffa-tagesausfluege', 'dagtrips-tenerife', 'gite-giornaliere-tenerife'],
   ['anaga-rural-park-tenerife', 'parc-rural-anaga-tenerife', 'parque-rural-anaga-tenerife', 'anaga-naturpark-teneriffa', 'anaga-natuurpark-tenerife', 'parco-rurale-anaga-tenerife'],
   ['tenerife-vs-gran-canaria', 'tenerife-ou-gran-canaria', 'tenerife-o-gran-canaria', 'teneriffa-oder-gran-canaria', 'tenerife-of-gran-canaria', 'tenerife-oppure-gran-canaria'],
+  // Stag & Hen (2 guides across 6 languages)
+  ['stag-do-tenerife-guide', 'enterrement-vie-garcon-tenerife', 'despedida-soltero-tenerife-guia', 'junggesellenabschied-teneriffa-guide', 'vrijgezellenfeest-mannen-tenerife', 'addio-al-celibato-tenerife-guida'],
+  ['hen-party-tenerife-ideas', 'enterrement-vie-jeune-fille-tenerife', 'despedida-soltera-tenerife-guia', 'junggesellinnenabschied-teneriffa-ideen', 'vrijgezellenfeest-vrouwen-tenerife', 'addio-al-nubilato-tenerife-idee'],
 ];
 
 export interface BlogAlternate {
