@@ -28,6 +28,11 @@ export interface BlogPost {
     afterParagraph: number;
     cmp?: string;
   };
+  /**
+   * For city / place guides: renders a Google map of the town and adds Place +
+   * GeoCoordinates structured data, reinforcing the page's local relevance.
+   */
+  place?: { name: string; lat: number; lng: number };
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1092,21 +1097,30 @@ export const blogPosts: BlogPost[] = [
     author: 'Fun Zone Tenerife',
     category: 'Group Activities',
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
-    readTime: '7 min read',
+    readTime: '8 min read',
     widget: {
       embed:
         '<div data-gyg-href="https://widget.getyourguide.com/default/city.frame" data-gyg-location-id="103407" data-gyg-locale-code="en-US" data-gyg-widget="city" data-gyg-partner-id="VHOM8VQ"></div>',
-      afterParagraph: 3,
+      afterParagraph: 8,
       cmp: 'funzone-blog-los-cristianos',
     },
+    place: { name: 'Los Cristianos', lat: 28.0527, lng: -16.7156 },
     content: [
-      "Los Cristianos is where the south of Tenerife started. Long before Playa de las Americas was built next door, this was a quiet fishing village — and it has kept more of that character than any other resort on the south coast. Today it blends a working harbour, two of the island's best town beaches, and a relaxed promenade lined with restaurants, making it the easiest and most good-natured base for a first trip to Tenerife or a group getaway.",
-      "The two beaches are the heart of the town. Playa de los Cristianos, right by the harbour, is calm and shallow — ideal for families and early-morning swims. A short walk along the promenade brings you to Playa de las Vistas, a wide crescent of imported golden sand with a landmark water fountain offshore, calm roped-off swimming zones and full facilities. Both fly the Blue Flag, and the flat seafront path connecting them is perfect for a slow evening stroll.",
-      "Los Cristianos is also the launch point for the island's best days on the water. The harbour is the main departure port for <a href=\"/en/activities/whale-watching-tenerife\">whale and dolphin watching</a> — the deep channel just offshore holds resident pilot whales year-round, so sightings are close to guaranteed (see our full <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">whale watching guide</a>). From the same harbour you can take a <a href=\"/en/activities/catamaran-sunset-cruise-tenerife\">catamaran sunset cruise</a> with food and drinks, or head out on a <a href=\"/en/activities/jet-ski-tenerife\">jet ski</a>.",
-      "The quickest way to see exactly what is bookable from Los Cristianos — with live dates and prices — is the list below:",
-      "For stag, hen and group trips, Los Cristianos is a smart choice: it has the group-friendly activities without the full-throttle party intensity of its neighbour. A catamaran cruise with an open bar is the classic group booking, but the real icebreaker is our <a href=\"/en/escape-game\">outdoor escape game</a> — a self-guided treasure hunt you play on your phones around the town, splitting into teams and solving clues at your own pace. It gets everyone talking within minutes and slots easily into a weekend. See all our group ideas on the <a href=\"/en/celebrations\">celebrations &amp; groups</a> page.",
-      "In the evening, Los Cristianos leans towards relaxed harbour dining rather than nightclubs. The fish restaurants around the old port serve the day's catch, and the pedestrian streets behind the beach are full of easy-going terraces. For a bigger night out, the clubs of Playa de las Americas are a 15-minute taxi away — close enough to visit, far enough to sleep.",
-      "Getting here is simple: Los Cristianos is about 20 minutes from Tenerife South (TFS) airport, and the town itself is flat and walkable. It is also the ferry gateway to La Gomera. If you are comparing south-coast bases, read our guides to neighbouring <a href=\"/en/blog/playa-de-las-americas-tenerife-guide\">Playa de las Americas</a> and <a href=\"/en/blog/costa-adeje-tenerife-things-to-do\">Costa Adeje</a>, and browse every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
+      "Los Cristianos is where the south of Tenerife began. Long before the resorts next door existed, this was a quiet fishing village, and it has held on to more of that easy-going character than anywhere else on the south coast. Today it mixes a working harbour, two of the island's best town beaches and a long seafront promenade, which makes it one of the friendliest places to base yourself, whether it is your first trip to Tenerife or a weekend away with friends.",
+      "## From fishing village to resort: a short history of Los Cristianos",
+      "For most of its history, Los Cristianos was little more than a handful of fishermen's houses on a sheltered bay. The first permanent homes went up in the 1860s, and the settlement grew slowly around the catch and the coastal trade. The turning point came in 1934, when the harbour was enlarged so larger boats could dock, giving the village a proper fishing and shipping port.",
+      "Tourism arrived in the late 1950s. The dry, sheltered climate and calm sea made Los Cristianos a place people came to rest and recover, and visitor numbers climbed steadily through the 1960s and 1970s. When Tenerife South airport opened in 1978, the whole south coast took off and the old fishing village became one of the island's busiest resorts. Today Los Cristianos sits in the municipality of Arona, its harbour is the main ferry gateway to La Gomera (and on to La Palma and El Hierro), and the fishing fleet has largely given way to whale-watching boats and excursion catamarans.",
+      "## The beaches",
+      "Two beaches anchor the town. Playa de los Cristianos, right beside the harbour, is calm and shallow, which makes it perfect for families and an easy morning swim. A short walk along the promenade takes you to Playa de las Vistas, a wide curve of golden sand with a landmark water fountain offshore, roped-off swimming zones and full facilities. Both hold the Blue Flag, and the flat seafront path that links them is made for a slow evening stroll.",
+      "## Best things to do in Los Cristianos",
+      "The harbour is the launch point for the island's best days on the water. It is the main departure port for <a href=\"/en/activities/whale-watching-tenerife\">whale and dolphin watching</a>, and because a resident pod of pilot whales lives in the deep channel just offshore, sightings are close to guaranteed (our full <a href=\"/en/blog/whale-watching-tenerife-complete-guide\">whale watching guide</a> explains when and how to go). From the same marina you can take a <a href=\"/en/activities/catamaran-sunset-cruise-tenerife\">catamaran sunset cruise</a> with food and drinks, or open up the throttle on a <a href=\"/en/activities/jet-ski-tenerife\">jet ski</a>.",
+      "The quickest way to see exactly what is bookable from Los Cristianos, with live dates and prices, is right here:",
+      "## A relaxed base for stag, hen and group trips",
+      "Los Cristianos is a smart choice for a group: it has all the group-friendly activities without the full-on party intensity of its neighbour. A catamaran cruise with an open bar is the classic booking, but the real icebreaker is our <a href=\"/en/escape-game\">outdoor escape game</a>, a self-guided treasure hunt you play on your phones around the town, splitting into teams and solving clues at your own pace. It gets everyone talking within minutes and fits neatly into a weekend. You will find all our group ideas on the <a href=\"/en/stag-hen-party-tenerife\">stag and hen</a> page.",
+      "## Food and evenings",
+      "In the evening, Los Cristianos leans towards relaxed harbour dining rather than late-night clubs. The fish restaurants around the old port serve the day's catch, and the pedestrian streets behind the beach fill with easy terraces. If you want a bigger night out, the clubs of Playa de las Americas are a short taxi ride away, close enough to visit and far enough to sleep.",
+      "## Getting to Los Cristianos",
+      "Los Cristianos is about 20 minutes from Tenerife South (TFS) airport, and the town itself is flat and easy to walk. It is also the ferry gateway to La Gomera, so it works well as a base for island-hopping. If you are weighing up where to stay, read our guides to neighbouring <a href=\"/en/blog/playa-de-las-americas-tenerife-guide\">Playa de las Americas</a> and <a href=\"/en/blog/costa-adeje-tenerife-things-to-do\">Costa Adeje</a>, and browse every bookable experience on our <a href=\"/en/activities\">things to do in Tenerife</a> page.",
     ],
   },
   {

@@ -11,6 +11,7 @@ import { Calendar, ArrowLeft, ArrowRight, User, Clock, Share2, ChevronRight, Hom
 import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import RelatedActivities from '@/components/blog/RelatedActivities';
 import InlineWidget from '@/components/blog/InlineWidget';
+import CityMap from '@/components/blog/CityMap';
 import CopyLinkButton from '@/components/blog/CopyLinkButton';
 
 const BASE_URL = 'https://funzonetenerife.com';
@@ -116,6 +117,20 @@ export default async function BlogPostPage({
     mainEntityOfPage: `${BASE_URL}/${locale}/blog/${slug}`,
     description: post.excerpt,
     image: post.image ? `${BASE_URL}${post.image}` : `${BASE_URL}/images/og-image.jpg`,
+    ...(post.place
+      ? {
+          about: {
+            '@type': 'Place',
+            name: post.place.name,
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: post.place.lat,
+              longitude: post.place.lng,
+            },
+            address: { '@type': 'PostalAddress', addressRegion: 'Tenerife', addressCountry: 'ES' },
+          },
+        }
+      : {}),
   };
 
   return (
@@ -205,13 +220,21 @@ export default async function BlogPostPage({
           <article className="space-y-6">
             {post.content.map((paragraph, index) => (
               <Fragment key={index}>
-                <p className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                {paragraph.startsWith('## ') ? (
+                  <h2 className="!mt-10 text-2xl font-bold text-white">{paragraph.slice(3)}</h2>
+                ) : (
+                  <p className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                )}
                 {post.widget && post.widget.afterParagraph === index && (
                   <InlineWidget widget={post.widget} locale={locale} />
                 )}
               </Fragment>
             ))}
           </article>
+
+          {post.place && (
+            <CityMap name={post.place.name} lat={post.place.lat} lng={post.place.lng} locale={locale} />
+          )}
 
           {/* Share */}
           <div className="mt-12 flex items-center justify-between border-t border-border/50 pt-6">
