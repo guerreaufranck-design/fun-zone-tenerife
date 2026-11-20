@@ -20,6 +20,15 @@ const POST_LANG: Record<string, BlogLocale> = {
   'plus-belles-plages-tenerife': 'fr',
   'que-faire-tenerife': 'fr',
   'tenerife-avec-un-bebe': 'fr',
+  // French city guides (translations of the English city guides)
+  'los-cristianos-que-faire': 'fr',
+  'playa-de-las-americas-que-faire': 'fr',
+  'costa-adeje-que-faire': 'fr',
+  'puerto-de-la-cruz-que-faire': 'fr',
+  'santa-cruz-tenerife-que-faire': 'fr',
+  'la-laguna-tenerife-que-faire': 'fr',
+  'los-gigantes-que-faire': 'fr',
+  'el-medano-que-faire': 'fr',
   // Spanish
   'audioguia-canarias-lume': 'es',
   'despedida-soltera-tenerife-ideas': 'es',
@@ -55,6 +64,15 @@ const TRANSLATION_GROUPS: string[][] = [
   ['que-hacer-tenerife', 'que-faire-tenerife', 'teneriffa-sehenswuerdigkeiten'],
   ['tenerife-with-a-baby', 'tenerife-con-un-bebe', 'tenerife-avec-un-bebe', 'teneriffa-mit-baby'],
   ['canary-islands-audio-guide-lume', 'audioguia-canarias-lume', 'audioguide-canaries-lume', 'kanaren-audioguide-lume'],
+  // City guides (EN original + its translations)
+  ['los-cristianos-tenerife-things-to-do', 'los-cristianos-que-faire'],
+  ['playa-de-las-americas-tenerife-guide', 'playa-de-las-americas-que-faire'],
+  ['costa-adeje-tenerife-things-to-do', 'costa-adeje-que-faire'],
+  ['puerto-de-la-cruz-tenerife-things-to-do', 'puerto-de-la-cruz-que-faire'],
+  ['santa-cruz-de-tenerife-things-to-do', 'santa-cruz-tenerife-que-faire'],
+  ['la-laguna-tenerife-things-to-do', 'la-laguna-tenerife-que-faire'],
+  ['los-gigantes-tenerife-things-to-do', 'los-gigantes-que-faire'],
+  ['el-medano-tenerife-things-to-do', 'el-medano-que-faire'],
 ];
 
 export interface BlogAlternate {
