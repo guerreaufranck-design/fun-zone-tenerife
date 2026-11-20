@@ -44,6 +44,8 @@ const nextConfig: NextConfig = {
       { source: '/activities', destination: '/en/activities', permanent: true },
       { source: '/activities/:slug', destination: '/en/activities/:slug', permanent: true },
       // Retired venue-centric blog articles → activities directory (301).
+      // Deduplicated: old Los Gigantes guide -> the new city guide (keeps SEO equity).
+      { source: '/:locale/blog/los-gigantes-tenerife-guide', destination: '/:locale/blog/los-gigantes-tenerife-things-to-do', permanent: true },
       { source: '/:locale/blog/evening-entertainment-tenerife-south', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/blog/date-night-ideas-tenerife', destination: '/:locale/activities', permanent: true },
       { source: '/:locale/blog/group-games-tenerife-competitive', destination: '/:locale/activities', permanent: true },

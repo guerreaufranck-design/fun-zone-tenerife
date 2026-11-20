@@ -407,28 +407,6 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: 'los-gigantes-tenerife-guide',
-    image: '/images/blog/los-gigantes-tenerife-guide.avif',
-    imageAlt: 'Los Gigantes cliffs rising from the sea, Tenerife',
-    title: 'Los Gigantes, Tenerife: The Giant Cliffs, Boat Trips & Whales',
-    excerpt:
-      'Towering 600 metres straight out of the Atlantic, the cliffs of Los Gigantes are one of Tenerife\'s great sights. Here is how to see them, and what else the west coast offers.',
-    date: '2026-10-22',
-    author: 'Fun Zone Tenerife',
-    category: 'Things To Do',
-    gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
-    readTime: '7 min read',
-    content: [
-      'On Tenerife\'s west coast, the land simply stops and drops. The cliffs of Los Gigantes, "the giants", rise up to 600 metres straight out of the sea, a wall of black volcanic rock that the ancient Guanches believed marked the edge of the world. It is one of the most dramatic coastlines in the Atlantic, and seeing it from the water is a Tenerife highlight.',
-      'The best way to appreciate the cliffs is a boat trip from the Los Gigantes marina. Out on the water you get the full scale of the rock face, and this stretch of coast is also prime territory for whales and dolphins, resident pilot whales and bottlenose dolphins are seen on the majority of trips. A <a href="/en/activities/los-gigantes-boat-trip">Los Gigantes boat trip</a> or a wider <a href="/en/activities/whale-watching-tenerife">whale-watching cruise</a> usually includes a swim stop in the calm, clear water at the foot of the cliffs.',
-      'The small resort of Los Gigantes itself is more relaxed than the big southern strips, a pretty marina, a black-sand beach (Playa de los Guíos) right beneath the cliffs, and sunsets that light the rock face gold. Neighbouring Puerto de Santiago and Playa de la Arena round out the area with more beaches and restaurants.',
-      'Los Gigantes also pairs with the island\'s best hike. The classic Masca gorge walk ends at a cove just up the coast, and the pick-up boat drops hikers back at the Los Gigantes marina, so many people combine the two into one unforgettable day.',
-      'For something more active on the water, the west and south-west coast is where you will find jet ski, parasailing and diving. The sea here is often calmer than the exposed north, making it good for beginners. Browse the water activities on our <a href="/en/activities">things to do in Tenerife</a> page.',
-      'Practical tips: boat trips run year-round thanks to the mild climate, but morning departures usually have the calmest sea. Bring sun protection, there is little shade on deck, and a light layer for the breeze. If you are prone to seasickness, choose a larger catamaran over a small boat.',
-      'Los Gigantes is an easy day trip from the southern resorts, about 30 to 40 minutes by car along the coast. Pair the cliffs and the whales with a relaxed afternoon, and save the evening for the lively side of the island. See everything on our <a href="/en/activities">activities hub</a>.',
-    ],
-  },
-  {
     slug: 'tenerife-carnival-guide',
     image: '/images/blog/tenerife-carnival-guide.avif',
     imageAlt: 'Colourful carnival costume in a street parade',
