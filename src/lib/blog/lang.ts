@@ -92,6 +92,30 @@ const POST_LANG: Record<string, BlogLocale> = {
   'teneriffa-fortbewegung-mietwagen-bus': 'de',
   'masca-schlucht-wanderung-teneriffa': 'de',
   'karneval-santa-cruz-teneriffa': 'de',
+  // Blog articles batch B - FR
+  'loro-parque-tenerife-visite': 'fr',
+  'vie-nocturne-tenerife': 'fr',
+  'observation-etoiles-teide-tenerife': 'fr',
+  'tenerife-avec-jeunes-enfants': 'fr',
+  'excursions-journee-tenerife': 'fr',
+  'parc-rural-anaga-tenerife': 'fr',
+  'tenerife-ou-gran-canaria': 'fr',
+  // Blog articles batch B - ES
+  'loro-parque-tenerife-guia': 'es',
+  'vida-nocturna-tenerife': 'es',
+  'observacion-estrellas-teide-tenerife': 'es',
+  'tenerife-con-ninos-pequenos': 'es',
+  'excursiones-un-dia-tenerife': 'es',
+  'parque-rural-anaga-tenerife': 'es',
+  'tenerife-o-gran-canaria': 'es',
+  // Blog articles batch B - DE
+  'loro-parque-teneriffa-guide': 'de',
+  'teneriffa-nachtleben': 'de',
+  'teide-sterne-beobachten-teneriffa': 'de',
+  'teneriffa-mit-kleinkindern': 'de',
+  'teneriffa-tagesausfluege': 'de',
+  'anaga-naturpark-teneriffa': 'de',
+  'teneriffa-oder-gran-canaria': 'de',
   // Spanish
   'audioguia-canarias-lume': 'es',
   'despedida-soltera-tenerife-ideas': 'es',
@@ -145,6 +169,14 @@ const TRANSLATION_GROUPS: string[][] = [
   ['getting-around-tenerife', 'se-deplacer-tenerife', 'como-moverse-tenerife', 'teneriffa-fortbewegung-mietwagen-bus'],
   ['masca-gorge-hike-tenerife', 'randonnee-gorges-masca-tenerife', 'barranco-masca-senderismo-tenerife', 'masca-schlucht-wanderung-teneriffa'],
   ['tenerife-carnival-guide', 'carnaval-santa-cruz-tenerife', 'carnaval-santa-cruz-tenerife-guia', 'karneval-santa-cruz-teneriffa'],
+  // Blog articles batch B (EN + FR + ES + DE; NL/IT pending)
+  ['loro-parque-tenerife-guide', 'loro-parque-tenerife-visite', 'loro-parque-tenerife-guia', 'loro-parque-teneriffa-guide'],
+  ['tenerife-nightlife-guide', 'vie-nocturne-tenerife', 'vida-nocturna-tenerife', 'teneriffa-nachtleben'],
+  ['teide-stargazing-tenerife', 'observation-etoiles-teide-tenerife', 'observacion-estrellas-teide-tenerife', 'teide-sterne-beobachten-teneriffa'],
+  ['tenerife-with-toddlers', 'tenerife-avec-jeunes-enfants', 'tenerife-con-ninos-pequenos', 'teneriffa-mit-kleinkindern'],
+  ['tenerife-day-trips', 'excursions-journee-tenerife', 'excursiones-un-dia-tenerife', 'teneriffa-tagesausfluege'],
+  ['anaga-rural-park-tenerife', 'parc-rural-anaga-tenerife', 'parque-rural-anaga-tenerife', 'anaga-naturpark-teneriffa'],
+  ['tenerife-vs-gran-canaria', 'tenerife-ou-gran-canaria', 'tenerife-o-gran-canaria', 'teneriffa-oder-gran-canaria'],
 ];
 
 export interface BlogAlternate {
