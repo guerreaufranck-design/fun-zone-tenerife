@@ -65,6 +65,33 @@ const POST_LANG: Record<string, BlogLocale> = {
   'la-laguna-tenerife-cosa-fare': 'it',
   'los-gigantes-cosa-fare': 'it',
   'el-medano-cosa-fare': 'it',
+  // Blog articles batch A - FR
+  'premier-escape-game-tenerife': 'fr',
+  'escape-game-chasse-au-tresor-tenerife': 'fr',
+  'observation-baleines-tenerife-guide': 'fr',
+  'mont-teide-tenerife-guide': 'fr',
+  'siam-park-tenerife-conseils': 'fr',
+  'se-deplacer-tenerife': 'fr',
+  'randonnee-gorges-masca-tenerife': 'fr',
+  'carnaval-santa-cruz-tenerife': 'fr',
+  // Blog articles batch A - ES
+  'escape-game-tenerife-principiantes': 'es',
+  'escape-games-rutas-tesoro-tenerife': 'es',
+  'avistamiento-ballenas-tenerife-guia': 'es',
+  'teide-tenerife-guia-visita': 'es',
+  'siam-park-tenerife-consejos': 'es',
+  'como-moverse-tenerife': 'es',
+  'barranco-masca-senderismo-tenerife': 'es',
+  'carnaval-santa-cruz-tenerife-guia': 'es',
+  // Blog articles batch A - DE
+  'escape-game-teneriffa-anfaenger': 'de',
+  'escape-games-schnitzeljagd-teneriffa': 'de',
+  'wale-beobachten-teneriffa': 'de',
+  'teide-teneriffa-besucherguide': 'de',
+  'siam-park-teneriffa-tipps': 'de',
+  'teneriffa-fortbewegung-mietwagen-bus': 'de',
+  'masca-schlucht-wanderung-teneriffa': 'de',
+  'karneval-santa-cruz-teneriffa': 'de',
   // Spanish
   'audioguia-canarias-lume': 'es',
   'despedida-soltera-tenerife-ideas': 'es',
@@ -109,6 +136,15 @@ const TRANSLATION_GROUPS: string[][] = [
   ['la-laguna-tenerife-things-to-do', 'la-laguna-tenerife-que-faire', 'la-laguna-tenerife-que-hacer', 'la-laguna-teneriffa-tipps', 'la-laguna-tenerife-tips', 'la-laguna-tenerife-cosa-fare'],
   ['los-gigantes-tenerife-things-to-do', 'los-gigantes-que-faire', 'los-gigantes-que-hacer', 'los-gigantes-teneriffa-tipps', 'los-gigantes-tenerife-tips', 'los-gigantes-cosa-fare'],
   ['el-medano-tenerife-things-to-do', 'el-medano-que-faire', 'el-medano-que-hacer', 'el-medano-teneriffa-tipps', 'el-medano-tenerife-tips', 'el-medano-cosa-fare'],
+  // Blog articles batch A (EN + FR + ES + DE; NL/IT pending)
+  ['escape-game-tenerife-first-timers', 'premier-escape-game-tenerife', 'escape-game-tenerife-principiantes', 'escape-game-teneriffa-anfaenger'],
+  ['escape-game-treasure-hunt-city-tour-tenerife', 'escape-game-chasse-au-tresor-tenerife', 'escape-games-rutas-tesoro-tenerife', 'escape-games-schnitzeljagd-teneriffa'],
+  ['whale-watching-tenerife-complete-guide', 'observation-baleines-tenerife-guide', 'avistamiento-ballenas-tenerife-guia', 'wale-beobachten-teneriffa'],
+  ['mount-teide-tenerife-visitor-guide', 'mont-teide-tenerife-guide', 'teide-tenerife-guia-visita', 'teide-teneriffa-besucherguide'],
+  ['siam-park-tenerife-tips-guide', 'siam-park-tenerife-conseils', 'siam-park-tenerife-consejos', 'siam-park-teneriffa-tipps'],
+  ['getting-around-tenerife', 'se-deplacer-tenerife', 'como-moverse-tenerife', 'teneriffa-fortbewegung-mietwagen-bus'],
+  ['masca-gorge-hike-tenerife', 'randonnee-gorges-masca-tenerife', 'barranco-masca-senderismo-tenerife', 'masca-schlucht-wanderung-teneriffa'],
+  ['tenerife-carnival-guide', 'carnaval-santa-cruz-tenerife', 'carnaval-santa-cruz-tenerife-guia', 'karneval-santa-cruz-teneriffa'],
 ];
 
 export interface BlogAlternate {
