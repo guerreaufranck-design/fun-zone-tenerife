@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Star } from 'lucide-react';
 import { activities, activityCategories, type ActivityCategory } from '@/data/activities';
 import { getAlternates, type Locale } from '@/lib/seo';
+import DiscoverCarsCTA from '@/components/blog/DiscoverCarsCTA';
 
 const activitiesMeta: Record<Locale, { title: string; description: string }> = {
   en: {
@@ -193,6 +194,12 @@ export default async function ActivitiesPage({
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <DiscoverCarsCTA locale={locale} />
         </div>
       </section>
     </div>

@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowRight, Tag, ChevronRight, Home } from 'lucide-react';
 import { blogPosts, postLang } from '@/lib/blog/posts';
 import { getAlternates, type Locale } from '@/lib/seo';
+import DiscoverCarsCTA from '@/components/blog/DiscoverCarsCTA';
 
 const HOME_LABEL: Record<string, string> = {
   en: 'Home', es: 'Inicio', fr: 'Accueil', de: 'Startseite', nl: 'Home', it: 'Home',
@@ -257,6 +258,12 @@ export default function BlogPage() {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <DiscoverCarsCTA locale={locale} />
         </div>
       </section>
     </div>
