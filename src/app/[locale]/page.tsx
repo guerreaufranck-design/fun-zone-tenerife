@@ -5,6 +5,7 @@ import StatsSection from '@/components/home/StatsSection';
 import HowItWorks from '@/components/home/HowItWorks';
 import CTASection from '@/components/home/CTASection';
 import JsonLdLocalBusiness from '@/components/seo/JsonLdLocalBusiness';
+import DiscoverCarsCTA from '@/components/blog/DiscoverCarsCTA';
 import { defaultMeta, getAlternates, type Locale } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -53,7 +54,12 @@ export async function generateMetadata({
   };
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <JsonLdLocalBusiness />
@@ -61,6 +67,12 @@ export default function HomePage() {
 
       <section className="py-20 lg:py-24">
         <ActivityHighlights />
+      </section>
+
+      <section className="px-4 pb-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <DiscoverCarsCTA locale={locale} />
+        </div>
       </section>
 
       <StatsSection />
