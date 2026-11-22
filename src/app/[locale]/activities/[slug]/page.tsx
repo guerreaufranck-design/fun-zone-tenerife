@@ -10,6 +10,7 @@ import { activities } from '@/data/activities';
 import { getAlternates, type Locale } from '@/lib/seo';
 import { gygTourId } from '@/lib/gyg';
 import GygAvailabilityWidget from '@/components/product/GygAvailabilityWidget';
+import DiscoverCarsCTA from '@/components/blog/DiscoverCarsCTA';
 
 export async function generateMetadata({
   params,
@@ -338,6 +339,12 @@ export default async function ActivityDetailPage({
               </div>
             </div>
           )}
+        </div>
+      </section>
+
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <DiscoverCarsCTA locale={locale} />
         </div>
       </section>
     </div>
