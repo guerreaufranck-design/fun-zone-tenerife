@@ -135,6 +135,18 @@ export default async function BlogPostPage({
       : {}),
   };
 
+  // Place the Discover Cars CTA EARLY (just before the 2nd section heading, or
+  // after the 3rd item when the article has no headings) so it lands within the
+  // first scroll instead of being buried at the foot of the page.
+  const headingIdxs: number[] = [];
+  post.content.forEach((c, i) => {
+    if (c.startsWith('## ')) headingIdxs.push(i);
+  });
+  const ctaAfterIndex = Math.max(
+    0,
+    headingIdxs.length >= 2 ? headingIdxs[1] - 1 : Math.min(2, post.content.length - 1)
+  );
+
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
@@ -232,6 +244,7 @@ export default async function BlogPostPage({
                 {post.widget && post.widget.afterParagraph === index && (
                   <InlineWidget widget={post.widget} locale={locale} />
                 )}
+                {index === ctaAfterIndex && <DiscoverCarsCTA locale={locale} />}
               </Fragment>
             ))}
           </article>
@@ -239,9 +252,6 @@ export default async function BlogPostPage({
           {post.place && (
             <CityMap name={post.place.name} lat={post.place.lat} lng={post.place.lng} locale={locale} />
           )}
-
-          {/* Discover Cars affiliate CTA on every article (365-day cookie = max coverage). */}
-          <DiscoverCarsCTA locale={locale} />
 
           {/* Share */}
           <div className="mt-12 flex items-center justify-between border-t border-border/50 pt-6">
