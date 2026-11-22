@@ -13,6 +13,7 @@ import RelatedActivities from '@/components/blog/RelatedActivities';
 import InlineWidget from '@/components/blog/InlineWidget';
 import CityMap from '@/components/blog/CityMap';
 import DiscoverCarsBanner from '@/components/blog/DiscoverCarsBanner';
+import DiscoverCarsCTA from '@/components/blog/DiscoverCarsCTA';
 import CopyLinkButton from '@/components/blog/CopyLinkButton';
 
 const BASE_URL = 'https://funzonetenerife.com';
@@ -238,6 +239,9 @@ export default async function BlogPostPage({
           {post.place && (
             <CityMap name={post.place.name} lat={post.place.lat} lng={post.place.lng} locale={locale} />
           )}
+
+          {/* Discover Cars affiliate CTA on every article (365-day cookie = max coverage). */}
+          <DiscoverCarsCTA locale={locale} />
 
           {/* Share */}
           <div className="mt-12 flex items-center justify-between border-t border-border/50 pt-6">
