@@ -12,6 +12,7 @@ import { blogPosts, postLang, postAlternates } from '@/lib/blog/posts';
 import RelatedActivities from '@/components/blog/RelatedActivities';
 import InlineWidget from '@/components/blog/InlineWidget';
 import CityMap from '@/components/blog/CityMap';
+import DiscoverCarsBanner from '@/components/blog/DiscoverCarsBanner';
 import CopyLinkButton from '@/components/blog/CopyLinkButton';
 
 const BASE_URL = 'https://funzonetenerife.com';
@@ -220,7 +221,9 @@ export default async function BlogPostPage({
           <article className="space-y-6">
             {post.content.map((paragraph, index) => (
               <Fragment key={index}>
-                {paragraph.startsWith('## ') ? (
+                {paragraph === '[[discover-cars-banner]]' ? (
+                  <DiscoverCarsBanner />
+                ) : paragraph.startsWith('## ') ? (
                   <h2 className="!mt-10 text-2xl font-bold text-white">{paragraph.slice(3)}</h2>
                 ) : (
                   <p className="text-base leading-relaxed text-muted-foreground [&_a]:text-[#00d4ff] [&_a]:underline [&_a:hover]:text-white" dangerouslySetInnerHTML={{ __html: paragraph }} />

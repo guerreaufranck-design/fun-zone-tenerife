@@ -4903,6 +4903,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 min read',
     content: [
+      "[[discover-cars-banner]]",
       "When you rent a car in Tenerife, the biggest surprise is usually not the price, it is the deposit. Many companies block a large sum on a credit card when you pick the car up, often between 700 and 1,500 euros, and some will not hand over the keys at all without one. If you only travel with a debit card, or you simply do not want a big hold sitting on your account for your whole holiday, here is how to rent a car in Tenerife with no deposit and no credit card.",
       "## Why there is a deposit in the first place",
       "The deposit is not a fee, it is a security hold that covers the insurance excess. A standard rental comes with an excess, sometimes 1,000 euros or more, that you would have to pay if the car is damaged or stolen. To guarantee it, the supplier freezes that amount on your credit card at the desk. Remove the excess and you remove the reason for the deposit, and that is exactly what the no-deposit option does.",
@@ -4929,6 +4930,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 min de lectura',
     content: [
+      "[[discover-cars-banner]]",
       "Cuando alquilas coche en Tenerife, la mayor sorpresa no suele ser el precio, sino el depósito. Muchas empresas bloquean una cantidad alta en una tarjeta de crédito al recoger el coche, a menudo entre 700 y 1.500 euros, y algunas ni siquiera te dan las llaves sin ella. Si solo viajas con tarjeta de débito, o simplemente no quieres tener una retención grande en tu cuenta durante todas las vacaciones, aquí tienes cómo alquilar coche en Tenerife sin depósito y sin tarjeta de crédito.",
       "## Por qué existe el depósito",
       "El depósito no es una tarifa, es una retención de seguridad que cubre la franquicia del seguro. Un alquiler estándar lleva una franquicia, a veces de 1.000 euros o más, que tendrías que pagar si el coche sufre daños o te lo roban. Para garantizarla, la empresa congela ese importe en tu tarjeta de crédito en el mostrador. Elimina la franquicia y eliminas el motivo del depósito, y eso es justo lo que hace la opción sin depósito.",
@@ -4955,6 +4957,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 min de lecture',
     content: [
+      "[[discover-cars-banner]]",
       "Quand on loue une voiture à Tenerife, la plus grosse surprise n'est pas le prix, c'est la caution. Beaucoup de loueurs bloquent une somme importante sur une carte de crédit au moment de prendre le véhicule, souvent entre 700 et 1 500 euros, et certains refusent même de vous confier les clés sans carte de crédit. Si vous ne voyagez qu'avec une carte de débit, ou si vous ne voulez tout simplement pas d'une grosse somme gelée sur votre compte pendant toutes vos vacances, voici comment louer une voiture à Tenerife sans caution et sans carte de crédit.",
       "## Pourquoi il y a une caution au départ",
       "La caution n'est pas des frais, c'est une empreinte de garantie qui couvre la franchise d'assurance. Une location standard comporte une franchise, parfois 1 000 euros ou plus, que vous devriez payer si la voiture est endommagée ou volée. Pour la garantir, le loueur gèle ce montant sur votre carte de crédit au comptoir. Supprimez la franchise et vous supprimez la raison d'être de la caution, et c'est exactement ce que fait l'option sans caution.",
@@ -4981,6 +4984,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 Min. Lesezeit',
     content: [
+      "[[discover-cars-banner]]",
       "Wenn du auf Teneriffa einen Mietwagen nimmst, ist die größte Überraschung meist nicht der Preis, sondern die Kaution. Viele Firmen blockieren bei der Abholung eine hohe Summe auf der Kreditkarte, oft zwischen 700 und 1.500 Euro, und manche geben den Schlüssel ohne Kreditkarte gar nicht erst heraus. Wenn du nur mit einer Debitkarte reist oder einfach keine hohe Blockade für den ganzen Urlaub auf deinem Konto haben willst, erfährst du hier, wie du auf Teneriffa ohne Kaution und ohne Kreditkarte mietest.",
       "## Warum es überhaupt eine Kaution gibt",
       "Die Kaution ist keine Gebühr, sondern eine Sicherheitsblockade, die die Selbstbeteiligung der Versicherung abdeckt. Ein Standardmietwagen kommt mit einer Selbstbeteiligung, manchmal 1.000 Euro oder mehr, die du zahlen müsstest, wenn das Auto beschädigt oder gestohlen wird. Zur Absicherung friert der Anbieter diesen Betrag am Schalter auf deiner Kreditkarte ein. Nimm die Selbstbeteiligung weg, und der Grund für die Kaution fällt weg, und genau das macht die Option ohne Kaution.",
@@ -5007,6 +5011,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 min leestijd',
     content: [
+      "[[discover-cars-banner]]",
       "Als je een auto huurt op Tenerife, is de grootste verrassing meestal niet de prijs, maar de borg. Veel maatschappijen blokkeren bij het ophalen een flink bedrag op een creditcard, vaak tussen 700 en 1.500 euro, en sommige geven je zonder creditcard helemaal geen sleutels. Reis je alleen met een betaalpas, of wil je gewoon niet je hele vakantie een grote blokkering op je rekening hebben staan, dan lees je hier hoe je op Tenerife een auto huurt zonder borg en zonder creditcard.",
       "## Waarom er überhaupt een borg is",
       "De borg is geen kost, het is een zekerheidsblokkering die het eigen risico van de verzekering dekt. Een standaardhuur heeft een eigen risico, soms 1.000 euro of meer, dat je zou moeten betalen als de auto beschadigd raakt of gestolen wordt. Om dat te garanderen blokkeert de verhuurder dat bedrag bij de balie op je creditcard. Haal het eigen risico weg en je haalt de reden voor de borg weg, en dat is precies wat de optie zonder borg doet.",
@@ -5033,6 +5038,7 @@ export const blogPosts: BlogPost[] = [
     gradient: 'from-[#00d4ff]/20 via-[#1a1a2e] to-[#0a0a0f]',
     readTime: '6 min di lettura',
     content: [
+      "[[discover-cars-banner]]",
       "Quando noleggi un'auto a Tenerife, la sorpresa più grande di solito non è il prezzo, è il deposito. Molte compagnie bloccano una somma importante sulla carta di credito al momento del ritiro, spesso da 700 a 1.500 euro, e alcune non ti consegnano nemmeno le chiavi senza. Se viaggi solo con una carta di debito, o semplicemente non vuoi un blocco così alto sul conto per tutta la vacanza, ecco come noleggiare un'auto a Tenerife senza deposito e senza carta di credito.",
       "## Perché esiste il deposito",
       "Il deposito non è una tariffa, è una garanzia che copre la franchigia dell'assicurazione. Un noleggio standard ha una franchigia, a volte di 1.000 euro o più, che dovresti pagare se l'auto viene danneggiata o rubata. Per garantirla, il fornitore congela quell'importo sulla tua carta di credito al banco. Elimina la franchigia ed elimini il motivo del deposito: è esattamente ciò che fa l'opzione senza deposito.",
