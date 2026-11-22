@@ -281,6 +281,8 @@ export default async function ActivityDetailPage({
             </div>
           )}
 
+          <DiscoverCarsCTA locale={locale} />
+
           {/* Group / stag / hen → EVG celebrations hub (internal link) */}
           {GROUP_FRIENDLY.has(activity.slug) && (
             <div className="mt-16">
@@ -339,12 +341,6 @@ export default async function ActivityDetailPage({
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <DiscoverCarsCTA locale={locale} />
         </div>
       </section>
     </div>
