@@ -188,6 +188,12 @@ const POST_LANG: Record<string, BlogLocale> = {
   'addio-al-celibato-tenerife-guida': 'it',
   'addio-al-nubilato-tenerife-idee': 'it',
   'cosa-fare-tenerife': 'it',
+  // Car-rental (no deposit / no credit card) article
+  'alquiler-coche-tenerife-sin-deposito-sin-tarjeta': 'es',
+  'location-voiture-tenerife-sans-caution-sans-carte': 'fr',
+  'mietwagen-teneriffa-ohne-kaution-ohne-kreditkarte': 'de',
+  'auto-huren-tenerife-zonder-borg-zonder-creditcard': 'nl',
+  'noleggio-auto-tenerife-senza-deposito-senza-carta': 'it',
 };
 
 /** The language a blog article is written in. */
@@ -234,6 +240,7 @@ const TRANSLATION_GROUPS: string[][] = [
   // Stag & Hen (2 guides across 6 languages)
   ['stag-do-tenerife-guide', 'enterrement-vie-garcon-tenerife', 'despedida-soltero-tenerife-guia', 'junggesellenabschied-teneriffa-guide', 'vrijgezellenfeest-mannen-tenerife', 'addio-al-celibato-tenerife-guida'],
   ['hen-party-tenerife-ideas', 'enterrement-vie-jeune-fille-tenerife', 'despedida-soltera-tenerife-guia', 'junggesellinnenabschied-teneriffa-ideen', 'vrijgezellenfeest-vrouwen-tenerife', 'addio-al-nubilato-tenerife-idee'],
+  ['tenerife-car-rental-no-deposit-no-credit-card', 'location-voiture-tenerife-sans-caution-sans-carte', 'alquiler-coche-tenerife-sin-deposito-sin-tarjeta', 'mietwagen-teneriffa-ohne-kaution-ohne-kreditkarte', 'auto-huren-tenerife-zonder-borg-zonder-creditcard', 'noleggio-auto-tenerife-senza-deposito-senza-carta'],
 ];
 
 export interface BlogAlternate {
