@@ -236,6 +236,27 @@ export default async function BlogPostPage({
               <Fragment key={index}>
                 {paragraph === '[[discover-cars-banner]]' ? (
                   <DiscoverCarsBanner />
+                ) : paragraph.startsWith('[[img:') ? (
+                  (() => {
+                    const [src, alt, caption] = paragraph.slice(6, -2).split('|');
+                    return (
+                      <figure className="!mt-8">
+                        <Image
+                          src={src}
+                          alt={alt ?? ''}
+                          width={935}
+                          height={475}
+                          sizes="(max-width: 768px) 100vw, 768px"
+                          className="h-auto w-full rounded-lg border border-border/50"
+                        />
+                        {caption && (
+                          <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+                            {caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    );
+                  })()
                 ) : paragraph.startsWith('## ') ? (
                   <h2 className="!mt-10 text-2xl font-bold text-white">{paragraph.slice(3)}</h2>
                 ) : (
