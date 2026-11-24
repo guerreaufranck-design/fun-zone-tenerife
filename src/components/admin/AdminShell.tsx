@@ -11,6 +11,7 @@ import {
   Package,
   TrendingUp,
   BarChart3,
+  MousePointerClick,
   Clock,
   HelpCircle,
   FileText,
@@ -29,6 +30,7 @@ import type { User } from '@supabase/supabase-js';
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+  { href: '/admin/traffic', label: 'Traffic', icon: MousePointerClick },
   { href: '/admin/escape-sales', label: 'Escape Sales', icon: Map },
   { href: '/admin/bookings', label: 'Bookings', icon: Calendar },
   { href: '/admin/offers', label: 'Offers', icon: Package },
