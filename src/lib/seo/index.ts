@@ -131,11 +131,16 @@ export function getAlternates(path: string, slug?: string, locale: string = 'en'
     return { canonical: canonicalFor(languages), languages };
   }
 
+  // The homepage is path === '/': concatenating it would yield `…/en/` with a
+  // trailing slash, which would NOT match the no-slash canonical (`…/en`) or the
+  // sitemap and makes Google reject the declared canonical ("duplicate, Google
+  // chose a different canonical"). Normalize '/' to '' so hreflang == canonical.
+  const suffix = path === '/' ? '' : path;
   const languages: Record<string, string> = {};
   for (const l of locales) {
-    languages[l] = `${BASE_URL}/${l}${path}`;
+    languages[l] = `${BASE_URL}/${l}${suffix}`;
   }
-  languages['x-default'] = `${BASE_URL}/en${path}`;
+  languages['x-default'] = `${BASE_URL}/en${suffix}`;
   return { canonical: canonicalFor(languages), languages };
 }
 
