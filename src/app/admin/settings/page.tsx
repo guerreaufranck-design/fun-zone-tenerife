@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Save, Loader2 } from 'lucide-react';
+import { Save, Loader2, Send } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 interface Setting {
@@ -32,6 +32,8 @@ export default function SettingsPage() {
   const [settings, setSettings] = useState<Setting[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [pinging, setPinging] = useState(false);
+  const [pingMsg, setPingMsg] = useState<string | null>(null);
 
   useEffect(() => {
     fetchSettings();
@@ -84,6 +86,21 @@ export default function SettingsPage() {
       console.error('Error saving settings:', err);
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function handleIndexNow() {
+    try {
+      setPinging(true);
+      setPingMsg(null);
+      const res = await fetch('/api/admin/indexnow', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `Erreur ${res.status}`);
+      setPingMsg(`Soumis à Bing : ${data.submitted} URLs (statut ${data.status}).`);
+    } catch (err) {
+      setPingMsg(err instanceof Error ? err.message : 'Échec de la soumission');
+    } finally {
+      setPinging(false);
     }
   }
 
@@ -161,6 +178,32 @@ export default function SettingsPage() {
               />
             </div>
           ))}
+        </CardContent>
+      </Card>
+
+      <Card className="bg-[#111118] border-border/30">
+        <CardHeader>
+          <CardTitle className="text-base">Indexation Bing (IndexNow)</CardTitle>
+          <CardDescription>
+            Notifie Bing, ChatGPT et Copilot de tes pages pour un crawl en minutes
+            au lieu de jours. Clique après avoir publié ou mis à jour du contenu.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <Button onClick={handleIndexNow} disabled={pinging} variant="outline">
+            {pinging ? (
+              <span className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Envoi…
+              </span>
+            ) : (
+              <span className="flex items-center gap-2">
+                <Send className="h-4 w-4" />
+                Soumettre le sitemap à Bing
+              </span>
+            )}
+          </Button>
+          {pingMsg && <p className="text-sm text-muted-foreground">{pingMsg}</p>}
         </CardContent>
       </Card>
     </div>
